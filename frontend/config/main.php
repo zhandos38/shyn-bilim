@@ -38,9 +38,13 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'languages' => ['ru', 'kz'],
+            'enableDefaultLanguageUrlCode' => true,
             'rules' => [
+                '/' => 'site/index'
             ],
         ],
     ],

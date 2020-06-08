@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
-    'name' => 'FreeWay',
+    'name' => 'Shyn Bilim',
     'language' => 'ru',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',

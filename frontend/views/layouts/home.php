@@ -7,7 +7,6 @@ use yii\helpers\Html;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
-use yii\widgets\Breadcrumbs;
 
 AppAsset::register($this);
 ?>
@@ -27,26 +26,8 @@ AppAsset::register($this);
 
 <?= $this->render('_header') ?>
 
-<div class="hero">
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'homeLink'      =>  [
-                'label'     =>  Yii::t('yii', 'Home'),
-                'url'       =>  ['/site/index'],
-                'class'     =>  'home',
-                'template'  =>  '<i class="fa fa-home"></i>{link}'.PHP_EOL,
-            ],
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            'itemTemplate' => '<i class="fa fa-angle-right"></i>{link}'.PHP_EOL,
-            'tag' =>  'ul',
-        ]); ?>
-    </div>
-</div>
-
-<div class="site-container container">
-    <?= Alert::widget() ?>
-    <?= $content ?>
-</div>
+<?= Alert::widget() ?>
+<?= $content ?>
 
 <?= $this->render('_footer') ?>
 

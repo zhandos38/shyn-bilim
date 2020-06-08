@@ -1,0 +1,142 @@
+.navbar-login-btn {
+  border-radius: 20px;
+  color: var(--main-black-color);
+  box-shadow: none;
+  text-shadow: none;
+  padding: .5rem 1rem;
+  transition: all 0.3s ease;
+  font-size: inherit;
+  text-decoration: none;
+  background: none;
+  border: solid 1px var(--main-color);
+}
+
+.navbar-login-btn:hover {
+  background: rgb(94,201,168);
+  background: linear-gradient(45deg, rgba(94,201,168,1) 10%, rgba(40,153,118,1) 100%);
+  color: #fff !important;
+  border: solid 1px var(--main-color);
+}
+
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.nav-link {
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  color: var(--main-black-color);
+}
+
+.navbar-brand {
+  background-image: url(/img/logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 126px;
+  height: 126px;
+  position: absolute;
+  z-index: 9;
+}
+.navbar-language {
+  color: var(--main-black-color);
+}
+.navbar-language:hover {
+  text-decoration: none;
+}
+.navbar-brand-wrapper {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand-title {
+  font-size: 22px;
+  /* font-weight: 600; */
+  text-transform: uppercase;
+}
+
+.navbar-mobile-button {
+  width: 100%;
+  display: none;
+}
+.navbar-mobile-language {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.navbar-wrapper {
+  background-color: #0F90E5;
+  color: #fff;
+}
+
+.nav-item {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.nav-item:hover {
+  background-color: #FFF133;
+}
+.nav-item--active {
+  background-color: #FFF133;
+}
+.nav-item--active a {
+  color: #01A0E4;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #fff;
+}
+
+.navbar-language {
+  margin-right: 5px;
+}
+
+/* Top header */
+.top-header {
+  background-color: #0062cc;
+  padding: 10px 0;
+  color: #fff;
+}
+.top-header__content {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 160px;
+}
+.top-header__content div {
+  margin-right: 20px;
+}
+.top-header__contact {
+  display: flex;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand-title {
+    text-align: center;
+  }
+  .navbar-button {
+    display: none;
+  }
+  .navbar-mobile-button {
+    display: block;
+  }
+
+  .top-header__content {
+    display: none;
+  }
+
+  .navbar-brand {
+    width: 100px;
+    height: 100px;
+  }
+
+  .navbar-brand {
+    top: -10px;
+  }
+
+  .navbar-toggler-icon {
+    color: #fff;
+  }
+}

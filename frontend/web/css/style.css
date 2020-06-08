@@ -1,0 +1,175 @@
+/* montserrat-300 - latin_cyrillic-ext_cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Montserrat Light'), local('Montserrat-Light'),
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-regular - latin_cyrillic-ext_cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600 - latin_cyrillic-ext_cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-800 - latin_cyrillic-ext_cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/fonts/montserrat-v14-latin_cyrillic-ext_cyrillic-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+    --main-color-blue: #01A0E4;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.main-feature {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px 0;
+}
+.feature {
+    padding: 20px;
+    color: #fff;
+    height: 160px;
+}
+.feature--first {
+    background-color: #E31E25;
+}
+.feature--second {
+    background-color: #FFEF26;
+    color: var(--main-color-blue);
+}
+.feature--third {
+    background-color: var(--main-color-blue);
+}
+.feature__title {
+    font-size: 22px;
+    font-weight: 600;
+}
+.feature__content {
+    font-size: 16px;
+}
+
+/* footer */
+footer {
+    padding: 40px 0;
+    background: url("/img/background.png");
+    color: #fff;
+}
+.footer__link {
+    font-weight: 600;
+    font-size: 22px;
+}
+.footer__link:hover {
+    color: var(--main-color-blue);
+}
+.footer__sub-link {
+    font-size: 18px;
+}
+.footer__sub-link:hover {
+    color: var(--main-color-blue);
+}
+.footer__img {
+    width: 160px;
+}
+
+/* breadcrumb */
+.breadcrumb {
+    background-color: unset;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb i {
+    font-size: 20px;
+    padding: 0 10px;
+    color: #fff;
+}
+.breadcrumb i:first-child {
+    padding-left: 0;
+}
+.breadcrumb a {
+    color: #fff;
+}
+
+/* hero */
+.hero {
+    padding: 30px 0;
+    background: url(/img/background.png) #f2f2f2 center repeat-x;
+}
+
+.site-container {
+    padding: 80px 0;
+}
+
+/* Magazine list */
+.magazine-list {
+    margin-top: 30px;
+}
+.magazine {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 15px 0 rgba(0,31,51,.4);
+    margin-bottom: 30px;
+}
+.magazine__image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.magazine__title {
+    margin-top: 10px;
+}
+.magazine__body {
+    padding: 5px 0;
+}
+.magazine__date {
+    color: #C2C2C2;
+    font-size: 12px;
+}
+.magazine__footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.magazine__share-link {
+    padding: 5px;
+    transition: color 0.5s ease;
+}
+.magazine__share-link:hover {
+    color: var(--main-color-blue) !important;
+}
