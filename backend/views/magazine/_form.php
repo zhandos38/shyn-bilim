@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'number')->textInput() ?>
 
-    <?= $form->field($model, 'imageFile')->fileInput() ?>
+    <?= $form->field($model, 'imageFile')->widget(FileInput) ?>
 
     <?php if ($model->image): ?>
         <img src="<?= $model->getImage() ?>" alt="product-image" width="200px">

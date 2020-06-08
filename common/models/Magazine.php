@@ -2,7 +2,7 @@
 
 namespace common\models;
 
-use Imagine\Imagick\Image;
+use yii\imagine\Image;
 use Yii;
 
 /**
@@ -68,7 +68,14 @@ class Magazine extends \yii\db\ActiveRecord
             return true;
         }
 
-        $imgPath = Yii::getAlias('@static') . '/magazine/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        $imageFolderPath = Yii::getAlias('@static') . '/magazine';
+
+        if (!file_exists($imageFolderPath) && !mkdir($imageFolderPath, 0777, true) && !is_dir($imageFolderPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $imageFolderPath));
+        }
+
+        $imgPath = $imageFolderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+
 
         if ($this->validate()) {
             $this->imageFile->saveAs($imgPath);
