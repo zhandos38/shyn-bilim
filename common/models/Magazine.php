@@ -33,7 +33,7 @@ class Magazine extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['number', 'image'], 'required'],
+            [['number', 'image', 'file'], 'required'],
             [['number', 'created_at'], 'integer'],
             [['image', 'file'], 'string', 'max' => 255],
 
@@ -53,6 +53,7 @@ class Magazine extends \yii\db\ActiveRecord
             'image' => 'Рисунок',
             'imageFile' => 'Файл рисунка',
             'file' => 'Файл',
+            'fileTemp' => 'Файл',
             'created_at' => 'Время добавления',
         ];
     }

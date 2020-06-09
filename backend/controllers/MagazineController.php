@@ -69,13 +69,14 @@ class MagazineController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->created_at = time();
 
-            if ($model->imageFile) {
+            if ($model->imageFile || $model->fileTemp) {
                 $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-                $model->upload();
+                $model->file = $model->imageFile->baseName . '.' . $model->imageFile->extension;
             }
 
-            if ($model->save()) {
+            if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }
 

@@ -2,6 +2,7 @@
 
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -28,13 +29,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'number')->textInput() ?>
 
-    <?= $form->field($model, 'imageFile')->widget(FileInput) ?>
+    <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+    ]) ?>
 
     <?php if ($model->image): ?>
         <img src="<?= $model->getImage() ?>" alt="product-image" width="200px">
     <?php endif; ?>
 
-    <?= $form->field($model, 'file')->fileInput() ?>
+    <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'document/*'],
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
