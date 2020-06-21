@@ -40,7 +40,7 @@ use yii\helpers\Url;
                         <a class="nav-link" href="/"><?= Yii::t('app', 'Главная') ?></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= Yii::t('app', 'Біз туралы') ?></a>
+                        <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= Yii::t('app', 'О нас') ?></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown1">
                             <a class="dropdown-item" href="<?= Url::to(['about/index']) ?>"><?= Yii::t('app', 'Редакция') ?></a>
                             <a class="dropdown-item" href="<?= Url::to(['about/education-center']) ?>"><?= Yii::t('app', 'Учебный центр') ?></a>
@@ -49,16 +49,16 @@ use yii\helpers\Url;
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/"><?= Yii::t('app', 'Журнал') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/"><?= Yii::t('app', 'Материалы') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалы') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['olympiad/list']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['olympiad/list']) ?>"><?= Yii::t('app', 'Проекты') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['project/index']) ?>"><?= Yii::t('app', 'Проекты') ?></a>
                     </li>
                 </ul>
             </div>

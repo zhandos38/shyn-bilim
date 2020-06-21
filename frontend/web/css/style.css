@@ -64,18 +64,18 @@ a:hover {
 }
 .feature {
     padding: 20px;
-    color: #fff;
+    color: #000;
     height: 160px;
+    border-width: 2px;
 }
 .feature--first {
-    background-color: #E31E25;
+    border: #E31E25 solid;
 }
 .feature--second {
-    background-color: #FFEF26;
-    color: var(--main-color-blue);
+    border: #FFEF26 solid;
 }
 .feature--third {
-    background-color: var(--main-color-blue);
+    border: var(--main-color-blue) solid;
 }
 .feature__title {
     font-size: 22px;
@@ -83,6 +83,11 @@ a:hover {
 }
 .feature__content {
     font-size: 16px;
+}
+
+/* carousel */
+.carousel-inner {
+    height: 620px;
 }
 
 /* footer */
@@ -172,4 +177,81 @@ footer {
 }
 .magazine__share-link:hover {
     color: var(--main-color-blue) !important;
+}
+
+/* pagination */
+.pagination li {
+    border: 1px solid #e8e8e8;
+    transition: box-shadow .3s, color .3s;
+    cursor: pointer;
+}
+.pagination li a {
+    display: block;
+    padding: 10px 14px;
+}
+.pagination li.disabled {
+    background-color: #e8e8e8;
+    padding: 10px 14px;
+}
+.pagination .active {
+    color: #e8e8e8;
+}
+.pagination li:hover {
+    box-shadow: 0 0 15px 0 rgba(0,31,51,.4);
+}
+.pagination li:first-child {
+    border-radius: 10px 0 0 10px;
+}
+.pagination li:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* question */
+.question-list__item span, .question-box__text span, .question-box__answer span {
+    top: 0 !important;
+}
+
+/* timer */
+.question-box {
+    margin-top: 60px;
+}
+.question-box__answer-text {
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.question-box__answer-text:hover {
+    color: var(--main-color);
+}
+
+.answer-list {
+    position: relative;
+}
+.answer-list__item--correct:before {
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    color: #28a745;
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f00c";
+    font-weight: 400;
+}
+
+.answer-list__item--wrong:before {
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    color: #dc3545;
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f00d";
+    font-weight: 400;
+}
+
+.answer-list__item--checked-correct:before {
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    color: #28a745;
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f058";
+    font-weight: 400;
 }

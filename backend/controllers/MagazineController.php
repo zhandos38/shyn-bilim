@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Magazine;
 use backend\models\MagazineSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -69,18 +70,20 @@ class MagazineController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
 
-            if ($model->imageFile || $model->fileTemp) {
+            if ($model->imageFile) {
                 $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-                $model->file = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            }
+
+            if ($model->fileTemp) {
+                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
             }
 
             if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }
-
-            return false;
         }
 
         return $this->render('create', [

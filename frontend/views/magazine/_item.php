@@ -11,7 +11,7 @@ use common\models\Magazine;
             <i class="fa fa-calendar"></i> <?= date('d-m-Y', $model->created_at) ?>
         </div>
         <div class="magazine__footer">
-            <a href="#" class="magazine__download-link"><i class="fa fa-download"></i> <?= Yii::t('app', 'Скачать') ?></a>
+            <a href="<?= Yii::$app->params['staticDomain'] . '/magazine/' . $model->file ?>" class="magazine__download-link" target="_blank"><i class="fa fa-download"></i> <?= Yii::t('app', 'Скачать') ?></a>
             <div class="magazine__buttons">
                 <a class="magazine__share-link"><i class="fa fa-facebook"></i></a>
                 <a class="magazine__share-link"><i class="fa fa-vk"></i></a>

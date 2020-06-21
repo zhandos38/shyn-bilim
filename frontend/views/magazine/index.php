@@ -1,13 +1,20 @@
 <?php
 /* @var $this \yii\web\View */
 
-$this->title = Yii::t('app', 'Журнал');
+$this->title = Yii::t('app', 'Журналы');
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['magazine/index']];
 ?>
-<h1><?= Yii::t('app', 'Журнал') ?></h1>
+<h1><?= $this->title ?></h1>
 <div class="magazine-list">
-    <div class="row">
-        <div class="col-md-3">
-
-        </div>
-    </div>
+    <?= \yii\widgets\ListView::widget([
+        'dataProvider' => $dataProvider,
+        'itemView' => '_item',
+        'layout' => '{items}{pager}',
+        'options' => [
+            'class' => 'row'
+        ],
+        'itemOptions' => [
+            'class' => 'col-md-3'
+        ]
+    ]) ?>
 </div>

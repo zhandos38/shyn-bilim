@@ -27,13 +27,13 @@ use yii\helpers\Url;
                         <a class="footer__link" href="#"><?= Yii::t('app', 'Журнал') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Турнир') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Турниры') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Байқаулар') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Конкурсы') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Олимпиадалар') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Олимпиады') ?></a>
                     </li>
                 </ul>
             </div>

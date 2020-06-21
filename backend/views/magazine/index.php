@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'number',
             'file',
+            'image',
             [
                 'attribute' => 'created_at',
                 'value' => function(Magazine $model) {

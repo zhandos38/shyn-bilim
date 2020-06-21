@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use yii\helpers\VarDumper;
 use yii\imagine\Image;
 use Yii;
 
@@ -38,7 +39,7 @@ class Magazine extends \yii\db\ActiveRecord
             [['image', 'file'], 'string', 'max' => 255],
 
             [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
-            [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf'],
+            [['fileTemp'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf'],
         ];
     }
 
@@ -65,22 +66,30 @@ class Magazine extends \yii\db\ActiveRecord
 
     public function upload()
     {
-        if ($this->imageFile === null) {
+        if ($this->imageFile === null && $this->fileTemp === null) {
             return true;
         }
 
-        $imageFolderPath = Yii::getAlias('@static') . '/magazine';
+        $folderPath = Yii::getAlias('@static') . '/magazine';
 
-        if (!file_exists($imageFolderPath) && !mkdir($imageFolderPath, 0777, true) && !is_dir($imageFolderPath)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $imageFolderPath));
+        if (!file_exists($folderPath) && !mkdir($folderPath, 0777, true) && !is_dir($folderPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
         }
 
-        $imgPath = $imageFolderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-
+        $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        $filePath = $folderPath . '/' . $this->fileTemp->baseName . '.' . $this->fileTemp->extension;
 
         if ($this->validate()) {
-            $this->imageFile->saveAs($imgPath);
-            return Image::resize($imgPath,375, 625, true)->save();
+            if ($this->imageFile) {
+                $this->imageFile->saveAs($imgPath);
+                Image::resize($imgPath,375, 625, true)->save();
+            }
+
+            if ($this->fileTemp) {
+                $this->fileTemp->saveAs($filePath);
+            }
+
+            return true;
         }
 
         return false;
