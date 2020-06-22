@@ -3,18 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Magazine;
-use backend\models\MagazineSearch;
-use yii\helpers\VarDumper;
+use common\models\Project;
+use backend\models\ProjectSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 /**
- * MagazineController implements the CRUD actions for Magazine model.
+ * ProjectController implements the CRUD actions for Project model.
  */
-class MagazineController extends Controller
+class ProjectController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +31,12 @@ class MagazineController extends Controller
     }
 
     /**
-     * Lists all Magazine models.
+     * Lists all Project models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new MagazineSearch();
+        $searchModel = new ProjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +46,7 @@ class MagazineController extends Controller
     }
 
     /**
-     * Displays a single Magazine model.
+     * Displays a single Project model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,25 +59,19 @@ class MagazineController extends Controller
     }
 
     /**
-     * Creates a new Magazine model.
+     * Creates a new Project model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Magazine();
+        $model = new Project();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
-            $model->created_at = time();
 
             if ($model->imageFile) {
-                $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-            }
-
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
             }
 
             if ($model->save() && $model->upload()) {
@@ -92,7 +85,7 @@ class MagazineController extends Controller
     }
 
     /**
-     * Updates an existing Magazine model.
+     * Updates an existing Project model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -104,14 +97,9 @@ class MagazineController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
 
             if ($model->imageFile) {
-                $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-            }
-
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
             }
 
             if ($model->save() && $model->upload()) {
@@ -125,7 +113,7 @@ class MagazineController extends Controller
     }
 
     /**
-     * Deletes an existing Magazine model.
+     * Deletes an existing Project model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -139,15 +127,15 @@ class MagazineController extends Controller
     }
 
     /**
-     * Finds the Magazine model based on its primary key value.
+     * Finds the Project model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Magazine the loaded model
+     * @return Project the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Magazine::findOne($id)) !== null) {
+        if (($model = Project::findOne($id)) !== null) {
             return $model;
         }
 

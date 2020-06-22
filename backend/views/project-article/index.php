@@ -1,20 +1,19 @@
 <?php
 
-use common\models\Magazine;
+use common\models\ProjectArticle;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
-use kartik\daterange\DateRangePicker;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\MagazineSearch */
+/* @var $searchModel backend\models\ProjectArticleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Журналы';
+$this->title = 'Материалы Проектов';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="magazine-index">
+<div class="project-article-index">
 
     <?php
 
@@ -23,10 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'isSolid' => true,
         'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button']),
         'tooltip' => 'this tooltip description',
-        'title' => 'Журналы'
+        'title' => $this->title
     ])
 
     ?>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -34,26 +35,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'number',
+//            'id',
+            'name',
+            'surname',
+            'patronymic',
+            'topic',
             'file',
-            'image',
+            [
+                'attribute' => 'project_id',
+                'value' => function(ProjectArticle $model) {
+                    return $model->project->name;
+                }
+            ],
             [
                 'attribute' => 'created_at',
-                'value' => function(Magazine $model) {
-                    return date('d-m-Y', $model->created_at);
+                'value' => function(ProjectArticle $model) {
+                    return date('d-m-Y H:i', $model->created_at);
                 },
-                'filter' => DateRangePicker::widget([
-                    'model' => $searchModel,
-                    'attribute' => 'createTimeRange',
-                    'convertFormat' => true,
-                    'pjaxContainerId' => 'crud-datatable-pjax',
-                    'pluginOptions' => [
-                        'locale' => [
-                            'format'=>'Y-m-d'
-                        ],
-                        'convertFormat'=>true
-                    ]
-                ]),
+                'filter' => false
             ],
 
             ['class' => 'yii\grid\ActionColumn'],
