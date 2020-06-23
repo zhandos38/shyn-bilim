@@ -49,6 +49,9 @@ use yii\helpers\Url;
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
                     </li>
                     <li class="nav-item">
