@@ -14,9 +14,13 @@ use yii\imagine\Image;
  * @property ProjectArticle[] $projectArticles
  * @property string $image
  * @property string $img [varchar(255)]
+ * @property bool $type [tinyint(3)]
  */
 class Project extends \yii\db\ActiveRecord
 {
+    const TYPE_PROJECT = 0;
+    const TYPE_CONTEST = 1;
+
     public $imageFile;
 
     /**
@@ -35,6 +39,7 @@ class Project extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
+            ['type', 'integer'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
         ];
@@ -49,6 +54,7 @@ class Project extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Наименование',
             'img' => 'Рисунок',
+            'type' => 'Тип',
             'imgFile' => 'Рисунок',
         ];
     }

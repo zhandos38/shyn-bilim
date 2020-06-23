@@ -47,7 +47,7 @@ class News extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'integer'],
             [['title', 'img'], 'string', 'max' => 255],
 
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 

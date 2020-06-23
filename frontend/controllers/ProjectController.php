@@ -4,6 +4,7 @@
 namespace frontend\controllers;
 
 
+use common\models\News;
 use common\models\Project;
 use common\models\ProjectArticle;
 use frontend\models\ProjectArticleSearch;
@@ -12,11 +13,12 @@ use yii\web\Controller;
 
 class ProjectController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($type = 0)
     {
-        $models = Project::find()->all();
+        $models = Project::findAll(['type' => $type]);
+
         return $this->render('index', [
-            'models' => $models
+            'models' => $models,
         ]);
     }
 

@@ -3,9 +3,9 @@
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use kartik\file\FileInput;
-use mihaildev\ckeditor\CKEditor;
-use mihaildev\elfinder\ElFinder;
+use vova07\imperavi\Widget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -31,8 +31,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->widget(CKEditor::className(),[
-        'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),
+    <?= $form->field($model, 'content')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 200,
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'imagemanager',
+            ],
+            'imageUpload' => Url::to(['news/image-upload']),
+            'imageManagerJson' => Url::to(['/news/images-get']),
+            'clips' => [
+                ['Lorem ipsum...', 'Lorem...'],
+                ['red', '<span class="label-red">red</span>'],
+                ['green', '<span class="label-green">green</span>'],
+                ['blue', '<span class="label-blue">blue</span>'],
+            ],
+        ],
     ]); ?>
 
     <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [

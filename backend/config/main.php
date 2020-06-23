@@ -46,17 +46,5 @@ return [
             ],
         ],
     ],
-    'controllerMap' => [
-        'elfinder' => [
-            'class' => 'mihaildev\elfinder\PathController',
-            'access' => ['@'],
-            'root' => [
-                'baseUrl'=>'http://static.shyn-bilim',
-                'basePath'=>'@static',
-                'path' => 'upload/global',
-                'name' => 'Global'
-            ],
-        ]
-    ],
     'params' => $params,
 ];
