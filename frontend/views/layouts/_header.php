@@ -1,4 +1,6 @@
 <?php
+
+use common\models\Project;
 use yii\helpers\Url;
 
 ?>
@@ -6,16 +8,19 @@ use yii\helpers\Url;
 <div class="top-header">
     <div class="container">
         <div class="top-header__content">
+            <div class="top-header__social-network">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-vk"></i></a>
+                <a href="#"><i class="fa fa-whatsapp"></i></a>
+            </div>
             <div class="top-header__contact">
-                <div class="navbar-phone">
-                    <i class="fa fa-phone"></i> +7 (701) 312-99-06
-                </div>
                 <div class="navbar-email">
                     <i class="fa fa-envelope"></i> bilimshini.kz@mail.ru
                 </div>
-            </div>
-            <div class="navbar-button">
-                <?= $this->render('select-language') ?>
+                <div class="navbar-button">
+                    <?= $this->render('select-language') ?>
+                </div>
             </div>
         </div>
     </div>
@@ -25,12 +30,12 @@ use yii\helpers\Url;
 <div class="navbar-wrapper">
     <div class="navbar navbar-expand-md" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="/"></a>
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<!--            <a class="navbar-brand" href="/"></a>-->
+            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav ml-auto">
+                <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item navbar-mobile-button">
                         <div class="navbar-mobile-language">
                             <?= $this->render('select-language') ?>
@@ -49,7 +54,7 @@ use yii\helpers\Url;
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
@@ -61,7 +66,10 @@ use yii\helpers\Url;
                         <a class="nav-link" href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['project/index']) ?>"><?= Yii::t('app', 'Проекты') ?></a>
+                        <a class="nav-link" href="<?= Url::to(['project/index', 'type' => Project::TYPE_PROJECT]) ?>"><?= Yii::t('app', 'Проекты') ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['project/index', 'type' => Project::TYPE_CONTEST]) ?>"><?= Yii::t('app', 'Конкурсы') ?></a>
                     </li>
                 </ul>
             </div>

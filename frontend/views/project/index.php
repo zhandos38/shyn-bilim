@@ -7,7 +7,22 @@ use common\models\Project;
 $this->title = Yii::t('app', 'Проекты');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['project/index']];
 ?>
-<h1><?= $this->title ?></h1>
+<div class="project-info" style="text-align: center">
+    <h2>Құрметті педагог!</h2>
+    <h4>BILIMSHINI.KZ  ИНТЕРНЕТ ПОРТАЛЫ</h4>
+    <p>Сіздің жұмыс нәтижелеріңізді, жетістіктеріңізді республика көлемінде жариялап,
+        жемісті еңбегіңізді таныту үшін түрлі байқаулар ұйымдастыруда. </p>
+    <p style="font-weight: 600">
+        БІЗ СІЗГЕ ӘРҚАШАН ШЫҒАРМАШЫЛЫҚ ҚОЛДАУ КӨРСЕТУГЕ ДАЙЫНБЫЗ!
+    </p>
+    <p>
+        Байқауға қатысып, өз шығармашылық жұмысыңызды Республика көлемінде жариялауға шақырамыз.
+    </p>
+    <p>
+        ШҰҒЫЛ түрде қабылдаймыз! Толық ереже мәтінін <a href="tel:77754037284">8(775) 403 72 84</a> <br>
+        номерлі <a href="https://wa.me/77754037284">https://wa.me/77754037284</a> сілтемесінен алуыңызға болады.
+    </p>
+</div>
 <div class="project-list">
     <?php foreach ($models as $model): ?>
         <a class="project-list__item" href="<?= \yii\helpers\Url::to(['project/list', 'id' => $model->id]) ?>">

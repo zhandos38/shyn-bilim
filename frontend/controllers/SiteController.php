@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\Mark;
+use common\models\News;
 use common\models\Post;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -79,8 +80,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'home';
+        $news = News::find()->orderBy(['id' => SORT_DESC])->limit(3)->all();
 
-        return $this->render('index');
+        return $this->render('index', [
+            'news' => $news
+        ]);
     }
 
     /**
