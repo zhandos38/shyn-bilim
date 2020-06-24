@@ -21,7 +21,7 @@ use yii\helpers\Url;
             <div class="col-md-3">
                 <ul class="footer-list">
                     <li class="footer-list__item">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Печатное дело') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Полиграфия') ?></a>
                     </li>
                     <li class="footer-list__item">
                         <i class="fa fa-phone"></i> +7(701) 590 79 16
