@@ -131,6 +131,11 @@ class ProjectArticleController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionInfo()
+    {
+        echo phpinfo();
+    }
+
     /**
      * Finds the ProjectArticle model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
