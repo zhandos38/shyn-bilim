@@ -5,28 +5,33 @@ $this->title = Yii::t('app', 'Главная страница');
 <div class="container">
     <!-- Begin Main -->
     <div class="main-block">
-        <div class="main-block__title" style="display: flex; align-items: center">
-            <img src="/img/logo.png" alt="logo" style="width: 120px;">
-            <span style="margin-left: 10px; font-size: 3.8rem; font-weight: 600; color: #3f85e7">BILIMSHINI</span>
+        <div class="main-block__title-wrapper" style="display: flex; align-items: center">
+            <img class="main-block__logo" src="/img/logo.png" alt="logo">
+            <span class="main-block__title">BILIMSHINI</span>
+        </div>
+        <div class="main-block__image-wrapper">
+            <img class="main-block__image" src="/img/main.png" alt="image">
         </div>
     </div>
     <!-- End Main -->
-    <div class="main-news" style="display: flex; margin-top: 260px">
-        <?php foreach ($news as $item): ?>
-            <div class="article-block">
-                <a href="<?= \yii\helpers\Url::to(['news/view', 'id' => $item->id]) ?>">
-                    <div class="article-block__preview">
-                        <img src="<?= $item->getImage() ?>" alt="<?= $item->title ?> title="<?= $item->title ?>">
-                    </div>
-                    <div class="article-block__description">
-                        <div class="article-block__title"><?= $item->title ?></div>
-                        <div class="article-block__bottom">
-                            <span class="date"><i class="fa fa-calendar"></i> <?= date('d.m.Y H:i', $item->created_at) ?></span>
+    <div class="main-news" style="display: flex; margin-top: 40px">
+        <div class="articles-list articles">
+            <?php foreach ($news as $item): ?>
+                <div class="article-block">
+                    <a href="<?= \yii\helpers\Url::to(['news/view', 'id' => $item->id]) ?>">
+                        <div class="article-block__preview">
+                            <img src="<?= $item->getImage() ?>" alt="<?= $item->title ?> title="<?= $item->title ?>">
                         </div>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
+                        <div class="article-block__description">
+                            <div class="article-block__title"><?= $item->title ?></div>
+                            <div class="article-block__bottom">
+                                <span class="date"><i class="fa fa-calendar"></i> <?= date('d.m.Y H:i', $item->created_at) ?></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 <!--    <div class="main-feature">-->
 <!--        <div class="row">-->

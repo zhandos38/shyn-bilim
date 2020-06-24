@@ -8,14 +8,61 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about
 ?>
 <h1><?= Yii::t('app', 'Редакция') ?></h1>
 <div class="row">
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-8">
-        <h1>БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ</h1>
-        <div style="color: red; font-weight: 600">
-            Құрлығанына 5 жыл
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="about-image" src="/img/11.png" alt="11">
+                <div class="staff-info">
+                    <div class="staff-name">Есен Бахыткул Артыққызы</div>
+                    <div class="staff-job">Бас рекактор</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="about-image" src="/img/22.png" alt="22">
+                <div class="staff-info">
+                    <div class="staff-name">Биғараев Жарқынбек</div>
+                    <div class="staff-job">Бас рекактордың орынбасары</div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="about-image" src="/img/33.png" alt="33">
+                <div class="staff-info">
+                    <div class="staff-name">Бекзат Рүстем</div>
+                    <div class="staff-job">Шығармашылық директор</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="about-image" src="/img/44.png" alt="44">
+                <div class="staff-info">
+                    <div class="staff-name">Усипова Жанна</div>
+                    <div class="staff-job">Фото-тілші</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="about-image" src="/img/55.png" alt="55">
+                <div class="staff-info">
+                    <div class="staff-name">Изтаева Феруза</div>
+                    <div class="staff-job">Фото-тілші</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="about-image" src="/img/66.png" alt="66">
+                <div class="staff-info">
+                    <div class="staff-name">Анаркулов Ислам</div>
+                    <div class="staff-job">Бас дизайнер</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ</h1>
+        <p style="color: red; font-weight: 600">
+            Құрлығанына 5 жыл
+        </p>
         <p>
             “Білім шыңы - Ғылым сыры” журналы - педагогтар мен оқушыларға арналған республикалық ғылыми-әдістемелік, танымдық, мәдени-рухани журнал.
         </p>
