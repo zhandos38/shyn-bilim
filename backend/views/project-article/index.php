@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'project_id',
                 'value' => function(ProjectArticle $model) {
-                    return $model->project->name;
+                    return $model->project !== null ? $model->project->name : 'Не указано';
                 }
             ],
             [

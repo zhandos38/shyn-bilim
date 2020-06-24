@@ -44,7 +44,7 @@ use yii\helpers\Url;
                         <ul class="dropdown-menu" aria-labelledby="dropdown1">
                             <a class="dropdown-item" href="<?= Url::to(['about/index']) ?>"><?= Yii::t('app', 'Редакция') ?></a>
                             <a class="dropdown-item" href="<?= Url::to(['about/education-center']) ?>"><?= Yii::t('app', 'Учебный центр') ?></a>
-                            <a class="dropdown-item" href="<?= Url::to(['about/printing']) ?>"><?= Yii::t('app', 'Печатное дело') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['about/printing']) ?>"><?= Yii::t('app', 'Полиграфия') ?></a>
                             <a class="dropdown-item" href="<?= Url::to(['about/photo-studio']) ?>"><?= Yii::t('app', 'Фотостудия') ?></a>
                         </ul>
                     </li>

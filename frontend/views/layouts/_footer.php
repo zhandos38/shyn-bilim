@@ -14,7 +14,7 @@ use yii\helpers\Url;
                         <a class="footer__sub-link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <a class="footer__sub-link" href="#"><?= Yii::t('app', 'Печатное дело') ?></a>
+                        <a class="footer__sub-link" href="#"><?= Yii::t('app', 'Полиграфия') ?></a>
                     </li>
                     <li class="footer-list__item">
                         <a class="footer__sub-link" href="#"><?= Yii::t('app', 'Фотостудия') ?></a>
