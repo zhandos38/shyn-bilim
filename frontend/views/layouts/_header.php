@@ -3,6 +3,8 @@
 use common\models\Project;
 use yii\helpers\Url;
 
+$controller = Yii::$app->controller->id;
+$action = Yii::$app->controller->action->id;
 ?>
 <!-- Start: Navigation Upper with Button -->
 <div class="top-header">
@@ -42,7 +44,7 @@ use yii\helpers\Url;
                             <?= $this->render('select-language') ?>
                         </div>
                     </li>
-                    <li class="nav-item nav-item--active">
+                    <li class="nav-item <?= $controller === 'site' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="/"><?= Yii::t('app', 'Главная') ?></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -54,22 +56,22 @@ use yii\helpers\Url;
                             <a class="dropdown-item" href="<?= Url::to(['about/photo-studio']) ?>"><?= Yii::t('app', 'Фотостудия') ?></a>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'news' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'magazine' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'article' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалы') ?></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'olympiad' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'project' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['project/index', 'type' => Project::TYPE_PROJECT]) ?>"><?= Yii::t('app', 'Проекты') ?></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $controller === 'project' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['project/index', 'type' => Project::TYPE_CONTEST]) ?>"><?= Yii::t('app', 'Конкурсы') ?></a>
                     </li>
                 </ul>
