@@ -4,7 +4,7 @@ use common\models\Magazine;
 /* @var $model Magazine */
 ?>
 <div class="magazine">
-    <img class="magazine__image" src="/img/magazine.jpg" alt="magazine-image">
+    <img class="magazine__image" src="<?= $model->getImage() ?>" alt="magazine-image">
     <div class="magazine__title"># <?= $model->number ?></div>
     <div class="magazine__body">
         <div class="magazine__date">
