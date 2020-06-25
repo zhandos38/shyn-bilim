@@ -10,11 +10,13 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about
 <div class="row">
     <div class="col-md-6">
         <div class="row">
-            <div class="col-md-12">
-                <img class="about-image" src="/img/11.png" alt="11">
-                <div class="staff-info">
-                    <div class="staff-name">Есен Бахыткул Артыққызы</div>
-                    <div class="staff-job">Бас рекактор</div>
+            <div class="col-md-12" style="display: flex; justify-content: center;">
+                <div style="width: 60%">
+                    <img class="about-image" src="/img/11.png" alt="11">
+                    <div class="staff-info">
+                        <div class="staff-name">Есен Бахыткул Артыққызы</div>
+                        <div class="staff-job">Бас рекактор</div>
+                    </div>
                 </div>
             </div>
         </div>
