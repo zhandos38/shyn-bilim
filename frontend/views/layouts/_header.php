@@ -34,6 +34,7 @@ use yii\helpers\Url;
             <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
             </button>
+            <img class="navbar-mobile-title" src="/img/title.png" alt="title">
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item navbar-mobile-button">

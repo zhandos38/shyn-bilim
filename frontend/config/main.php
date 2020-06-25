@@ -10,6 +10,7 @@ return [
     'id' => 'app-frontend',
     'name' => 'FreeWay.kz',
     'basePath' => dirname(__DIR__),
+    'language' => 'kz',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
