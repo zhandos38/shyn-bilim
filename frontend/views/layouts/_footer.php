@@ -50,7 +50,7 @@ use yii\helpers\Url;
                         <a class="footer__link" href="#"><?= Yii::t('app', 'Фотостудия') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(078) 317 05 16
+                        <i class="fa fa-phone"></i> +7(078) 317 65 16
                     </li>
                     <li class="footer-list__item">
                         <i class="fa fa-phone"></i> +7(747) 233 97 45
