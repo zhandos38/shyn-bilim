@@ -117,7 +117,21 @@
   display: flex;
 }
 
+.navbar-toggler {
+  background-color: #fff;
+}
+.navbar-toggler-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3f85e7;
+}
+
 @media (max-width: 576px) {
+  .top-header {
+    display: none;
+  }
+
   .navbar-brand-title {
     text-align: center;
   }
@@ -139,9 +153,5 @@
 
   .navbar-brand {
     top: -10px;
-  }
-
-  .navbar-toggler-icon {
-    color: #fff;
   }
 }
