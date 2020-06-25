@@ -59,6 +59,11 @@ class Magazine extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getFile()
+    {
+        return Yii::$app->params['staticDomain'] . '/magazine/' . $this->file;
+    }
+
     public function getImage()
     {
         return $this->image ? Yii::$app->params['staticDomain'] . '/magazine/' . $this->image : '/img/no-magazine.png';
