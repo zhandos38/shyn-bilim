@@ -2,6 +2,8 @@
 /* @var $this \yii\web\View */
 
 $this->title = Yii::t('app', 'Новости');
+
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['news/index']];
 ?>
 <div class="news-index">
     <h1 class="site-title"><?= $this->title ?></h1>
