@@ -8,5 +8,15 @@ $this->title = Yii::t('app', 'Проекты');
 
 <?= \yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
-    'itemView' => '_item'
+    'itemView' => '_item',
+    'layout' => '{items}',
+    'options' => [
+        'class' => 'row'
+    ],
+    'itemOptions' => [
+        'class' => 'col-md-3'
+    ]
+]) ?>
+<?= \yii\widgets\LinkPager::widget([
+    'pagination' => $dataProvider->pagination
 ]) ?>
