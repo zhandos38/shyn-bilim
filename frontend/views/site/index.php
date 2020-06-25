@@ -7,7 +7,8 @@ $this->title = Yii::t('app', 'Главная страница');
     <div class="main-block">
         <div class="main-block__title-wrapper">
             <img class="main-block__logo" src="/img/logo.png" alt="logo">
-            <span class="main-block__title">БІЛІМ ШЫҢЫ</span>
+<!--            <span class="main-block__title">БІЛІМ ШЫҢЫ</span>-->
+            <img class="main-block__title-img" src="/img/title.png" alt="title">
         </div>
         <div class="main-block__image-wrapper">
             <img class="main-block__image" src="/img/main.png" alt="image">
