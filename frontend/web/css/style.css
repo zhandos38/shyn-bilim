@@ -462,4 +462,8 @@ footer {
         width: 80px;
         margin-right: 10px;
     }
+
+    .main-block__title-img {
+        width: 65%;
+    }
 }
