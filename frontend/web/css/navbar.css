@@ -21,7 +21,6 @@
 .navbar {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: #3f85e7;
 }
 .nav-link {
   padding-left: 18px !important;
@@ -153,5 +152,9 @@
 
   .navbar-brand {
     top: -10px;
+  }
+
+  .navbar {
+    background: #3f85e7;
   }
 }
