@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about
     <div class="col-md-6">
         <div class="row">
             <div class="col-md-12" style="display: flex; justify-content: center;">
-                <div style="width: 60%">
+                <div class="about__director-wrapper">
                     <img class="about-image" src="/img/11.png" alt="11">
                     <div class="staff-info">
                         <div class="staff-name">Есен Бахыткул Артыққызы</div>

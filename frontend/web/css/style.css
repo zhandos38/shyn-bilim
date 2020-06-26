@@ -430,6 +430,9 @@ footer {
     width: 86%;
     margin: 16px;
 }
+.about__director-wrapper {
+    width: 60%
+}
 
 /* staff */
 .staff-info {
@@ -440,6 +443,19 @@ footer {
 .main-block__title-img {
     width: 80%;
     margin-left: 16px;
+}
+
+.printing__img-wrapper {
+    padding: 20px;
+    text-align: center;
+}
+.printing__img {
+    width: 80%;
+}
+.printing__title {
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 767px) {
@@ -469,5 +485,13 @@ footer {
 
     .main-block__title-wrapper {
         display: none;
+    }
+
+    .about__director-wrapper {
+        width: 100%
+    }
+
+    .site-container h1 {
+        text-align: center;
     }
 }
