@@ -466,4 +466,8 @@ footer {
     .main-block__title-img {
         width: 65%;
     }
+
+    .main-block__title-wrapper {
+        display: none;
+    }
 }
