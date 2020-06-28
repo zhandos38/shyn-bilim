@@ -148,6 +148,9 @@ footer {
     margin-bottom: 40px;
     padding: 40px 30px;
 }
+.site-container a {
+    color: #0a568c;
+}
 .site-title {
     margin-bottom: 20px;
 }
