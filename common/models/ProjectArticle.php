@@ -39,7 +39,7 @@ class ProjectArticle extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic'], 'required'],
+            [['name', 'surname', 'topic'], 'required'],
             [['project_id', 'created_at'], 'integer'],
             [['topic', 'file', 'name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['project_id' => 'id']],
