@@ -14,8 +14,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about
                 <div class="about__director-wrapper">
                     <img class="about-image" src="/img/11.png" alt="11">
                     <div class="staff-info">
-                        <div class="staff-name">Есен Бахыткул Артыққызы</div>
-                        <div class="staff-job">Бас рекактор</div>
+                        <div class="staff-name">Есен Бахытгул Артыққызы</div>
+                        <div class="staff-job">Бас редактор</div>
                     </div>
                 </div>
             </div>
