@@ -41,44 +41,47 @@ class ArticleController extends Controller
     {
         $model = new Article();
 
-        $paybox = new Paybox();
-
-        $paybox->merchant->id = 530827;
-        $paybox->merchant->secretKey = 'oqyhxvX5lnzTFZTd';
-        $paybox->order->id = $model->id;
-        $paybox->order->amount = 100;
-        $paybox->order->description = 'test order';
-
-        if($paybox->init()) {
-            return $this->redirect($paybox->redirectUrl);
-        }
-
         if ($model->load(Yii::$app->request->post())) {
 
-            $transaction = Yii::$app->db->beginTransaction();
-            try {
-                $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
-                $model->created_at = time();
+            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+            $model->created_at = time();
 
-                if ($model->fileTemp) {
-                    $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
-                }
+            if ($model->fileTemp) {
+                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            }
 
-                if ($model->save() && $model->upload()) {
+            if ($model->save() && $model->upload()) {
 
-                    $transaction->commit();
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 25,
+                    'pg_salt' => 'bilim_test',
+                    'pg_order_id' => $model->id,
+                    'pg_description' => 'Оплата за публикацию материала',
+                ];
 
-                    Yii::$app->session->setFlash('success', Yii::t('app', 'Ваш материал успешно опубликован'));
-                    return $this->redirect(['index']);
-                }
-            } catch (Exception $e) {
-                $transaction->rollBack();
-                throw new Exception($e->getMessage());
+                //generate a signature and add it to the array
+                ksort($request); //sort alphabetically
+                array_unshift($request, 'payment.php');
+                array_push($request, Yii::$app->params['payboxKey']); //add your secret key (you can take it in your personal cabinet on paybox system)
+
+                $request['pg_sig'] = md5(implode(';', $request));
+
+                unset($request[0], $request[1]);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
         }
 
         return $this->render('order', [
             'model' => $model,
         ]);
+    }
+
+    public function actionResult()
+    {
+
     }
 }
