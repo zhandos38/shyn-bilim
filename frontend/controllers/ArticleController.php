@@ -18,13 +18,13 @@ use yii\web\UploadedFile;
 
 class ArticleController extends Controller
 {
-    public function actionIndex($message = null)
+    public function actionIndex($status = null)
     {
         $subjects = Subject::find()->all();
 
-        if ($message === 'success') {
+        if ($status === 'success') {
             Yii::$app->session->setFlash('success', 'Ваш материал успешно опубликоован');
-        } else if ($message === 'fail') {
+        } else if ($status === 'fail') {
             Yii::$app->session->setFlash('error', 'Произошла какая-то ошибка, попробуйте еще раз');
         }
 
