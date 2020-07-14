@@ -23,10 +23,9 @@ class ArticleController extends Controller
         $subjects = Subject::find()->all();
 
         $request = Yii::$app->request->queryParams;
+        unset($request['status']);
 
-        $form = new PayboxForm();
-        $form->load($request);
-        if ($this->checkSign($form->getRequestFields())) {
+        if (!$this->checkSign($request)) {
             throw new Exception('Sig is not correct');
         }
 
