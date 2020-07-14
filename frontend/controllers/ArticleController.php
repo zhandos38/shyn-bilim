@@ -22,7 +22,8 @@ class ArticleController extends Controller
     {
         $subjects = Subject::find()->all();
 
-        $request = Yii::$app->request->get();
+        $request = Yii::$app->request->bodyParams;
+        VarDumper::dumpAsString($request,10,1); die;
         $form = new PayboxForm();
         $form->load($request);
         if ($this->checkSign($form->getRequestFields())) {
