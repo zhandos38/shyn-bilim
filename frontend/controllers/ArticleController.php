@@ -22,7 +22,7 @@ class ArticleController extends Controller
     {
         $subjects = Subject::find()->all();
 
-        $request = Yii::$app->request->bodyParams;
+        $request = Yii::$app->request->queryParams;
         VarDumper::dump($request,10,1); die;
         $form = new PayboxForm();
         $form->load($request);
