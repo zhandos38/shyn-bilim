@@ -68,7 +68,7 @@ class ArticleController extends Controller
                     'pg_description' => 'Оплата за публикацию материала'
                 ];
 
-                $request['pg_sig'] = $this->sign($request, $salt,'payment.php');
+                $request = $this->getSignByData($request, 'payment.php', $salt);
 
                 $query = http_build_query($request);
 
@@ -83,13 +83,15 @@ class ArticleController extends Controller
 
     public function actionResult()
     {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
+
         $request = Yii::$app->request->bodyParams;
         $data = [
             'pg_status' => 'error',
             'pg_error_description' => 'Ошибка',
         ];
 
-        return $this->getSignByData($data);
+        return $this->getSignByData($data, 'result');
 
         try {
             $form = new PayboxForm();
@@ -123,14 +125,14 @@ class ArticleController extends Controller
         }
     }
 
-    private function sign($data, $salt, $url)
+    private function sign($data, $salt)
     {
         $arr = $data;
         $key = Yii::$app->params['payboxKey'];
 
         $arr[$this->toProperty('salt')] = $salt;
         ksort($arr);
-        array_unshift($arr, $url);
+        array_unshift($arr, 'result');
         array_push($arr, $key);
         $arr[$this->toProperty('sig')] = md5(implode(';', $arr));
 
@@ -149,7 +151,7 @@ class ArticleController extends Controller
         return ($sign == $data[$this->toProperty('sig')]);
     }
 
-    public function getSignByData($data, $salt = null)
+    public function getSignByData($data, $url, $salt = null)
     {
         $array = $data;
         $salt = $salt ? $salt : $this->getSalt(8);
@@ -157,8 +159,8 @@ class ArticleController extends Controller
         unset($array[$this->toProperty('sig')]);
 
         ksort($array);
-        array_unshift($array, $this->url);
-        array_push($array, $this->getToken());
+        array_unshift($array, $url);
+        array_push($array,Yii::$app->params['payboxKey']);
         $sign = md5(implode(';', $array));
 
         $data[$this->toProperty('salt')] = $salt;
