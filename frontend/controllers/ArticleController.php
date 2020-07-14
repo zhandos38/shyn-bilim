@@ -84,7 +84,6 @@ class ArticleController extends Controller
     public function actionResult()
     {
         $request = Yii::$app->request->bodyParams;
-        throw new Exception(VarDumper::dumpAsString($request,10,1));
 
         try {
             $form = new PayboxForm();
