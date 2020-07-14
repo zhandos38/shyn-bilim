@@ -22,6 +22,13 @@ class ArticleController extends Controller
     {
         $subjects = Subject::find()->all();
 
+        $request = Yii::$app->request->bodyParams;
+        $form = new PayboxForm();
+        $form->load($request);
+        if ($this->checkSign($form->getRequestFields())) {
+            throw new Exception('Sig is not correct');
+        }
+
         if ($status === 'success') {
             Yii::$app->session->setFlash('success', 'Ваш материал успешно опубликоован');
         } else if ($status === 'fail') {
@@ -86,12 +93,6 @@ class ArticleController extends Controller
         Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
 
         $request = Yii::$app->request->bodyParams;
-        $data = [
-            'pg_status' => 'error',
-            'pg_error_description' => 'Ошибка',
-        ];
-
-        return $this->getSignByData($data, 'result');
 
         try {
             $form = new PayboxForm();
@@ -114,14 +115,14 @@ class ArticleController extends Controller
                 throw new Exception('Article is not saved');
             }
 
-            return $this->getSignByData($data);
+            return $this->getSignByData($data, 'result');
         } catch (Exception $e) {
             $data = [
                 'pg_status' => 'error',
                 'pg_error_description' => $e->getMessage(),
             ];
 
-            return $this->getSignByData($data);
+            return $this->getSignByData($data, 'result');
         }
     }
 
