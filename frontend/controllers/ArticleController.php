@@ -22,7 +22,7 @@ class ArticleController extends Controller
     {
         $subjects = Subject::find()->all();
 
-        $request = Yii::$app->request->bodyParams;
+        $request = Yii::$app->request->get();
         $form = new PayboxForm();
         $form->load($request);
         if ($this->checkSign($form->getRequestFields())) {
