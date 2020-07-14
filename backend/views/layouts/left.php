@@ -20,6 +20,7 @@
                     ['label' => 'Разделы', 'options' => ['class' => 'header']],
                     ['label' => 'Пользователи', 'icon' => 'fas fa-user', 'url' => ['user/index']],
                     ['label' => 'Журналы', 'icon' => 'fas fa-user', 'url' => ['magazine/index']],
+                    ['label' => 'Материалы', 'icon' => 'fas fa-user', 'url' => ['article/index']],
                     ['label' => 'Проекты', 'icon' => 'fas fa-user', 'url' => ['project/index']],
                     ['label' => 'Материалы Проектов', 'icon' => 'fas fa-user', 'url' => ['project-article/index']],
                     ['label' => 'Новости', 'icon' => 'fas fa-user', 'url' => ['news/index']],

@@ -17,12 +17,14 @@ use yii\helpers\Json;
  * @property string $file
  * @property int $subject_id
  * @property int $status
+ * @property mixed $subject
  * @property int|null $created_at
  */
 class Article extends \yii\db\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ACTIVE = 1;
+
     public $fileTemp;
 
     /**
@@ -64,6 +66,11 @@ class Article extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Статус'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];
+    }
+
+    public function getSubject()
+    {
+        return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
     }
 
     public function getFile()
