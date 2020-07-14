@@ -11,6 +11,7 @@ use frontend\models\PayboxForm;
 use Paybox\Pay\Facade as Paybox;
 use Yii;
 use yii\db\Exception;
+use yii\helpers\Json;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\UploadedFile;
