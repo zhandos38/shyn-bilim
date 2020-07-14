@@ -16,10 +16,13 @@ use yii\helpers\Json;
  * @property string $topic
  * @property string $file
  * @property int $subject_id
+ * @property int $status
  * @property int|null $created_at
  */
 class Article extends \yii\db\ActiveRecord
 {
+    const STATUS_OFF = 0;
+    const STATUS_ACTIVE = 1;
     public $fileTemp;
 
     /**
@@ -36,8 +39,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id'], 'required'],
-            [['subject_id', 'created_at'], 'integer'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'status'], 'required'],
+            [['subject_id', 'status', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
@@ -58,6 +61,7 @@ class Article extends \yii\db\ActiveRecord
             'file' => Yii::t('app', 'Файл'),
             'fileTemp' => Yii::t('app', 'Файл'),
             'subject_id' => Yii::t('app', 'Предмет'),
+            'status' => Yii::t('app', 'Статус'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];
     }
