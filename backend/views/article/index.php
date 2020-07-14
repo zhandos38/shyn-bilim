@@ -41,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'patronymic',
             'topic',
             'file',
+            'status',
             [
                 'attribute' => 'subject_id',
                 'value' => function(Article $model) {
