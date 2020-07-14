@@ -87,6 +87,7 @@ class ArticleController extends Controller
 
         try {
             $form = new PayboxForm();
+            throw new Exception(VarDumper::dumpAsString($form,10,1));
             $form->load($request);
             if ($this->checkSign($form->getRequestFields())) {
                 throw new Exception('Sig is not correct');
