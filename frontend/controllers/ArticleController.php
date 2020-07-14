@@ -86,7 +86,7 @@ class ArticleController extends Controller
         $request = Yii::$app->request->bodyParams;
         $data = [
             'pg_status' => 'error',
-            'pg_error_description' => $e->getMessage(),
+            'pg_error_description' => 'Ошибка',
         ];
 
         return $this->getSignByData($data);
