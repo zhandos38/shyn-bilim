@@ -84,10 +84,15 @@ class ArticleController extends Controller
     public function actionResult()
     {
         $request = Yii::$app->request->bodyParams;
+        $data = [
+            'pg_status' => 'error',
+            'pg_error_description' => $e->getMessage(),
+        ];
+
+        return $this->getSignByData($data);
 
         try {
             $form = new PayboxForm();
-            throw new Exception(VarDumper::dumpAsString($form,10,1));
             $form->load($request);
             if ($this->checkSign($form->getRequestFields())) {
                 throw new Exception('Sig is not correct');
