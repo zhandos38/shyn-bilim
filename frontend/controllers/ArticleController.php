@@ -22,16 +22,28 @@ class ArticleController extends Controller
     {
         $subjects = Subject::find()->all();
 
-        $request = Yii::$app->request->queryParams;
+        if (Yii::$app->request->get('status')) {
+            $request = Yii::$app->request->queryParams;
 
-        if (!$this->checkSign($request, 'index')) {
-            throw new Exception('Sig is not correct');
-        }
+            if (!$this->checkSign($request, 'index')) {
+                throw new Exception('Sig is not correct');
+            }
 
-        if ($status === 'success') {
-            Yii::$app->session->setFlash('success', 'Ваш материал успешно опубликоован');
-        } else if ($status === 'fail') {
-            Yii::$app->session->setFlash('error', 'Произошла какая-то ошибка, попробуйте еще раз');
+            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+            if ($order === null) {
+                throw new Exception('Order is not found');
+            }
+
+            $order->status = Article::STATUS_ACTIVE;
+            if (!$order->save()) {
+                throw new Exception('Article is not saved');
+            }
+
+            if ($status === 'success') {
+                Yii::$app->session->setFlash('success', 'Ваш материал успешно опубликоован');
+            } else if ($status === 'fail') {
+                Yii::$app->session->setFlash('error', 'Произошла какая-то ошибка, попробуйте еще раз');
+            }
         }
 
         return $this->render('index', [
@@ -89,6 +101,7 @@ class ArticleController extends Controller
 
     public function actionResult()
     {
+        throw new Exception('xaxaxaxaxa');
         Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
 
         $request = Yii::$app->request->post();
@@ -114,7 +127,7 @@ class ArticleController extends Controller
 
             return $this->getSignByData($data, 'result');
         } catch (Exception $e) {
-            throw new Exception($e->getMessage());
+//            throw new Exception($e->getMessage());
 
             $data = [
                 'pg_status' => 'error',
