@@ -23,7 +23,7 @@ class ArticleController extends Controller
         $subjects = Subject::find()->all();
 
         $request = Yii::$app->request->queryParams;
-        unset($request['status']);
+//        unset($request['status']);
 
         if (!$this->checkSign($request)) {
             throw new Exception('Sig is not correct');
