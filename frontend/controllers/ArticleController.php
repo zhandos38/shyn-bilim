@@ -52,21 +52,6 @@ class ArticleController extends Controller
 
     public function actionOrder()
     {
-        $salt = $this->getSalt(8);
-        $request = [
-            'pg_merchant_id' => Yii::$app->params['payboxId'],
-            'pg_amount' => 25,
-            'pg_salt' => $salt,
-            'pg_order_id' => $model->id,
-            'pg_description' => 'Оплата за публикацию материала'
-        ];
-
-        $request = $this->getSignByData($request, 'payment.php', $salt);
-
-        $query = http_build_query($request);
-
-        return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-
         $model = new Article();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -80,7 +65,20 @@ class ArticleController extends Controller
 
             if ($model->save() && $model->upload()) {
 
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 25,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_description' => 'Оплата за публикацию материала'
+                ];
 
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
         }
 
