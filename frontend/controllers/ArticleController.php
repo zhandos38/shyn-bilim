@@ -91,7 +91,7 @@ class ArticleController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
 
-        $request = Yii::$app->request->post();
+        $request = Yii::$app->request->bodyParams;
 
         try {
             if (!$this->checkSign($request, 'result')) {
