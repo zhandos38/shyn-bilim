@@ -94,7 +94,7 @@ class ArticleController extends Controller
         $request = Yii::$app->request->queryParams;
 
         try {
-            if ($this->checkSign($request, 'result')) {
+            if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
             }
 
