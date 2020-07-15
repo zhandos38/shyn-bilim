@@ -99,45 +99,6 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function actionResult()
-    {
-        throw new Exception('xaxaxaxaxa');
-        Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
-
-        $request = Yii::$app->request->post();
-
-        try {
-            if (!$this->checkSign($request, 'result')) {
-                throw new Exception('Sig is not correct');
-            }
-
-            $data = [
-                'pg_status' => 'ok'
-            ];
-
-            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-            if ($order === null) {
-                throw new Exception('Order is not found');
-            }
-
-            $order->status = Article::STATUS_ACTIVE;
-            if (!$order->save()) {
-                throw new Exception('Article is not saved');
-            }
-
-            return $this->getSignByData($data, 'result');
-        } catch (Exception $e) {
-//            throw new Exception($e->getMessage());
-
-            $data = [
-                'pg_status' => 'error',
-                'pg_error_description' => $e->getMessage(),
-            ];
-
-            return $this->getSignByData($data, 'result');
-        }
-    }
-
     public function checkSign($data, $url):bool
     {
         $array = $data;
