@@ -29,15 +29,15 @@ class ArticleController extends Controller
                 throw new Exception('Sig is not correct');
             }
 
-            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-            if ($order === null) {
-                throw new Exception('Order is not found');
-            }
-
-            $order->status = Article::STATUS_ACTIVE;
-            if (!$order->save()) {
-                throw new Exception('Article is not saved');
-            }
+//            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+//            if ($order === null) {
+//                throw new Exception('Order is not found');
+//            }
+//
+//            $order->status = Article::STATUS_ACTIVE;
+//            if (!$order->save()) {
+//                throw new Exception('Article is not saved');
+//            }
 
             if ($status === 'success') {
                 Yii::$app->session->setFlash('success', 'Ваш материал успешно опубликоован');
