@@ -132,7 +132,7 @@ class ArticleController extends Controller
 
         $sign = $this->sign($array, $salt, $url);
 
-        VarDumper::dump($sign . ' - ' . $data[$this->toProperty('sig')]); die;
+//        VarDumper::dump($sign . ' - ' . $data[$this->toProperty('sig')]); die;
 
         return ($sign == $data[$this->toProperty('sig')]);
     }
