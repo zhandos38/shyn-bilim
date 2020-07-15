@@ -89,6 +89,10 @@ body {
     font-size: 16px;
 }
 
+.card {
+    margin-bottom: 20px;
+}
+
 /* carousel */
 .carousel-inner {
     height: 620px;
