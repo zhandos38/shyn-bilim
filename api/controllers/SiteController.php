@@ -28,6 +28,7 @@ class SiteController extends Controller
     public function actionResult()
     {
         $request = Yii::$app->request->bodyParams;
+        throw new Exception('xaxaxa');
 
         try {
             if (!$this->checkSign($request, 'result')) {
