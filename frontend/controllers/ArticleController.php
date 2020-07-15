@@ -91,9 +91,7 @@ class ArticleController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
 
-        $request = Yii::$app->request->queryParams;
-
-        throw new Exception(VarDumper::dumpAsString($request));
+        $request = Yii::$app->request->post();
 
         try {
             if (!$this->checkSign($request, 'result')) {
