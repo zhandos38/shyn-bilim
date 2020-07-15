@@ -102,7 +102,7 @@ class ArticleController extends Controller
                 'pg_status' => 'ok'
             ];
 
-            $order = Article::findOne(['id' => $request[$this->toProperty('order_id')]]);
+            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
             if ($order === null) {
                 throw new Exception('Order is not found');
             }
