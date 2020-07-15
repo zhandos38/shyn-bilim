@@ -93,6 +93,8 @@ class ArticleController extends Controller
 
         $request = Yii::$app->request->bodyParams;
 
+        throw new Exception(json_encode($request));
+
         try {
             if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
