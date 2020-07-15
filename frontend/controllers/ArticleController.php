@@ -23,9 +23,8 @@ class ArticleController extends Controller
         $subjects = Subject::find()->all();
 
         $request = Yii::$app->request->queryParams;
-//        unset($request['status']);
 
-        if (!$this->checkSign($request)) {
+        if (!$this->checkSign($request, 'index')) {
             throw new Exception('Sig is not correct');
         }
 
@@ -92,12 +91,10 @@ class ArticleController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
 
-        $request = Yii::$app->request->bodyParams;
+        $request = Yii::$app->request->queryParams;
 
         try {
-            $form = new PayboxForm();
-            $form->load($request);
-            if ($this->checkSign($form->getRequestFields())) {
+            if ($this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
             }
 
@@ -105,7 +102,7 @@ class ArticleController extends Controller
                 'pg_status' => 'ok'
             ];
 
-            $order = Article::findOne(['id' => $form->pg_order_id]);
+            $order = Article::findOne(['id' => $request[$this->toProperty('order_id')]]);
             if ($order === null) {
                 throw new Exception('Order is not found');
             }
@@ -126,30 +123,32 @@ class ArticleController extends Controller
         }
     }
 
-    private function sign($data, $salt)
-    {
-        $arr = $data;
-        $key = Yii::$app->params['payboxKey'];
-
-        $arr[$this->toProperty('salt')] = $salt;
-        ksort($arr);
-        array_unshift($arr, 'result');
-        array_push($arr, $key);
-        $arr[$this->toProperty('sig')] = md5(implode(';', $arr));
-
-        return $arr[$this->toProperty('sig')];
-    }
-
-    public function checkSign($data)
+    public function checkSign($data, $url):bool
     {
         $array = $data;
         $salt = $array[$this->toProperty('salt')];
 
         unset($array[$this->toProperty('sig')], $array[$this->toProperty('salt')]);
 
-        $sign = $this->sign($array, $salt);
+        $sign = $this->sign($array, $salt, $url);
+
+        VarDumper::dump($sign . ' - ' . $data[$this->toProperty('sig')]); die;
 
         return ($sign == $data[$this->toProperty('sig')]);
+    }
+
+    private function sign($data, $salt, $url)
+    {
+        $arr = $data;
+        $key = Yii::$app->params['payboxKey'];
+
+        $arr[$this->toProperty('salt')] = $salt;
+        ksort($arr);
+        array_unshift($arr, $url);
+        array_push($arr, $key);
+        $arr[$this->toProperty('sig')] = md5(implode(';', $arr));
+
+        return $arr[$this->toProperty('sig')];
     }
 
     public function getSignByData($data, $url, $salt = null)
