@@ -93,6 +93,8 @@ class ArticleController extends Controller
 
         $request = Yii::$app->request->queryParams;
 
+        VarDumper::dump($request); die;
+
         try {
             if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
