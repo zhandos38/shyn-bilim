@@ -114,6 +114,8 @@ class ArticleController extends Controller
 
             return $this->getSignByData($data, 'result');
         } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+
             $data = [
                 'pg_status' => 'error',
                 'pg_error_description' => $e->getMessage(),
