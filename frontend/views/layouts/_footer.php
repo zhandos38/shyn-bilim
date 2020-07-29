@@ -8,52 +8,26 @@ use yii\helpers\Url;
             <div class="col-md-3">
                 <ul class="footer-list">
                     <li class="footer-list__item footer-list__item--main">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Информация') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(701) 312 99 06
+                        <a href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>"><?= Yii::t('app', 'Публичная оферта') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(701) 076 78 76
+                        <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul class="footer-list">
                     <li class="footer-list__item footer-list__item--main">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Полиграфия') ?></a>
+                        <a class="footer__link" href="#"><?= Yii::t('app', 'Контакты') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(701) 590 79 16
+                        <a href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>">+7 (702)</a>
                     </li>
                     <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(778) 418 00 83
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="footer-list">
-                    <li class="footer-list__item footer-list__item--main">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Учебный центр') ?></a>
-                    </li>
-                    <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(775) 424 37 27
-                    </li>
-                    <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(775) 403 72 84
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="footer-list">
-                    <li class="footer-list__item footer-list__item--main">
-                        <a class="footer__link" href="#"><?= Yii::t('app', 'Фотостудия') ?></a>
-                    </li>
-                    <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(708) 317 65 16
-                    </li>
-                    <li class="footer-list__item">
-                        <i class="fa fa-phone"></i> +7(747) 233 97 45
+                        <a href="<?= Url::to(['site/contact']) ?>">#</a>
                     </li>
                 </ul>
             </div>

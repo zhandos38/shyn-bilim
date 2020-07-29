@@ -25,7 +25,13 @@ $this->title = Yii::t('app', 'Опубликовать материал');
     <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(Subject::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Выбрать предмет')]) ?>
 
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'document/*'],
+        'options' => [
+            'accept' => 'document/*'
+        ],
+        'pluginOptions' => [
+            'theme' => 'fa',
+            'showCaption' => false,
+        ],
     ]) ?>
     <div>
         <small>

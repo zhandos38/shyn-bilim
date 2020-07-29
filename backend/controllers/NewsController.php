@@ -35,13 +35,13 @@ class NewsController extends Controller
         return [
             'images-get' => [
                 'class' => 'vova07\imperavi\actions\GetImagesAction',
-                'url' => 'http://static.shyn-bilim/upload/', // Directory URL address, where files are stored.
+                'url' => Yii::$app['staticDomain'] . '/upload/', // Directory URL address, where files are stored.
                 'path' => '@static/upload', // Or absolute path to directory where files are stored.
                 'options' => ['only' => ['*.jpg', '*.jpeg', '*.png', '*.gif', '*.ico']], // These options are by default.
             ],
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
-                'url' => 'http://static.shyn-bilim/upload/', // Directory URL address, where files are stored.
+                'url' => Yii::$app['staticDomain'] . '/upload/', // Directory URL address, where files are stored.
                 'path' => '@static/upload', // Or absolute path to directory where files are stored.
             ],
         ];
