@@ -10,7 +10,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
 ?>
 <div class="order-form">
     <h1><?= $this->title ?></h1>
-    <p>Чтобы опубликовать материал, необходимо заполнить форму и произвести оплату на сумму 2500 тенге</p>
+    <p>Чтобы опубликовать материал, необходимо заполнить форму и произвести оплату на сумму 2500 тенге. Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a></p>
 
     <?php $form = ActiveForm::begin() ?>
 
@@ -27,7 +27,11 @@ $this->title = Yii::t('app', 'Опубликовать материал');
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>
-
+    <div>
+        <small>
+            Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
+        </small>
+    </div>
     <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Оплатить и опубликовать'), ['class' => 'btn btn-success']) ?>
 
     <?php ActiveForm::end() ?>

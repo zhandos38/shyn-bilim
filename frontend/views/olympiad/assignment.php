@@ -11,7 +11,9 @@ use yii\helpers\ArrayHelper;
 $this->title = Yii::t('app', 'Регистрация');
 ?>
 <h1><?= $subject->name ?></h1>
-<p><?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде') ?></p>
+<p>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде') ?>. Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
+</p>
 <div class="row">
     <div class="col-md-4">
         <?php $form = ActiveForm::begin() ?>
@@ -64,6 +66,12 @@ $this->title = Yii::t('app', 'Регистрация');
         ], [
             'prompt' => Yii::t('app', 'Выберите язык')
         ]) ?>
+
+        <div>
+            <small>
+                Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
+            </small>
+        </div>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
