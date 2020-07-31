@@ -63,11 +63,6 @@ class Subject extends \yii\db\ActiveRecord
         return $this->hasMany(Test::className(), ['subject_id' => 'id']);
     }
 
-    public function getImage()
-    {
-        return Yii::$app->params['staticDomain'] . '/subject/' . $this->img;
-    }
-
     public static function getTypes()
     {
         return [
