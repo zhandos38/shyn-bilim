@@ -33,7 +33,8 @@
         "kartik-v/dependent-dropdown": "dev-master",
         "vova07/yii2-imperavi-widget": "*",
         "yii2mod/yii2-sweet-alert": "*",
-        "payboxmoney/pay": "^1.2"
+        "payboxmoney/pay": "^1.2",
+        "kartik-v/yii2-mpdf": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
