@@ -20,8 +20,7 @@ use dmstr\widgets\Alert;
 </div>
 
 <footer class="main-footer">
-    <strong>Cash Project &copy; 2019 | All rights
-    reserved.
+    <strong><?= Yii::$app->name ?> &copy; 2020 | All rights reserved.
 </footer>
 
 <!-- Control Sidebar -->

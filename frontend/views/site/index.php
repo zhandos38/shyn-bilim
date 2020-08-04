@@ -14,6 +14,15 @@ $this->title = Yii::t('app', 'Главная страница');
             <img class="main-block__image" src="/img/main.png" alt="image">
         </div>
     </div>
+    <div class="main-description">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin: 60px 0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorum error explicabo magnam odit pariatur quasi quidem saepe. Corporis, doloremque, praesentium! Ducimus hic id possimus voluptatum. Autem ducimus laborum quam?
+                </p>
+            </div>
+        </div>
+    </div>
     <!-- End Main -->
     <div class="main-news" style="display: flex; margin-top: 40px">
         <div class="articles-list articles">

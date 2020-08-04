@@ -71,6 +71,9 @@ $action = Yii::$app->controller->action->id;
                     <li class="nav-item <?= $controller === 'project' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['project/index', 'type' => Project::TYPE_PROJECT]) ?>"><?= Yii::t('app', 'Проекты') ?></a>
                     </li>
+                    <li class="nav-item <?= $controller === 'site' && $action === 'contact' ? 'nav-item--active' : '' ?>">
+                        <a class="nav-link" href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -11,7 +11,14 @@ use yii\helpers\ArrayHelper;
 $this->title = Yii::t('app', 'Регистрация');
 ?>
 <h1><?= $subject->name ?></h1>
-<p><?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде') ?></p>
+<p>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде') ?>
+    <?php if (Yii::$app->language === 'ru'): ?>
+        Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
+    <?php else: ?>
+        Мәліметтерді жібере отырып, <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
+    <?php endif; ?>
+</p>
 <div class="row">
     <div class="col-md-4">
         <?php $form = ActiveForm::begin() ?>
