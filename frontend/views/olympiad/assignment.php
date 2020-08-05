@@ -27,6 +27,8 @@ $this->title = Yii::t('app', 'Регистрация');
 
         <?= $form->field($model, 'surname') ?>
 
+        <?= $form->field($model, 'patronymic') ?>
+
         <?= $form->field($model, 'iin') ?>
 
         <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name')) ?>

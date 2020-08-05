@@ -19,6 +19,7 @@ use Yii;
  * @property Test $test
  * @property int $point [int(11)]
  * @property int $finished_at [int(11)]
+ * @property string $patronymic [varchar(255)]
  */
 class TestAssignment extends \yii\db\ActiveRecord
 {
@@ -43,7 +44,7 @@ class TestAssignment extends \yii\db\ActiveRecord
         return [
             [['test_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'school_id','grade', 'lang'], 'required'],
-            [['name', 'surname'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 12],
             [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
 
@@ -65,6 +66,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'test_id' => 'Test ID',
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
+            'patronymic' => Yii::t('app', 'Отчество'),
             'iin' => Yii::t('app', 'ИИН'),
             'school_id' => Yii::t('app', 'Школа'),
             'grade' => Yii::t('app', 'Класс'),

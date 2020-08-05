@@ -1,68 +1,79 @@
 <?php
 
+use yii\helpers\Url;
+
 $this->title = Yii::t('app', 'Главная страница');
 ?>
 <div class="container">
     <!-- Begin Main -->
     <div class="main-block">
         <div class="main-block__title-wrapper">
-            <img class="main-block__logo" src="/img/logo.png" alt="logo">
-<!--            <span class="main-block__title">БІЛІМ ШЫҢЫ</span>-->
-            <img class="main-block__title-img" src="/img/title.png" alt="title">
+            <img class="main-block__logo" src="/img/main-brand.png" alt="logo">
         </div>
         <div class="main-block__image-wrapper">
             <img class="main-block__image" src="/img/main.png" alt="image">
         </div>
     </div>
-    <div class="main-description">
-        <div class="row">
-            <div class="col-md-12">
-                <p style="margin: 60px 0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorum error explicabo magnam odit pariatur quasi quidem saepe. Corporis, doloremque, praesentium! Ducimus hic id possimus voluptatum. Autem ducimus laborum quam?
-                </p>
-            </div>
-        </div>
-    </div>
     <!-- End Main -->
-    <div class="main-news" style="display: flex; margin-top: 40px">
-        <div class="articles-list articles">
-            <?php foreach ($news as $item): ?>
-                <div class="article-block">
-                    <a href="<?= \yii\helpers\Url::to(['news/view', 'id' => $item->id]) ?>">
-                        <div class="article-block__preview">
-                            <img src="<?= $item->getImage() ?>" alt="<?= $item->title ?> title="<?= $item->title ?>">
-                        </div>
-                        <div class="article-block__description">
-                            <div class="article-block__title"><?= $item->title ?></div>
-                            <div class="article-block__bottom">
-                                <span class="date"><i class="fa fa-calendar"></i> <?= date('d.m.Y H:i', $item->created_at) ?></span>
-                            </div>
+    <div class="main-news" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-block">
+                    <a href="<?= Url::to(['about/index']) ?>">
+                        <div class="feature-block__preview">
+                            <img src="/img/feature-1.png" alt="#" title="#">
                         </div>
                     </a>
                 </div>
-            <?php endforeach; ?>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-block">
+                    <a href="<?= Url::to(['about/printing']) ?>">
+                        <div class="feature-block__preview">
+                            <img src="/img/feature-2.png" alt="#" title="#">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-block">
+                    <a href="<?= Url::to(['about/education-center']) ?>">
+                        <div class="feature-block__preview">
+                            <img src="/img/feature-3.png" alt="#" title="#">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-block">
+                    <a href="<?= Url::to(['about/photo-studio']) ?>">
+                        <div class="feature-block__preview">
+                            <img src="/img/feature-4.png" alt="#" title="#">
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-<!--    <div class="main-feature">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-4">-->
-<!--                <div class="feature feature--first">-->
-<!--                    <div class="feature__title">Материалдар</div>-->
-<!--                    <div class="feature__content">Материалы на актуальные темы</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-4">-->
-<!--                <div class="feature feature--second">-->
-<!--                    <div class="feature__title">Новости</div>-->
-<!--                    <div class="feature__content">Свежие новости про казахстанское и мировое образование</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-4">-->
-<!--                <div class="feature feature--third">-->
-<!--                    <div class="feature__title">Олимпиады</div>-->
-<!--                    <div class="feature__content">Новинки сайта, интервью на различные темы с интересными людьми</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+</div>
+<div class="about-block" style="background-color: #fff; padding: 20px 0 60px 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin: 60px 0">
+                    <b>«БІЛІМ ШЫҢЫ» сайтының мақсаты</b> - тәрбие мен білім беру үрдісіндегі педагогикалық технологияларды жетік меңгерген, оқушылар қабілеттерін дамытуда жоғарғы нәтиже көрсеткен, белсенді шығармашылықпен жұмыс жасайтын білікті педагогтарға демеу көрсету, озық іс-тәжірибелерін тарату, жалпы мұғалім мәртебесін көтеру және дарынды шәкірттерді дамыту, елге таныту.
+                    <br>Сайттан ашық сабақтар, сабақ жоспарларын, қмж, омж, ұмж, ктп, сценарийлер, тәрбие сағаттарды, шәкірттердің шығармашылық жұмыстарын, мұғалімдер мен оқушыларға керекті барлық ақпараттарды таба аласыз.
+                    <br>Сайтта материал жариялап, олимпиадаларға, байқаулар мен жобаларға қатысып сертификат, диплом, алғыс хат, грамота мадақтамаларды алып, ЖЕҢІМПАЗ атануға болады.
+                </p>
+                <div style="text-align: center">
+                    <h4>ҚҰРМЕТТІ ПЕДАГОГ!</h4>
+                    <h4>ТАЛАБЫ ТАУДАЙ ШӘКІРТ!</h4>
+                    <p>
+                        Сіз бен біз шығармашылық байланыста болып, Мәңгілік ел мерейін өсіру жолында БІЛІМНІҢ БИІК ШЫҢДАРЫН бірге бағындыратын боламыз.
+                    </p>
+                    <h6>БІЗДІҢ САЙТҚА ҚОШ КЕЛДІҢІЗ!</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
