@@ -23,6 +23,8 @@ class ArticleController extends Controller
 {
     public function actionIndex($status = null)
     {
+        Yii::$app->session->setFlash('success', Yii::t('app', 'Страница в разработке'));
+        return $this->redirect(['site/index']);
         $subjects = Subject::find()->all();
 
         return $this->render('index', [
@@ -35,19 +37,19 @@ class ArticleController extends Controller
         if (Yii::$app->request->get('status')) {
             $request = Yii::$app->request->queryParams;
 
-//            if (!$this->checkSign($request, 'index')) {
-//                throw new Exception('Sig is not correct');
-//            }
+            if (!$this->checkSign($request, 'index')) {
+                throw new Exception('Sig is not correct');
+            }
 
-//            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-//            if ($order === null) {
-//                throw new Exception('Order is not found');
-//            }
-//
-//            $order->status = Article::STATUS_ACTIVE;
-//            if (!$order->save()) {
-//                throw new Exception('Article is not saved');
-//            }
+            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+            if ($order === null) {
+                throw new Exception('Order is not found');
+            }
+
+            $order->status = Article::STATUS_ACTIVE;
+            if (!$order->save()) {
+                throw new Exception('Article is not saved');
+            }
 
             return $this->render('success', [
                 'id' => $order->id
