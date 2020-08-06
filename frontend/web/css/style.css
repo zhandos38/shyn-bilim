@@ -89,6 +89,15 @@ body {
     font-size: 16px;
 }
 
+.feature-block__footer {
+    position: absolute;
+    padding: 26px;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    bottom: 0;
+}
+
 .card {
     margin-bottom: 20px;
 }

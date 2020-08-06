@@ -20,9 +20,9 @@ $this->title = Yii::t('app', 'Опубликовать материал');
 
     <?php $form = ActiveForm::begin() ?>
 
-    <?= $form->field($model, 'name') ?>
-
     <?= $form->field($model, 'surname') ?>
+
+    <?= $form->field($model, 'name') ?>
 
     <?= $form->field($model, 'patronymic') ?>
 

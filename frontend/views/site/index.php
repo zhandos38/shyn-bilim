@@ -44,6 +44,9 @@ $this->title = Yii::t('app', 'Главная страница');
                                 <div class="feature-block__preview">
                                     <img src="/img/feature-1.png" alt="#" title="#">
                                 </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Редакция') ?></span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -52,6 +55,9 @@ $this->title = Yii::t('app', 'Главная страница');
                             <a href="<?= Url::to(['about/printing']) ?>">
                                 <div class="feature-block__preview">
                                     <img src="/img/feature-2.png" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Полиграфия') ?></span>
                                 </div>
                             </a>
                         </div>
@@ -62,6 +68,9 @@ $this->title = Yii::t('app', 'Главная страница');
                                 <div class="feature-block__preview">
                                     <img src="/img/feature-3.png" alt="#" title="#">
                                 </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Учебный центр') ?></span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -70,6 +79,9 @@ $this->title = Yii::t('app', 'Главная страница');
                             <a href="<?= Url::to(['about/photo-studio']) ?>">
                                 <div class="feature-block__preview">
                                     <img src="/img/feature-4.png" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Фотостудия') ?></span>
                                 </div>
                             </a>
                         </div>
