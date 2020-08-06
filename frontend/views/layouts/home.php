@@ -5,7 +5,7 @@
 
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use yii2mod\alert\Alert;
 use yii\helpers\Url;
 
 AppAsset::register($this);

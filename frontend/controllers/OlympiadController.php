@@ -20,6 +20,9 @@ class OlympiadController extends Controller
 {
     public function actionIndex()
     {
+        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
+        return $this->redirect(['site/index']);
+        
         return $this->render('index');
     }
 

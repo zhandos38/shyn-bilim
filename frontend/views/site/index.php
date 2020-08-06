@@ -15,48 +15,8 @@ $this->title = Yii::t('app', 'Главная страница');
         </div>
     </div>
     <!-- End Main -->
-    <div class="main-news" style="margin-top: 40px">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="feature-block">
-                    <a href="<?= Url::to(['about/index']) ?>">
-                        <div class="feature-block__preview">
-                            <img src="/img/feature-1.png" alt="#" title="#">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-block">
-                    <a href="<?= Url::to(['about/printing']) ?>">
-                        <div class="feature-block__preview">
-                            <img src="/img/feature-2.png" alt="#" title="#">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-block">
-                    <a href="<?= Url::to(['about/education-center']) ?>">
-                        <div class="feature-block__preview">
-                            <img src="/img/feature-3.png" alt="#" title="#">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-block">
-                    <a href="<?= Url::to(['about/photo-studio']) ?>">
-                        <div class="feature-block__preview">
-                            <img src="/img/feature-4.png" alt="#" title="#">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<div class="about-block" style="background-color: #fff; padding: 20px 0 60px 0">
+<div class="about-block" style="padding: 20px 0 60px 0">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -72,6 +32,48 @@ $this->title = Yii::t('app', 'Главная страница');
                         Сіз бен біз шығармашылық байланыста болып, Мәңгілік ел мерейін өсіру жолында БІЛІМНІҢ БИІК ШЫҢДАРЫН бірге бағындыратын боламыз.
                     </p>
                     <h6>БІЗДІҢ САЙТҚА ҚОШ КЕЛДІҢІЗ!</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="main-news" style="padding: 60px 0 0 0">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/index']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-1.png" alt="#" title="#">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/printing']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-2.png" alt="#" title="#">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/education-center']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-3.png" alt="#" title="#">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/photo-studio']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-4.png" alt="#" title="#">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

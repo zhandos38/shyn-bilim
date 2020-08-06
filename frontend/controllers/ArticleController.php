@@ -21,6 +21,9 @@ class ArticleController extends Controller
 {
     public function actionIndex($status = null)
     {
+        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
+        return $this->redirect(['site/index']);
+
         $subjects = Subject::find()->all();
 
         if (Yii::$app->request->get('status')) {
