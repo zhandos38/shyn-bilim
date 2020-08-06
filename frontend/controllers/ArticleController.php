@@ -10,22 +10,28 @@ use frontend\models\ArticleSearch;
 use frontend\models\PayboxForm;
 use kartik\mpdf\Pdf;
 use Paybox\Pay\Facade as Paybox;
+use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 use Yii;
 use yii\db\Exception;
 use yii\helpers\Json;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\UploadedFile;
 
 class ArticleController extends Controller
 {
     public function actionIndex($status = null)
     {
-        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
-        return $this->redirect(['site/index']);
-
         $subjects = Subject::find()->all();
 
+        return $this->render('index', [
+            'subjects' => $subjects
+        ]);
+    }
+
+    public function actionSuccess()
+    {
         if (Yii::$app->request->get('status')) {
             $request = Yii::$app->request->queryParams;
 
@@ -43,35 +49,39 @@ class ArticleController extends Controller
 //                throw new Exception('Article is not saved');
 //            }
 
-            // get your HTML raw content without any layouts or scripts
-            $content = $this->renderPartial('_cert', ['user' => [
-                'name' => 'Тест тестовой',
-            ], 'number' => 1847]);
-
-            // setup kartik\mpdf\Pdf component
-            $pdf = new Pdf([
-                // set to use core fonts only
-                'mode' => Pdf::MODE_UTF8,
-                // A4 paper format
-                'format' => Pdf::FORMAT_A3,
-                // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
-                // stream to browser inline
-                'destination' => Pdf::DEST_DOWNLOAD,
-                'filename' => 'Сертификат.pdf',
-                // your html content input
-                'content' => $content,
-                // format content from your own css file if needed or use the
-                // enhanced bootstrap css built by Krajee for mPDF formatting
-                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+            return $this->render('success', [
+                'id' => $order->id
             ]);
-
-            return $pdf->render();
         }
 
-        return $this->render('index', [
-            'subjects' => $subjects
+        throw new HttpException('404', 'Page is not found!');
+    }
+
+    public function actionCert($id) {
+        // get your HTML raw content without any layouts or scripts
+        $content = $this->renderPartial('_cert', ['user' => [
+            'name' => 'Тест тестовой',
+        ], 'number' => 1847]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A3,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_DOWNLOAD,
+            'filename' => 'Сертификат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
         ]);
+
+        return $pdf->render();
     }
 
     public function actionList($id)

@@ -1,8 +1,11 @@
 <?php
 
+use common\models\School;
 use common\models\Subject;
 use kartik\file\FileInput;
+use kartik\select2\Select2;
 use yii\bootstrap4\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /* @var $this \yii\web\View */
 
@@ -30,6 +33,12 @@ $this->title = Yii::t('app', 'Опубликовать материал');
 
     <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(Subject::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Выбрать предмет')]) ?>
 
+    <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите регион')]) ?>
+
+    <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите город')]) ?>
+
+    <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите школу')]) ?>
+
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
         'options' => [
             'accept' => 'document/*'
@@ -45,3 +54,47 @@ $this->title = Yii::t('app', 'Опубликовать материал');
     <?php ActiveForm::end() ?>
 
 </div>
+<?php
+$js =<<<JS
+$('#article-region_id').change(function() {
+  $.get({
+    url: '/kz/site/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#article-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#article-city_id').change(function() {
+  $.get({
+    url: '/kz/site/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#article-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>

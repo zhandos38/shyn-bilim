@@ -18,10 +18,12 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/in
         <?= Yii::t('app', 'Опубликовать материал') ?>
     </a>
 </div>
-<div class="subject-list">
-    <?php foreach ($subjects as $subject): ?>
-    <a class="subject-list__item" style="background: linear-gradient(90deg, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.4) 40%), url('<?= '/img/' . $subject->img ?>')" href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
-        <h4><?= $subject->name ?></h4>
-    </a>
-    <?php endforeach; ?>
+<div class="row" style="padding-top: 20px">
+    <div class="col-md-3">
+        <?php foreach ($subjects as $subject): ?>
+            <a class="subject-list__item" style="background: linear-gradient(90deg, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.4) 40%), url('<?= '/img/' . $subject->img ?>')" href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
+                <h4><?= $subject->name ?></h4>
+            </a>
+        <?php endforeach; ?>
+    </div>
 </div>

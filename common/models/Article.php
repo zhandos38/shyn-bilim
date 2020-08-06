@@ -19,9 +19,13 @@ use yii\helpers\Json;
  * @property int $status
  * @property mixed $subject
  * @property int|null $created_at
+ * @property int $school_id [int(11)]
  */
 class Article extends \yii\db\ActiveRecord
 {
+    public $region_id;
+    public $city_id;
+
     const STATUS_OFF = 0;
     const STATUS_ACTIVE = 1;
 
@@ -41,8 +45,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id'], 'required'],
-            [['subject_id', 'status', 'created_at'], 'integer'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id'], 'required'],
+            [['subject_id', 'status', 'school_id', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
@@ -63,6 +67,9 @@ class Article extends \yii\db\ActiveRecord
             'file' => Yii::t('app', 'Файл'),
             'fileTemp' => Yii::t('app', 'Файл'),
             'subject_id' => Yii::t('app', 'Предмет'),
+            'region_id' => Yii::t('app', 'Регион'),
+            'city_id' => Yii::t('app', 'Город'),
+            'school_id' => Yii::t('app', 'Школа'),
             'status' => Yii::t('app', 'Статус'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];

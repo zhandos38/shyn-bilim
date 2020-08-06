@@ -1,9 +1,11 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\City;
 use common\models\Mark;
 use common\models\News;
 use common\models\Post;
+use common\models\School;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -19,6 +21,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\helpers\VarDumper;
+use yii\web\HttpException;
 
 /**
  * Site controller
@@ -271,5 +274,25 @@ class SiteController extends Controller
     public function actionInfo()
     {
         phpinfo();
+    }
+
+    public function actionGetCities($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $cities = City::findAll(['region_id' => $id]);
+            return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
+    }
+
+    public function actionGetSchools($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $cities = School::findAll(['city_id' => $id]);
+            return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
     }
 }

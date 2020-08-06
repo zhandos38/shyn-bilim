@@ -31,21 +31,11 @@ $this->title = Yii::t('app', 'Регистрация');
 
         <?= $form->field($model, 'iin') ?>
 
-        <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name')) ?>
+        <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите регион')]) ?>
 
-        <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name')) ?>
+        <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите город')]) ?>
 
-        <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-            'id' => 'signup-form-school_id',
-            'data' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
-            'options' => [
-                'placeholder' => Yii::t('app', 'Укажите школу'),
-                'class' => 'signup-form__input site-input'
-            ],
-            'pluginOptions' => [
-                'allowClear' => true
-            ],
-        ]) ?>
+        <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите школу')]) ?>
 
         <?php if ($subject->type === \common\models\Subject::TYPE_STUDENT): ?>
 
@@ -79,3 +69,47 @@ $this->title = Yii::t('app', 'Регистрация');
         <?php ActiveForm::end() ?>
     </div>
 </div>
+<?php
+$js =<<<JS
+$('#test-assignment-region_id').change(function() {
+  $.get({
+    url: '/kz/site/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#test-assignment-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#test-assignment-city_id').change(function() {
+  $.get({
+    url: '/kz/site/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#test-assignment-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>
