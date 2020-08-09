@@ -63,7 +63,7 @@ class OlympiadController extends Controller
             $salt = $this->getSalt(8);
             $request = [
                 'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => 25,
+                'pg_amount' => 500,
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
                 'pg_description' => 'Оплата за публикацию материала'
