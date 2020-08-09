@@ -23,8 +23,8 @@ class ArticleController extends Controller
 {
     public function actionIndex($status = null)
     {
-        Yii::$app->session->setFlash('success', Yii::t('app', 'Страница в разработке'));
-        return $this->redirect(['site/index']);
+//        Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
+//        return $this->redirect(['site/index']);
         $subjects = Subject::find()->all();
 
         return $this->render('index', [
@@ -59,7 +59,8 @@ class ArticleController extends Controller
         throw new HttpException('404', 'Page is not found!');
     }
 
-    public function actionCert($id) {
+    public function actionCert($id)
+    {
         // get your HTML raw content without any layouts or scripts
         $content = $this->renderPartial('_cert', ['user' => [
             'name' => 'Тест тестовой',

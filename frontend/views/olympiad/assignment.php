@@ -12,7 +12,7 @@ $this->title = Yii::t('app', 'Регистрация');
 ?>
 <h1><?= $subject->name ?></h1>
 <p>
-    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде') ?>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет 500 тенге') ?>
     <?php if (Yii::$app->language === 'ru'): ?>
         Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
     <?php else: ?>
@@ -71,7 +71,7 @@ $this->title = Yii::t('app', 'Регистрация');
 </div>
 <?php
 $js =<<<JS
-$('#test-assignment-region_id').change(function() {
+$('#testassignment-region_id').change(function() {
   $.get({
     url: '/kz/site/get-cities',
     data: {id: $(this).val()},
@@ -82,7 +82,7 @@ $('#test-assignment-region_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#test-assignment-city_id').html(options);
+      $('#testassignment-city_id').html(options);
     },
     error: function() {
       console.log('Ошибка');
@@ -90,7 +90,7 @@ $('#test-assignment-region_id').change(function() {
   });
 });
 
-$('#test-assignment-city_id').change(function() {
+$('#testassignment-city_id').change(function() {
   $.get({
     url: '/kz/site/get-schools',
     data: {id: $(this).val()},
@@ -101,7 +101,7 @@ $('#test-assignment-city_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#test-assignment-school_id').html(options);
+      $('#testassignment-school_id').html(options);
     },
     error: function() {
       console.log('Ошибка');

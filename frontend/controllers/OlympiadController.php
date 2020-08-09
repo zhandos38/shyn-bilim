@@ -20,8 +20,8 @@ class OlympiadController extends Controller
 {
     public function actionIndex()
     {
-        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
-        return $this->redirect(['site/index']);
+//        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
+//        return $this->redirect(['site/index']);
         
         return $this->render('index');
     }
@@ -60,13 +60,42 @@ class OlympiadController extends Controller
                 throw new Exception('Assignment is not saved');
             }
 
-            return $this->redirect(['olympiad/test', 'assignment' => $model->id, 'id' => $test->id]);
+            $salt = $this->getSalt(8);
+            $request = [
+                'pg_merchant_id' => Yii::$app->params['payboxId'],
+                'pg_amount' => 25,
+                'pg_salt' => $salt,
+                'pg_order_id' => $model->id,
+                'pg_description' => 'Оплата за публикацию материала'
+            ];
+
+            $request = $this->getSignByData($request, 'payment.php', $salt);
+
+            $query = http_build_query($request);
+
+            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
         }
 
         return $this->render('assignment', [
             'model' => $model,
             'subject' => $subject
         ]);
+    }
+
+    public function actionSuccess()
+    {
+        $request = Yii::$app->request->queryParams;
+
+        if (!$this->checkSign($request, 'index')) {
+            throw new Exception('Sig is not correct');
+        }
+
+        $model = TestAssignment::findOne(['id' => $request($this->toProperty('order_id'))]);
+        if (!$model) {
+            throw new Exception('Test assignment not found!');
+        }
+
+        return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
     }
 
     public function actionTest($assignment, $id)
@@ -144,5 +173,60 @@ class OlympiadController extends Controller
         }
 
         return true;
+    }
+
+    public function checkSign($data, $url):bool
+    {
+        $array = $data;
+        $salt = $array[$this->toProperty('salt')];
+
+        unset($array[$this->toProperty('sig')], $array[$this->toProperty('salt')]);
+
+        $sign = $this->sign($array, $salt, $url);
+
+//        VarDumper::dump($sign . ' - ' . $data[$this->toProperty('sig')]); die;
+
+        return ($sign == $data[$this->toProperty('sig')]);
+    }
+
+    private function sign($data, $salt, $url)
+    {
+        $arr = $data;
+        $key = Yii::$app->params['payboxKey'];
+
+        $arr[$this->toProperty('salt')] = $salt;
+        ksort($arr);
+        array_unshift($arr, $url);
+        array_push($arr, $key);
+        $arr[$this->toProperty('sig')] = md5(implode(';', $arr));
+
+        return $arr[$this->toProperty('sig')];
+    }
+
+    public function getSignByData($data, $url, $salt = null)
+    {
+        $array = $data;
+        $salt = $salt ? $salt : $this->getSalt(8);
+        $array[$this->toProperty('salt')] = $salt;
+        unset($array[$this->toProperty('sig')]);
+
+        ksort($array);
+        array_unshift($array, $url);
+        array_push($array,Yii::$app->params['payboxKey']);
+        $sign = md5(implode(';', $array));
+
+        $data[$this->toProperty('salt')] = $salt;
+        $data[$this->toProperty('sig')] = $sign;
+
+        return $data;
+    }
+
+    private function getSalt($length) {
+        return bin2hex(random_bytes($length));
+    }
+
+    private function toProperty($property)
+    {
+        return 'pg_' . $property;
     }
 }
