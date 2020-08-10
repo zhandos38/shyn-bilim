@@ -28,17 +28,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             </div>
             <div v-else>
                 <div class="questions-correct-count">Вы набрали: {{ correctAnswerCount }}</div>
-                <ol class="question-list">
-                    <li class="question-list__item" v-for="question in questions">
-                        <span v-html="question.text"></span>
-                        <ol class="answer-list" type="a">
-                            <li class="answer-list__item" v-for="(answer, key) in question.answers" :class="{'answer-list__item--correct': (answer.isRight && question.selectedAnswerId != key), 'answer-list__item--wrong': (!answer.isRight && question.selectedAnswerId == key), 'answer-list__item--checked-correct': (answer.isRight && question.selectedAnswerId == key)}">
-                                <span v-html="answer.text"></span>
-                                <i class="fab fa-acquisitions-incorporated"></i>
-                            </li>
-                        </ol>
-                    </li>
-                </ol>
             </div>
         </div>
     </div>

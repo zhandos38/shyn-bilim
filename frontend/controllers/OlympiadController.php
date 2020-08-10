@@ -9,6 +9,7 @@ use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
+use yii\helpers\VarDumper;
 use yii\web\HttpException;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -49,6 +50,9 @@ class OlympiadController extends Controller
 
         $subject = Subject::findOne(['id' => $model->subject_id]);
 
+//        $model->load(\Yii::$app->request->post());
+//        VarDumper::dump($model, 10, 1); die;
+
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
             if (!$test) {
@@ -66,7 +70,9 @@ class OlympiadController extends Controller
                 'pg_amount' => 500,
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
-                'pg_description' => 'Оплата за публикацию материала'
+                'pg_description' => 'Оплата за публикацию материала',
+                'pg_success_url' => 'http://shyn-bilim/olympiad/success',
+                'pg_result_url' => 'http://api.shyn-bilim/site/olympiad-result'
             ];
 
             $request = $this->getSignByData($request, 'payment.php', $salt);

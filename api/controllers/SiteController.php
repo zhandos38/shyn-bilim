@@ -3,6 +3,8 @@ namespace app\controllers;
 
 
 use common\models\Article;
+use common\models\Test;
+use common\models\TestAssignment;
 use Yii;
 use yii\db\Exception;
 use yii\filters\auth\AuthInterface;
@@ -44,6 +46,41 @@ class SiteController extends Controller
             }
 
             $order->status = Article::STATUS_ACTIVE;
+            if (!$order->save()) {
+                throw new Exception('Article is not saved');
+            }
+
+            return $this->getSignByData($data, 'result');
+        } catch (Exception $e) {
+
+            $data = [
+                'pg_status' => 'error',
+                'pg_error_description' => $e->getMessage(),
+            ];
+
+            return $this->getSignByData($data, 'result');
+        }
+    }
+
+    public function actionOlympiadResult()
+    {
+        $request = Yii::$app->request->bodyParams;
+
+        try {
+            if (!$this->checkSign($request, 'result')) {
+                throw new Exception('Sig is not correct');
+            }
+
+            $data = [
+                'pg_status' => 'ok'
+            ];
+
+            $order = TestAssignment::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+            if ($order === null) {
+                throw new Exception('Order is not found');
+            }
+
+            $order->status = TestAssignment::STATUS_ACTIVE;
             if (!$order->save()) {
                 throw new Exception('Article is not saved');
             }

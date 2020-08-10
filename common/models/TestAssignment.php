@@ -28,6 +28,9 @@ class TestAssignment extends \yii\db\ActiveRecord
     public $region_id;
     public $city_id;
 
+    const STATUS_OFF = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * {@inheritdoc}
      */
@@ -43,16 +46,16 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['test_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'iin', 'school_id','grade', 'lang'], 'required'],
+            [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
             [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 12],
             [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
 
             ['iin', 'match', 'pattern' => '/^\d{12}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять 12 цифр')],
-            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
+//            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id'], 'integer']
+            [['city_id', 'region_id', 'status'], 'integer']
         ];
     }
 

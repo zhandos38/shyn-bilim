@@ -27,7 +27,7 @@ class TestController extends Controller
         try {
             $fileName = readline('Enter name of file: ');
             foreach (Subject::find()->all() as $subject){
-                printf($subject->id . ': ' . $subject->name . "\n");
+                printf($subject->id . ': ' . $subject->name . " - " . $subject->type . "\n");
             }
             $subjectId = readline('Enter id of subject: ');
             $grade = readline('Enter class: ');

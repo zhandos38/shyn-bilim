@@ -9,14 +9,22 @@ use yii\helpers\Url;
 $this->title = Yii::t('app', 'Материалы');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/index']];
 ?>
-<h1><?= $this->title ?></h1>
-<div class="article-order-widget">
-    <div class="article-order-widget__text">
-        <?= Yii::t('app', 'У вас есть материал?') ?>
+<div style="text-align: center">
+    <h1><?= $this->title ?></h1>
+    <?php if (Yii::$app->language === 'kz'): ?>
+        <h4>Құрметті педагог!</h4>
+        Бұл бөлімде сіз  ашық сабақтар, сабақ жоспарларын, қмж, омж, ұмж, ктж, сценарийлер, тәрбие сағаттарды, мұғалімдер мен оқушылардың шығармашылық жұмыстарын, ғылыми жұмыстарды, озық іс-тәжірибені жариялай аласыз. Материалыңызды қосқаннан кейін бірден жариялау туралы сертификат аласыз.
+    <?php else: ?>
+        <h4>Уважаемый педагог!</h4>
+    <?php endif; ?>
+    <div class="article-order-widget">
+        <div class="article-order-widget__text">
+            <?= Yii::t('app', 'У вас есть материал?') ?>
+        </div>
+        <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
+            <?= Yii::t('app', 'Опубликовать материал') ?>
+        </a>
     </div>
-    <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
-        <?= Yii::t('app', 'Опубликовать материал') ?>
-    </a>
 </div>
 <div class="row" style="padding-top: 20px">
     <div class="col-md-3">
