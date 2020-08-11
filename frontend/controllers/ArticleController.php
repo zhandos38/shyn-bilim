@@ -25,7 +25,7 @@ class ArticleController extends Controller
     {
 //        Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
 //        return $this->redirect(['site/index']);
-        $subjects = Subject::find()->all();
+        $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->all();
 
         return $this->render('index', [
             'subjects' => $subjects

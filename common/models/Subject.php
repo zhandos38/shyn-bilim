@@ -19,6 +19,7 @@ class Subject extends \yii\db\ActiveRecord
 {
     const TYPE_STUDENT = 0;
     const TYPE_TEACHER = 1;
+    const TYPE_ARTICLE = 2;
 
     /**
      * {@inheritdoc}
