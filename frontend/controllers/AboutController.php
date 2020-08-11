@@ -15,6 +15,7 @@ class AboutController extends Controller
 
     public function actionEducationCenter()
     {
+        $this->layout = 'full';
         return $this->render('education-center');
     }
 

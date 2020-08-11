@@ -551,6 +551,21 @@ footer {
     font-weight: 600;
 }
 
+.site-edu__container {
+    padding: 0 60px;
+    position: relative;
+    top: -500px;
+}
+
+.site-edu__feature {
+    text-align: center;
+    padding: 20px;
+    background-color: #41aedb;
+    color: #ffffff;
+    margin: 10px;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 767px) {
     .site-container {
         padding: 40px 15px;
