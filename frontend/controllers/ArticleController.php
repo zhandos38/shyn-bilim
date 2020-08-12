@@ -14,6 +14,7 @@ use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 use Yii;
 use yii\db\Exception;
 use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -117,6 +118,7 @@ class ArticleController extends Controller
                     'pg_amount' => 2500,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
+                    'pg_success_url' => Yii::$app->homeUrl . '/article/success?order_id=' . $model->id,
                     'pg_description' => 'Оплата за публикацию материала'
                 ];
 
