@@ -66,6 +66,8 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->bodyParams;
 
+        Yii::debug('Я здесь');
+
         try {
             if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
@@ -74,8 +76,6 @@ class SiteController extends Controller
             $data = [
                 'pg_status' => 'ok'
             ];
-
-            Yii::debug('Я здесь');
 
             $order = TestAssignment::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
             if (empty($order)) {
