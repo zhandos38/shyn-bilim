@@ -72,8 +72,8 @@ class OlympiadController extends Controller
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
                 'pg_description' => 'Оплата за публикацию материала',
-                'pg_success_url' => 'http://shyn-bilim/olympiad/success',
-                'pg_result_url' => 'http://api.shyn-bilim/site/olympiad-result'
+                'pg_success_url' => Yii::$app->homeUrl . '/olympiad/success',
+                'pg_result_url' => Yii::$app->params['apiDomain'] . '/site/olympiad-result'
             ];
 
             $request = $this->getSignByData($request, 'payment.php', $salt);
