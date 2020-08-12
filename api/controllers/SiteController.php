@@ -67,7 +67,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->bodyParams;
 
-        VarDumper::dump($request); die;
+        throw new Exception(VarDumper::dumpAsString($request,10)); die;
 
         try {
             if (!$this->checkSign($request, 'result')) {
