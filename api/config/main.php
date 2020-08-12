@@ -42,6 +42,7 @@ return [
             'rules' => [
                 '' => 'site/index',
                 'POST result' => 'site/result',
+                'POST olympiad-result' => 'site/olympiad-result',
             ]
         ]
     ],
