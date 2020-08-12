@@ -59,6 +59,7 @@ class OlympiadController extends Controller
                 throw new Exception('Тест не найден!');
             }
 
+            $model->test_id = $test->id;
             $model->created_at = time();
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
@@ -92,12 +93,12 @@ class OlympiadController extends Controller
     {
         $request = Yii::$app->request->queryParams;
 
-        if (!$this->checkSign($request, 'index')) {
+        if (!$this->checkSign($request, 'success')) {
             throw new Exception('Sig is not correct');
         }
 
-        $model = TestAssignment::findOne(['id' => $request($this->toProperty('order_id'))]);
-        if (!$model) {
+        $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')]]);
+        if (empty($model)) {
             throw new Exception('Test assignment not found!');
         }
 
