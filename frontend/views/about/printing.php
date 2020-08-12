@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about
     </div>
     <div class="printing__img-wrapper col-md-4">
         <img class="printing__img" src="/img/2.jpg" alt="image">
-        <p class="printing__title"><?= Yii::t('app', 'Термопереплет, пур-бины') ?></p>
+        <p class="printing__title"><?= Yii::t('app', 'Термопереплет, пур-биндер') ?></p>
     </div>
     <div class="printing__img-wrapper col-md-4">
         <img class="printing__img" src="/img/3.jpg" alt="image">
