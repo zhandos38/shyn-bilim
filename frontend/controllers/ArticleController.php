@@ -77,7 +77,7 @@ class ArticleController extends Controller
             // portrait orientation
             'orientation' => Pdf::ORIENT_LANDSCAPE,
             // stream to browser inline
-            'destination' => Pdf::DEST_DOWNLOAD,
+            'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Сертификат.pdf',
             // your html content input
             'content' => $content,
