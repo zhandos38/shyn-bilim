@@ -67,7 +67,7 @@ class SiteController extends Controller
         $request = Yii::$app->request->bodyParams;
 
         try {
-            if (!$this->checkSign($request, 'olympiad-result')) {
+            if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
             }
 
