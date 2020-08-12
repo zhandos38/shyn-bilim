@@ -101,7 +101,7 @@ class OlympiadController extends Controller
 
         $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')], 'status' => TestAssignment::STATUS_ACTIVE]);
         if (empty($model)) {
-            throw new Exception('Test assignment not found!');
+            throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
         return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
