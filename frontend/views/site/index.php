@@ -19,6 +19,60 @@ $this->title = Yii::t('app', 'Главная страница');
 <div class="about-block" style="padding: 20px 0 60px 0">
     <div class="container">
         <div class="row">
+            <div class="main-news" style="padding: 60px 0 0 0">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/index']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/3.jpg" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Журналы') ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/printing']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-2.png" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Материалы') ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/education-center']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-3.png" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Олимпиады') ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-block">
+                            <a href="<?= Url::to(['about/photo-studio']) ?>">
+                                <div class="feature-block__preview">
+                                    <img src="/img/feature-4.png" alt="#" title="#">
+                                </div>
+                                <div class="feature-block__footer">
+                                    <span><?= Yii::t('app', 'Проекты') ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <?php if (Yii::$app->language === 'kz'): ?>
                     <p style="margin: 60px 0">
