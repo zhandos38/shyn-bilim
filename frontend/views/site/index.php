@@ -16,66 +16,54 @@ $this->title = Yii::t('app', 'Главная страница');
     </div>
     <!-- End Main -->
 </div>
-<div class="about-block" style="padding: 20px 0 60px 0">
-    <div class="container">
+<div class="container">
+    <div class="main-news" style="padding: 80px 0 0 0">
         <div class="row">
-            <div class="main-news" style="padding: 60px 0 0 0">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/index']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/3.jpg" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Журналы') ?></span>
-                                </div>
-                            </a>
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <a href="<?= Url::to(['magazine/index']) ?>">
+                        <div class="feature-box__container">
+                            <span><?= Yii::t('app', 'Журналы') ?></span>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/printing']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-2.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Материалы') ?></span>
-                                </div>
-                            </a>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <a href="<?= Url::to(['article/index']) ?>">
+                        <div class="feature-box__container">
+                            <span><?= Yii::t('app', 'Материалы') ?></span>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/education-center']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-3.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Олимпиады') ?></span>
-                                </div>
-                            </a>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <a href="<?= Url::to(['olympiad/index']) ?>">
+                        <div class="feature-box__container">
+                            <span><?= Yii::t('app', 'Олимпиады') ?></span>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/photo-studio']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-4.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Проекты') ?></span>
-                                </div>
-                            </a>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <a href="<?= Url::to(['project/index']) ?>">
+                        <div class="feature-box__container">
+                            <span><?= Yii::t('app', 'Жоба') ?></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="about-block" style="padding: 20px 0 20px 0">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <?php if (Yii::$app->language === 'kz'): ?>
-                    <p style="margin: 60px 0">
+                    <p style="margin: 20px 0">
                         <b>«БІЛІМ ШЫҢЫ» сайтының мақсаты</b> - тәрбие мен білім беру үрдісіндегі педагогикалық технологияларды жетік меңгерген, оқушылар қабілеттерін дамытуда жоғарғы нәтиже көрсеткен, белсенді шығармашылықпен жұмыс жасайтын білікті педагогтарға демеу көрсету, озық іс-тәжірибелерін тарату, жалпы мұғалім мәртебесін көтеру және дарынды шәкірттерді дамыту, елге таныту.
                         <br>Сайттан ашық сабақтар, сабақ жоспарларын, қмж, омж, ұмж, ктп, сценарийлер, тәрбие сағаттарды, шәкірттердің шығармашылық жұмыстарын, мұғалімдер мен оқушыларға керекті барлық ақпараттарды таба аласыз.
                         <br>Сайтта материал жариялап, олимпиадаларға, байқаулар мен жобаларға қатысып сертификат, диплом, алғыс хат, грамота мадақтамаларды алып, ЖЕҢІМПАЗ атануға болады.
@@ -89,7 +77,7 @@ $this->title = Yii::t('app', 'Главная страница');
                         <h6>БІЗДІҢ САЙТҚА ҚОШ КЕЛДІҢІЗ!</h6>
                     </div>
                 <?php else: ?>
-                    <p style="margin: 60px 0">
+                    <p style="margin: 20px 0">
                         <b> Цель сайта "Білім ШЫҢЫ"</b> - оказание поддержки творчески работающим педагогам, в совершенстве владеющим педагогическими технологиями в воспитательном и образовательном процессе, показавшим высокие результаты в развитии способностей учащихся, распространение передового опыта, повышение престижа учителя в целом и развитие одаренных учащихся, популяризация их творчества.
                         <br>На сайте вы найдете открытые уроки, планы занятий, КСП, ССП, ДСП, КТП, сценарии, воспитательные часы, творческие работы учащихся, всю необходимую информацию для учителей и учащихся.
                         <br>Вы можете стать ПОБЕДИТЕЛЕМ, разместив материалы на сайте, участвуя в олимпиадах, конкурсах и проектах, получая сертификаты, дипломы, благодарственные письма, грамоты.

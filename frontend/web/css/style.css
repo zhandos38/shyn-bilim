@@ -566,6 +566,36 @@ footer {
     font-weight: 600;
 }
 
+.feature-box {
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,31,51,.25);
+    box-shadow: 0 0 10px 0 rgba(0,31,51,.25);
+    -webkit-transition: color .3s,-webkit-box-shadow .3s;
+    transition: color .3s,-webkit-box-shadow .3s;
+    -o-transition: box-shadow .3s,color .3s;
+    transition: box-shadow .3s,color .3s;
+    transition: box-shadow .3s,color .3s,-webkit-box-shadow .3s;
+}
+
+.feature-box:hover {
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,31,51,.4);
+    box-shadow: 0 0 15px 0 rgba(0,31,51,.4);
+}
+
+.feature-box__container {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 26px;
+}
+
 @media screen and (max-width: 767px) {
     .site-container {
         padding: 40px 15px;
