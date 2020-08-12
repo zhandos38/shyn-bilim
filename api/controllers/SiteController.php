@@ -12,6 +12,7 @@ use yii\filters\auth\AuthMethod;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
+use yii\helpers\VarDumper;
 use yii\rest\Controller;
 
 /**
@@ -66,7 +67,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->bodyParams;
 
-        throw new Exception('HAhahahah');
+        VarDumper::dump($request); die;
 
         try {
             if (!$this->checkSign($request, 'result')) {
