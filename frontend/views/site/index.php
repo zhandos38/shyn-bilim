@@ -58,7 +58,7 @@ $this->title = Yii::t('app', 'Главная страница');
         </div>
     </div>
 </div>
-<div class="about-block" style="padding: 20px 0 20px 0">
+<div class="about-block" style="padding: 20px 0 20px 0; background-color: #fff">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
