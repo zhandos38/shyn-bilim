@@ -35,8 +35,8 @@ class ArticleController extends Controller
 
     public function actionSuccess()
     {
-        $request = Yii::$app->request->bodyParams;
-        VarDumper::dump(Yii::$app->request->queryParams,10,1);
+        $request = Yii::$app->request->post();
+        VarDumper::dump(Yii::$app->request->get(),10,1);
         VarDumper::dump($request,10,1); die;
 
         if (!$this->checkSign($request, 'index')) {
@@ -118,7 +118,7 @@ class ArticleController extends Controller
                     'pg_amount' => 2500,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
-                    'pg_success_url' => Yii::$app->homeUrl . '/article/success?order_id=' . $model->id,
+                    'pg_success_url_method' => 'POST',
                     'pg_description' => 'Оплата за публикацию материала'
                 ];
 
