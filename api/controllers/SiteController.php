@@ -49,7 +49,7 @@ class SiteController extends Controller
 
             $order->status = Article::STATUS_ACTIVE;
             if (!$order->save()) {
-                throw new Exception(Json::encode($order->getErrors()));
+                throw new Exception(Json::encode($order->errors));
             }
 
             return $this->getSignByData($data, 'result');
