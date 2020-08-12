@@ -99,7 +99,7 @@ class OlympiadController extends Controller
             throw new Exception('Sig is not correct');
         }
 
-        $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')]]);
+        $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')], 'status' => TestAssignment::STATUS_ACTIVE]);
         if (empty($model)) {
             throw new Exception('Test assignment not found!');
         }
