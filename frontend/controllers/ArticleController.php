@@ -34,29 +34,25 @@ class ArticleController extends Controller
 
     public function actionSuccess()
     {
-        if (Yii::$app->request->get('status')) {
-            $request = Yii::$app->request->queryParams;
+        $request = Yii::$app->request->queryParams;
 
-            if (!$this->checkSign($request, 'index')) {
-                throw new Exception('Sig is not correct');
-            }
-
-            $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-            if ($order === null) {
-                throw new Exception('Order is not found');
-            }
-
-            $order->status = Article::STATUS_ACTIVE;
-            if (!$order->save()) {
-                throw new Exception('Article is not saved');
-            }
-
-            return $this->render('success', [
-                'id' => $order->id
-            ]);
+        if (!$this->checkSign($request, 'index')) {
+            throw new Exception('Sig is not correct');
         }
 
-        throw new HttpException('404', 'Page is not found!');
+        $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+        if ($order === null) {
+            throw new Exception('Order is not found');
+        }
+
+        $order->status = Article::STATUS_ACTIVE;
+        if (!$order->save()) {
+            throw new Exception('Article is not saved');
+        }
+
+        return $this->render('success', [
+            'id' => $order->id
+        ]);
     }
 
     public function actionCert($id)
