@@ -35,6 +35,7 @@ class ArticleController extends Controller
     public function actionSuccess()
     {
         $request = Yii::$app->request->post();
+        VarDumper::dump(Yii::$app->request->get(),10,1);
         VarDumper::dump($request,10,1); die;
 
         if (!$this->checkSign($request, 'index')) {
