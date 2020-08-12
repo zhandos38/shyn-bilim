@@ -66,7 +66,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->bodyParams;
 
-        Yii::debug('Я здесь');
+        throw new Exception('HAhahahah');
 
         try {
             if (!$this->checkSign($request, 'result')) {
