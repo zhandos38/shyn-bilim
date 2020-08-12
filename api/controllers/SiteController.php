@@ -41,7 +41,7 @@ class SiteController extends Controller
             ];
 
             $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-            if ($order === null) {
+            if (empty($order)) {
                 throw new Exception('Order is not found');
             }
 
@@ -67,7 +67,7 @@ class SiteController extends Controller
         $request = Yii::$app->request->bodyParams;
 
         try {
-            if (!$this->checkSign($request, 'result')) {
+            if (!$this->checkSign($request, 'olympiad-result')) {
                 throw new Exception('Sig is not correct');
             }
 
@@ -76,7 +76,7 @@ class SiteController extends Controller
             ];
 
             $order = TestAssignment::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
-            if ($order === null) {
+            if (empty($order)) {
                 throw new Exception('Order is not found');
             }
 

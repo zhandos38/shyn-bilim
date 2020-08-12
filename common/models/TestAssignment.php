@@ -14,6 +14,7 @@ use Yii;
  * @property string $iin
  * @property int|null $school_id
  * @property int $grade
+ * @property int $status
  * @property int|null $created_at
  *
  * @property Test $test
