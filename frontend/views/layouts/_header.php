@@ -47,6 +47,15 @@ $action = Yii::$app->controller->action->id;
                     <li class="nav-item <?= $controller === 'site' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="/"><?= Yii::t('app', 'Главная') ?></a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= Yii::t('app', 'О нас') ?></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                            <a class="dropdown-item" href="<?= Url::to(['about/index']) ?>"><?= Yii::t('app', 'Редакция') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['about/education-center']) ?>"><?= Yii::t('app', 'Учебный центр') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['about/printing']) ?>"><?= Yii::t('app', 'Полиграфия') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['about/photo-studio']) ?>"><?= Yii::t('app', 'Фотостудия') ?></a>
+                        </ul>
+                    </li>
                     <li class="nav-item <?= $controller === 'news' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
                     </li>
