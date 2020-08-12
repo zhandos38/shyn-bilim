@@ -58,7 +58,7 @@ class ArticleController extends Controller
 
     public function actionCert($id)
     {
-        $model = Article::findOne(['id' => $id]);
+        $model = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
         if (empty($model)) {
             throw new Exception('Article not found!');
         }
