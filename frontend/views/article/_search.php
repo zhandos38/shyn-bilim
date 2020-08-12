@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 <div class="project-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['list'],
+        'action' => ['list', 'id' => $projectId],
         'method' => 'get',
         'options' => [
             'style' => 'display:flex;justify-content: space-between;'

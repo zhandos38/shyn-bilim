@@ -19,6 +19,7 @@ use yii\helpers\Json;
  * @property int $status
  * @property mixed $subject
  * @property int|null $created_at
+ * @property-read \yii\db\ActiveQuery $school
  * @property int $school_id [int(11)]
  */
 class Article extends \yii\db\ActiveRecord
@@ -78,6 +79,14 @@ class Article extends \yii\db\ActiveRecord
     public function getSubject()
     {
         return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSchool()
+    {
+        return $this->hasOne(School::className(), ['id' => 'school_id']);
     }
 
     public function getFile()
