@@ -9,6 +9,7 @@ use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
+use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\HttpException;
 use Yii;
@@ -72,7 +73,7 @@ class OlympiadController extends Controller
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
                 'pg_description' => 'Оплата за публикацию материала',
-                'pg_success_url' => Yii::$app->params['baseUrl'] . '/olympiad/success',
+                'pg_success_url' => Url::base('https') . '/olympiad/success',
                 'pg_result_url' => Yii::$app->params['apiDomain'] . '/site/olympiad-result'
             ];
 
