@@ -12,6 +12,7 @@ use yii\filters\auth\AuthMethod;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
+use yii\helpers\Json;
 use yii\helpers\VarDumper;
 use yii\rest\Controller;
 
@@ -48,7 +49,7 @@ class SiteController extends Controller
 
             $order->status = Article::STATUS_ACTIVE;
             if (!$order->save()) {
-                throw new Exception('Article is not saved');
+                throw new Exception(Json::encode($order->getErrors()));
             }
 
             return $this->getSignByData($data, 'result');
