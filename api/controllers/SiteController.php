@@ -82,20 +82,13 @@ class SiteController extends Controller
             }
 
             $order->status = TestAssignment::STATUS_ACTIVE;
-            throw new Exception(VarDumper::dumpAsString($order,10)); die;
             if (!$order->save()) {
                 throw new Exception('Article is not saved');
             }
 
             return $this->getSignByData($data, 'result');
         } catch (Exception $e) {
-
-            $data = [
-                'pg_status' => 'error',
-                'pg_error_description' => $e->getMessage(),
-            ];
-
-            return $this->getSignByData($data, 'result');
+            throw new Exception($e->getMessage());
         }
     }
 
