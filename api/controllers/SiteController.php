@@ -67,8 +67,6 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->bodyParams;
 
-        throw new Exception(VarDumper::dumpAsString($request,10)); die;
-
         try {
             if (!$this->checkSign($request, 'result')) {
                 throw new Exception('Sig is not correct');
@@ -84,6 +82,7 @@ class SiteController extends Controller
             }
 
             $order->status = TestAssignment::STATUS_ACTIVE;
+            throw new Exception(VarDumper::dumpAsString($order,10)); die;
             if (!$order->save()) {
                 throw new Exception('Article is not saved');
             }
