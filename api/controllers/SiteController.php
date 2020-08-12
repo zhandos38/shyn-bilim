@@ -75,6 +75,8 @@ class SiteController extends Controller
                 'pg_status' => 'ok'
             ];
 
+            Yii::debug('Я здесь');
+
             $order = TestAssignment::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
             if (empty($order)) {
                 throw new Exception('Order is not found');
