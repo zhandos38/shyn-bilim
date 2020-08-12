@@ -34,7 +34,7 @@ class ArticleController extends Controller
 
     public function actionSuccess()
     {
-        $request = Yii::$app->request->queryParams;
+        $request = Yii::$app->request->post();
 
         if (!$this->checkSign($request, 'index')) {
             throw new Exception('Sig is not correct');
