@@ -10,7 +10,6 @@ $this->title = Yii::t('app', 'Материалы');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/index']];
 ?>
 <div style="text-align: center">
-    <h1><?= $this->title ?></h1>
     <?php if (Yii::$app->language === 'kz'): ?>
         <h4>ҚҰРМЕТТІ ҰСТАЗ!</h4>
         Жетістік портфолиоңыз үшін <br>

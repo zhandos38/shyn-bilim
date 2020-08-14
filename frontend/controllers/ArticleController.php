@@ -113,7 +113,7 @@ class ArticleController extends Controller
                 $salt = $this->getSalt(8);
                 $request = [
                     'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 2500,
+                    'pg_amount' => 1000,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
                     'pg_success_url_method' => 'GET',
