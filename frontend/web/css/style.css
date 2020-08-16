@@ -394,6 +394,8 @@ footer {
     text-decoration: none;
     text-align: center;
     color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .subject-list__item:hover {
     -webkit-box-shadow: 0 0 29px rgba(0,31,51,.8);
