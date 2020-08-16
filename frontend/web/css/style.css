@@ -396,6 +396,8 @@ footer {
     color: #fff;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .subject-list__item:hover {
     -webkit-box-shadow: 0 0 29px rgba(0,31,51,.8);
