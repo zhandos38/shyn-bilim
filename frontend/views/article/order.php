@@ -20,33 +20,37 @@ $this->title = Yii::t('app', 'Опубликовать материал');
             Мәліметтерді жібере отырып, <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
         <?php endif; ?>
 
-    <?php $form = ActiveForm::begin() ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?php $form = ActiveForm::begin() ?>
 
-    <?= $form->field($model, 'surname') ?>
+            <?= $form->field($model, 'surname') ?>
 
-    <?= $form->field($model, 'name') ?>
+            <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'patronymic') ?>
+            <?= $form->field($model, 'patronymic') ?>
 
-    <?= $form->field($model, 'topic') ?>
+            <?= $form->field($model, 'topic') ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Выбрать предмет')]) ?>
+            <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Выбрать предмет')]) ?>
 
-    <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите регион')]) ?>
+            <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите регион')]) ?>
 
-    <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите город')]) ?>
+            <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите город')]) ?>
 
-    <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите школу')]) ?>
+            <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите школу')]) ?>
 
-    <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
-        'options' => [
-            'accept' => 'document/*'
-        ],
-        'pluginOptions' => [
-            'theme' => 'fa',
-            'showCaption' => false,
-        ],
-    ]) ?>
+            <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
+                'options' => [
+                    'accept' => 'document/*'
+                ],
+                'pluginOptions' => [
+                    'theme' => 'fa',
+                    'showCaption' => false,
+                ],
+            ]) ?>
+        </div>
+    </div>
 
     <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Оплатить и опубликовать'), ['class' => 'btn btn-success']) ?>
 
