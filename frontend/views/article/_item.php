@@ -1,5 +1,5 @@
 <?php
-/* @var $model \common\models\ProjectArticle */
+/* @var $model \common\models\Article */
 ?>
 <div class="card">
     <div class="card-body">

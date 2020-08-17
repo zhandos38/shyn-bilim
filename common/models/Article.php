@@ -91,7 +91,7 @@ class Article extends \yii\db\ActiveRecord
 
     public function getFile()
     {
-        return Yii::$app->params['staticDomain'] . '/project/' . $this->file;
+        return Yii::$app->params['staticDomain'] . '/article/' . $this->file;
     }
 
     public function upload()
