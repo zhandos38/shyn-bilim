@@ -36,10 +36,12 @@ class Test extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['subject_id', 'grade', 'questions_limit', 'time_limit', 'created_at'], 'integer'],
+            [['subject_id', 'questions_limit', 'time_limit', 'created_at'], 'integer'],
             [['name'], 'string', 'max' => 255],
             ['lang', 'string', 'max' => 2],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
+
+            ['grade', 'safe']
         ];
     }
 
