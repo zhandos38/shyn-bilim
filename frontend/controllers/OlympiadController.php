@@ -82,8 +82,8 @@ class OlympiadController extends Controller
 
             $query = http_build_query($request);
 
-//            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-            return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
+            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+//            return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
         }
 
         return $this->render('assignment', [
