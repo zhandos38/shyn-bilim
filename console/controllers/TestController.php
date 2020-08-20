@@ -84,7 +84,7 @@ class TestController extends Controller
 
                     $imgPath = $subjectFolderPath . '/' . $question->id;
 
-                    VarDumper::dumpAsString($item['questiontext'],10,1);
+                    VarDumper::dump($item['questiontext'],10);
 
                     $this->convertImage($item['questiontext']['file'], $imgPath);
                 }
