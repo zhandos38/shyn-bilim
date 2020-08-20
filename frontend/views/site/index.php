@@ -16,7 +16,7 @@ $this->title = Yii::t('app', 'Главная страница');
                 <div class="feature-box">
                     <a href="<?= Url::to(['magazine/index']) ?>">
                         <div class="feature-box__container">
-                               <span><?= Yii::t('app', 'Журналы') ?></span>
+                            <span><?= Yii::t('app', 'Журналы') ?></span>
                         </div>
                     </a>
                 </div>
