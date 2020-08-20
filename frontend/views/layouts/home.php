@@ -24,6 +24,8 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+<?= $this->render('_header') ?>
+
 <?= Alert::widget() ?>
 <?= $content ?>
 

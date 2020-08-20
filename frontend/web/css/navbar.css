@@ -96,9 +96,13 @@
 
 .nav-link {
   font-size: 16px;
-  color: #0a0a0a;
+  color: #fff;
   letter-spacing: 0.5px;
   /*font-weight: 600;*/
+}
+
+.nav-link {
+  color: #fff !important;
 }
 
 .navbar-language {
