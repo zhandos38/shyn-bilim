@@ -74,7 +74,9 @@ class TestController extends Controller
                 }
 
                 $imgDomainPath = Yii::$app->params['staticDomain'] . '/test/' . $selectedSubject->id . '/' . $question->id;
-                $question->text = str_replace('@@PLUGINFILE@@', $imgDomainPath, trim($item['questiontext']['text']));
+                $text = str_replace('@@PLUGINFILE@@', $imgDomainPath, trim($item['questiontext']['text']));
+                $text = str_replace('.jpg', '.png', $text);
+                $question->text = $text;
                 if (!$question->save()) {
                     print_r($question->errors);
                 }
@@ -83,8 +85,6 @@ class TestController extends Controller
                 if (!empty($item['questiontext']['file'])) {
 
                     $imgPath = $subjectFolderPath . '/' . $question->id;
-
-                    VarDumper::dump($item['questiontext'],10);
 
                     $this->convertImage($item['questiontext']['file'], $imgPath);
                 }
