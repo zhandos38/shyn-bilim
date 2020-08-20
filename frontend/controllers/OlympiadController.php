@@ -60,6 +60,9 @@ class OlympiadController extends Controller
                 throw new Exception('Тест не найден!');
             }
 
+            if ($model->test->subject->type === Subject::TYPE_TEACHER) {
+                $model->grade = 1;
+            }
             $model->test_id = $test->id;
             $model->created_at = time();
             if (!$model->save()) {
