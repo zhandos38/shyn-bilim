@@ -55,14 +55,11 @@ class OlympiadController extends Controller
 //        VarDumper::dump($model, 10, 1); die;
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->test->subject->type === Subject::TYPE_TEACHER ? 1 : $model->grade, 'lang' => $model->lang]);
+            $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
             if (!$test) {
                 throw new Exception('Тест не найден!');
             }
 
-            if ($model->test->subject->type === Subject::TYPE_TEACHER) {
-                $model->grade = 1;
-            }
             $model->test_id = $test->id;
             $model->created_at = time();
             if (!$model->save()) {

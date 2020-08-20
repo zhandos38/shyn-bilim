@@ -31,9 +31,6 @@ class TestController extends Controller
             }
             $subjectId = readline('Enter id of subject: ');
             $grade = readline('Enter class: ');
-            if ($grade < 1 || $grade > 12) {
-                printf('Error, number of class must between 1 and 12');
-            }
 
             $selectedSubject = Subject::findOne(['id' => $subjectId]);
             if ($selectedSubject === null) {
