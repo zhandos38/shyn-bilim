@@ -4,60 +4,63 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('app', 'Главная страница');
 ?>
-<div class="container">
-    <!-- Begin Main -->
-    <div class="main-block">
-        <div class="main-block__title-wrapper">
-            <img class="main-block__logo" src="/img/main-brand.png" alt="logo">
+<section class="main-container">
+    <?= $this->render('/layouts/_header') ?>
+    <div class="container">
+        <!-- Begin Main -->
+        <div class="main-block">
+            <div class="main-block__title-wrapper">
+                <img class="main-block__logo" src="/img/main-brand.png" alt="logo">
+            </div>
+<!--            <div class="main-block__image-wrapper">-->
+<!--                <img class="main-block__image" src="/img/main.png" alt="image">-->
+<!--            </div>-->
         </div>
-        <div class="main-block__image-wrapper">
-            <img class="main-block__image" src="/img/main.png" alt="image">
+        <!-- End Main -->
+    </div>
+    <div class="container">
+        <div class="main-news" style="padding: 80px 0 0 0">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['magazine/index']) ?>">
+                            <div class="feature-box__container">
+                                <span><?= Yii::t('app', 'Журналы') ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['article/index']) ?>">
+                            <div class="feature-box__container">
+                                <span><?= Yii::t('app', 'Материалы') ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['olympiad/index']) ?>">
+                            <div class="feature-box__container">
+                                <span><?= Yii::t('app', 'Олимпиады') ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['project/index']) ?>">
+                            <div class="feature-box__container">
+                                <span><?= Yii::t('app', 'Жоба') ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- End Main -->
-</div>
-<div class="container">
-    <div class="main-news" style="padding: 80px 0 0 0">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <a href="<?= Url::to(['magazine/index']) ?>">
-                        <div class="feature-box__container">
-                            <span><?= Yii::t('app', 'Журналы') ?></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <a href="<?= Url::to(['article/index']) ?>">
-                        <div class="feature-box__container">
-                            <span><?= Yii::t('app', 'Материалы') ?></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <a href="<?= Url::to(['olympiad/index']) ?>">
-                        <div class="feature-box__container">
-                            <span><?= Yii::t('app', 'Олимпиады') ?></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <a href="<?= Url::to(['project/index']) ?>">
-                        <div class="feature-box__container">
-                            <span><?= Yii::t('app', 'Жоба') ?></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 <div class="about-block" style="padding: 20px 0 20px 0; background-color: #fff">
     <div class="container">
         <div class="row">

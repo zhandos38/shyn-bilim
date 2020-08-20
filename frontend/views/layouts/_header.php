@@ -38,7 +38,7 @@ $action = Yii::$app->controller->action->id;
             </button>
             <img class="navbar-mobile-title" src="/img/title.png" alt="title">
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav mr-auto">
+                <ul class="nav navbar-nav m-auto">
                     <li class="nav-item navbar-mobile-button">
                         <div class="navbar-mobile-language">
                             <?= $this->render('select-language') ?>

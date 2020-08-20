@@ -56,8 +56,13 @@ a:hover {
     text-decoration: none;
 }
 
-body {
-    background-image: url("/img/fon.jpg");
+/*body {*/
+/*    background-image: url("/img/fon.jpg");*/
+/*}*/
+
+.main-container {
+    color: #0a0a0a;
+    /*background-image: url("/img/fon.jpg");*/
 }
 
 .main-feature {
@@ -185,7 +190,7 @@ footer {
     padding-left: 10px;
 }
 .main-block__logo {
-    width: 100%;
+    width: 50%;
 }
 .main-block__image {
     width: 100%;
