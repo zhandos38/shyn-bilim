@@ -102,5 +102,8 @@ use yii\helpers\Url;
                 </ul>
             </div>
         </div>
+        <div style="text-align: center">
+            Designed and Developed by <a href="http://itbgroup.kz">Itbgroup</a>
+        </div>
     </div>
 </footer>
