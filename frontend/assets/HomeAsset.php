@@ -16,11 +16,13 @@ class HomeAsset extends AssetBundle
         'fonts/font-awesome.min.css',
         'css/navbar.css',
         'css/style.css',
+        'css/aos.css',
     ];
     public $js = [
         'js/tween.js',
         'js/wavify.js',
         'js/jquery.wavify.js',
+        'js/aos.js',
         'js/script.js'
     ];
     public $depends = [

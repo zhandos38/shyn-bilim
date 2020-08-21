@@ -10,8 +10,8 @@ $this->title = Yii::t('app', 'Главная страница');
             <div class="row">
                 <div class="col-md-6">
                     <div class="main-block__title-wrapper">
-                        <img class="main-block__logo" src="/img/brand-img.jpg" alt="logo">
-                        <div class="main-block__title">
+                        <img class="main-block__logo" src="/img/brand-img.jpg" alt="logo" data-aos="fade-right">
+                        <div class="main-block__title" data-aos="fade-right" data-aos-delay="300">
                             <h5>
                                 Руспубликалық педагогтар мен оқушыларға арналған ғылыми-әдістемелік, танымдық, мәдени-рухани сайты
                             </h5>
@@ -23,7 +23,7 @@ $this->title = Yii::t('app', 'Главная страница');
                 </div>
                 <div class="col-md-6">
                     <div class="main-block__image-wrapper">
-                        <img class="main-block__image" src="/img/exam.png" alt="image">
+                        <img class="main-block__image" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-duration="1000" src="/img/exam.png" alt="image">
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ $this->title = Yii::t('app', 'Главная страница');
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="feature-box">
+                    <div class="feature-box" data-aos="fade-up">
                         <a href="<?= Url::to(['magazine/index']) ?>">
                             <div class="feature-box__container">
                                 <img class="feature-box__image" src="/img/magazine.png" alt="magazine">
@@ -45,7 +45,7 @@ $this->title = Yii::t('app', 'Главная страница');
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="feature-box">
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
                         <a href="<?= Url::to(['article/index']) ?>">
                             <div class="feature-box__container">
                                 <img class="feature-box__image" src="/img/application.png" alt="application">
@@ -57,7 +57,7 @@ $this->title = Yii::t('app', 'Главная страница');
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="feature-box">
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="600">
                         <a href="<?= Url::to(['olympiad/index']) ?>">
                             <div class="feature-box__container">
                                 <img class="feature-box__image" src="/img/success.png" alt="success">
@@ -69,7 +69,7 @@ $this->title = Yii::t('app', 'Главная страница');
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="feature-box">
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="900">
                         <a href="<?= Url::to(['project/index']) ?>">
                             <div class="feature-box__container">
                                 <img class="feature-box__image" src="/img/preparation.png" alt="preparation">

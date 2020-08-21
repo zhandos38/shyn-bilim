@@ -21,3 +21,5 @@ let wave3 = $('#feel-the-wave-three').wavify({
     color: 'rgba(0, 123, 255, .2)',
     speed: .25
 });
+
+AOS.init();
