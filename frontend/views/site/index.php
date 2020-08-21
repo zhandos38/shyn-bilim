@@ -29,71 +29,69 @@ $this->title = Yii::t('app', 'Главная страница');
             </div>
         </div>
     </div>
-    <div class="main-news">
-        <div class="main-features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="feature-box">
-                            <a href="<?= Url::to(['magazine/index']) ?>">
-                                <div class="feature-box__container">
-                                    <img class="feature-box__image" src="/img/magazine.png" alt="magazine">
-                                    <div class="feature-box__title">
-                                        <span><?= Yii::t('app', 'Журналы') ?></span>
-                                    </div>
+    <div class="main-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['magazine/index']) ?>">
+                            <div class="feature-box__container">
+                                <img class="feature-box__image" src="/img/magazine.png" alt="magazine">
+                                <div class="feature-box__title">
+                                    <span><?= Yii::t('app', 'Журналы') ?></span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-box">
-                            <a href="<?= Url::to(['article/index']) ?>">
-                                <div class="feature-box__container">
-                                    <img class="feature-box__image" src="/img/application.png" alt="application">
-                                    <div class="feature-box__title">
-                                        <span><?= Yii::t('app', 'Материалы') ?></span>
-                                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['article/index']) ?>">
+                            <div class="feature-box__container">
+                                <img class="feature-box__image" src="/img/application.png" alt="application">
+                                <div class="feature-box__title">
+                                    <span><?= Yii::t('app', 'Материалы') ?></span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-box">
-                            <a href="<?= Url::to(['olympiad/index']) ?>">
-                                <div class="feature-box__container">
-                                    <img class="feature-box__image" src="/img/success.png" alt="success">
-                                    <div class="feature-box__title">
-                                        <span><?= Yii::t('app', 'Олимпиады') ?></span>
-                                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['olympiad/index']) ?>">
+                            <div class="feature-box__container">
+                                <img class="feature-box__image" src="/img/success.png" alt="success">
+                                <div class="feature-box__title">
+                                    <span><?= Yii::t('app', 'Олимпиады') ?></span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-box">
-                            <a href="<?= Url::to(['project/index']) ?>">
-                                <div class="feature-box__container">
-                                    <img class="feature-box__image" src="/img/preparation.png" alt="preparation">
-                                    <div class="feature-box__title">
-                                        <span><?= Yii::t('app', 'Жоба') ?></span>
-                                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <a href="<?= Url::to(['project/index']) ?>">
+                            <div class="feature-box__container">
+                                <img class="feature-box__image" src="/img/preparation.png" alt="preparation">
+                                <div class="feature-box__title">
+                                    <span><?= Yii::t('app', 'Жоба') ?></span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="main-waves">
-            <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave" d=""/></svg>
+    </div>
+    <div class="main-waves">
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave" d=""/></svg>
 
-            <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-two" d=""/></svg>
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-two" d=""/></svg>
 
-            <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-three" d=""/></svg>
-        </div>
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-three" d=""/></svg>
     </div>
 </section>
-<div class="about-block" style="padding: 120px 0 20px 0; background-color: #fff">
+<div class="about-block">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -131,56 +129,54 @@ $this->title = Yii::t('app', 'Главная страница');
                 <?php endif; ?>
             </div>
         </div>
-        <div class="row">
-            <div class="main-news" style="padding: 60px 0 0 0">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/index']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-1.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Редакция') ?></span>
-                                </div>
-                            </a>
-                        </div>
+        <div class="main-news" style="padding: 60px 0 0 0">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-block">
+                        <a href="<?= Url::to(['about/index']) ?>">
+                            <div class="feature-block__preview">
+                                <img src="/img/feature-1.png" alt="#" title="#">
+                            </div>
+                            <div class="feature-block__footer">
+                                <span><?= Yii::t('app', 'Редакция') ?></span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/printing']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-2.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Полиграфия') ?></span>
-                                </div>
-                            </a>
-                        </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-block">
+                        <a href="<?= Url::to(['about/printing']) ?>">
+                            <div class="feature-block__preview">
+                                <img src="/img/feature-2.png" alt="#" title="#">
+                            </div>
+                            <div class="feature-block__footer">
+                                <span><?= Yii::t('app', 'Полиграфия') ?></span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/education-center']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-3.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Учебный центр') ?></span>
-                                </div>
-                            </a>
-                        </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-block">
+                        <a href="<?= Url::to(['about/education-center']) ?>">
+                            <div class="feature-block__preview">
+                                <img src="/img/feature-3.png" alt="#" title="#">
+                            </div>
+                            <div class="feature-block__footer">
+                                <span><?= Yii::t('app', 'Учебный центр') ?></span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="feature-block">
-                            <a href="<?= Url::to(['about/photo-studio']) ?>">
-                                <div class="feature-block__preview">
-                                    <img src="/img/feature-4.png" alt="#" title="#">
-                                </div>
-                                <div class="feature-block__footer">
-                                    <span><?= Yii::t('app', 'Фотостудия') ?></span>
-                                </div>
-                            </a>
-                        </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-block">
+                        <a href="<?= Url::to(['about/photo-studio']) ?>">
+                            <div class="feature-block__preview">
+                                <img src="/img/feature-4.png" alt="#" title="#">
+                            </div>
+                            <div class="feature-block__footer">
+                                <span><?= Yii::t('app', 'Фотостудия') ?></span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -628,6 +628,11 @@ footer {
     padding-bottom: 16px;
 }
 
+.about-block {
+    padding: 120px 0 20px 0;
+    background-color: #fff;
+}
+
 @media screen and (max-width: 767px) {
     .site-container {
         padding: 40px 15px;
@@ -673,5 +678,18 @@ footer {
 
     .site-container h1 {
         text-align: center;
+    }
+
+    .about-block {
+        padding: 20px 0 20px 0;
+    }
+
+    .feature-block {
+        margin-right: 0;
+    }
+
+    .main-features {
+        top: 0;
+        background-color: rgb(0, 123, 255);
     }
 }
