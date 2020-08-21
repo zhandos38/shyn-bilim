@@ -4,11 +4,11 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use frontend\assets\AppAsset;
+use frontend\assets\HomeAsset;
 use yii2mod\alert\Alert;
 use yii\helpers\Url;
 
-AppAsset::register($this);
+HomeAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

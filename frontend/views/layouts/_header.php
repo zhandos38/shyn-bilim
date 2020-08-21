@@ -32,13 +32,13 @@ $action = Yii::$app->controller->action->id;
 <div class="navbar-wrapper">
     <div class="navbar navbar-expand-md" role="navigation">
         <div class="container">
-<!--            <a class="navbar-brand" href="/"></a>-->
+            <a class="navbar-brand" href="/"></a>
             <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
             </button>
             <img class="navbar-mobile-title" src="/img/title.png" alt="title">
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav m-auto">
+                <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item navbar-mobile-button">
                         <div class="navbar-mobile-language">
                             <?= $this->render('select-language') ?>
