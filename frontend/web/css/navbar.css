@@ -162,12 +162,11 @@
   }
 
   .navbar-brand {
-    width: 100px;
-    height: 100px;
+    display: none;
   }
 
-  .navbar-brand {
-    top: -10px;
+  .main-features {
+    background-color: rgb(0, 123, 255);
   }
 
   .navbar {

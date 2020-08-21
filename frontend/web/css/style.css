@@ -659,7 +659,11 @@ footer {
         width: 65%;
     }
 
-    .main-block__title-wrapper {
+    .main-block__title {
+        top: 0;
+    }
+
+    .main-block__logo {
         display: none;
     }
 
