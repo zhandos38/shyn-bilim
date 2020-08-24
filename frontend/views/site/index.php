@@ -138,8 +138,9 @@ $this->title = Yii::t('app', 'Главная страница');
                 <?php endif; ?>
             </div>
         </div>
-        <div class="main-news" style="padding: 60px 0 0 0">
-            <div class="row">
+        <div class="main-news" style="margin: 40px 0 0 0; text-align: center">
+            <h4><?= Yii::t('app', 'Дополнительные услуги, предоставляемые вам компанией') ?></h4>
+            <div class="row" style="margin-top: 20px">
                 <div class="col-md-3">
                     <div class="feature-block">
                         <a href="<?= Url::to(['about/index']) ?>">
