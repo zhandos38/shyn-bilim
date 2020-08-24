@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><?= Yii::t('app', 'Для преподавателей') ?></h5>
-                    <p class="card-text"><?= Yii::t('app', 'Олимпиадов для преподавателей') ?></p>
+                    <p class="card-text"><?= Yii::t('app', 'Олимпиады для преподавателей') ?></p>
                     <a href="<?= Url::to(['olympiad/list', 'type' => Subject::TYPE_TEACHER]) ?>" class="btn btn-primary"><?= Yii::t('app', 'Перейти') ?></a>
                 </div>
             </div>
