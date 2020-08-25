@@ -21,6 +21,6 @@ if ($type == Subject::TYPE_TEACHER): ?>
         'class' => 'row'
     ],
     'itemOptions' => [
-        'class' => 'col-md-4'
+        'class' => 'col-md-3'
     ]
 ]) ?>
