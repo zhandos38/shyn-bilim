@@ -43,9 +43,11 @@ AppAsset::register($this);
     </div>
 </div>
 
-<div class="site-container container">
-    <?= Alert::widget() ?>
-    <?= $content ?>
+<div class="site-container">
+    <div class="container">
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </div>
 </div>
 
 <?= $this->render('_footer') ?>
