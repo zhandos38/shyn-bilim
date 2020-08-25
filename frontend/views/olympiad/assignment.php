@@ -9,6 +9,10 @@ use yii\helpers\ArrayHelper;
 /* @var $subject \common\models\Subject */
 
 $this->title = Yii::t('app', 'Регистрация');
+
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Для учеников'), 'url' => ['olympiad/list', 'type' => $subject->type]];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/assignment', 'subject' => $subject->id]];
 ?>
 <h1><?= $subject->name ?></h1>
 <p>

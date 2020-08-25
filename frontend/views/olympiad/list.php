@@ -3,7 +3,10 @@ use common\models\Subject;
 
 /* @var $this \yii\web\View*/
 
-$this->title = Yii::t('app', 'Олимпиады');
+$this->title = Yii::t('app', Yii::t('app', 'Для учеников'));
+
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['#']];
 ?>
 <h1><?= $this->title ?></h1>
 <?php /** @var String $type */
