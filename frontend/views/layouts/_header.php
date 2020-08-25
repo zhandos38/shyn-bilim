@@ -5,6 +5,8 @@ use yii\helpers\Url;
 
 $controller = Yii::$app->controller->id;
 $action = Yii::$app->controller->action->id;
+
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favicon.png']);
 ?>
 <!-- Start: Navigation Upper with Button -->
 <div class="top-header">
