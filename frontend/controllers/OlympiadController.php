@@ -40,7 +40,8 @@ class OlympiadController extends Controller
         ]);
 
         return $this->render('list', [
-            'dataProvider' => $dataProvider
+            'dataProvider' => $dataProvider,
+            'type' => $type
         ]);
     }
 
