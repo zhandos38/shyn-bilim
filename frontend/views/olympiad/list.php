@@ -15,6 +15,9 @@ if ($type == Subject::TYPE_TEACHER): ?>
         <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Ereje-Pedagoc.doc"><b>подробнее</b></a>') ?>
     </p>
 <?php else: ?>
+    <p>
+        <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Altyn-Urpak.doc"><b>подробнее</b></a>') ?>
+    </p>
 <?php endif; ?>
 <?= \yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
