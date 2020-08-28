@@ -8,17 +8,29 @@ $this->title = Yii::t('app', $type ? 'Для преподавателей' : 'Д
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['#']];
 ?>
-<h1><?= $this->title ?></h1>
-<?php /** @var String $type */
-if ($type == Subject::TYPE_TEACHER): ?>
-    <p>
-        <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Ereje-Pedagoc.doc"><b>подробнее</b></a>') ?>
-    </p>
-<?php else: ?>
-    <p>
-        <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Altyn-Urpak.doc"><b>подробнее</b></a>') ?>
-    </p>
-<?php endif; ?>
+<div class="olympiad-info">
+    <?php /** @var String $type */
+    if ($type == Subject::TYPE_TEACHER): ?>
+        <img class="olympiad-img" src="/img/ped-olympiad.jpg" alt="">
+        <h1><?= Yii::t('app', 'Уважаемые педагоги') ?></h1>
+        <p>
+            <?= Yii::t('app', 'Сайт bilimshini.kz приглашает Вас принять участие в олимпиаде <b>«ПӘН ОЛИМПИАДАСЫНЫҢ ҮЗДІК ПЕДАГОГЫ - 2020»</b>, посвященной первому кварталу 2020-2021 учебного года') ?>
+        </p>
+        <p>
+            <?= Yii::t('app', 'Победители будут награждены НАГРУДНЫМ ЗНАКОМ и ДИПЛОМОМ') ?>
+        </p>
+        <p>
+           <?= Yii::t('app', 'Все участники получат <b>СЕРТИФИКАТ</b>') ?>
+        </p>
+        <p>
+            <?= Yii::t('app', 'Полностью ознакомьтесь с положением олимпиады') ?>, <a href="/file/<?= Yii::$app->language === 'kz' ? 'ped-rule-kz.doc' : 'ped-rule-ru.docx' ?>"><b><?= Yii::t('app', 'подробнее') ?></b></a>
+        </p>
+    <?php else: ?>
+        <p>
+            <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Altyn-Urpak.doc"><b>подробнее</b></a>') ?>
+        </p>
+    <?php endif; ?>
+</div>
 <?= \yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '{items}{pager}',
