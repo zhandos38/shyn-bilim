@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
 ?>
 <h1><?= $subject->name ?></h1>
 <p>
-    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет 500 тенге') ?>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $subject->type === 1 ? 2000 : 500]) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
         Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
     <?php else: ?>
