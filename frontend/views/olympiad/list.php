@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['#']];
            <?= Yii::t('app', 'Все участники получат <b>СЕРТИФИКАТ</b>') ?>
         </p>
         <p>
-            <?= Yii::t('app', 'Полностью ознакомьтесь с положением олимпиады') ?>, <a href="/file/<?= Yii::$app->language === 'kz' ? 'ped-rule-kz.doc' : 'ped-rule-ru.docx' ?>"><b><?= Yii::t('app', 'подробнее') ?></b></a>
+            <?= Yii::t('app', 'Полностью ознакомьтесь с положением олимпиады') ?>, <a href="/file/<?= Yii::$app->language === 'kz' ? 'ped-rule-kz.docx' : 'ped-rule-ru.doc' ?>"><b><?= Yii::t('app', 'подробнее') ?></b></a>
         </p>
     <?php else: ?>
         <p>
