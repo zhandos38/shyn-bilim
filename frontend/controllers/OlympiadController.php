@@ -30,6 +30,11 @@ class OlympiadController extends Controller
 
     public function actionList($type)
     {
+        if (!$type) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Данная олимпиада еще не доступна'));
+            return $this->redirect(['index']);
+        }
+
         $dataProvider = new ActiveDataProvider([
             'query' => Subject::find()->andWhere(['type' => $type]),
             'sort' => [
@@ -70,7 +75,7 @@ class OlympiadController extends Controller
             $salt = $this->getSalt(8);
             $request = [
                 'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => 500,
+                'pg_amount' => 2000,
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
                 'pg_description' => 'Оплата за публикацию материала',

@@ -672,6 +672,16 @@ color: #9e9e9e;
     background-color: #fff;
 }
 
+.olympiad-info {
+    text-align: center;
+}
+.olympiad-img {
+    width: 260px;
+}
+.olympiad-info a {
+    color: #0b58a2;
+}
+
 @media screen and (max-width: 767px) {
     .site-container {
         padding: 40px 15px;
