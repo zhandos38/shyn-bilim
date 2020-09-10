@@ -56,6 +56,8 @@ $this->title = Yii::t('app', 'Опубликовать материал');
                 'pluginOptions' => [
                     'theme' => 'fa',
                     'showCaption' => false,
+                    'showUpload' => false,
+                    'browseLabel' =>  Yii::t('app', 'Загрузить')
                 ],
             ]) ?>
         </div>
