@@ -17,7 +17,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
         <?php if (Yii::$app->language === 'ru'): ?>
             Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
         <?php else: ?>
-            Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
+            Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">келісімді</a> мақұлдайсыз
         <?php endif; ?>
 
     <div class="row">
