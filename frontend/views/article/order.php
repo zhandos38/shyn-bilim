@@ -32,6 +32,8 @@ $this->title = Yii::t('app', 'Опубликовать материал');
 
             <?= $form->field($model, 'topic') ?>
 
+            <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Выбрать предмет')]) ?>
+
             <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                 'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
                 'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
