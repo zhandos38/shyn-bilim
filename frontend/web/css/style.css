@@ -479,6 +479,13 @@ color: #9e9e9e;
 }
 
 /* articles */
+.article-order-widget {
+    margin-bottom: 10px;
+}
+.article-order-widget__text {
+    font-weight: 600;
+}
+
 .articles-list {
     display: -webkit-box;
     display: -ms-flexbox;

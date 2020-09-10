@@ -63,7 +63,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
         </div>
     </div>
 
-    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Оплатить и опубликовать'), ['class' => 'btn btn-success']) ?>
+    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Оплатить'), ['class' => 'btn btn-success']) ?>
 
     <?php ActiveForm::end() ?>
 
