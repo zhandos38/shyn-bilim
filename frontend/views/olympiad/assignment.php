@@ -18,9 +18,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
 <p>
     <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $subject->type === 1 ? 2000 : 500]) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
-        Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">публичной оферты</a>
+        Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
     <?php else: ?>
-        Мәліметтерді жібере отырып, <a style="color: red" href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
+        Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
     <?php endif; ?>
 </p>
 <div class="row">
@@ -35,11 +35,20 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
 
         <?= $form->field($model, 'iin') ?>
 
-        <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите регион')]) ?>
+        <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+            'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+        ]); ?>
 
-        <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите город')]) ?>
+        <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+            'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+        ]); ?>
 
-        <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => Yii::t('app', 'Укажите школу')]) ?>
+        <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
+            'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+        ]); ?>
 
         <?php if ($subject->type === \common\models\Subject::TYPE_STUDENT): ?>
 

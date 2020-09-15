@@ -22,6 +22,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/in
             Материалыңызды қосқаннан кейін бірден жариялау туралы сертификат аласыз. <br>
             Қосымша сұрағыңыз бойынша  вадсапқа <a href="https://wa.me/77750767876">https://wa.me/77750767876</a> сілтемесін басып жазуыңызға болады.
         </p>
+        <p>
+            <b>Материал жариялау үшін пән таңдап, ашылған беттегі "Материал жариялау" батырмасын басыңыз</b>
+        </p>
     <?php else: ?>
         <h4>УВАЖАЕМЫЙ ПЕДАГОГ!</h4>
         Для портфолио достижений <br>
@@ -34,21 +37,16 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/in
             После добавления вашего материала вы получите сертификат об опубликовании. <br>
             По дополнительному вопросу вы можете нажать на ссылку вадсапа <a href="https://wa.me/77750767876">https://wa.me/77750767876</a>
         </p>
+    <p>
+        <b>Чтобы опубликовать материал, выберите предмет и в открывшемся окне нужно нажать на кнопку "Опубликовать материал"</b>
+    </p>
     <?php endif; ?>
-    <div class="article-order-widget">
-        <div class="article-order-widget__text">
-            <?= Yii::t('app', 'У вас есть материал?') ?>
-        </div>
-        <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
-            <?= Yii::t('app', 'Опубликовать материал') ?>
-        </a>
-    </div>
 </div>
 <div class="row" style="padding-top: 20px">
     <?php foreach ($subjects as $subject): ?>
     <div class="col-md-3">
         <a class="subject-list__item" style="background: linear-gradient(90deg, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.4) 40%), url('<?= '/img/' . $subject->img ?>')" href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
-            <h4><?= $subject->name ?></h4>
+            <h4><?= $subject->getName() ?></h4>
         </a>
     </div>
     <?php endforeach; ?>

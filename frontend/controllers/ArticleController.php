@@ -90,17 +90,18 @@ class ArticleController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $id);
 
         return $this->render('list', [
+            'id' => $id,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider
         ]);
     }
 
-    public function actionOrder()
+    public function actionOrder($id)
     {
         $model = new Article();
+        $model->subject_id = $id;
 
         if ($model->load(Yii::$app->request->post())) {
-
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
 

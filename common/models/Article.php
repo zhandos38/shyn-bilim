@@ -66,7 +66,7 @@ class Article extends \yii\db\ActiveRecord
             'patronymic' => Yii::t('app', 'Отчество'),
             'topic' => Yii::t('app', 'Название'),
             'file' => Yii::t('app', 'Файл'),
-            'fileTemp' => Yii::t('app', 'Файл'),
+            'fileTemp' => Yii::t('app', 'Выбрать файл'),
             'subject_id' => Yii::t('app', 'Предмет'),
             'region_id' => Yii::t('app', 'Регион'),
             'city_id' => Yii::t('app', 'Город'),

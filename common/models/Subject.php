@@ -9,7 +9,8 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "subject".
  *
  * @property int $id
- * @property string $name
+ * @property string $name_kz
+ * @property string $name_ru
  * @property string|null $img
  *
  * @property Test[] $tests
@@ -35,8 +36,8 @@ class Subject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'string', 'max' => 100],
+            [['name_kz', 'name_ru'], 'required'],
+            [['name_kz', 'name_ru'], 'string', 'max' => 100],
             [['img'], 'string', 'max' => 255],
             ['type', 'integer']
         ];
@@ -48,7 +49,8 @@ class Subject extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('app', 'Название'),
+            'name_kz' => Yii::t('app', 'Название'),
+            'name_ru' => Yii::t('app', 'Название'),
             'img' => Yii::t('app', 'Рисунок'),
             'type' => Yii::t('app', 'Тип'),
         ];
@@ -75,5 +77,10 @@ class Subject extends \yii\db\ActiveRecord
     public function getTypeLabel()
     {
         return ArrayHelper::getValue(self::getTypes(), $this->type);
+    }
+
+    public function getName()
+    {
+        return Yii::$app->language === 'kz' ? $this->name_kz : $this->name_ru;
     }
 }
