@@ -30,10 +30,8 @@ class OlympiadController extends Controller
 
     public function actionList($type)
     {
-        if (!$type) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Данная олимпиада еще не доступна'));
-            return $this->redirect(['index']);
-        }
+        Yii::$app->session->setFlash('error', Yii::t('app', 'Данная олимпиада еще не доступна'));
+        return $this->redirect(['index']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => Subject::find()->andWhere(['type' => $type]),
