@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/in
     <?php foreach ($subjects as $subject): ?>
     <div class="col-md-3">
         <a class="subject-list__item" style="background: linear-gradient(90deg, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.4) 40%), url('<?= '/img/' . $subject->img ?>')" href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
-            <h4><?= $subject->getName() ?></h4>
+            <h5><?= $subject->getName() ?></h5>
         </a>
     </div>
     <?php endforeach; ?>
