@@ -11,7 +11,7 @@
         <div style="text-align: center; font-size: 16px; font-weight: bold; padding-left: 380px; width: 860px">
             <?= Yii::$app->params['staticDomain'] . '/project/' . $model->file ?>
         </div>
-        <div id="cert-date" style="padding-top: 170px; padding-left: 644px; font-size: 20px; color: #000000;">Күні: <?= date('d.m.Y') ?></div>
+        <div id="cert-date" style="padding-top: 180px; padding-left: 644px; font-size: 20px; color: #000000;">Күні: <?= date('d.m.Y') ?></div>
         <div id="cert-number" style="padding-top: 5px; padding-left: 644px; font-size: 20px; color: #000000;">Тіркеу №<?= $model->id ?></div>
     </div>
 </div>
