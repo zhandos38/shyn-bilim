@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/conta
                 <a href="tel:87083176516"><i class="fa fa-phone"></i> +7(708) 317 65 16 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
-                <a href="tel:87472339745"><i class="fa fa-phone"></i> +7(747) 233 97 45 ( WhatsApp )</a>
+                <a href="tel:87472339745"><i class="fa fa-phone"></i> +7(747) 233 97 35 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
                 <a href="mailto:photo-studio@bilimshini.kz"><i class="fa fa-envelope"></i> photo-studio@bilimshini.kz</a>

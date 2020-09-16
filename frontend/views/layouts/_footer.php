@@ -94,7 +94,7 @@ use yii\helpers\Url;
                         <a href="tel:87083176516">+7(708) 317 65 16</a>
                     </li>
                     <li class="footer-list__item">
-                        <a href="tel:87472339745">+7(747) 233 97 45</a>
+                        <a href="tel:87472339745">+7(747) 233 97 35</a>
                     </li>
                     <li class="footer-list__item">
                         <a href="mailto:photo-studio@bilimshini.kz"><i class="fa fa-envelope"></i> photo-studio@bilimshini.kz</a>
