@@ -3,5 +3,5 @@
 
 ?>
 <a class="olympiad-item" href="<?= \yii\helpers\Url::to(['olympiad/assignment', 'subject' => $model->id]) ?>">
-    <span><?= $model->name ?></span>
+    <span><?= $model->getName() ?></span>
 </a>
