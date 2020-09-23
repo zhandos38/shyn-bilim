@@ -27,9 +27,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
     <div class="col-md-4">
         <?php $form = ActiveForm::begin() ?>
 
-        <?= $form->field($model, 'name') ?>
-
         <?= $form->field($model, 'surname') ?>
+
+        <?= $form->field($model, 'name') ?>
 
         <?= $form->field($model, 'patronymic') ?>
 
