@@ -57,7 +57,7 @@ class TestController extends Controller
                 mkdir($subjectFolderPath, 0777, true);
             }
 
-            $xml = simplexml_load_string(file_get_contents('/test/' . $fileName));
+            $xml = simplexml_load_string(file_get_contents(Yii::getAlias('@static') . '/' . $fileName));
             $json = json_encode($xml);
             $array = json_decode($json, true);
 
