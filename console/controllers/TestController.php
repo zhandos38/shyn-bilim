@@ -27,7 +27,7 @@ class TestController extends Controller
         try {
             $fileName = readline('Enter name of file: ');
             foreach (Subject::find()->all() as $subject){
-                printf($subject->id . ': ' . $subject->name . " - " . $subject->type . "\n");
+                printf($subject->id . ': ' . $subject->getName() . " - " . $subject->type . "\n");
             }
             $subjectId = readline('Enter id of subject: ');
             $grade = readline('Enter class: ');
@@ -57,7 +57,7 @@ class TestController extends Controller
                 mkdir($subjectFolderPath, 0777, true);
             }
 
-            $xml = simplexml_load_string(file_get_contents(Yii::getAlias('@static') . '/' . $fileName));
+            $xml = simplexml_load_string(file_get_contents('/test/' . $fileName));
             $json = json_encode($xml);
             $array = json_decode($json, true);
 
