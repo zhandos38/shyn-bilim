@@ -15,17 +15,13 @@ use yii\widgets\ActiveForm;
 
 <div class="news-form">
 
-    <?php
-
-    LteBox::begin([
+    <?php LteBox::begin([
         'type' => LteConst::TYPE_SUCCESS,
         'isSolid' => true,
         'boxTools' => Html::a('Назад <i class="fas fa-arrow-alt-circle-left"></i>', ['index'], ['class' => 'btn btn-danger btn-xs create_button']),
         'tooltip' => 'this tooltip description',
         'title' =>  $this->title
-    ])
-
-    ?>
+    ]) ?>
 
     <?php $form = ActiveForm::begin(); ?>
 

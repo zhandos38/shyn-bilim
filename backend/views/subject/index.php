@@ -1,18 +1,19 @@
 <?php
 
+use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\NewsSearch */
+/* @var $searchModel backend\models\SubjectSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'News';
+$this->title = 'Subjects';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-index">
+<div class="subject-index">
 
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
@@ -28,11 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'title',
-//            'content:ntext',
-            'img',
-            'created_at',
-            //'updated_at',
+            'id',
+            'name_kz',
+            'name_ru',
+//            'img',
+            [
+                'attribute' => 'type',
+                'value' => function(Subject $model) {
+                    return $model->getTypeLabel();
+                },
+                'filter' => Subject::getTypes()
+            ],
+            'order',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -31,7 +31,7 @@ class OlympiadController extends Controller
     public function actionList($type)
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Subject::find()->andWhere(['type' => $type]),
+            'query' => Subject::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC]),
             'sort' => [
                 'defaultOrder' => [
                     'id' => SORT_DESC

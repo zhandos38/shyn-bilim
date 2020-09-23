@@ -24,6 +24,7 @@
                     ['label' => 'Проекты', 'icon' => 'fas fa-user', 'url' => ['project/index']],
                     ['label' => 'Материалы Проектов', 'icon' => 'fas fa-user', 'url' => ['project-article/index']],
                     ['label' => 'Новости', 'icon' => 'fas fa-user', 'url' => ['news/index']],
+                    ['label' => 'Предметы', 'icon' => 'fas fa-book', 'url' => ['subject/index']],
                 ],
             ]
         ) ?>

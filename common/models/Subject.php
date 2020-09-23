@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property Test[] $tests
  * @property bool $type [tinyint(3)]
+ * @property integer $order [tinyint(3)]
  */
 class Subject extends \yii\db\ActiveRecord
 {
@@ -39,7 +40,7 @@ class Subject extends \yii\db\ActiveRecord
             [['name_kz', 'name_ru'], 'required'],
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
             [['img'], 'string', 'max' => 255],
-            ['type', 'integer']
+            [['type', 'order'], 'integer']
         ];
     }
 
@@ -49,10 +50,11 @@ class Subject extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name_kz' => Yii::t('app', 'Название'),
-            'name_ru' => Yii::t('app', 'Название'),
+            'name_kz' => Yii::t('app', 'Название на казахском'),
+            'name_ru' => Yii::t('app', 'Название на русском'),
             'img' => Yii::t('app', 'Рисунок'),
             'type' => Yii::t('app', 'Тип'),
+            'order' => Yii::t('app', 'Порядок')
         ];
     }
 
