@@ -58,7 +58,12 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
             if (!$test) {
-                throw new Exception('Тест не найден!');
+                Yii::$app->session->setFlash('error', 'Тест не найден!');
+
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'subject' => $subject
+                ]);
             }
 
             $model->test_id = $test->id;
