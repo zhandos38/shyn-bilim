@@ -22,10 +22,10 @@ class OlympiadController extends Controller
 {
     public function actionIndex()
     {
-//        Yii::$app->session->setFlash('error', 'Страница находится в разработке');
-//        return $this->redirect(['site/index']);
-        
-        return $this->render('index');
+        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
+        return $this->redirect(['site/index']);
+
+//        return $this->render('index');
     }
 
     public function actionList($type)
