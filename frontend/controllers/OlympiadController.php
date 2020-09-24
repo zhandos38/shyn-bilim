@@ -22,14 +22,14 @@ class OlympiadController extends Controller
 {
     public function actionIndex()
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
-        return $this->redirect(['site/index']);
-
-//        return $this->render('index');
+        return $this->render('index');
     }
 
     public function actionList($type)
     {
+        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
+        return $this->redirect(['site/index']);
+
         $dataProvider = new ActiveDataProvider([
             'query' => Subject::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC]),
             'sort' => [
