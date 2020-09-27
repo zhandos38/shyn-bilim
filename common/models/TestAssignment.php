@@ -18,6 +18,7 @@ use Yii;
  * @property int|null $created_at
  *
  * @property Test $test
+ * @property TestAssignment $school
  * @property int $point [int(11)]
  * @property int $finished_at [int(11)]
  * @property string $patronymic [varchar(255)]
@@ -88,5 +89,13 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function getTest()
     {
         return $this->hasOne(Test::className(), ['id' => 'test_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSchool()
+    {
+        return $this->hasOne(School::className(), ['id' => 'school_id']);
     }
 }

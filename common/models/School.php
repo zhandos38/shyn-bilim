@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string|null $name
+ * @property integer|null $city_id
  *
  * @property User[] $users
  */
@@ -28,6 +29,7 @@ class School extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['city_id', 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -51,5 +53,10 @@ class School extends \yii\db\ActiveRecord
     public function getUsers()
     {
         return $this->hasMany(User::className(), ['school_id' => 'id']);
+    }
+
+    public function getCity()
+    {
+        return $this->hasOne(City::className(), ['id' => 'city_id']);
     }
 }

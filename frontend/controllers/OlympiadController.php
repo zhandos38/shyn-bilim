@@ -9,6 +9,7 @@ use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
+use kartik\mpdf\Pdf;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\HttpException;
@@ -121,8 +122,14 @@ class OlympiadController extends Controller
             throw new Exception('Тест не найден!');
         }
 
+        $testAssignment = TestAssignment::findOne(['id' => $assignment]);
+        if ($testAssignment->status === TestAssignment::STATUS_ACTIVE) {
+            Yii::$app->session->setFlash('success', 'Тест уже пройден!');
+            return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
+        }
+
         return $this->render('test', [
-            'assignment_id' => $assignment,
+            'assignment_id' => $testAssignment->id,
             'subject_name' => $test->subject->name,
             'id' => $id
         ]);
@@ -183,12 +190,85 @@ class OlympiadController extends Controller
 
         $testAssignment->lang = 'kz';
         $testAssignment->point = (int)$data['point'];
+        $testAssignment->status = TestAssignment::STATUS_ACTIVE;
         $testAssignment->finished_at = time();
         if (!$testAssignment->save()) {
             throw new Exception('Test result is not saved');
         }
 
         return true;
+    }
+
+    public function actionGetCert($id)
+    {
+        $testAssignment = TestAssignment::findOne(['id' => $id]);
+        if (!$testAssignment) {
+            throw new Exception('Test Assignment is not found');
+        }
+
+        if ($testAssignment->point >= 17) {
+            $place = 'III';
+
+            if ($testAssignment->point >= 28 && $testAssignment->point <= 30) {
+                $place = 'Бас жүлде';
+            }
+
+            if ($testAssignment->point >= 23 && $testAssignment->point <= 27) {
+                $place = 'I';
+            }
+
+            if ($testAssignment->point >= 20 && $testAssignment->point <= 22) {
+                $place = 'II';
+            }
+
+            $content = $this->renderPartial('_diploma', [
+                'testAssignment' => $testAssignment,
+                'place' => $place
+            ]);
+
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_UTF8,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A4,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_PORTRAIT,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                'filename' => 'Сертификат.pdf',
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+            ]);
+
+        } else {
+            $content = $this->renderPartial('_cert', [
+                'testAssignment' => $testAssignment
+            ]);
+
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_UTF8,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A3,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                'filename' => 'Сертификат.pdf',
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+            ]);
+        }
+
+        return $pdf->render();
     }
 
     public function checkSign($data, $url):bool
