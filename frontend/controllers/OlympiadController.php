@@ -153,7 +153,7 @@ class OlympiadController extends Controller
         }
 
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
-        if ($testAssignment->status === TestAssignment::STATUS_ACTIVE) {
+        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
             return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
         }
@@ -220,6 +220,7 @@ class OlympiadController extends Controller
 
         $testAssignment->lang = 'kz';
         $testAssignment->point = (int)$data['point'];
+        $testAssignment->status = TestAssignment::STATUS_FINISHED;
         $testAssignment->finished_at = time();
         if (!$testAssignment->save()) {
             throw new Exception('Test result is not saved');

@@ -32,6 +32,7 @@ class TestAssignment extends \yii\db\ActiveRecord
 
     const STATUS_OFF = 0;
     const STATUS_ACTIVE = 1;
+    const STATUS_FINISHED = 2;
 
     /**
      * {@inheritdoc}
