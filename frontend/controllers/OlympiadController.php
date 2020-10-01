@@ -141,7 +141,7 @@ class OlympiadController extends Controller
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
-        return true;
+        return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
     }
 
     public function actionTest($assignment, $id)
@@ -219,7 +219,6 @@ class OlympiadController extends Controller
 
         $testAssignment->lang = 'kz';
         $testAssignment->point = (int)$data['point'];
-        $testAssignment->status = TestAssignment::STATUS_ACTIVE;
         $testAssignment->finished_at = time();
         if (!$testAssignment->save()) {
             throw new Exception('Test result is not saved');
