@@ -135,7 +135,8 @@ class OlympiadController extends Controller
 
         $model = TestAssignment::find()
                 ->andWhere(['id' => $request[$this->toProperty('order_id')]])
-                ->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
+                ->andWhere(['status' => TestAssignment::STATUS_ACTIVE])
+                ->one();
 
         if (empty($model)) {
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
