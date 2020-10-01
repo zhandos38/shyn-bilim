@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "test_assignment".
@@ -69,7 +70,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'test_id' => 'Test ID',
+            'test_id' => 'Тест',
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
@@ -79,6 +80,9 @@ class TestAssignment extends \yii\db\ActiveRecord
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
+            'status' => Yii::t('app', 'Статус'),
+            'point' => Yii::t('app', 'Баллы'),
+            'created_at' => Yii::t('app', 'Время создание'),
         ];
     }
 
@@ -98,5 +102,19 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function getSchool()
     {
         return $this->hasOne(School::className(), ['id' => 'school_id']);
+    }
+
+    public static function getStatuses()
+    {
+        return [
+            self::STATUS_OFF => 'Не оплачено',
+            self::STATUS_ACTIVE => 'Оплачено',
+            self::STATUS_FINISHED => 'Завершено',
+        ];
+    }
+
+    public function getStatus()
+    {
+        return ArrayHelper::getValue(self::getStatuses(), $this->status);
     }
 }
