@@ -10,6 +10,8 @@ use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
 use kartik\mpdf\Pdf;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\HttpException;
@@ -21,6 +23,30 @@ use yii\web\Response;
 
 class OlympiadController extends Controller
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
@@ -28,8 +54,8 @@ class OlympiadController extends Controller
 
     public function actionList($type)
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
-        return $this->redirect(['site/index']);
+//        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
+//        return $this->redirect(['site/index']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => Subject::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC]),
