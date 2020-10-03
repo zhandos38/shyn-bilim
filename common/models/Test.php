@@ -78,4 +78,12 @@ class Test extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Question::className(), ['test_id' => 'id'])->orderBy('RAND()')->limit($this->questions_limit);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getQuestionsTotal()
+    {
+        return $this->hasMany(Question::className(), ['test_id' => 'id']);
+    }
 }
