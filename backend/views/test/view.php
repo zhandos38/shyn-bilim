@@ -50,12 +50,14 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <div>
-        <?php foreach ($model->questions as $question): ?>
+        <?php
+        $counter = 1;
+        foreach ($model->questions as $question): ?>
             <div>
-                <p><?= $question->text ?></p>
+                <p><?= $counter++ ?>) <?= $question->id ?>: <?= $question->text ?></p>
                 <ul>
                     <?php foreach ($question->answers as $answer): ?>
-                        <li class="<?= $answer->is_right ? 'text-danger' : '' ?>"><?= $answer->text ?></li>
+                        <li class="<?= $answer->is_right ? 'text-danger' : '' ?>"><?= $answer->id ?>: <?= $answer->text ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
