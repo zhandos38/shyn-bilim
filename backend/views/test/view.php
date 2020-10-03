@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Всего вопросов',
                 'value' => function(Test $model) {
-                    return count($model->questions);
+                    return count($model->questionsTotal);
                 }
             ]
         ],
