@@ -24,7 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'subject_id',
+            [
+                'attribute' => 'subject_id',
+                'value' => function(Test $model) {
+                    return $model->subject->name_kz;
+                }
+            ],
             'grade',
             'questions_limit',
             'time_limit',
@@ -35,6 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     return date('d-m-Y H:i', $model->created_at);
                 }
             ],
+            [
+                'label' => 'Всего вопросов',
+                'value' => function(Test $model) {
+                    return count($model->questions);
+                }
+            ]
         ],
     ]) ?>
 
