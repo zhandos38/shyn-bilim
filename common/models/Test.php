@@ -55,7 +55,7 @@ class Test extends \yii\db\ActiveRecord
             'subject_id' => Yii::t('app', 'Предмет'),
             'grade' => Yii::t('app', 'Класс'),
             'lang' => Yii::t('app', 'Язык'),
-            'question_limit' => Yii::t('app', 'Ограничение вопросов'),
+            'questions_limit' => Yii::t('app', 'Ограничение вопросов'),
             'time_limit' => Yii::t('app', 'Ограничение по времени'),
             'created_at' => Yii::t('app', 'Время добавления')
         ];
