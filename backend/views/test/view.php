@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div>
         <?php
         $counter = 1;
-        foreach ($model->questions as $question): ?>
+        foreach ($model->questionsTotal as $question): ?>
             <div>
                 <p><?= $counter++ ?>) <?= $question->id ?>: <?= $question->text ?></p>
                 <ul>
