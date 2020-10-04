@@ -24,10 +24,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-info site-button" v-on:click="nextQuestion">Следующий вопрос</button>
+                <button class="btn btn-info site-button" v-on:click="nextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?></button>
             </div>
             <div v-else>
-                <div class="questions-correct-count">Вы набрали: {{ correctAnswerCount }}</div>
+                <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
                 <div>
                     <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>"><?= Yii::t('app', 'Получить сертификат') ?></a>
                 </div>
