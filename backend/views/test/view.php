@@ -12,6 +12,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Tests', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+<style>
+    .content img {
+        vertical-align: unset;
+    }
+</style>
 <div class="test-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
