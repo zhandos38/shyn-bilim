@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $subject->name_kz . '-' . $model['lang'] . '-' . $subject->getTypeLabel();
                 })
             ],
-            'name:raw',
+            'name',
             'surname',
             'patronymic',
             'iin',
@@ -64,7 +64,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(TestAssignment $model) {
                     return $model->school->name;
                 },
-                'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name')
+                'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
+                'format' => 'raw'
             ],
             'grade',
             'point',
