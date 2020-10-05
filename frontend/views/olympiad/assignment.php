@@ -80,7 +80,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
             'prompt' => Yii::t('app', 'Выберите язык')
         ]) ?>
 
-        <small><?= Yii::t('app', 'Видеоинструкция') ?>: <a href="https://youtu.be/Ej3I7IEomxc">https://youtu.be/Ej3I7IEomxc</a></small>
+        <small><?= Yii::t('app', 'Видеоинструкция как оплатить') ?>: <a href="https://youtu.be/Ej3I7IEomxc">https://youtu.be/Ej3I7IEomxc</a></small>
+        <small><?= Yii::t('app', 'Видеоинструкция "Как откырть доступ к онлайн оплатам в Kaspi Gold"') ?>: <a href="https://youtu.be/Ej3I7IEomxc">https://youtu.be/dVm6dYWOhD8</a></small>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
