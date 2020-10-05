@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'created_at',
                 'value' => function(TestAssignment $model) {
-                    return date('d-m-Y H:i', $model->created_at);
+                    return date('d-m-Y H:i', $model->created_at + 2160);
                 }
             ],
             //'finished_at',
