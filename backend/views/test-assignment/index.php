@@ -64,7 +64,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(TestAssignment $model) {
                     return $model->school->name;
                 },
-                'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name')
+                'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
+                'format' => 'raw'
             ],
             'grade',
             'point',
@@ -78,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'created_at',
                 'value' => function(TestAssignment $model) {
-                    return date('d-m-Y H:i', $model->created_at);
+                    return date('d-m-Y H:i', $model->created_at + 21600);
                 }
             ],
             //'finished_at',

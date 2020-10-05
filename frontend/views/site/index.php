@@ -2,7 +2,15 @@
 
 use yii\helpers\Url;
 
-$this->title = Yii::t('app', 'Главная страница');
+$this->title = 'Bilimshini.kz - образовательный портал';
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'Bilimshini, Білімшыңы, Білімшыны'
+]);
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
+]);
 ?>
 <section class="main-container">
     <div class="container">
