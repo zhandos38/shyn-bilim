@@ -45,7 +45,7 @@ class OlympiadController extends Controller
 
     public function actionList($type)
     {
-        if ($type === 0) {
+        if ($type == 0) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
             return $this->redirect(['site/index']);
         }

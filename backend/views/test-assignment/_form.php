@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'point')->textInput() ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
