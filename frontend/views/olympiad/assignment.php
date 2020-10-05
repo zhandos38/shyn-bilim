@@ -49,6 +49,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
             'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
             'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
         ]); ?>
+        <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
         <?php if ($subject->type === \common\models\Subject::TYPE_STUDENT): ?>
 
