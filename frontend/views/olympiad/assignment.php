@@ -46,9 +46,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
         ]); ?>
 
         <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
-                return htmlspecialchars_decode($model['name']);
-            }),
+            'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
             'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
         ]); ?>
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
