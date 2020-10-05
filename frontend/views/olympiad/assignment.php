@@ -78,6 +78,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
             'prompt' => Yii::t('app', 'Выберите язык')
         ]) ?>
 
+        <small><?= Yii::t('app', 'Видеоинструкция') ?>: <a href="https://youtu.be/Ej3I7IEomxc">https://youtu.be/Ej3I7IEomxc</a></small>
+
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
         <?php ActiveForm::end() ?>
