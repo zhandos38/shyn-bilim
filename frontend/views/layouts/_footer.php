@@ -103,7 +103,7 @@ use yii\helpers\Url;
             </div>
         </div>
         <div style="text-align: center">
-            Designed and Developed by <a href="http://itbgroup.kz">Itbgroup</a>
+            Designed and Developed with <i class="fa fa-heart"></i> by <a href="https://vk.com/zhandragon96">Jako</a>
         </div>
     </div>
 </footer>
