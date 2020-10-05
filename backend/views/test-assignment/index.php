@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $subject->name_kz . '-' . $model['lang'] . '-' . $subject->getTypeLabel();
                 })
             ],
-            'name:html',
+            'name:raw',
             'surname',
             'patronymic',
             'iin',
