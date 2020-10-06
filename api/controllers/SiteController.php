@@ -82,7 +82,7 @@ class SiteController extends Controller
                 throw new Exception('Order is not found');
             }
 
-            if ((int)$request[$this->toProperty('status')]) {
+            if ((int)$request[$this->toProperty('status')] === 1) {
                 $order->lang = 'kz';
                 $order->status = TestAssignment::STATUS_ACTIVE;
                 if (!$order->save()) {
