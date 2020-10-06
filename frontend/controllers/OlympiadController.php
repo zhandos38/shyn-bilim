@@ -158,7 +158,7 @@ class OlympiadController extends Controller
         }
 
         if ($testAssignment->status === TestAssignment::STATUS_OFF) {
-            Yii::$app->session->setFlash('success', 'Сумма за участия в олимпиаде не оплчена!');
+            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
             return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
         }
 
