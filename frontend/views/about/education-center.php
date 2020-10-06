@@ -4,7 +4,7 @@
 
 $this->title = Yii::t('app', 'Учебный центр');
 
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about']];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['about/education-center']];
 ?>
 <div class="site-edu">
     <img src="/img/edu-bng.png" alt="img" style="width: 100%;">

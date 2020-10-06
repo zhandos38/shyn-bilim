@@ -4,7 +4,7 @@
 
 $this->title = Yii::t('app', 'Фотостудия');
 
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about']];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['about/photo-studio']];
 ?>
 <h1><?= Yii::t('app', 'Фотостудия') ?></h1>
 <br>

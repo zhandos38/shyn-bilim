@@ -74,6 +74,9 @@ class OlympiadController extends Controller
         $model->subject_id = $subject;
 
         $subject = Subject::findOne(['id' => $model->subject_id]);
+        if (empty($subject)) {
+            throw new Exception('Subject is not found');
+        }
 
 //        $model->load(\Yii::$app->request->post());
 //        VarDumper::dump($model, 10, 1); die;
@@ -81,7 +84,7 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
             if (!$test) {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден!'));
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Test is not found'));
 
                 return $this->render('assignment', [
                     'model' => $model,
