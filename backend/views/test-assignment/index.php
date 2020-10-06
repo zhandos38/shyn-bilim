@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id', function ($model) {
                     $subject = \common\models\Subject::findOne(['id' => $model['subject_id']]);
-                    return $model['id'] . ': ' . $subject->name_kz . '-' . $model['lang'] . '-' . $subject->getTypeLabel();
+                    return $subject->name_kz . '-' . $model['lang'] . '-' . $subject->getTypeLabel();
                 })
             ],
             'name',
