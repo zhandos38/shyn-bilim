@@ -101,7 +101,7 @@ class OlympiadController extends Controller
                 'pg_amount' => 2000,
                 'pg_salt' => $salt,
                 'pg_order_id' => $model->id,
-                'pg_description' => 'Оплата за публикацию материала',
+                'pg_description' => 'Оплата за участие в олимпиаде',
                 'pg_success_url' => Url::base('https') . '/olympiad/success',
                 'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
                 'pg_result_url_method' => 'POST',
