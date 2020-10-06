@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            'test_id',
             [
                 'attribute' => 'test_id',
                 'value' => function(TestAssignment $model) {
