@@ -35,8 +35,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         </div>
     </div>
 <?php
+$hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS
 testApp.id = "$id";
+testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
 testApp.getTest();
 JS;

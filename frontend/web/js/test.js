@@ -10,6 +10,7 @@ testApp = new Vue({
         correctAnswerCount: 0,
         currentQuestionId: 0,
         showResultActive: false,
+        hash: null
     },
     methods: {
         getTest() {
@@ -57,9 +58,11 @@ testApp = new Vue({
                 }
             });
 
+            console.log(this.hash);
+
             $.post({
                 url: 'set-result',
-                data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount},
+                data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
                 success: (result) => {
                     console.log(result);
 
