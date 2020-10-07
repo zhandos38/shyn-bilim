@@ -47,10 +47,10 @@ use yii\helpers\Url;
                         <a class="footer__link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
                     </li>
                     <li class="footer-list__item">
-                        <a href="tel:87013129906">+7(701) 312 99 06</a>
+                        <a href="tel:87083176516">+7(708) 317 65 16</a>
                     </li>
                     <li class="footer-list__item">
-                        <a href="tel:87010767876">+7(701) 076 78 76</a>
+                        <a href="tel:87750767876">+7(775) 076 78 76</a>
                     </li>
                     <li class="footer-list__item">
                         <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>

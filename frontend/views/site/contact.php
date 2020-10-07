@@ -30,10 +30,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/conta
                 <a class="footer__link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
             </li>
             <li class="contact-list__item">
-                <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a>
+                <a href="tel:87083176516"><i class="fa fa-phone"></i> +7(708) 317 65 16</a>
             </li>
             <li class="contact-list__item">
-                <a href="tel:87010767876"><i class="fa fa-phone"></i> +7(701) 076 78 76 ( WhatsApp )</a>
+                <a href="tel:87750767876"><i class="fa fa-phone"></i> +7(775) 076 78 76 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
                 <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
