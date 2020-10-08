@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use common\models\TestAssignment;
 use backend\models\TestAssignmentSearch;
+use yii\helpers\Url;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,6 +37,8 @@ class TestAssignmentController extends Controller
      */
     public function actionIndex()
     {
+        Url::remember();
+
         $searchModel = new TestAssignmentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -85,9 +89,10 @@ class TestAssignmentController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model->lang = 'ok';
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(Url::previous());
         }
 
         return $this->render('update', [
