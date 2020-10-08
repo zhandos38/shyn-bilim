@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'test_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->test->subject->name_kz . '-' . $model->lang . '-' . $model->test->subject->getTypeLabel();
+                    return $model->test ? $model->test->subject->name_kz . '-' . $model->lang . '-' . $model->test->subject->getTypeLabel() : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id', function ($model) {
                     $subject = \common\models\Subject::findOne(['id' => $model['subject_id']]);
