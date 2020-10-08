@@ -217,9 +217,9 @@ class OlympiadController extends Controller
 
         $data = Yii::$app->request->post();
 
-        if ($data['hash'] !== md5('zohan'.(string)$data['assignmentId'])) {
-            return 'nope bitch!';
-        }
+//        if ($data['hash'] !== md5('zohan'.(string)$data['assignmentId'])) {
+//            return 'nope bitch!';
+//        }
 
         $testAssignment = TestAssignment::findOne(['id' => (int)$data['assignmentId']]);
         if (!$testAssignment) {
