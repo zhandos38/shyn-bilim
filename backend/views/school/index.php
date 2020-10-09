@@ -1,8 +1,10 @@
 <?php
 
+use common\models\City;
 use common\models\School;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -36,7 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'city_id',
                 'value' => function(School $model) {
                     return $model->city->name;
-                }
+                },
+                'filter' => ArrayHelper::map(City::find()->asArray()->all(), 'id', 'name')
             ],
 
             ['class' => 'yii\grid\ActionColumn'],
