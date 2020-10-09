@@ -1,6 +1,6 @@
 <?php
 
-use common\models\City;
+use common\models\School;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use yii\helpers\Html;
@@ -34,8 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'attribute' => 'city_id',
-                'value' => function(City $model) {
-                    return $model->name;
+                'value' => function(School $model) {
+                    return $model->city->name;
                 }
             ],
 
