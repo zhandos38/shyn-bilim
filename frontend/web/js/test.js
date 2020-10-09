@@ -10,7 +10,8 @@ testApp = new Vue({
         correctAnswerCount: 0,
         currentQuestionId: 0,
         showResultActive: false,
-        hash: null
+        hash: null,
+        isSent: false
     },
     methods: {
         getTest() {
@@ -49,7 +50,7 @@ testApp = new Vue({
 
             this.currentQuestionId++;
         },
-        showResults() {
+        async showResults() {
             this.showResultActive = true;
 
             this.questions.forEach(question => {
@@ -58,21 +59,26 @@ testApp = new Vue({
                 }
             });
 
-            console.log(this.hash);
+            let interval = setInterval(async () => {
+                $.post({
+                    url: 'set-result',
+                    data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
+                    success: async (result) => {
+                        console.log(result);
 
-            $.post({
-                url: 'set-result',
-                data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
-                success: (result) => {
-                    console.log(result);
+                        if (parseInt(result) === 1) {
+                            clearInterval(interval);
+                            this.isSent = true;
+                        }
+                    },
+                    error: function () {
+                        console.log('Set result error!');
+                    }
+                });
+            }, 1000);
 
-                    this.timer = '0:00';
-                    clearInterval(this.interval);
-                },
-                error: function () {
-                    console.log('Set result error!');
-                }
-            });
+            this.timer = '0:00';
+            clearInterval(this.interval);
 
             console.log('Correct answers are: ' + this.correctAnswerCount);
         },

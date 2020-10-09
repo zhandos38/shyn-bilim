@@ -387,6 +387,13 @@ color: #9e9e9e;
     max-height: 100%;
 }
 
+.disabled-link{
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
 /* subject list */
 .subject-list__item {
     display: -webkit-box;
