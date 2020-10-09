@@ -148,7 +148,8 @@ class OlympiadController extends Controller
     {
         $test = Test::findOne(['id' => $id]);
         if (!$test || ($test->id === 58 || $test->id === 71)) {
-            throw new Exception('Тест не найден!');
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
+            return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
         }
 
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
