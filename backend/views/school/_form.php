@@ -1,17 +1,19 @@
 <?php
 
+use common\models\City;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
-use kartik\file\FileInput;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Project */
+/* @var $model common\models\School */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="project-form">
+<div class="school-form">
 
     <?php LteBox::begin([
         'type' => LteConst::TYPE_SUCCESS,
@@ -25,12 +27,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*'],
-    ]) ?>
+    <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(City::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+    ]); ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
