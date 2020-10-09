@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             <div v-else>
                 <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
                 <div>
-                    <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>"><?= Yii::t('app', 'Получить сертификат') ?></a>
+                    <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>"><?= Yii::t('app', 'Получить сертификат/диплом') ?></a>
                 </div>
             </div>
         </div>
