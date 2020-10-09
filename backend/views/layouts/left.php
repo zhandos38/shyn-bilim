@@ -27,6 +27,7 @@
                     ['label' => 'Предметы', 'icon' => 'fas fa-book', 'url' => ['subject/index']],
                     ['label' => 'Олимпиады', 'icon' => 'fas fa-book', 'url' => ['test/index']],
                     ['label' => 'Результаты олимпиад', 'icon' => 'fas fa-book', 'url' => ['test-assignment/index']],
+                    ['label' => 'Школы', 'icon' => 'fas fa-book', 'url' => ['school/index']],
                 ],
             ]
         ) ?>
