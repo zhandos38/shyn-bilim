@@ -54,8 +54,8 @@ testApp = new Vue({
             this.showResultActive = true;
 
             this.questions.forEach(question => {
-                if (typeof question['answers'][question['selectedAnswerId']] !== 'undefined' && question['answers'][question['selectedAnswerId']]['isRight']) {
-                    this.correctAnswerCount++;
+                if (typeof question['answers'][question['selectedAnswerId']] !== 'undefined' && parseInt(question['answers'][question['selectedAnswerId']]['isRight'])) {
+                    this.correctAnswerCount = parseInt(this.correctAnswerCount) + 1;
                 }
             });
 
