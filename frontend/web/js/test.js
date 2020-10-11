@@ -61,7 +61,7 @@ testApp = new Vue({
 
             let interval = setInterval(async () => {
                 $.post({
-                    url: 'set-result',
+                    url: '/ru/olympiad/set-result',
                     data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
                     success: async (result) => {
                         console.log(result);
