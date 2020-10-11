@@ -83,7 +83,7 @@ class OlympiadController extends Controller
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
-            if (!$test || ($test->id === 61 || $test->id === 62)) {
+            if (!$test) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
