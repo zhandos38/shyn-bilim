@@ -7,7 +7,7 @@
         <div id="cert-place" style="padding-top: 260px; padding-left: 30px; width: 900px; text-align: center; font-size: 28px; font-weight: bold; color: #e53830;"><?= $place ?> иегері</div>
         <div id="cert-region" style="padding-top: 145px; padding-left: 0; width: 900px; text-align: center; font-size: 14px;">
             <?php
-            if ($testAssignment->school->city_id === 1 && $testAssignment->school->city_id === 2 && $testAssignment->school->city_id === 3) {
+            if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
                 echo $testAssignment->school->city->name;
             } else {
                 echo $testAssignment->school->city->region->name;
