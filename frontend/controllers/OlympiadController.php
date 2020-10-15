@@ -147,7 +147,7 @@ class OlympiadController extends Controller
     public function actionTest($assignment, $id)
     {
         $test = Test::findOne(['id' => $id]);
-        if (!$test) {
+        if (!$test || ($test->id === 62 || $test->id === 75 || $test->id === 58 || $test->id === 71)) {
             throw new Exception('Тест не найден!');
         }
 
