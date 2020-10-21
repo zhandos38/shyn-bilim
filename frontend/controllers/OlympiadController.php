@@ -45,13 +45,15 @@ class OlympiadController extends Controller
 
     public function actionList($type)
     {
-        if ($type == 0) {
+        if ((int)$type === 0) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
             return $this->redirect(['site/index']);
         }
 
-//        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась. Олимпиада "ЕҢ БІЛІМДІ ПЕДАГОГ-2020" пройдет между 05-15 октября'));
-//        return $this->redirect(['site/index']);
+        if ((int)$type === 1) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада закончилась'));
+            return $this->redirect(['site/index']);
+        }
 
         $dataProvider = new ActiveDataProvider([
             'query' => Subject::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC]),
@@ -70,11 +72,14 @@ class OlympiadController extends Controller
 
     public function actionAssignment($subject)
     {
+        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада закончилась'));
+        return $this->redirect(['site/index']);
+
         $model = new TestAssignment();
         $model->subject_id = $subject;
 
         $subject = Subject::findOne(['id' => $model->subject_id]);
-        if (empty($subject)) {
+        if ($subject === null) {
             throw new Exception('Subject is not found');
         }
 
