@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
         'options' => ['accept' => 'document/*'],
     ]) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите предмет']) ?>
+    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
