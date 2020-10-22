@@ -1,8 +1,13 @@
 <?php
 
+use common\models\Subject;
+use insolita\wgadminlte\LteBox;
+use insolita\wgadminlte\LteConst;
+use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\models\Test;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\TestAssignment */
@@ -10,6 +15,14 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="test-assignment-form">
+
+    <?php LteBox::begin([
+        'type' => LteConst::TYPE_SUCCESS,
+        'isSolid' => true,
+        'boxTools' => Html::a('Назад <i class="fas fa-arrow-alt-circle-left"></i>', ['index'], ['class' => 'btn btn-danger btn-xs create_button']),
+        'tooltip' => 'this tooltip description',
+        'title' =>  $this->title
+    ]) ?>
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -21,7 +34,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name')) ?>
+    <?= $form->field($model, 'test_id')->dropDownList(ArrayHelper::map(Test::find()->asArray()->all(), 'id', function ($model) {
+        $subject = Subject::findOne(['id' => $model['subject_id']]);
+        return $subject->name_kz . ' - ' . $model['lang'] . ' - ' . $subject->getTypeLabel();
+    }), ['prompt' => 'Укажите тест']) ?>
+
+    <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+    ]); ?>
+
+    <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+    ]); ?>
+
+    <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
+            return htmlspecialchars_decode($model['name']);
+        }),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+    ]); ?>
 
     <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
 
@@ -35,4 +68,50 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+    <?php LteBox::end() ?>
+
 </div>
+<?php
+$js =<<<JS
+$('#testassignment-region_id').change(function() {
+  $.get({
+    url: '/test-assignment/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#testassignment-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#testassignment-city_id').change(function() {
+  $.get({
+    url: '/test-assignment/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#testassignment-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>

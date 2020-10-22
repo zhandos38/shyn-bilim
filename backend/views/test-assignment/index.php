@@ -7,12 +7,13 @@ use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TestAssignmentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Test Assignments';
+$this->title = 'Участники олимпиады';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="test-assignment-index">
@@ -20,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
         'isSolid' => true,
+        'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button']),
         'tooltip' => 'this tooltip description',
         'title' => $this->title
     ]) ?>

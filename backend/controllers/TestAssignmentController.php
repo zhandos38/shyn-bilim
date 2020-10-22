@@ -2,12 +2,17 @@
 
 namespace backend\controllers;
 
+use common\models\City;
+use common\models\School;
 use Yii;
 use common\models\TestAssignment;
 use backend\models\TestAssignmentSearch;
+use yii\db\Exception;
+use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -65,13 +70,20 @@ class TestAssignmentController extends Controller
      * Creates a new TestAssignment model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+     * @throws Exception
      */
     public function actionCreate()
     {
         $model = new TestAssignment();
+        $model->lang = 'ok';
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->created_at = time();
+            if (!$model->save()) {
+                throw new Exception('Assignment is not saved');
+            }
+
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -106,6 +118,8 @@ class TestAssignmentController extends Controller
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -128,5 +142,25 @@ class TestAssignmentController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionGetCities($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $cities = City::findAll(['region_id' => $id]);
+            return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
+    }
+
+    public function actionGetSchools($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $cities = School::findAll(['city_id' => $id]);
+            return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
     }
 }
