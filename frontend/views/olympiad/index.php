@@ -11,22 +11,14 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
     <h1><?= $this->title ?></h1>
     <div class="row">
         <div class="col-sm-6">
+            <?php foreach ($olympiads as $olympiad): ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?= Yii::t('app', 'Для учеников') ?></h5>
-                    <p class="card-text"><?= Yii::t('app', 'Олимпиады для учеников') ?></p>
-                    <a href="<?= Url::to(['olympiad/list', 'type' => Subject::TYPE_STUDENT]) ?>" class="btn btn-primary"><?= Yii::t('app', 'Перейти') ?></a>
+                    <h5 class="card-title"><?= $olympiad->name ?></h5>
+                    <a href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>" class="btn btn-primary"><?= Yii::t('app', 'Перейти') ?></a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?= Yii::t('app', 'Для преподавателей') ?></h5>
-                    <p class="card-text"><?= Yii::t('app', 'Олимпиады для преподавателей') ?></p>
-                    <a href="<?= Url::to(['olympiad/list', 'type' => Subject::TYPE_TEACHER]) ?>" class="btn btn-primary"><?= Yii::t('app', 'Перейти') ?></a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

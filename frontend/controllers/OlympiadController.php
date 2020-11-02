@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\Answer;
+use common\models\Olympiad;
 use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
@@ -40,23 +41,27 @@ class OlympiadController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $olympiads = Olympiad::findAll(['status' => Olympiad::STATUS_ACTIVE]);
+
+        return $this->render('index', [
+            'olympiads' => $olympiads
+        ]);
     }
 
-    public function actionList($type)
+    public function actionView($id)
     {
-        if ((int)$type === 0) {
+        $olympiad = Olympiad::findOne(['id' => $id]);
+        if ($olympiad === null) {
+            throw new Exception("Olympiad not found");
+        }
+
+        if ($olympiad->status === Olympiad::STATUS_INACTIVE) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
             return $this->redirect(['site/index']);
         }
 
-        if ((int)$type === 1) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада закончилась'));
-            return $this->redirect(['site/index']);
-        }
-
         $dataProvider = new ActiveDataProvider([
-            'query' => Subject::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC]),
+            'query' => Subject::find()->andWhere(['olympiad_id' => $olympiad->id])->orderBy(['order' => SORT_ASC]),
             'sort' => [
                 'defaultOrder' => [
                     'id' => SORT_DESC
@@ -64,9 +69,8 @@ class OlympiadController extends Controller
             ]
         ]);
 
-        return $this->render('list', [
-            'dataProvider' => $dataProvider,
-            'type' => $type
+        return $this->render('view', [
+            'dataProvider' => $dataProvider
         ]);
     }
 

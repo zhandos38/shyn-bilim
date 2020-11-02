@@ -9,6 +9,7 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "test".
  *
  * @property int $id
+ * @property int $olympiad_id
  * @property string|null $name
  * @property int|null $subject_id
  * @property int|null $grade
@@ -36,8 +37,7 @@ class Test extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['subject_id', 'questions_limit', 'time_limit', 'created_at'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['olympiad_id', 'subject_id', 'questions_limit', 'time_limit', 'created_at'], 'integer'],
             ['lang', 'string', 'max' => 2],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
 
@@ -51,7 +51,7 @@ class Test extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('app', 'Название'),
+            'olympiad_id' => Yii::t('app', 'Олимпиада'),
             'subject_id' => Yii::t('app', 'Предмет'),
             'grade' => Yii::t('app', 'Класс'),
             'lang' => Yii::t('app', 'Язык'),
@@ -85,5 +85,10 @@ class Test extends \yii\db\ActiveRecord
     public function getQuestionsTotal()
     {
         return $this->hasMany(Question::className(), ['test_id' => 'id']);
+    }
+
+    public function getOlympiad()
+    {
+        return $this->hasOne(Olympiad::className(), ['id' => 'olympiad_id']);
     }
 }
