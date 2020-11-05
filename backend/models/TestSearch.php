@@ -17,7 +17,7 @@ class TestSearch extends Test
     public function rules()
     {
         return [
-            [['id', 'subject_id', 'grade', 'questions_limit', 'time_limit', 'created_at'], 'integer'],
+            [['id', 'subject_id', 'grade', 'time_limit', 'created_at'], 'integer'],
         ];
     }
 
@@ -58,9 +58,7 @@ class TestSearch extends Test
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'subject_id' => $this->subject_id,
             'grade' => $this->grade,
-            'questions_limit' => $this->questions_limit,
             'time_limit' => $this->time_limit,
             'created_at' => $this->created_at,
         ]);
