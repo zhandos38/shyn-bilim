@@ -34,6 +34,8 @@ class TestSubject extends \yii\db\ActiveRecord
             [['test_id', 'subject_id', 'questions_limit'], 'integer'],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
             [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
+
+            [['subject_id', 'question_limits'], 'required']
         ];
     }
 
@@ -44,9 +46,9 @@ class TestSubject extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'test_id' => 'Test',
-            'subject_id' => 'Subject',
-            'questions_limit' => 'Questions limit',
+            'test_id' => 'Тест',
+            'subject_id' => 'Предмет',
+            'questions_limit' => 'Кол-во вопросов',
         ];
     }
 

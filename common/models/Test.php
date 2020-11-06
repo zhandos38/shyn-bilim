@@ -4,13 +4,13 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "test".
  *
  * @property int $id
  * @property int $olympiad_id
- * @property string|null $name
  * @property int|null $grade
  * @property int|null $created_at
  *
@@ -21,6 +21,10 @@ use yii\behaviors\TimestampBehavior;
  */
 class Test extends \yii\db\ActiveRecord
 {
+    const LANG_KZ = 'KZ';
+    const LANG_RU = 'RU';
+    const LANG_EN = 'EN';
+
     /**
      * {@inheritdoc}
      */
@@ -60,5 +64,19 @@ class Test extends \yii\db\ActiveRecord
     public function getOlympiad()
     {
         return $this->hasOne(Olympiad::className(), ['id' => 'olympiad_id']);
+    }
+
+    public static function getLanguages()
+    {
+        return [
+            self::LANG_KZ => 'KZ',
+            self::LANG_RU => 'RU',
+            self::LANG_EN => 'EN'
+        ];
+    }
+
+    public function getLanguage()
+    {
+        return ArrayHelper::getValue(self::getLanguages(), $this->lang);
     }
 }

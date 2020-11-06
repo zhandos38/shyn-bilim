@@ -29,21 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'options' => [
+            'class' => 'table-responsive'
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'test_id',
-            [
-                'attribute' => 'test_id',
-                'value' => function(TestAssignment $model) {
-                    return $model->test ? $model->test->subject->name_kz . '-' . $model->lang . '-' . $model->test->subject->getTypeLabel() : 'Не указано';
-                },
-                'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id', function ($model) {
-                    $subject = \common\models\Subject::findOne(['id' => $model['subject_id']]);
-                    return $subject->name_kz . '-' . $model['lang'] . '-' . $subject->getTypeLabel();
-                })
-            ],
             'name',
             'surname',
             'patronymic',

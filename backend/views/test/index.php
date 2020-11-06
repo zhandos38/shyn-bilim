@@ -30,16 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            [
-                'attribute' => 'subject_id',
-                'value' => function(Test $model) {
-                    return $model->subject->name_kz;
-                },
-                'filter' => ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_TEACHER])->asArray()->all(), 'id', 'name_kz')
-            ],
             'grade',
-            'questions_limit',
             'time_limit',
             [
                 'attribute' => 'lang',

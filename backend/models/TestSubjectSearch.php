@@ -4,12 +4,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Test;
+use common\models\TestSubject;
 
 /**
- * TestSearch represents the model behind the search form of `common\models\Test`.
+ * TestSubjectSearch represents the model behind the search form of `common\models\TestSubject`.
  */
-class TestSearch extends Test
+class TestSubjectSearch extends TestSubject
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class TestSearch extends Test
     public function rules()
     {
         return [
-            [['id', 'grade', 'time_limit', 'created_at'], 'integer'],
+            [['id', 'test_id', 'subject_id', 'questions_limit'], 'integer'],
         ];
     }
 
@@ -37,9 +37,9 @@ class TestSearch extends Test
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $test)
     {
-        $query = Test::find();
+        $query = TestSubject::find()->andWhere(['test_id' => $test]);
 
         // add conditions that should always apply here
 
@@ -58,12 +58,10 @@ class TestSearch extends Test
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'grade' => $this->grade,
-            'time_limit' => $this->time_limit,
-            'created_at' => $this->created_at,
+            'test_id' => $this->test_id,
+            'subject_id' => $this->subject_id,
+            'questions_limit' => $this->questions_limit,
         ]);
-
-        $query ->andFilterWhere(['like', 'lang', $this->lang]);
 
         return $dataProvider;
     }
