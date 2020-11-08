@@ -2,11 +2,11 @@
 use yii\web\View;
 
 /* @var $this View */
-/* @var $id integer */
+/* @var $test_id integer */
 /* @var $assignment_id integer */
-/* @var $subject_name String */
+/* @var $test_name String */
 
-$this->title = $subject_name;
+$this->title = $test_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
 ?>
     <div id="test">
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
 <?php
 $hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS
-testApp.id = "$id";
+testApp.id = "$test_id";
 testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
 testApp.getTest();

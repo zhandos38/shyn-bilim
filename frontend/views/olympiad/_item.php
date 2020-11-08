@@ -1,7 +1,7 @@
 <?php
-/* @var $model \common\models\Subject */
+/* @var $model \common\models\Test */
 
-?>
-<a class="olympiad-item" href="<?= \yii\helpers\Url::to(['olympiad/assignment', 'subject' => $model->id]) ?>">
-    <span><?= $model->getName() ?></span>
+use yii\helpers\Url; ?>
+<a class="olympiad-item" href="<?= Url::to(['olympiad/assignment', 'test' => $model->id]) ?>">
+    <span><?= $model->name ?></span>
 </a>

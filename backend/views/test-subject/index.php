@@ -1,5 +1,7 @@
 <?php
 
+use insolita\wgadminlte\LteBox;
+use insolita\wgadminlte\LteConst;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -12,13 +14,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="test-subject-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Test Subject', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php LteBox::begin([
+        'type' => LteConst::TYPE_INFO,
+        'isSolid' => true,
+        'tooltip' => 'this tooltip description',
+        'title' => $this->title
+    ]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -35,5 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+    <?php LteBox::end() ?>
 
 </div>

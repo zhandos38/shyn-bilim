@@ -1,37 +1,21 @@
 <?php
 use common\models\Subject;
+use yii\widgets\ListView;
 
 /* @var $this \yii\web\View*/
+/** @var \common\models\Olympiad $olympiad */
 
-$this->title = Yii::t('app', $type ? 'Для преподавателей' : 'Для учеников');
+$this->title = $olympiad->getType();
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['#']];
 ?>
 <div class="olympiad-info">
-    <?php /** @var String $type */
-    if ($type == Subject::TYPE_TEACHER): ?>
-        <img class="olympiad-img" src="/img/ped-olympiad.jpg" alt="">
-        <h1><?= Yii::t('app', 'Уважаемые педагоги') ?></h1>
-        <p>
-            <?= Yii::t('app', 'Приглашаем Вас принять участие в Республиканской предметной олимпиаде <b>«ЕҢ БІЛІМДІ ПЕДАГОГ - 2020»!</b>') ?>
-        </p>
-        <p>
-            <?= Yii::t('app', 'Победители будут награждены НАГРУДНЫМ ЗНАКОМ и ДИПЛОМОМ') ?>
-        </p>
-        <p>
-           <?= Yii::t('app', 'Участникам не занявшие призовые места, будет выдан <b>СЕРТИФИКАТ</b>') ?>
-        </p>
-        <p>
-            <?= Yii::t('app', 'Полностью ознакомьтесь с положением олимпиады') ?>, <a href="/file/<?= Yii::$app->language === 'kz' ? 'ped-rule-kz.docx' : 'ped-rule-ru.doc' ?>"><b><?= Yii::t('app', 'подробнее') ?></b></a>
-        </p>
-    <?php else: ?>
-        <p>
-            <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="/file/Altyn-Urpak.doc"><b>подробнее</b></a>') ?>
-        </p>
-    <?php endif; ?>
+    <p>
+        <?= Yii::t('app', 'Вы можете ознакомиться с правилами проведения олимпиады <a href="{file}"><b>подробнее</b></a>', ['file' => $olympiad->getFile()]) ?>
+    </p>
 </div>
-<?= \yii\widgets\ListView::widget([
+<?= ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '{items}{pager}',
     'itemView' => '_item',

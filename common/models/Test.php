@@ -11,20 +11,15 @@ use yii\helpers\ArrayHelper;
  *
  * @property int $id
  * @property int $olympiad_id
- * @property int|null $grade
+ * @property string $name
  * @property int|null $created_at
  *
  * @property Question $questions
  * @property Subject $subject
  * @property int $time_limit [int(11)]
- * @property string $lang [varchar(2)]
  */
 class Test extends \yii\db\ActiveRecord
 {
-    const LANG_KZ = 'KZ';
-    const LANG_RU = 'RU';
-    const LANG_EN = 'EN';
-
     /**
      * {@inheritdoc}
      */
@@ -40,10 +35,9 @@ class Test extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'time_limit', 'created_at'], 'integer'],
-            ['lang', 'string', 'max' => 2],
-            [['olympiad_id'], 'exist', 'skipOnError' => true, 'targetClass' => Olympiad::className(), 'targetAttribute' => ['olympiad_id' => 'id']],
 
-            ['grade', 'safe']
+            ['name', 'string', 'max' => 255],
+            [['olympiad_id'], 'exist', 'skipOnError' => true, 'targetClass' => Olympiad::className(), 'targetAttribute' => ['olympiad_id' => 'id']],
         ];
     }
 
@@ -53,6 +47,7 @@ class Test extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'name' => Yii::t('app', 'Наименование'),
             'olympiad_id' => Yii::t('app', 'Олимпиада'),
             'grade' => Yii::t('app', 'Класс'),
             'lang' => Yii::t('app', 'Язык'),
@@ -64,19 +59,5 @@ class Test extends \yii\db\ActiveRecord
     public function getOlympiad()
     {
         return $this->hasOne(Olympiad::className(), ['id' => 'olympiad_id']);
-    }
-
-    public static function getLanguages()
-    {
-        return [
-            self::LANG_KZ => 'KZ',
-            self::LANG_RU => 'RU',
-            self::LANG_EN => 'EN'
-        ];
-    }
-
-    public function getLanguage()
-    {
-        return ArrayHelper::getValue(self::getLanguages(), $this->lang);
     }
 }

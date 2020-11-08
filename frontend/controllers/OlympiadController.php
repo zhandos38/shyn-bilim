@@ -10,11 +10,10 @@ use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
+use common\models\TestSubject;
 use kartik\mpdf\Pdf;
-use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
-use yii\helpers\VarDumper;
 use yii\web\HttpException;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -61,7 +60,7 @@ class OlympiadController extends Controller
         }
 
         $dataProvider = new ActiveDataProvider([
-            'query' => Subject::find()->andWhere(['olympiad_id' => $olympiad->id])->orderBy(['order' => SORT_ASC]),
+            'query' => Test::find()->andWhere(['olympiad_id' => $olympiad->id]),
             'sort' => [
                 'defaultOrder' => [
                     'id' => SORT_DESC
@@ -70,25 +69,17 @@ class OlympiadController extends Controller
         ]);
 
         return $this->render('view', [
+            'olympiad' => $olympiad,
             'dataProvider' => $dataProvider
         ]);
     }
 
-    public function actionAssignment($subject)
+    public function actionAssignment($test)
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада закончилась'));
-        return $this->redirect(['site/index']);
+        $test = Test::findOne(['id' => $test]);
 
         $model = new TestAssignment();
-        $model->subject_id = $subject;
-
-        $subject = Subject::findOne(['id' => $model->subject_id]);
-        if ($subject === null) {
-            throw new Exception('Subject is not found');
-        }
-
-//        $model->load(\Yii::$app->request->post());
-//        VarDumper::dump($model, 10, 1); die;
+        $model->test_id = $test;
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
@@ -161,20 +152,20 @@ class OlympiadController extends Controller
         }
 
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
-        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
+        if ($test->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
-            return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
+            return $this->redirect(['olympiad/view', 'id' => $test->id]);
         }
 
-        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
+        if ($test->status === TestAssignment::STATUS_OFF) {
             Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
-            return $this->redirect(['olympiad/list', 'type' => $test->subject->type]);
+            return $this->redirect(['olympiad/view', 'type' => $test->id]);
         }
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
-            'subject_name' => $test->subject->name,
-            'id' => $id
+            'test_id' => $test->id,
+            'test_name' => $test->name
         ]);
     }
 
@@ -186,17 +177,17 @@ class OlympiadController extends Controller
     {
         if (Yii::$app->request->isAjax) {
             Yii::$app->response->format = Response::FORMAT_JSON;
-            $test = Test::find()->where(['id' => $id])->one();
+            $testSubject = TestSubject::find()->where(['id' => $id])->one();
 
             $data = [
-                'id' => $test->id,
+                'id' => $testSubject->id,
                 'questions' => [],
-                'timeLimit' => $test->time_limit
+                'timeLimit' => $testSubject->test->time_limit
             ];
 
             /** @var Question $question */
             /** @var Answer $answer */
-            foreach ($test->questions as $question) {
+            foreach ($testSubject->questions as $question) {
                 $answers = [];
                 foreach ($question->answers as $answer) {
                     $answers[] = [

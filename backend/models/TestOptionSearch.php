@@ -4,12 +4,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Test;
+use common\models\TestOption;
 
 /**
- * TestSearch represents the model behind the search form of `common\models\Test`.
+ * TestOptionSearch represents the model behind the search form of `common\models\TestOption`.
  */
-class TestSearch extends Test
+class TestOptionSearch extends TestOption
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,8 @@ class TestSearch extends Test
     public function rules()
     {
         return [
-            [['id', 'time_limit', 'created_at'], 'integer'],
+            [['id', 'test_id', 'grade'], 'integer'],
+            [['lang'], 'safe'],
         ];
     }
 
@@ -39,7 +40,7 @@ class TestSearch extends Test
      */
     public function search($params, $id)
     {
-        $query = Test::find()->andWhere(['olympiad_id' => $id]);
+        $query = TestOption::find()->andWhere(['test_id' => $id]);
 
         // add conditions that should always apply here
 
@@ -58,8 +59,11 @@ class TestSearch extends Test
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'time_limit' => $this->time_limit
+            'test_id' => $this->test_id,
+            'grade' => $this->grade,
         ]);
+
+        $query->andFilterWhere(['like', 'lang', $this->lang]);
 
         return $dataProvider;
     }

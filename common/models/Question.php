@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "question".
  *
  * @property int $id
- * @property int|null $test_id
+ * @property int|null $test_subject_id
  * @property string|null $text
  * @property int|null $created_at
  *

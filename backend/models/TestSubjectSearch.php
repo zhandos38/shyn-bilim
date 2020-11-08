@@ -17,7 +17,7 @@ class TestSubjectSearch extends TestSubject
     public function rules()
     {
         return [
-            [['id', 'test_id', 'subject_id', 'questions_limit'], 'integer'],
+            [['id', 'test_option_id', 'subject_id', 'questions_limit'], 'integer'],
         ];
     }
 
@@ -37,9 +37,9 @@ class TestSubjectSearch extends TestSubject
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $test)
+    public function search($params, $testOption)
     {
-        $query = TestSubject::find()->andWhere(['test_id' => $test]);
+        $query = TestSubject::find()->andWhere(['test_option_id' => $testOption]);
 
         // add conditions that should always apply here
 
@@ -58,7 +58,7 @@ class TestSubjectSearch extends TestSubject
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'test_id' => $this->test_id,
+            'test_option_id' => $this->test_option_id,
             'subject_id' => $this->subject_id,
             'questions_limit' => $this->questions_limit,
         ]);

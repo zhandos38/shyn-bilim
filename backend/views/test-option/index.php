@@ -2,17 +2,17 @@
 
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\Html;
 use yii\grid\GridView;
-use common\models\Test;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\TestSearch */
+/* @var $searchModel backend\models\TestOptionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tests';
+$this->title = 'Варианты тестов';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="test-index">
+<div class="test-option-index">
 
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
@@ -27,13 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'name',
-            'time_limit',
+            'id',
+            'test_id',
+            'grade',
+            'lang',
 
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}'
-            ],
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

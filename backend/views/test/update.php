@@ -22,14 +22,14 @@ $this->params['breadcrumbs'][] = 'Обновить';
     ]) ?>
 
 </div>
-<div class="test-subject">
+<div class="test-option-index">
 
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
         'isSolid' => true,
-        'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['test-subject/create', 'id' => $model->id], ['class' => 'btn btn-success btn-xs create_button']),
+        'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['test-option/create', 'id' => $model->id], ['class' => 'btn btn-success btn-xs create_button']),
         'tooltip' => 'this tooltip description',
-        'title' => $this->title
+        'title' => 'Список опции'
     ]) ?>
 
     <?= GridView::widget([
@@ -38,19 +38,20 @@ $this->params['breadcrumbs'][] = 'Обновить';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            [
-                'attribute' => 'subject_id',
-                'value' => function(TestSubject $model) {
-                    return $model->subject->name_kz;
-                },
-                'filter' => false
-            ],
-            'questions_limit',
+            'grade',
+            'lang',
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{update} {delete}'
+                'template' => '{update} {delete}',
+                'buttons' => [
+                    'update' => function($url, $model) {
+                        return Html::a('<fa class="fa fa-pencil"></fa>', ['test-option/update', 'id' => $model->id], ['class' => 'btn btn-info']);
+                    },
+                    'delete' => function($url, $model) {
+                        return Html::a('<fa class="fa fa-trash"></fa>', ['test-option/delete', 'id' => $model->id], ['class' => 'btn btn-danger']);
+                    }
+                ]
             ],
         ],
     ]); ?>

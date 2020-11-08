@@ -9,16 +9,18 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
 ?>
 <div class="olympiad-index" style="padding-bottom: 80px">
     <h1><?= $this->title ?></h1>
-    <div class="row">
-        <div class="col-sm-6">
-            <?php foreach ($olympiads as $olympiad): ?>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $olympiad->name ?></h5>
-                    <a href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>" class="btn btn-primary"><?= Yii::t('app', 'Перейти') ?></a>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
+    <ul class="card-list">
+        <?php /** @var \common\models\Olympiad $olympiad */
+        foreach ($olympiads as $olympiad): ?>
+            <li class="card">
+                <a class="card-image" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>" style="background-image: url(<?= htmlspecialchars($olympiad->getImage()) ?>);" data-image-full="<?= $olympiad->getImage() ?>">
+                    <img src="<?= $olympiad->getImage() ?>" alt="Olympiad" />
+                </a>
+                <a class="card-description" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>">
+                    <h6><?= $olympiad->name ?></h6>
+                    <p><?= $olympiad->getType() ?></p>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </div>

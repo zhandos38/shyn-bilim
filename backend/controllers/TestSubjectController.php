@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\forms\ImportForm;
 use Yii;
 use common\models\TestSubject;
 use backend\models\TestSubjectSearch;
@@ -65,10 +66,10 @@ class TestSubjectController extends Controller
     public function actionCreate($id)
     {
         $model = new TestSubject();
-        $model->test_id = $id;
+        $model->test_option_id = $id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['test/update', 'id' => $model->test_id]);
+            return $this->redirect(['test-option/update', 'id' => $model->test_option_id]);
         }
 
         return $this->render('create', [
@@ -82,17 +83,26 @@ class TestSubjectController extends Controller
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \yii\db\Exception
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['test/update', 'id' => $model->test_id]);
+            return $this->redirect(['test-option/update', 'id' => $model->test_option_id]);
+        }
+
+        $importForm = new ImportForm();
+        $importForm->test_subject = $id;
+
+        if ($importForm->load(Yii::$app->request->post()) && $importForm->importTest()) {
+            return $this->redirect(['test-option/update', 'id' => $model->test_option_id]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'importForm' => $importForm
         ]);
     }
 

@@ -17,14 +17,14 @@ use yii\widgets\ActiveForm;
     <?php LteBox::begin([
         'type' => LteConst::TYPE_SUCCESS,
         'isSolid' => true,
-        'boxTools' => Html::a('Назад <i class="fas fa-arrow-alt-circle-left"></i>', ['test/update', 'id' => $model->test_id], ['class' => 'btn btn-danger btn-xs create_button']),
+        'boxTools' => Html::a('Назад <i class="fas fa-arrow-alt-circle-left"></i>', ['test-option/update', 'id' => $model->test_option_id], ['class' => 'btn btn-danger btn-xs create_button']),
         'tooltip' => 'this tooltip description',
         'title' => $this->title
     ]) ?>
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'test_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'test_option_id')->hiddenInput()->label(false) ?>
 
     <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->asArray()->all(), 'id', 'name_kz'), ['prompt' => 'Выбрать предмет']) ?>
 

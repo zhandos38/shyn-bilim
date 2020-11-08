@@ -2,19 +2,18 @@
 
 namespace backend\controllers;
 
-use backend\models\TestSearch;
+use backend\models\TestSubjectSearch;
 use Yii;
-use common\models\Olympiad;
-use backend\models\OlympiadSearch;
+use common\models\TestOption;
+use backend\models\TestOptionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
- * OlympiadController implements the CRUD actions for Olympiad model.
+ * TestOptionController implements the CRUD actions for TestOption model.
  */
-class OlympiadController extends Controller
+class TestOptionController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +31,12 @@ class OlympiadController extends Controller
     }
 
     /**
-     * Lists all Olympiad models.
+     * Lists all TestOption models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OlympiadSearch();
+        $searchModel = new TestOptionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +46,7 @@ class OlympiadController extends Controller
     }
 
     /**
-     * Displays a single Olympiad model.
+     * Displays a single TestOption model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,29 +59,17 @@ class OlympiadController extends Controller
     }
 
     /**
-     * Creates a new Olympiad model.
+     * Creates a new TestOption model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
-        $model = new Olympiad();
+        $model = new TestOption();
+        $model->test_id = $id;
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
-
-            if ($model->imageFile) {
-                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-            }
-
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
-            }
-
-            if ($model->save() && $model->upload()) {
-                return $this->redirect(['index']);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['test/update', 'id' => $model->test_id]);
         }
 
         return $this->render('create', [
@@ -91,7 +78,7 @@ class OlympiadController extends Controller
     }
 
     /**
-     * Updates an existing Olympiad model.
+     * Updates an existing TestOption model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -101,35 +88,22 @@ class OlympiadController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
-
-            if ($model->imageFile) {
-                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
-            }
-
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
-            }
-
-            if ($model->save() && $model->upload()) {
-                return $this->redirect(['index']);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['test/update', 'id' => $model->test_id]);
         }
 
-        $searchModel = new TestSearch();
+        $searchModel = new TestSubjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $model->id);
 
         return $this->render('update', [
             'model' => $model,
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider
         ]);
     }
 
     /**
-     * Deletes an existing Olympiad model.
+     * Deletes an existing TestOption model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -145,15 +119,15 @@ class OlympiadController extends Controller
     }
 
     /**
-     * Finds the Olympiad model based on its primary key value.
+     * Finds the TestOption model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Olympiad the loaded model
+     * @return TestOption the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Olympiad::findOne($id)) !== null) {
+        if (($model = TestOption::findOne($id)) !== null) {
             return $model;
         }
 

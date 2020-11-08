@@ -1,6 +1,8 @@
 <?php
 
+use kartik\file\FileInput;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\TestSubject */
@@ -16,4 +18,19 @@ $this->params['breadcrumbs'][] = 'Update';
         'model' => $model,
     ]) ?>
 
+</div>
+<div class="question-index">
+
+    <?php $form = ActiveForm::begin() ?>
+
+    <?= $form->field($importForm, 'tempFile')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'document/*'],
+    ]) ?>
+
+    <?= Html::a('<fa class="fa fa-trash"></fa> Очистить', ['test-subject/clear-questions', 'id' => $model->id], ['class' => 'btn btn-danger']) ?>
+
+    <?= Html::a('<fa class="fa fa-download"></fa> Загрузить тест', ['test-subject/update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+
+    <?php ActiveForm::end() ?>
+    
 </div>

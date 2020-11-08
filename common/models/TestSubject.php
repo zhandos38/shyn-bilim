@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "test_subject".
  *
  * @property int $id
- * @property int|null $test_id
+ * @property int|null $test_option_id
  * @property int|null $subject_id
  * @property int|null $questions_limit
  *
@@ -31,11 +31,11 @@ class TestSubject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['test_id', 'subject_id', 'questions_limit'], 'integer'],
+            [['test_option_id', 'subject_id', 'questions_limit'], 'integer'],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
-            [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
+            [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 
-            [['subject_id', 'question_limits'], 'required']
+            [['subject_id', 'questions_limit'], 'required']
         ];
     }
 
@@ -46,7 +46,7 @@ class TestSubject extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'test_id' => 'Тест',
+            'test_option_id' => 'Опция теста',
             'subject_id' => 'Предмет',
             'questions_limit' => 'Кол-во вопросов',
         ];
@@ -79,12 +79,12 @@ class TestSubject extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Test]].
+     * Gets query for [[TestOption]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTest()
+    public function getTestOption()
     {
-        return $this->hasOne(Test::className(), ['id' => 'test_id']);
+        return $this->hasOne(TestOption::className(), ['id' => 'test_option_id']);
     }
 }
