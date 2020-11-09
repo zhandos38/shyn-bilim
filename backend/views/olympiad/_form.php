@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Olympiad;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use kartik\file\FileInput;
@@ -34,6 +35,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
     ]) ?>
+
+    <?= $form->field($model, 'status')->dropDownList(Olympiad::getStatuses(), ['prompt' => 'Укажите статус']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
