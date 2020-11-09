@@ -42,7 +42,7 @@ class OlympiadController extends Controller
 
     public function actionIndex()
     {
-        $olympiads = Olympiad::findAll(['status' => Olympiad::STATUS_ACTIVE]);
+        $olympiads = Olympiad::find()->all();
 
         return $this->render('index', [
             'olympiads' => $olympiads
