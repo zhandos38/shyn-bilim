@@ -36,6 +36,8 @@ use yii\widgets\ActiveForm;
         'options' => ['accept' => 'image/*'],
     ]) ?>
 
+    <?= $form->field($model, 'type')->dropDownList(Olympiad::getTypes(), ['prompt' => 'Укажите тип']) ?>
+
     <?= $form->field($model, 'status')->dropDownList(Olympiad::getStatuses(), ['prompt' => 'Укажите статус']) ?>
 
     <div class="form-group">
