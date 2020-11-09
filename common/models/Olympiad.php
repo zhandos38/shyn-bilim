@@ -45,7 +45,7 @@ class Olympiad extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'img', 'file'], 'string', 'max' => 255],
-            ['type', 'boolean'],
+            [['type', 'status'], 'boolean'],
             ['price', 'number'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
