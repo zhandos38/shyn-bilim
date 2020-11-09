@@ -2,7 +2,7 @@
 use yii\web\View;
 
 /* @var $this View */
-/* @var $test_id integer */
+/* @var $test_option_id integer */
 /* @var $assignment_id integer */
 /* @var $test_name String */
 
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
 <?php
 $hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS
-testApp.id = "$test_id";
+testApp.id = "$test_option_id";
 testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
 testApp.getTest();

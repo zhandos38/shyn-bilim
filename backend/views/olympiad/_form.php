@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'price')->textInput() ?>
+
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>

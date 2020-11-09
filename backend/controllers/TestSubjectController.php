@@ -3,12 +3,15 @@
 namespace backend\controllers;
 
 use backend\forms\ImportForm;
+use common\models\Question;
 use Yii;
 use common\models\TestSubject;
 use backend\models\TestSubjectSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * TestSubjectController implements the CRUD actions for TestSubject model.
@@ -94,16 +97,42 @@ class TestSubjectController extends Controller
         }
 
         $importForm = new ImportForm();
-        $importForm->test_subject = $id;
-
-        if ($importForm->load(Yii::$app->request->post()) && $importForm->importTest()) {
-            return $this->redirect(['test-option/update', 'id' => $model->test_option_id]);
-        }
 
         return $this->render('update', [
             'model' => $model,
             'importForm' => $importForm
         ]);
+    }
+
+    public function actionImportTest()
+    {
+        $importForm = new ImportForm();
+
+        $importForm->test_subject = (int)$id;
+        if ($importForm->load(Yii::$app->request->post())) {
+            $importForm->tempFile = UploadedFile::getInstance($importForm, 'tempFile');
+            if ($importForm->tempFile) {
+                $importForm->document = $importForm->tempFile->baseName . '.' . $importForm->tempFile->extension;
+            }
+
+            $importForm->upload();
+
+            $importForm->importTest();
+
+            return $this->redirect(['test-subject/update', 'id' => $importForm->test_subject]);
+        }
+
+        return $this->redirect(['test-subject/update', 'id' => $importForm->test_subject]);
+    }
+
+    public function actionClearQuestions($id)
+    {
+        $questions = Question::findAll(['test_subject_id' => $id]);
+        foreach ($questions as $question) {
+            $question->delete();
+        }
+
+        return $this->redirect(['test-subject/update', 'id' => $id]);
     }
 
     /**

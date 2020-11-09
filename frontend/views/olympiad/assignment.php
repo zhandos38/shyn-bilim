@@ -6,17 +6,16 @@ use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
 /* @var $this \yii\web\View */
 /* @var $model \common\models\TestAssignment */
-/* @var $subject \common\models\Subject */
+/* @var $test \common\models\Test */
 
 $this->title = Yii::t('app', 'Регистрация');
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', $subject->type ? 'Для преподавателей' : 'Для учеников'), 'url' => ['olympiad/list', 'type' => $subject->type]];
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/assignment', 'subject' => $subject->id]];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/assignment', 'test' => $test->id]];
 ?>
-<h1><?= $subject->name ?></h1>
+<h1><?= $test->name ?></h1>
 <p>
-    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $subject->type === 1 ? 2000 : 500]) ?>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $test->olympiad->price]) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
         Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
     <?php else: ?>
@@ -53,7 +52,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
         ]); ?>
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
-        <?php if ($subject->type === \common\models\Subject::TYPE_STUDENT): ?>
+        <?php if ($test->olympiad->type === \common\models\Olympiad::TYPE_STUDENT): ?>
 
             <?= $form->field($model, 'grade')->dropDownList([
                 1 => '1',

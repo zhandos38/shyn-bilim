@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "test_assignment".
  *
  * @property int $id
- * @property int|null $test_id
+ * @property int|null $test_option_id
  * @property string $name
  * @property string $surname
  * @property string $iin
@@ -49,11 +49,11 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['test_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
+            [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
             [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 12],
-            [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
+            [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 
             ['iin', 'match', 'pattern' => '/^\d{12}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять 12 цифр')],
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
@@ -70,7 +70,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'test_id' => 'Тест',
+            'test_option_id' => 'Тест',
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
@@ -91,9 +91,9 @@ class TestAssignment extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTest()
+    public function getTestOption()
     {
-        return $this->hasOne(Test::className(), ['id' => 'test_id']);
+        return $this->hasOne(TestOption::className(), ['id' => 'test_option_id']);
     }
 
     /**

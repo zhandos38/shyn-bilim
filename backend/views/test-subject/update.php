@@ -21,7 +21,12 @@ $this->params['breadcrumbs'][] = 'Update';
 </div>
 <div class="question-index">
 
-    <?php $form = ActiveForm::begin() ?>
+    <?php $form = ActiveForm::begin([
+        'action' => ['test-subject/import-test'],
+        'method' => 'POST'
+    ]) ?>
+
+    <?= $form->field($importForm, 'test_subject')->hiddenInput(['value' => $model->id])->label(false) ?>
 
     <?= $form->field($importForm, 'tempFile')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
@@ -29,8 +34,23 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= Html::a('<fa class="fa fa-trash"></fa> Очистить', ['test-subject/clear-questions', 'id' => $model->id], ['class' => 'btn btn-danger']) ?>
 
-    <?= Html::a('<fa class="fa fa-download"></fa> Загрузить тест', ['test-subject/update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+    <?= Html::submitButton('<fa class="fa fa-download"></fa> Загрузить тест', ['class' => 'btn btn-success'] ) ?>
 
     <?php ActiveForm::end() ?>
     
 </div>
+<div>
+    <?php
+    $counter = 1;
+    foreach ($model->questionsTotal as $question): ?>
+        <div>
+            <p><?= $counter++ ?>) <?= $question->id ?>: <?= $question->text ?></p>
+            <ul>
+                <?php foreach ($question->answers as $answer): ?>
+                    <li class="<?= $answer->is_right ? 'text-danger' : '' ?>"><?= $answer->id ?>: <?= $answer->text ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endforeach; ?>
+</div>
+

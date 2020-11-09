@@ -13,6 +13,7 @@ use yii\imagine\Image;
  * @property boolean $status
  * @property string|null $name
  * @property boolean|null $type
+ * @property float|null $price
  * @property string|null $img
  * @property string|null $file
  *
@@ -45,6 +46,7 @@ class Olympiad extends \yii\db\ActiveRecord
         return [
             [['name', 'img', 'file'], 'string', 'max' => 255],
             ['type', 'boolean'],
+            ['price', 'number'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
@@ -64,7 +66,8 @@ class Olympiad extends \yii\db\ActiveRecord
             'fileTemp' => 'Файл',
             'type' => 'Тип',
             'imageFile' => 'Рисунок',
-            'status' => 'Статус'
+            'status' => 'Статус',
+            'price' => 'Цена'
         ];
     }
 

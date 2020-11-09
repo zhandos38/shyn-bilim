@@ -10,10 +10,12 @@ use common\models\Question;
 use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
+use common\models\TestOption;
 use common\models\TestSubject;
 use kartik\mpdf\Pdf;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
+use yii\helpers\VarDumper;
 use yii\web\HttpException;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -74,53 +76,54 @@ class OlympiadController extends Controller
         ]);
     }
 
-    public function actionAssignment($test)
+    public function actionAssignment($id)
     {
-        $test = Test::findOne(['id' => $test]);
+        $test = Test::findOne(['id' => $id]);
 
         $model = new TestAssignment();
-        $model->test_id = $test;
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            $test = Test::findOne(['subject_id' => $model->subject_id, 'grade' => $model->grade, 'lang' => $model->lang]);
-            if (!$test) {
+            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => $model->lang]);
+            if (!$testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
                     'model' => $model,
-                    'subject' => $subject
+                    'test' => $test
                 ]);
             }
 
-            $model->test_id = $test->id;
+            $model->status = TestAssignment::STATUS_ACTIVE;
+            $model->test_option_id = $testOption->id;
             $model->created_at = time();
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
             }
 
-            $salt = $this->getSalt(8);
-            $request = [
-                'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => 2000,
-                'pg_salt' => $salt,
-                'pg_order_id' => $model->id,
-                'pg_description' => 'Оплата за участие в олимпиаде',
-                'pg_success_url' => Url::base('https') . '/olympiad/success',
-                'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-                'pg_result_url_method' => 'POST',
-            ];
+            return $this->redirect(['test', 'assignment' => $model->id]);
 
-            $request = $this->getSignByData($request, 'payment.php', $salt);
-
-            $query = http_build_query($request);
-
-            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-//            return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
+//            $salt = $this->getSalt(8);
+//            $request = [
+//                'pg_merchant_id' => Yii::$app->params['payboxId'],
+//                'pg_amount' => 2000,
+//                'pg_salt' => $salt,
+//                'pg_order_id' => $model->id,
+//                'pg_description' => 'Оплата за участие в олимпиаде',
+//                'pg_success_url' => Url::base('https') . '/olympiad/success',
+//                'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+//                'pg_result_url_method' => 'POST',
+//            ];
+//
+//            $request = $this->getSignByData($request, 'payment.php', $salt);
+//
+//            $query = http_build_query($request);
+//
+//            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
         }
 
         return $this->render('assignment', [
             'model' => $model,
-            'subject' => $subject
+            'test' => $test
         ]);
     }
 
@@ -144,67 +147,74 @@ class OlympiadController extends Controller
         return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
     }
 
-    public function actionTest($assignment, $id)
+    public function actionTest($assignment)
     {
-        $test = Test::findOne(['id' => $id]);
-        if (!$test) {
-            throw new Exception('Тест не найден!');
-        }
-
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
-        if ($test->status === TestAssignment::STATUS_FINISHED) {
+
+        $testOption = $testAssignment->testOption;
+
+        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
             return $this->redirect(['olympiad/view', 'id' => $test->id]);
         }
 
-        if ($test->status === TestAssignment::STATUS_OFF) {
+        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
             Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
             return $this->redirect(['olympiad/view', 'type' => $test->id]);
         }
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
-            'test_id' => $test->id,
-            'test_name' => $test->name
+            'test_option_id' => $testOption->id,
+            'test_name' => $testOption->test->name
         ]);
     }
 
     /**
      * @param $id
      * @return array
+     * @throws Exception
      */
     public function actionGetTest($id)
     {
         if (Yii::$app->request->isAjax) {
+            $testOption = TestOption::findOne(['id' => $id]);
+            if ($testOption === null) {
+                throw new Exception('Test option is not found');
+            }
+
             Yii::$app->response->format = Response::FORMAT_JSON;
-            $testSubject = TestSubject::find()->where(['id' => $id])->one();
+            $testSubjects = TestSubject::find()->where(['test_option_id' => $id])->all();
 
             $data = [
-                'id' => $testSubject->id,
+                'id' => $testOption->id,
                 'questions' => [],
-                'timeLimit' => $testSubject->test->time_limit
+                'timeLimit' => $testOption->test->time_limit
             ];
 
-            /** @var Question $question */
-            /** @var Answer $answer */
-            foreach ($testSubject->questions as $question) {
-                $answers = [];
-                foreach ($question->answers as $answer) {
-                    $answers[] = [
-                        'id' => $answer->id,
-                        'text' => $answer->text,
-                        'isRight' => $answer->is_right
+            foreach ($testSubjects as $testSubject) {
+                /** @var Question $question */
+                /** @var Answer $answer */
+                foreach ($testSubject->questions as $question) {
+                    $answers = [];
+                    foreach ($question->answers as $answer) {
+                        $answers[] = [
+                            'id' => $answer->id,
+                            'text' => $answer->text,
+                            'isRight' => $answer->is_right
+                        ];
+                    }
+
+                    shuffle($answers);
+                    $data['questions'][] = [
+                        'id' => $question->id,
+                        'text' => $question->text,
+                        'selectedAnswerId' => null,
+                        'answers' => $answers
                     ];
                 }
-
-                shuffle($answers);
-                $data['questions'][] = [
-                    'id' => $question->id,
-                    'text' => $question->text,
-                    'selectedAnswerId' => null,
-                    'answers' => $answers
-                ];
             }
+
             return $data;
         }
     }
@@ -217,9 +227,9 @@ class OlympiadController extends Controller
 
         $data = Yii::$app->request->post();
 
-//        if ($data['hash'] !== md5('zohan'.(string)$data['assignmentId'])) {
-//            return 'nope bitch!';
-//        }
+        if ($data['hash'] !== md5('zohan'.(string)$data['assignmentId'])) {
+            return 'nope bitch!';
+        }
 
         $testAssignment = TestAssignment::findOne(['id' => (int)$data['assignmentId']]);
         if (!$testAssignment) {

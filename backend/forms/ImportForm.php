@@ -14,6 +14,7 @@ use yii\base\Model;
 use yii\db\Exception;
 use yii\helpers\Json;
 use yii\helpers\VarDumper;
+use yii\imagine\Image;
 
 class ImportForm extends Model
 {
@@ -27,7 +28,7 @@ class ImportForm extends Model
             ['document', 'safe'],
             ['test_subject', 'integer'],
 
-            [['tempFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
+            [['tempFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'xml'],
         ];
     }
 
@@ -35,7 +36,7 @@ class ImportForm extends Model
     {
         $transaction = Yii::$app->db->beginTransaction();
         try {
-            $testSubject = TestSubject::findOne(['id' => $test_subject]);
+            $testSubject = TestSubject::findOne(['id' => $this->test_subject]);
             if ($testSubject === null) {
                 throw new Exception('Test subject is not found');
             }
@@ -46,7 +47,7 @@ class ImportForm extends Model
                 mkdir($subjectFolderPath, 0777, true);
             }
 
-            $xml = simplexml_load_string(file_get_contents(Yii::getAlias('@static') . '/' . $this->tempFile));
+            $xml = simplexml_load_string(file_get_contents(Yii::getAlias('@static') . '/olympiad/' . $this->tempFile));
             $json = json_encode($xml);
             $array = json_decode($json, true);
 
@@ -127,5 +128,26 @@ class ImportForm extends Model
         $bin = base64_decode($file);
 
         return file_put_contents($imgFile, $bin);
+    }
+
+    public function upload()
+    {
+        if ($this->tempFile === null) {
+            return true;
+        }
+
+        $folderPath = Yii::getAlias('@static') . '/olympiad';
+
+        if (!file_exists($folderPath) && !mkdir($folderPath, 0777, true) && !is_dir($folderPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
+        }
+
+        $filePath = $folderPath . '/' . $this->tempFile->baseName . '.' . $this->tempFile->extension;
+
+        if ($this->tempFile) {
+            return $this->tempFile->saveAs($filePath);
+        }
+
+        return false;
     }
 }
