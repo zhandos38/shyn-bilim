@@ -54,8 +54,14 @@ class OlympiadController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        if ($model->status === Olympiad::STATUS_INACTIVE) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада не проводится'));
+            return $this->redirect(['olympiad/index']);
+        }
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
