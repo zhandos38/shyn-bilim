@@ -108,7 +108,6 @@ class TestSubjectController extends Controller
     {
         $importForm = new ImportForm();
 
-        $importForm->test_subject = (int)$id;
         if ($importForm->load(Yii::$app->request->post())) {
             $importForm->tempFile = UploadedFile::getInstance($importForm, 'tempFile');
             if ($importForm->tempFile) {
