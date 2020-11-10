@@ -102,6 +102,16 @@ class OlympiadController extends Controller
             }
 
             $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+
+            $testAssignment = TestAssignment::findOne(['iin' => $model->iin]);
+            if ($testAssignment !== null) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'test' => $test
+                ]);
+            }
+
             if ($whiteList === null) {
                 $salt = $this->getSalt(8);
                 $request = [
@@ -121,6 +131,8 @@ class OlympiadController extends Controller
 
                 return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
+
+
 
             return $this->redirect(['test', 'assignment' => $model->id]);
         }
@@ -148,7 +160,7 @@ class OlympiadController extends Controller
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
-        return $this->redirect(['test', 'assignment' => $model->id, 'id' => $model->test->id]);
+        return $this->redirect(['test', 'assignment' => $model->id]);
     }
 
     public function actionTest($assignment)
