@@ -2,12 +2,12 @@
 
 use common\models\School;
 use common\models\TestAssignment;
-use common\models\Test;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\helpers\Html;
+use common\models\Test;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TestAssignmentSearch */
@@ -36,7 +36,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'test_id',
+            [
+                'attribute' => 'test_id',
+                'value' => function(TestAssignment $model) {
+                    return $model->testOption->test->name;
+                },
+                'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id','name')
+            ],
             'name',
             'surname',
             'patronymic',

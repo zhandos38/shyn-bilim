@@ -11,6 +11,7 @@ use common\models\TestAssignment;
  */
 class TestAssignmentSearch extends TestAssignment
 {
+    public $test_id;
     public $city_id;
     public $region_id;
 
@@ -44,6 +45,8 @@ class TestAssignmentSearch extends TestAssignment
     public function search($params)
     {
         $query = TestAssignment::find()
+                ->alias('t1')
+                ->leftJoin('test_option as t4', 't1.test_option_id = t4.id')
                 ->joinWith('school as t2')
                 ->leftJoin('city as t3', 't2.city_id = t3.id');
 
@@ -69,7 +72,7 @@ class TestAssignmentSearch extends TestAssignment
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'test_id' => $this->test_id,
+            't4.test_id' => $this->test_id,
             'school_id' => $this->school_id,
             'grade' => $this->grade,
             'point' => $this->point,
