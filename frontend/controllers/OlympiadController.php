@@ -104,7 +104,7 @@ class OlympiadController extends Controller
             $whiteList = WhiteList::findOne(['iin' => $model->iin]);
 
             $testAssignment = TestAssignment::findOne(['iin' => $model->iin]);
-            if ($testAssignment !== null) {
+            if ($testAssignment !== null && $testAssignment->status === TestAssignment::STATUS_FINISHED) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
                     'model' => $model,
@@ -131,8 +131,6 @@ class OlympiadController extends Controller
 
                 return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
-
-
 
             return $this->redirect(['test', 'assignment' => $model->id]);
         }
