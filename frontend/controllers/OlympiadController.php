@@ -12,6 +12,7 @@ use common\models\Test;
 use common\models\TestAssignment;
 use common\models\TestOption;
 use common\models\TestSubject;
+use common\models\WhiteList;
 use kartik\mpdf\Pdf;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
@@ -100,25 +101,28 @@ class OlympiadController extends Controller
                 throw new Exception('Assignment is not saved');
             }
 
-            return $this->redirect(['test', 'assignment' => $model->id]);
+            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+            if ($whiteList === null) {
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 2000,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_description' => 'Оплата за участие в олимпиаде',
+                    'pg_success_url' => Url::base('https') . '/olympiad/success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
 
-//            $salt = $this->getSalt(8);
-//            $request = [
-//                'pg_merchant_id' => Yii::$app->params['payboxId'],
-//                'pg_amount' => 2000,
-//                'pg_salt' => $salt,
-//                'pg_order_id' => $model->id,
-//                'pg_description' => 'Оплата за участие в олимпиаде',
-//                'pg_success_url' => Url::base('https') . '/olympiad/success',
-//                'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-//                'pg_result_url_method' => 'POST',
-//            ];
-//
-//            $request = $this->getSignByData($request, 'payment.php', $salt);
-//
-//            $query = http_build_query($request);
-//
-//            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
+
+            return $this->redirect(['test', 'assignment' => $model->id]);
         }
 
         return $this->render('assignment', [
