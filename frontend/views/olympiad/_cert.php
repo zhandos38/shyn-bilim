@@ -8,9 +8,9 @@
         <div id="cert-city" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 10px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->school->city->name ?></div>
         <div id="cert-school" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 50px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->school->name ?></div>
 <!--        <div id="cert-subject" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 10px; width: 900px; text-align: center; font-weight: 200">--><?//= $testAssignment->test->subject->name_kz ?><!--</div>-->
-        <div id="footer" style="padding-top: 422px; padding-left: 420px; font-size: 16px; color: #454545; font-family: 'Times New Roman'">
+        <div id="footer" style="padding-top: 417px; padding-left: 420px; font-size: 16px; color: #454545; font-family: 'Times New Roman'">
             <div id="cert-number"><?= $testAssignment->id ?></div>
-            <div id="cert-date"><?= date('d.m.Y') ?></div>
+            <div id="cert-date" style="padding-top: 6px"><?= date('d.m.Y') ?></div>
         </div>
     </div>
 </div>

@@ -18,7 +18,7 @@ use yii\helpers\ArrayHelper;
  * @property int $status
  * @property int|null $created_at
  *
- * @property Test $test
+ * @property TestOption $test_option
  * @property TestAssignment $school
  * @property int $point [int(11)]
  * @property int $finished_at [int(11)]
@@ -87,7 +87,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Test]].
+     * Gets query for [[TestOption]].
      *
      * @return \yii\db\ActiveQuery
      */

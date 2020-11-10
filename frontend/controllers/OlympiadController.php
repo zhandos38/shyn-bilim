@@ -256,7 +256,7 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/list', 'type' => $testAssignment->test->subject->type]);
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->id]);
         }
 
         if ($testAssignment->point >= 17) {
@@ -289,7 +289,7 @@ class OlympiadController extends Controller
                 'orientation' => Pdf::ORIENT_PORTRAIT,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
-                'filename' => 'Сертификат.pdf',
+                'filename' => 'Диплом.pdf',
                 // your html content input
                 'content' => $content,
                 // format content from your own css file if needed or use the
