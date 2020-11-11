@@ -82,6 +82,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
+            'kinder_garden' => Yii::t('app', 'Детсад'),
             'status' => Yii::t('app', 'Статус'),
             'point' => Yii::t('app', 'Баллы'),
             'created_at' => Yii::t('app', 'Время создание'),
