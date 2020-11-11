@@ -7,10 +7,14 @@
         <div id="cert-place" style="padding-top: 266px; padding-left: 30px; width: 900px; text-align: center; font-size: 28px; font-weight: bold; color: #e53830;"><?= $place ?> иегері</div>
         <div id="cert-region" style="padding-top: 155px; padding-left: 0; width: 900px; text-align: center; font-size: 14px;">
             <?php
-            if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
-                echo $testAssignment->school->city->name;
-            } else {
-                echo $testAssignment->school->city->region->name;
+            if ($testAssignment->school !== null) {
+                if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
+                    echo $testAssignment->school->city->name;
+                } else {
+                    echo $testAssignment->school->city->region->name;
+                }
+            } elseif ($testAssignment->kinder_garden !== null) {
+                echo $testAssignment->kinder_garden;
             }
             ?>
         </div>
