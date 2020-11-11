@@ -50,25 +50,26 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'region_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->school->city->region->name;
+                    return $model->school !== null ? $model->school->city->region->name : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name')
             ],
             [
                 'attribute' => 'city_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->school->city->name;
+                    return $model->school !== null ? $model->school->city->name : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name')
             ],
             [
                 'attribute' => 'school_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->school->name;
+                    return $model->school !== null ? $model->school->name : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
                 'format' => 'raw'
             ],
+            'kinder_garden',
             'grade',
             'point',
             [
