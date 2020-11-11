@@ -29,6 +29,7 @@
                     ['label' => 'Тесты', 'icon' => 'fas fa-book', 'url' => ['test/index']],
                     ['label' => 'Результаты олимпиад', 'icon' => 'fas fa-book', 'url' => ['test-assignment/index']],
                     ['label' => 'Школы', 'icon' => 'fas fa-book', 'url' => ['school/index']],
+                    ['label' => 'Белый список', 'icon' => 'fas fa-book', 'url' => ['white-list/index']],
                 ],
             ]
         ) ?>
