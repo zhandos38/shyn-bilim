@@ -19,7 +19,7 @@
         <?php if ($testAssignment->school !== null): ?>
         <div id="cert-school" style="padding-top: 5px; padding-left: 80px; width: 540px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->school->name ?></div>
         <?php elseif ($testAssignment->kinder_garden !== null): ?>
-        <div id="cert-school" style="padding-top: 5px; padding-left: 80px; width: 540px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->kinder_garden ?></div>
+        <div id="cert-school" style="padding-top: 15px; padding-left: 80px; width: 540px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->kinder_garden ?></div>
         <?php endif; ?>
         <div id="cert-subject" style="padding-top: 5px; padding-left: 0; font-size: 14px; color: #000000; height: 20px; width: 900px; text-align: center;"><?= $testAssignment->testOption->test->name ?> <br>пәні мұғалімі</div>
         <div id="cert-name" style="padding-top: 5px; padding-left: 0; width: 900px; text-align: center; font-size: 18px; font-weight: bold; color: #e53830;"><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></div>
