@@ -9,7 +9,7 @@
         <div id="cert-city" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 10px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->school->city->name ?></div>
         <div id="cert-school" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 50px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->school->name ?></div>
         <?php elseif ($testAssignment->kinder_garden !== null): ?>
-        <div id="cert-school" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 65px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->kinder_garden ?></div>
+        <div id="cert-school" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 70px; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->kinder_garden ?></div>
         <?php endif; ?>
 <!--        <div id="cert-subject" style="padding-top: 5px; padding-left: 400px; font-size: 16px; color: #000000; height: 10px; width: 900px; text-align: center; font-weight: 200">--><?//= $testAssignment->test->subject->name_kz ?><!--</div>-->
         <div id="footer" style="padding-top: 417px; padding-left: 420px; font-size: 16px; color: #454545; font-family: 'Times New Roman'">
