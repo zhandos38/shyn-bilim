@@ -34,11 +34,6 @@ use common\models\Test;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'test_id')->dropDownList(ArrayHelper::map(Test::find()->asArray()->all(), 'id', function ($model) {
-        $subject = Subject::findOne(['id' => $model['subject_id']]);
-        return $subject->name_kz . ' - ' . $model['lang'] . ' - ' . $subject->getTypeLabel();
-    }), ['prompt' => 'Укажите тест']) ?>
-
     <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
         'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
