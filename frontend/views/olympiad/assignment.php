@@ -52,6 +52,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
         ]); ?>
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
+        <?= $form->field($model, 'kinder_garden')->textInput() ?>
+
         <?php if ($test->olympiad->type === \common\models\Olympiad::TYPE_STUDENT): ?>
 
             <?= $form->field($model, 'grade')->dropDownList([

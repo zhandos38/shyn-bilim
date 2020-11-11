@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $surname
  * @property string $iin
  * @property int|null $school_id
+ * @property string|null $kinder_garden
  * @property int $grade
  * @property int $status
  * @property int|null $created_at
@@ -50,7 +51,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
+            [['name', 'surname', 'iin', 'lang'], 'required'],
             [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 14],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
@@ -59,7 +60,8 @@ class TestAssignment extends \yii\db\ActiveRecord
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id', 'status'], 'integer']
+            [['city_id', 'region_id', 'status'], 'integer'],
+            ['kinder_garden', 'string']
         ];
     }
 
