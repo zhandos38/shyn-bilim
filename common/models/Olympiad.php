@@ -100,7 +100,7 @@ class Olympiad extends \yii\db\ActiveRecord
     public static function getTypes()
     {
         return [
-            self::TYPE_STUDENT => Yii::t('app', 'Олимпиада для школьников'),
+            self::TYPE_STUDENT => Yii::t('app', 'Интеллектуальная олимпиада'),
             self::TYPE_TEACHER => Yii::t('app', 'Олимпиада для преподавателей')
         ];
     }
