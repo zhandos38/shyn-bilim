@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
                     <p><?= $olympiad->getType() ?></p>
                 </a>
                 <div class="d-flex">
-                    <a class="btn btn-info w-50 rounded-0" href="<?= $olympiad->getFile() ?>"><i class="fa fa-download"></i> <?= Yii::t('app', 'Правила') ?></a>
+                    <a class="btn btn-info w-50 rounded-0" href="<?= $olympiad->getFile() ?>"><i class="fa fa-download"></i> <?= Yii::t('app', 'Приложение') ?></a>
                     <a class="btn btn-success w-50 rounded-0" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"><i class="fa fa-sign-in"></i> <?= Yii::t('app', 'Участвовать') ?></a>
                 </div>
             </li>
