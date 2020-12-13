@@ -72,6 +72,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
                 'prompt' => Yii::t('app', 'Выберите класс')
             ]) ?>
 
+        <?= $form->field($model, 'leader_name') ?>
+
         <?php endif; ?>
 
         <?= $form->field($model, 'lang')->dropDownList([
