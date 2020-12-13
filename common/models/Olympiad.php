@@ -24,8 +24,9 @@ class Olympiad extends \yii\db\ActiveRecord
     public $imageFile;
     public $fileTemp;
 
-    const STATUS_INACTIVE = 0;
+    const STATUS_FINISHED = 0;
     const STATUS_ACTIVE = 1;
+    const STATUS_NEW = 2;
 
     const TYPE_STUDENT = 0;
     const TYPE_TEACHER = 1;
@@ -45,8 +46,9 @@ class Olympiad extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'img', 'file'], 'string', 'max' => 255],
-            [['type', 'status'], 'boolean'],
+            [['type'], 'boolean'],
             ['price', 'number'],
+            ['status', 'integer'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
@@ -84,8 +86,9 @@ class Olympiad extends \yii\db\ActiveRecord
     public static function getStatuses()
     {
         return [
-            self::STATUS_INACTIVE => 'Отключено',
-            self::STATUS_ACTIVE => 'Включено'
+            self::STATUS_FINISHED => 'Завершено',
+            self::STATUS_ACTIVE => 'Включено',
+            self::STATUS_NEW => 'Новая'
         ];
     }
 

@@ -57,7 +57,12 @@ class OlympiadController extends Controller
             throw new Exception("Olympiad not found");
         }
 
-        if ($olympiad->status === Olympiad::STATUS_INACTIVE) {
+        if ($olympiad->status === Olympiad::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
+            return $this->redirect(['site/index']);
+        }
+
+        if ($olympiad->status === Olympiad::STATUS_NEW) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
             return $this->redirect(['site/index']);
         }

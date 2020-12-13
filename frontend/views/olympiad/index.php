@@ -20,6 +20,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
                     <h6><?= $olympiad->name ?></h6>
                     <p><?= $olympiad->getType() ?></p>
                 </a>
+                <div class="d-flex">
+                    <a class="btn btn-info w-50 rounded-0" href="<?= $olympiad->getFile() ?>"><?= Yii::t('app', 'Правила') ?></a>
+                    <a class="btn btn-success w-50 rounded-0" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"><?= Yii::t('app', 'Войти') ?></a>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>
