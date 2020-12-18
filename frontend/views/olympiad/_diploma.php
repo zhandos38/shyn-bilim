@@ -3,9 +3,8 @@
 /* @var $testAssignment \common\models\TestAssignment */
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('/img/ped-olymp-diploma.jpg'); background-size: cover; background-repeat: no-repeat; width: 800px; height: 980px; font-family: 'Times New Roman';">
-        <div id="cert-place" style="padding-top: 266px; padding-left: 30px; width: 900px; text-align: center; font-size: 28px; font-weight: bold; color: #e53830;"><?= $place ?> иегері</div>
-        <div id="cert-region" style="padding-top: 155px; padding-left: 0; width: 900px; text-align: center; font-size: 14px;">
+    <div class="cert-page" style="background-image: url('/img/diploma-altyn-qyran.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman';">
+        <div id="cert-region" style="padding-top: 180px; padding-left: 770px; width: 200px; text-align: center; font-size: 14px;">
             <?php
             if ($testAssignment->school !== null) {
                 if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -16,13 +15,10 @@
             }
             ?>
         </div>
-        <?php if ($testAssignment->school !== null): ?>
-        <div id="cert-school" style="padding-top: 5px; padding-left: 80px; width: 540px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->school->name ?></div>
-        <?php elseif ($testAssignment->kinder_garden !== null): ?>
-        <div id="cert-school" style="padding-top: 24px; padding-left: 80px; width: 540px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->kinder_garden ?></div>
-        <?php endif; ?>
-        <div id="cert-subject" style="padding-top: 5px; padding-left: 0; font-size: 14px; color: #000000; height: 20px; width: 900px; text-align: center;"><?= $testAssignment->testOption->test->name ?> <br>пәні мұғалімі</div>
-        <div id="cert-name" style="padding-top: 5px; padding-left: 0; width: 900px; text-align: center; font-size: 18px; font-weight: bold; color: #e53830;"><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></div>
-        <div id="cert-number" style="padding-top: 340px; padding-left: 88px; font-size: 14px; color: #454545; font-family: 'Times New Roman'"><?= $testAssignment->id ?></div>
+        <div id="cert-school" style="padding-top: 5px; padding-left: 680px; width: 360px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->school->name ?></div>
+        <div id="cert-school" style="padding-top: 38px; padding-left: 605px; width: 360px; height: 35px; text-align: center; font-size: 14px;"><?= $testAssignment->grade ?></div>
+        <div id="cert-place" style="padding-top: -60px; padding-left: 30px; width: 560px; text-align: center; font-weight: bold; font-size: 38px; font-family: 'Arial'; color: #fff;"><?= $place ?></div>
+        <div id="cert-name" style="padding-top: 5px; padding-left: 600px; width: 900px; text-align: center; font-size: 18px; font-weight: bold; color: #e53830;"><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></div>
+        <div id="cert-number" style="padding-top: 133px; padding-left: 100px; font-size: 14px; color: #fff; font-family: 'Times New Roman'; margin-bottom: 20px"><?= $testAssignment->id ?></div>
     </div>
 </div>
