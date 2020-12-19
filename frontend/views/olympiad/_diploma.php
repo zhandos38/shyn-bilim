@@ -10,7 +10,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 <div>
     <div class="cert-page" style="background-image: url('/img/diploma-altyn-qyran.jpg'); background-size: cover; background-repeat: no-repeat;font-size: 18px; font-family: 'Times New Roman';">
         <div id="cert-qrcode" style="padding-top: 50px; padding-left: 5px; width: 160px; text-align: center; font-size: 22px; font-weight: bold; "><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-        <div id="cert-region" style="padding-top: 0; padding-left: 770px; height: 40px; width: 200px; text-align: center;">
+        <div id="cert-region" style="padding-top: 0; padding-left: 770px; height: 35px; width: 200px; text-align: center;">
             <?php
             if ($testAssignment->school !== null) {
                 if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
