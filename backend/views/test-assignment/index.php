@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
                 'format' => 'raw'
             ],
-            'kinder_garden',
+            'leader_name',
             'grade',
             'point',
             [
