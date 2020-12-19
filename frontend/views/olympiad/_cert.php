@@ -20,7 +20,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             }
             ?>
         </div>
-        <div id="cert-school" style="padding-top: 5px; padding-left: 360px; font-size: 16px; color: #000000; height: 50px; width: 600px; text-align: center; font-weight: 200"><?= $testAssignment->school->name ?></div>
+        <div id="cert-school" style="padding-top: 5px; padding-left: 450px; font-size: 16px; color: #000000; height: 50px; width: 600px; text-align: center; font-weight: 200"><?= $testAssignment->school->name ?></div>
         <div id="cert-grade" style="padding-top: 5px; padding-left: 360px; color: #000000; width: 900px; text-align: center; font-weight: 200"><?= $testAssignment->grade ?> <span>сынып оқушысы</span></div>
         <div id="cert-name" style="padding-top: 5px; padding-left: 450px; height: 65px; width: 600px; text-align: center; font-size: 18px; font-weight: bold; text-transform: uppercase"><?= ' ' . $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></div>
         <div id="cert-name" style="padding-top: 20px; padding-left: 370px; width: 900px; text-align: center;">Жетекші мұғалімі</div>
