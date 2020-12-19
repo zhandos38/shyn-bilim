@@ -4,7 +4,7 @@ use Da\QrCode\QrCode;
 /* @var $testAssignment \common\models\TestAssignment */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(160)
+    ->setSize(80)
     ->setMargin(5);
 ?>
 <div>
@@ -25,9 +25,9 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         <div id="cert-name" style="padding-top: 5px; padding-left: 450px; height: 65px; width: 600px; text-align: center; font-size: 18px; font-weight: bold; text-transform: uppercase"><?= ' ' . $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></div>
         <div id="cert-name" style="padding-top: 20px; padding-left: 370px; width: 900px; text-align: center;">Жетекші мұғалімі</div>
         <div id="cert-name" style="padding-top: 5px; padding-left: 450px; height: 65px; width: 600px; text-align: center; font-size: 18px; font-weight: bold; text-transform: uppercase"><?= ' ' . $testAssignment->leader_name ?></div>
-        <div id="footer" style="padding-top: 90px; height: 60px; padding-left: 464px; font-size: 16px; color: #454545; font-family: 'Times New Roman'">
-            <div id="cert-number"><?= $testAssignment->id ?></div>
-<!--            <div id="cert-qrcode" style="padding-left: 400px; width: 160px; font-size: 22px; font-weight: bold; "><img src="--><?//= $qrCode->writeDataUri() ?><!--"></div>-->
+        <div id="footer" style="padding-top: 0; height: 150px; padding-left: 464px; font-size: 16px; color: #454545; font-family: 'Times New Roman'">
+            <div id="cert-qrcode" style="height: 60px; padding-top: 40px; padding-left: 540px; width: 160px; font-size: 22px; font-weight: bold;"><img src="<?= $qrCode->writeDataUri() ?>"></div>
+            <div id="cert-number" style="padding-top: -40px"><?= $testAssignment->id ?></div>
         </div>
     </div>
 </div>

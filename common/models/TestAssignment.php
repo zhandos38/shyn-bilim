@@ -14,7 +14,6 @@ use yii\helpers\ArrayHelper;
  * @property string $surname
  * @property string $iin
  * @property int|null $school_id
- * @property string|null $kinder_garden
  * @property int $grade
  * @property int $status
  * @property int|null $created_at
@@ -60,8 +59,7 @@ class TestAssignment extends \yii\db\ActiveRecord
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id', 'status'], 'integer'],
-            ['kinder_garden', 'string']
+            [['city_id', 'region_id', 'status'], 'integer']
         ];
     }
 
@@ -83,7 +81,6 @@ class TestAssignment extends \yii\db\ActiveRecord
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
-            'kinder_garden' => Yii::t('app', 'Детсад'),
             'status' => Yii::t('app', 'Статус'),
             'point' => Yii::t('app', 'Баллы'),
             'created_at' => Yii::t('app', 'Время создание'),
