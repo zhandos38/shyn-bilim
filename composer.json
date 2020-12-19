@@ -35,7 +35,8 @@
         "yii2mod/yii2-sweet-alert": "*",
         "payboxmoney/pay": "^1.2",
         "kartik-v/yii2-mpdf": "dev-master",
-        "notamedia/yii2-sentry": "^1.5"
+        "notamedia/yii2-sentry": "^1.5",
+        "2amigos/qrcode-library": "~1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

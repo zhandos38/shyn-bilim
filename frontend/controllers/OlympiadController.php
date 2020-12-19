@@ -329,8 +329,12 @@ class OlympiadController extends Controller
             $pdf = new Pdf([
                 // set to use core fonts only
                 'mode' => Pdf::MODE_UTF8,
+                'marginTop' => 0,
+                'marginLeft' => 0,
+                'marginRight' => 0,
+                'marginBottom' => 0,
                 // A4 paper format
-                'format' => Pdf::FORMAT_A3,
+                'format' => Pdf::FORMAT_A4,
                 // portrait orientation
                 'orientation' => Pdf::ORIENT_LANDSCAPE,
                 // stream to browser inline
