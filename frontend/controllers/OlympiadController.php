@@ -278,7 +278,7 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->id]);
         }
 
-        if ($testAssignment->point >= 10) {
+        if ($testAssignment->point >= 15) {
             $place = 'III ДӘРЕЖЕЛІ';
 
             if ($testAssignment->point === 30) {
