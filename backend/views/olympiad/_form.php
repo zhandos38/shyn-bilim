@@ -28,7 +28,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'price')->textInput() ?>
 
-    <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
+    <?= $form->field($model, 'fileTempKz')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'document/*'],
+    ]) ?>
+
+    <?= $form->field($model, 'fileTempRu')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>
 

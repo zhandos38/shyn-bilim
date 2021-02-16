@@ -86,14 +86,19 @@ class OlympiadController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+            $model->fileTempKz = UploadedFile::getInstance($model, 'fileTempKz');
+            $model->fileTempRu = UploadedFile::getInstance($model, 'fileTempRu');
 
             if ($model->imageFile) {
                 $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
             }
 
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            if ($model->fileTempKz) {
+                $model->file = $model->fileTempKz->baseName . '.' . $model->fileTempKz->extension;
+            }
+
+            if ($model->fileTempRu) {
+                $model->file = $model->fileTempRu->baseName . '.' . $model->fileTempRu->extension;
             }
 
             if ($model->save() && $model->upload()) {
