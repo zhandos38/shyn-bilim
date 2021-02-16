@@ -15,16 +15,14 @@ use yii\imagine\Image;
  * @property boolean|null $type
  * @property float|null $price
  * @property string|null $img
- * @property string|null $file_kz
- * @property string|null $file_ru
+ * @property string|null $file
  *
  * @property Test[] $tests
  */
 class Olympiad extends \yii\db\ActiveRecord
 {
     public $imageFile;
-    public $fileTempKz;
-    public $fileTempRu;
+    public $fileTemp;
 
     const STATUS_FINISHED = 0;
     const STATUS_ACTIVE = 1;
@@ -53,7 +51,7 @@ class Olympiad extends \yii\db\ActiveRecord
             ['status', 'integer'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
-            [['fileTempKZ', 'fileTempRu'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
+            [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
         ];
     }
 
@@ -67,8 +65,7 @@ class Olympiad extends \yii\db\ActiveRecord
             'name' => 'Наименование',
             'img' => 'Рисунок',
             'file' => 'Файл',
-            'fileTempKZ' => 'Файл (KZ)',
-            'fileTempRu' => 'Файл (RU)',
+            'fileTemp' => 'Файл',
             'type' => 'Тип',
             'imageFile' => 'Рисунок',
             'status' => 'Статус',
@@ -125,7 +122,7 @@ class Olympiad extends \yii\db\ActiveRecord
 
     public function upload()
     {
-        if ($this->imageFile === null && $this->fileTempKz === null && $this->fileTempRu) {
+        if ($this->imageFile === null && $this->fileTemp === null) {
             return true;
         }
 
@@ -135,24 +132,16 @@ class Olympiad extends \yii\db\ActiveRecord
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
         }
 
-        $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-
-        $filePathKz = $folderPath . '/' . $this->fileTempKz->baseName . '.' . $this->fileTempKz->extension;
-        $filePathRu = $folderPath . '/' . $this->fileTempRu->baseName . '.' . $this->fileTempRu->extension;
-
         if ($this->validate()) {
             if ($this->imageFile) {
+                $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
                 $this->imageFile->saveAs($imgPath);
-                Image::resize($imgPath,375, 625, true)
-                    ->save();
+                Image::resize($imgPath,375, 625, true)->save();
             }
 
-            if ($this->fileTempKz) {
-                $this->fileTempKz->saveAs($filePathKz);
-            }
-
-            if ($this->fileTempRu) {
-                $this->fileTempRu->saveAs($filePathRu);
+            if ($this->fileTemp) {
+                $filePath = $folderPath . '/' . $this->fileTemp->baseName . '.' . $this->fileTemp->extension;
+                $this->fileTemp->saveAs($filePath);
             }
 
             return true;

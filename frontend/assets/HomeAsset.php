@@ -23,7 +23,7 @@ class HomeAsset extends AssetBundle
         'js/wavify.js',
         'js/jquery.wavify.js',
         'js/aos.js',
-        'js/script.js'
+        'js/home.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
