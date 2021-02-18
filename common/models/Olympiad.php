@@ -53,7 +53,7 @@ class Olympiad extends \yii\db\ActiveRecord
             ['status', 'integer'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
-            [['fileTempKZ', 'fileTempRu'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
+            [['fileTempKz', 'fileTempRu'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
         ];
     }
 
@@ -67,7 +67,7 @@ class Olympiad extends \yii\db\ActiveRecord
             'name' => 'Наименование',
             'img' => 'Рисунок',
             'file' => 'Файл',
-            'fileTempKZ' => 'Файл (KZ)',
+            'fileTempKz' => 'Файл (KZ)',
             'fileTempRu' => 'Файл (RU)',
             'type' => 'Тип',
             'imageFile' => 'Рисунок',
@@ -115,7 +115,8 @@ class Olympiad extends \yii\db\ActiveRecord
 
     public function getFile()
     {
-        return Yii::$app->params['staticDomain'] . '/olympiad/' . $this->file;
+        $fileName = Yii::$app->language === 'ru' ? $this->file_ru : $this->file_kz;
+        return Yii::$app->params['staticDomain'] . '/olympiad/' . $fileName;
     }
 
     public function getImage()
