@@ -66,11 +66,15 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
                 9 => '9',
                 10 => '10',
                 11 => '11'
-            ],[
+            ], [
                 'prompt' => Yii::t('app', 'Выберите класс')
             ]) ?>
 
-        <?= $form->field($model, 'leader_name') ?>
+        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
+
+        <div id="leader-name-second-wrapper" style="display: none">
+            <?= $form->field($model, 'leader_name') ?>
+        </div>
 
         <?php endif; ?>
 
@@ -124,6 +128,14 @@ $('#testassignment-city_id').change(function() {
       console.log('Ошибка');
     }
   });
+});
+
+$('#testassignment-grade').change(function() {
+  if (parseInt($(this).val()) <= 4) {
+    $('#leader-name-second-wrapper').show('ease');   
+  } else {
+    $('#leader-name-second-wrapper').hide('ease');
+  }
 });
 JS;
 

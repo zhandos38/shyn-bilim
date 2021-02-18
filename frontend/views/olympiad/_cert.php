@@ -8,7 +8,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('/img/cert-altyn-qyran.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman';">
+    <div class="cert-page" style="background-image: url('/img/altyn-urpak-cert.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman';">
         <div id="cert-city" style="padding-top: 360px; padding-left: 360px; font-size: 16px; color: #000000; height: 10px; width: 900px; text-align: center; font-weight: 200">
             <?php
             if ($testAssignment->school !== null) {

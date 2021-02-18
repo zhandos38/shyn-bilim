@@ -13,6 +13,7 @@ use yii\helpers\ArrayHelper;
  * @property string $name
  * @property string $surname
  * @property string $leader_name
+ * @property string $leader_name_second
  * @property string $iin
  * @property int|null $school_id
  * @property int $grade
@@ -52,7 +53,7 @@ class TestAssignment extends \yii\db\ActiveRecord
         return [
             [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'lang', 'grade', 'leader_name', 'school_id'], 'required'],
-            [['name', 'surname', 'patronymic', 'leader_name'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 14],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 
@@ -79,6 +80,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'grade' => Yii::t('app', 'Класс'),
             'leader_name' => Yii::t('app', 'Ф.И.О руководителя'),
+            'leader_name_second' => Yii::t('app', 'Ф.И.О руководителя'),
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
@@ -118,5 +120,10 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function getStatus()
     {
         return ArrayHelper::getValue(self::getStatuses(), $this->status);
+    }
+
+    public function getGrade()
+    {
+        return $this->grade . ' сынып оқушысы';
     }
 }
