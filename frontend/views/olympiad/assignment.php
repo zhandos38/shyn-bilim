@@ -131,7 +131,7 @@ $('#testassignment-city_id').change(function() {
 });
 
 $('#testassignment-grade').change(function() {
-  if (parseInt($(this).val()) <= 4) {
+  if (parseInt($(this).val()) > 4) {
     $('#leader-name-second-wrapper').show('ease');   
   } else {
     $('#leader-name-second-wrapper').hide('ease');

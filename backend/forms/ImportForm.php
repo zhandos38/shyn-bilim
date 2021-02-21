@@ -85,7 +85,9 @@ class ImportForm extends Model
                         throw new Exception('Answer is not saved');
                     }
 
-                    $answer->text = str_replace('@@PLUGINFILE@@', $imgDomainPath . '/' . $answer->id, trim($item['text']));
+                    $text = str_replace('@@PLUGINFILE@@', $imgDomainPath . '/' . $answer->id, trim($item['text']));
+                    $text = str_replace('.jpg', '.png', $text);
+                    $answer->text = $text;
                     if (!$answer->save()) {
                         throw new Exception('Answer is not saved');
                     }
