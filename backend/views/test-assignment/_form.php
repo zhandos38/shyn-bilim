@@ -55,6 +55,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'leader_name') ?>
 
+    <?= $form->field($model, 'leader_name_second') ?>
+
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
 
     <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
