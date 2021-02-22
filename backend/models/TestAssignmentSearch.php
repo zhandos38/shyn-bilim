@@ -71,23 +71,23 @@ class TestAssignmentSearch extends TestAssignment
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            't1.id' => $this->id,
             't4.test_id' => $this->test_id,
-            'school_id' => $this->school_id,
-            'grade' => $this->grade,
-            'point' => $this->point,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'finished_at' => $this->finished_at,
+            't1.school_id' => $this->school_id,
+            't1.grade' => $this->grade,
+            't1.point' => $this->point,
+            't1.status' => $this->status,
+            't1.created_at' => $this->created_at,
+            't1.finished_at' => $this->finished_at,
 
             't2.city_id' => $this->city_id,
             't3.region_id' => $this->region_id
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'surname', $this->surname])
-            ->andFilterWhere(['like', 'patronymic', $this->patronymic])
-            ->andFilterWhere(['like', 'iin', $this->iin]);
+        $query->andFilterWhere(['like', 't1.name', $this->name])
+            ->andFilterWhere(['like', 't1.surname', $this->surname])
+            ->andFilterWhere(['like', 't1.patronymic', $this->patronymic])
+            ->andFilterWhere(['like', 't1.iin', $this->iin]);
 
         return $dataProvider;
     }
