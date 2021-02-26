@@ -297,7 +297,7 @@ class OlympiadController extends Controller
             if ($testAssignment->grade > 4) {
                 $text = 'Тарих, География пәндері бойынша өткізілген <br> республикалық <span style="color: red">"ALTYN URPAQ"</span> зияткерлік олимпиадасының <br> жеңімпазы';
             } else {
-                $text = 'Дүниетану, Жаратылыстану пәндері бойынша өткізілген <br> руспубликалық <span style="color: red">"ALTYN URPAQ"</span> зияткерлік олимпиадасының <br> жеңімпазы';
+                $text = 'Дүниетану, Жаратылыстану пәндері бойынша өткізілген <br> республикалық <span style="color: red">"ALTYN URPAQ"</span> зияткерлік олимпиадасының <br> жеңімпазы';
             }
 
 
