@@ -293,9 +293,18 @@ class OlympiadController extends Controller
                 $place = 'II ДӘРЕЖЕЛІ';
             }
 
+            $text = null;
+            if ($testAssignment->grade > 4) {
+                $text = 'Тарих, География пәндері бойынша өткізілген <br> республикалық <span style="color: red">"ALTYN URPAQ"</span> зияткерлік олимпиадасының <br> жеңімпазы';
+            } else {
+                $text = 'Дүниетану, Жаратылыстану пәндері бойынша өткізілген <br> республикалық <span style="color: red">"ALTYN URPAQ"</span> зияткерлік олимпиадасының <br> жеңімпазы';
+            }
+
+
             $content = $this->renderPartial('_diploma', [
                 'testAssignment' => $testAssignment,
-                'place' => $place
+                'place' => $place,
+                'text' => $text
             ]);
 
             // setup kartik\mpdf\Pdf component
