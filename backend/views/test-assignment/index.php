@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'test_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->testOption->test->name;
+                    return $model->testOption ? $model->testOption->test->name : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id','name')
             ],
