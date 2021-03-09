@@ -59,6 +59,13 @@ use common\models\Test;
 
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
 
+    <?= $form->field($model, 'test_option_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\TestOption::find()->asArray()->all(), 'id', function ($model) {
+            return htmlspecialchars_decode($model['test_id'] . ':' . $model['grade'] . ' - ' . $model['lang']);
+        }),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+    ]); ?>
+
     <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
 
     <div class="form-group">
