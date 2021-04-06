@@ -121,9 +121,8 @@ class ArticleController extends Controller
                     'pg_amount' => 1000,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
-                    'pg_description' => 'Оплата за публикацию материала',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
+                    'pg_success_url_method' => 'GET',
+                    'pg_description' => 'Оплата за публикацию материала'
                 ];
 
                 $request = $this->getSignByData($request, 'payment.php', $salt);
