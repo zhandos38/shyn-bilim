@@ -24,8 +24,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                     } else {
                         echo $testAssignment->school->city->region->name;
                     }
-                }
-                ?>
+                } ?>
             </div>
             <div id="cert-school" style="font-size: 13px; height: 60px;"><?= $testAssignment->school->name ?></div>
             <div id="cert-name" style="padding-top: 36px; font-size: 22px; height: 35px; font-weight: bold; text-transform: uppercase;"><?= $testAssignment->leader_name ?></div>
