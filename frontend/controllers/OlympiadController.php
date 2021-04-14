@@ -360,6 +360,13 @@ class OlympiadController extends Controller
         return $pdf->render();
     }
 
+    public function actionCheckCert()
+    {
+        $checkCert = C
+
+        return $this->render('check-cert');
+    }
+
     public function checkSign($data, $url):bool
     {
         $array = $data;

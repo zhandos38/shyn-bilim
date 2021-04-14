@@ -8,6 +8,11 @@ $action = Yii::$app->controller->action->id;
 
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favicon.png']);
 ?>
+<div class="qa-block rounded-circle shadow-lg">
+    <a class="qa-block-link" href="<?= Url::to(['site/questions']) ?>">
+        <img class="qa-block-img" src="/img/qa-img.png" alt="qa-img">
+    </a>
+</div>
 <!-- Start: Navigation Upper with Button -->
 <div class="top-header">
     <div class="container">

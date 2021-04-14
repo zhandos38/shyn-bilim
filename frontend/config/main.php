@@ -45,7 +45,9 @@ return [
             'languages' => ['ru', 'kz'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
-                '/' => 'site/index'
+                '/' => 'site/index',
+                'contact' => 'site/contact',
+                'questions' => 'site/questions',
             ],
         ],
     ],

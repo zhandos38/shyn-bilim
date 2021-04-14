@@ -271,6 +271,11 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionQuestions()
+    {
+        return $this->render('questions');
+    }
+
     public function actionInfo()
     {
         phpinfo();
