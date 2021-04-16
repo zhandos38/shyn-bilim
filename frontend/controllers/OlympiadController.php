@@ -362,7 +362,7 @@ class OlympiadController extends Controller
 
     public function actionCheckCert()
     {
-        $checkCert = C
+//        $checkCert = C
 
         return $this->render('check-cert');
     }

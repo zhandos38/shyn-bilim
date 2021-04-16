@@ -136,23 +136,21 @@ class Olympiad extends \yii\db\ActiveRecord
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
         }
 
-        $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-
-        $filePathKz = $folderPath . '/' . $this->fileTempKz->baseName . '.' . $this->fileTempKz->extension;
-        $filePathRu = $folderPath . '/' . $this->fileTempRu->baseName . '.' . $this->fileTempRu->extension;
-
         if ($this->validate()) {
             if ($this->imageFile) {
+                $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
                 $this->imageFile->saveAs($imgPath);
                 Image::resize($imgPath,375, 625, true)
                     ->save();
             }
 
             if ($this->fileTempKz) {
+                $filePathKz = $folderPath . '/' . $this->fileTempKz->baseName . '.' . $this->fileTempKz->extension;
                 $this->fileTempKz->saveAs($filePathKz);
             }
 
             if ($this->fileTempRu) {
+                $filePathRu = $folderPath . '/' . $this->fileTempRu->baseName . '.' . $this->fileTempRu->extension;
                 $this->fileTempRu->saveAs($filePathRu);
             }
 
