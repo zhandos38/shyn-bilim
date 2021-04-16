@@ -43,7 +43,7 @@ class OlympiadController extends Controller
 
     public function actionIndex()
     {
-        $olympiads = Olympiad::find()->all();
+        $olympiads = Olympiad::find()->orderBy(['id' => SORT_DESC])->all();
 
         return $this->render('index', [
             'olympiads' => $olympiads
