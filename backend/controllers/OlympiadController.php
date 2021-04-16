@@ -94,11 +94,11 @@ class OlympiadController extends Controller
             }
 
             if ($model->fileTempKz) {
-                $model->file = $model->fileTempKz->baseName . '.' . $model->fileTempKz->extension;
+                $model->file_kz = $model->fileTempKz->baseName . '.' . $model->fileTempKz->extension;
             }
 
             if ($model->fileTempRu) {
-                $model->file = $model->fileTempRu->baseName . '.' . $model->fileTempRu->extension;
+                $model->file_ru = $model->fileTempRu->baseName . '.' . $model->fileTempRu->extension;
             }
 
             if ($model->save() && $model->upload()) {
