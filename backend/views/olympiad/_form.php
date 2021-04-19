@@ -44,6 +44,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->dropDownList(Olympiad::getStatuses(), ['prompt' => 'Укажите статус']) ?>
 
+    <?= $form->field($model, 'order') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
