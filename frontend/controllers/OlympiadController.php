@@ -13,6 +13,7 @@ use common\models\TestAssignment;
 use common\models\TestOption;
 use common\models\TestSubject;
 use common\models\WhiteList;
+use frontend\models\CheckAssignmentForm;
 use kartik\mpdf\Pdf;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
@@ -174,12 +175,12 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test_id]);
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
         }
 
         if ($testAssignment->status === TestAssignment::STATUS_OFF) {
             Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test_id]);
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
         }
 
         return $this->render('test', [
@@ -362,9 +363,36 @@ class OlympiadController extends Controller
 
     public function actionCheckCert()
     {
-//        $checkCert = C
+        $model = new CheckAssignmentForm();
 
-        return $this->render('check-cert');
+        if ($model->load(Yii::$app->request->post())) {
+            if ($testAssignmentId = $model->check()) {
+                return $this->redirect(['olympiad/get-cert', 'id' => $testAssignmentId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+        }
+
+        return $this->render('check-cert', [
+            'model' => $model
+        ]);
+    }
+
+    public function actionCheckTest()
+    {
+        $model = new CheckAssignmentForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($testAssignmentId = $model->check()) {
+                return $this->redirect(['olympiad/test', 'assignment' => $testAssignmentId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+        }
+
+        return $this->render('check-test', [
+            'model' => $model
+        ]);
     }
 
     public function checkSign($data, $url):bool

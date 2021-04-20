@@ -4,7 +4,8 @@
 $this->title = Yii::t('app', 'Вопросы и ответы');
 
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/contact']];
-?>
+
+use yii\helpers\Url; ?>
 <style>
     .card {
         margin: 0;
@@ -129,7 +130,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/conta
                 <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
-                            Жауап:  Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталы. Тапсырмаға қайта кіру үшін
+                            Жауап:  Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталы. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
+                            <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
                         </p>
                     </div>
                 </div>
@@ -145,7 +147,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/conta
                 <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
-                            Жауап:  Егер Сіз Дипломды немесе Сертификатты жүктей алмай қалсаңыз
+                            Жауап:  Егер Сіз Дипломды немесе Сертификатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
+                            <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
                         </p>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ namespace frontend\models;
 
 
 use common\models\Article;
+use common\models\TestAssignment;
 use Yii;
 use yii\base\Model;
 use Exception;
@@ -14,7 +15,7 @@ use yii\helpers\VarDumper;
  *
  * @property mixed $requestFields
  */
-class CheckCertForm extends Model
+class CheckAssignmentForm extends Model
 {
     public $iin;
 
@@ -31,5 +32,15 @@ class CheckCertForm extends Model
         return [
           'iin' => Yii::t('site', 'ИИН')
         ];
+    }
+
+    public function check()
+    {
+        $testAssignment = TestAssignment::findOne(['iin' => $this->iin]);
+        if ($testAssignment) {
+            return $testAssignment->id;
+        }
+
+        return false;
     }
 }
