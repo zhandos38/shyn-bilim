@@ -84,13 +84,13 @@
 .nav-item:hover {
   transform: translate3d(0, -2px, 0);
   -webkit-transform: translate3d(0, -2px, 0);
-  background-color: #7fbdff;
+  background-color: #3f85f7;
 }
 .nav-item a:hover {
   color: #fff;
 }
 .nav-item--active {
-  border-bottom: 4px solid #7fbdff;
+  border-bottom: 4px solid #3f85f7;
   border-radius: 0;
 }
 
@@ -108,7 +108,7 @@
 /* Top header */
 .top-header {
   padding: 10px 0;
-  background-color: rgba(0, 123, 255, 0.5);
+  background-color: rgb(63, 133, 247);
   color: #fff;
 }
 .top-header__content {
