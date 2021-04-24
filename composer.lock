@@ -1518,6 +1518,12 @@
                 "option",
                 "select"
             ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/dependent-dropdown",
+                    "type": "open_collective"
+                }
+            ],
             "time": "2019-09-03T03:12:44+00:00"
         },
         {
