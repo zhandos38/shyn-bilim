@@ -12,11 +12,6 @@ use yii\grid\GridView;
 $this->title = 'Test Subjects';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<style>
-    .content img {
-        margin-bottom: 15px;
-    }
-</style>
 <div class="test-subject-index">
 
     <?php LteBox::begin([

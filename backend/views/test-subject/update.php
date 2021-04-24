@@ -12,6 +12,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Test Subjects', 'url' => ['index']
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
+<style>
+    .content img {
+        margin-bottom: 15px;
+    }
+</style>
 <div class="test-subject-update">
 
     <?= $this->render('_form', [
