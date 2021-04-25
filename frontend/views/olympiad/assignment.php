@@ -72,10 +72,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/a
 
         <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
 
-        <div id="leader-name-second-wrapper" style="display: none">
-            <?= $form->field($model, 'leader_name_second') ?>
-        </div>
-
         <?php endif; ?>
 
         <?= $form->field($model, 'lang')->dropDownList([
@@ -128,14 +124,6 @@ $('#testassignment-city_id').change(function() {
       console.log('Ошибка');
     }
   });
-});
-
-$('#testassignment-grade').change(function() {
-  if (parseInt($(this).val()) > 4) {
-    $('#leader-name-second-wrapper').show('ease');   
-  } else {
-    $('#leader-name-second-wrapper').hide('ease');
-  }
 });
 JS;
 

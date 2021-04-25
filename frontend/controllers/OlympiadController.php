@@ -173,15 +173,15 @@ class OlympiadController extends Controller
 
         $testOption = $testAssignment->testOption;
 
-        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
-            Yii::$app->session->setFlash('success', 'Тест уже пройден!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
-        }
-
-        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
-            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
-        }
+//        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
+//            Yii::$app->session->setFlash('success', 'Тест уже пройден!');
+//            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
+//        }
+//
+//        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
+//            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
+//            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
+//        }
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
@@ -280,18 +280,18 @@ class OlympiadController extends Controller
         }
 
         if ($testAssignment->point >= 10) {
-            $place = 'III ДӘРЕЖЕЛІ';
+            $place = 'III Орын';
 
             if ($testAssignment->point === 30) {
                 $place = 'Бас жүлде';
             }
 
             if ($testAssignment->point >= 25 && $testAssignment->point <= 29) {
-                $place = 'I ДӘРЕЖЕЛІ';
+                $place = 'I Орын';
             }
 
             if ($testAssignment->point >= 20 && $testAssignment->point <= 24) {
-                $place = 'II ДӘРЕЖЕЛІ';
+                $place = 'II Орын';
             }
 
             $content = $this->renderPartial('_diploma', [
@@ -337,7 +337,7 @@ class OlympiadController extends Controller
                 // A4 paper format
                 'format' => Pdf::FORMAT_A4,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                'orientation' => Pdf::ORIENT_PORTRAIT,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Сертификат.pdf',
@@ -367,6 +367,47 @@ class OlympiadController extends Controller
         return $this->render('check-cert', [
             'model' => $model
         ]);
+    }
+
+    public function actionGetCertThank($id)
+    {
+        $testAssignment = TestAssignment::findOne(['id' => $id]);
+        if (!$testAssignment) {
+            throw new Exception('Test Assignment is not found');
+        }
+
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->id]);
+        }
+
+        $content = $this->renderPartial('_cert-thank', [
+            'testAssignment' => $testAssignment
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Алғыс хат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+        ]);
+
+        return $pdf->render();
     }
 
     public function actionCheckTest()
