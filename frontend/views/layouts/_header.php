@@ -11,7 +11,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
 <div class="qa-block rounded-circle shadow-lg">
     <a class="qa-block-link" href="<?= Url::to(['site/questions']) ?>">
         <img class="qa-block-img" src="/img/qa-img.png" alt="qa-img">
-        <div style="color: #9c9c9c; font-size: 14px;"><?= Yii::t('site', 'Көмек') ?></div>
+        <div style="color: #9c9c9c; font-size: 14px;"><?= Yii::t('site', 'Помощь') ?></div>
     </a>
 </div>
 <!-- Start: Navigation Upper with Button -->
