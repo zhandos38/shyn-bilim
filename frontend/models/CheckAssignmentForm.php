@@ -42,6 +42,7 @@ class CheckAssignmentForm extends Model
         } else {
             $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
         }
+        $query->all();
 
 
         if ($query) {
