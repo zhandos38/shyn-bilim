@@ -23,7 +23,7 @@ use yii\helpers\Url; ?>
 </h1>
 <div class="row">
     <div class="col-md-12">
-        <?php if (Yii::$app->language === 'ru'): ?>
+        <?php if (Yii::$app->language === 'kz'): ?>
             <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
