@@ -42,11 +42,11 @@ class CheckAssignmentForm extends Model
         } else {
             $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
         }
-        $query->one();
+        $testAssignment = $query->one();
 
 
-        if ($query) {
-            return $query->id;
+        if ($testAssignment) {
+            return $testAssignment->id;
         }
 
         return false;
