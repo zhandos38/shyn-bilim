@@ -172,7 +172,7 @@ use yii\helpers\Url; ?>
                 <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
-                            Жауап:  Егер Сіз Дипломды немесе Сертификатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
+                            Жауап:  Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
                             <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
                             <br>
                             <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Алғыс хатты жүктеу</a>
@@ -345,7 +345,7 @@ use yii\helpers\Url; ?>
                     <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>
-                                Ответ:  Если Вы не можете скачать Диплом или Сертификат, то
+                                Ответ:  Если Вы не можете скачать Диплом, Сертификат, Благодарственное письмо, то
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
                                 <br>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Получить благодарственное письмо</a>
