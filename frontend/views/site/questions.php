@@ -165,7 +165,7 @@ use yii\helpers\Url; ?>
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight">
-                            8. Сұрақ: Дипломды немесе Сертификатты жүктей алмай қалған жағдайда не істеймін?
+                            8. Сұрақ: Дипломды, алғыс хатты немесе Сертификатты жүктей алмай қалған жағдайда не істеймін?
                         </button>
                     </h2>
                 </div>
@@ -386,7 +386,7 @@ use yii\helpers\Url; ?>
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
                             <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight">
-                                8. Вопрос: Что мне делать если я не могу скачать Диплом или Сертификат?
+                                8. Вопрос: Что мне делать если я не могу скачать Диплом, Сертификат, Благодарственное письмо?
                             </button>
                         </h2>
                     </div>
