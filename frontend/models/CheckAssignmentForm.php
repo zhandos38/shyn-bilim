@@ -34,11 +34,18 @@ class CheckAssignmentForm extends Model
         ];
     }
 
-    public function check()
+    public function check($isFinished = false)
     {
-        $testAssignment = TestAssignment::findOne(['iin' => $this->iin, 'status' => TestAssignment::STATUS_FINISHED]);
-        if ($testAssignment) {
-            return $testAssignment->id;
+        $query = TestAssignment::find()->andWhere(['iin' => $this->iin]);
+        if ($isFinished) {
+            $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
+        } else {
+            $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
+        }
+
+
+        if ($query) {
+            return $query->id;
         }
 
         return false;

@@ -357,7 +357,7 @@ class OlympiadController extends Controller
         $model = new CheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            if ($testAssignmentId = $model->check()) {
+            if ($testAssignmentId = $model->check(true)) {
                 return $this->redirect(['olympiad/get-cert', 'id' => $testAssignmentId]);
             }
 
@@ -415,7 +415,7 @@ class OlympiadController extends Controller
         $model = new CheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            if ($testAssignmentId = $model->check()) {
+            if ($testAssignmentId = $model->check(true)) {
                 return $this->redirect(['olympiad/get-cert-thank', 'id' => $testAssignmentId]);
             }
 
