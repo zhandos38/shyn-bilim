@@ -173,15 +173,15 @@ class OlympiadController extends Controller
 
         $testOption = $testAssignment->testOption;
 
-//        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
-//            Yii::$app->session->setFlash('success', 'Тест уже пройден!');
-//            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
-//        }
-//
-//        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
-//            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
-//            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
-//        }
+        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('success', 'Тест уже пройден!');
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
+        }
+
+        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
+            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
+            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
+        }
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
@@ -276,7 +276,7 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->id]);
+            return $this->redirect(['olympiad/index']);
         }
 
         if ($testAssignment->point >= 10) {
@@ -378,7 +378,7 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->id]);
+            return $this->redirect(['olympiad/view']);
         }
 
         $content = $this->renderPartial('_cert-thank', [
