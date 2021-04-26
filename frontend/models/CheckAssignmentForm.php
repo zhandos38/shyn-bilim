@@ -36,7 +36,7 @@ class CheckAssignmentForm extends Model
 
     public function check()
     {
-        $testAssignment = TestAssignment::findOne(['iin' => $this->iin]);
+        $testAssignment = TestAssignment::findOne(['iin' => $this->iin, 'status' => TestAssignment::STATUS_FINISHED]);
         if ($testAssignment) {
             return $testAssignment->id;
         }
