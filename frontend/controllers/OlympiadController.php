@@ -410,6 +410,23 @@ class OlympiadController extends Controller
         return $pdf->render();
     }
 
+    public function actionCheckCertThank()
+    {
+        $model = new CheckAssignmentForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($testAssignmentId = $model->check()) {
+                return $this->redirect(['olympiad/get-cert-thank', 'id' => $testAssignmentId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+        }
+
+        return $this->render('check-cert-thank', [
+            'model' => $model
+        ]);
+    }
+
     public function actionCheckTest()
     {
         $model = new CheckAssignmentForm();
