@@ -54,7 +54,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'lang', 'grade', 'leader_name', 'school_id'], 'required'],
             [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second'], 'string', 'max' => 255],
-            [['iin'], 'string', 'max' => 14],
+            [['iin'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
