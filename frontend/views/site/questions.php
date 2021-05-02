@@ -23,7 +23,7 @@ use yii\helpers\Url; ?>
 </h1>
 <div class="row">
     <div class="col-md-12">
-        <?php if (Yii::$app->language === 'ru'): ?>
+        <?php if (Yii::$app->language === 'kz'): ?>
             <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -165,15 +165,17 @@ use yii\helpers\Url; ?>
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight">
-                            8. Сұрақ: Дипломды немесе Сертификатты жүктей алмай қалған жағдайда не істеймін?
+                            8. Сұрақ: Дипломды, алғыс хатты немесе Сертификатты жүктей алмай қалған жағдайда не істеймін?
                         </button>
                     </h2>
                 </div>
                 <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
-                            Жауап:  Егер Сіз Дипломды немесе Сертификатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
+                            Жауап:  Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
                             <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
+                            <br>
+                            <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Алғыс хатты жүктеу</a>
                         </p>
                     </div>
                 </div>
@@ -190,6 +192,54 @@ use yii\helpers\Url; ?>
                     <div class="card-body">
                         <p>
                             Жауап: Егер Сіз анкетаны қателікпен толтырсаңыз, Сіздің марапат қағазыңыз жіберген қателікпен шығады. Қатені жөндеу үшін bilimshini.kz@mail.ru электронды поштасына жазасыз: «Менің марапат қағазымда (осы жақша ішіне қалай дұрыстау керектігін жазыңыз) қателік кетіп қалды. Дұрыстап алуға сіздердің көмектеріңіз қажет» деп, ЖСН-іңізді қоса жазыңыз. Сізге, почтаңызға дұрысталған марапат қағазының сілтемесі жіберіледі.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            10. Сұрақ: Тапсырманы орындау барысында сұрақтар кері қайтады ма??
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>
+                            Жауап:  Сұрақтар кері қайтпайды.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            11. Сұрақ: Тапсырмада белгілеген жауаптың дұрыс-бұрыстығы көрсетіледі ме?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>
+                            Жауап:  Жауаптар олимпиада аяқталғанша құпия сақталады. Дұрыс жауап көрсетілмейді.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            12. Сұрақ: Аппеляцияға қашан-қалай беруге болады?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>
+                            Жауап:  Аппеляциялық шағымдар олимпиаданың соңғы күні30 –шы мамырда bilimshini.kz@mail.ru электронды поштасында қабылданады. Қарауға 1күн  (жұмыс күні) уақыт қойылған.
                         </p>
                     </div>
                 </div>
@@ -336,15 +386,17 @@ use yii\helpers\Url; ?>
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
                             <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight">
-                                8. Вопрос: Что мне делать если я не могу скачать Диплом или Сертификат?
+                                8. Вопрос: Что мне делать если я не могу скачать Диплом, Сертификат, Благодарственное письмо?
                             </button>
                         </h2>
                     </div>
                     <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>
-                                Ответ:  Если Вы не можете скачать Диплом или Сертификат, то
+                                Ответ:  Если Вы не можете скачать Диплом, Сертификат, Благодарственное письмо, то
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
+                                <br>
+                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Получить благодарственное письмо</a>
                             </p>
                         </div>
                     </div>
