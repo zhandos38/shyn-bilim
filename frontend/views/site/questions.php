@@ -199,12 +199,12 @@ use yii\helpers\Url; ?>
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen">
                             10. Сұрақ: Тапсырманы орындау барысында сұрақтар кері қайтады ма??
                         </button>
                     </h2>
                 </div>
-                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div id="collapseTen" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
                             Жауап:  Сұрақтар кері қайтпайды.
@@ -215,12 +215,12 @@ use yii\helpers\Url; ?>
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven">
                             11. Сұрақ: Тапсырмада белгілеген жауаптың дұрыс-бұрыстығы көрсетіледі ме?
                         </button>
                     </h2>
                 </div>
-                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
                             Жауап:  Жауаптар олимпиада аяқталғанша құпия сақталады. Дұрыс жауап көрсетілмейді.
@@ -231,12 +231,12 @@ use yii\helpers\Url; ?>
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve">
                             12. Сұрақ: Аппеляцияға қашан-қалай беруге болады?
                         </button>
                     </h2>
                 </div>
-                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div id="collapseTwelve" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <p>
                             Жауап:  Аппеляциялық шағымдар олимпиаданың соңғы күні 16–шы мамырда bilimshini.kz@mail.ru электронды поштасында қабылданады. Қарауға 1күн  (жұмыс күні) уақыт қойылған.
@@ -420,12 +420,12 @@ use yii\helpers\Url; ?>
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen">
                                 10. Вопрос: Возвращаются ли вопросы во время выполнения тестовых заданий?
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div id="collapseTen" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>
                                 Ответ:  Вопросы не возвращаются.
@@ -436,12 +436,12 @@ use yii\helpers\Url; ?>
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven">
                                 11. Вопрос: После ввода ответа, можно ли увидеть правильный ответ?
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div id="collapseEleven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>
                                 Ответ:  Ответы будут храниться до конца олипиады. Правильный ответ не отображается.
@@ -452,12 +452,12 @@ use yii\helpers\Url; ?>
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve">
                                 12. Вопрос: Когда и как можно подать на аппеляцию?
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div id="collapseTwelve" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>
                                 Ответ:  Апелляции принимаются в последний день олимпиады 16 мая по электронной почте bilimshini.kz@mail.ru. На рассмотрение апелляции берется 1 день.
