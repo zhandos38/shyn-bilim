@@ -128,7 +128,7 @@ class Olympiad extends \yii\db\ActiveRecord
 
     public function upload()
     {
-        if ($this->imageFile === null && $this->fileTempKz === null && $this->fileTempRu) {
+        if ($this->imageFile === null && $this->fileTempKz === null && $this->fileTempRu === null) {
             return true;
         }
 
