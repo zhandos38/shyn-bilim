@@ -16,7 +16,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         </div>
         <div style="padding-left: 460px; padding-top: 160px; text-align: center; width: 520px; text-transform: uppercase;">
             <div style="padding-top: 130px; font-size: 16px;">
-                ТӘУЕЛСІЗ ҚАЗАҚСТАН БІЛІМ САЛАСЫНА ӨЛШЕУСІЗ ҮЛЕС ҚОСЫП, ЖАҢАШЫЛДЫҚТЫҢ БАСТАМАШЫСЫ БОЛЫП ЖҮРГЕН ІСКЕР БАСШЫЛАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br>
+                КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br>
                 <b><?= Strip_tags($testAssignment->testOption->test->olympiad->name) ?></b> <br>
                 АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ
             </div>
