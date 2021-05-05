@@ -52,7 +52,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'iin', 'lang', 'grade', 'school_id'], 'required'],
+            [['name', 'surname', 'iin', 'lang', 'school_id'], 'required'],
             [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
