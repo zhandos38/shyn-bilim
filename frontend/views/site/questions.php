@@ -174,8 +174,6 @@ use yii\helpers\Url; ?>
                         <p>
                             Жауап:  Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
                             <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
-                            <br>
-                            <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Алғыс хатты жүктеу</a>
                         </p>
                     </div>
                 </div>
@@ -395,8 +393,6 @@ use yii\helpers\Url; ?>
                             <p>
                                 Ответ:  Если Вы не можете скачать Диплом, Сертификат, Благодарственное письмо, то
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
-                                <br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank']) ?>">Получить благодарственное письмо</a>
                             </p>
                         </div>
                     </div>
