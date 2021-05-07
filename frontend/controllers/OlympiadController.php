@@ -105,7 +105,7 @@ class OlympiadController extends Controller
                 ]);
             }
 
-            $model->status = TestAssignment::STATUS_ACTIVE;
+//            $model->status = TestAssignment::STATUS_ACTIVE;
             $model->test_option_id = $testOption->id;
             $model->created_at = time();
             if (!$model->save()) {
