@@ -105,14 +105,16 @@ class OlympiadController extends Controller
                 ]);
             }
 
-//            $model->status = TestAssignment::STATUS_ACTIVE;
+            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+            if ($whiteList !== null) {
+                $model->status = TestAssignment::STATUS_ACTIVE;
+            }
+
             $model->test_option_id = $testOption->id;
             $model->created_at = time();
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
             }
-
-            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
 
             $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED]);
             if ($testAssignment !== null) {
