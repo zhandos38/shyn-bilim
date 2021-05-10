@@ -6,6 +6,15 @@ use Da\QrCode\QrCode;
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
     ->setSize(60)
     ->setMargin(5);
+
+$text = '';
+if ($testAssignment->testOption->test->olympiad_id === 8) {
+    $text = 'КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>' . Strip_tags($testAssignment->testOption->test->olympiad->name) . '</b> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+} elseif ($testAssignment->testOption->test->olympiad_id === 7) {
+    $text = 'ОҚЫТУ МЕН ТӘРБИЕ БЕРУ ТӘЖІРБИЕСІН ЖЕТІК МЕҢГЕРГЕН, <br> БІЛІМ ҚЫЗМЕТКЕРЛЕРІНІҢ КӘСІПТІК ДЕҢГЕЙІН КӨТЕРУДІҢ ЖӘНЕ ОҚУ-ТӘРБИЕ ЖҰМЫСЫН БАСҚАРУДЫҢ <br> ҮЗДІК ҮЛГІСІН КӨРСЕТІП ЖҮРГЕН <br> МЕКТЕП ДИРЕКТОРЫ ОРЫНБАСАРЛАРЫНЫҢ <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> "ҮЗДІК ОРЫНБАСАР - 2021" АТТЫ I РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+} elseif ($testAssignment->testOption->test->olympiad_id === 6) {
+    $text = 'ТӘУЕЛСІЗ ҚАЗАҚСТАННЫҢ БІЛІМ САЛАСЫНА <br> ӨЛШЕУСІЗ ҮЛЕС ҚОСЫП, ЖАҢАШЫЛДЫҚТЫҢ <br> БАСТАМАШЫСЫ БОЛЫП ЖҮРГЕН ІСКЕР БАСШЫЛАР <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> "БІЛІКТІ БАСШЫ - 2021" АТТЫ I РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+}
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/teacher-cert.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
@@ -16,9 +25,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         </div>
         <div style="padding-left: 460px; padding-top: 160px; text-align: center; width: 520px; text-transform: uppercase;">
             <div style="padding-top: 130px; font-size: 16px;">
-                КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br>
-                <b><?= Strip_tags($testAssignment->testOption->test->olympiad->name) ?></b> <br>
-                АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ
+                <?= $text ?>
             </div>
             <div style="padding-top: 10px; font-size: 20px;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
