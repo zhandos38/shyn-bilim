@@ -9,11 +9,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 
 $text = '';
 if ($testAssignment->testOption->test->olympiad_id === 8) {
-    $text = 'КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>' . Strip_tags($testAssignment->testOption->test->olympiad->name) . '</b> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+    $text = 'КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>“ПӘН ОЛИМПИАДАСЫНЫҢ ҮЗДІК ПЕДАГОГЫ - 2021”</b> <br> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
 } elseif ($testAssignment->testOption->test->olympiad_id === 7) {
-    $text = 'ОҚЫТУ МЕН ТӘРБИЕ БЕРУ ТӘЖІРБИЕСІН ЖЕТІК МЕҢГЕРГЕН, <br> БІЛІМ ҚЫЗМЕТКЕРЛЕРІНІҢ КӘСІПТІК ДЕҢГЕЙІН КӨТЕРУДІҢ ЖӘНЕ ОҚУ-ТӘРБИЕ ЖҰМЫСЫН БАСҚАРУДЫҢ <br> ҮЗДІК ҮЛГІСІН КӨРСЕТІП ЖҮРГЕН <br> МЕКТЕП ДИРЕКТОРЫ ОРЫНБАСАРЛАРЫНЫҢ <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> "ҮЗДІК ОРЫНБАСАР - 2021" АТТЫ I РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+    $text = 'ОҚЫТУ МЕН ТӘРБИЕ БЕРУ ТӘЖІРБИЕСІН ЖЕТІК МЕҢГЕРГЕН, <br> БІЛІМ ҚЫЗМЕТКЕРЛЕРІНІҢ КӘСІПТІК ДЕҢГЕЙІН КӨТЕРУДІҢ ЖӘНЕ <br> ОҚУ-ТӘРБИЕ ЖҰМЫСЫН БАСҚАРУДЫҢ ҮЗДІК ҮЛГІСІН КӨРСЕТІП ЖҮРГЕН МЕКТЕП ДИРЕКТОРЫ ОРЫНБАСАРЛАРЫНЫҢ <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>"ҮЗДІК ОРЫНБАСАР - 2021"</b> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
 } elseif ($testAssignment->testOption->test->olympiad_id === 6) {
-    $text = 'ТӘУЕЛСІЗ ҚАЗАҚСТАННЫҢ БІЛІМ САЛАСЫНА <br> ӨЛШЕУСІЗ ҮЛЕС ҚОСЫП, ЖАҢАШЫЛДЫҚТЫҢ <br> БАСТАМАШЫСЫ БОЛЫП ЖҮРГЕН ІСКЕР БАСШЫЛАР <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> "БІЛІКТІ БАСШЫ - 2021" АТТЫ I РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
+    $text = 'ТӘУЕЛСІЗ ҚАЗАҚСТАННЫҢ БІЛІМ САЛАСЫНА <br> ӨЛШЕУСІЗ ҮЛЕС ҚОСЫП, ЖАҢАШЫЛДЫҚТЫҢ <br> БАСТАМАШЫСЫ БОЛЫП ЖҮРГЕН ІСКЕР БАСШЫЛАР <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>"БІЛІКТІ БАСШЫ - 2021"</b> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАСЫНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
 }
 ?>
 <div>
@@ -23,16 +23,18 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
             <div id="cert-number" style="font-size: 12px; font-weight: bold">Тіркеу №<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 12px; font-weight: bold"><?= date('d.m.Y') ?> жыл</div>
         </div>
-        <div style="padding-left: 460px; padding-top: 160px; text-align: center; width: 520px; text-transform: uppercase;">
+        <div style="padding-left: 460px; padding-top: 160px; text-align: center; width: 540px; text-transform: uppercase;">
             <div style="padding-top: 130px; font-size: 16px;">
                 <?= $text ?>
             </div>
             <div style="padding-top: 10px; font-size: 20px;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
+            <?php if ($testAssignment->testOption->test->olympiad_id === 8): ?>
             <div style="font-size: 14px; padding-top: 10px;">
                 <?= $testAssignment->testOption->test->name ?> пәні мұғалімі
             </div>
+            <?php endif; ?>
             <div style="font-size: 12px;">
                 <?php
                 if ($testAssignment->school !== null) {
