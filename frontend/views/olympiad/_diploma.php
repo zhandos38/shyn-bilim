@@ -10,7 +10,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 $text = '';
 if ($testAssignment->testOption->test->olympiad_id === 8) {
     $text = 'КӘСІБИ ДЕҢГЕЙІ ЖОҒАРЫ ЖӘНЕ ШЫҒАРМАШЫЛ ТАЛАНТТЫ ПЕДАГОГТАР АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>“ПӘН ОЛИМПИАДАСЫНЫҢ ҮЗДІК ПЕДАГОГЫ - 2021”</b> <br> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ <br> БЕЛСЕНДІ ҚАТЫСУШЫСЫ';
-} elseif ($testAssignment->testOption->test->olympiad_id === 7) {
+} elseif ($testAssignment->testOption->test->olympiad_id === 1) {
     $text = 'ОҚУ-ТӘРБИЕ ЖҰМЫСЫН БАСҚАРУДЫҢ ҮЗДІК ҮЛГІСІН КӨРСЕТІП ЖҮРГЕН МЕКТЕП ДИРЕКТОРЫ ОРЫНБАСАРЛАРЫНЫҢ <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>"ҮЗДІК ОРЫНБАСАР - 2021"</b> <br> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ';
 } elseif ($testAssignment->testOption->test->olympiad_id === 6) {
     $text = 'ТӘУЕЛСІЗ ҚАЗАҚСТАННЫҢ БІЛІМ САЛАСЫНА <br> ӨЛШЕУСІЗ ҮЛЕС ҚОСЫП, ЖАҢАШЫЛДЫҚТЫҢ <br> БАСТАМАШЫСЫ БОЛЫП ЖҮРГЕН ІСКЕР БАСШЫЛАР <br> АРАСЫНДА ҰЙЫМДАСТЫРЫЛҒАН <br> <b>"БІЛІКТІ БАСШЫ - 2021"</b> <br> АТТЫ РЕСПУБЛИКАЛЫҚ ОЛИМПИАДАНЫҢ';
@@ -21,7 +21,7 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
         <div id="cert-qrcode" style="padding-top: 65px; padding-left: 65px; font-size: 22px; font-weight: bold; "><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
         <div style="padding-left: 120px; padding-top: 0; text-align: center; width: 560px; text-transform: uppercase;">
             <img style="width: 120px" src="<?= $testAssignment->testOption->test->olympiad->getImage() ?>" alt="logo">
-            <div style="padding-top: 130px; font-size: 18px;">
+            <div style="padding-top: 130px; height: 155px; font-size: 18px;">
                 <?= $text ?>
             </div>
             <div style="padding-top: 10px; font-size: 22px;">
@@ -45,9 +45,9 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
                     }
                 } ?>
             </div>
-            <div style="font-size: 14px; height: 60px;"><?= $testAssignment->school->name ?></div>
+            <div style="font-size: 14px; height: 80px;"><?= $testAssignment->school->name ?></div>
         </div>
-        <div class="border" style="padding-top: 310px; padding-left: 85px;">
+        <div class="border" style="padding-top: 280px; padding-left: 85px;">
             <div id="cert-number" style="font-size: 12px; font-weight: bold">Тіркеу №<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 12px; font-weight: bold"><?= date('d.m.Y') ?> жыл</div>
         </div>
