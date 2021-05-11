@@ -47,7 +47,7 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
             </div>
             <div style="font-size: 14px; height: 60px;"><?= $testAssignment->school->name ?></div>
         </div>
-        <div class="border" style="padding-top: 300px; padding-left: 85px;">
+        <div class="border" style="padding-top: 320px; padding-left: 85px;">
             <div id="cert-number" style="font-size: 12px; font-weight: bold">Тіркеу №<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 12px; font-weight: bold"><?= date('d.m.Y') ?> жыл</div>
         </div>
