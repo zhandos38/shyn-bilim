@@ -14,6 +14,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             <h1><?= $this->title ?></h1>
             <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
             <div v-if="!showResultActive">
+                <div>
+                    <button class="btn btn-info" @click="setPreviousQuestion"><?= Yii::t('app', 'Предыдущий вопрос') ?></button>
+                    <button class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?></button>
+                </div>
                 <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
                 <div class="question-box" v-if="questions[currentQuestionId]">
                     <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>

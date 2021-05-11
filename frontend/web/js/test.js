@@ -14,8 +14,21 @@ testApp = new Vue({
         isSent: false
     },
     methods: {
+        setPreviousQuestion() {
+            if (this.currentQuestionId - 1 === -1) {
+                return false;
+            }
+
+            this.currentQuestionId--;
+        },
+        setNextQuestion() {
+            if (this.currentQuestionId + 1 >= this.questions.length) {
+                return false;
+            }
+
+            this.currentQuestionId++;
+        },
         getTest() {
-            console.log(this.id);
             $.get({
                 url: 'get-test',
                 format: 'JSON',
@@ -64,8 +77,6 @@ testApp = new Vue({
                     url: '/ru/olympiad/set-result',
                     data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
                     success: async (result) => {
-                        console.log(result);
-
                         if (parseInt(result) === 1) {
                             clearInterval(interval);
                             this.isSent = true;
