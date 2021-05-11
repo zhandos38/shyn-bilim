@@ -58,10 +58,10 @@ class OlympiadController extends Controller
             throw new Exception("Olympiad not found");
         }
 
-        if ($olympiad->id === 6 || $olympiad->id === 7) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'ОЛИМПИАДА 12 мамыр басталады'));
-            return $this->redirect(['site/index']);
-        }
+//        if ($olympiad->id === 6 || $olympiad->id === 7) {
+//            Yii::$app->session->setFlash('error', Yii::t('app', 'ОЛИМПИАДА 12 мамыр басталады'));
+//            return $this->redirect(['site/index']);
+//        }
 
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
