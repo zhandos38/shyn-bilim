@@ -65,13 +65,18 @@ testApp = new Vue({
                 return true;
             }
 
-            if (this.currentQuestionId + 1 >= this.questions.length) {
-                console.log('Вы достигли максимума');
-                this.showResults();
-                return true;
-            }
+            for ($i = 0; $i <= this.questions.length; $i++) {
+                if (this.currentQuestionId + 1 >= this.questions.length) {
+                    console.log('Вы достигли максимума');
+                    this.showResults();
+                    return true;
+                }
 
-            this.currentQuestionId++;
+                this.currentQuestionId++;
+                if (!this.questions[this.currentQuestionId].hasOwnProperty('selectedAnswerId')) {
+                    return;
+                }
+            }
         },
         async showResults() {
             this.showResultActive = true;
