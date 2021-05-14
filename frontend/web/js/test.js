@@ -15,7 +15,7 @@ testApp = new Vue({
     },
     methods: {
         setPreviousQuestion() {
-            if (this.currentQuestionId - 1 === 0) {
+            if (this.currentQuestionId === 0) {
                 return false;
             }
 
