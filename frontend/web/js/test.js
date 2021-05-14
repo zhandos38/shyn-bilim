@@ -15,28 +15,18 @@ testApp = new Vue({
     },
     methods: {
         setPreviousQuestion() {
-            for ($i = 0; $i <= this.questions.length; $i++) {
-                if (this.currentQuestionId === 0) {
-                    return;
-                }
-
-                this.currentQuestionId--;
-                if (!this.questions[this.currentQuestionId].hasOwnProperty('selectedAnswerId')) {
-                    return;
-                }
+            if (this.currentQuestionId - 1 === 0) {
+                return false;
             }
+
+            this.currentQuestionId--;
         },
         setNextQuestion() {
-            for ($i = 0; $i <= this.questions.length; $i++) {
-                if (this.currentQuestionId + 1 >= this.questions.length){
-                    return;
-                }
-
-                this.currentQuestionId++;
-                if (!this.questions[this.currentQuestionId].hasOwnProperty('selectedAnswerId')) {
-                    return;
-                }
+            if (this.currentQuestionId + 1 >= this.questions.length) {
+                return false;
             }
+
+            this.currentQuestionId++;
         },
         getTest() {
             $.get({
