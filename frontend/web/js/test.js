@@ -14,6 +14,13 @@ testApp = new Vue({
         isSent: false
     },
     methods: {
+        showLog(key1, key2) {
+              console.log('selectedId', key1);
+              console.log('id', key2);
+        },
+        selectAnswer(key) {
+            Vue.set(this.questions[this.currentQuestionId], 'selectedAnswerId', key);
+        },
         setPreviousQuestion() {
             if (this.currentQuestionId === 0) {
                 return false;
@@ -48,25 +55,6 @@ testApp = new Vue({
                     console.log('Get test failed');
                 }
             });
-        },
-        nextQuestion() {
-            if (this.questions[this.currentQuestionId]['selectedAnswerId'] === undefined) {
-                console.log('Нужно ответить на вопрос');
-                return true;
-            }
-
-            for ($i = 0; $i <= this.questions.length; $i++) {
-                if (this.currentQuestionId + 1 >= this.questions.length) {
-                    console.log('Вы достигли максимума');
-                    this.showResults();
-                    return true;
-                }
-
-                this.currentQuestionId++;
-                if (!this.questions[this.currentQuestionId].hasOwnProperty('selectedAnswerId')) {
-                    return;
-                }
-            }
         },
         async showResults() {
             this.showResultActive = true;
