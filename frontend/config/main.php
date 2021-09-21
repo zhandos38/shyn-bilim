@@ -46,6 +46,7 @@ return [
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'site/index',
+                'login' => 'site/login',
                 'contact' => 'site/contact',
                 'questions' => 'site/questions',
             ],

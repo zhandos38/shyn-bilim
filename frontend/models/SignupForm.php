@@ -16,6 +16,11 @@ class SignupForm extends Model
     public $password;
     public $role;
     public $status;
+    public $phone;
+    public $address;
+    public $city_id;
+    public $region_id;
+    public $school_id;
 
 
     /**
@@ -46,7 +51,13 @@ class SignupForm extends Model
     {
         return [
             'username' => 'Логин',
-            'password' => 'Пароль'
+            'password' => 'Пароль',
+            'phone' => Yii::t('app', 'Номер телефона'),
+            'address' => 'Адрес',
+            'school_id' => Yii::t('app', 'Школа/Колледж'),
+            'email' => 'Email',
+            'city_id' => Yii::t('app', 'Город'),
+            'region_id' => Yii::t('app', 'Регион'),
         ];
     }
 

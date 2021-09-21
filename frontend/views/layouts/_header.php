@@ -19,17 +19,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
     <div class="container">
         <div class="top-header__content">
             <div class="top-header__social-network">
+                <a class="mr-4" href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
                 <a href="https://www.facebook.com/people/%D0%A8%D1%8B%D2%A3-%D0%91%D0%B0%D1%81%D0%BF%D0%B0%D1%85%D0%B0%D0%BD%D0%B0%D1%81%D1%8B-%D0%95%D1%81%D0%B5%D0%BD-%D0%91%D0%B0%D1%85%D1%8B%D1%82%D0%B3%D1%83%D0%BB/100009917714377"><i class="fa fa-facebook"></i></a>
                 <a href="https://instagram.com/bilim.shyny?igshid=17e2qmrtscwpp"><i class="fa fa-instagram"></i></a>
                 <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i></a>
                 <a href="tel:87750767876"><i class="fa fa-whatsapp"></i></a>
             </div>
             <div class="top-header__contact">
-                <div class="navbar-email">
-                    <i class="fa fa-envelope"></i> bilimshini.kz@mail.ru
-                </div>
                 <div class="navbar-button">
                     <?= $this->render('select-language') ?>
+                </div>
+                <div class="navbar-button">
+                    <a href="<?= Url::to(['site/login']) ?>"><i class="fa fa-user pr-1"></i> Войти</a>
                 </div>
             </div>
         </div>

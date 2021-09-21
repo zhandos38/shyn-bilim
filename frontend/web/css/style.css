@@ -60,6 +60,10 @@ a:hover {
 /*    background-image: url("/img/fon.jpg");*/
 /*}*/
 
+.help-block-error {
+    color: red;
+}
+
 .main-container {
     color: #fff;
     /*background-image: linear-gradient(90deg, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.4) 40%), url(/img/002.jpg);*/

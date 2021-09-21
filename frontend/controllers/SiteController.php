@@ -8,6 +8,7 @@ use common\models\Post;
 use common\models\School;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
+use kartik\mpdf\Pdf;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\helpers\Json;
@@ -299,5 +300,51 @@ class SiteController extends Controller
         }
 
         throw new HttpException('404', 'Page is not found!');
+    }
+
+    public function actionCert()
+    {
+//        $results = Result::find()
+//            ->alias('t1')
+//            ->joinWith('test t2')
+//            ->andWhere(['>=', 't1.point', 0])
+//            ->andWhere(['<=', 't1.point', 20])
+//            ->andWhere(['t2.lang' => 'ru'])
+////            ->limit(1)
+//            ->all();
+
+        $results = Yii::$app->db->createCommand("select * from diploma")->queryAll();
+
+//        $number = 38;
+        foreach ($results as $result) {
+            // get your HTML raw content without any layouts or scripts
+            $content = $this->renderPartial('_cert', ['user' => $result]);
+
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_UTF8,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A3,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                'marginTop' => 0,
+                'marginLeft' => 0,
+                'marginRight' => 0,
+                'marginBottom' => 0,
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+                'filename' =>  'C:/diploma/' . $result['protocol_number'] . ' - ' . $result['full_name_kz'] . '.pdf'
+            ]);
+
+            // return the pdf output as per the destination settin
+            return $pdf->render();
+//            $number++;
+        }
     }
 }
