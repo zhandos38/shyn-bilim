@@ -3,6 +3,7 @@ namespace app\controllers;
 
 
 use common\models\Article;
+use common\models\Subscribe;
 use common\models\Test;
 use common\models\TestAssignment;
 use Yii;
@@ -85,6 +86,37 @@ class SiteController extends Controller
             if ((int)$request[$this->toProperty('result')]) {
                 $order->lang = 'kz';
                 $order->status = TestAssignment::STATUS_ACTIVE;
+                if (!$order->save()) {
+                    throw new Exception(Json::encode($order->getErrors()));
+                }
+            }
+
+            return $this->getSignByData($data, 'result');
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function actionSubscribeResult()
+    {
+        $request = Yii::$app->request->bodyParams;
+
+        try {
+            if (!$this->checkSign($request, 'result')) {
+                throw new Exception('Sig is not correct');
+            }
+
+            $data = [
+                'pg_status' => 'ok'
+            ];
+
+            $order = Subscribe::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+            if (empty($order)) {
+                throw new Exception('Order subscribe is not found');
+            }
+
+            if ((int)$request[$this->toProperty('result')]) {
+                $order->status = Subscribe::STATUS_ACTIVE;
                 if (!$order->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }

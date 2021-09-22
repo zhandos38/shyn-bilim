@@ -43,6 +43,7 @@ return [
                 '' => 'site/index',
                 'POST result' => 'site/result',
                 'POST olympiad/result' => 'site/olympiad-result',
+                'POST subscribe/result' => 'site/subscribe-result',
             ]
         ]
     ],

@@ -34,8 +34,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                         <a href="<?= Url::to(['site/login']) ?>"><i class="fa fa-user pr-1"></i> Войти</a>
                     </div>
                 <?php else: ?>
-                    <div class="navbar-button">
-                        <a href="<?= Url::to(['site/logout']) ?>"><i class="fa fa-user pr-1"></i><?= Yii::$app->user->identity->name ?> (Выйти)</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= Yii::$app->user->identity->name ?>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Мой материалы</a>
+                            <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>">Выйти</a>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>

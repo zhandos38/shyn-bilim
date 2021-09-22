@@ -29,8 +29,9 @@ use yii\web\IdentityInterface;
  * @property string $iin
  * @property string $phone
  * @property string $address
- * @property string $school_id
+ * @property integer $school_id
  * @property string $post
+ * @property integer $article_count
  */
 class User extends ActiveRecord implements IdentityInterface
 {

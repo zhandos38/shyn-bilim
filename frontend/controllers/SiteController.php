@@ -6,12 +6,17 @@ use common\models\Mark;
 use common\models\News;
 use common\models\Post;
 use common\models\School;
+use common\models\Subscribe;
+use common\models\User;
+use Exception;
 use frontend\models\ResendVerificationEmailForm;
+use frontend\models\SubscribeForm;
 use frontend\models\VerifyEmailForm;
 use kartik\mpdf\Pdf;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -346,5 +351,113 @@ class SiteController extends Controller
             return $pdf->render();
 //            $number++;
         }
+    }
+
+    public function actionSubscribe()
+    {
+        $model = new SubscribeForm();
+        if ($model->load(Yii::$app->request->post()) && $orderId = $model->save()) {
+            $salt = $this->getSalt(8);
+            $request = [
+                'pg_merchant_id' => Yii::$app->params['payboxId'],
+                'pg_amount' => 3000,
+                'pg_salt' => $salt,
+                'pg_order_id' => $orderId,
+                'pg_description' => 'Оплата за подписку',
+                'pg_success_url' => Url::base('https') . '/site/subscribe-success',
+                'pg_result_url' => Yii::$app->params['apiDomain'] . '/subscribe/result',
+                'pg_result_url_method' => 'POST',
+            ];
+
+            $request = $this->getSignByData($request, 'payment.php', $salt);
+
+            $query = http_build_query($request);
+
+            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+        }
+        /** @var User $user */
+        $user = Yii::$app->user->identity;
+        $model->school_id = $user->school_id;
+        $model->post = $user->post;
+        $model->address = $user->address;
+
+        return $this->render('subscribe', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionSubscribeSuccess()
+    {
+        $request = Yii::$app->request->queryParams;
+
+        if (!$this->checkSign($request, 'success')) {
+            throw new Exception('Sig is not correct');
+        }
+
+        $model = Subscribe::find()
+            ->andWhere(['id' => $request[$this->toProperty('order_id')]])
+            ->andWhere(['status' => Subscribe::STATUS_ACTIVE])
+            ->one();
+
+        if (empty($model)) {
+            throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
+        }
+
+        return $this->redirect(['site/subscribe']);
+    }
+
+    public function checkSign($data, $url):bool
+    {
+        $array = $data;
+        $salt = $array[$this->toProperty('salt')];
+
+        unset($array[$this->toProperty('sig')], $array[$this->toProperty('salt')]);
+
+        $sign = $this->sign($array, $salt, $url);
+
+//        VarDumper::dump($sign . ' - ' . $data[$this->toProperty('sig')]); die;
+
+        return ($sign == $data[$this->toProperty('sig')]);
+    }
+
+    private function sign($data, $salt, $url)
+    {
+        $arr = $data;
+        $key = Yii::$app->params['payboxKey'];
+
+        $arr[$this->toProperty('salt')] = $salt;
+        ksort($arr);
+        array_unshift($arr, $url);
+        array_push($arr, $key);
+        $arr[$this->toProperty('sig')] = md5(implode(';', $arr));
+
+        return $arr[$this->toProperty('sig')];
+    }
+
+    public function getSignByData($data, $url, $salt = null)
+    {
+        $array = $data;
+        $salt = $salt ? $salt : $this->getSalt(8);
+        $array[$this->toProperty('salt')] = $salt;
+        unset($array[$this->toProperty('sig')]);
+
+        ksort($array);
+        array_unshift($array, $url);
+        array_push($array,Yii::$app->params['payboxKey']);
+        $sign = md5(implode(';', $array));
+
+        $data[$this->toProperty('salt')] = $salt;
+        $data[$this->toProperty('sig')] = $sign;
+
+        return $data;
+    }
+
+    private function getSalt($length) {
+        return bin2hex(random_bytes($length));
+    }
+
+    private function toProperty($property)
+    {
+        return 'pg_' . $property;
     }
 }
