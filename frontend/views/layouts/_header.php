@@ -29,9 +29,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                 <div class="navbar-button">
                     <?= $this->render('select-language') ?>
                 </div>
-                <div class="navbar-button">
-                    <a href="<?= Url::to(['site/login']) ?>"><i class="fa fa-user pr-1"></i> Войти</a>
-                </div>
+                <?php if (!Yii::$app->user->identity): ?>
+                    <div class="navbar-button">
+                        <a href="<?= Url::to(['site/login']) ?>"><i class="fa fa-user pr-1"></i> Войти</a>
+                    </div>
+                <?php else: ?>
+                    <div class="navbar-button">
+                        <a href="<?= Url::to(['site/logout']) ?>"><i class="fa fa-user pr-1"></i><?= Yii::$app->user->identity->name ?> (Выйти)</a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

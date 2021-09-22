@@ -12,7 +12,6 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
- * @property string $username
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $verification_token
@@ -23,6 +22,15 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ *
+ * @property string $name
+ * @property string $surname
+ * @property string $patronymic
+ * @property string $iin
+ * @property string $phone
+ * @property string $address
+ * @property string $school_id
+ * @property string $post
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -58,21 +66,30 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['username', 'string', 'max' => 255],
             ['email', 'email'],
 
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
+
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
+            ['school_id', 'integer'],
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'username' => 'Логин',
             'role' => 'Роль',
             'status' => 'Статус',
-            'created_at' => 'Дата добавление'
+            'created_at' => 'Дата добавление',
+            'name' => Yii::t('app', 'Имя'),
+            'surname' => Yii::t('app', 'Фамилия'),
+            'patronymic' => Yii::t('app', 'Отчество'),
+            'iin' => Yii::t('app', 'ИИН'),
+            'phone' => Yii::t('app', 'Номер телефона'),
+            'address' => 'Адрес',
+            'school_id' => Yii::t('app', 'Школа/Колледж'),
+            'post' => Yii::t('app', 'Почтовый индекс'),
         ];
     }
 
@@ -93,14 +110,14 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * Finds user by username
+     * Finds user by iin
      *
-     * @param string $username
+     * @param string $iin
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByIIN($iin)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['iin' => $iin, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**

@@ -11,16 +11,20 @@ use yii\helpers\VarDumper;
  */
 class SignupForm extends Model
 {
-    public $username;
     public $email;
     public $password;
     public $role;
     public $status;
+    public $name;
+    public $surname;
+    public $patronymic;
     public $phone;
+    public $iin ;
     public $address;
     public $city_id;
     public $region_id;
     public $school_id;
+    public $post;
 
 
     /**
@@ -29,35 +33,38 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
-
             ['email', 'trim'],
-            ['email', 'required'],
             ['email', 'email'],
-            ['email', 'string', 'max' => 255],
+            [['email', 'post'], 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
 
-            [['status', 'role'], 'integer']
+            [['status', 'role'], 'integer'],
+
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
+            ['school_id', 'integer'],
+            [['name', 'surname', 'iin'], 'required'],
+            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный телефон уже зарегистрирован'],
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'username' => 'Логин',
             'password' => 'Пароль',
+            'name' => Yii::t('app', 'Имя'),
+            'surname' => Yii::t('app', 'Фамилия'),
+            'patronymic' => Yii::t('app', 'Отчество'),
+            'iin' => Yii::t('app', 'ИИН'),
             'phone' => Yii::t('app', 'Номер телефона'),
             'address' => 'Адрес',
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'email' => 'Email',
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
+            'post' => Yii::t('app', 'Почтовый индекс'),
         ];
     }
 
@@ -73,8 +80,16 @@ class SignupForm extends Model
         }
 
         $user = new User();
-        $user->username = $this->username;
+        $user->name = $this->name;
+        $user->surname = $this->surname;
+        $user->patronymic = $this->patronymic;
+        $user->phone = $this->phone;
+        $user->address = $this->address;
+        $user->post = $this->post;
+        $user->school_id = $this->school_id;
+        $user->iin = $this->iin;
         $user->email = $this->email;
+        $user->status = User::STATUS_ACTIVE;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();

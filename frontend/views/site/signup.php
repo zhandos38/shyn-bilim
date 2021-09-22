@@ -22,7 +22,17 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'surname') ?>
+
+                <?= $form->field($model, 'patronymic') ?>
+
+                <?= $form->field($model, 'iin') ?>
+
+                <?= $form->field($model, 'password')->passwordInput() ?>
+
+                <?= $form->field($model, 'address') ?>
 
                 <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
                     'mask' => '+7(999)999-99-99',
@@ -36,7 +46,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
 
                 <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'post') ?>
 
                 <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                     'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
@@ -56,8 +66,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
                 ]) ?>
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
-                <?= $form->field($model, 'address') ?>
-
                 <div class="form-group">
                     <?= Html::submitButton('Продолжить', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
@@ -66,3 +74,47 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
         </div>
     </div>
 </div>
+<?php
+$js =<<<JS
+$('#signupform-region_id').change(function() {
+  $.get({
+    url: '/kz/site/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#signupform-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#signupform-city_id').change(function() {
+  $.get({
+    url: '/kz/site/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#signupform-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>
