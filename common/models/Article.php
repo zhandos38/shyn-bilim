@@ -47,7 +47,7 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id', 'user_id'], 'required'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id'], 'required'],
             [['subject_id', 'status', 'school_id', 'user_id', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
 

@@ -8,6 +8,8 @@
     </div>
     <div class="card-footer">
         <small class="text-muted"><i class="fa fa-calendar"></i> <?= date('d.m.Y', $model->created_at) ?></small>
-        <a href="<?= $model->getFile() ?>" class="btn btn-primary pull-right">Жүктеу</a>
+        <div class="mb-2 pull-right">
+            <a href="<?= $model->getFile() ?>" class="btn btn-outline-info"><i class="fa fa-download"></i> <?= Yii::t('site', 'Скачать') ?></a>
+        </div>
     </div>
 </div>

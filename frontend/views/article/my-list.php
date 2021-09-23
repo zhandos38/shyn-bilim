@@ -8,23 +8,28 @@ use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\bootstrap4\LinkPager;
 ?>
-<h2><?= $this->title ?></h2>
-<div class="article-order-widget">
-    <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
-        <?= Yii::t('app', 'Опубликовать материал') ?>
-    </a>
+<div class="mt-5 mb-5">
+    <h2><?= $this->title ?></h2>
+    <p>
+        Лимит бесплатных публикации: <?= Yii::$app->user->identity->article_count ?>
+    </p>
+    <div class="article-order-widget">
+        <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
+            <?= Yii::t('app', 'Опубликовать материал') ?>
+        </a>
+    </div>
+    <?= ListView::widget([
+        'dataProvider' => $dataProvider,
+        'itemView' => '_item',
+        'layout' => '{items}',
+        'options' => [
+            'class' => 'row'
+        ],
+        'itemOptions' => [
+            'class' => 'col-md-4'
+        ]
+    ]) ?>
+    <?= LinkPager::widget([
+        'pagination' => $dataProvider->pagination
+    ]) ?>
 </div>
-<?= ListView::widget([
-    'dataProvider' => $dataProvider,
-    'itemView' => '_item',
-    'layout' => '{items}',
-    'options' => [
-        'class' => 'row'
-    ],
-    'itemOptions' => [
-        'class' => 'col-md-3'
-    ]
-]) ?>
-<?= LinkPager::widget([
-    'pagination' => $dataProvider->pagination
-]) ?>

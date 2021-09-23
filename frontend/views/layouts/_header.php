@@ -40,8 +40,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="<?= Url::to(['article/my-list']) ?>">Мой материалы</a>
-                            <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>">Выйти</a>
+                            <a class="dropdown-item" href="<?= Url::to(['article/my-list']) ?>"><?= Yii::t('site', 'Мои материалы') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>"><?= Yii::t('site', 'Выйти') ?></a>
                         </div>
                     </div>
                 <?php endif; ?>

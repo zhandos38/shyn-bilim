@@ -45,7 +45,7 @@ class SignupForm extends Model
 
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
             ['school_id', 'integer'],
-            [['name', 'surname', 'iin'], 'required'],
+            [['name', 'surname', 'patronymic', 'iin'], 'required'],
             ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный телефон уже зарегистрирован'],
         ];
     }

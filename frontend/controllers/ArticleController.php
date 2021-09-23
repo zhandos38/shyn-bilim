@@ -138,8 +138,13 @@ class ArticleController extends Controller
     {
         $model = new Article();
         $model->subject_id = $id;
-        if ($id === null) {
-            $model->user_id = Yii::$app->user->getId();
+        if (!Yii::$app->user->isGuest || $id === null) {
+            $user = Yii::$app->user->identity;
+            $model->user_id = $user->id;
+            $model->school_id = $user->school_id;
+            $model->name = $user->name;
+            $model->surname = $user->surname;
+            $model->patronymic = $user->patronymic;
         }
 
         if ($model->load(Yii::$app->request->post())) {
@@ -151,7 +156,7 @@ class ArticleController extends Controller
             }
 
             if ($model->save() && $model->upload()) {
-                if (!$model->user_id) {
+                if (!$model->user_id || Yii::$app->user->identity->article_count <= 0) {
                     $salt = $this->getSalt(8);
                     $request = [
                         'pg_merchant_id' => Yii::$app->params['payboxId'],
@@ -170,6 +175,12 @@ class ArticleController extends Controller
 
                     return $this->redirect('https://api.paybox.money/payment.php?' . $query);
                 } else {
+                    $user = Yii::$app->user->identity;
+                    $user->article_count -= 1;
+                    if (!$user->save()) {
+                        throw new Exception('Article count save error!');
+                    }
+
                     Yii::$app->session->setFlash('success', Yii::t('site', 'Материал успешно опубликован'));
                     return $this->redirect(['article/my-list']);
                 }

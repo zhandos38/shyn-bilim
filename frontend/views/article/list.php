@@ -24,7 +24,7 @@ use yii\helpers\Url;
         'class' => 'row'
     ],
     'itemOptions' => [
-        'class' => 'col-md-3'
+        'class' => 'col-md-4'
     ]
 ]) ?>
 <?= \yii\widgets\LinkPager::widget([

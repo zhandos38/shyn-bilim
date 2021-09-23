@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
 
 $this->title = Yii::t('app', 'Опубликовать материал');
 ?>
-<div class="order-form">
+<div class="order-form mt-5 mb-5">
     <h1><?= $this->title ?></h1>
     <?php if (!$model->user_id): ?>
     <p>
@@ -25,11 +25,15 @@ $this->title = Yii::t('app', 'Опубликовать материал');
         <div class="col-md-6">
             <?php $form = ActiveForm::begin() ?>
 
-            <?= $form->field($model, 'surname') ?>
+            <?php if (!$model->user_id): ?>
 
-            <?= $form->field($model, 'name') ?>
+                <?= $form->field($model, 'surname') ?>
 
-            <?= $form->field($model, 'patronymic') ?>
+                <?= $form->field($model, 'name') ?>
+
+                <?= $form->field($model, 'patronymic') ?>
+
+            <?php endif; ?>
 
             <?= $form->field($model, 'topic') ?>
 
@@ -41,6 +45,8 @@ $this->title = Yii::t('app', 'Опубликовать материал');
                 ]) ?>
 
             <?php endif; ?>
+
+            <?php if (!$model->school_id): ?>
 
             <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                 'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
@@ -56,6 +62,8 @@ $this->title = Yii::t('app', 'Опубликовать материал');
                 'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
             ]) ?>
+
+            <?php endif; ?>
 
             <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
                 'options' => [
