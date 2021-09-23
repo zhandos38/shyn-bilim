@@ -40,7 +40,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Мой материалы</a>
+                            <a class="dropdown-item" href="<?= Url::to(['article/my-list']) ?>">Мой материалы</a>
                             <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>">Выйти</a>
                         </div>
                     </div>

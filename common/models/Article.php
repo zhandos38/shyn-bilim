@@ -21,6 +21,7 @@ use yii\helpers\Json;
  * @property int|null $created_at
  * @property-read \yii\db\ActiveQuery $school
  * @property int $school_id [int(11)]
+ * @property int $user_id [int(11)]
  */
 class Article extends \yii\db\ActiveRecord
 {
@@ -46,8 +47,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id'], 'required'],
-            [['subject_id', 'status', 'school_id', 'created_at'], 'integer'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id', 'user_id'], 'required'],
+            [['subject_id', 'status', 'school_id', 'user_id', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
@@ -73,12 +74,18 @@ class Article extends \yii\db\ActiveRecord
             'school_id' => Yii::t('app', 'Школа'),
             'status' => Yii::t('app', 'Статус'),
             'created_at' => Yii::t('app', 'Время создание'),
+            'user_id' => Yii::t('app', 'Пользователь'),
         ];
     }
 
     public function getSubject()
     {
         return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**

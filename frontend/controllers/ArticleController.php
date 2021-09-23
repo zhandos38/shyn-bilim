@@ -7,12 +7,15 @@ namespace frontend\controllers;
 use common\models\Article;
 use common\models\Subject;
 use frontend\models\ArticleSearch;
+use frontend\models\MyArticleSearch;
 use frontend\models\PayboxForm;
 use kartik\mpdf\Pdf;
 use Paybox\Pay\Facade as Paybox;
 use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 use Yii;
 use yii\db\Exception;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -22,6 +25,26 @@ use yii\web\UploadedFile;
 
 class ArticleController extends Controller
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['my-list'],
+                'rules' => [
+                    [
+                        'actions' => ['my-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex($status = null)
     {
 //        Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
@@ -100,10 +123,24 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function actionOrder($id)
+    public function actionMyList()
+    {
+        $searchModel = new MyArticleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('my-list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
+        ]);
+    }
+
+    public function actionOrder($id = null)
     {
         $model = new Article();
         $model->subject_id = $id;
+        if ($id === null) {
+            $model->user_id = Yii::$app->user->getId();
+        }
 
         if ($model->load(Yii::$app->request->post())) {
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
@@ -114,24 +151,28 @@ class ArticleController extends Controller
             }
 
             if ($model->save() && $model->upload()) {
+                if (!$model->user_id) {
+                    $salt = $this->getSalt(8);
+                    $request = [
+                        'pg_merchant_id' => Yii::$app->params['payboxId'],
+                        'pg_amount' => 1000,
+                        'pg_salt' => $salt,
+                        'pg_order_id' => $model->id,
+                        'pg_success_url_method' => 'GET',
+                        'pg_description' => 'Оплата за публикацию материала',
+                        'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+                        'pg_result_url_method' => 'POST',
+                    ];
 
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 1000,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_success_url_method' => 'GET',
-                    'pg_description' => 'Оплата за публикацию материала',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
-                ];
+                    $request = $this->getSignByData($request, 'payment.php', $salt);
 
-                $request = $this->getSignByData($request, 'payment.php', $salt);
+                    $query = http_build_query($request);
 
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                    return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                } else {
+                    Yii::$app->session->setFlash('success', Yii::t('site', 'Материал успешно опубликован'));
+                    return $this->redirect(['article/my-list']);
+                }
             }
         }
 
