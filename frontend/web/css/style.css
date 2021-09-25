@@ -700,7 +700,7 @@ color: #9e9e9e;
 .card-image {
     display: block;
     min-height: 20rem; /* layout hack */
-    background: #006fb9 center center no-repeat;
+    background: #0092df center center no-repeat;
     background-size: cover;
 }
 .card-image > img {
