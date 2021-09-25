@@ -11,7 +11,7 @@ use yii\bootstrap4\LinkPager;
 <div class="mt-5 mb-5">
     <h2><?= $this->title ?></h2>
     <p>
-        Лимит бесплатных публикации: <?= Yii::$app->user->identity->article_count ?>
+        <?= Yii::t('site', 'Лимит бесплатных публикации') ?>: <?= Yii::$app->user->identity->article_count ?>
     </p>
     <div class="article-order-widget">
         <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
