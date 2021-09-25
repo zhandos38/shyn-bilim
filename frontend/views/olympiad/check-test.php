@@ -8,7 +8,7 @@ use yii\web\View;
 /* @var $this View */
 /* @var $model CheckAssignmentForm */
 
-$this->title = Yii::t('site', 'Продолжить олимпиаду');
+$this->title = Yii::t('app', 'Продолжить олимпиаду');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Вопросы и ответы'), 'url' => ['site/questions']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 ?>

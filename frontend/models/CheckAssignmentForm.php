@@ -30,7 +30,7 @@ class CheckAssignmentForm extends Model
     public function attributeLabels()
     {
         return [
-          'iin' => Yii::t('site', 'ИИН')
+          'iin' => Yii::t('app', 'ИИН')
         ];
     }
 

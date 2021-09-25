@@ -11,7 +11,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
 <div class="qa-block rounded-circle shadow-lg">
     <a class="qa-block-link" href="<?= Url::to(['site/questions']) ?>">
         <img class="qa-block-img" src="/img/qa-img.png" alt="qa-img">
-        <div style="color: #9c9c9c; font-size: 14px;"><?= Yii::t('site', 'Помощь') ?></div>
+        <div style="color: #9c9c9c; font-size: 14px;"><?= Yii::t('app', 'Помощь') ?></div>
     </a>
 </div>
 <!-- Start: Navigation Upper with Button -->
@@ -40,8 +40,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="<?= Url::to(['article/my-list']) ?>"><?= Yii::t('site', 'Мои материалы') ?></a>
-                            <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>"><?= Yii::t('site', 'Выйти') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['article/my-list']) ?>"><?= Yii::t('app', 'Мои материалы') ?></a>
+                            <a class="dropdown-item" href="<?= Url::to(['site/logout']) ?>"><?= Yii::t('app', 'Выйти') ?></a>
                         </div>
                     </div>
                 <?php endif; ?>

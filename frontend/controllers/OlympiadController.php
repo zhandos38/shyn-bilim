@@ -368,7 +368,7 @@ class OlympiadController extends Controller
                 return $this->redirect(['olympiad/get-cert', 'id' => $testAssignmentId]);
             }
 
-            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Данный ИИН не участвовал в олимпиаде'));
         }
 
         return $this->render('check-cert', [
@@ -426,7 +426,7 @@ class OlympiadController extends Controller
                 return $this->redirect(['olympiad/get-cert-thank', 'id' => $testAssignmentId]);
             }
 
-            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Данный ИИН не участвовал в олимпиаде'));
         }
 
         return $this->render('check-cert-thank', [
@@ -443,7 +443,7 @@ class OlympiadController extends Controller
                 return $this->redirect(['olympiad/test', 'assignment' => $testAssignmentId]);
             }
 
-            Yii::$app->session->setFlash('error', Yii::t('site', 'Данный ИИН не участвовал в олимпиаде'));
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Данный ИИН не участвовал в олимпиаде'));
         }
 
         return $this->render('check-test', [

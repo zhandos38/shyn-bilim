@@ -95,7 +95,7 @@ $this->registerMetaTag([
                             <div class="feature-box__container">
                                 <img class="feature-box__image" src="/img/preparation.png" alt="preparation">
                                 <div class="feature-box__title">
-                                    <span><?= Yii::t('app', 'Жоба') ?></span>
+                                    <span><?= Yii::t('app', 'Проекты') ?></span>
                                 </div>
                             </div>
                         </a>
