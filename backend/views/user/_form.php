@@ -16,7 +16,7 @@ use yii\widgets\MaskedInput;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'username')->textInput() ?>
+        <?= $form->field($model, 'iin')->textInput() ?>
 
         <?= $form->field($model, 'email')->textInput() ?>
 

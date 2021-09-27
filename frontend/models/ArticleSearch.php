@@ -48,7 +48,9 @@ class ArticleSearch extends Article
      */
     public function search($params, $id)
     {
-        $query = Article::find()->andWhere(['subject_id' => $id]);
+        $query = Article::find()
+            ->andWhere(['status' => Article::STATUS_ACTIVE])
+            ->andWhere(['subject_id' => $id]);
 
         // add conditions that should always apply here
 
