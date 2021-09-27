@@ -8,7 +8,7 @@ use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\bootstrap4\LinkPager;
 ?>
-<div class="mt-5 mb-5">
+<div>
     <h2><?= $this->title ?></h2>
     <p>
         <?= Yii::t('app', 'Лимит бесплатных публикации') ?>: <?= Yii::$app->user->identity->article_count ?>

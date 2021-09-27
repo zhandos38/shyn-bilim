@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
 
 $this->title = Yii::t('app', 'Опубликовать материал');
 ?>
-<div class="order-form mt-5 mb-5">
+<div class="order-form">
     <h1><?= $this->title ?></h1>
     <?php if (!$model->user_id): ?>
     <p>

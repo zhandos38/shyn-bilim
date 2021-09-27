@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login']];
 ?>
-<div class="site-login mt-5 mb-5">
+<div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Заполните форму чтобы войти в свой аккаунт</p>

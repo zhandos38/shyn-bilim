@@ -13,7 +13,7 @@ use yii\widgets\MaskedInput;
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signup']];
 ?>
-<div class="site-signup mt-5 mb-5">
+<div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Заполните форму чтобы зарегистрироватся:</p>

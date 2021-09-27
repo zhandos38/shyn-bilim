@@ -55,7 +55,7 @@ AppAsset::register($this);
 </div>
 
 <div class="site-container">
-    <div class="container">
+    <div class="container pt-5 pb-5">
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>

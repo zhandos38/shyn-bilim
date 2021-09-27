@@ -12,7 +12,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Подписатся';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login']];
 ?>
-<div class="subscribe-login mt-5 mb-5">
+<div class="subscribe-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Заполните форму чтобы подписатся</p>

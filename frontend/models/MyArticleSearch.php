@@ -49,7 +49,7 @@ class MyArticleSearch extends Article
      */
     public function search($params)
     {
-        $query = Article::find()->andWhere(['user_id' => Yii::$app->user->getId()]);
+        $query = Article::find()->andWhere(['status' => Article::STATUS_ACTIVE])->andWhere(['user_id' => Yii::$app->user->getId()]);
 
         // add conditions that should always apply here
 
