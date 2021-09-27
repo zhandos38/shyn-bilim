@@ -3,6 +3,7 @@
 /* @var $searchModel \frontend\models\ProjectArticleSearch */
 
 $this->title = Yii::t('app', Yii::t('app', 'Материалы'));
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/list']];
 use yii\helpers\Url;
 ?>
 <h1 class="site-title"><?= $this->title ?></h1>

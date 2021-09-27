@@ -3,7 +3,7 @@
 /* @var $searchModel \frontend\models\ProjectArticleSearch */
 
 $this->title = Yii::t('app', Yii::t('app', 'Мои материалы'));
-
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['my-article/index']];
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\bootstrap4\LinkPager;
