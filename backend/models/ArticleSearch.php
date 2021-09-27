@@ -61,6 +61,7 @@ class ArticleSearch extends Article
             'id' => $this->id,
             'subject_id' => $this->subject_id,
             'created_at' => $this->created_at,
+            'status' => $this->status,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
