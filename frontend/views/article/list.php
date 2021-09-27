@@ -3,9 +3,9 @@
 /* @var $searchModel \frontend\models\ProjectArticleSearch */
 
 $this->title = Yii::t('app', Yii::t('app', 'Материалы'));
-
 use yii\helpers\Url;
 ?>
+<h1 class="site-title"><?= $this->title ?></h1>
 <div class="article-order-widget">
     <span class="article-order-widget__text">
         <?= Yii::t('app', 'У вас есть материал?') ?>
