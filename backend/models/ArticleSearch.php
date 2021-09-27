@@ -18,7 +18,7 @@ class ArticleSearch extends Article
     {
         return [
             [['id', 'subject_id', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'topic', 'file'], 'safe'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'status'], 'safe'],
         ];
     }
 

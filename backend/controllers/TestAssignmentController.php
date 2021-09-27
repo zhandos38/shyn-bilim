@@ -8,6 +8,7 @@ use Yii;
 use common\models\TestAssignment;
 use backend\models\TestAssignmentSearch;
 use yii\db\Exception;
+use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -27,6 +28,15 @@ class TestAssignmentController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ]
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

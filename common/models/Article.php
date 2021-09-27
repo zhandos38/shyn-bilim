@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\db\Exception;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
 /**
@@ -120,5 +121,18 @@ class Article extends \yii\db\ActiveRecord
         }
 
         throw new Exception(Json::encode($this->errors));
+    }
+
+    public static function getStatuses()
+    {
+        return [
+            self::STATUS_OFF => 'Не оплачен',
+            self::STATUS_ACTIVE => 'Оплачен',
+        ];
+    }
+
+    public function getStatus()
+    {
+        return ArrayHelper::getValue(self::getStatuses(), $this->status);
     }
 }

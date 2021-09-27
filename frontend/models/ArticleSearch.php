@@ -74,6 +74,8 @@ class ArticleSearch extends Article
             return $dataProvider;
         }
 
+        $query->andFilterWhere(['status' => $this->status]);
+
         // grid filtering conditions
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'surname', $this->surname])
