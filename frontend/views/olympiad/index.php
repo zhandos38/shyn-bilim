@@ -6,9 +6,10 @@ use common\models\Subject;
 
 $this->title = Yii::t('app', 'Олимпиады');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/index']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
 <div class="olympiad-index" style="padding-bottom: 80px">
-    <h1><?= $this->title ?></h1>
     <div class="row">
         <?php /** @var \common\models\Olympiad $olympiad */
         foreach ($olympiads as $olympiad): ?>

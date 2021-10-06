@@ -36,23 +36,58 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<?= $this->render('_header') ?>
+<header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-expand-lg top-space navbar-light bg-white header-light navbar-boxed fixed-top header-reverse-scroll">
+        <div class="container-fluid nav-header-container">
+            <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" class="default-logo" alt="">
+                    <img src="/img/logo_alt.png" data-at2x="/img/logo_alt.png" class="alt-logo" alt="">
+                    <img src="/img/logo_alt.png" data-at2x="/img/logo_alt.png" class="mobile-logo" alt="">
+                </a>
+            </div>
+            <div class="col-auto col-lg-8 menu-order px-lg-0">
+                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <?= $this->render('_nav') ?>
+                </div>
+            </div>
+            <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
+                <div class="header-language dropdown d-lg-inline-block">
+                    <?= $this->render('_language') ?>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<div class="hero">
+<section class="bg-light-gray padding-40px-tb sm-padding-30px-tb page-title-small">
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'homeLink'      =>  [
-                'label'     =>  Yii::t('yii', 'Home'),
-                'url'       =>  ['/site/index'],
-                'class'     =>  'home',
-                'template'  =>  '<i class="fa fa-home"></i>{link}'.PHP_EOL,
-            ],
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            'itemTemplate' => '<i class="fa fa-angle-right"></i>{link}'.PHP_EOL,
-            'tag' =>  'ul',
-        ]); ?>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xl-8 col-lg-6 text-center text-lg-start">
+                <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom d-inline-block"><?= $this->params['heroTitle'] ?></h1>
+                <span class="alt-font text-medium d-block d-md-inline-block sm-margin-5px-top"><?= $this->params['heroDescription'] ?></span>
+            </div>
+            <div class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
+                <?= Breadcrumbs::widget([
+                    'homeLink'      =>  [
+                        'label'     =>  Yii::t('yii', 'Home'),
+                        'url'       =>  ['/site/index'],
+                        'class'     =>  'home',
+                    ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'tag' =>  'ul',
+                ]); ?>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
 <div class="site-container">
     <div class="container pt-5 pb-5">

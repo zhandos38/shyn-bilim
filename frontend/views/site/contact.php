@@ -5,10 +5,9 @@
 $this->title = Yii::t('app', 'Контакты');
 
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/contact']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h2>
-    <?= Yii::t('app', 'Контакты'); ?>
-</h2>
 <div class="row">
     <div class="col-md-6">
         <p>

@@ -5,8 +5,9 @@
 $this->title = Yii::t('app', 'Редакция');
 
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/about']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1><?= Yii::t('app', 'Редакция') ?></h1>
 <div class="row">
     <div class="col-md-6">
         <div class="row">

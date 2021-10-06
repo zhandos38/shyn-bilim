@@ -12,192 +12,375 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
-<section class="main-container">
-    <div class="container">
-        <div class="main-block">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="main-block__title-wrapper">
-                        <img class="main-block__logo" src="/img/brand-img.jpg" alt="logo" data-aos="fade-right">
-                        <div class="main-block__title" data-aos="fade-right" data-aos-delay="300">
-                            <?php if (Yii::$app->language === "kz"): ?>
-                                <h5>
-                                    Педагогтар мен оқушыларға арналған Республикалық ғылыми-әдістемелік, танымдық, мәдени-рухани портал
-                                </h5>
-                                <p>
-                                    Сіз мұнда <b>сабақ жоспарларын, қмж, тәрбие сағаттарды, шәкірттердің шығармашылық жұмыстарын</b> жариялай аласыз.
-                                    <br>
-                                    Зияткерлік олимпиадаларға, жобаларға қатысып, <b>СЕРТИФИКАТ, ДИПЛОМ, АЛҒЫС ХАТ, ГРАМОТА</b> иеленіп, ЖЕҢІМПАЗ атануға болады.
-                                </p>
-                            <?php else: ?>
-                                <h5>
-                                    Республиканский научно-методический, познавательный, культурно-духовный портал для учителей и студентов
-                                </h5>
-                                <p>
-                                    Здесь вы можете опубликовать <b>планы уроков, ксп, учебные часы, творческие работы студентов</b>
-                                    <br>
-                                    Вы можете принять участие в интеллектуальных олимпиадах, проектах, получить <b>СЕРТИФИКАТ, ДИПЛОМ, БЛАГОДАРНОСТЬ, ГРАМОТУ и стать ПОБЕДИТЕЛЕМ</b>
-                                </p>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="main-block__image-wrapper">
-                        <img class="main-block__image" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-duration="1000" src="/img/exam.png" alt="image">
-                    </div>
-                </div>
+<!-- start revolution slider -->
+<section class="p-0 example home-startup bg-dark-slate-blue">
+    <article class="content">
+        <div id="rev_slider_26_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
+            <!-- Start revolution slider 5.4.1 fullscreen mode -->
+            <div id="rev_slider_26_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+                <ul>
+                    <!-- start slide 01 -->
+                    <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
+                        <!-- main image -->
+                        <img src="/images/home-startup-slider-bg-01.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
+
+                        <!-- main text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
+                             id="slide-411-layer-01"
+                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-whitespace="nowrap"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['70','53','60','35']"
+                             data-lineheight="['70','59','70','39']"
+                             data-letterspacing="['-2','-1','-1','-1']"
+                             data-responsive="off"
+                             data-responsive_offset="off"
+                             data-paddingtop="['0','0','0','0']"
+                             data-paddingbottom="['15','8','8','8']"
+                             data-paddingright="['0','0','0','0']"
+                             data-paddingleft="['0','0','0','0']"
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Олимпиада <br>Altyn Qyran</div>
+
+                        <!-- small text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
+                             id="slide-411-layer-02"
+                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['19','16','19','14']"
+                             data-lineheight="['28','14','23','20']"
+                             data-letterspacing="['0.5','0.5','0.5','0.5']"
+                             data-responsive="off"
+                             data-responsive_offset="on">Участвуйте в олимпиаде и получите призы</div>
+
+                        <!-- btn layer -->
+                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
+                           href="#"
+                           id="slide-411-layer-03"
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-responsive="off"
+                           data-responsive_offset="off"
+                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="['8','8','8','8']"
+                           data-paddingbottom="['8','8','8','8']"
+                           data-paddingright="['7','7','7','7']"
+                           data-paddingleft="['34','34','34','34']"
+                           style="background-color: #00B057; color: #fff; font-size: 15px;">
+                            Участвовать
+                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
+                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- end slide 01 -->
+                    <!-- start slide 02 -->
+                    <li data-index="rs-74" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="02" data-param1="02" data-description="">
+                        <!-- main image -->
+                        <img src="/images/home-startup-slider-bg-02.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
+
+                        <!-- main text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
+                             id="slide-411-layer-04"
+                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-whitespace="nowrap"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['70','53','60','35']"
+                             data-lineheight="['70','59','70','39']"
+                             data-letterspacing="['-2','-1','-1','-1']"
+                             data-responsive="off"
+                             data-responsive_offset="off"
+                             data-paddingtop="['0','0','0','0']"
+                             data-paddingbottom="['15','8','8','8']"
+                             data-paddingright="['0','0','0','0']"
+                             data-paddingleft="['0','0','0','0']"
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Combine thinking<br> and technical</div>
+
+                        <!-- small text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
+                             id="slide-411-layer-05"
+                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['19','13','19','14']"
+                             data-lineheight="['28','14','23','20']"
+                             data-letterspacing="['0.5','0.5','0.5','0.5']"
+                             data-responsive="off"
+                             data-responsive_offset="on">Участвуйте в олимпиаде и получите призы</div>
+
+                        <!-- btn layer -->
+                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
+                           href="#"
+                           id="slide-411-layer-06"
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-responsive="off"
+                           data-responsive_offset="off"
+                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="['8','8','8','8']"
+                           data-paddingbottom="['8','8','8','8']"
+                           data-paddingright="['7','7','7','7']"
+                           data-paddingleft="['34','34','34','34']"
+                           style="background-color: #00B057; color: #fff; font-size: 15px;">Участвовать
+                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
+                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- end slide 02 -->
+                    <!-- start slide 03 -->
+                    <li data-index="rs-75" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="03" data-param1="03" data-description="">
+                        <!-- main image -->
+                        <img src="/images/home-startup-slider-bg-03.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
+
+                        <!-- main text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
+                             id="slide-411-layer-07"
+                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-whitespace="nowrap"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['70','53','60','35']"
+                             data-lineheight="['70','59','70','39']"
+                             data-letterspacing="['-2','-1','-1','-1']"
+                             data-responsive="off"
+                             data-responsive_offset="off"
+                             data-paddingtop="['0','0','0','0']"
+                             data-paddingbottom="['15','8','8','8']"
+                             data-paddingright="['0','0','0','0']"
+                             data-paddingleft="['0','0','0','0']"
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Delivering creative<br> digital products</div>
+
+                        <!-- small text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
+                             id="slide-411-layer-08"
+                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['19','13','19','14']"
+                             data-lineheight="['28','14','23','20']"
+                             data-letterspacing="['0.5','0.5','0.5','0.5']"
+                             data-responsive="off"
+                             data-responsive_offset="on">The best way to promote your business</div>
+
+                        <!-- btn layer -->
+                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
+                           href="contact-us-classic.html"
+                           id="slide-411-layer-09"
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-responsive="off"
+                           data-responsive_offset="off"
+                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="['8','8','8','8']"
+                           data-paddingbottom="['8','8','8','8']"
+                           data-paddingright="['7','7','7','7']"
+                           data-paddingleft="['34','34','34','34']"
+                           style="background-color: #00B057; color: #fff; font-size: 15px;">Get started now
+                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
+                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- end slide 01 -->
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="main-features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="feature-box" data-aos="fade-up">
-                        <a href="<?= Url::to(['magazine/index']) ?>">
-                            <div class="feature-box__container">
-                                <img class="feature-box__image" src="/img/magazine.png" alt="magazine">
-                                <div class="feature-box__title">
-                                    <span><?= Yii::t('app', 'Журналы') ?></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
-                        <a href="<?= Url::to(['article/index']) ?>">
-                            <div class="feature-box__container">
-                                <img class="feature-box__image" src="/img/application.png" alt="application">
-                                <div class="feature-box__title">
-                                    <span><?= Yii::t('app', 'Материалы') ?></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="600">
-                        <a href="<?= Url::to(['olympiad/index']) ?>">
-                            <div class="feature-box__container">
-                                <img class="feature-box__image" src="/img/success.png" alt="success">
-                                <div class="feature-box__title">
-                                    <span><?= Yii::t('app', 'Олимпиады') ?></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="900">
-                        <a href="<?= Url::to(['project/index']) ?>">
-                            <div class="feature-box__container">
-                                <img class="feature-box__image" src="/img/preparation.png" alt="preparation">
-                                <div class="feature-box__title">
-                                    <span><?= Yii::t('app', 'Проекты') ?></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="main-waves">
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave" d=""/></svg>
-
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-two" d=""/></svg>
-
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-three" d=""/></svg>
-    </div>
+    </article>
 </section>
-<div class="about-block">
+<!-- end revolution slider -->
+<!-- start section -->
+<section class="extra-big-section cover-background overflow-visible" style="background-image: url('/images/home-startup-about-bg.jpg');">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <?php if (Yii::$app->language === 'kz'): ?>
-                    <p style="margin: 20px 0">
-                        <b>«БІЛІМ ШЫҢЫ» сайтының мақсаты</b> - тәрбие мен білім беру үрдісіндегі педагогикалық технологияларды жетік меңгерген, оқушылар қабілеттерін дамытуда жоғарғы нәтиже көрсеткен, белсенді шығармашылықпен жұмыс жасайтын білікті педагогтарға демеу көрсету, озық іс-тәжірибелерін тарату, жалпы мұғалім мәртебесін көтеру және дарынды шәкірттерді дамыту, елге таныту.
-                    </p>
-                    <div style="text-align: center">
-                        <h4>ҚҰРМЕТТІ ПЕДАГОГ!</h4>
-                        <h4>ТАЛАБЫ ТАУДАЙ ШӘКІРТ!</h4>
-                        <p>
-                            Сіз бен біз шығармашылық байланыста болып, Мәңгілік ел мерейін өсіру жолында БІЛІМНІҢ БИІК ШЫҢДАРЫН бірге бағындыратын боламыз.
-                        </p>
-                        <h6>БІЗДІҢ САЙТҚА ҚОШ КЕЛДІҢІЗ!</h6>
+            <div class="col-12 overlap-section md-no-margin-top md-margin-70px-bottom sm-margin-50px-bottom">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Book icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Материалы и статьи</div>
+                                <span>Получите доступ к крупнейшей базе трудов для преподавателей</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
                     </div>
-                <?php else: ?>
-                    <p style="margin: 20px 0">
-                        <b> Цель сайта "Білім ШЫҢЫ"</b> - оказание поддержки творчески работающим педагогам, в совершенстве владеющим педагогическими технологиями в воспитательном и образовательном процессе, показавшим высокие результаты в развитии способностей учащихся, распространение передового опыта, повышение престижа учителя в целом и развитие одаренных учащихся, популяризация их творчества.
-                    </p>
-                    <div style="text-align: center">
-                        <h4>УВАЖАЕМЫЙ ПЕДАГОГ!</h4>
-                        <h4>УЧЕНИК С ВЫСОКИМИ ТРЕБОВАНИЯМИ!</h4>
-                        <p>
-                            С Вами мы будем сотрудничать в творческом сотрудничестве и вместе покорять.
-                        </p>
-                        <p>
-                            ВЫСОКИЕ ВЕРШИНЫ ЗНАНИЙ на пути к процветанию
-                        </p>
-                        <h6>Добро пожаловать на наш сайт!</h6>
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Олимпиады</div>
+                                <span>Участвуйте в наших олимпиадах и покажите на что вы способны</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
                     </div>
-                <?php endif; ?>
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Idea icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Проекты</div>
+                                <span>Участвуйте в наших проектах и поделитесь своим трудом всем миром</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="main-news" style="margin: 40px 0 0 0; text-align: center">
-            <h4><?= Yii::t('app', 'Дополнительные услуги, предоставляемые вам компанией') ?></h4>
-            <div class="row" style="margin-top: 20px">
-                <div class="col-md-3">
-                    <div class="feature-block">
-                        <a href="<?= Url::to(['about/index']) ?>">
-                            <div class="feature-block__preview">
-                                <img src="/img/feature-1.png" alt="#" title="#">
-                            </div>
-                            <div class="feature-block__footer">
-                                <span><?= Yii::t('app', 'Редакция') ?></span>
-                            </div>
-                        </a>
-                    </div>
+        <div class="row align-items-end">
+            <div class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
+                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600">7k+</div>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">Опубликованных материалов</span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80">Всего опубликованных материалов и статьей</p>
+            </div>
+            <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
+                <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
+                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">10</span>
+                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block">Лет опыта</span>
                 </div>
-                <div class="col-md-3">
-                    <div class="feature-block">
-                        <a href="<?= Url::to(['about/printing']) ?>">
-                            <div class="feature-block__preview">
-                                <img src="/img/feature-2.png" alt="#" title="#">
-                            </div>
-                            <div class="feature-block__footer">
-                                <span><?= Yii::t('app', 'Полиграфия') ?></span>
-                            </div>
-                        </a>
-                    </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
+                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600" >50k+</div>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">Уникальных участников олимпиады</span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80">Всего уникальных участников олимпиады по всей стране</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="overflow-visible pt-md-0 pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center overlap-section wow animate__zoomIn">
+                <img class="rounded-circle box-shadow-large w-170px h-170px border-all border-width-10px border-color-white" src="/images/home-startup-about-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="position-relative pb-0 overflow-visible wow animate__fadeIn" data-wow-delay="0.4s" style="padding-top: 40px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 position-relative margin-70px-top lg-margin-30px-top md-margin-50px-bottom">
+                <div class="w-70 border-radius-6px overflow-hidden position-relative">
+                    <img src="/images/our-process-02.jpg" alt="" />
+                    <div class="opacity-extra-medium bg-gradient-sky-blue-pink"></div>
                 </div>
-                <div class="col-md-3">
-                    <div class="feature-block">
-                        <a href="<?= Url::to(['about/education-center']) ?>">
-                            <div class="feature-block__preview">
-                                <img src="/img/feature-3.png" alt="#" title="#">
-                            </div>
-                            <div class="feature-block__footer">
-                                <span><?= Yii::t('app', 'Учебный центр') ?></span>
-                            </div>
-                        </a>
-                    </div>
+                <div class="position-absolute right-15px bottom-0px w-70" data-parallax-layout-ratio="1.1">
+                    <img class="border-radius-6px" src="/images/our-process-01.jpg" alt="" />
                 </div>
-                <div class="col-md-3">
-                    <div class="feature-block">
-                        <a href="<?= Url::to(['about/photo-studio']) ?>">
-                            <div class="feature-block__preview">
-                                <img src="/img/feature-4.png" alt="#" title="#">
-                            </div>
-                            <div class="feature-block__footer">
-                                <span><?= Yii::t('app', 'Фотостудия') ?></span>
-                            </div>
-                        </a>
-                    </div>
+            </div>
+            <div class="col-12 col-lg-5 offset-lg-1">
+                <div class="alt-font text-extra-medium font-weight-500 margin-30px-bottom"><span class="w-30px h-1px bg-fast-blue d-inline-block align-middle margin-20px-right"></span>
+                    <span class="text-fast-blue d-inline-block">
+                        О нашем сайте
+                    </span>
+                </div>
+                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom w-95">Цель "Bilimshini.kz"</h5>
+                <p class="w-95">
+                    Оказание поддержки творчески работающим педагогам, в совершенстве владеющим педагогическими технологиями в воспитательном и образовательном процессе, показавшим высокие результаты в развитии способностей учащихся, распространение передового опыта, повышение престижа учителя в целом и развитие одаренных учащихся, популяризация их творчества.
+                </p>
+                <div class="btn-dual margin-15px-top d-inline-block">
+                    <a href="<?= Url::to(['site/about']) ?>" class="btn btn-medium btn-dark-gray btn-slide-right-bg">
+                        <?= Yii::t('app', 'Подробнее') ?><span class="bg-white"></span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="wow animate__fadeIn">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 align-items-center justify-content-center">
+            <!-- start counter item -->
+            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="121"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Журналов</span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="768"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Материалов</span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center xs-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.6s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="12"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Проектов</span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center wow animate__fadeIn" data-wow-delay="0.8s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="20"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Олимпиад</span>
+            </div>
+            <!-- end counter item -->
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="parallax wow animate__fadeIn" data-parallax-background-ratio="0.2" style="background-image:url('/images/our-process-bg-5.jpg');">
+    <div class="opacity-full bg-gradient-fast-blue-purple"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-xl-7 col-md-8 col-sm-10 position-relative text-center text-md-start sm-margin-30px-bottom">
+                <h4 class="alt-font font-weight-600 text-white mb-0">Подпишитесь на наш журнал</h4>
+            </div>
+            <div class="col-12 col-xl-5 col-md-4 position-relative text-center text-md-end">
+                <a href="#" class="btn btn-large btn-gradient-light-purple-light-orange">Подписаться</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->

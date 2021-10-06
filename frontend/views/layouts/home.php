@@ -34,7 +34,34 @@ HomeAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<?= $this->render('_header') ?>
+<header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
+        <div class="container-fluid nav-header-container">
+            <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo_alt.png" data-at2x="/img/logo_alt.png" class="default-logo" alt="">
+                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" class="alt-logo" alt="">
+                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" class="mobile-logo" alt="">
+                </a>
+            </div>
+            <div class="col-auto col-lg-8 menu-order px-lg-0">
+                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <?= $this->render('_nav') ?>
+                </div>
+            </div>
+            <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
+                <?= $this->render('_language') ?>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <?= Alert::widget() ?>
 <?= $content ?>

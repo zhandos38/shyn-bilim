@@ -8,6 +8,8 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('app', 'Материалы');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/index']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
 <div style="text-align: center">
     <?php if (Yii::$app->language === 'kz'): ?>

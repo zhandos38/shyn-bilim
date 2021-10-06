@@ -5,8 +5,9 @@
 $this->title = Yii::t('app', 'Полиграфия');
 
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['about/printing']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ПОЛИГРАФИЯСЫ';
 ?>
-<h1><?= Yii::t('app', 'Полиграфия') ?></h1>
 <div class="row">
     <div class="printing__img-wrapper col-md-4">
         <img class="printing__img" src="/img/1.jpg" alt="image">

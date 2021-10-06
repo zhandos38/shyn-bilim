@@ -5,9 +5,9 @@
 $this->title = Yii::t('app', 'Фотостудия');
 
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['about/photo-studio']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ФОТОСТУДИЯСЫ';
 ?>
-<h1><?= Yii::t('app', 'Фотостудия') ?></h1>
-<br>
 <div class="row">
     <div class="col-md-3">
         <div class="package">

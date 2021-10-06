@@ -3,8 +3,9 @@
 
 $this->title = Yii::t('app', 'Журналы');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['magazine/index']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1><?= $this->title ?></h1>
 <div class="magazine-list">
     <?= \yii\widgets\ListView::widget([
         'dataProvider' => $dataProvider,
