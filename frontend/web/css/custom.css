@@ -10,7 +10,7 @@ body, h4, h5 {
 }
 
 .theme-demos {
-    display: none;
+    display: none !important;
 }
 
 /* question */
