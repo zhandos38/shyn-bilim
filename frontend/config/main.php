@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
-    'name' => 'FreeWay.kz',
+    'name' => 'Bilimshini.kz',
     'basePath' => dirname(__DIR__),
     'language' => 'kz',
     'bootstrap' => ['log'],
@@ -42,7 +42,7 @@ return [
             'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'languages' => ['ru', 'kz'],
+            'languages' => ['kz', 'ru'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'site/index',

@@ -22,7 +22,7 @@ $this->registerMetaTag([
                     <!-- start slide 01 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/images/home-startup-slider-bg-01.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/fon-2.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
 
@@ -89,7 +89,7 @@ $this->registerMetaTag([
                     <!-- start slide 02 -->
                     <li data-index="rs-74" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="02" data-param1="02" data-description="">
                         <!-- main image -->
-                        <img src="/images/home-startup-slider-bg-02.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/fon-1.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
 
@@ -280,7 +280,7 @@ $this->registerMetaTag([
             </div>
             <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
                 <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
-                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">10</span>
+                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">7</span>
                     <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block">Лет опыта</span>
                 </div>
             </div>
@@ -310,11 +310,11 @@ $this->registerMetaTag([
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 position-relative margin-70px-top lg-margin-30px-top md-margin-50px-bottom">
                 <div class="w-70 border-radius-6px overflow-hidden position-relative">
-                    <img src="/images/our-process-02.jpg" alt="" />
+                    <img src="/img/about-2.jpg" alt="" />
                     <div class="opacity-extra-medium bg-gradient-sky-blue-pink"></div>
                 </div>
                 <div class="position-absolute right-15px bottom-0px w-70" data-parallax-layout-ratio="1.1">
-                    <img class="border-radius-6px" src="/images/our-process-01.jpg" alt="" />
+                    <img class="border-radius-6px" src="/img/about-1.jpg" alt="" />
                 </div>
             </div>
             <div class="col-12 col-lg-5 offset-lg-1">
