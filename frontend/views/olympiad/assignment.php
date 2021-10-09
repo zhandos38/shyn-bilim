@@ -12,6 +12,8 @@ $this->title = Yii::t('app', 'Регистрация');
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/assignment', 'test' => $test->id]];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
 <h1><?= $test->name ?></h1>
 <p>

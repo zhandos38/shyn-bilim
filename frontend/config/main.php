@@ -43,6 +43,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'languages' => ['kz', 'ru'],
+            'enableLanguageDetection' => false,
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'site/index',

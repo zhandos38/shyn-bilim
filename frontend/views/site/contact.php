@@ -29,13 +29,10 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <a class="footer__link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
             </li>
             <li class="contact-list__item">
-                <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87083176516"><i class="fa fa-phone"></i> +7(708) 317 65 16 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
                 <a href="tel:87750767876"><i class="fa fa-phone"></i> +7(775) 076 78 76 ( WhatsApp )</a>
+            </li>
+            <li class="contact-list__item">
+                <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27</a>
             </li>
             <li class="contact-list__item">
                 <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
@@ -51,30 +48,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </li>
             <li class="contact-list__item">
                 <a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a>
-            </li>
-            <li class="contact-list__item contact-list__item--main">
-                <a class="footer__link" href="#"><?= Yii::t('app', 'Учебный центр') ?></a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87754037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
-            </li>
-            <li class="contact-list__item contact-list__item--main">
-                <a class="footer__link" href="#"><?= Yii::t('app', 'Фотостудия') ?></a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87083176516"><i class="fa fa-phone"></i> +7(708) 317 65 16 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87472339745"><i class="fa fa-phone"></i> +7(747) 233 97 35 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="mailto:photo-studio@bilimshini.kz"><i class="fa fa-envelope"></i> photo-studio@bilimshini.kz</a>
             </li>
         </ul>
     </div>

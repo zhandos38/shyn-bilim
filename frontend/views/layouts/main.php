@@ -43,8 +43,8 @@ AppAsset::register($this);
             <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
                 <a class="navbar-brand" href="/">
                     <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" class="default-logo" alt="">
-                    <img src="/img/logo_alt.png" data-at2x="/img/logo_alt.png" class="alt-logo" alt="">
-                    <img src="/img/logo_alt.png" data-at2x="/img/logo_alt.png" class="mobile-logo" alt="">
+                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt.png" class="alt-logo" alt="">
+                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt.png" class="mobile-logo" alt="">
                 </a>
             </div>
             <div class="col-auto col-lg-8 menu-order px-lg-0">
@@ -71,8 +71,12 @@ AppAsset::register($this);
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-xl-8 col-lg-6 text-center text-lg-start">
+                <?php if (!empty($this->params['heroTitle'])): ?>
                 <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom d-inline-block"><?= $this->params['heroTitle'] ?></h1>
+                <?php endif; ?>
+                <?php if (!empty($this->params['heroDescription'])): ?>
                 <span class="alt-font text-medium d-block d-md-inline-block sm-margin-5px-top"><?= $this->params['heroDescription'] ?></span>
+                <?php endif; ?>
             </div>
             <div class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
                 <?= Breadcrumbs::widget([
