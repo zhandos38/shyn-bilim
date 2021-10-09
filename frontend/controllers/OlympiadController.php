@@ -42,13 +42,18 @@ class OlympiadController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($type = Olympiad::TYPE_STUDENT)
     {
-        $olympiads = Olympiad::find()->orderBy(['order' => SORT_ASC])->all();
+        $olympiads = Olympiad::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC])->all();
 
         return $this->render('index', [
             'olympiads' => $olympiads
         ]);
+    }
+
+    public function actionChoose()
+    {
+        return $this->render('choose');
     }
 
     public function actionView($id)

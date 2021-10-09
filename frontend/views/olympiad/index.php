@@ -5,6 +5,7 @@ use common\models\Subject;
 /* @var $this \yii\web\View */
 
 $this->title = Yii::t('app', 'Олимпиады');
+$this->params['breadcrumbs'][] = ['label' => 'Выбор типа олимпиады', 'url' => ['olympiad/choose']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/index']];
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
