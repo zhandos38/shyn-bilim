@@ -14,17 +14,18 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?php /** @var \common\models\Olympiad $olympiad */
         foreach ($olympiads as $olympiad): ?>
             <div class="col-md-4">
-                <div class="card">
-                    <a class="card-image" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>" style="background-image: url(<?= htmlspecialchars($olympiad->getImage()) ?>);" data-image-full="<?= $olympiad->getImage() ?>">
-                        <img src="<?= $olympiad->getImage() ?>" alt="Olympiad" />
-                    </a>
-                    <a class="card-description text-center" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>">
-                        <h6><?= $olympiad->name ?></h6>
-                        <p><?= $olympiad->getType() ?></p>
-                    </a>
-                    <div class="d-flex">
-                        <a class="btn btn-info w-50 rounded-0" href="<?= $olympiad->getFile() ?>"><i class="fa fa-download"></i> <?= Yii::t('app', 'Положение') ?></a>
-                        <a class="btn btn-success w-50 rounded-0" href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"><i class="fa fa-sign-in"></i> <?= Yii::t('app', 'Участие') ?></a>
+                <div class="blog-post text-center border-radius-6px bg-white box-shadow box-shadow-large-hover">
+                    <div class="blog-post-image bg-gradient-fast-blue-purple">
+                        <a href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"><img src="<?= $olympiad->getImage() ?>" alt="">
+                            <div class="blog-rounded-icon bg-white border-color-white absolute-middle-center">
+                                <i class="feather icon-feather-arrow-right text-extra-dark-gray icon-extra-small"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="post-details padding-30px-all xl-padding-25px-lr">
+                        <a href="#" class="post-author text-medium text-uppercase"><?= $olympiad->getType() ?></a>
+                        <a href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>" class="text-extra-dark-gray font-weight-500 alt-font d-block"><?= $olympiad->name ?></a>
+                        <a href="<?= $olympiad->getFile() ?>" class="btn btn-extra-large btn-link text-extra-dark-gray"><?= Yii::t('app', 'Положение') ?></a>
                     </div>
                 </div>
             </div>
