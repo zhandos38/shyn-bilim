@@ -15,36 +15,47 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 Жұмыс уақыты: дүйсенбі-жұма, 9.00-19.00 <br>
                 Сенбі, 10:00-14:00 <br>
                 Қазақстан Республикасы, <br>
-                Шымкент қаласы, Ғ.Орманов көшесі, 6А
+                Шымкент қаласы, Ғ.Орманов көшесі, 10/1
             <?php else: ?>
                 Грфик работы: понедельник-пятница, 9.00-19.00 <br>
                 Суббота, 10.00-14.00 <br>
                 Республика Казахстана, <br>
-                Город Шымкент, ул. Г.Орманова, 6А
+                Город Шымкент, ул. Г.Орманова, 10/1
             <?php endif; ?>
         </p>
         <h4><?= Yii::t('app', 'Контактные телефоны'); ?></h4>
+        <h6>
+            <?= Yii::t('app', 'Редакция') ?>
+        </h6>
         <ul class="phone-list" style="padding: 0">
-            <li class="contact-list__item contact-list__item--main">
-                <a class="footer__link" href="#"><?= Yii::t('app', 'Редакция') ?></a>
-            </li>
             <li class="contact-list__item">
                 <a href="tel:87750767876"><i class="fa fa-phone"></i> +7(775) 076 78 76 ( WhatsApp )</a>
+            </li>
+            <li class="contact-list__item">
+                <a href="tel:87754037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a>
             </li>
             <li class="contact-list__item">
                 <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27</a>
             </li>
             <li class="contact-list__item">
+                <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a>
+            </li>
+            <li class="contact-list__item">
                 <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
             </li>
-            <li class="contact-list__item contact-list__item--main">
-                <a class="footer__link" href="#"><?= Yii::t('app', 'Полиграфия') ?></a>
-            </li>
+        </ul>
+        <h6 class="mt-4">
+            <?= Yii::t('app', 'Полиграфия') ?>
+        </h6>
+        <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
                 <a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
                 <a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a>
+            </li>
+            <li class="contact-list__item">
+                <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a>
             </li>
             <li class="contact-list__item">
                 <a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a>
