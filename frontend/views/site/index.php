@@ -232,7 +232,7 @@ $this->registerMetaTag([
     <div class="container">
         <div class="row">
             <div class="col-12 text-center overlap-section wow animate__zoomIn">
-                <img class="rounded-circle box-shadow-large w-170px h-170px border-all border-width-10px border-color-white" src="/images/home-startup-about-img.jpg" alt="">
+                <img class="rounded-circle box-shadow-large w-170px h-170px border-all border-width-10px border-color-white" src="/img/about-mini-1.jpg" alt="">
             </div>
         </div>
     </div>
