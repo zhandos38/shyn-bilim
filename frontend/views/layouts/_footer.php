@@ -19,8 +19,8 @@ use yii\helpers\Url;
                 <div class="col-12 col-md-3 col-sm-6 sm-margin-40px-bottom xs-margin-25px-bottom">
                     <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom">Информация</span>
                     <ul>
-                        <li><a href="about-us.html">Публичная оферта</a></li>
-                        <li><a href="our-services.html">Вопросы и ответы</a></li>
+                        <li><a href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>"><?= Yii::t('app', 'Публичная оферта') ?></a></li>
+                        <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Вопросы и ответы') ?></a></li>
                     </ul>
                 </div>
                 <!-- end footer column -->
@@ -28,10 +28,10 @@ use yii\helpers\Url;
                 <div class="col-12 col-md-3 col-sm-6 sm-margin-40px-bottom xs-margin-25px-bottom">
                     <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom">Ссылки</span>
                     <ul>
-                        <li><a href="faq.html">Главная</a></li>
-                        <li><a href="pricing-packages.html">Журналы</a></li>
-                        <li><a href="our-story.html">Олимпиады</a></li>
-                        <li><a href="latest-news.html">Контакты</a></li>
+                        <li><a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a></li>
+                        <li><a href="#"><?= Yii::t('app', 'Марафон') ?></a></li>
+                        <li><a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиада') ?></a></li>
+                        <li><a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a></li>
                     </ul>
                 </div>
                 <!-- end footer column -->
@@ -53,7 +53,7 @@ use yii\helpers\Url;
                     <ul>
                         <li><a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a></li>
                         <li><a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a></li>
-                        <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
+                        <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a></li>
                         <li><a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a></li>
                     </ul>
                 </div>
