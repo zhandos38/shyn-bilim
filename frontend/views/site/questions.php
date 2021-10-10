@@ -247,146 +247,67 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
+                            3. Вопрос: Оплатив взнос за участие в олимпиаде, можно ли участвовать позже (в другое время)?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne">
-                                1. Вопрос: Как можно принять участие в олимпиаде?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <p>
-                                Ответ:  Перейдите на выбранную Вами олимпиаду, нажмите на кнопку «Положение» под логотипом олимпиады, обязательно ознакомьтесь с положением. Вы можете участвовать, если согласны с нашими требованиями.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
-                                2. Вопрос: Как можно произвести оплату через сайт?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <p>
-                                Жауап:
-                            </p>
-                            <p>
-                                1. После нажатия кнопки «ОЛИМПИАДЫ», нажмите кнопку «УЧАСТИЕ»
-                                <img class="card-img" src="/img/pay-1.png" alt="pay-1">
-                            </p>
-                            <p>
-                                2.Нажмите на кнопку «МАТЕМАТИКА»
-                                <img class="card-img" src="/img/pay-2.png" alt="pay-2">
-                            </p>
-                            <p>
-                                3. Заполните АНКЕТУ без ошибок и нажмимте внизу на кнопку «ОТПРАВИТЬ»
-                                <img class="card-img" src="/img/pay-3.png" alt="pay-3">
-                            </p>
-                            <p>
-                                4.	Далее после заполнения анкеты появится ПЛАТЕЖНАЯ СТРАНИЦА. Как показано на картинке - Напишите 16 цифр на своей платежной карте.
-                            </p>
-                            <p>
-                                5. Напишите числа на обратной стороне своей Платежной карты рядом с символами MM, YY, CVC
-                            </p>
-                            <p>
-                                6.	После заполнения данных платежной карты, нажмите кнопку PAY 500т, затем подождите 10 секунд, задания олимпиады откроются сразу, не закрывайте страницу
-                                <img class="card-img" src="/img/pay-4.png" alt="pay-4">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">
-                                3. Вопрос: Оплатив взнос за участие в олимпиаде, можно ли участвовать позже (в другое время)?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
                             <p>
                                 Ответ:  Нет, нельзя. После оплаты тестовые задания открываюся сразу же.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour">
-                                4. Вопрос: Что мне делать, если я не могу произвести оплату через сайт?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4. Вопрос: Что мне делать, если я не могу произвести оплату через сайт?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Если у Вас возникли проблемы с оплатой на сайте: переведите 2000 (две тысячи) тенге на номер 8775 424 37 27 Кaspi Gold Изтаевой Ферузе, далее Вам необходимо без ошибок отправить ИИН участника и чек на электронную почту bilimshini.kz@mail.ru. В течение 24 часов по электронной почте   вы получите ответ о том, что вы «Зарегистрированы». Только после получения ответа на свою электронную почту о регистрации, Вы сможете принять участие в олимпиаде. По личным мобильным телефонам и по ватсапу вопросы не рассматриваются.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive">
-                                5. Вопрос: Произвела оплату через Каспи Голд Изтаевой Ферузе по номеру 87754243727, скинула на электронную почту bilimshini.kz@mail.ru чек и ИИН. На электронную почту пришел ответ о «Регистрации». Но когда я хочу принять участие в олимпиаде, все время выходит платежная страница. Что делать?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5. Вопрос: Произвела оплату через Каспи Голд Изтаевой Ферузе по номеру 87754243727, скинула на электронную почту bilimshini.kz@mail.ru чек и ИИН. На электронную почту пришел ответ о «Регистрации». Но когда я хочу принять участие в олимпиаде, все время выходит платежная страница. Что делать?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Сравните ИИН, который вы отправили на электронную почту, с ИИН, который вы указали в анкете. Вы не сможете участвовать с неправильным ИИНом.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix">
-                                6. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд Изтаевой Ферузе по номеру  8775 424 37 27?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд Изтаевой Ферузе по номеру  8775 424 37 27?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Вам необходимо зайти на телефоне в приложение Каспи голд и отправить зеленый развернутый чек из историй на электронную почту bilimshini.kz@mail.ru.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven">
-                                7. Вопрос: Выполняя задания олимпиады, нечаянно вышла с сайта, как можно пройти заново олимпиаду?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            7. Вопрос: Выполняя задания олимпиады, нечаянно вышла с сайта, как можно пройти заново олимпиаду?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Да, Вы можете. Но тестовые задания начнутся с самого начала. Для того, чтобы пройти тест заново
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-test']) ?>">Продолжить олимпиаду</a>
@@ -394,16 +315,14 @@ use yii\helpers\Url; ?>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight">
-                                8. Вопрос: Что мне делать если я не могу скачать Диплом, Сертификат, Благодарственное письмо?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            8. Вопрос: Что мне делать если я не могу скачать Диплом, Сертификат, Благодарственное письмо?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Если Вы не можете скачать Диплом, Сертификат, Благодарственное письмо, то
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
@@ -411,64 +330,56 @@ use yii\helpers\Url; ?>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine">
-                                9. Вопрос: Что мне делать, если мой Диплом или Сертификат оказался с ошибками из-за неправильного заполнения анкеты ?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            9. Вопрос: Что мне делать, если мой Диплом или Сертификат оказался с ошибками из-за неправильного заполнения анкеты ?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Если вы заполните анкету неправильно, ваш Диплом выйдет с ошибками. Чтобы исправить ошибки, напишите на электронную почту bilimshini.kz@mail.ru: «В моем сертификате есть ошибка (в скобках напишите, как ее исправить). Нам нужна ваша помощь, чтобы все исправить» вместе с ИИН участника. Вам будет отправлена ссылка Диплома  на вашу электронную почту с исправленными ошибками.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen">
-                                10. Вопрос: Возвращаются ли вопросы во время выполнения тестовых заданий?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTen" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            10. Вопрос: Возвращаются ли вопросы во время выполнения тестовых заданий?
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Вопросы не возвращаются.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven">
-                                11. Вопрос: После ввода ответа, можно ли увидеть правильный ответ?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseEleven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEleven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                            11. Вопрос: После ввода ответа, можно ли увидеть правильный ответ?
+                        </button>
+                    </h2>
+                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Ответы будут храниться до конца олипиады. Правильный ответ не отображается.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve">
-                                12. Вопрос: Когда и как можно подать на аппеляцию?
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwelve" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwelve">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                            12. Вопрос: Когда и как можно подать на аппеляцию?
+                        </button>
+                    </h2>
+                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <p>
                                 Ответ:  Апелляции принимаются в последний день олимпиады 16 мая по электронной почте bilimshini.kz@mail.ru. На рассмотрение апелляции берется 1 день.
                             </p>
