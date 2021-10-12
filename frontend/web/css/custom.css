@@ -1,6 +1,17 @@
 body, h4, h5 {
     font-family: 'Roboto', serif;
 }
+
+.required.error {
+    border: none !important;
+}
+.required.error.has-success > .select2-container {
+    border: none !important;
+}
+.required.error > .select2-container {
+    border: 1px solid red !important;
+}
+
 .navbar .navbar-nav .nav-link {
     font-family: 'Roboto', serif;
 }
