@@ -22,7 +22,7 @@ $this->registerMetaTag([
                     <!-- start slide 01 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/img/fon-2.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/5370420.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
 
@@ -45,7 +45,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Олимпиада <br>Altyn Qyran</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"Журнал 2022"<br> жазыламыз</div>
 
                         <!-- small text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
@@ -60,7 +60,7 @@ $this->registerMetaTag([
                              data-lineheight="['28','14','23','20']"
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
-                             data-responsive_offset="on">Участвуйте в олимпиаде и получите призы</div>
+                             data-responsive_offset="on">Портфолиаға 100% жарамды</div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
@@ -79,7 +79,7 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            Участвовать
+                            Жазылу
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
