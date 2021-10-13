@@ -22,17 +22,38 @@ $this->registerMetaTag([
                     <!-- start slide 01 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/img/5370420.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/fon-6.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
+                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.3;"></div>
 
-                        <!-- main text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
+                        <!-- help text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
                              id="slide-411-layer-01"
                              data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-whitespace="nowrap"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-160','0','-115','-65']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['38','30','30','35']"
+                             data-lineheight="['70','59','70','39']"
+                             data-letterspacing="['-2','-1','-1','-1']"
+                             data-responsive="off"
+                             data-responsive_offset="off"
+                             data-paddingtop="['0','0','0','0']"
+                             data-paddingbottom="['15','8','8','8']"
+                             data-paddingright="['0','0','0','0']"
+                             data-paddingleft="['0','0','0','0']"
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Портфолиоға 100% жарамды*</div>
+
+                        <!-- main text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
+                             id="slide-411-layer-01"
+                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-whitespace="nowrap"
+                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
                              data-width="auto"
                              data-height="auto"
@@ -45,14 +66,14 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"Журнал 2022"<br> жазыламыз</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"БАСПАСӨЗ-2022"<br> жазыламыз</div>
 
                         <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
                              id="slide-411-layer-02"
                              data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
                              data-width="auto"
                              data-height="auto"
@@ -60,13 +81,16 @@ $this->registerMetaTag([
                              data-lineheight="['28','14','23','20']"
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
-                             data-responsive_offset="on">Портфолиаға 100% жарамды</div>
+                             data-responsive_offset="on">
+                            БІЛІМ, ҒЫЛЫМ - МӘҢГІЛІК ҚАЗЫҒЫМЫЗ <br>
+                            ҚҰРМЕТТІ ҰСТАЗ, ЖУРНАЛҒА ЖАЗЫЛЫҢЫЗ!
+                        </div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="#"
+                           href="<?= Url::to(['site/subscribe']) ?>"
                            id="slide-411-layer-03"
-                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                            data-whitespace="nowrap"
                            data-type="button"
@@ -79,7 +103,7 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            Жазылу
+                            <?= Yii::t('app', 'Жазылу') ?>
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
@@ -171,8 +195,8 @@ $this->registerMetaTag([
                                 <i class="line-icon-Book icon-medium text-green"></i>
                             </div>
                             <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Материалы и статьи</div>
-                                <span>Получите доступ к крупнейшей базе трудов для преподавателей</span>
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Материалы и статьи') ?></div>
+                                <span>Педагогтарға арналған ең үлкен еңбек базасына қол жеткізіңіз.</span>
                             </div>
                         </div>
                         <!-- end feature box item-->
@@ -184,8 +208,8 @@ $this->registerMetaTag([
                                 <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
                             </div>
                             <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Олимпиады</div>
-                                <span>Участвуйте в наших олимпиадах и покажите на что вы способны</span>
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Олимпиады') ?></div>
+                                <span><?= Yii::t('app', 'Участвуй в нашей олимпиаде и получи 100% действующий сертификат') ?></span>
                             </div>
                         </div>
                         <!-- end feature box item-->
@@ -197,8 +221,8 @@ $this->registerMetaTag([
                                 <i class="line-icon-Idea icon-medium text-green"></i>
                             </div>
                             <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom">Проекты</div>
-                                <span>Участвуйте в наших проектах и поделитесь своим трудом всем миром</span>
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
+                                <span>Кел, қатардан қалма, Кітап оқып, биікке самға! Ұтып алған кітабыңды мектепке сыйла!</span>
                             </div>
                         </div>
                         <!-- end feature box item-->
@@ -209,19 +233,19 @@ $this->registerMetaTag([
         <div class="row align-items-end">
             <div class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
                 <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600">7k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">Опубликованных материалов</span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80">Всего опубликованных материалов и статьей</p>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Опубликованных материалов') ?></span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего опубликованных материалов и статьей') ?></p>
             </div>
             <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
                 <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
                     <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">7</span>
-                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block">Лет опыта</span>
+                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block"><?= Yii::t('app', 'Лет опыта') ?></span>
                 </div>
             </div>
             <div class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
                 <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600" >50k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">Уникальных участников олимпиады</span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80">Всего уникальных участников олимпиады по всей стране</p>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Уникальных участников олимпиады') ?></span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего уникальных участников олимпиады по всей стране') ?></p>
             </div>
         </div>
     </div>
@@ -254,12 +278,12 @@ $this->registerMetaTag([
             <div class="col-12 col-lg-5 offset-lg-1">
                 <div class="alt-font text-extra-medium font-weight-500 margin-30px-bottom"><span class="w-30px h-1px bg-fast-blue d-inline-block align-middle margin-20px-right"></span>
                     <span class="text-fast-blue d-inline-block">
-                        О нашем сайте
+                        <?= Yii::t('app', 'О нашем сайте') ?>
                     </span>
                 </div>
-                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom w-95">Цель "Bilimshini.kz"</h5>
+                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom w-95"><?= Yii::t('app', 'Цель сайта Bilimshini.kz') ?></h5>
                 <p class="w-95">
-                    Оказание поддержки творчески работающим педагогам, в совершенстве владеющим педагогическими технологиями в воспитательном и образовательном процессе, показавшим высокие результаты в развитии способностей учащихся, распространение передового опыта, повышение престижа учителя в целом и развитие одаренных учащихся, популяризация их творчества.
+                    <?= Yii::t('app', 'Оказание поддержки творчески работающим педагогам, в совершенстве владеющим педагогическими технологиями в воспитательном и образовательном процессе, показавшим высокие результаты в развитии способностей учащихся, распространение передового опыта, повышение престижа учителя в целом и развитие одаренных учащихся, популяризация их творчества.') ?>
                 </p>
                 <div class="btn-dual margin-15px-top d-inline-block">
                     <a href="<?= Url::to(['site/about']) ?>" class="btn btn-medium btn-dark-gray btn-slide-right-bg">
@@ -278,25 +302,25 @@ $this->registerMetaTag([
             <!-- start counter item -->
             <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                 <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="121"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Журналов</span>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
             </div>
             <!-- end counter item -->
             <!-- start counter item -->
             <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
                 <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="768"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Материалов</span>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Материалов') ?></span>
             </div>
             <!-- end counter item -->
             <!-- start counter item -->
             <div class="col text-center xs-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.6s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="12"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Проектов</span>
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="7"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
             </div>
             <!-- end counter item -->
             <!-- start counter item -->
             <div class="col text-center wow animate__fadeIn" data-wow-delay="0.8s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="20"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top">Олимпиад</span>
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="3"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Марафон') ?></span>
             </div>
             <!-- end counter item -->
         </div>
@@ -309,10 +333,10 @@ $this->registerMetaTag([
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-xl-7 col-md-8 col-sm-10 position-relative text-center text-md-start sm-margin-30px-bottom">
-                <h4 class="alt-font font-weight-600 text-white mb-0">Подпишитесь на наш журнал</h4>
+                <h4 class="alt-font font-weight-600 text-white mb-0"><?= Yii::t('app', 'Подпишитесь на наш журнал') ?></h4>
             </div>
             <div class="col-12 col-xl-5 col-md-4 position-relative text-center text-md-end">
-                <a href="#" class="btn btn-large btn-gradient-light-purple-light-orange">Подписаться</a>
+                <a href="#" class="btn btn-large btn-gradient-light-purple-light-orange"><?= Yii::t('app', 'Подписаться') ?></a>
             </div>
         </div>
     </div>

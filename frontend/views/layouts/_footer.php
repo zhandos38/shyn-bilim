@@ -17,7 +17,7 @@ use yii\helpers\Url;
             <div class="row">
                 <!-- start footer column -->
                 <div class="col-12 col-md-3 col-sm-6 sm-margin-40px-bottom xs-margin-25px-bottom">
-                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom">Информация</span>
+                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Информация') ?></span>
                     <ul>
                         <li><a href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>"><?= Yii::t('app', 'Публичная оферта') ?></a></li>
                         <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Вопросы и ответы') ?></a></li>
@@ -26,7 +26,7 @@ use yii\helpers\Url;
                 <!-- end footer column -->
                 <!-- start footer column -->
                 <div class="col-12 col-md-3 col-sm-6 sm-margin-40px-bottom xs-margin-25px-bottom">
-                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom">Ссылки</span>
+                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Ссылки') ?></span>
                     <ul>
                         <li><a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a></li>
                         <li><a href="#"><?= Yii::t('app', 'Марафон') ?></a></li>
@@ -37,7 +37,7 @@ use yii\helpers\Url;
                 <!-- end footer column -->
                 <!-- start footer column -->
                 <div class="col-12 col-md-3 col-sm-6 xs-margin-25px-bottom">
-                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom">Редакция</span>
+                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Редакция') ?></span>
                     <ul>
                         <li><a href="tel:+7(775)0767876"><i class="fa fa-phone"></i> +7(775) 076 78 76</a></li>
                         <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>

@@ -21,7 +21,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     </div>
                     <div class="feature-box-content last-paragraph-no-margin">
                         <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-extra-medium"><?= Yii::t('app', 'Олимпиада для преподавателей') ?></span>
-                        <p>Lorem ipsum dolor amet consectetur adipiscing elit do eiusmod incididunt ut labore et dolore magna.</p>
+                        <p><?= Yii::t('app', 'Біздің олимпиадаларға қатысып, жеңімпаз атанып, 100% жарамды СЕРТИФИКАТ, АЛҒЫС ХАТ иеленіңіз') ?>/p>
                     </div>
                 </div>
             </a>
