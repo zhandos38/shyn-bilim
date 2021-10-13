@@ -45,7 +45,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Портфолиоға 100% жарамды*</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Портфолиоға 100% жарамды</div>
 
                         <!-- main text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
@@ -66,7 +66,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"БАСПАСӨЗ-2022"<br> жазыламыз</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"БАСПАСӨЗ-2022"</div>
 
                         <!-- small text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
@@ -103,7 +103,7 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Жазылу') ?>
+                            <?= Yii::t('app', 'Подробнее') ?>
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
