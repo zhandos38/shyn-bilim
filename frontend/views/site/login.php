@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login']];
 $this->params['heroTitle'] = $this->title;
-$this->params['heroDescription'] = 'Заполните форму чтобы войти в свой аккаунт';
+$this->params['heroDescription'] = Yii::t('app', 'Заполните форму чтобы войти в свой аккаунт');
 ?>
 <div class="site-login">
     <div class="row">
@@ -24,11 +24,11 @@ $this->params['heroDescription'] = 'Заполните форму чтобы в�
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
                 <div style="color:#999;margin:1em 0">
-                    У вас нет аккаунта? <b><?= Html::a('Зарегистрироватся', ['site/signup']) ?></b>
+                    <?= Yii::t('app', 'У вас нет аккаунта?') ?> <b><?= Html::a(Yii::t('app', 'Зарегистрироватся'), ['site/signup']) ?></b>
                     <br>
-                    Если забыли свой пароль. <b><?= Html::a('Восстановить', ['site/request-password-reset']) ?></b>
+                    <?= Yii::t('app', 'Если забыли свой пароль') ?>. <b><?= Html::a(Yii::t('app', 'Восстановить'), ['site/request-password-reset']) ?></b>
                     <br>
-                    Не получили письмо подтверждение? <b><?= Html::a('Переотправить', ['site/resend-verification-email']) ?></b>
+                    <?= Yii::t('app', 'Не получили письмо подтверждение?') ?> <b><?= Html::a(Yii::t('app', 'Переотправить'), ['site/resend-verification-email']) ?></b>
                 </div>
 
                 <div class="form-group">

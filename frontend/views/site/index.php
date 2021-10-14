@@ -235,7 +235,7 @@ $this->registerMetaTag([
                             </div>
                             <div class="feature-box-content">
                                 <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Олимпиады') ?></div>
-                                <span><?= Yii::t('app', 'Участвуй в нашей олимпиаде и получи 100% действующий сертификат') ?></span>
+                                <span><?= Yii::t('app', 'Интеллектуальное соревнование в форме теста позволит оценить уровень знаний учащихся и педагогов') ?></span>
                             </div>
                         </div>
                         <!-- end feature box item-->
@@ -248,7 +248,7 @@ $this->registerMetaTag([
                             </div>
                             <div class="feature-box-content">
                                 <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
-                                <span>Кел, қатардан қалма, Кітап оқып, биікке самға! Ұтып алған кітабыңды мектепке сыйла!</span>
+                                <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
                             </div>
                         </div>
                         <!-- end feature box item-->
