@@ -57,7 +57,12 @@ HomeAsset::register($this);
                 </div>
             </div>
             <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
-                <?= $this->render('_language') ?>
+                <div class="header-language dropdown d-lg-inline-block text-white">
+                    <?= $this->render('_account') ?>
+                </div>
+                <div class="header-language dropdown d-lg-inline-block">
+                    <?= $this->render('_language') ?>
+                </div>
             </div>
         </div>
     </nav>

@@ -9,12 +9,10 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'Заполните форму чтобы войти в свой аккаунт';
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Заполните форму чтобы войти в свой аккаунт</p>
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
@@ -34,7 +32,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login
                 </div>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton(Yii::t('app', 'Войти'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>

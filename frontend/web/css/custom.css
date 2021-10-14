@@ -24,6 +24,10 @@ body, h4, h5 {
     display: none !important;
 }
 
+.form-group .form-control {
+    margin-bottom: 0;
+}
+
 /* question */
 .question-list__item span, .question-box__text span, .question-box__answer span {
     top: 0 !important;

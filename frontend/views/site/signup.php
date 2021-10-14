@@ -12,12 +12,10 @@ use yii\widgets\MaskedInput;
 
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signup']];
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'Заполните форму чтобы зарегистрироватся:';
 ?>
 <div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Заполните форму чтобы зарегистрироватся:</p>
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
@@ -67,7 +65,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Продолжить', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton(Yii::t('app', 'Продолжить'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
