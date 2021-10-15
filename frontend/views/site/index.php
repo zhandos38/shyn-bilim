@@ -222,7 +222,7 @@ $this->registerMetaTag([
                             </div>
                             <div class="feature-box-content">
                                 <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Материалы и статьи') ?></div>
-                                <span><?= Yii::t('app', 'Получить доступ к самой большой трудовой базе для педагогов') ?></span>
+                                <span><?= Yii::t('app', 'Получите доступ к самой большой трудовой базе для педагогов') ?></span>
                             </div>
                         </div>
                         <!-- end feature box item-->
