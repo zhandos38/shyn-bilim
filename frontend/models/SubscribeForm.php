@@ -26,7 +26,7 @@ class SubscribeForm extends Model
     public function rules()
     {
         return [
-            [['post', 'address', 'city_id', 'region_id', 'school_id'], 'required'],
+            [['post', 'address', 'school_id'], 'required'],
             [['post', 'address'], 'string'],
             [['city_id', 'region_id', 'school_id'], 'integer'],
         ];
