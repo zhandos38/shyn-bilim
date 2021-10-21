@@ -120,6 +120,12 @@ class SiteController extends Controller
                 if (!$order->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }
+
+                $user = $order->user;
+                $user->article_count += 3;
+                if (!$user->save()) {
+                    throw new Exception(Json::encode($order->getErrors()));
+                }
             }
 
             return $this->getSignByData($data, 'result');

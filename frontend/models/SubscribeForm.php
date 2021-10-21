@@ -47,6 +47,7 @@ class SubscribeForm extends Model
      * Signs user up.
      *
      * @return bool whether the creating new account was successful and email was sent
+     * @throws Exception
      */
     public function save()
     {
@@ -58,7 +59,7 @@ class SubscribeForm extends Model
         $user->address = $this->address;
         $user->post = $this->post;
         $user->school_id = $this->school_id;
-        $user->article_count += 3;
+//        $user->article_count += 3;
         if (!$user->save()) {
             throw new Exception('Subscribe form error!');
         }
