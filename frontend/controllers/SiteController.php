@@ -390,7 +390,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request->queryParams;
 
-        if (!$this->checkSign($request, 'success')) {
+        if (!$this->checkSign($request, 'subscribe-success')) {
             throw new Exception('Sig is not correct');
         }
 
