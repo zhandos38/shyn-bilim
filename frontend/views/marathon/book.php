@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$this->title = 'Книги';
+$this->title = Yii::t('app', 'Книги');
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
