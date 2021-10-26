@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\City;
+use common\models\Marathon;
 use common\models\Mark;
 use common\models\News;
 use common\models\Post;
@@ -280,11 +281,6 @@ class SiteController extends Controller
     public function actionQuestions()
     {
         return $this->render('questions');
-    }
-
-    public function actionInfo()
-    {
-        phpinfo();
     }
 
     public function actionGetCities($id)
