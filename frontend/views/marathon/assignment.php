@@ -160,7 +160,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 </div>
 <?php
 $js =<<<JS
-$('#testassignment-region_id').change(function() {
+$('#marathon-region_id').change(function() {
   $.get({
     url: '/kz/site/get-cities',
     data: {id: $(this).val()},
@@ -171,7 +171,7 @@ $('#testassignment-region_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#testassignment-city_id').html(options);
+      $('#marathon-city_id').html(options);
     },
     error: function() {
       console.log('Ошибка');
@@ -179,7 +179,7 @@ $('#testassignment-region_id').change(function() {
   });
 });
 
-$('#testassignment-city_id').change(function() {
+$('#marathon-city_id').change(function() {
   $.get({
     url: '/kz/site/get-schools',
     data: {id: $(this).val()},
@@ -190,7 +190,7 @@ $('#testassignment-city_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#testassignment-school_id').html(options);
+      $('#marathon-school_id').html(options);
     },
     error: function() {
       console.log('Ошибка');
