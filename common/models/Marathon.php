@@ -65,4 +65,9 @@ class Marathon extends \yii\db\ActiveRecord
             'phone_teacher' => Yii::t('app', 'Номер телефона преподавателей'),
         ];
     }
+
+    public function getSchool()
+    {
+        return $this->hasOne(School::className(), ['id' => 'school_id']);
+    }
 }
