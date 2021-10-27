@@ -18,7 +18,7 @@ class MarathonSearch extends Marathon
     {
         return [
             [['id', 'school_id', 'grade'], 'integer'],
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'phone_parent', 'phone_teacher'], 'safe'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'phone_parent', 'phone_teacher', 'city_id', 'region_id'], 'safe'],
         ];
     }
 
@@ -40,7 +40,10 @@ class MarathonSearch extends Marathon
      */
     public function search($params)
     {
-        $query = Marathon::find();
+        $query = Marathon::find()
+            ->alias('t1')
+            ->joinWith('school as t2')
+            ->leftJoin('city as t3', 't2.city_id = t3.id');
 
         // add conditions that should always apply here
 
@@ -61,6 +64,9 @@ class MarathonSearch extends Marathon
             'id' => $this->id,
             'school_id' => $this->school_id,
             'grade' => $this->grade,
+
+            't2.city_id' => $this->city_id,
+            't3.region_id' => $this->region_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

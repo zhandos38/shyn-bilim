@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "marathon".
@@ -17,6 +18,7 @@ use Yii;
  * @property string|null $phone
  * @property string|null $phone_parent
  * @property string|null $phone_teacher
+ * @property integer $created_at
  */
 class Marathon extends \yii\db\ActiveRecord
 {
@@ -31,13 +33,25 @@ class Marathon extends \yii\db\ActiveRecord
         return 'marathon';
     }
 
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at'],
+                ],
+            ]
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['school_id', 'grade'], 'integer'],
+            [['school_id', 'grade', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
             [['iin', 'phone', 'phone_parent', 'phone_teacher'], 'string', 'max' => 20],
 
@@ -63,6 +77,7 @@ class Marathon extends \yii\db\ActiveRecord
             'phone' => Yii::t('app', 'Номер телефона'),
             'phone_parent' => Yii::t('app', 'Номер телефона родителей'),
             'phone_teacher' => Yii::t('app', 'Номер телефона преподавателей'),
+            'created_at' => 'Время добавление',
         ];
     }
 

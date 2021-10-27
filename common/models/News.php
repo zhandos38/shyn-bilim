@@ -56,8 +56,6 @@ class News extends \yii\db\ActiveRecord
      */
     public function attributeLabels()
     {
-        
-
         return [
             'id' => 'ID',
             'title' => 'Наименование',
