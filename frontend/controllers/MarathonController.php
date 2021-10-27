@@ -13,19 +13,19 @@ class MarathonController extends Controller
 {
     public function actionAssignment()
     {
-       /* Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН НАЧИНАЕТСЯ 1 НОЯБРЯ'));
-        return $this->redirect(['site/index']);*/
+        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН НАЧИНАЕТСЯ 1 НОЯБРЯ'));
+        return $this->redirect(['site/index']);
 
-        $model = new Marathon();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['marathon/book', 'grade' => $model->grade]);
-        }
-
-        $checkAssignmentForm = new CheckAssignmentForm();
-        return $this->render('assignment', [
-            'model' => $model,
-            'checkAssignmentForm' => $checkAssignmentForm
-        ]);
+//        $model = new Marathon();
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['marathon/book', 'grade' => $model->grade]);
+//        }
+//
+//        $checkAssignmentForm = new CheckAssignmentForm();
+//        return $this->render('assignment', [
+//            'model' => $model,
+//            'checkAssignmentForm' => $checkAssignmentForm
+//        ]);
     }
 
     public function actionBook($grade)
