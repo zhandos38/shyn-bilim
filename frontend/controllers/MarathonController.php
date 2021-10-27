@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\Marathon;
+use frontend\models\CheckAssignmentForm;
 use Yii;
 use yii\web\Controller;
 
@@ -20,8 +21,10 @@ class MarathonController extends Controller
             return $this->redirect(['marathon/book', 'grade' => $model->grade]);
         }
 
+        $checkAssignmentForm = new CheckAssignmentForm();
         return $this->render('assignment', [
-            'model' => $model
+            'model' => $model,
+            'checkAssignmentForm' => $checkAssignmentForm
         ]);
     }
 
@@ -30,5 +33,22 @@ class MarathonController extends Controller
         return $this->render('book', [
             'grade' => (int)$grade
         ]);
+    }
+
+    public function actionCheckAssignment()
+    {
+        $model = new CheckAssignmentForm();
+        if ($model->load(Yii::$app->request->post())) {
+            $marathon = Marathon::findOne(['iin' => $model->iin]);
+
+            if ($marathon === null) {
+                Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
+                return $this->redirect(['marathon/assignment']);
+            }
+
+            return $this->redirect(['marathon/book', 'grade' => $marathon->grade]);
+        }
+
+        return false;
     }
 }
