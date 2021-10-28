@@ -7,31 +7,37 @@ namespace frontend\controllers;
 use common\models\Marathon;
 use frontend\models\CheckAssignmentForm;
 use Yii;
+use yii\db\Exception;
 use yii\web\Controller;
 
 class MarathonController extends Controller
 {
     public function actionAssignment()
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН НАЧИНАЕТСЯ 1 НОЯБРЯ'));
-        return $this->redirect(['site/index']);
+//        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН НАЧИНАЕТСЯ 1 НОЯБРЯ'));
+//        return $this->redirect(['site/index']);
 
-//        $model = new Marathon();
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['marathon/book', 'grade' => $model->grade]);
-//        }
-//
-//        $checkAssignmentForm = new CheckAssignmentForm();
-//        return $this->render('assignment', [
-//            'model' => $model,
-//            'checkAssignmentForm' => $checkAssignmentForm
-//        ]);
+        $model = new Marathon();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
+        }
+
+        $checkAssignmentForm = new CheckAssignmentForm();
+        return $this->render('assignment', [
+            'model' => $model,
+            'checkAssignmentForm' => $checkAssignmentForm
+        ]);
     }
 
-    public function actionBook($grade)
+    public function actionBook($assignment_id)
     {
+        $assignment = Marathon::findOne(['id' => $assignment_id]);
+        if ($assignment === null) {
+            throw new Exception('Assignment is not found!');
+        }
+
         return $this->render('book', [
-            'grade' => (int)$grade
+            'grade' => (int)$assignment->grade
         ]);
     }
 
