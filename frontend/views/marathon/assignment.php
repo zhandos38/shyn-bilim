@@ -70,7 +70,12 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             <p>4.3. ІІ орын &ndash; 25-27 дұрыс жауап. Оқушыға ІІ ДӘРЕЖЕЛІ ДИПЛОМ (электронды нұсқа)</p>
             <p>4.4. ІІІ орын &ndash; 20-24&nbsp; дұрыс жауап. Оқушыға ІІІ ДӘРЕЖЕЛІ ДИПЛОМ (электронды нұсқа)</p>
             <p>4.5. Орын алмаған оқушыларға СЕРТИФИКАТ. (электронды)</p>
-            <p>СӘТТІЛІК ТІЛЕЙМІЗ!</p>
+            <p>
+                <a href="https://wa.me/77754037284" style="color: blue">https://wa.me/77754037284</a>
+                <br><a href="https://wa.me/77754243727" style="color: blue">https://wa.me/77754243727</a>
+                <br><a href="https://wa.me/77013129906" style="color: blue">https://wa.me/77013129906</a>
+                <br><a href="mailto:bilimshini.kz@mail.ru" style="color: blue">bilimshini.kz@mail.ru</a>
+            </p>
 
             <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Жазылу</a>
         </div>
@@ -78,7 +83,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     <div class="col-md-4">
         <div>
             <a id="check-assignment-btn" href="#" style="color: blue">
-                Вы уже заполняли анкету?
+                <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
             </a>
 
             <div id="check-assignment-form" class="mb-5" style="display: none">
