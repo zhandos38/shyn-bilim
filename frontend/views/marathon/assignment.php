@@ -71,7 +71,8 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             <p>4.4. ІІІ орын &ndash; 20-24&nbsp; дұрыс жауап. Оқушыға ІІІ ДӘРЕЖЕЛІ ДИПЛОМ (электронды нұсқа)</p>
             <p>4.5. Орын алмаған оқушыларға СЕРТИФИКАТ. (электронды)</p>
             <p>
-                <a href="https://wa.me/77754037284" style="color: blue">https://wa.me/77754037284</a>
+                Сұрақтарыңыз болса:
+                <br><a href="https://wa.me/77754037284" style="color: blue">https://wa.me/77754037284</a>
                 <br><a href="https://wa.me/77754243727" style="color: blue">https://wa.me/77754243727</a>
                 <br><a href="https://wa.me/77013129906" style="color: blue">https://wa.me/77013129906</a>
                 <br><a href="mailto:bilimshini.kz@mail.ru" style="color: blue">bilimshini.kz@mail.ru</a>
