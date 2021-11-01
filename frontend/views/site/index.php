@@ -12,6 +12,75 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
+<!-- start section -->
+<section class="extra-big-section cover-background overflow-visible" style="background-image: url('/images/home-startup-about-bg.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 overlap-section md-no-margin-top md-margin-70px-bottom sm-margin-50px-bottom">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Book icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Материалы и статьи') ?></div>
+                                <span><?= Yii::t('app', 'Получите доступ к самой большой трудовой базе для педагогов') ?></span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Олимпиады') ?></div>
+                                <span><?= Yii::t('app', 'Интеллектуальное соревнование в форме теста позволит оценить уровень знаний учащихся и педагогов') ?></span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
+                        <!-- start feature box item-->
+                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                <i class="line-icon-Idea icon-medium text-green"></i>
+                            </div>
+                            <div class="feature-box-content">
+                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
+                                <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
+                            </div>
+                        </div>
+                        <!-- end feature box item-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
+                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600">7k+</div>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Опубликованных материалов') ?></span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего опубликованных материалов и статьей') ?></p>
+            </div>
+            <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
+                <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
+                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">7</span>
+                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block"><?= Yii::t('app', 'Лет опыта') ?></span>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
+                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600" >50k+</div>
+                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Уникальных участников олимпиады') ?></span>
+                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего уникальных участников олимпиады по всей стране') ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
 <!-- start revolution slider -->
 <section class="p-0 example home-startup bg-dark-slate-blue">
     <article class="content">
@@ -208,75 +277,6 @@ $this->registerMetaTag([
     </article>
 </section>
 <!-- end revolution slider -->
-<!-- start section -->
-<section class="extra-big-section cover-background overflow-visible" style="background-image: url('/images/home-startup-about-bg.jpg');">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 overlap-section md-no-margin-top md-margin-70px-bottom sm-margin-50px-bottom">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
-                        <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Book icon-medium text-green"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Материалы и статьи') ?></div>
-                                <span><?= Yii::t('app', 'Получите доступ к самой большой трудовой базе для педагогов') ?></span>
-                            </div>
-                        </div>
-                        <!-- end feature box item-->
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Олимпиады') ?></div>
-                                <span><?= Yii::t('app', 'Интеллектуальное соревнование в форме теста позволит оценить уровень знаний учащихся и педагогов') ?></span>
-                            </div>
-                        </div>
-                        <!-- end feature box item-->
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Idea icon-medium text-green"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
-                                <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
-                            </div>
-                        </div>
-                        <!-- end feature box item-->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-end">
-            <div class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
-                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600">7k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Опубликованных материалов') ?></span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего опубликованных материалов и статьей') ?></p>
-            </div>
-            <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
-                <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
-                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">7</span>
-                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block"><?= Yii::t('app', 'Лет опыта') ?></span>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
-                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600" >50k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Уникальных участников олимпиады') ?></span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего уникальных участников олимпиады по всей стране') ?></p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end section -->
 <!-- start section -->
 <section class="overflow-visible pt-md-0 pb-0">
     <div class="container">
