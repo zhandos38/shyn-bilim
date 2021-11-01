@@ -54,7 +54,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </li>
         </ul>
 
-        <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Жазылу</a>
+        <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Тіркелу</a>
     </div>
     <?php else: ?>
         <p>
@@ -83,7 +83,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <p>
                 •	Стоимость подписки на журнал на 6 месяцев - 3000 тенге
             </p>
-            <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Подписаться</a>
+            <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Зарегистрироваться</a>
         </div>
     <?php endif; ?>
 </div>
