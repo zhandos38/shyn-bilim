@@ -157,29 +157,37 @@ class ArticleController extends Controller
 
             if ($model->save() && $model->upload()) {
                 if (!$model->user_id || Yii::$app->user->identity->article_count <= 0) {
-                    $salt = $this->getSalt(8);
-                    $request = [
-                        'pg_merchant_id' => Yii::$app->params['payboxId'],
-                        'pg_amount' => 1000,
-                        'pg_salt' => $salt,
-                        'pg_order_id' => $model->id,
-                        'pg_success_url_method' => 'GET',
-                        'pg_description' => 'Оплата за публикацию материала',
-                        'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                        'pg_result_url_method' => 'POST',
-                    ];
+                    // $salt = $this->getSalt(8);
+                    // $request = [
+                    //     'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    //     'pg_amount' => 1000,
+                    //     'pg_salt' => $salt,
+                    //     'pg_order_id' => $model->id,
+                    //     'pg_success_url_method' => 'GET',
+                    //     'pg_description' => 'Оплата за публикацию материала',
+                    //     'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+                    //     'pg_result_url_method' => 'POST',
+                    // ];
 
-                    $request = $this->getSignByData($request, 'payment.php', $salt);
+                    // $request = $this->getSignByData($request, 'payment.php', $salt);
 
-                    $query = http_build_query($request);
+                    // $query = http_build_query($request);
 
-                    return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                    // return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+
+                    return $this->redirect(['site/subscribe']);
                 } else {
                     $user = Yii::$app->user->identity;
                     $user->article_count -= 1;
                     if (!$user->save()) {
                         throw new Exception('Article count save error!');
                     }
+
+                    $model->status = Article::STATUS_ACTIVE;
+                    if (!$model->save()) {
+                        throw new Exception('Article count save error!');
+                    }
+
 
                     Yii::$app->session->setFlash('success', Yii::t('app', 'Материал успешно опубликован'));
                     return $this->redirect(['article/my-list']);
