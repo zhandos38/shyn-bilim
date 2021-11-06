@@ -188,7 +188,6 @@ class ArticleController extends Controller
                         throw new Exception('Article count save error!');
                     }
 
-
                     Yii::$app->session->setFlash('success', Yii::t('app', 'Материал успешно опубликован'));
                     return $this->redirect(['article/my-list']);
                 }
