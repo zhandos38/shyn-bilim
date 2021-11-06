@@ -18,8 +18,16 @@ class MarathonController extends Controller
         return $this->redirect(['site/index']);
 
         $model = new Marathon();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
+        if ($model->load(Yii::$app->request->post())) {
+
+            if ($marathon !== null) {
+                Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
+                return $this->redirect(['marathon/assignment']);
+            }
+
+            if (!$model->save()) {
+                throw new Exception('Marathon save error!');
+            }
             return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
         }
 
