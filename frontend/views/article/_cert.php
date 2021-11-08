@@ -28,10 +28,10 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     <div id="cert-school" style="padding-top: 5px; padding-left: 355px; font-size: 14px; color: #000000; height: 45px; width: 600px; text-align: center">
         <?= $model->school->name ?>
     </div>
-    <div id="cert-topic" style="padding-top: 0; padding-left: 540px; font-size: 18px; color: #000000; height: 55px; width: 460px;">
+    <div id="cert-topic" style="padding-top: 0; padding-left: 460px; font-size: 18px; color: #000000; height: 80px; width: 460px;">
          <b>Тақырыбы:</b> <?= $model->topic ?>
     </div>
-    <div style="padding-top: 210px; padding-left: 525px; padding-bottom: 45px; font-size: 16px; color: #000000;">
+    <div style="padding-top: 180px; padding-left: 525px; padding-bottom: 45px; font-size: 16px; color: #000000;">
         <div id="cert-date">Күні: <?= date('d.m.Y') ?></div>
         <div id="cert-number" style="padding-top: 5px;">Тіркеу №<?= $model->id ?></div>
     </div>
