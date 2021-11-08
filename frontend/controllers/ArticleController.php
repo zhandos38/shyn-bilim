@@ -187,11 +187,6 @@ class ArticleController extends Controller
                         throw new Exception('Article count save error!');
                     }
 
-                    $model->status = Article::STATUS_ACTIVE;
-                    if (!$model->save()) {
-                        throw new Exception('Article count save error!');
-                    }
-
                     Yii::$app->session->setFlash('success', Yii::t('app', 'Материал успешно опубликован'));
                     return $this->redirect(['article/cert', 'id' => $model->id]);
                 }
