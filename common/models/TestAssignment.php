@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $surname
  * @property string $leader_name
  * @property string $leader_name_second
+ * @property string $parent_name
  * @property string $iin
  * @property int|null $school_id
  * @property int $grade
