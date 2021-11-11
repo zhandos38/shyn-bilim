@@ -12,7 +12,7 @@ use yii\imagine\Image;
  * @property int $id
  * @property boolean $status
  * @property string|null $name
- * @property boolean|null $type
+ * @property integer|null $type
  * @property float|null $price
  * @property string|null $img
  * @property int|null $order
@@ -33,6 +33,7 @@ class Olympiad extends \yii\db\ActiveRecord
 
     const TYPE_STUDENT = 0;
     const TYPE_TEACHER = 1;
+    const TYPE_MARATHON = 2;
 
     /**
      * {@inheritdoc}
@@ -49,7 +50,7 @@ class Olympiad extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'img', 'file'], 'string', 'max' => 255],
-            [['type'], 'boolean'],
+            [['type'], 'integer'],
             ['price', 'number'],
             [['status', 'order'], 'integer'],
 
@@ -106,7 +107,8 @@ class Olympiad extends \yii\db\ActiveRecord
     {
         return [
             self::TYPE_STUDENT => Yii::t('app', 'Интеллектуальная олимпиада'),
-            self::TYPE_TEACHER => Yii::t('app', 'Олимпиада для преподавателей')
+            self::TYPE_TEACHER => Yii::t('app', 'Олимпиада для преподавателей'),
+            self::TYPE_MARATHON => Yii::t('app', 'Марафон'),
         ];
     }
 
