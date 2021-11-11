@@ -73,7 +73,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
 
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
-            ['school_id', 'integer'],
+            [['school_id', 'article_count'], 'integer'],
         ];
     }
 
@@ -91,6 +91,7 @@ class User extends ActiveRecord implements IdentityInterface
             'address' => 'Адрес',
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'post' => Yii::t('app', 'Почтовый индекс'),
+            'article_count' => Yii::t('app', 'Лимит на материалы'),
         ];
     }
 

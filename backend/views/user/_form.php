@@ -24,6 +24,8 @@ use yii\widgets\MaskedInput;
 
         <?= $form->field($model, 'status')->dropDownList(User::getStatuses(), ['prompt' => 'Указать статус']) ?>
 
+        <?= $form->field($model, 'article_count') ?>
+
         <div class="form-group">
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
         </div>
