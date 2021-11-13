@@ -6,16 +6,13 @@ use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
 /* @var $this \yii\web\View */
 /* @var $model \common\models\TestAssignment */
-/* @var $test \common\models\Test */
 
 $this->title = Yii::t('app', 'Регистрация');
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Олимпиады'), 'url' => ['olympiad/index']];
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/assignment', 'test' => $test->id]];
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1><?= $test->name ?></h1>
+<h1><?= Yii::t('site', 'Марафон') ?></h1>
 <p>
     <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $test->olympiad->price]) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
