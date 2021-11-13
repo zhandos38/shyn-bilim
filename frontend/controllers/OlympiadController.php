@@ -117,13 +117,13 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['id' => 105]);
 
-            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => $model->lang]);
+            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => 'kz']);
             if (!$testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
                     'model' => $model,
-                    'test' => $test
+                    'checkAssignmentForm' => $checkAssignmentForm
                 ]);
             }
 
@@ -143,7 +143,7 @@ class OlympiadController extends Controller
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
                     'model' => $model,
-                    'test' => $test
+                    'checkAssignmentForm' => $checkAssignmentForm
                 ]);
             }
 
