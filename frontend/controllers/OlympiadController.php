@@ -101,7 +101,7 @@ class OlympiadController extends Controller
 
         if ($checkAssignmentForm->load(\Yii::$app->request->post())) {
             $marathon = Marathon::findOne(['iin' => $checkAssignmentForm->iin]);
-            if ($marathon !== null) {
+            if ($marathon === null) {
                 Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
                 return $this->redirect(['olympiad/assignment']);
             }
