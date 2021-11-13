@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\Answer;
+use common\models\Marathon;
 use common\models\Olympiad;
 use common\models\Question;
 use common\models\Subject;
@@ -93,13 +94,28 @@ class OlympiadController extends Controller
         ]);
     }
 
-    public function actionAssignment($id)
+    public function actionAssignment($iin = null)
     {
-        $test = Test::findOne(['id' => $id]);
-
         $model = new TestAssignment();
 
+        if ($iin !== null) {
+            $marathon = Marathon::findOne(['iin' => $iin]);
+            if ($marathon !== null) {
+                Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
+                return $this->redirect(['olympiad/assignment']);
+            }
+
+            $model->name = $marathon->name;
+            $model->surname = $marathon->surname;
+            $model->patronymic = $marathon->patronymic;
+            $model->iin = $marathon->iin;
+            $model->school_id = $marathon->school_id;
+            $model->grade = $marathon->grade;
+        }
+
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            $test = Test::findOne(['id' => 105]);
+
             $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => $model->lang]);
             if (!$testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
@@ -153,9 +169,11 @@ class OlympiadController extends Controller
             return $this->redirect(['test', 'assignment' => $model->id]);
         }
 
+        $checkAssignmentForm = new CheckAssignmentForm();
         return $this->render('assignment', [
             'model' => $model,
-            'test' => $test
+            'test' => $test,
+            'checkAssignmentForm' => $checkAssignmentForm
         ]);
     }
 

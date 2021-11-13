@@ -26,6 +26,22 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 </p>
 <div class="row">
     <div class="col-md-4">
+        <div>
+            <a id="check-assignment-btn" href="#" style="color: blue">
+                <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
+            </a>
+
+            <div id="check-assignment-form" class="mb-5" style="display: none">
+                <?php $form = ActiveForm::begin(['action' => ['olympiad/assignment']]) ?>
+
+                <?= $form->field($checkAssignmentForm, 'iin') ?>
+
+                <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
+
+                <?php ActiveForm::end() ?>
+            </div>
+        </div>
+
         <?php $form = ActiveForm::begin() ?>
 
         <?= $form->field($model, 'surname') ?>
@@ -54,34 +70,25 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         ]); ?>
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
-        <?php if ($test->olympiad->type === \common\models\Olympiad::TYPE_STUDENT): ?>
-
-            <?= $form->field($model, 'grade')->dropDownList([
-                1 => '1',
-                2 => '2',
-                3 => '3',
-                4 => '4',
-                5 => '5',
-                6 => '6',
-                7 => '7',
-                8 => '8',
-                9 => '9',
-                10 => '10',
-                11 => '11'
-            ], [
-                'prompt' => Yii::t('app', 'Выберите класс')
-            ]) ?>
+        <?= $form->field($model, 'grade')->dropDownList([
+            1 => '1',
+            2 => '2',
+            3 => '3',
+            4 => '4',
+            5 => '5',
+            6 => '6',
+            7 => '7',
+            8 => '8',
+            9 => '9',
+            10 => '10',
+            11 => '11'
+        ], [
+            'prompt' => Yii::t('app', 'Выберите класс')
+        ]) ?>
 
         <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
 
-        <?php endif; ?>
-
-        <?= $form->field($model, 'lang')->dropDownList([
-            'kz' => 'Қазақша',
-            'ru' => 'Русский'
-        ], [
-            'prompt' => Yii::t('app', 'Выберите язык')
-        ]) ?>
+        <?= $form->field($model, 'parent_name')->textInput() ?>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
@@ -126,6 +133,10 @@ $('#testassignment-city_id').change(function() {
       console.log('Ошибка');
     }
   });
+});
+
+$('#check-assignment-btn').click(function() {
+  $('#check-assignment-form').toggle('ease');
 });
 JS;
 
