@@ -29,7 +29,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </a>
 
             <div id="check-assignment-form" class="mb-5" style="display: none">
-                <?php $form = ActiveForm::begin(['action' => ['olympiad/assignment'], 'method' => 'GET']) ?>
+                <?php $form = ActiveForm::begin(['action' => ['olympiad/assignment']]) ?>
 
                 <?= $form->field($checkAssignmentForm, 'iin') ?>
 
