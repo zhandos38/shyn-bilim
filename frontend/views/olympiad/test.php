@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                     <button class="btn btn-success site-button" v-on:click="showResults"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
                 </div>
                 <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
-                <small>
+                <small style="color: red; font-weight: 600">
                     ТЕСТТІ СКРИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТИЫМ САЛЫНАДЫ
                 </small>
                 <div class="question-box" v-if="questions[currentQuestionId]">
