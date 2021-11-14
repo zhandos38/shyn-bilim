@@ -116,6 +116,9 @@ body, h4, h5 {
     color: var(--main-color-blue) !important;
 }
 
+input[type=radio]+label span {
+    width: 100%;
+}
 
 /* project list */
 .project-list {
