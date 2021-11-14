@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                 </div>
                 <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
                 <small style="color: red; font-weight: 600">
-                    ТЕСТТІ СКРИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТИЫМ САЛЫНАДЫ
+                    ТЕСТТІ СКРИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТЫЙЫМ САЛЫНАДЫ
                 </small>
                 <div class="question-box" v-if="questions[currentQuestionId]">
                     <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
