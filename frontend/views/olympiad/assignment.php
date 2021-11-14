@@ -68,7 +68,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
         <?= $form->field($model, 'grade')->dropDownList([
-            1 => '1',
             2 => '2',
             3 => '3',
             4 => '4',
