@@ -19,6 +19,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                     <button class="btn btn-success site-button" v-on:click="showResults"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
                 </div>
                 <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
+                <p>
+                    ТЕСТТІ СКИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТИЫМ САЛЫНАДЫ
+                </p>
                 <div class="question-box" v-if="questions[currentQuestionId]">
                     <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
                     <br>
@@ -33,9 +36,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                 </div>
             </div>
             <div v-else>
-                <p>
-                    ТЕСТТІ СКИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТИЫМ САЛЫНАДЫ
-                </p>
                 <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
                 <div>
                     <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" target="_blank">
