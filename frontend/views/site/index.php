@@ -89,7 +89,7 @@ $this->registerMetaTag([
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['marathon/assignment']) ?>"
+                           href="<?= Url::to(['olympiad/assignment']) ?>"
                            id="slide-411-layer-06"
                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','100']"
