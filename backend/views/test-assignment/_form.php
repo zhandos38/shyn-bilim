@@ -57,6 +57,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'leader_name_second') ?>
 
+    <?= $form->field($model, 'parent_name') ?>
+
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
 
     <?= $form->field($model, 'test_option_id')->widget(Select2::classname(), [

@@ -33,11 +33,24 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                 </div>
             </div>
             <div v-else>
+                <p>
+                    ТЕСТТІ СКИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТИЫМ САЛЫНАДЫ
+                </p>
                 <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
                 <div>
                     <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" target="_blank">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                         <?= Yii::t('app', 'Получить сертификат/диплом') ?>
+                    </a>
+                    <br><br>
+                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" target="_blank">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                        <?= Yii::t('app', 'Получить благодарственное письмо для родителя') ?>
+                    </a>
+                    <br><br>
+                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" target="_blank">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                        <?= Yii::t('app', 'Получить благодарственное письмо для руководителя') ?>
                     </a>
                 </div>
             </div>

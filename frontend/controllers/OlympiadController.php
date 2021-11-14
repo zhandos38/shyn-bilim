@@ -308,19 +308,19 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/index']);
         }
 
-        if ($testAssignment->point >= 14) {
-            $place = 'III Орын';
+        if ($testAssignment->point >= 20) {
+            $place = 'III ОРЫН';
 
-            if ($testAssignment->point === 20) {
-                $place = 'Бас жүлде';
+            if ($testAssignment->point === 30) {
+                $place = 'БАС ЖҮЛДЕ';
             }
 
-            if ($testAssignment->point >= 18 && $testAssignment->point <= 19) {
-                $place = 'I Орын';
+            if ($testAssignment->point >= 28 && $testAssignment->point <= 29) {
+                $place = 'I ОРЫН';
             }
 
-            if ($testAssignment->point >= 16 && $testAssignment->point <= 17) {
-                $place = 'II Орын';
+            if ($testAssignment->point >= 25 && $testAssignment->point <= 27) {
+                $place = 'II ОРЫН';
             }
 
             $content = $this->renderPartial('_diploma', [
@@ -339,7 +339,7 @@ class OlympiadController extends Controller
                 'marginRight' => 0,
                 'marginBottom' => 0,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_PORTRAIT,
+                'orientation' => Pdf::ORIENT_LANDSCAPE,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
@@ -398,7 +398,7 @@ class OlympiadController extends Controller
         ]);
     }
 
-    public function actionGetCertThank($id)
+    public function actionGetCertThankParent($id)
     {
         $testAssignment = TestAssignment::findOne(['id' => $id]);
         if (!$testAssignment) {
@@ -410,7 +410,48 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/view']);
         }
 
-        $content = $this->renderPartial('_cert-thank', [
+        $content = $this->renderPartial('_cert-thank-parent', [
+            'testAssignment' => $testAssignment
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Алғыс хат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+        ]);
+
+        return $pdf->render();
+    }
+
+    public function actionGetCertThankLeader($id)
+    {
+        $testAssignment = TestAssignment::findOne(['id' => $id]);
+        if (!$testAssignment) {
+            throw new Exception('Test Assignment is not found');
+        }
+
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+            return $this->redirect(['olympiad/view']);
+        }
+
+        $content = $this->renderPartial('_cert-thank-leader', [
             'testAssignment' => $testAssignment
         ]);
 
