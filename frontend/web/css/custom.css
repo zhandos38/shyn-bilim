@@ -116,9 +116,12 @@ body, h4, h5 {
     color: var(--main-color-blue) !important;
 }
 
-input[type=radio]+label span {
+.question-box__answer span {
     width: 100%;
     height: unset;
+    display: unset;
+    margin: unset;
+    vertical-align: unset;
 }
 
 /* project list */
