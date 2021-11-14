@@ -117,6 +117,17 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $test = Test::findOne(['id' => 105]);
 
+            $olympiad = $test->olympiad;
+            if ($olympiad->status === Olympiad::STATUS_FINISHED) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
+                return $this->redirect(['site/index']);
+            }
+
+            if ($olympiad->status === Olympiad::STATUS_NEW) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
+                return $this->redirect(['site/index']);
+            }
+
             $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => 'kz']);
             if (!$testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
