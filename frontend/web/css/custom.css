@@ -116,12 +116,12 @@ body, h4, h5 {
     color: var(--main-color-blue) !important;
 }
 
-.question-box__answer-text p>span {
-    width: 100%;
-    height: unset;
-    display: unset;
-    margin: unset;
-    vertical-align: unset;
+.question-box__answer-text span {
+    width: 100% !important;
+    height: unset !important;
+    display: unset !important;
+    margin: unset !important;
+    vertical-align: unset !important;
 }
 
 /* project list */
