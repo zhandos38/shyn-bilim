@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Article;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use kartik\file\FileInput;
@@ -35,11 +36,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'topic')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'status')->dropDownList(Article::getStatuses()) ?>
+
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>
 
     <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
+
+    <?= $form->field($model, 'school_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите город']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

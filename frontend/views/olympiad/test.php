@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             <div v-if="!showResultActive">
                 <div>
                     <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
-                    <button class="btn btn-success site-button" v-on:click="showResults"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
+                    <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
                 </div>
                 <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
                 <small style="color: red; font-weight: 600">
@@ -38,17 +38,17 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             <div v-else>
                 <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
                 <div>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" target="_blank">
+                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" target="_parent">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                         <?= Yii::t('app', 'Получить сертификат/диплом') ?>
                     </a>
                     <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" target="_blank">
+                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" target="_parent">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                         <?= Yii::t('app', 'Получить благодарственное письмо для родителя') ?>
                     </a>
                     <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" target="_blank">
+                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" target="_parent">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                         <?= Yii::t('app', 'Получить благодарственное письмо для руководителя') ?>
                     </a>
