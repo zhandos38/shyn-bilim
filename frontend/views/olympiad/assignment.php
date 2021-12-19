@@ -120,8 +120,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
         <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
 
-        <?= $form->field($model, 'parent_name')->textInput() ?>
-
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
         <?php ActiveForm::end() ?>
