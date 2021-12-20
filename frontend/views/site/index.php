@@ -44,7 +44,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">МАРАФОН</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">ОЛИМПИАДА</div>
 
                         <!-- main text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
@@ -56,8 +56,8 @@ $this->registerMetaTag([
                              data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-100','-65']"
                              data-width="auto"
                              data-height="auto"
-                             data-fontsize="['70','53','36','22']"
-                             data-lineheight="['70','59','70','39']"
+                             data-fontsize="['53','42','36','22']"
+                             data-lineheight="['53','59','70','39']"
                              data-letterspacing="['-2','-1','-1','-1']"
                              data-responsive="off"
                              data-responsive_offset="off"
@@ -65,7 +65,8 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">КАНИКУЛДА КІТАП ОҚИМЫЗ</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN QYRAN– ерекше дарын иесі» 
+зияткерлік білім сайысы басталды!!!</div>
 
                         <!-- small text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
