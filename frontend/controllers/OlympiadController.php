@@ -352,7 +352,7 @@ class OlympiadController extends Controller
                 // portrait orientation
                 'orientation' => Pdf::ORIENT_LANDSCAPE,
                 // stream to browser inline
-                'destination' => Pdf::DEST_BROWSER,
+                'destination' => Pdf::DEST_DOWNLOAD,
                 'filename' => 'Диплом.pdf',
                 // your html content input
                 'content' => $content,
