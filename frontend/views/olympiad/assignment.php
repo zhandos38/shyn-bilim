@@ -23,22 +23,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 </p>
 <div class="row">
     <div class="col-md-4">
-        <div>
-            <a id="check-assignment-btn" href="#" style="color: blue">
-                <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
-            </a>
-
-            <div id="check-assignment-form" class="mb-5" style="display: none">
-                <?php $form = ActiveForm::begin(['action' => ['olympiad/assignment']]) ?>
-
-                <?= $form->field($checkAssignmentForm, 'iin') ?>
-
-                <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
-
-                <?php ActiveForm::end() ?>
-            </div>
-        </div>
-
+        
         <?php $form = ActiveForm::begin() ?>
 
         <?= $form->field($model, 'surname') ?>
