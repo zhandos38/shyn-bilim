@@ -94,7 +94,7 @@ class OlympiadController extends Controller
         ]);
     }
 
-    public function actionAssignment()
+    public function actionAssignment($id)
     {
         $model = new TestAssignment();
         $checkAssignmentForm = new CheckAssignmentForm();
@@ -115,7 +115,7 @@ class OlympiadController extends Controller
         }
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            $test = Test::findOne(['id' => 105]);
+            $test = Test::findOne(['id' => $id]);
 
             $olympiad = $test->olympiad;
             if ($olympiad->status === Olympiad::STATUS_FINISHED) {
