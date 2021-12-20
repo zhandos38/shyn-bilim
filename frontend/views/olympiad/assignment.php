@@ -12,7 +12,7 @@ $this->title = Yii::t('app', 'Регистрация');
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1><?= Yii::t('site', 'Марафон') ?></h1>
+<h1>Altyn Qyran</h1>
 <p>
     <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => '1000']) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
@@ -21,6 +21,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
     <?php endif; ?>
 </p>
+<<<<<<< HEAD
 <div >
     <div class="text-center">
         <h6>
@@ -57,6 +58,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <p>Сұрақтарыңыз болса:<br /> <a href="https://wa.me/77754037284">https://wa.me/77754037284</a><br /> <a href="https://wa.me/77754243727">https://wa.me/77754243727</a><br /> <a href="https://bilimshini.kz/">http://bilimshini.kz/</a>&nbsp;</p>
     </div>
 </div>
+=======
+>>>>>>> 1e65363bbd3eb775b2298554fdd9a33eee3e636d
 <div class="row">
     <div class="col-md-4">
         <div>
