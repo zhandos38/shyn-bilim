@@ -65,8 +65,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN QYRAN– ерекше дарын иесі» 
-зияткерлік білім сайысы басталды!!!</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN QYRAN– ерекше дарын иесі» олимпиадасы</div>
 
                         <!-- small text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
@@ -82,15 +81,12 @@ $this->registerMetaTag([
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
                              data-responsive_offset="on">
-                            Кел, қатардан қалма, <br>
-                            Кітап оқып, биікке самға! <br>
-                            Ұтып алған кітабыңды мектепке <br>
-                            <b>Сыйла!</b>
+                            2 - 11 сынып оқушылары үшін
                         </div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/assignment']) ?>"
+                           href="<?= Url::to(['olympiad/assignment', 'id' => 87]) ?>"
                            id="slide-411-layer-06"
                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','100']"
