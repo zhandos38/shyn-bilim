@@ -14,7 +14,6 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         </div>
         <div style="padding-left: 550px; padding-top: -120px; text-align: center; width: 500px; text-transform: uppercase;">
             <div style="height: 172px">
-                <div style="font-size: 14px;"><?= $testAssignment->school->name ?></div>
                 <div style="font-size: 14px;">
                     <?php
                     if ($testAssignment->school !== null) {
@@ -25,6 +24,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                         }
                     } ?>
                 </div>
+                <div style="font-size: 14px; width: 440px; padding-left: 35px"><?= $testAssignment->school->name ?></div>
                 <div style="font-size: 14px; font-weight: bold"><?= $testAssignment->grade ?> сынып оқушысы</div>
                 <div style="padding-top: 10px; font-size: 22px;">
                     <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
