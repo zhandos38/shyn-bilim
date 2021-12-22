@@ -35,7 +35,7 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
             <div style="font-size: 18px; padding-top: 3px; color: #000">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="font-size: 18px; color: #000; padding-top: 30px; height: 80px">
+            <div style="font-size: 16px; color: #000; padding-top: 30px; height: 80px">
                 <b><?= $testAssignment->leader_name ?></b>
             </div>
         </div>
