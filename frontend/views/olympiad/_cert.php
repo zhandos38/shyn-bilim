@@ -35,11 +35,15 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
             <div style="font-size: 18px; padding-top: 3px; color: #000">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="font-size: 16px; color: #000; padding-top: 30px; height: 80px; text-transform: capitalize;">
+            <div style="padding-left: -20px; font-size: 22px; color: #000; padding-top: 30px; height: 120px; text-transform: capitalize;">
                 <b><?= $testAssignment->leader_name ?></b>
+                <br>
+                <b><?= $testAssignment->leader_name_second ?></b>
+                <br>
+                <b><?= $testAssignment->leader_name_third ?></b>
             </div>
         </div>
-        <div style="padding-left: 910px; padding-top: -62px">
+        <div style="padding-left: 910px; padding-top: -102px">
             <div id="cert-number" style="font-size: 14px;">№<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 14px; padding-top: 3px"><?= date('d.m.Y') ?> жыл</div>
         </div>

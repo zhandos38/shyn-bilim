@@ -67,7 +67,11 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
 
-        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
+        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input'])->label('Қазақ тілі пәні мұғалім') ?>
+
+        <?= $form->field($model, 'leader_name_second')->textInput()->label('Орыс тілі пәні мұғалімі') ?>
+
+        <?= $form->field($model, 'leader_name_third')->textInput()->label('Ағылшын тілі пәні мұғалімі') ?>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
