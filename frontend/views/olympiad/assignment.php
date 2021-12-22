@@ -64,12 +64,15 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             10 => '10',
             11 => '11'
         ], [
+            'id' => 'grade-input',
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
 
-        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input'])->label('Қазақ тілі пәні мұғалім') ?>
+        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
 
-        <?= $form->field($model, 'leader_name_second')->textInput()->label('Орыс тілі пәні мұғалімі') ?>
+        <div id="grade-box" style="display: none">
+            <?= $form->field($model, 'leader_name_second')->textInput() ?>
+        </div>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
@@ -122,6 +125,14 @@ $('#check-assignment-btn').click(function() {
 
 $('#toggleBtn').click(function() {
   $('#toggleText').toggle('ease');
+});
+
+$('#grade-input').change(function() {
+  if (parseInt($(this).val()) >= 5) {
+      $('#grade-box').show();
+  } else {
+      $('#grade-box').hide();
+  }
 });
 JS;
 
