@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $surname
  * @property string $leader_name
  * @property string $leader_name_second
+ * @property string $leader_name_third
  * @property string $parent_name
  * @property string $iin
  * @property int|null $school_id
@@ -54,7 +55,7 @@ class TestAssignment extends \yii\db\ActiveRecord
         return [
             [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'school_id', 'leader_name', 'grade'], 'required'],
-            [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'parent_name'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'leader_name_third', 'parent_name'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 

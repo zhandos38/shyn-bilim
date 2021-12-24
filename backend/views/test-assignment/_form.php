@@ -57,6 +57,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'leader_name_second') ?>
 
+    <?= $form->field($model, 'leader_name_third') ?>
+
     <?= $form->field($model, 'parent_name') ?>
 
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
