@@ -51,7 +51,6 @@ use yii\helpers\Url;
                 <div class="col-12 col-md-3 col-sm-6">
                     <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Полиграфия') ?></span>
                     <ul>
-                        <li><a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a></li>
                         <li><a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a></li>
                         <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a></li>
                         <li><a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a></li>

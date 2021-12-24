@@ -49,9 +49,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </h6>
         <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
-                <a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
                 <a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
