@@ -76,7 +76,9 @@ class WhiteListController extends Controller
     {
         $model = new WhiteList();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->iin = str_replace(' ', '', $model->iin);
+            $model->save();
             return $this->redirect(['index']);
         }
 
@@ -96,7 +98,9 @@ class WhiteListController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->iin = str_replace(' ', '', $model->iin);
+            $model->save();
             return $this->redirect(['index']);
         }
 
