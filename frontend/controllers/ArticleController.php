@@ -125,27 +125,19 @@ class ArticleController extends Controller
 
     public function actionMyList()
     {
-        $searchModel = new MyArticleSearch();
+        return $this->redirect('/');
+        /*$searchModel = new MyArticleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('my-list', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider
-        ]);
+        ]);*/
     }
 
-    public function actionOrder($id = null)
+    public function actionOrder()
     {
         $model = new Article();
-        $model->subject_id = $id;
-        if (!Yii::$app->user->isGuest || $id === null) {
-            $user = Yii::$app->user->identity;
-            $model->user_id = $user->id;
-            $model->school_id = $user->school_id;
-            $model->name = $user->name;
-            $model->surname = $user->surname;
-            $model->patronymic = $user->patronymic;
-        }
 
         if ($model->load(Yii::$app->request->post())) {
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
@@ -154,42 +146,25 @@ class ArticleController extends Controller
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
             }
-	   
-            if (Yii::$app->user->identity->article_count > 0) {
-		$model->status =  Article::STATUS_ACTIVE;
-            }
 
             if ($model->save() && $model->upload()) {
-                if (!$model->user_id || Yii::$app->user->identity->article_count <= 0) {
-                    // $salt = $this->getSalt(8);
-                    // $request = [
-                    //     'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    //     'pg_amount' => 1000,
-                    //     'pg_salt' => $salt,
-                    //     'pg_order_id' => $model->id,
-                    //     'pg_success_url_method' => 'GET',
-                    //     'pg_description' => 'Оплата за публикацию материала',
-                    //     'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    //     'pg_result_url_method' => 'POST',
-                    // ];
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 1000,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_success_url_method' => 'GET',
+                    'pg_description' => 'Оплата за публикацию материала',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+                    'pg_result_url_method' => 'POST',
+                ];
 
-                    // $request = $this->getSignByData($request, 'payment.php', $salt);
+                $request = $this->getSignByData($request, 'payment.php', $salt);
 
-                    // $query = http_build_query($request);
+                $query = http_build_query($request);
 
-                    // return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-
-                    return $this->redirect(['site/subscribe']);
-                } else {
-                    $user = Yii::$app->user->identity;
-                    $user->article_count -= 1;
-                    if (!$user->save()) {
-                        throw new Exception('Article count save error!');
-                    }
-
-                    Yii::$app->session->setFlash('success', Yii::t('app', 'Материал успешно опубликован'));
-                    return $this->redirect(['article/cert', 'id' => $model->id]);
-                }
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
         }
 

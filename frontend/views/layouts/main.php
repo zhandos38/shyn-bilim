@@ -60,9 +60,6 @@ AppAsset::register($this);
             </div>
             <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
                 <div class="header-language dropdown d-lg-inline-block">
-                    <?= $this->render('_account') ?>
-                </div>
-                <div class="header-language dropdown d-lg-inline-block">
                     <?= $this->render('_language') ?>
                 </div>
             </div>

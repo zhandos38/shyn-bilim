@@ -72,7 +72,8 @@ class Subject extends \yii\db\ActiveRecord
     {
         return [
             self::TYPE_STUDENT => 'Для учеников',
-            self::TYPE_TEACHER => 'Для учителей'
+            self::TYPE_TEACHER => 'Для учителей',
+            self::TYPE_ARTICLE => 'Для материалов',
         ];
     }
 
