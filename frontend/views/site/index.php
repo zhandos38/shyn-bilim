@@ -61,7 +61,7 @@ $this->registerMetaTag([
                              data-height="auto"
                              data-fontsize="['70','53','60','35']"
                              data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['-2','-1','-1','-1']"
+                             data-letterspacing="['0','0','0','0']"
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-paddingtop="['0','0','0','0']"
