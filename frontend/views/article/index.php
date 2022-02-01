@@ -59,6 +59,9 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <a class="btn btn-success" href="<?= Url::to(['site/subscribe']) ?>">Тіркелу</a>
         </div>
     <?php endif; ?>
+    <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order', 'id' => $id]) ?>">
+        <?= Yii::t('app', 'Опубликовать материал') ?>
+    </a>
 </div>
 <div class="row" style="padding-top: 20px">
     <?php foreach ($subjects as $subject): ?>

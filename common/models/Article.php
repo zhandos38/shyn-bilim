@@ -18,6 +18,7 @@ use yii\helpers\Json;
  * @property string $file
  * @property int $subject_id
  * @property int $status
+ * @property string $iin
  * @property mixed $subject
  * @property int|null $created_at
  * @property-read \yii\db\ActiveQuery $school
@@ -48,9 +49,10 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'file', 'subject_id', 'school_id'], 'required'],
+            [['name', 'surname', 'patronymic', 'topic', 'fileTemp', 'subject_id', 'school_id', 'iin'], 'required'],
             [['subject_id', 'status', 'school_id', 'user_id', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'iin'], 'string', 'max' => 255],
+            [['iin'], 'string', 'max' => 20],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
         ];
@@ -67,6 +69,7 @@ class Article extends \yii\db\ActiveRecord
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
             'topic' => Yii::t('app', 'Название'),
+            'iin' => Yii::t('app', 'ИИН'),
             'file' => Yii::t('app', 'Файл'),
             'fileTemp' => Yii::t('app', 'Выбрать файл'),
             'subject_id' => Yii::t('app', 'Предмет'),

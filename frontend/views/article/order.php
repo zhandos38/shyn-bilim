@@ -25,28 +25,20 @@ $this->title = Yii::t('app', 'Опубликовать материал');
         <div class="col-md-6">
             <?php $form = ActiveForm::begin() ?>
 
-            <?php if (!$model->user_id): ?>
+            <?= $form->field($model, 'surname') ?>
 
-                <?= $form->field($model, 'surname') ?>
+            <?= $form->field($model, 'name') ?>
 
-                <?= $form->field($model, 'name') ?>
+            <?= $form->field($model, 'patronymic') ?>
 
-                <?= $form->field($model, 'patronymic') ?>
-
-            <?php endif; ?>
+            <?= $form->field($model, 'iin') ?>
 
             <?= $form->field($model, 'topic') ?>
 
-            <?php if ($model->user_id): ?>
-
-                <?= $form->field($model, 'subject_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', Yii::$app->language === 'ru' ? 'name_ru' : 'name_kz'),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите предмет')],
-                ]) ?>
-
-            <?php endif; ?>
-
-            <?php if (!$model->school_id): ?>
+            <?= $form->field($model, 'subject_id')->widget(Select2::classname(), [
+                'data' => ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', Yii::$app->language === 'ru' ? 'name_ru' : 'name_kz'),
+                'options' => ['placeholder' => Yii::t('app', 'Укажите предмет')],
+            ]) ?>
 
             <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                 'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
@@ -63,8 +55,6 @@ $this->title = Yii::t('app', 'Опубликовать материал');
                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
             ]) ?>
 
-            <?php endif; ?>
-
             <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
                 'options' => [
                     'accept' => 'document/*'
@@ -79,7 +69,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
         </div>
     </div>
 
-    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app',  !$model->user_id ? 'Оплатить' : 'Сохранить'), ['class' => 'btn btn-success']) ?>
+    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Сохранить/Оплатить'), ['class' => 'btn btn-success']) ?>
 
     <?php ActiveForm::end() ?>
 

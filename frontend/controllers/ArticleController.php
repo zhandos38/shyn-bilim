@@ -22,6 +22,7 @@ use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\UploadedFile;
+use common\models\ArticleWhiteList;
 
 class ArticleController extends Controller
 {
@@ -135,9 +136,12 @@ class ArticleController extends Controller
         ]);*/
     }
 
-    public function actionOrder()
+    public function actionOrder($id = null)
     {
         $model = new Article();
+        if ($id) {
+            $model->subject_id = $id;
+        }
 
         if ($model->load(Yii::$app->request->post())) {
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
@@ -147,11 +151,21 @@ class ArticleController extends Controller
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
             }
 
+            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
+            if ($whiteList !== null) {
+                $model->status = Article::STATUS_ACTIVE;
+            }
+
             if ($model->save() && $model->upload()) {
+
+                if ($whiteList !== null) {
+                    return $this->redirect(['article/cert', 'id' => $model->id]);
+                }
+
                 $salt = $this->getSalt(8);
                 $request = [
                     'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 1000,
+                    'pg_amount' => 3000,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
                     'pg_success_url_method' => 'GET',

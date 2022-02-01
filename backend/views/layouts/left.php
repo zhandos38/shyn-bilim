@@ -22,6 +22,7 @@
                     ['label' => 'Журналы', 'icon' => 'fas fa-user', 'url' => ['magazine/index']],
                     ['label' => 'Подписка', 'icon' => 'fas fa-edit', 'url' => ['subscribe/index']],
                     ['label' => 'Материалы', 'icon' => 'fas fa-user', 'url' => ['article/index']],
+                    ['label' => 'Белый список для материалов', 'icon' => 'fas fa-book', 'url' => ['article-white-list/index']],
                     ['label' => 'Проекты', 'icon' => 'fas fa-user', 'url' => ['project/index']],
                     ['label' => 'Материалы Проектов', 'icon' => 'fas fa-user', 'url' => ['project-article/index']],
                     ['label' => 'Новости', 'icon' => 'fas fa-user', 'url' => ['news/index']],
