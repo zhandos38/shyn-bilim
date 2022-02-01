@@ -50,6 +50,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 Қосымша сұрақтар бойынша Whatsapp:
                 <br>
                 https://wa.me/77013129906
+                <br>
                 https://wa.me/77083176516
             </p>
         </div>
@@ -91,6 +92,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 Қосымша сұрақтар бойынша Whatsapp:
                 <br>
                 https://wa.me/77013129906
+                <br>
                 https://wa.me/77083176516
             </p>
         </div>
