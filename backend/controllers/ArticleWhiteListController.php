@@ -75,6 +75,7 @@ class ArticleWhiteListController extends Controller
     public function actionCreate()
     {
         $model = new ArticleWhiteList();
+        $model->limit = 3;
 
         if ($model->load(Yii::$app->request->post())) {
             $model->iin = str_replace(' ', '', $model->iin);

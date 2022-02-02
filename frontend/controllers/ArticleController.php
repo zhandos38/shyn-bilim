@@ -159,6 +159,9 @@ class ArticleController extends Controller
             if ($model->save() && $model->upload()) {
 
                 if ($whiteList !== null) {
+                    $whiteList->limit = $whiteList->limit - 1;
+                    $whiteList->save();
+                    
                     return $this->redirect(['article/cert', 'id' => $model->id]);
                 }
 
