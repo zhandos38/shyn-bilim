@@ -69,6 +69,11 @@ class OlympiadController extends Controller
 //            return $this->redirect(['site/index']);
 //        }
 
+        if ($olympiad->id === 3) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада 14 ақпанда басталады'));
+            return $this->redirect(['site/index']);
+        }
+
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
             return $this->redirect(['site/index']);
