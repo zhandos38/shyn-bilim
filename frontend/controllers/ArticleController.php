@@ -65,13 +65,9 @@ class ArticleController extends Controller
             throw new Exception('Sig is not correct');
         }
 
-        $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id')]]);
+        $order = Article::findOne(['id' => (int)$request[$this->toProperty('order_id'), 'status' => Article::STATUS_ACTIVE]]);
         if (empty($order)) {
             throw new Exception('Order is not found');
-        }
-        $order->status = Article::STATUS_ACTIVE;
-        if (!$order->save()) {
-            throw new Exception('Order is not saved');
         }
 
         return $this->render('success', [
