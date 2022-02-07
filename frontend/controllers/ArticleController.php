@@ -155,6 +155,12 @@ class ArticleController extends Controller
 
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            } else {
+                Yii::$app->session->setFlash('error', 'Файлды жүктеу қажет');
+
+                return $this->render('order', [
+                    'model' => $model,
+                ]);
             }
 
             $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
