@@ -70,7 +70,9 @@ class ArticleController extends Controller
             throw new Exception('Order is not found');
         }
         $order->status = Article::STATUS_ACTIVE;
-        $order->save();
+        if (!$order->save()) {
+            throw new Exception('Order is not found');
+        }
 
         return $this->render('success', [
             'id' => $order->id
