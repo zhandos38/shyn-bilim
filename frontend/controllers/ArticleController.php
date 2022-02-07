@@ -70,8 +70,10 @@ class ArticleController extends Controller
             throw new Exception('Order is not found');
         }
         $order->status = Article::STATUS_ACTIVE;
+        $order->validate();
+        VarDumper::dum($order->errors, 10, 1);
         if (!$order->save()) {
-            throw new Exception('Order is not found');
+            throw new Exception('Order is not saved');
         }
 
         return $this->render('success', [
