@@ -17,10 +17,9 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
 }
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/certificate-altyn-qyran-2021.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
-        <div id="cert-qrcode" style="padding-top: 160px; padding-left: 890px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-        <div style="padding-left: 180px; padding-top: -30px; text-align: center; width: 540px; text-transform: uppercase;">
-            <div style="font-size: 14px; font-weight: 600; padding-top: 20px;">
+    <div class="cert-page" style="background-image: url('./img/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
+        <div style="padding-left: 440px; padding-top: 270px; text-align: center; width: 540px; text-transform: uppercase;">
+            <div style="font-size: 14px; font-weight: bold; padding-top: 20px; color: #fff">
                 <?php
                 if ($testAssignment->school !== null) {
                     if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -30,20 +29,16 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
                     }
                 } ?>
             </div>
-            <div style="font-size: 14px; height: 60px;"><?= $testAssignment->school->name ?></div>
-            <div style="font-size: 14px; padding-top: 10px; font-weight: 600;"><?= $testAssignment->grade ?> сынып оқушысы</div>
-            <div style="font-size: 18px; padding-top: 3px; color: #000">
+            <div style="font-size: 14px; font-weight: bold; height: 60px; color: #fff"><?= $testAssignment->school->name ?></div>
+            <div style="font-size: 16px; padding-top: 30px; font-weight: bold;"><?= $testAssignment->grade ?> сынып оқушысы</div>
+            <div style="font-size: 32px; padding-top: 10px; color: #4ba55e; font-weight: lighter; font-family: 'vCourn'">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="font-size: 18px; color: #000; padding-top: 28px">
-                <b><?= $testAssignment->leader_name ?></b>
-                <br>
-                <b><?= $testAssignment->leader_name_second ?></b>
-            </div>
         </div>
-        <div style="padding-left: 910px; padding-top: -32px">
+        <div id="cert-qrcode" style="padding-top: 142px; padding-left: 120px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
+        <div style="padding-left: 120px; padding-top: 0">
             <div id="cert-number" style="font-size: 14px;">№<?= $testAssignment->id ?></div>
-            <div id="cert-date" style="font-size: 14px; padding-top: 3px"><?= date('d.m.Y') ?> жыл</div>
+            <div id="cert-date" style="font-size: 14px; padding-top: 8px"><?= date('d.m.Y') ?> жыл</div>
         </div>
     </div>
 </div>

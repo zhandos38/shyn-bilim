@@ -2,6 +2,11 @@ body, h4, h5 {
     font-family: 'Roboto', serif;
 }
 
+@font-face {
+    font-family: 'vCourn';
+    src: url('../fonts/vCourn.ttf');
+}
+
 .required.error {
     border: none !important;
 }

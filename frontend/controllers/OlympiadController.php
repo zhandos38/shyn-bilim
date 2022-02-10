@@ -352,13 +352,13 @@ class OlympiadController extends Controller
                 // portrait orientation
                 'orientation' => Pdf::ORIENT_LANDSCAPE,
                 // stream to browser inline
-                'destination' => Pdf::DEST_DOWNLOAD,
+                'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
                 // your html content input
                 'content' => $content,
                 // format content from your own css file if needed or use the
                 // enhanced bootstrap css built by Krajee for mPDF formatting
-                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+                'cssFile' => 'css/custom.css'
             ]);
 
         } else {
@@ -385,7 +385,7 @@ class OlympiadController extends Controller
                 'content' => $content,
                 // format content from your own css file if needed or use the
                 // enhanced bootstrap css built by Krajee for mPDF formatting
-                'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+                'cssFile' => 'css/custom.css'
             ]);
         }
 
@@ -407,6 +407,47 @@ class OlympiadController extends Controller
         return $this->render('check-cert', [
             'model' => $model
         ]);
+    }
+
+    public function actionGetCertThank($id)
+    {
+        $testAssignment = TestAssignment::findOne(['id' => $id]);
+        if (!$testAssignment) {
+            throw new Exception('Test Assignment is not found');
+        }
+
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+            return $this->redirect(['olympiad/view']);
+        }
+
+        $content = $this->renderPartial('_cert-thank', [
+            'testAssignment' => $testAssignment
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Алғыс хат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+        ]);
+
+        return $pdf->render();
     }
 
     public function actionGetCertThankParent($id)
