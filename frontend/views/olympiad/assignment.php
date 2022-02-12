@@ -76,6 +76,13 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <?= $form->field($model, 'leader_name_second')->textInput(['id' => 'leader-name-second-input']) ?>
         </div>
 
+        <?= $form->field($model, 'lang')->dropDownList([
+            'kz' => 'Қазақша',
+            'ru' => 'Русский'
+        ], [
+            'prompt' => Yii::t('app', 'Выберите язык')
+        ]) ?>
+
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
         <?php ActiveForm::end() ?>
