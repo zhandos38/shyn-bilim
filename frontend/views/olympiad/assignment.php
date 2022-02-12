@@ -12,7 +12,7 @@ $this->title = Yii::t('app', 'Регистрация');
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1>Altyn Qyran</h1>
+<h1>Altyn Urpaq</h1>
 <p>
     <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => '500']) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
@@ -82,7 +82,15 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
     </div>
 </div>
 <?php
+$bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
+$historyLabel = Yii::t('site', 'Преподаватель истории');
+$geographyLabel = Yii::t('site', 'Преподаватель географий');
+$naturalSciencesLabel = Yii::t('site', 'Преподаватель гуманитарий');
 $js =<<<JS
+let bastaushLabel = "$bastaushLabel";
+let historyLabel = "$historyLabel";
+let geographyLabel = "$geographyLabel";
+let naturalSciencesLabel = "$naturalSciencesLabel";
 $('#testassignment-region_id').change(function() {
   $.get({
     url: '/kz/site/get-cities',
@@ -144,13 +152,13 @@ function handleChange() {
     let grade = parseInt($('#grade-input').val());
     
     if (grade <= 4) {
-        firstLabel.html('Бастауыш сынып мұғалімі');
+        firstLabel.html(bastaushLabel);
     } else if (grade >= 5 && grade <= 6) {
-        firstLabel.html('Тарих пәні мұғалімі');
-        secondLabel.html('Жаратылыстану пәні мұғалімі');
+        firstLabel.html(historyLabel);
+        secondLabel.html(naturalSciencesLabel);
     } else if (grade > 6) {
-        firstLabel.html('Тарих пәні мұғалімі');
-        secondLabel.html('География пәні мұғалімі');
+        firstLabel.html(historyLabel);
+        secondLabel.html(geographyLabel);
     }
     
     if (grade) {
