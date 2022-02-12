@@ -18,7 +18,7 @@ if ($testAssignment->grade >= 5 && $testAssignment->grade <= 6) {
     <div class="cert-page" style="background-image: url(<?= $fileName ?>); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 800px">
         <div style="padding-left: 210px; padding-top: 200px">
             <div>
-                <div style="font-size: 14px; width: 440px; padding-top: 0; padding-left: 220px; font-weight: bold">
+                <div style="font-size: 14px; width: 440px; padding-top: 0; padding-left: 220px; font-weight: bold; height: 80px">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
