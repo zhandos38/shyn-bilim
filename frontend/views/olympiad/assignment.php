@@ -68,10 +68,12 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
 
-        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
+        <div id="leader-name-input-box" style="display: none">
+            <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
+        </div>
 
-        <div id="grade-box" style="display: none">
-            <?= $form->field($model, 'leader_name_second')->textInput() ?>
+        <div id="leader-name-second-input-box" style="display: none">
+            <?= $form->field($model, 'leader_name_second')->textInput(['id' => 'leader-name-second-input']) ?>
         </div>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
@@ -127,13 +129,40 @@ $('#toggleBtn').click(function() {
   $('#toggleText').toggle('ease');
 });
 
-$('#grade-input').change(function() {
-  if (parseInt($(this).val()) >= 5) {
-      $('#grade-box').show();
-  } else {
-      $('#grade-box').hide();
-  }
+$(document).ready(() => {
+    handleChange();
 });
+
+$('#grade-input').change(function() {
+    handleChange();
+});
+
+function handleChange() {
+  let firstLabel = $('#leader-name-input').siblings('label');
+    let secondLabel = $('#leader-name-second-input').siblings('label');
+
+    let grade = parseInt($('#grade-input').val());
+    
+    if (grade <= 4) {
+        firstLabel.html('Бастауыш сынып мұғалімі');
+    } else if (grade >= 5 && grade <= 6) {
+        firstLabel.html('Тарих пәні мұғалімі');
+        secondLabel.html('Жаратылыстану пәні мұғалімі');
+    } else if (grade > 6) {
+        firstLabel.html('Тарих пәні мұғалімі');
+        secondLabel.html('География пәні мұғалімі');
+    }
+    
+    if (grade) {
+          $('#leader-name-input-box').show();
+      } 
+    
+  if (grade >= 5) {
+      $('#leader-name-second-input-box').show();
+  } else {
+      $('#leader-name-second-input-box').hide();
+  }
+}
 JS;
 
 
