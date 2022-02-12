@@ -115,7 +115,7 @@ class OlympiadController extends Controller
         }
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            if ($model->grade >= 5) {
+            if (!$model->leader_name_second && $model->grade >= 5) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Необходимо указать второго преподавателя'));
 
                 return $this->render('assignment', [
