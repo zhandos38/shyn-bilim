@@ -42,7 +42,7 @@ use yii\widgets\ActiveForm;
         'options' => ['accept' => 'document/*'],
     ]) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
+    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => 2])->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
 
     <?= $form->field($model, 'school_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите город']) ?>
 

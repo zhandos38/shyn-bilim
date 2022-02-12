@@ -12,7 +12,7 @@ $this->title = Yii::t('app', 'Регистрация');
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1>Altyn Qyran</h1>
+<h1>Altyn Urpaq</h1>
 <p>
     <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => '500']) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
@@ -68,11 +68,20 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
 
-        <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
-
-        <div id="grade-box" style="display: none">
-            <?= $form->field($model, 'leader_name_second')->textInput() ?>
+        <div id="leader-name-input-box" style="display: none">
+            <?= $form->field($model, 'leader_name')->textInput(['id' => 'leader-name-input']) ?>
         </div>
+
+        <div id="leader-name-second-input-box" style="display: none">
+            <?= $form->field($model, 'leader_name_second')->textInput(['id' => 'leader-name-second-input']) ?>
+        </div>
+
+        <?= $form->field($model, 'lang')->dropDownList([
+            'kz' => 'Қазақша',
+            'ru' => 'Русский'
+        ], [
+            'prompt' => Yii::t('app', 'Выберите язык')
+        ]) ?>
 
         <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
 
@@ -80,7 +89,15 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
     </div>
 </div>
 <?php
+$bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
+$historyLabel = Yii::t('site', 'Преподаватель истории');
+$geographyLabel = Yii::t('site', 'Преподаватель географий');
+$naturalSciencesLabel = Yii::t('site', 'Преподаватель гуманитарий');
 $js =<<<JS
+let bastaushLabel = "$bastaushLabel";
+let historyLabel = "$historyLabel";
+let geographyLabel = "$geographyLabel";
+let naturalSciencesLabel = "$naturalSciencesLabel";
 $('#testassignment-region_id').change(function() {
   $.get({
     url: '/kz/site/get-cities',
@@ -127,13 +144,40 @@ $('#toggleBtn').click(function() {
   $('#toggleText').toggle('ease');
 });
 
-$('#grade-input').change(function() {
-  if (parseInt($(this).val()) >= 5) {
-      $('#grade-box').show();
-  } else {
-      $('#grade-box').hide();
-  }
+$(document).ready(() => {
+    handleChange();
 });
+
+$('#grade-input').change(function() {
+    handleChange();
+});
+
+function handleChange() {
+  let firstLabel = $('#leader-name-input').siblings('label');
+    let secondLabel = $('#leader-name-second-input').siblings('label');
+
+    let grade = parseInt($('#grade-input').val());
+    
+    if (grade <= 4) {
+        firstLabel.html(bastaushLabel);
+    } else if (grade >= 5 && grade <= 6) {
+        firstLabel.html(historyLabel);
+        secondLabel.html(naturalSciencesLabel);
+    } else if (grade > 6) {
+        firstLabel.html(historyLabel);
+        secondLabel.html(geographyLabel);
+    }
+    
+    if (grade) {
+          $('#leader-name-input-box').show();
+      } 
+    
+  if (grade >= 5) {
+      $('#leader-name-second-input-box').show();
+  } else {
+      $('#leader-name-second-input-box').hide();
+  }
+}
 JS;
 
 
