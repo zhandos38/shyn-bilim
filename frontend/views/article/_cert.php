@@ -7,7 +7,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; font-family: 'Times New Roman';">
+<div class="cert-page" style="background-image: url('/img/article-cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; font-family: 'Times New Roman';">
     <div id="cert-qrcode" style="height: 60px; padding-top: 40px; padding-right: -30px; width: 160px; font-size: 22px; float: right">
         <img src="<?= $qrCode->writeDataUri() ?>">
     </div>
