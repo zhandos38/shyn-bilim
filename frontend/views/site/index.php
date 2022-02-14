@@ -141,7 +141,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN QYRAN – ерекше дарын иесі»</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN URPAQ»</div>
 
                         <!-- small text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
