@@ -91,7 +91,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 <?php
 $bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
 $historyLabel = Yii::t('site', 'Преподаватель истории');
-$geographyLabel = Yii::t('site', 'Преподаватель географий');
+$geographyLabel = Yii::t('site', 'Преподаватель географии');
 $naturalSciencesLabel = Yii::t('site', 'Преподаватель по естествознанию');
 $js =<<<JS
 let bastaushLabel = "$bastaushLabel";
