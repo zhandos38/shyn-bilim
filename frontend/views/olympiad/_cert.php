@@ -18,7 +18,7 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
-        <div style="padding-left: 440px; padding-top: 270px; text-align: center; width: 540px; text-transform: uppercase;">
+        <div style="padding-left: 320px; padding-top: 270px; text-align: center; width: 800px; text-transform: uppercase;">
             <div style="font-size: 14px; font-weight: bold; padding-top: 20px; color: #fff">
                 <?php
                 if ($testAssignment->school !== null) {
@@ -29,9 +29,9 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
                     }
                 } ?>
             </div>
-            <div style="font-size: 14px; font-weight: bold; height: 60px; color: #fff"><?= $testAssignment->school->name ?></div>
+            <div style="font-size: 14px; font-weight: bold; height: 65px; color: #fff"><?= $testAssignment->school->name ?></div>
             <div style="font-size: 16px; padding-top: 30px; font-weight: bold;"><?= $testAssignment->grade ?> сынып оқушысы</div>
-            <div style="font-size: 32px; padding-top: 10px; color: #4ba55e; font-weight: lighter; font-family: 'vCourn'">
+            <div style="font-size: 28px; padding-top: 10px; color: #4ba55e; font-weight: lighter; font-family: 'vCourn'">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
