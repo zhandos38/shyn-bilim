@@ -46,7 +46,7 @@ class ArticleController extends Controller
         ];
     }
 
-    public function actionIndex($status = null)
+    public function actionIndex()
     {
 //        Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
 //        return $this->redirect(['site/index']);

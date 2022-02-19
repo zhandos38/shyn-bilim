@@ -305,6 +305,10 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
+        if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
+            throw new Exception('Тест уже пройден');
+        }
+
         $testAssignment->lang = 'kz';
         $testAssignment->point = (int)$data['point'];
         $testAssignment->status = TestAssignment::STATUS_FINISHED;
