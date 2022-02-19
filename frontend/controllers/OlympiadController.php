@@ -147,6 +147,15 @@ class OlympiadController extends Controller
                 ]);
             }
 
+            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED]);
+            if ($testAssignment !== null) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'checkAssignmentForm' => $checkAssignmentForm
+                ]);
+            }
+
             $whiteList = WhiteList::findOne(['iin' => $model->iin]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
@@ -156,15 +165,6 @@ class OlympiadController extends Controller
             $model->created_at = time();
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
-            }
-
-            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED]);
-            if ($testAssignment !== null) {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm
-                ]);
             }
 
             if ($whiteList === null) {
