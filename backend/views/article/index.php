@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'surname',
             'patronymic',
+            'iin',
             'topic',
             'file',
             [
