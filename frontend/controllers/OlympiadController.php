@@ -334,7 +334,6 @@ class OlympiadController extends Controller
 
         if ($testAssignment->point >= 15) {
             $place = 'III ОРЫН';
-
             if ($testAssignment->point === 30) {
                 $place = 'БАС ЖҮЛДЕ';
             }
@@ -342,6 +341,7 @@ class OlympiadController extends Controller
             if ($testAssignment->point >= 25 && $testAssignment->point <= 29) {
                 $place = 'I ОРЫН';
             }
+
 
             if ($testAssignment->point >= 20 && $testAssignment->point <= 24) {
                 $place = 'II ОРЫН';
@@ -363,7 +363,7 @@ class OlympiadController extends Controller
                 'marginRight' => 0,
                 'marginBottom' => 0,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                'orientation' => Pdf::ORIENT_PORTRAIT,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
