@@ -6,15 +6,16 @@ use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
 /* @var $this \yii\web\View */
 /* @var $model \common\models\TestAssignment */
+/* @var $olympiad \common\models\Olympiad */
 
 $this->title = Yii::t('app', 'Регистрация');
 
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<h1>Altyn Urpaq</h1>
+<h1><?= $olympiad->name ?></h1>
 <p>
-    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => '500']) ?>
+    <?= Yii::t('app', 'Заполните форму для участия в данной олимпиаде. Стоимость составляет {tenge} тенге', ['tenge' => $olympiad->price]) ?>
     <?php if (Yii::$app->language === 'ru'): ?>
         Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
     <?php else: ?>

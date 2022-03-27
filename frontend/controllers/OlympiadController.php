@@ -114,6 +114,11 @@ class OlympiadController extends Controller
             $model->grade = $marathon->grade;
         }
 
+        $test = Test::findOne(['id' => $id]);
+
+        /** @var Olympiad $olympiad */
+        $olympiad = $test->olympiad;
+
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             if (!$model->leader_name_second && $model->grade >= 5) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Необходимо указать второго преподавателя'));
@@ -124,10 +129,6 @@ class OlympiadController extends Controller
                 ]);
             }
 
-            $test = Test::findOne(['id' => $id]);
-
-            /** @var Olympiad $olympiad */
-            $olympiad = $test->olympiad;
             if ($olympiad->status === Olympiad::STATUS_FINISHED) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
                 return $this->redirect(['site/index']);
@@ -193,7 +194,8 @@ class OlympiadController extends Controller
 
         return $this->render('assignment', [
             'model' => $model,
-            'checkAssignmentForm' => $checkAssignmentForm
+            'checkAssignmentForm' => $checkAssignmentForm,
+            'olympiad' => $olympiad,
         ]);
     }
 
