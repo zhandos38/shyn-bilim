@@ -2,13 +2,16 @@
 use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
+/* @var $place string */
+/* @var $diplomaImage string */
+/* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
     ->setSize(80)
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/uzdik_boss.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
+    <div class="cert-page" style="background-image: url(<?= './img/' . $diplomaImage ?>); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
         <div id="cert-qrcode" style="padding-top: 140px; padding-left: 40px"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
         <div style="padding-left: 110px; padding-top: 320px; width: 480px; text-transform: uppercase;">
             <div style="font-size: 30px">
@@ -19,6 +22,9 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                     <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
                 </div>
                 <div style="font-size: 11px; padding-top: 20px">
+                    <?php if ($pedagogSubject): ?>
+                        <?= $pedagogSubject ?> <br>
+                    <?php endif; ?>
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -29,7 +35,6 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                     } ?>
                 </div>
                 <div style="font-size: 11px; width: 440px;"><?= $testAssignment->school->name ?></div>
-                <div style="font-size: 11px;"><?= $testAssignment->grade ?> сынып оқушысы</div>
             </div>
         </div>
         <div class="border" style="padding-left: 120px; padding-top: 280px; color: #fff9f6">

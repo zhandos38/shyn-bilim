@@ -45,7 +45,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-style: italic;">ЖАРЫС! ЖАРЫС! ЖАРЫС!</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Портфолиоға 100% жарамды</div>
 
                         <!-- main text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
@@ -53,23 +53,38 @@ $this->registerMetaTag([
                              data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-whitespace="nowrap"
-                             data-x="['left','center','center','center']"
-                             data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-voffset="['-20','-50','-115','-65']"
+                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
                              data-width="auto"
                              data-height="auto"
                              data-fontsize="['70','53','60','35']"
-                             data-lineheight="['82','79','70','39']"
-                             data-letterspacing="['0','0','0','0']"
+                             data-lineheight="['70','59','70','39']"
+                             data-letterspacing="['-2','-1','-1','-1']"
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-paddingtop="['0','0','0','0']"
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ЖАҢА ҚАЗАҚСТАН: <br>
-ЖАҚСЫ МҰҒАЛІМ»</div>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"БАСПАСӨЗ-2022"</div>
+
+                        <!-- small text layer -->
+                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
+                             id="slide-411-layer-02"
+                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="text"
+                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
+                             data-width="auto"
+                             data-height="auto"
+                             data-fontsize="['19','16','19','14']"
+                             data-lineheight="['28','14','23','20']"
+                             data-letterspacing="['0.5','0.5','0.5','0.5']"
+                             data-responsive="off"
+                             data-responsive_offset="on">
+                            БІЛІМ, ҒЫЛЫМ - МӘҢГІЛІК ҚАЗЫҒЫМЫЗ <br>
+                            ҚҰРМЕТТІ ҰСТАЗ, ЖУРНАЛҒА ЖАЗЫЛЫҢЫЗ!
+                        </div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
@@ -88,7 +103,7 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Опубликовать материал') ?>
+                            <?= Yii::t('app', 'Подробнее') ?>
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
@@ -101,26 +116,6 @@ $this->registerMetaTag([
                         <img src="/img/fon-5.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
-
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
-                             id="slide-411-layer-04"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-140','-50','-160','-100']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['52','53','36','22']"
-                             data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['-2','-1','-1','-1']"
-                             data-responsive="off"
-                             data-responsive_offset="off"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">ОЛИМПИАДА</div>
 
                         <!-- main text layer -->
                         <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
@@ -141,47 +136,7 @@ $this->registerMetaTag([
                              data-paddingbottom="['15','8','8','8']"
                              data-paddingright="['0','0','0','0']"
                              data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«ALTYN URPAQ»</div>
-
-                        <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
-                             id="slide-411-layer-05"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['80','100','-5','15']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['24','13','19','18']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on">
-                            2 - 11 сынып оқушылары үшін
-                        </div>
-
-                        <!-- btn layer -->
-                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/assignment', 'id' => 88]) ?>"
-                           id="slide-411-layer-06"
-                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','100']"
-                           data-whitespace="nowrap"
-                           data-type="button"
-                           data-responsive="off"
-                           data-responsive_offset="off"
-                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                           data-textAlign="['center','center','center','center']"
-                           data-paddingtop="['8','8','8','8']"
-                           data-paddingbottom="['8','8','8','8']"
-                           data-paddingright="['7','7','7','7']"
-                           data-paddingleft="['34','34','34','34']"
-                           style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Участвовать') ?>
-                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
-                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
-                            </div>
-                        </a>
+                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«Bilimshini.kz»</div>
                     </li>
                     <!-- end slide 02 -->                
                 </ul>

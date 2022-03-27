@@ -1,8 +1,10 @@
 <?php
 
 use common\models\Article;
+use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -53,7 +55,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'subject_id',
                 'value' => function(Article $model) {
                     return $model->subject !== null ? $model->subject->name : 'Не указано';
-                }
+                },
+                'filter' => ArrayHelper::map(\common\models\Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name_ru')
             ],
             [
                 'attribute' => 'created_at',

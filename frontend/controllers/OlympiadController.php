@@ -332,24 +332,38 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/index']);
         }
 
+        $pedagogSubject = null;
+        if ($testAssignment->testOption->test->olympiad_id === 8) {
+            $pedagogSubject = $testAssignment->testOption->test->name . " пәні мұғалімі";
+        }
+
         if ($testAssignment->point >= 15) {
+            $diplomaImage = "uzdik_pedagog.jpg";
+            if ($testAssignment->testOption->test->olympiad_id === 6) {
+                $diplomaImage = "uzdik_boss.jpg";
+            } elseif ($testAssignment->testOption->test->olympiad_id === 7) {
+                $diplomaImage = "uzdik_orinbasar.jpg";
+            }
+
             $place = 'III ОРЫН';
-            if ($testAssignment->point === 30) {
+            if ($testAssignment->point === 20) {
                 $place = 'БАС ЖҮЛДЕ';
             }
 
-            if ($testAssignment->point >= 25 && $testAssignment->point <= 29) {
+            if ($testAssignment->point >= 18 && $testAssignment->point <= 19) {
                 $place = 'I ОРЫН';
             }
 
 
-            if ($testAssignment->point >= 20 && $testAssignment->point <= 24) {
+            if ($testAssignment->point >= 16 && $testAssignment->point <= 17) {
                 $place = 'II ОРЫН';
             }
 
             $content = $this->renderPartial('_diploma', [
                 'testAssignment' => $testAssignment,
-                'place' => $place
+                'place' => $place,
+                'diplomaImage' => $diplomaImage,
+                'pedagogSubject' => $pedagogSubject
             ]);
 
             // setup kartik\mpdf\Pdf component
@@ -375,8 +389,17 @@ class OlympiadController extends Controller
             ]);
 
         } else {
+            $certImage = "uzdik_pedagog_cert.jpg";
+            if ($testAssignment->testOption->test->olympiad_id === 6) {
+                $certImage = "uzdik_boss_cert.jpg";
+            } elseif ($testAssignment->testOption->test->olympiad_id === 7) {
+                $certImage = "uzdik_orinbasar_cert.jpg";
+            }
+
             $content = $this->renderPartial('_cert', [
-                'testAssignment' => $testAssignment
+                'testAssignment' => $testAssignment,
+                'certImage' => $certImage,
+                'pedagogSubject' => $pedagogSubject
             ]);
 
             // setup kartik\mpdf\Pdf component

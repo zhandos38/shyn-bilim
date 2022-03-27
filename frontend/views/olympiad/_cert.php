@@ -2,9 +2,11 @@
 use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
+/* @var $certImage string */
+/* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(100)
+    ->setSize(60)
     ->setMargin(5);
 
 $text = '';
@@ -17,9 +19,18 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
 }
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
-        <div style="padding-left: 320px; padding-top: 270px; text-align: center; width: 800px; text-transform: uppercase;">
-            <div style="font-size: 14px; font-weight: bold; padding-top: 20px; color: #fff">
+    <div class="cert-page" style="background-image: url(<?= './img/' . $certImage ?>); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 800px">
+        <div id="cert-qrcode" style="padding-top: 100px; padding-left: 890px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
+        <div style="padding-left: 120px; padding-top: 110px; text-align: center; width: 600px; text-transform: uppercase;">
+            <div style="font-size: 22px; padding-top: 10px; font-weight: lighter; font-family: 'vCourn'">
+                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+            </div>
+            <?php if ($pedagogSubject): ?>
+            <div style="font-size: 14px; padding-top: 20px;">
+                <?= $pedagogSubject ?> <br>
+            </div>
+            <?php endif; ?>
+            <div style="font-size: 14px; <?= !$pedagogSubject ? 'padding-top: 20px' : '' ?>">
                 <?php
                 if ($testAssignment->school !== null) {
                     if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -29,15 +40,12 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
                     }
                 } ?>
             </div>
-            <div style="font-size: 14px; font-weight: bold; height: 65px; color: #fff"><?= $testAssignment->school->name ?></div>
-            <div style="font-size: 16px; padding-top: 30px; font-weight: bold;"><?= $testAssignment->grade ?> сынып оқушысы</div>
-            <div style="font-size: 28px; padding-top: 10px; color: #4ba55e; font-weight: lighter; font-family: 'vCourn'">
-                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+            <div style="font-size: 14px; height: 65px">
+                <?= $testAssignment->school->name ?>
             </div>
         </div>
-        <div id="cert-qrcode" style="padding-top: 142px; padding-left: 120px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-        <div style="padding-left: 120px; padding-top: 0">
-            <div id="cert-number" style="font-size: 14px;">№<?= $testAssignment->id ?></div>
+        <div style="padding-left: 420px; padding-top: 270px">
+            <div id="cert-number" style="font-size: 14px;">Тіркеу №<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 14px; padding-top: 8px"><?= date('d.m.Y') ?> жыл</div>
         </div>
     </div>
