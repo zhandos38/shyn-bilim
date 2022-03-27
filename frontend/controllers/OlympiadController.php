@@ -126,6 +126,7 @@ class OlympiadController extends Controller
 
             $test = Test::findOne(['id' => $id]);
 
+            /** @var Olympiad $olympiad */
             $olympiad = $test->olympiad;
             if ($olympiad->status === Olympiad::STATUS_FINISHED) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
@@ -171,7 +172,7 @@ class OlympiadController extends Controller
                 $salt = $this->getSalt(8);
                 $request = [
                     'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 500,
+                    'pg_amount' => $olympiad->price,
                     'pg_salt' => $salt,
                     'pg_order_id' => $model->id,
                     'pg_description' => 'Оплата за участие в олимпиаде',
