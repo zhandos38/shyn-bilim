@@ -149,12 +149,13 @@ class OlympiadController extends Controller
                 ]);
             }
 
-            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED]);
+            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'test_option_id' => $testOption->id, 'status' => TestAssignment::STATUS_FINISHED]);
             if ($testAssignment !== null) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
                     'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm
+                    'checkAssignmentForm' => $checkAssignmentForm,
+                    'olympiad' => $olympiad,
                 ]);
             }
 
