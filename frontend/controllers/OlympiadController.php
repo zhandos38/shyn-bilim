@@ -341,7 +341,7 @@ class OlympiadController extends Controller
             $pedagogSubject = $testAssignment->testOption->test->name . " пәні мұғалімі";
         }
 
-        if ($testAssignment->point >= 15) {
+        if ($testAssignment->point >= 14) {
             $diplomaImage = "uzdik_pedagog.jpg";
             if ($testAssignment->testOption->test->olympiad_id === 6) {
                 $diplomaImage = "uzdik_boss.jpg";
