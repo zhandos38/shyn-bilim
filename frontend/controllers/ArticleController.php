@@ -144,8 +144,49 @@ class ArticleController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+//            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
+
+//            VarDumper::dump($model->content,10,1);
+
+            $content = $this->renderPartial('_article-template', [
+                'model' => $model,
+            ]);
+
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_UTF8,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A4,
+                'marginTop' => 20,
+                'marginLeft' => 0,
+                'marginRight' => 0,
+                'marginBottom' => 00,
+                'defaultFontSize' => 11,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_PORTRAIT,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                'filename' => 'Мақала.pdf',
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => 'css/custom.css',
+                'cssInline' => 'body {background: url("/img/article-template.jpg"); width: 120px} table {border-collapse: collapse;} th, td {border: 1px solid black; padding: 5px} img {width: 20%}',
+                'methods' => [
+//                    'SetDefaultBodyCSS' => ["background", "url('/img/article-template.jpg') no-repeat"],
+//                    'SetDefaultBodyCSS' => ['background-image-resize', 6],
+                ]
+            ]);
+//            $pdf->api->SetDefaultBodyCSS("background", "url('/img/article-template.jpg')");;
+//            $pdf->api->SetDefaultBodyCSS("background-attachment", 'fixed');;
+//            $pdf->api->SetDefaultBodyCSS("background-position", 'right');;
+//            $pdf->api->SetDefaultBodyCSS("background-size", 'contain');;
+//            $pdf->api->SetDefaultBodyCSS("width", '50%');;
+
+            return $pdf->render();
 
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
@@ -161,6 +202,9 @@ class ArticleController extends Controller
             if ($whiteList !== null) {
                 $model->status = Article::STATUS_ACTIVE;
             }
+
+            // $model->save();
+            // VarDumper::dump($model->errors); die;
 
             if ($model->save() && $model->upload()) {
 

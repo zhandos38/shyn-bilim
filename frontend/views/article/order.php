@@ -1,8 +1,10 @@
 <?php
 use kartik\file\FileInput;
 use kartik\select2\Select2;
+use vova07\imperavi\Widget;
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $model \common\models\Article */
@@ -55,17 +57,17 @@ $this->title = Yii::t('app', 'Опубликовать материал');
                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
             ]) ?>
 
-            <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
-                'options' => [
-                    'accept' => 'document/*'
+        </div>
+        <div class="col-md-12">
+            <?= $form->field($model, 'content')->widget(Widget::className(), [
+                'settings' => [
+                    'lang' => 'ru',
+                    'minHeight' => 200,
+                    'plugins' => [
+                        'fullscreen',
+                    ],
                 ],
-                'pluginOptions' => [
-                    'theme' => 'fa',
-                    'showCaption' => false,
-                    'showUpload' => false,
-                    'browseLabel' =>  Yii::t('app', 'Загрузить')
-                ],
-            ]) ?>
+            ]); ?>
         </div>
     </div>
 

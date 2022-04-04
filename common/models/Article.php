@@ -16,6 +16,7 @@ use yii\helpers\Json;
  * @property string $patronymic
  * @property string $topic
  * @property string $file
+ * @property string $content
  * @property int $subject_id
  * @property int $status
  * @property string $iin
@@ -49,10 +50,11 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'topic', 'subject_id', 'school_id', 'iin'], 'required'],
+            [['name', 'surname', 'patronymic', 'topic', 'subject_id', 'school_id', 'iin', 'content'], 'required'],
             [['subject_id', 'status', 'school_id', 'user_id', 'created_at'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file', 'iin'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
+            ['content', 'string'],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
         ];
