@@ -116,7 +116,7 @@ class OlympiadController extends Controller
             }
 
             $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => $model->lang]);
-            if (!$testOption) {
+            if ($testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
