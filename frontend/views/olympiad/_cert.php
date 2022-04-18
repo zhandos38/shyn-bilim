@@ -37,11 +37,11 @@ if ($testAssignment->testOption->test->olympiad_id === 8) {
                     }
                 } ?>
             </div>
-            <div style="height: 65px">
+            <div style="height: 100px">
                 <?= $testAssignment->school->name ?>
             </div>
         </div>
-        <div id="cert-qrcode" style="padding-top: 250px; padding-left: 920px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
+        <div id="cert-qrcode" style="padding-top: 220px; padding-left: 920px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
         <div style="padding-left: 260px; padding-top: 20px;  transform: rotate(90deg);">
             <div id="cert-number" style="font-size: 14px;">Тіркеу №<?= $testAssignment->id ?></div>
             <div id="cert-date" style="font-size: 14px; padding-top: 8px"><?= date('d.m.Y') ?> жыл</div>
