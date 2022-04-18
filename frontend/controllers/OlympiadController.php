@@ -121,7 +121,8 @@ class OlympiadController extends Controller
 
                 return $this->render('assignment', [
                     'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm
+                    'checkAssignmentForm' => $checkAssignmentForm,
+                    'olympiad' => $olympiad,
                 ]);
             }
 
