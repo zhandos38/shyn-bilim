@@ -99,21 +99,6 @@ class OlympiadController extends Controller
         $model = new TestAssignment();
         $checkAssignmentForm = new CheckAssignmentForm();
 
-        if ($checkAssignmentForm->load(\Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $checkAssignmentForm->iin]);
-            if ($marathon === null) {
-                Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
-                return $this->redirect(['olympiad/assignment']);
-            }
-
-            $model->name = $marathon->name;
-            $model->surname = $marathon->surname;
-            $model->patronymic = $marathon->patronymic;
-            $model->iin = $marathon->iin;
-            $model->school_id = $marathon->school_id;
-            $model->grade = $marathon->grade;
-        }
-
         $test = Test::findOne(['id' => $id]);
 
         /** @var Olympiad $olympiad */
@@ -141,7 +126,7 @@ class OlympiadController extends Controller
             }
 
             $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'test_option_id' => $testOption->id, 'status' => TestAssignment::STATUS_FINISHED]);
-            if ($testAssignment !== null) {
+            if (!$testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
                     'model' => $model,
