@@ -11,7 +11,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
     <div class="cert-page" style="background-image: url('./img/young_math_than.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 800px">
         <div style="padding-left: 160px; padding-top: 200px">
             <div>
-                <div style="font-size: 14px; width: 440px; padding-top: 0; padding-left: 260px; font-weight: bold; height: 100px">
+                <div style="font-size: 14px; width: 440px; padding-top: 10px; padding-left: 260px; font-weight: bold; height: 100px">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -23,7 +23,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
                     <br>
                     <?= $testAssignment->school->name ?>
                 </div>
-                <div style="padding-top: 5px; height: 140px;">
+                <div style="padding-top: 0; height: 140px; font-size: 16px; font-weight: bold">
                     <?php if ($testAssignment->grade >= 5): ?>
                         <div>Математика пәні мұғалімі</div>
                     <?php else: ?>
