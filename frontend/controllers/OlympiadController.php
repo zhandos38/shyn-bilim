@@ -127,7 +127,6 @@ class OlympiadController extends Controller
             }
 
             $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'test_option_id' => $testOption->id, 'status' => TestAssignment::STATUS_FINISHED]);
-            VarDumper::dump($testAssignment,10,1); die;
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
