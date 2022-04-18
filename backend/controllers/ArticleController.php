@@ -4,7 +4,6 @@ namespace backend\controllers;
 
 use common\models\Article;
 use backend\models\ArticleSearch;
-use kartik\mpdf\Pdf;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
