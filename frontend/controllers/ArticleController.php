@@ -147,6 +147,8 @@ class ArticleController extends Controller
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
 
+            $model->status = Article::STATUS_ACTIVE;
+
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
             } else {
@@ -157,37 +159,9 @@ class ArticleController extends Controller
                 ]);
             }
 
-            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
-            if ($whiteList !== null) {
-                $model->status = Article::STATUS_ACTIVE;
-            }
-
             if ($model->save() && $model->upload()) {
-
-                if ($whiteList !== null) {
-                    $whiteList->limit = $whiteList->limit - 1;
-                    $whiteList->save();
-                    
-                    return $this->redirect(['article/cert', 'id' => $model->id]);
-                }
-
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 3000,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_success_url_method' => 'GET',
-                    'pg_description' => 'Оплата за публикацию материала',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
-                ];
-
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                Yii::$app->session->setFlash('success', Yii::t('app', 'Ваш материал успешно опубликован!'));
+                return $this->redirect(['article/cert', 'id' => $model->id]);
             }
         }
 

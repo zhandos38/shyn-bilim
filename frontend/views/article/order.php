@@ -3,6 +3,7 @@ use kartik\file\FileInput;
 use kartik\select2\Select2;
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
+use yii\widgets\MaskedInput;
 
 /* @var $this \yii\web\View */
 /* @var $model \common\models\Article */
@@ -32,6 +33,16 @@ $this->title = Yii::t('app', 'Опубликовать материал');
             <?= $form->field($model, 'patronymic') ?>
 
             <?= $form->field($model, 'iin') ?>
+
+            <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                'mask' => '+7(999)999-99-99',
+                'clientOptions' => [
+                    'removeMaskOnSubmit' => true
+                ],
+                'options' => [
+                    'autofocus' => true
+                ]
+            ]) ?>
 
             <?= $form->field($model, 'topic') ?>
 

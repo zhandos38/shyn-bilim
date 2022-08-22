@@ -42,6 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'surname',
             'patronymic',
             'iin',
+            [
+                'attribute' => 'phone',
+                'value' => function(Article $model) {
+                    return '<a target="_blank" href="https://wa.me/7' . $model->phone . '">' . $model->phone . '</a>';
+                },
+                'format' => 'raw'
+            ],
             'topic',
             'file',
             [
