@@ -14,12 +14,13 @@ $this->title = Yii::t('app', 'Опубликовать материал');
     <h1><?= $this->title ?></h1>
     <?php if (!$model->user_id): ?>
     <p>
-        <?= Yii::t('app', 'Чтобы опубликовать материал, необходимо заполнить форму. Стоимость 3000 тенге') ?>.
         <?php if (Yii::$app->language === 'ru'): ?>
             Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
         <?php else: ?>
             Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">келісімді</a> мақұлдайсыз
         <?php endif; ?>
+        <br>
+        <a style="color: blue" href="/file/Шаблон байқауға.docx"><i class="fa fa-download"></i> Шаблонды жүктеу</a>
     </p>
     <?php endif; ?>
     <div class="row">
