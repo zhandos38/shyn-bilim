@@ -103,133 +103,13 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Подробнее') ?>
+                            <?= Yii::t('app', 'Участвую') ?>
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
                         </a>
                     </li>
                     <!-- end slide 02 -->
-                    <!-- start slide 01 -->
-                    <li data-index="rs-74" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
-                        <!-- main image -->
-                        <img src="/img/fon-6.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.3;"></div>
-
-                        <!-- help text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
-                             id="slide-411-layer-01"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-160','-140']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['38','26','26','26']"
-                             data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['-2','-1','-1','-1']"
-                             data-responsive="on"
-                             data-responsive_offset="on"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">Портфолиоға 100% жарамды</div>
-
-                        <!-- main text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
-                             id="slide-411-layer-01"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['70','53','60','35']"
-                             data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['-2','-1','-1','-1']"
-                             data-responsive="on"
-                             data-responsive_offset="on"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"БАСПАСӨЗ-2022"</div>
-
-                        <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['19','16','19','14']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on">
-                            БІЛІМ, ҒЫЛЫМ - МӘҢГІЛІК ҚАЗЫҒЫМЫЗ <br>
-                            ҚҰРМЕТТІ ҰСТАЗ, ЖУРНАЛҒА ЖАЗЫЛЫҢЫЗ!
-                        </div>
-
-                        <!-- btn layer -->
-                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['article/index']) ?>"
-                           id="slide-411-layer-03"
-                           data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
-                           data-whitespace="nowrap"
-                           data-type="button"
-                           data-responsive="off"
-                           data-responsive_offset="off"
-                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                           data-textAlign="['center','center','center','center']"
-                           data-paddingtop="['8','8','8','8']"
-                           data-paddingbottom="['8','8','8','8']"
-                           data-paddingright="['7','7','7','7']"
-                           data-paddingleft="['34','34','34','34']"
-                           style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Подробнее') ?>
-                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
-                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <!-- end slide 01 -->
-                    <!-- start slide 03 -->
-                    <li data-index="rs-75" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="02" data-param1="02" data-description="">
-                        <!-- main image -->
-                        <img src="/img/fon-5.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.5;"></div>
-
-                        <!-- main text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
-                             id="slide-411-layer-04"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-100','-65']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['53','42','36','22']"
-                             data-lineheight="['53','59','70','39']"
-                             data-letterspacing="['-2','-1','-1','-1']"
-                             data-responsive="off"
-                             data-responsive_offset="off"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">«Bilimshini.kz»</div>
-                    </li>
-                    <!-- end slide 03 -->
                 </ul>
             </div>
         </div>
