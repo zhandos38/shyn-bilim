@@ -149,6 +149,12 @@ class ArticleController extends Controller
 
             $model->status = Article::STATUS_ACTIVE;
 
+            $modelExist = Article::find()->where(['id' => $model->iin])->one();
+            if ($modelExist) {
+                Yii::$app->session->setFlash('success', Yii::t('app', 'Ваш материал уже опубликован'));
+                return $this->redirect('/');
+            }
+
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
             } else {

@@ -82,7 +82,7 @@ $this->registerMetaTag([
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
                              data-responsive_offset="on">
-                            БАЙҚАУЫНА ҚАТЫСЫП, ПОРТФОЛИЯҢЫЗДЫ <br>
+                            БАЙҚАУЫНА ҚАТЫСЫП, ПОРТФОЛИОҢЫЗДЫ<br>
                             ТОЛЫҚТЫРАТЫН МАРАПАТҚА ИЕ БОЛЫҢЫЗ!
                         </div>
 
