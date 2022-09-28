@@ -48,7 +48,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
             <?= $form->field($model, 'topic') ?>
 
             <?= $form->field($model, 'subject_id')->widget(Select2::classname(), [
-                'data' => ArrayHelper::map(\common\models\Subject::find()->asArray()->all(), 'id', Yii::$app->language === 'ru' ? 'name_ru' : 'name_kz'),
+                'data' => ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_ARTICLE])->asArray()->all(), 'id', Yii::$app->language === 'ru' ? 'name_ru' : 'name_kz'),
                 'options' => ['placeholder' => Yii::t('app', 'Укажите предмет')],
             ]) ?>
 
