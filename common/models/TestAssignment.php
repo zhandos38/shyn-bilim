@@ -24,6 +24,7 @@ use yii\helpers\ArrayHelper;
  * @property int|null $created_at
  *
  * @property TestOption $testOption
+ * @property Subject $subject
  * @property School $school
  * @property int $point [int(11)]
  * @property int $finished_at [int(11)]
@@ -54,8 +55,8 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['test_option_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'iin', 'school_id', 'lang', 'grade', 'leader_name'], 'required'],
+            [['test_option_id', 'school_id', 'grade', 'point', 'subject_id', 'created_at'], 'integer'],
+            [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
             [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'leader_name_third', 'parent_name'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
@@ -92,6 +93,16 @@ class TestAssignment extends \yii\db\ActiveRecord
             'point' => Yii::t('app', 'Баллы'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];
+    }
+
+    /**
+     * Gets query for [[Subject]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSubject()
+    {
+        return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
     }
 
     /**

@@ -53,19 +53,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         ]); ?>
         <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
-        <?= $form->field($model, 'grade')->dropDownList([
-            2 => '2',
-            3 => '3',
-            4 => '4',
-            5 => '5',
-            6 => '6',
-            7 => '7',
-            8 => '8',
-            9 => '9',
-            10 => '10',
-            11 => '11'
-        ], [
-            'prompt' => Yii::t('app', 'Выберите класс')
+        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
+            'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
 
         <?= $form->field($model, 'leader_name')->textInput() ?>

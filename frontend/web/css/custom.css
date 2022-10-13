@@ -7,6 +7,10 @@ body, h4, h5 {
     src: url('../fonts/vCourn.ttf');
 }
 
+.bordered {
+    border: 1px solid red;
+}
+
 .required.error {
     border: none !important;
 }

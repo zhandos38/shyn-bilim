@@ -15,7 +15,6 @@ use yii\helpers\ArrayHelper;
  * @property int|null $created_at
  *
  * @property Question $questions
- * @property Subject $subject
  * @property int $time_limit [int(11)]
  */
 class Test extends \yii\db\ActiveRecord
