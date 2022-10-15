@@ -109,10 +109,12 @@ class TestSubjectController extends Controller
         }
 
         $importForm = new ImportForm();
+        $questionForm = new QuestionForm();
 
         return $this->render('update', [
             'model' => $model,
-            'importForm' => $importForm
+            'importForm' => $importForm,
+            'questionForm' => $questionForm,
         ]);
     }
 
