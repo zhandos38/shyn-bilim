@@ -153,10 +153,10 @@ class TestSubjectController extends Controller
         $questionForm = new QuestionForm();
 
         if ($questionForm->load(Yii::$app->request->post()) && $questionForm->save()) {
-            return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+            return $this->redirect(['test-subject/update', 'id' => $questionForm->test_subject_id]);
         }
 
-        return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+        return $this->redirect(['test-subject/update', 'id' => $questionForm->test_subject_id]);
     }
 
     public function actionDeleteQuestion()

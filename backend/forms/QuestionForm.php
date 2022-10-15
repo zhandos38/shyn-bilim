@@ -11,7 +11,7 @@ use yii\base\Model;
 
 class QuestionForm extends Model
 {
-    public $test_id;
+    public $test_subject_id;
     public $question_text;
     public $answer_1;
     public $answer_1_is_right;
@@ -28,7 +28,7 @@ class QuestionForm extends Model
     {
         return [
             [['question_text', 'answer_1', 'answer_1_is_right', 'answer_2', 'answer_2_is_right', 'answer_3', 'answer_3_is_right', 'answer_4', 'answer_4_is_right', 'answer_5', 'answer_5_is_right'], 'safe'],
-            ['test_id', 'integer'],
+            ['test_subject_id', 'integer'],
         ];
     }
 
@@ -53,7 +53,7 @@ class QuestionForm extends Model
     {
         try {
             $question = new Question();
-            $question->test_id = $this->test_id;
+            $question->test_subject_id = $this->test_subject_id;
             $question->text = $this->question_text;
             $question->save();
 
