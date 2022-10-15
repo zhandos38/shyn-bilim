@@ -49,11 +49,11 @@ $this->params['breadcrumbs'][] = 'Update';
 </div>
 <div id="question-box" style="display: none">
     <?php $form = ActiveForm::begin([
-        'action' => ['test/add-question'],
+        'action' => ['test-subject/add-question'],
         'method' => 'POST'
     ]) ?>
 
-    <?= $form->field($questionForm, 'test_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+    <?= $form->field($questionForm, 'test_subject_id')->hiddenInput(['value' => $model->id])->label(false) ?>
 
     <div>
         <?= $form->field($questionForm, 'question_text')->textarea() ?>
@@ -112,7 +112,7 @@ $('#question-toggle-btn').click(() => {
 $('.question-delete-btn').click(function () {
     const questionId = $(this).data('id');
    $.post({
-        url: '/test/delete-question',
+        url: '/test-subject/delete-question',
         data: {
             id: questionId,
         },
