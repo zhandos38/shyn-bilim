@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\forms\ImportForm;
+use backend\forms\QuestionForm;
 use common\models\Question;
 use Yii;
 use common\models\TestSubject;
@@ -10,6 +11,7 @@ use backend\models\TestSubjectSearch;
 use yii\filters\AccessControl;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -142,6 +144,29 @@ class TestSubjectController extends Controller
         }
 
         return $this->redirect(['test-subject/update', 'id' => $id]);
+    }
+
+    public function actionAddQuestion()
+    {
+        $questionForm = new QuestionForm();
+
+        if ($questionForm->load(Yii::$app->request->post()) && $questionForm->save()) {
+            return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+        }
+
+        return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+    }
+
+    public function actionDeleteQuestion()
+    {
+        $question_id = Yii::$app->request->post('id');
+
+        $question = Question::findOne(['id' => $question_id]);
+        if ($question && $question->delete()) {
+            return true;
+        }
+
+        throw new HttpException('401');
     }
 
     /**
