@@ -71,6 +71,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'leader_name',
             'grade',
+            [
+                'attribute' => 'phone',
+                'value' => function(TestAssignment $model) {
+                    return '<a target="_blank" href="https://wa.me/7' . $model->phone . '">' . $model->phone . '</a>';
+                },
+                'format' => 'raw'
+            ],
             'point',
             [
                 'attribute' => 'status',

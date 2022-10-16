@@ -20,6 +20,7 @@ use yii\helpers\ArrayHelper;
  * @property int|null $school_id
  * @property int $grade
  * @property int $status
+ * @property string $phone
  * @property string $lang
  * @property int|null $created_at
  *
@@ -58,7 +59,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             [['test_option_id', 'school_id', 'grade', 'point', 'subject_id', 'created_at'], 'integer'],
             [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
             [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'leader_name_third', 'parent_name'], 'string', 'max' => 255],
-            [['iin'], 'string', 'max' => 20],
+            [['iin', 'phone'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
@@ -91,6 +92,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'region_id' => Yii::t('app', 'Регион'),
             'status' => Yii::t('app', 'Статус'),
             'point' => Yii::t('app', 'Баллы'),
+            'phone' => Yii::t('app', 'Номер телефона'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];
     }

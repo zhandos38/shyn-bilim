@@ -4,6 +4,8 @@ use common\models\School;
 use kartik\select2\Select2;
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
+use yii\widgets\MaskedInput;
+
 /* @var $this \yii\web\View */
 /* @var $model \common\models\TestAssignment */
 /* @var $olympiad \common\models\Olympiad */
@@ -34,6 +36,14 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?= $form->field($model, 'patronymic') ?>
 
         <?= $form->field($model, 'iin') ?>
+
+        <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+            'mask' => '+7(999)999-99-99',
+            'clientOptions' => [
+                'removeMaskOnSubmit' => true,
+            ],
+            'options' => ['placeholder' => '+7(___)___-__-__'],
+        ]) ?>
 
         <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
             'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
