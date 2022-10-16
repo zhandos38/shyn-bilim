@@ -67,8 +67,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
 
-        <?= $form->field($model, 'leader_name')->textInput() ?>
-
         <?= $form->field($model, 'lang')->dropDownList([
             'kz' => 'Қазақша',
             'ru' => 'Русский'
