@@ -34,7 +34,6 @@ use yii\helpers\ArrayHelper;
  */
 class TestAssignment extends \yii\db\ActiveRecord
 {
-    public $subject_id;
     public $lang;
     public $region_id;
     public $city_id;
