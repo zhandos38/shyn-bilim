@@ -18,6 +18,7 @@ use yii\helpers\ArrayHelper;
  * @property string $parent_name
  * @property string $iin
  * @property int|null $school_id
+ * @property int|null $subject_id
  * @property int $grade
  * @property int $status
  * @property string $phone
@@ -57,7 +58,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['test_option_id', 'school_id', 'grade', 'point', 'subject_id', 'created_at'], 'integer'],
-            [['name', 'surname', 'iin', 'school_id', 'lang'], 'required'],
+            [['name', 'surname', 'iin', 'school_id', 'lang', 'subject_id'], 'required'],
             [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'leader_name_third', 'parent_name'], 'string', 'max' => 255],
             [['iin', 'phone'], 'string', 'max' => 20],
             [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
@@ -83,6 +84,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'patronymic' => Yii::t('app', 'Отчество'),
             'iin' => Yii::t('app', 'ИИН'),
             'school_id' => Yii::t('app', 'Школа/Колледж'),
+            'subject_id' => Yii::t('app', 'Предмет'),
             'grade' => Yii::t('app', 'Класс'),
             'leader_name' => Yii::t('app', 'Ф.И.О руководителя'),
             'leader_name_second' => Yii::t('app', 'Ф.И.О руководителя'),
