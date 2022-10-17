@@ -62,6 +62,10 @@ use common\models\Test;
     <?= $form->field($model, 'parent_name') ?>
 
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
+    
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
+            'prompt' => Yii::t('app', 'Выберите предмет')
+        ]) ?>
 
     <?= $form->field($model, 'test_option_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\common\models\TestOption::find()->asArray()->all(), 'id', function ($model) {
