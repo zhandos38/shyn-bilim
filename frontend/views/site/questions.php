@@ -101,23 +101,9 @@ use yii\helpers\Url; ?>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            5. Сұрақ: Мен жарнасын 8775 424 37 27 Феруза Изтаеваның Каспий голдына төлеп қойдым ЖСН-ді тіркеуге жібердім bilimshini.kz@mail.ru электронды поштасына. «Почтама «Тіркелдіңіз» деген жауап келді. Бірақ олимпиадаға қатысайын десем, «Төлем жаса» деп шығып тұр. Не істеуге болады.
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Жауап:  Сіз электронды почтаға жіберіп, тіркеткен ЖСН-іңізді анкетаға жазған ЖСН –мен салыстырып көріңіз. Қате ЖСН-мен қатыса алмайсыз.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            6. Сұрақ: 8775 424 37 27 Феруза Изтаеваның Каспий голдына төлем жасалғаннан кейін bilimshini.kz@mail.ru электронды поштасына қандай чек жіберу керекпін?
+                            6. Сұрақ: 8775 076 78 76 Бакыткүл Есеннің Каспий голдына төлем жасалғаннан кейін bilimshini.kz@mail.ru электронды поштасына қандай чек жіберу керекпін?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -276,23 +262,9 @@ use yii\helpers\Url; ?>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            5. Вопрос: Произвела оплату через Каспи Голд Изтаевой Ферузе по номеру 87754243727, скинула на электронную почту bilimshini.kz@mail.ru чек и ИИН. На электронную почту пришел ответ о «Регистрации». Но когда я хочу принять участие в олимпиаде, все время выходит платежная страница. Что делать?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Ответ:  Сравните ИИН, который вы отправили на электронную почту, с ИИН, который вы указали в анкете. Вы не сможете участвовать с неправильным ИИНом.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            6. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд Изтаевой Ферузе по номеру  8775 424 37 27?
+                            6. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд 8(775)076-78-76 Бакыткүл Есен?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
