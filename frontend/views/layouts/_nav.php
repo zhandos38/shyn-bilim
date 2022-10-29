@@ -27,6 +27,9 @@ use yii\helpers\Url;
         <a href="<?= Url::to(['olympiad/choose']) ?>" class="nav-link"><?= Yii::t('app', 'Олимпиада') ?></a>
     </li>
     <li class="nav-item dropdown megamenu">
+        <a href="<?= Url::to(['marathon/assignment']) ?>" class="nav-link"><?= Yii::t('app', 'Марафон') ?></a>
+    </li>
+    <li class="nav-item dropdown megamenu">
         <a href="<?= Url::to(['site/questions']) ?>" class="nav-link"><?= Yii::t('app', 'Помощь') ?></a>
     </li>
     <li class="nav-item dropdown megamenu">
