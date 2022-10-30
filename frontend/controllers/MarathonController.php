@@ -17,29 +17,29 @@ class MarathonController extends Controller
 {
     public function actionAssignment()
     {
-//        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН ПРОЙДЕТ 10-15 НОЯБРЯ'));
-//        return $this->redirect(['site/index']);
+        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН ПРОЙДЕТ 10-15 НОЯБРЯ'));
+        return $this->redirect(['site/index']);
 
-        $model = new Marathon();
-        if ($model->load(Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $model->iin]);
-
-            if ($marathon !== null) {
-                Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
-                return $this->redirect(['marathon/assignment']);
-            }
-
-            if (!$model->save()) {
-                throw new Exception('Marathon save error!');
-            }
-            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
-        }
-
-        $checkAssignmentForm = new CheckAssignmentForm();
-        return $this->render('assignment', [
-            'model' => $model,
-            'checkAssignmentForm' => $checkAssignmentForm
-        ]);
+//        $model = new Marathon();
+//        if ($model->load(Yii::$app->request->post())) {
+//            $marathon = Marathon::findOne(['iin' => $model->iin]);
+//
+//            if ($marathon !== null) {
+//                Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
+//                return $this->redirect(['marathon/assignment']);
+//            }
+//
+//            if (!$model->save()) {
+//                throw new Exception('Marathon save error!');
+//            }
+//            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
+//        }
+//
+//        $checkAssignmentForm = new CheckAssignmentForm();
+//        return $this->render('assignment', [
+//            'model' => $model,
+//            'checkAssignmentForm' => $checkAssignmentForm
+//        ]);
     }
 
     public function actionBook($assignment_id)
