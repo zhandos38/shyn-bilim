@@ -22,90 +22,11 @@ $this->registerMetaTag([
                     <!-- start slide 02 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/img/teacher-banner-bg3.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.3;"></div>
-
-                        <!-- help text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-black font-weight-600"
-                             id="slide-411-layer-01"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-160','-140']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['38','26','26','26']"
-                             data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['0','-1','-1','-1']"
-                             data-responsive="on"
-                             data-responsive_offset="on"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">2022 жыл 17-25 қазан аралығы</div>
-
-                        <!-- main text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-600"
-                             id="slide-411-layer-01"
-                             data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-whitespace="nowrap"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['53','53','60','35']"
-                             data-lineheight="['70','59','70','39']"
-                             data-letterspacing="['0','-1','-1','-1']"
-                             data-responsive="on"
-                             data-responsive_offset="on"
-                             data-paddingtop="['0','0','0','0']"
-                             data-paddingbottom="['15','8','8','8']"
-                             data-paddingright="['0','0','0','0']"
-                             data-paddingleft="['0','0','0','0']"
-                             style="text-shadow: 0 0 20px rgba(0,0,0,0.3);">"ЕҢ БІЛІМДІ ПЕДАГОГ - 2022"</div>
-
-                        <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['75','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['5','100','-5','15']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['26','16','19','14']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on">
-                            ПЕДАГОГТАРДЫҢ ПӘНДЕР ОЛИМПИАДАСЫ
-                        </div>
-
-                        <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white font-weight-300"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['85','100','-5','15']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['16','16','19','14']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on">
-                            ОЛИМПИАДАҒА ҚАТЫСЫП<br>
-                            ПОРТФОЛИОҢЫЗДЫ ТОЛЫҚТЫРЫҢЫЗ!!!
-                        </div>
+                        <img src="/img/marathon-2022/banner.jpg" alt="banner" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/view', 'id' => 1]) ?>"
+                           href="<?= Url::to(['marathon/assignment']) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
