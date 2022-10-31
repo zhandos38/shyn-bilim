@@ -12,6 +12,7 @@ use frontend\models\ExtraAssignmentForm;
 use Yii;
 use yii\db\Exception;
 use yii\web\Controller;
+use kartik\mpdf\Pdf;
 
 class MarathonController extends Controller
 {
