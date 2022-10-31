@@ -7,6 +7,13 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
 /** @var integer $grade */
 ?>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['/marathon/get-cert-thank', 'id' => $marathon_id]) ?>" download>
+            <?= Yii::t('app', 'Получить благодарственное письмо') ?>
+        </a>
+    </div>
+</div>
 <div class="row">
     <?php if ($grade === 2 || $grade === 3 || $grade === 4): ?>
         <div class="col-md-4">
