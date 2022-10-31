@@ -30,7 +30,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             <li>1 қарашада https://bilim-shini.kz/ru сайтында өтеді. Кітап оқу ТЕГІН!!!</li>
         </ul>
         <div class="text-center font-weight-bold">
-            <a id="toggleBtn" style="color: blue" href="#">Толығырақ</a>
+            <button id="toggleBtn" class="btn btn-success">Толығырақ</button>
         </div>
         <div id="toggleText" style="display: none">
             <p><strong>І. БІРІНШІ  КЕЗЕҢ – КІТАП ОҚУ</strong></p>
@@ -157,6 +157,8 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
                 'placeholder' => '7(000) 000-00-00'
             ]
         ]) ?>
+
+        <?= $form->field($model, 'parent_name') ?>
 
         <?= $form->field($model, 'phone_parent')->widget(MaskedInput::className(), [
             'mask' => '+7(999)999-99-99',

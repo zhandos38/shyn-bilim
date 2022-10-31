@@ -11,6 +11,7 @@ use frontend\models\CheckAssignmentForm;
 use frontend\models\ExtraAssignmentForm;
 use Yii;
 use yii\db\Exception;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use kartik\mpdf\Pdf;
 
@@ -18,29 +19,29 @@ class MarathonController extends Controller
 {
     public function actionAssignment()
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН ПРОЙДЕТ 1-10 НОЯБРЯ'));
-        return $this->redirect(['site/index']);
+        // Yii::$app->session->setFlash('error', Yii::t('app', 'МАРАФОН ПРОЙДЕТ 1-10 НОЯБРЯ'));
+        // return $this->redirect(['site/index']);
 
-//        $model = new Marathon();
-//        if ($model->load(Yii::$app->request->post())) {
-//            $marathon = Marathon::findOne(['iin' => $model->iin]);
-//
-//            if ($marathon !== null) {
-//                Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
-//                return $this->redirect(['marathon/assignment']);
-//            }
-//
-//            if (!$model->save()) {
-//                throw new Exception('Marathon save error!');
-//            }
-//            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
-//        }
-//
-//        $checkAssignmentForm = new CheckAssignmentForm();
-//        return $this->render('assignment', [
-//            'model' => $model,
-//            'checkAssignmentForm' => $checkAssignmentForm
-//        ]);
+        $model = new Marathon();
+        if ($model->load(Yii::$app->request->post())) {
+            $marathon = Marathon::findOne(['iin' => $model->iin]);
+
+            if ($marathon !== null) {
+                Yii::$app->session->setFlash('error', 'Данный ИИН уже зарегистрирован');
+                return $this->redirect(['marathon/assignment']);
+            }
+
+            if (!$model->save()) {
+                throw new Exception('Marathon save error!');
+            }
+            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
+        }
+
+        $checkAssignmentForm = new CheckAssignmentForm();
+        return $this->render('assignment', [
+            'model' => $model,
+            'checkAssignmentForm' => $checkAssignmentForm
+        ]);
     }
 
     public function actionBook($assignment_id)
@@ -51,7 +52,8 @@ class MarathonController extends Controller
         }
 
         return $this->render('book', [
-            'grade' => (int)$assignment->grade
+            'grade' => (int)$assignment->grade,
+            'marathon_id' => (int)$assignment->id,
         ]);
     }
 
@@ -150,7 +152,43 @@ class MarathonController extends Controller
             'content' => $content,
             // format content from your own css file if needed or use the
             // enhanced bootstrap css built by Krajee for mPDF formatting
-            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+            'cssFile' => 'css/custom.css',
+        ]);
+
+        return $pdf->render();
+    }
+
+    public function actionGetCertThankParent($id)
+    {
+        $marathon = Marathon::findOne(['id' => $id]);
+        if (!$marathon) {
+            throw new Exception('Marathon is not found');
+        }
+
+        $content = $this->renderPartial('_cert-thank-parent', [
+            'marathon' => $marathon
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Алғыс хат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => 'css/custom.css',
         ]);
 
         return $pdf->render();

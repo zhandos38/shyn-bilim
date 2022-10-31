@@ -32,6 +32,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'patronymic')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'parent_name')->textInput() ?>
+
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'school_id')->textInput() ?>

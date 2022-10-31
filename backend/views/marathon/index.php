@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'isSolid' => true,
         'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button']),
         'tooltip' => 'this tooltip description',
-        'title' => 'Журналы'
+        'title' => 'Марафон'
     ])
 
     ?>
@@ -36,9 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            'id',
             'name',
             'surname',
             'patronymic',
+            'parent_name',
             'iin',
             [
                 'attribute' => 'region_id',

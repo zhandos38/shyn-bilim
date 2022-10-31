@@ -12,6 +12,7 @@ use yii\db\ActiveRecord;
  * @property string|null $name
  * @property string|null $surname
  * @property string|null $patronymic
+ * @property string|null $parent_name
  * @property string|null $iin
  * @property int|null $school_id
  * @property int|null $grade
@@ -19,6 +20,8 @@ use yii\db\ActiveRecord;
  * @property string|null $phone_parent
  * @property string|null $phone_teacher
  * @property integer $created_at
+ *
+ * @property School $school
  */
 class Marathon extends \yii\db\ActiveRecord
 {
@@ -52,7 +55,7 @@ class Marathon extends \yii\db\ActiveRecord
     {
         return [
             [['school_id', 'grade', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'parent_name'], 'string', 'max' => 255],
             [['iin', 'phone', 'phone_parent', 'phone_teacher'], 'string', 'max' => 20],
 
             [['name', 'surname', 'patronymic', 'school_id', 'grade', 'iin', 'phone', 'phone_parent', 'phone_teacher'], 'required'],
@@ -69,6 +72,7 @@ class Marathon extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
+            'parent_name' => Yii::t('app', 'Ф.И.О родителей'),
             'iin' => Yii::t('app', 'ИИН'),
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'city_id' => Yii::t('app', 'Город'),
