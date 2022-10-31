@@ -48,13 +48,13 @@ class ArticleController extends Controller
 
     public function actionIndex()
     {
-        Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
-        return $this->redirect(['site/index']);
-       // $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
+        // Yii::$app->session->setFlash('error', Yii::t('app', 'Страница в разработке'));
+        // return $this->redirect(['site/index']);
+        $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
 
-       // return $this->render('index', [
-       //     'subjects' => $subjects
-       // ]);
+        return $this->render('index', [
+            'subjects' => $subjects
+        ]);
     }
 
     public function actionSuccess()
