@@ -14,6 +14,11 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             <?= Yii::t('app', 'Получить благодарственное письмо') ?>
         </a>
     </div>
+    <div class="col-md-4">
+        <a class="btn btn-success w-100" href="<?= \yii\helpers\Url::to(['/marathon/get-cert-than-parent', 'id' => $marathon_id]) ?>">
+            <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
+        </a>
+    </div>
 </div>
 <div class="row">
     <?php if ($grade === 2 || $grade === 3): ?>
