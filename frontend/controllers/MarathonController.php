@@ -118,4 +118,40 @@ class MarathonController extends Controller
             'model' => $model
         ]);
     }
+    
+    public function actionGetCertThank($id)
+    {
+        $marathon = Marathon::findOne(['id' => $id]);
+        if (!$marathon) {
+            throw new Exception('Marathon is not found');
+        }
+        
+        $content = $this->renderPartial('_cert-thank', [
+            'marathon' => $marathon
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Алғыс хат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+        ]);
+
+        return $pdf->render();
+    }
 }
