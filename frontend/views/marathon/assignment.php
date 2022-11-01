@@ -80,7 +80,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
     <div class="col-md-4">
         <div>
-            <a id="check-assignment-btn" href="#" style="color: blue">
+            <a id="check-assignment-btn" href="javaScript:void(0);" style="color: blue">
                 <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
             </a>
 
