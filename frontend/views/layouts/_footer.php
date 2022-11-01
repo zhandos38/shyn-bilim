@@ -39,9 +39,6 @@ use yii\helpers\Url;
                 <div class="col-12 col-md-3 col-sm-6 xs-margin-25px-bottom">
                     <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Редакция') ?></span>
                     <ul>
-                        <li><a href="tel:+7(775)0767876"><i class="fa fa-phone"></i> +7(775) 076 78 76</a></li>
-                        <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
-                        <li><a href="tel:+7(775)4243727"><i class="fa fa-phone"></i> +7(775) 424 37 27</a></li>
                         <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
                         <li><a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a></li>
                     </ul>
@@ -51,7 +48,6 @@ use yii\helpers\Url;
                 <div class="col-12 col-md-3 col-sm-6">
                     <span class="alt-font font-weight-500 d-block text-extra-dark-gray text-medium margin-20px-bottom xs-margin-10px-bottom"><?= Yii::t('app', 'Полиграфия') ?></span>
                     <ul>
-                        <li><a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a></li>
                         <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a></li>
                         <li><a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a></li>
                     </ul>
