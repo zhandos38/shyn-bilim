@@ -29,6 +29,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </h6>
         <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
+                <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a></li>
                 <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
@@ -40,6 +41,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </h6>
         <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
+                <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a></li>
                 <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
