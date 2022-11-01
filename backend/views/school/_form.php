@@ -25,12 +25,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+    ]); ?>
 
     <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(City::find()->asArray()->all(), 'id', 'name'),
         'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
     ]); ?>
+
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
@@ -41,3 +46,28 @@ use yii\widgets\ActiveForm;
     <?php LteBox::end() ?>
 
 </div>
+<?php
+$js =<<<JS
+$('#school-region_id').change(function() {
+  $.get({
+    url: '/site/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#school-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>

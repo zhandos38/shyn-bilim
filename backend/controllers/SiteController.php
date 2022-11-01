@@ -1,11 +1,14 @@
 <?php
 namespace backend\controllers;
 
+use common\models\City;
 use Yii;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use yii\web\HttpException;
 
 /**
  * Site controller
@@ -80,6 +83,16 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionGetCities($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $cities = City::findAll(['region_id' => $id]);
+            return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
     }
 
     /**

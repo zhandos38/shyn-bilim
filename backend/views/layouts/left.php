@@ -31,6 +31,8 @@
                     ['label' => 'Марафон', 'icon' => 'fas fa-book', 'url' => ['marathon/index']],
                     ['label' => 'Тесты', 'icon' => 'fas fa-book', 'url' => ['test/index']],
                     ['label' => 'Результаты олимпиад', 'icon' => 'fas fa-book', 'url' => ['test-assignment/index']],
+                    ['label' => 'Регионы', 'icon' => 'fas fa-book', 'url' => ['region/index']],
+                    ['label' => 'Города', 'icon' => 'fas fa-book', 'url' => ['city/index']],
                     ['label' => 'Школы', 'icon' => 'fas fa-book', 'url' => ['school/index']],
                     ['label' => 'Белый список', 'icon' => 'fas fa-book', 'url' => ['white-list/index']],
                 ],

@@ -15,6 +15,8 @@ use Yii;
  */
 class School extends \yii\db\ActiveRecord
 {
+    public $region_id;
+
     /**
      * {@inheritdoc}
      */

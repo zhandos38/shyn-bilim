@@ -11,7 +11,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['marathon/get-cert-thank', 'id'
     <div class="cert-page" style="background-image: url('/img/marathon-2022/marathon-certificate-2022.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
         <div style="padding-top: 165px; padding-left: 280px; text-align: center; width: 540px; text-align: center;">
             <div id="cert-name" style="height: 60px; font-size: 24px; font-weight: bold; text-transform: uppercase; color: red">
-                <?= $marathon->name ?> <?= $marathon->surname ?> <?= $marathon->patronymic ?>
+                <?= $marathon->surname ?> <?= $marathon->name ?> <?= $marathon->patronymic ?>
             </div>
             <div style="padding-top: 5px; font-size: 18px">
                     <?php
