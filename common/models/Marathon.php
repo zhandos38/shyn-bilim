@@ -58,7 +58,7 @@ class Marathon extends \yii\db\ActiveRecord
             [['name', 'surname', 'patronymic', 'parent_name'], 'string', 'max' => 255],
             [['iin', 'phone', 'phone_parent', 'phone_teacher'], 'string', 'max' => 20],
 
-            [['name', 'surname', 'patronymic', 'school_id', 'grade', 'iin', 'phone', 'phone_parent', 'phone_teacher'], 'required'],
+            [['name', 'surname', 'school_id', 'grade', 'iin', 'phone', 'phone_parent', 'phone_teacher'], 'required'],
         ];
     }
 
