@@ -11,7 +11,12 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 <div class="row justify-content-center mb-4">
     <div class="col-md-4">
         <a class="btn btn-success w-100" href="<?= \yii\helpers\Url::to(['/marathon/get-cert-thank', 'id' => $marathon_id]) ?>">
-            <?= Yii::t('app', 'Получить благодарственное письмо') ?>
+            Оқушыға СЕРТИФИКАТ 
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-success w-100" href="<?= \yii\helpers\Url::to(['/marathon/get-cert-thank-parent', 'id' => $marathon_id]) ?>">
+            <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
         </a>
     </div>
 </div>

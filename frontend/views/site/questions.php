@@ -95,7 +95,7 @@ use yii\helpers\Url; ?>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Жауап:  Егер сайтта төлем жасауда қиындықтар туындаса: 8(775)076-78-76 Бакыткүл Есеннің Каспий голд номеріне 2000 тг (екі мың) аударып,
+                            Жауап:  Егер сайтта төлем жасауда қиындықтар туындаса: +7 775 403 7284 Жаннаның Каспий голд номеріне 2000 тг (екі мың) аударып,
                             Чекті және ЖСН-іңізді bilimshini.kz@mail.ru электронды поштасына қатесіз жазып жіберуіңіз міндетті. 24 сағат ішінде Сізге «Тіркелді» деген жауап келеді. Электронды почтаңызға жауап келгеннен кейін ғана олимпиадаға қатысуға мүмкіндік ашылады. Жеке ұялы телефондарда, вадсапта мәселелер қарастырылмайды.
                         </div>
                     </div>
@@ -103,7 +103,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Сұрақ: 8(775)076-78-76 Бакыткүл Есеннің Каспий голдына төлем жасалғаннан кейін bilimshini.kz@mail.ru электронды поштасына қандай чек жіберу керекпін?
+                            5. Сұрақ: 7 775 403 7284 Жаннаның Каспий голдына төлем жасалғаннан кейін bilimshini.kz@mail.ru электронды поштасына қандай чек жіберу керекпін?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -256,7 +256,7 @@ use yii\helpers\Url; ?>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
-                                Ответ:  Если у Вас возникли проблемы с оплатой на сайте: переведите 2000 (две тысячи) тенге на Каспи голд 8(775)076-78-76 Бакыткүл Есен, далее Вам необходимо без ошибок отправить ИИН участника и чек на электронную почту bilimshini.kz@mail.ru. В течение 24 часов по электронной почте   вы получите ответ о том, что вы «Зарегистрированы». Только после получения ответа на свою электронную почту о регистрации, Вы сможете принять участие в олимпиаде. По личным мобильным телефонам и по ватсапу вопросы не рассматриваются.
+                                Ответ:  Если у Вас возникли проблемы с оплатой на сайте: переведите 2000 (две тысячи) тенге на Каспи голд 7 775 403 7284 Жанна, далее Вам необходимо без ошибок отправить ИИН участника и чек на электронную почту bilimshini.kz@mail.ru. В течение 24 часов по электронной почте   вы получите ответ о том, что вы «Зарегистрированы». Только после получения ответа на свою электронную почту о регистрации, Вы сможете принять участие в олимпиаде. По личным мобильным телефонам и по ватсапу вопросы не рассматриваются.
                             </p>
                         </div>
                     </div>
@@ -264,7 +264,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд 8(775)076-78-76 Бакыткүл Есен?
+                            5. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд 7 775 403 7284 Жанна?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">

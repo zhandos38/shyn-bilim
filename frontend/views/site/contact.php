@@ -29,15 +29,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </h6>
         <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
-                <a href="tel:87754037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
-                <a href="tel:87750767876"><i class="fa fa-phone"></i> +7(775) 076 78 76 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
+                <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a></li>
                 <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
@@ -49,9 +41,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </h6>
         <ul class="phone-list" style="padding: 0">
             <li class="contact-list__item">
-                <a href="tel:87784180083"><i class="fa fa-phone"></i> +7(778) 418 00 83 ( WhatsApp )</a>
-            </li>
-            <li class="contact-list__item">
+                <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a></li>
                 <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
             </li>
             <li class="contact-list__item">
