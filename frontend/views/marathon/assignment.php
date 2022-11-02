@@ -121,7 +121,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             }),
             'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
         ]); ?>
-        <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам 8(775) 403-72-84 (Whatsapp)') ?></small>
+        <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам +7(701) 312 99 06 (Whatsapp)') ?></small>
 
         <?= $form->field($model, 'grade')->dropDownList([
             2 => '2',
