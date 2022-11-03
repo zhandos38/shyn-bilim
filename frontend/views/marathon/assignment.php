@@ -23,8 +23,10 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     <div class="col-md-4">
         <div>
             <div>
-                <a id="check-assignment-btn btn btn-info" href="/file/marathon-2022/rule.pdf">
-                    <i class="fa fa-info"></i> Бекітілген ереженмен танысу
+                <a id="check-assignment-btn" href="/file/marathon-2022/rule.pdf">
+                    <button class="btn btn-info">
+                        <i class="fa fa-info"></i> Бекітілген ереженмен танысу
+                    </button>
                 </a>
             </div>
             
@@ -43,19 +45,19 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             </div>
             
             <div>
-                <a id="check-assignment-btn btn btn-info" href="javaScript:void(0);">
-                    <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
-                </a>
-            </div>
+                <button id="check-assignment-btn btn btn-info" href="javaScript:void(0);">
+                    <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
+                </button>
+                
+                <div id="check-assignment-form" class="mb-5" style="display: none">
+                    <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
 
-            <div id="check-assignment-form" class="mb-5" style="display: none">
-                <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
+                    <?= $form->field($checkAssignmentForm, 'iin') ?>
 
-                <?= $form->field($checkAssignmentForm, 'iin') ?>
+                    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
 
-                <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
-
-                <?php ActiveForm::end() ?>
+                    <?php ActiveForm::end() ?>
+                </div>
             </div>
         </div>
 
