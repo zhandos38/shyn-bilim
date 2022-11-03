@@ -243,7 +243,7 @@ new Chart("myChart", {
   options: {
     title: {
       display: true,
-      text: 'Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері'
+      text: 'Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері',
     }
   }
 });
@@ -251,5 +251,5 @@ JS;
 
 
 $this->registerJs($js);
-$this->registerJs("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js");
+$this->registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js", ['position' => \yii\web\View::POS_END]);
 ?>
