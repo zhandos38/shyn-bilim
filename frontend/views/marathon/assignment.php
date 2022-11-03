@@ -71,10 +71,8 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
         </div>
     </div>
 </div>
-<?php $form = ActiveForm::begin() ?>
-
 <div class="row mt-4">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <button id="monitoring-btn" class="btn btn-primary"><i class="fa fa-bar-chart"></i> Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері</button>
         <div id="monitoring-box" style="display: none;">
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -82,6 +80,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
 </div>
 
+<?php $form = ActiveForm::begin() ?>
 <div class="row mt-4">
     <div class="col-md-12 text-center">
         <p>Марафонға қатысу үшін анкетаны толтырыңыз</p>
