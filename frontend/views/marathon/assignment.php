@@ -23,7 +23,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     <div class="col-md-4">
         <div>
             <div>
-                <a id="check-assignment-btn" href="/file/marathon-2022/rule.pdf">
+                <a href="/file/marathon-2022/rule.pdf">
                     <button class="btn btn-info">
                         <i class="fa fa-info"></i> Бекітілген ереженмен танысу
                     </button>
@@ -61,84 +61,86 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             </div>
         </div>
 
-        <?php $form = ActiveForm::begin() ?>
+        <div class="mt-4">
+            <?php $form = ActiveForm::begin() ?>
 
-        <?= $form->field($model, 'surname') ?>
+                <?= $form->field($model, 'surname') ?>
 
-        <?= $form->field($model, 'name') ?>
+                <?= $form->field($model, 'name') ?>
 
-        <?= $form->field($model, 'patronymic') ?>
+                <?= $form->field($model, 'patronymic') ?>
 
-        <?= $form->field($model, 'iin') ?>
+                <?= $form->field($model, 'iin') ?>
 
-        <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
-            'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
-        ]); ?>
+                <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+                ]); ?>
 
-        <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
-            'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
-        ]); ?>
+                <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+                ]); ?>
 
-        <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
-                return htmlspecialchars_decode($model['name']);
-            }),
-            'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
-        ]); ?>
-        <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам +7(701) 312 99 06 (Whatsapp)') ?></small>
+                <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
+                        return htmlspecialchars_decode($model['name']);
+                    }),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+                ]); ?>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам +7(701) 312 99 06 (Whatsapp)') ?></small>
 
-        <?= $form->field($model, 'grade')->dropDownList([
-            2 => '2',
-            3 => '3',
-            4 => '4',
-            5 => '5',
-            6 => '6',
-            7 => '7',
-            8 => '8',
-            9 => '9',
-            10 => '10',
-            11 => '11'
-        ], [
-            'prompt' => Yii::t('app', 'Выберите класс')
-        ]) ?>
+                <?= $form->field($model, 'grade')->dropDownList([
+                    2 => '2',
+                    3 => '3',
+                    4 => '4',
+                    5 => '5',
+                    6 => '6',
+                    7 => '7',
+                    8 => '8',
+                    9 => '9',
+                    10 => '10',
+                    11 => '11'
+                ], [
+                    'prompt' => Yii::t('app', 'Выберите класс')
+                ]) ?>
 
-        <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
-            'mask' => '+7(999)999-99-99',
-            'clientOptions' => [
-                'removeMaskOnSubmit' => true
-            ],
-            'options' => [
-                'placeholder' => '7(000) 000-00-00'
-            ]
-        ]) ?>
+                <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                    'options' => [
+                        'placeholder' => '7(000) 000-00-00'
+                    ]
+                ]) ?>
 
-        <?= $form->field($model, 'phone_teacher')->widget(MaskedInput::className(), [
-            'mask' => '+7(999)999-99-99',
-            'clientOptions' => [
-                'removeMaskOnSubmit' => true
-            ],
-            'options' => [
-                'placeholder' => '7(000) 000-00-00'
-            ]
-        ]) ?>
+                <?= $form->field($model, 'phone_teacher')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                    'options' => [
+                        'placeholder' => '7(000) 000-00-00'
+                    ]
+                ]) ?>
 
-        <?= $form->field($model, 'parent_name') ?>
+                <?= $form->field($model, 'parent_name') ?>
 
-        <?= $form->field($model, 'phone_parent')->widget(MaskedInput::className(), [
-            'mask' => '+7(999)999-99-99',
-            'clientOptions' => [
-                'removeMaskOnSubmit' => true
-            ],
-            'options' => [
-                'placeholder' => '7(000) 000-00-00'
-            ]
-        ]) ?>
+                <?= $form->field($model, 'phone_parent')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                    'options' => [
+                        'placeholder' => '7(000) 000-00-00'
+                    ]
+                ]) ?>
 
-        <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
+                <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
 
-        <?php ActiveForm::end() ?>
+            <?php ActiveForm::end() ?>
+        </div>
     </div>
 </div>
 <?php
