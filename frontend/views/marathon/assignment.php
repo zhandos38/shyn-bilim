@@ -13,14 +13,14 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 /** @var $checkAssignmentForm \frontend\models\CheckAssignmentForm  */
 ?>
 <div class="row justify-content-center">
-    <div class="col-md-4 text-center">
+    <div class="col-md-12 text-center">
         <h4>
          <?= $this->params['heroDescription'] ?>
         </h4>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div>
             <div>
                 <a id="check-assignment-btn" href="/file/marathon-2022/rule.pdf">
@@ -45,7 +45,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             </div>
             
             <div class="mt-2">
-                <button id="check-assignment-btn btn btn-info" href="javaScript:void(0);">
+                <button id="check-assignment-btn" class="btn btn-info">
                     <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
                 </button>
                 
