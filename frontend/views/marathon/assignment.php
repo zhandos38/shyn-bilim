@@ -14,7 +14,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 ?>
 <div class="row justify-content-center">
     <div class="col-md-12 text-center">
-        <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) , url(/img/marathon-2022/marathon-books.webp);
+        <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)) , url(/img/marathon-2022/marathon-books.webp);
     padding: 60px 0;
     font-size: 32px;
     color: #fff;
@@ -32,17 +32,17 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row mt-6">
     <div class="col-md-4">
         <a class="w-100" href="/file/marathon-2022/rule.pdf">
-            <button class="btn btn-info">
+            <button class="btn btn-success w-100">
                 <i class="fa fa-info"></i> Бекітілген ереженмен танысу
             </button>
         </a>
     </div>
     
     <div class="col-md-4">
-        <button id="try-example-btn" class="btn btn-info w-100">
+        <button id="try-example-btn" class="btn btn-primary w-100">
             <i class="fa fa-eye"></i> Мысал тапсырмалармен танысу
         </button>
         <div id="try-example-box" style="display: none">
@@ -56,7 +56,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
     
     <div class="col-md-4">
-        <button id="check-assignment-btn" class="btn btn-info w-100">
+        <button id="check-assignment-btn" class="btn btn-success w-100">
             <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
         </button>
         
