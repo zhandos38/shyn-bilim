@@ -68,7 +68,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 </div>
 
 <button id="check-assignment-btn" class="btn btn-danger w-100">
-    <i class="fa fa-info"></i>  Анкетаны толтырып қойғансыз ба? немесе Сертификат/Алғыс хат ала алмай қалдыңызба
+    <i class="fa fa-info"></i>  Анкетаны толтырып қойғансыз ба? немесе Сертификат/Алғыс хат ала алмай қалдыңызба?
 </button>
 
 <div id="check-assignment-form" class="mb-5" style="display: none">
