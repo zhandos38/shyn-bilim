@@ -42,7 +42,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
     
     <div class="col-md-4">
-        <button id="try-example-btn" class="btn btn-primary w-100">
+        <button id="try-example-btn" class="btn btn-success w-100">
             <i class="fa fa-eye"></i> Мысал тапсырмалармен танысу
         </button>
         <div id="try-example-box" style="display: none">
@@ -56,28 +56,29 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
     
     <div class="col-md-4">
-        <button id="check-assignment-btn" class="btn btn-success w-100">
-            <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
-        </button>
-        
-        <div id="check-assignment-form" class="mb-5" style="display: none">
-            <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
-
-            <?= $form->field($checkAssignmentForm, 'iin') ?>
-
-            <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
-
-            <?php ActiveForm::end() ?>
-        </div>
+        <button id="monitoring-btn" class="btn btn-success w-100"><i class="fa fa-bar-chart"></i> Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері</button>
     </div>
 </div>
 <div class="row mt-4">
     <div class="col-md-12 text-center">
-        <button id="monitoring-btn" class="btn btn-primary"><i class="fa fa-bar-chart"></i> Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері</button>
         <div id="monitoring-box" style="display: none;">
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
         </div>
     </div>
+</div>
+
+<button id="check-assignment-btn" class="btn btn-danger w-100">
+    <i class="fa fa-info"></i>  Анкетаны толтырып қойғансыз ба? немесе Сертификат/Алғыс хат ала алмай қалдыңызба
+</button>
+
+<div id="check-assignment-form" class="mb-5" style="display: none">
+    <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
+
+    <?= $form->field($checkAssignmentForm, 'iin') ?>
+
+    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
+
+    <?php ActiveForm::end() ?>
 </div>
 
 <?php $form = ActiveForm::begin() ?>
