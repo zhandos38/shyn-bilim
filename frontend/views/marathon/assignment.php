@@ -13,7 +13,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 /** @var $checkAssignmentForm \frontend\models\CheckAssignmentForm  */
 ?>
 <div class="row justify-content-center">
-    div class="col-md-4">
+    <div class="col-md-4">
         <h2>
          <?= $this->title ?>
         </h2>
