@@ -76,7 +76,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
     <?= $form->field($checkAssignmentForm, 'iin') ?>
 
-    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
+    <?= \yii\bootstrap4\Html::submitButton('ЖҮКТЕУ', ['class' => 'btn btn-success']) ?>
 
     <?php ActiveForm::end() ?>
 </div>
