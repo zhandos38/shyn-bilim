@@ -14,55 +14,65 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 ?>
 <div class="row justify-content-center">
     <div class="col-md-12 text-center">
-        <div style="background-image: url('/img/marathon-2022/marathon-books.webp');">
-            <h4>
-             <?= $this->params['heroDescription'] ?>
-            </h4>
+        <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) , url(/img/marathon-2022/marathon-books.webp);
+    padding: 60px 0;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;">
+            <div>
+                <?= $this->params['heroDescription'] ?>
+            </div>
+            <div>
+                <div style="
+                font-size: 20px;
+                font-weight: 500;
+            ">II республикалық олимпиада
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-4">
-        <div>
-            <div>
-                <a href="/file/marathon-2022/rule.pdf">
-                    <button class="btn btn-info">
-                        <i class="fa fa-info"></i> Бекітілген ереженмен танысу
-                    </button>
-                </a>
-            </div>
-            
-            <div class="mt-2">
-                <button id="try-example-btn" class="btn btn-info">
-                    <i class="fa fa-eye"></i> Мысал тапсырмалармен танысу
-                </button>
-                <div id="try-example-box" style="display: none">
-                    <ol>
-                        <li><a href="/file/marathon/2,3,4-grade.pdf">2,3,4 сынып</a></li>
-                        <li><a href="/file/marathon/5,6-grade.pdf">5,6 сынып</a></li>
-                        <li><a href="/file/marathon/7,8-grade.pdf">7,8 сынып</a></li>
-                        <li><a href="/file/marathon/9,10,11-grade.pdf">9,10,11 сынып</a></li>
-                    </ol>
-                </div>
-            </div>
-            
-            <div class="mt-2">
-                <button id="check-assignment-btn" class="btn btn-info">
-                    <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
-                </button>
-                
-                <div id="check-assignment-form" class="mb-5" style="display: none">
-                    <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
-
-                    <?= $form->field($checkAssignmentForm, 'iin') ?>
-
-                    <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
-
-                    <?php ActiveForm::end() ?>
-                </div>
-            </div>
+        <a class="w-100" href="/file/marathon-2022/rule.pdf">
+            <button class="btn btn-info">
+                <i class="fa fa-info"></i> Бекітілген ереженмен танысу
+            </button>
+        </a>
+    </div>
+    
+    <div class="col-md-4">
+        <button id="try-example-btn" class="btn btn-info w-100">
+            <i class="fa fa-eye"></i> Мысал тапсырмалармен танысу
+        </button>
+        <div id="try-example-box" style="display: none">
+            <ol>
+                <li><a href="/file/marathon/2,3,4-grade.pdf">2,3,4 сынып</a></li>
+                <li><a href="/file/marathon/5,6-grade.pdf">5,6 сынып</a></li>
+                <li><a href="/file/marathon/7,8-grade.pdf">7,8 сынып</a></li>
+                <li><a href="/file/marathon/9,10,11-grade.pdf">9,10,11 сынып</a></li>
+            </ol>
         </div>
+    </div>
+    
+    <div class="col-md-4">
+        <button id="check-assignment-btn" class="btn btn-info w-100">
+            <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
+        </button>
+        
+        <div id="check-assignment-form" class="mb-5" style="display: none">
+            <?php $form = ActiveForm::begin(['action' => ['marathon/check-assignment']]) ?>
 
+            <?= $form->field($checkAssignmentForm, 'iin') ?>
+
+            <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Перейти к книгам'), ['class' => 'btn btn-success']) ?>
+
+            <?php ActiveForm::end() ?>
+        </div>
+    </div>
+</div>
+<div class="row mt-6">
+    <div class="col-md-4">
         <div class="mt-4">
             <?php $form = ActiveForm::begin() ?>
 
