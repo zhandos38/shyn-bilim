@@ -13,7 +13,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 /** @var $checkAssignmentForm \frontend\models\CheckAssignmentForm  */
 ?>
 <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
         <h2>
          <?= $this->title ?>
         </h2>
@@ -29,13 +29,13 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             <button id="try-example-btn" class="btn btn-info">
                 Мысал тапсырмалармен танысу
             </button>
-            <div id="try-example-box" style-"display: none">
-                <ul>
+            <div id="try-example-box" style="display: none">
+                <ol>
                     <li><a href="/file/marathon/2,3,4-grade.pdf">2,3,4 сынып</a></li>
                     <li><a href="/file/marathon/5,6-grade.pdf">5,6 сынып</a></li>
                     <li><a href="/file/marathon/7,8-grade.pdf">7,8 сынып</a></li>
                     <li><a href="/file/marathon/9,10,11-grade.pdf">9,10,11 сынып</a></li>
-                </ul>
+                </ol>
             </div>
             
             <a id="check-assignment-btn" href="javaScript:void(0);" style="color: blue">
