@@ -73,7 +73,10 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 </div>
 <?php $form = ActiveForm::begin() ?>
 
-<div class="row mt-6">
+<div class="row mt-4">
+    <div class="col-md-12 text-center">
+        <p>Марафонға қатысу үшін анкетаны толтырыңыз</p>
+    </div>
     <div class="col-md-4">
         <?= $form->field($model, 'surname') ?>
 
