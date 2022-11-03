@@ -12,12 +12,31 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
 /** @var $checkAssignmentForm \frontend\models\CheckAssignmentForm  */
 ?>
+<div class="row justify-content-center">
+    div class="col-md-4">
+        <h2>
+         <?= $this->title ?>
+        </h2>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-4">
         <div>
             <a id="check-assignment-btn" href="/file/marathon-2022/rule.pdf" style="color: blue">
                 Бекітілген ереженмен танысу
             </a>
+            
+            <button id="try-example-btn" class="btn btn-info">
+                Мысал тапсырмалармен танысу
+            </button>
+            <div id="try-example-box" style-"display: none">
+                <ul>
+                    <li><a href="/file/marathon/2,3,4-grade.pdf">2,3,4 сынып</a></li>
+                    <li><a href="/file/marathon/5,6-grade.pdf">5,6 сынып</a></li>
+                    <li><a href="/file/marathon/7,8-grade.pdf">7,8 сынып</a></li>
+                    <li><a href="/file/marathon/9,10,11-grade.pdf">9,10,11 сынып</a></li>
+                </ul>
+            </div>
             
             <a id="check-assignment-btn" href="javaScript:void(0);" style="color: blue">
                 <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
@@ -156,6 +175,10 @@ $('#marathon-city_id').change(function() {
 
 $('#toggleBtn').click(function() {
   $('#toggleText').toggle('ease');
+});
+            
+$('#try-example-btn').click(function() {
+  $('#try-example-box').toggle('ease');
 });
 
 $('#check-assignment-btn').click(function() {
