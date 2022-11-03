@@ -74,6 +74,15 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 <?php $form = ActiveForm::begin() ?>
 
 <div class="row mt-4">
+    <div class="col-md-12">
+        <button id="monitoring-btn" class="btn btn-primary"><i class="fa fa-bar-chart"></i> Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері</button>
+        <div id="monitoring-box" style="display: none;">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
     <div class="col-md-12 text-center">
         <p>Марафонға қатысу үшін анкетаны толтырыңыз</p>
     </div>
@@ -210,8 +219,38 @@ $('#try-example-btn').click(function() {
 $('#check-assignment-btn').click(function() {
   $('#check-assignment-form').toggle('ease');
 });
+
+$('#monitoring-btn').click(function() {
+  $('#monitoring-box').toggle('ease');
+});
+
+var xValues = ["Түркістан облысы", "Шымкент қаласы", "Басқа аймақтар"];
+var yValues = [1627, 1017, 811];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Марафон "КАНИКУЛДА КІТАП ОҚИМЫЗ" 2021 нәтижелері"
+    }
+  }
+});
 JS;
 
 
 $this->registerJs($js);
+$this->registerJs("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js", ['position' => \yii\web\View::POS_END);
 ?>
