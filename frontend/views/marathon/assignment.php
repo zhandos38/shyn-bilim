@@ -20,7 +20,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div>
             <div>
                 <a id="check-assignment-btn" href="/file/marathon-2022/rule.pdf">
@@ -30,7 +30,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
                 </a>
             </div>
             
-            <div>
+            <div class="mt-2">
                 <button id="try-example-btn" class="btn btn-info">
                     <i class="fa fa-eye"></i> Мысал тапсырмалармен танысу
                 </button>
@@ -44,7 +44,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
                 </div>
             </div>
             
-            <div>
+            <div class="mt-2">
                 <button id="check-assignment-btn btn btn-info" href="javaScript:void(0);">
                     <i class="fa fa-info"></i> <?= Yii::t('app', 'Вы уже заполняли анкету?') ?>
                 </button>
