@@ -252,5 +252,5 @@ JS;
 
 
 $this->registerJs($js);
-$this->registerJs("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js", ['position' => \yii\web\View::POS_END);
+$this->registerJs("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js", ['position' => \yii\web\View::POS_END]);
 ?>
