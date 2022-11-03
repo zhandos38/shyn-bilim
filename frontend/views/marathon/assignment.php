@@ -14,9 +14,11 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 ?>
 <div class="row justify-content-center">
     <div class="col-md-12 text-center">
-        <h4>
-         <?= $this->params['heroDescription'] ?>
-        </h4>
+        <div style="background-image: url('/img/marathon-2022/marathon-books.webp');">
+            <h4>
+             <?= $this->params['heroDescription'] ?>
+            </h4>
+        </div>
     </div>
 </div>
 <div class="row">
