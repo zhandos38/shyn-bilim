@@ -193,4 +193,9 @@ class MarathonController extends Controller
 
         return $pdf->render();
     }
+
+    public function actionInfo()
+    {
+        return $this->render('info');
+    }
 }

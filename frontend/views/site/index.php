@@ -87,17 +87,19 @@ $this->registerMetaTag([
                         <!-- end feature box item-->
                     </div>
                     <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Idea icon-medium text-green"></i>
+                        <a href="<?= Url::to(['marathon/info']) ?>">
+                            <!-- start feature box item-->
+                            <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
+                                <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
+                                    <i class="line-icon-Idea icon-medium text-green"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
+                                    <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
+                                </div>
                             </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
-                                <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
-                            </div>
-                        </div>
-                        <!-- end feature box item-->
+                            <!-- end feature box item-->
+                        </a>
                     </div>
                 </div>
             </div>
