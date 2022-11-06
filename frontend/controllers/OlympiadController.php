@@ -594,6 +594,20 @@ class OlympiadController extends Controller
         ]);
     }
 
+//    public function actionExportQuestions($test_subject_id)
+//    {
+//        $text = "";
+//        $questions = Question::findAll(['test_subject_id' => $test_subject_id]);
+//        foreach ($questions as $question) {
+//            $text .= "" . $question->text . "\n";
+//            $answers = $question->getAnswers();
+//            /** @var Answer $answer */
+//            foreach ($answers as $answer) {
+//                $text .= $answer->text . "\n";
+//            }
+//        }
+//    }
+
     public function checkSign($data, $url):bool
     {
         $array = $data;
