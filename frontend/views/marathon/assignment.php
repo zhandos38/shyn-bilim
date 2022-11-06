@@ -10,6 +10,7 @@ $this->title = 'Марафон';
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
+/** @var $model \yii\rbac\Assignment  */
 /** @var $checkAssignmentForm \frontend\models\CheckAssignmentForm  */
 ?>
 <div class="row justify-content-center">
