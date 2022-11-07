@@ -13,7 +13,10 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <img src="/img/marathon-2022/banner-info.jpg" style="width: 100%" />
+                        <a href="/file/marathon-2022/folder1/2.doc">✓✓«КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауы документ</a>
+                        <div>
+                            <img src="/img/marathon-2022/banner-info.jpg" style="width: 100%" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,20 +28,44 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/1. Мектеп оқушыларының кітап оқуға белсенділігі артады;.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/2. Мектеп оқушыларының оқырман белсенділігі және оқырман біліктілігін дамытуға бағытталған жоба жүйесі қалыптасады.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/3. Отбасылық кітап оқу дәстүрі жаңғыртылады;.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/5. Оқушылардың оқырмандық мәдени тәрбиесі, көркем әдебиетке, кітапқа деген қызығушылығы дамиды;.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/6. Оқушылар электронды кітаптарды оқуды меңгереді.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/7. Оқушылар цифрлық технологияларды игереді..jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауын өткізу масштабы
-                        – Республика көлемінде. Бұқаралығы - 2-11 сынып оқушылары.
+                        3. АНАЛИТИКАЛЫҚ АНЫҚТАМА (МАСШТАБЫН, БҰҚАРАЛЫҒЫН, КӘСІБИ МӘРТЕБЕСІН, ДЕРЕККӨЗДЕРГЕ СІЛТЕМЕЛЕРІН КӨРСЕТЕ ОТЫРЫП)
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div>
+                            «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауын өткізу масштабы
+                            – Республика көлемінде. Бұқаралығы - 2-11 сынып оқушылары.
+                        </div>
+                        <div>
+                            <a href="/file/marathon-2022/folder3/marathon-2021.xlsx">Документ marathon-2021.xlsx</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,7 +77,9 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div>
+                            <a href="/file/marathon-2022/folder4/ЕРЕЖЕ БЕКІТУ.pdf">Документ ЕРЕЖЕ БЕКІТУ.pdf</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,7 +91,9 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div>
+                            <a href="/file/marathon-2022/folder5/5.docx">БАҒАЛАУ КРИТЕРИЙЛЕРІ</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,18 +105,120 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div>
+                            <ol>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Жетісай.docx">Жетісай.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Мақтаарал.docx">Мақтаарал.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Маңғыстау облысы.docx">Маңғыстау облысы.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Ордабасы.docx">Ордабасы.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Ордабасы.docx">Отырар.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Сарыағаш.docx">Сарыағаш.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Сауран.docx">Сауран.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Созақ.docx">Созақ.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Түркістан.docx">Түркістан.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Төле би.docx">Төле би.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/Қазығұрт.docx">Қазығұрт.docx</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <ol>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№9.docx">№9.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№15.docx">№15.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№24.docx">№24.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№27.docx">№27.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№35.docx">№35.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№48.docx">№48.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№50.docx">№50.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№52.docx">№52.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№53.docx">№53.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№70.docx">№70.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№87.docx">№87.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№93.docx">№93.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№109.docx">№109.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№111.docx">№111.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№127.docx">№127.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№131.docx">№131.docx</a>
+                                </li>
+                                <li>
+                                    <a href="/file/marathon-2022/folder6/№138.docx">№138.docx</a>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                        7. Апелляцияға сілтеме.
+                        7. АПЕЛЛЯЦИЯЛЫҚ КОМИССИЯ.
                     </button>
                 </h2>
                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
+                        <div>
+                            <p>
+                                Апелляциялық комиссияның негізгі мақсаты байқауға қатысушы мен қазылар алқасы арасындағы даулы жағдайды шешу болып табылады.
+                                Апелляцялық комиссия құқылы:
+                                <br>• олимпиада қатысушыларының апелляцияларын қабылдау және қарау; Апелляциялық комиссия жауапты:
+                                <br>• олимпиадаға қатысушылардың апелляцияға өтініштерін тіркеуге;
+                                <br>• олимпиадаға қатысушылардың өтініштерін объективті қарауға.
+                            </p>
+                            <br>
+                            Апелляцияға сілтеме:
+                        </div>
                         <a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
                         <br>
                         <a href="https://wa.me/77753129906">https://wa.me/77753129906</a>
@@ -100,19 +233,42 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <a href="/file/marathon-2022/folder8/МЕМОРАНДУМ 01.pdf">МЕМОРАНДУМ</a>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTen">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                        9. Оқушылары каникулда 100 пайыз кітап оқыған мектептер тізімі.
+                        9. Оқушылары каникулда «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафонына қатысып, 100 пайыз кітап оқыған мектептер тізімі.
                     </button>
                 </h2>
                 <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <br><h6>Республика бойынша «ЕҢ КӨП КІТАП ОҚИТАН МЕКТЕП» номинациясына ие болған мектептер тізімі:</h6>
+                        <br><b>Жамбыл облысы:</b>
+                        <br>Жамбыл ауданы, «Жамбыл атындағы бастауыш мектебі» КММ
+                        <br><b>Алматы қаласы:</b>
+                        <br>"№142 жалпы білім беретін мектеп" КММ
+                        <br><b>Қызылорда облысы:</b>
+                        <br>Арал ауданы - 248 орта мектебі
+                        <br>Жаңарқорған ауданы - №51 қазақ орта мектебі
+                        <br>Арал ауданы - Т.Ізтілеуов атындағы №29 қазақ орта мектебі
+                        <br><b>Түркістан облысы:</b>
+                        <br>Келес ауданы - №53 Құркелес жалпы білім беретін мектеп
+                        <br>Сайрам ауданы - К.Тленшин жалпы білім беретін мектеп
+                        <br>Сауран ауданы – Игүнекей жалпы білім беретін мектеп
+                        <br>Түркістан қаласы -№14 жалпы білім беретін мектеп
+                        <br>Қазығұрт ауданы - «Болашақ» мектеп-гимназия
+                        <br>Мақтарал ауданы - №9 жалпы білім беретін мектеп
+                        <br>Шардара ауданы – «Жаушықұм» мектеп-лицей
+                        <br>Созақ ауданы - І. Кеңесбаев атындағы жалпы білім беретін мектеп
+                        <br>Бәйдібек ауданы - М.Әуезов атындағы жалпы білім беретін мектеп
+                        <br>Кентау қаласы - Махмуд Қашқари атындағы жаратылыстану бағытындағы мл
+                        <br>Отырар ауданы - Ө.Жәнібеков атындағы №4 жалпы орта лицей-интернаты
+                        <br><b>Шымкент қаласынан:</b>
+                        <br>№27 «Мәртөбе» жалпы білім беретін орта мектеп
+                        <br>№24 Саттар Ерубаев атындағы мектеп-лицейі
                     </div>
                 </div>
             </div>
@@ -124,7 +280,41 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/1.jpeg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/2.JPG" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/3.JPG" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/4.jpeg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/5.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/6.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/7.jpeg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/261491078_626436925439864_4703705522924381643_n.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/263740455_441135317590967_5755856218951685385_n.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/267742941_1251625608656165_7902292520123960421_n.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder10/272973235_2026991037474497_4241443834245965647_n.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,3 +349,13 @@ $this->params['heroDescription'] = 'Ақпарат';
         </div>
     </div>
 </div>
+<?php
+$js =<<<JS
+$(document).ready(function(){
+    $('#lightgallery').lightGallery(); 
+});
+JS;
+
+$this->registerJsFile("/js/lightGallery.js");
+$this->registerJs($js);
+?>
