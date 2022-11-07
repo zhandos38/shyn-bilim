@@ -30,22 +30,25 @@ $this->params['heroDescription'] = 'Ақпарат';
                     <div class="accordion-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/1. Мектеп оқушыларының кітап оқуға белсенділігі артады;.jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic1.jpg" alt="">
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/2. Мектеп оқушыларының оқырман белсенділігі және оқырман біліктілігін дамытуға бағытталған жоба жүйесі қалыптасады.jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic2.jpg" alt="">
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/3. Отбасылық кітап оқу дәстүрі жаңғыртылады;.jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic3.jpg" alt="">
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/5. Оқушылардың оқырмандық мәдени тәрбиесі, көркем әдебиетке, кітапқа деген қызығушылығы дамиды;.jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic4.jpg" alt="">
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/6. Оқушылар электронды кітаптарды оқуды меңгереді.jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic5.jpg" alt="">
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/7. Оқушылар цифрлық технологияларды игереді..jpg" alt="">
+                                <img src="/file/marathon-2022/folder2/pic6.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/marathon-2022/folder2/pic7.jpg" alt="">
                             </div>
                         </div>
                     </div>
