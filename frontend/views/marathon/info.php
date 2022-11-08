@@ -30,25 +30,46 @@ $this->params['heroDescription'] = 'Ақпарат';
                     <div class="accordion-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic1.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic1.jpg" alt="">
+                                    <p>1. Мектеп оқушыларының кітап оқуға белсенділігі артады;.JPG</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic2.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic2.jpg" alt="">
+                                    <p>2. Мектеп оқушыларының оқырман белсенділігі және оқырман біліктілігін дамытуға бағытталған жоба жүйесі қалыптасады</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic3.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic3.jpg" alt="">
+                                    <p>3. Отбасылық кітап оқу дәстүрі жаңғыртылады;</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic4.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic4.jpg" alt="">
+                                    <p>4. Жас ұрпақтың өскелең талабын қанағаттандыратын, рухани байлығын, жалпы ой-өрісін дамытатын, жоғары эстетикалық талап-талғамын қалыптастыратын ең үлкен де ұлы тәрбие құралы жақ</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic5.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic5.jpg" alt="">
+                                    <p>5. Оқушылардың оқырмандық мәдени тәрбиесі, көркем әдебиетке, кітапқа деген қызығушылығы дамиды;</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic6.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic6.jpg" alt="">
+                                    <p>6. Оқушылар электронды кітаптарды оқуды меңгереді</p>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder2/pic7.jpg" alt="">
+                                <div class="text-center">
+                                    <img src="/file/marathon-2022/folder2/pic7.jpg" alt="">
+                                    <p>7. Оқушылар цифрлық технологияларды игереді.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
