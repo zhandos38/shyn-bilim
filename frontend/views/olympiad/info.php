@@ -13,7 +13,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <a href="/file/olympiad-math-2022/folder1/ОЛИМПИАДАЛАР бойынша.docx">Документ</a>
+                        <a href="/file/olympiad-math-2022/folder1/ОЛИМПИАДАЛАР бойынша.docx">ОЛИМПИАДАЛАР бойынша.docx</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                       <a href="/file/olympiad-math-2022/folder2/2.doc">Документ</a>
+                       <a href="/file/olympiad-math-2022/folder2/2.docx">Документ</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <a href="/file/olympiad-math-2022/folder3/3.doc">Документ</a>
+                            <a href="/file/olympiad-math-2022/folder3/3.docx">Документ</a>
                         </div>
                     </div>
                 </div>
