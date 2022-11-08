@@ -219,41 +219,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/1.jpeg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/2.JPG" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/3.JPG" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/4.jpeg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/5.jpg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/6.jpg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/7.jpeg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/261491078_626436925439864_4703705522924381643_n.jpg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/263740455_441135317590967_5755856218951685385_n.jpg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/267742941_1251625608656165_7902292520123960421_n.jpg" alt="">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/file/marathon-2022/folder10/272973235_2026991037474497_4241443834245965647_n.jpg" alt="">
-                            </div>
-                        </div>
+                        <a href="/file/olympiad-math-2022/folder10/11.docx">Интернет ресурстардағы пікірлер.docx</a>
                     </div>
                 </div>
             </div>
@@ -265,23 +231,38 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <div>
-                            2021 жыл:
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;color:black;'>-</span> <a href="https://www.facebook.com/100015419883057/posts/pfbid02be56EXYayuyVhavxFNp2V7arWhdQ1KMt54Qm1ScQgMua8vQWRHT1XkN4agLn9Rkzl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100015419883057/posts/pfbid02be56EXYayuyVhavxFNp2V7arWhdQ1KMt54Qm1ScQgMua8vQWRHT1XkN4agLn9Rkzl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;color:black;'>-</span> <a href="https://www.facebook.com/100029004851547/posts/pfbid02dULEGVGCSoXNj7Nu67xMMsFAKHt7BNzJPcJpGnNeyY7gvCa975SoP4d27jPtHoZZl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100029004851547/posts/pfbid02dULEGVGCSoXNj7Nu67xMMsFAKHt7BNzJPcJpGnNeyY7gvCa975SoP4d27jPtHoZZl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;color:black;'>-</span> <a href="https://www.facebook.com/100071551248592/posts/pfbid02MeK4Qrxga7BywNMFQAxUfbTX5UsPX3G2nHCszayiZY9RyVEMuRophBgyF9mbWsh7l/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100071551248592/posts/pfbid02MeK4Qrxga7BywNMFQAxUfbTX5UsPX3G2nHCszayiZY9RyVEMuRophBgyF9mbWsh7l/?d=n</span></a></p>
-                        </div>
-                        <div>
-                            2022 жыл:
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>&nbsp;</span><a href="https://www.facebook.com/100052910271312/posts/pfbid02BizZoD1wvG2yhQEVBqDYKSPNRxgupLtvbvFWPSnKBnQ9kmMzk3mfgu4E6fgAwVNNl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100052910271312/posts/pfbid02BizZoD1wvG2yhQEVBqDYKSPNRxgupLtvbvFWPSnKBnQ9kmMzk3mfgu4E6fgAwVNNl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/100063642390673/posts/pfbid0tKg1v9kqveAGoGi4iWKphtKVbN79HVpq7tLaC2VneK3UvSecT1wguZsy9YCawLF5l/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100063642390673/posts/pfbid0tKg1v9kqveAGoGi4iWKphtKVbN79HVpq7tLaC2VneK3UvSecT1wguZsy9YCawLF5l/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/100074672530470/posts/pfbid0g95EntveAL45VHhAqpUUtgXo82ETtxaLVv5bdUSFTGDBctP1G6VQznBGWzQVxZbl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100074672530470/posts/pfbid0g95EntveAL45VHhAqpUUtgXo82ETtxaLVv5bdUSFTGDBctP1G6VQznBGWzQVxZbl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/109271831538728/posts/pfbid0327apVZx66BJbn9TeAh4DRHyQiZSVHuoavnUJuLybBFY7BUqCeZqRTQqnYDEZAo8kl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/109271831538728/posts/pfbid0327apVZx66BJbn9TeAh4DRHyQiZSVHuoavnUJuLybBFY7BUqCeZqRTQqnYDEZAo8kl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/100048235103559/posts/pfbid0Zr6yqaJCmQV3C1kctwxE14q9nVar8r8xSh9wbPg9F2qp2jiDdczxQXH8NR5B1AN2l/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100048235103559/posts/pfbid0Zr6yqaJCmQV3C1kctwxE14q9nVar8r8xSh9wbPg9F2qp2jiDdczxQXH8NR5B1AN2l/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/109271831538728/posts/pfbid02RSb7XeG76G6iDbKKNggx6EcsV92iTvLsXpCodEtztEiEgbthohhD8XfDwgBqHMiEl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/109271831538728/posts/pfbid02RSb7XeG76G6iDbKKNggx6EcsV92iTvLsXpCodEtztEiEgbthohhD8XfDwgBqHMiEl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/109271831538728/posts/pfbid02PmB24s38zCE1ro4sYYyTXzXQ5E1tG26j7SjkpMG69LsFh3ss5q8ATb4QxB4nqA9Nl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/109271831538728/posts/pfbid02PmB24s38zCE1ro4sYYyTXzXQ5E1tG26j7SjkpMG69LsFh3ss5q8ATb4QxB4nqA9Nl/?d=n</span></a></p>
-                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>-</span> <a href="https://www.facebook.com/100040819761746/posts/pfbid0mM3qC2pkUm6iP9GmYu6W5wWRkgcYuZH2Q2NzFg9nnjUZc44azC1i5YfyMJWmGXGgl/?d=n"><span style='font-size:16px;line-height:115%;font-family:"Times New Roman",serif;'>https://www.facebook.com/100040819761746/posts/pfbid0mM3qC2pkUm6iP9GmYu6W5wWRkgcYuZH2Q2NzFg9nnjUZc44azC1i5YfyMJWmGXGgl/?d=n</span></a></p>
-                        </div>
+                        <ol>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/2 класс ҚАЗАҚША+.docx">2 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/2 класс ҚАЗАҚША+.docx">3 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/3 класс ҚАЗАҚША+.docx">4 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/5  класс ҚАЗАҚША+.docx">5  класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/6  класс ҚАЗАҚША+.docx">6  класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/7 класс ҚАЗАҚША+.docx">7 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/8 класс ҚАЗАҚША+.docx">8 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/9 класс ҚАЗАҚША+.docx">9 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/10- класс ҚАЗАҚША+.docx">10 класс ҚАЗАҚША+.docx</a>
+                            </li>
+                            <li>
+                                <a href="/file/olympiad-math-2022/folder11/11- класс ҚАЗАҚША+.docx">11- класс ҚАЗАҚША+.docx</a>
+                            </li>
+                        <ol>
                     </div>
                 </div>
             </div>
