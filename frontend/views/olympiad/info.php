@@ -13,10 +13,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <a href="/file/marathon-2022/folder1/2.doc">✓✓«КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауы документ</a>
-                        <div>
-                            <img src="/img/marathon-2022/banner-info.jpg" style="width: 100%" />
-                        </div>
+                        <a href="/file/olympiad-math-2022/folder1/ОЛИМПИАДАЛАР бойынша.docx">Документ</a>
                     </div>
                 </div>
             </div>
@@ -28,50 +25,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic1.jpg" alt="">
-                                    <p>1. Мектеп оқушыларының кітап оқуға белсенділігі артады</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic2.jpg" alt="">
-                                    <p>2. Мектеп оқушыларының оқырман белсенділігі және оқырман біліктілігін дамытуға бағытталған жоба жүйесі қалыптасады</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic3.jpg" alt="">
-                                    <p>3. Отбасылық кітап оқу дәстүрі жаңғыртылады;</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic4.jpg" alt="">
-                                    <p>4. Жас ұрпақтың өскелең талабын қанағаттандыратын, рухани байлығын, жалпы ой-өрісін дамытатын, жоғары эстетикалық талап-талғамын қалыптастыратын ең үлкен де ұлы тәрбие құралы жақ</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic5.jpg" alt="">
-                                    <p>5. Оқушылардың оқырмандық мәдени тәрбиесі, көркем әдебиетке, кітапқа деген қызығушылығы дамиды;</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic6.jpg" alt="">
-                                    <p>6. Оқушылар электронды кітаптарды оқуды меңгереді</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-center">
-                                    <img src="/file/marathon-2022/folder2/pic7.jpg" alt="">
-                                    <p>7. Оқушылар цифрлық технологияларды игереді.</p>
-                                </div>
-                            </div>
-                        </div>
+                       <a href="/file/olympiad-math-2022/folder2/2.doc">Документ</a>
                     </div>
                 </div>
             </div>
@@ -84,11 +38,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауын өткізу масштабы
-                            – Республика көлемінде. Бұқаралығы - 2-11 сынып оқушылары.
-                        </div>
-                        <div>
-                            <a href="/file/marathon-2022/folder3/marathon-2021.xlsx">Документ marathon-2021.xlsx</a>
+                            <a href="/file/olympiad-math-2022/folder3/3.doc">Документ</a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +52,16 @@ $this->params['heroDescription'] = 'Ақпарат';
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <a href="/file/marathon-2022/folder4/ЕРЕЖЕ БЕКІТУ.pdf">Документ ЕРЕЖЕ БЕКІТУ.pdf</a>
+                            <a href="/file/olympiad-math-2022/folder4/Қосымша 1 ЖАС МАТЕМАТИК.doc">Қосымша 1 ЖАС МАТЕМАТИК.doc</a>
+                            <br>
+                            <a href="/file/olympiad-math-2022/folder4/Қосымша 1 «YOUNG MATHEMATICIAN».pdf">Қосымша 1 «YOUNG MATHEMATICIAN».pdf</a>
+                            <div>
+                                <img src="/file/olympiad-math-2022/folder4/ереже1 ЖАС МАТЕМАТИК.jpeg" style="width: 100%" />
+                                <br>
+                                <img src="/file/olympiad-math-2022/folder4/БЕКИТЕМИН1 ЖАС МАТЕМАТИК.jpeg" style="width: 100%" />
+                                <br>
+                                <img src="/file/olympiad-math-2022/folder4/БЕКИТЕМИН2 ЖАС МАТЕМАТИК.jpeg" style="width: 100%" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,13 +69,13 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        5 - БАҒАЛАУ КРИТЕРИЙЛЕРІ
+                        5 БАҒАЛАУ КРИТЕРИЙЛЕРІ
                     </button>
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <a href="/file/marathon-2022/folder5/5.docx">БАҒАЛАУ КРИТЕРИЙЛЕРІ</a>
+                            <a href="/file/olympiad-math-2022/folder5/5.docx">БАҒАЛАУ КРИТЕРИЙЛЕРІ</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +83,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSeven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                       6 ПАПКА - ҚАТЫСУШЫЛАР
+                       6 ҚАТЫСУШЫЛАР
                     </button>
                 </h2>
                 <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
@@ -132,92 +91,16 @@ $this->params['heroDescription'] = 'Ақпарат';
                         <div>
                             <ol>
                                 <li>
-                                    <a href="/file/marathon-2022/folder6/Жетісай.docx">Жетісай.docx</a>
+                                    <a href="/file/olympiad-math-2022/folder6/Алтын қыран қатысушылар саны - 2021.ods">Алтын қыран қатысушылар саны - 2021.ods</a>
                                 </li>
                                 <li>
-                                    <a href="/file/marathon-2022/folder6/Мақтаарал.docx">Мақтаарал.docx</a>
+                                    <a href="/file/olympiad-math-2022/folder6/Алтын ұрпақ қатысушылары - 2021.ods">Алтын ұрпақ қатысушылары - 2021.ods</a>
                                 </li>
                                 <li>
-                                    <a href="/file/marathon-2022/folder6/Маңғыстау облысы.docx">Маңғыстау облысы.docx</a>
+                                    <a href="/file/olympiad-math-2022/folder6/Ең білімді педагог- 2021.ods">Ең білімді педагог- 2021.ods</a>
                                 </li>
                                 <li>
-                                    <a href="/file/marathon-2022/folder6/Ордабасы.docx">Ордабасы.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Ордабасы.docx">Отырар.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Сарыағаш.docx">Сарыағаш.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Сауран.docx">Сауран.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Созақ.docx">Созақ.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Түркістан.docx">Түркістан.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Төле би.docx">Төле би.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/Қазығұрт.docx">Қазығұрт.docx</a>
-                                </li>
-                            </ol>
-                        </div>
-                        <div>
-                            <ol>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№9.docx">№9.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№15.docx">№15.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№24.docx">№24.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№27.docx">№27.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№35.docx">№35.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№48.docx">№48.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№50.docx">№50.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№52.docx">№52.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№53.docx">№53.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№70.docx">№70.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№87.docx">№87.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№93.docx">№93.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№109.docx">№109.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№111.docx">№111.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№127.docx">№127.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№131.docx">№131.docx</a>
-                                </li>
-                                <li>
-                                    <a href="/file/marathon-2022/folder6/№138.docx">№138.docx</a>
+                                    <a href="/file/olympiad-math-2022/folder6/Жас математик -2021 жыл қатысушылар.ods">Жас математик -2021 жыл қатысушылар.ods</a>
                                 </li>
                             </ol>
                         </div>
@@ -233,13 +116,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <p>
-                                Апелляциялық комиссияның негізгі мақсаты байқауға қатысушы мен қазылар алқасы арасындағы даулы жағдайды шешу болып табылады.
-                                Апелляцялық комиссия құқылы:
-                                <br>• олимпиада қатысушыларының апелляцияларын қабылдау және қарау; Апелляциялық комиссия жауапты:
-                                <br>• олимпиадаға қатысушылардың апелляцияға өтініштерін тіркеуге;
-                                <br>• олимпиадаға қатысушылардың өтініштерін объективті қарауға.
-                            </p>
+                            <a href="/file/olympiad-math-2022/folder7/7.docx">7.docx</a>
                             <br>
                             Апелляцияға сілтеме:
                         </div>
@@ -257,7 +134,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <a href="/file/marathon-2022/folder8/МЕМОРАНДУМ 01.pdf">МЕМОРАНДУМ</a>
+                        <a href="/file/olympiad-math-2022/folder8/МЕМОРАНДУМ 01.pdf">МЕМОРАНДУМ</a>
                     </div>
                 </div>
             </div>
@@ -269,30 +146,68 @@ $this->params['heroDescription'] = 'Ақпарат';
                 </h2>
                 <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <br><h6>Республика бойынша «ЕҢ КӨП КІТАП ОҚИТАН МЕКТЕП» номинациясына ие болған мектептер тізімі:</h6>
-                        <br><b>Жамбыл облысы:</b>
-                        <br>Жамбыл ауданы, «Жамбыл атындағы бастауыш мектебі» КММ
-                        <br><b>Алматы қаласы:</b>
-                        <br>"№142 жалпы білім беретін мектеп" КММ
-                        <br><b>Қызылорда облысы:</b>
-                        <br>Арал ауданы - 248 орта мектебі
-                        <br>Жаңарқорған ауданы - №51 қазақ орта мектебі
-                        <br>Арал ауданы - Т.Ізтілеуов атындағы №29 қазақ орта мектебі
-                        <br><b>Түркістан облысы:</b>
-                        <br>Келес ауданы - №53 Құркелес жалпы білім беретін мектеп
-                        <br>Сайрам ауданы - К.Тленшин жалпы білім беретін мектеп
-                        <br>Сауран ауданы – Игүнекей жалпы білім беретін мектеп
-                        <br>Түркістан қаласы -№14 жалпы білім беретін мектеп
-                        <br>Қазығұрт ауданы - «Болашақ» мектеп-гимназия
-                        <br>Мақтарал ауданы - №9 жалпы білім беретін мектеп
-                        <br>Шардара ауданы – «Жаушықұм» мектеп-лицей
-                        <br>Созақ ауданы - І. Кеңесбаев атындағы жалпы білім беретін мектеп
-                        <br>Бәйдібек ауданы - М.Әуезов атындағы жалпы білім беретін мектеп
-                        <br>Кентау қаласы - Махмуд Қашқари атындағы жаратылыстану бағытындағы мл
-                        <br>Отырар ауданы - Ө.Жәнібеков атындағы №4 жалпы орта лицей-интернаты
-                        <br><b>Шымкент қаласынан:</b>
-                        <br>№27 «Мәртөбе» жалпы білім беретін орта мектеп
-                        <br>№24 Саттар Ерубаев атындағы мектеп-лицейі
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/Алтын ұрпақ 1.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҚ 1.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҚ2.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҚ3.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҚ5.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ2.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ3.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ4.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ5.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ6.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ8.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ9.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ10.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ11.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ12.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ13.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ14.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ15.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/АҰ16.jpg" alt="">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/file/olympiad-math-2022/folder9/168506493_1814174065416542_8559931446544239180_n.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
