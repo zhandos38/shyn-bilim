@@ -8,7 +8,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        1. «КАНИКУЛДА КІТАП ОҚИМЫЗ» МАРАФОН-БАЙҚАУЫ
+                        1 БАННЕР-АФИША
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -23,7 +23,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        2. «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауының мақсаты.
+                        2 ОЛИМПИАДА МАҚСАТТАРЫ
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -78,7 +78,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. АНАЛИТИКАЛЫҚ АНЫҚТАМА (МАСШТАБЫН, БҰҚАРАЛЫҒЫН, КӘСІБИ МӘРТЕБЕСІН, ДЕРЕККӨЗДЕРГЕ СІЛТЕМЕЛЕРІН КӨРСЕТЕ ОТЫРЫП)
+                        3 ОЛИМПИАДА ҚАТЫСУШЫЛАРЫ
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -96,7 +96,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        4. Өткізу ережелері мен шарттары
+                        4 БЕКІТІЛГЕН ЕРЕЖЕЛЕР
                     </button>
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -110,7 +110,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        5. Марафон-байқаудың бағалау критерийлері
+                        5 - БАҒАЛАУ КРИТЕРИЙЛЕРІ
                     </button>
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -124,7 +124,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSeven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        6. Марафон-байқаудың көтермелеу жүйесі, өткен жылдардың жеңімпаздары мен жүлдегерлері туралы ақпараттар.
+                       6 ПАПКА - ҚАТЫСУШЫЛАР
                     </button>
                 </h2>
                 <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
@@ -227,7 +227,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                        7. АПЕЛЛЯЦИЯЛЫҚ КОМИССИЯ.
+                        7 АПЕЛЛЯЦИЯЛЫҚ КОМИССИЯ
                     </button>
                 </h2>
                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
@@ -252,7 +252,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingNine">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                        8. Марафон-байқауға қатысушылары педагогтердің әдістемелік, ақпараттық қолдауы. 2021 жыл Меморандум
+                        8 Дамытушы және ақпараттық орта
                     </button>
                 </h2>
                 <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
@@ -264,7 +264,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTen">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                        9. Оқушылары каникулда «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафонына қатысып, 100 пайыз кітап оқыған мектептер тізімі.
+                        9 ОЛИМПИАДА жеңімпаздарын марапаттау. Суреттер
                     </button>
                 </h2>
                 <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
@@ -299,7 +299,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingEleven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                        10. Марафон жеңімпаздарын марапаттау.
+                        10 Интернет ресурстардағы пікірлер
                     </button>
                 </h2>
                 <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
@@ -345,7 +345,7 @@ $this->params['heroDescription'] = 'Ақпарат';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwelve">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-                        11. «КАНИКУЛДА КІТАП ОҚИМЫЗ» марафон-байқауы бойынша әлеуеметтік желідегі пікірлер.
+                        11 ТАПСЫРМАЛАР
                     </button>
                 </h2>
                 <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
