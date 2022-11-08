@@ -32,7 +32,7 @@ $this->params['heroDescription'] = 'Ақпарат';
                             <div class="col-md-4">
                                 <div class="text-center">
                                     <img src="/file/marathon-2022/folder2/pic1.jpg" alt="">
-                                    <p>1. Мектеп оқушыларының кітап оқуға белсенділігі артады;.JPG</p>
+                                    <p>1. Мектеп оқушыларының кітап оқуға белсенділігі артады</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
