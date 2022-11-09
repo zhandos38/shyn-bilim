@@ -74,7 +74,8 @@ $this->registerMetaTag([
                         <!-- end feature box item-->
                     </div>
                     <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <!-- start feature box item-->
+                        <a href="<?= Url::to(['olympiad/info']) ?>">
+                            <!-- start feature box item-->
                         <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
                             <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
                                 <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
@@ -85,6 +86,7 @@ $this->registerMetaTag([
                             </div>
                         </div>
                         <!-- end feature box item-->
+                        </a>
                     </div>
                     <div class="col-12 col-lg-4 col-md-6 col-sm-8">
                         <a href="<?= Url::to(['marathon/info']) ?>">
