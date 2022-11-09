@@ -26,7 +26,7 @@ $this->registerMetaTag([
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['marathon/assignment']) ?>"
+                           href="<?= Url::to(['olympiad/assignment', 'id' => 105]) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
@@ -39,9 +39,9 @@ $this->registerMetaTag([
                            data-paddingtop="['8','8','8','8']"
                            data-paddingbottom="['8','8','8','8']"
                            data-paddingright="['7','7','7','7']"
-                           data-paddingleft="['34','34','34','34']"
+                           data-paddingleft="['14','34','34','34']"
                            style="background-color: #00B057; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Участвую') ?>
+                            Марафон олимпиадасына қатысамын (10 қарашадан бастап)
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: #007C3E; margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>

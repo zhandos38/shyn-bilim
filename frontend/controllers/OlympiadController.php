@@ -129,7 +129,7 @@ class OlympiadController extends Controller
                 return $this->redirect(['site/index']);
             }
 
-            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade, 'lang' => $model->lang]);
+            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade]);
             if (!$testOption) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
