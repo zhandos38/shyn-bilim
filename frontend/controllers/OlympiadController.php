@@ -110,7 +110,11 @@ class OlympiadController extends Controller
             $marathon = Marathon::findOne(['iin' => $model->iin]);
             if ($marathon === null) {
                 Yii::$app->session->setFlash('error', 'Енгізілген ЖСН тіркелмеген');
-                return $this->redirect(['test', 'assignment' => $model->id]);
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'checkAssignmentForm' => $checkAssignmentForm,
+                    'olympiad' => $olympiad,
+                ]);
             }
             $model->name = $marathon->name;
             $model->surname = $marathon->surname;
