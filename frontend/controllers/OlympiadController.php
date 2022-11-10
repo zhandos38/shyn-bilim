@@ -331,7 +331,7 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/index']);
         }
 
-        if ($testAssignment->point >= 5) {
+        if ($testAssignment->point >= 1) {
             $place = 'III ДӘРЕЖЕЛІ';
             if ($testAssignment->point === 20) {
                 $place = 'БАС ЖҮЛДЕ';
@@ -374,31 +374,8 @@ class OlympiadController extends Controller
             ]);
 
         } else {
-            $content = $this->renderPartial('_cert', [
-                'testAssignment' => $testAssignment,
-            ]);
-
-            // setup kartik\mpdf\Pdf component
-            $pdf = new Pdf([
-                // set to use core fonts only
-                'mode' => Pdf::MODE_UTF8,
-                'marginTop' => 0,
-                'marginLeft' => 0,
-                'marginRight' => 0,
-                'marginBottom' => 0,
-                // A4 paper format
-                'format' => Pdf::FORMAT_A4,
-                // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
-                // stream to browser inline
-                'destination' => Pdf::DEST_BROWSER,
-                'filename' => 'Сертификат.pdf',
-                // your html content input
-                'content' => $content,
-                // format content from your own css file if needed or use the
-                // enhanced bootstrap css built by Krajee for mPDF formatting
-                'cssFile' => 'css/custom.css'
-            ]);
+            Yii::$app->session->setFlash('success', 'Диплом алуға балыңыз жетпейді');
+            return $this->redirect(['olympiad/index']);
         }
 
         return $pdf->render();
