@@ -66,21 +66,21 @@ class MarathonSearch extends Marathon
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'school_id' => $this->school_id,
-            'grade' => $this->grade,
+            't1.id' => $this->id,
+            't1.school_id' => $this->school_id,
+            't1.grade' => $this->grade,
 
             't2.city_id' => $this->city_id,
             't3.region_id' => $this->region_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'surname', $this->surname])
-            ->andFilterWhere(['like', 'patronymic', $this->patronymic])
-            ->andFilterWhere(['like', 'iin', $this->iin])
-            ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'phone_parent', $this->phone_parent])
-            ->andFilterWhere(['like', 'phone_teacher', $this->phone_teacher]);
+        $query->andFilterWhere(['t1.like', 'name', $this->name])
+            ->andFilterWhere(['t1.like', 'surname', $this->surname])
+            ->andFilterWhere(['t1.like', 'patronymic', $this->patronymic])
+            ->andFilterWhere(['t1.like', 'iin', $this->iin])
+            ->andFilterWhere(['t1.like', 'phone', $this->phone])
+            ->andFilterWhere(['t1.like', 'phone_parent', $this->phone_parent])
+            ->andFilterWhere(['t1.like', 'phone_teacher', $this->phone_teacher]);
 
         return $dataProvider;
     }

@@ -103,12 +103,12 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Сұрақ: 7 775 403 7284 Жаннаның Каспий голдына төлем жасалғаннан кейін bilimshini.kz@mail.ru электронды поштасына қандай чек жіберу керекпін?
+                            5. Сұрақ: 8775 403 72 84 Жанна каспий голдына төлем жасағаннан кейін қандай чекті, қайда жіберуім қажет?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Жауап:  Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті bilimshini.kz@mail.ru электронды поштасына жіберуіңіз қажет
+                            Жауап: Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті 8775 403 72 84 вадсапқа  жіберуіңіз қажет
                         </div>
                     </div>
                 </div>
@@ -264,13 +264,13 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Вопрос: Какой чек мне нужно отправить на электронную почту bilimshini.kz@mail.ru после оплаты на Каспи голд 7 775 403 7284 Жанна?
+                            5. Вопрос: Куда отправить чек после оплаты на Каспи голд 7 775 403 7284 Жанна?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
-                                Ответ:  Вам необходимо зайти на телефоне в приложение Каспи голд и отправить зеленый развернутый чек из историй на электронную почту bilimshini.kz@mail.ru.
+                                Ответ:  Вам необходимо зайти на телефоне в приложение Каспи голд и отправить зеленый развернутый чек из историй на ватсап номер 7 775 403 7284 Жанна.
                             </p>
                         </div>
                     </div>
