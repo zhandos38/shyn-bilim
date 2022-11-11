@@ -74,13 +74,13 @@ class MarathonSearch extends Marathon
             't3.region_id' => $this->region_id,
         ]);
 
-        $query->andFilterWhere(['t1.like', 'name', $this->name])
-            ->andFilterWhere(['t1.like', 'surname', $this->surname])
-            ->andFilterWhere(['t1.like', 'patronymic', $this->patronymic])
-            ->andFilterWhere(['t1.like', 'iin', $this->iin])
-            ->andFilterWhere(['t1.like', 'phone', $this->phone])
-            ->andFilterWhere(['t1.like', 'phone_parent', $this->phone_parent])
-            ->andFilterWhere(['t1.like', 'phone_teacher', $this->phone_teacher]);
+        $query->andFilterWhere(['like', 't1.name', $this->name])
+            ->andFilterWhere(['like', 't1.surname', $this->surname])
+            ->andFilterWhere(['like', 't1.patronymic', $this->patronymic])
+            ->andFilterWhere(['like', 't1.iin', $this->iin])
+            ->andFilterWhere(['like', 't1.phone', $this->phone])
+            ->andFilterWhere(['like', 't1.phone_parent', $this->phone_parent])
+            ->andFilterWhere(['like', 't1.phone_teacher', $this->phone_teacher]);
 
         return $dataProvider;
     }
