@@ -108,7 +108,7 @@ use yii\helpers\Url; ?>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Жауап: Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті 8775 403 72 84 вадсапқа  жіберуіңіз қажет
+                            Жауап: Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті және қатысушының ЖСН 8775 403 72 84 вадсапқа жіберуіңіз қажет
                         </div>
                     </div>
                 </div>
