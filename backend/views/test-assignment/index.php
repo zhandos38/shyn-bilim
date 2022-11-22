@@ -8,6 +8,7 @@ use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\helpers\Html;
 use common\models\Test;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TestAssignmentSearch */
@@ -26,13 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'title' => $this->title
     ]) ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'options' => [
-            'class' => 'table-responsive'
-        ],
-        'columns' => [
+    <?php
+        $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
@@ -95,7 +91,22 @@ $this->params['breadcrumbs'][] = $this->title;
             //'finished_at',
 
             ['class' => 'yii\grid\ActionColumn'],
+        ];
+
+        echo ExportMenu::widget([
+            'dataProvider' => $dataProvider,
+            'columns' => $gridColumns,
+            'clearBuffers' => true, //optional
+        ]);
+    ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'options' => [
+            'class' => 'table-responsive'
         ],
+        'columns' => $gridColumns,
     ]); ?>
 
     <?php LteBox::end() ?>

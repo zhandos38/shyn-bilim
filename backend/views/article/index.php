@@ -7,6 +7,7 @@ use insolita\wgadminlte\LteConst;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\ProjectArticleSearch */
@@ -29,12 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+    <?php
+        $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
@@ -74,7 +71,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
 
             ['class' => 'yii\grid\ActionColumn'],
-        ],
+        ];
+        echo ExportMenu::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => $gridColumns,
+        'clearBuffers' => true, //optional
+        ]);
+    ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => $gridColumns,
     ]) ?>
 
     <?php LteBox::end() ?>
