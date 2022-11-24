@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'city_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->school !== null ? $model->school->city->name : 'Не указано';
+                    return $model->school !== null && $model->school->city !== null ? $model->school->city->name : 'Не указано';
                 },
                 'filter' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name')
             ],
