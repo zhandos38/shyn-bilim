@@ -105,24 +105,6 @@ class OlympiadController extends Controller
         $olympiad = $test->olympiad;
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            /** init marathon data */
-            /** @var Marathon $marathon */
-            $marathon = Marathon::findOne(['iin' => $model->iin]);
-            if ($marathon === null) {
-                Yii::$app->session->setFlash('error', 'Енгізілген ЖСН тіркелмеген');
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm,
-                    'olympiad' => $olympiad,
-                ]);
-            }
-            $model->name = $marathon->name;
-            $model->surname = $marathon->surname;
-            $model->patronymic = $marathon->patronymic;
-            $model->parent_name = $marathon->parent_name;
-            $model->school_id = $marathon->school_id;
-            $model->grade = $marathon->grade;
-
             if ($olympiad->status === Olympiad::STATUS_FINISHED) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
                 return $this->redirect(['site/index']);
