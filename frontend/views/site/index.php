@@ -27,7 +27,7 @@ $this->registerMetaTag([
                         <div class="overlay-bg" style="opacity: 0.3;"></div>
 
                         <!-- help text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-black font-weight-600 text-white"
+                        <div class="tp-caption tp-resizeme alt-font text-black text-white"
                              id="slide-411-layer-01"
                              data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
@@ -36,7 +36,7 @@ $this->registerMetaTag([
                              data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-160','-140']"
                              data-width="auto"
                              data-height="auto"
-                             data-fontsize="['32','26','26','26']"
+                             data-fontsize="['24','26','26','26']"
                              data-lineheight="['70','59','70','39']"
                              data-letterspacing="['0','-1','-1','-1']"
                              data-responsive="on"
@@ -54,10 +54,10 @@ $this->registerMetaTag([
                              data-type="text"
                              data-whitespace="nowrap"
                              data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-80','-50','-115','-65']"
                              data-width="auto"
                              data-height="auto"
-                             data-fontsize="['32','32','32','24']"
+                             data-fontsize="['24','32','32','24']"
                              data-lineheight="['59','59','70','39']"
                              data-letterspacing="['0','-1','-1','-1']"
                              data-responsive="on"
@@ -76,7 +76,7 @@ $this->registerMetaTag([
                              data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['85','100','-5','15']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['35','25','-5','15']"
                              data-width="auto"
                              data-height="auto"
                              data-fontsize="['36','16','19','14']"
@@ -91,10 +91,10 @@ $this->registerMetaTag([
                              data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['120','100','-5','15']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['45','35','-5','15']"
                              data-width="auto"
                              data-height="auto"
-                             data-fontsize="['36','16','19','14']"
+                             data-fontsize="['32','16','19','14']"
                              data-lineheight="['28','14','23','20']"
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
