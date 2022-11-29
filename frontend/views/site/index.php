@@ -24,7 +24,7 @@ $this->registerMetaTag([
                         <!-- main image -->
                         <img src="/img/altyn-qyran-2022/banner.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-                        <div class="overlay-bg bg-extra-dark-gray" style="opacity: 0.3;"></div>
+                        <div class="overlay-bg" style="opacity: 0.3;"></div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
