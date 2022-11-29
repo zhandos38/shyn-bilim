@@ -76,7 +76,7 @@ $this->registerMetaTag([
                              data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['0','25','-5','15']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','25','-10','-20']"
                              data-width="auto"
                              data-height="auto"
                              data-fontsize="['36','16','19','14']"
@@ -91,7 +91,7 @@ $this->registerMetaTag([
                              data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="text"
                              data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['25','45','-5','15']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['65','45','15','0']"
                              data-width="auto"
                              data-height="auto"
                              data-fontsize="['24','16','19','14']"
