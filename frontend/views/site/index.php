@@ -94,7 +94,7 @@ $this->registerMetaTag([
                              data-y="['middle','middle','middle','middle']" data-voffset="['65','45','-5','15']"
                              data-width="auto"
                              data-height="auto"
-                             data-fontsize="['32','16','19','14']"
+                             data-fontsize="['24','16','19','14']"
                              data-lineheight="['28','14','23','20']"
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
