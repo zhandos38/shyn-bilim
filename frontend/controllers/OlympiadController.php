@@ -97,14 +97,11 @@ class OlympiadController extends Controller
     public function actionAssignment($id)
     {
         $model = new TestAssignment();
-        $checkAssignmentForm = new CheckAssignmentForm();
-
-        $test = Test::findOne(['id' => $id]);
-
-        /** @var Olympiad $olympiad */
-        $olympiad = $test->olympiad;
+        $olympiad = Olympiad::findOne(['id' => $id]);
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            // Check olympiad status
+            /** @var Olympiad $olympiad */
             if ($olympiad->status === Olympiad::STATUS_FINISHED) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
                 return $this->redirect(['site/index']);
@@ -115,36 +112,38 @@ class OlympiadController extends Controller
                 return $this->redirect(['site/index']);
             }
 
-            $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade]);
-            $testSubject = TestSubject::findOne(['test_option_id' => $testOption->id, 'subject_id' => $model->subject_id]);
+            // Check test assignment
+            $testAssignment = TestAssignment::find()->andWhere(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED, 'subject_id' => $model->subject_id])->one();
+            if ($testAssignment) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
 
-            if (!$testOption || !$testSubject) {
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'olympiad' => $olympiad,
+                ]);
+            }
+
+            // Get Test
+            /** @var Test $test */
+            $tests = $this->getTestsByAssignment($model);
+
+            if (!$tests) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
                     'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm,
                     'olympiad' => $olympiad,
                 ]);
             }
 
-            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'subject_id' => $model->subject_id, 'status' => TestAssignment::STATUS_FINISHED]);
-            if ($testAssignment) {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'checkAssignmentForm' => $checkAssignmentForm,
-                    'olympiad' => $olympiad,
-                ]);
-            }
+            $model->created_at = time();
 
+            // Check whitelist
             $whiteList = WhiteList::findOne(['iin' => $model->iin, 'subject_id' => $model->subject_id]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
             }
 
-            $model->test_option_id = $testOption->id;
-            $model->created_at = time();
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
             }
@@ -174,7 +173,6 @@ class OlympiadController extends Controller
 
         return $this->render('assignment', [
             'model' => $model,
-            'checkAssignmentForm' => $checkAssignmentForm,
             'olympiad' => $olympiad,
         ]);
     }
@@ -199,26 +197,39 @@ class OlympiadController extends Controller
         return $this->redirect(['test', 'assignment' => $model->id]);
     }
 
+    public function getTestsByAssignment(TestAssignment $model)
+    {
+        $query = Test::find()
+            ->andWhere(['olympiad_id' => $model->olympiad_id])
+            ->andWhere([
+                'and',
+                ['<=', 'grade_from', $model->grade],
+                ['>=', 'grade_to', $model->grade]
+            ])
+            ->andWhere(['lang' => $model->lang]);
+
+        if (!empty($model->subject_id)) {
+            $query->andWhere(['subject_id' => $model->subject_id]);
+        }
+
+        return $query->all();
+    }
+
     public function actionTest($assignment)
     {
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
-
-        $testOption = $testAssignment->testOption;
+        if (empty($testAssignment)) {
+            throw new Exception('Произашла ошибка');
+        }
 
         if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
-        }
-
-        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
-            Yii::$app->session->setFlash('error', 'Сумма за участия в олимпиаде не оплачена!');
-            return $this->redirect(['olympiad/view', 'id' => $testAssignment->testOption->test->olympiad_id]);
+            return $this->redirect('/');
         }
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
-            'test_option_id' => $testOption->id,
-            'test_name' => $testOption->test->name
+            'olympiad_name' => $testAssignment->olympiad->name
         ]);
     }
 
@@ -230,25 +241,32 @@ class OlympiadController extends Controller
     public function actionGetTest($id)
     {
         if (Yii::$app->request->isAjax) {
-            $testOption = TestOption::findOne(['id' => $id]);
-            if ($testOption === null) {
-                throw new Exception('Test option is not found');
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            $testAssignment = TestAssignment::findOne(['id' => $id]);
+            if ($testAssignment === null) {
+                throw new Exception('Test assignment option is not found');
             }
 
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            $testSubjects = TestSubject::find()->where(['test_option_id' => $id])->all();
+            $tests = $this->getTestsByAssignment($testAssignment);
+            if (!$tests) {
+                throw new Exception('Tests is not found');
+            }
 
             $data = [
-                'id' => $testOption->id,
                 'questions' => [],
-                'timeLimit' => $testOption->test->time_limit
+                'timeLimit' => 0,
             ];
 
-            foreach ($testSubjects as $testSubject) {
+            /** @var Test $test */
+            foreach ($tests as $test) {
+                $questions = Question::find()->andWhere(['test_id' => $test->id])->limit($test->question_limit)->all();
+
                 /** @var Question $question */
-                /** @var Answer $answer */
-                foreach ($testSubject->questions as $question) {
+                foreach ($questions as $question) {
                     $answers = [];
+
+                    /** @var Answer $answer */
                     foreach ($question->answers as $answer) {
                         $answers[] = [
                             'id' => $answer->id,
@@ -265,6 +283,8 @@ class OlympiadController extends Controller
                         'answers' => $answers
                     ];
                 }
+
+                $data['timeLimit'] += $test->time_limit;
             }
 
             return $data;
@@ -292,12 +312,12 @@ class OlympiadController extends Controller
             throw new Exception('Тест уже пройден');
         }
 
-        $testAssignment->lang = 'kz';
         $testAssignment->point = (int)$data['point'];
         $testAssignment->status = TestAssignment::STATUS_FINISHED;
         $testAssignment->finished_at = time();
         if (!$testAssignment->save()) {
-            throw new Exception('Test result is not saved');
+            return VarDumper::dump($testAssignment);
+//            throw new Exception('Test result is not saved: ');
         }
 
         return true;

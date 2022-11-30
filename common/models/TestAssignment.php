@@ -9,24 +9,20 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "test_assignment".
  *
  * @property int $id
- * @property int|null $test_option_id
+ * @property int|null $olympiad_id
+ * @property int|null $subject_id
  * @property string $name
  * @property string $surname
+ * @property string $teacher_name
  * @property string $leader_name
- * @property string $leader_name_second
- * @property string $leader_name_third
- * @property string $parent_name
  * @property string $iin
  * @property int|null $school_id
- * @property int|null $subject_id
  * @property int $grade
  * @property int $status
- * @property string $phone
- * @property string $phone_student
  * @property string $lang
  * @property int|null $created_at
  *
- * @property TestOption $testOption
+ * @property Olympiad $olympiad
  * @property Subject $subject
  * @property School $school
  * @property int $point [int(11)]
@@ -35,7 +31,6 @@ use yii\helpers\ArrayHelper;
  */
 class TestAssignment extends \yii\db\ActiveRecord
 {
-    public $lang;
     public $region_id;
     public $city_id;
 
@@ -57,11 +52,10 @@ class TestAssignment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['test_option_id', 'school_id', 'grade', 'point', 'subject_id', 'created_at'], 'integer'],
-            [['iin', 'leader_name'], 'required'],
-            [['name', 'surname', 'patronymic', 'leader_name', 'leader_name_second', 'leader_name_third', 'parent_name'], 'string', 'max' => 255],
-            [['iin', 'phone', 'phone_student'], 'string', 'max' => 20],
-            [['test_option_id'], 'exist', 'skipOnError' => true, 'targetClass' => TestOption::className(), 'targetAttribute' => ['test_option_id' => 'id']],
+            [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
+            [['grade', 'teacher_name', 'leader_name'], 'required'],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'leader_name'], 'string', 'max' => 255],
+            [['iin'], 'string', 'max' => 20],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
@@ -78,46 +72,42 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'test_option_id' => 'Тест',
+            'olympiad_id' => Yii::t('app', 'Олимпиада'),
+            'subject_id' => Yii::t('app', 'Предмет'),
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
-            'iin' => Yii::t('app', 'ИИН'),
+            'iin' => Yii::t('app', 'ИИН участника'),
             'school_id' => Yii::t('app', 'Школа/Колледж'),
-            'subject_id' => Yii::t('app', 'Предмет'),
             'grade' => Yii::t('app', 'Класс'),
-            'leader_name' => Yii::t('app', 'Ф.И.О руководителя'),
-            'leader_name_second' => Yii::t('app', 'Ф.И.О руководителя'),
-            'parent_name' => Yii::t('app', 'Ф.И.О родителей'),
+            'teacher_name' => Yii::t('app', 'Ф.И.О преподавателя'),
+            'leader_name' => Yii::t('app', 'Ф.И.О руководителя предмета'),
+            'phone' => Yii::t('app', 'Номер телефона'),
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
             'status' => Yii::t('app', 'Статус'),
             'point' => Yii::t('app', 'Баллы'),
-            'phone' => Yii::t('app', 'Номер телефона преподавателей'),
-            'phone_student' => Yii::t('app', 'Номер телефона ученика'),
             'created_at' => Yii::t('app', 'Время создание'),
         ];
     }
 
-    /**
-     * Gets query for [[Subject]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
+    public function getOlympiad()
+    {
+        return $this->hasOne(Olympiad::className(), ['id' => 'olympiad_id']);
+    }
+
     public function getSubject()
     {
         return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
     }
 
     /**
-     * Gets query for [[TestOption]].
-     *
      * @return \yii\db\ActiveQuery
      */
-    public function getTestOption()
+    public function getTest()
     {
-        return $this->hasOne(TestOption::className(), ['id' => 'test_option_id']);
+        return $this->hasOne(Test::className(), ['id' => 'test_id']);
     }
 
     /**

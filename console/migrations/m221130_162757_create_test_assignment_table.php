@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%test_assignment}}`.
  */
-class m200618_163858_create_test_assignment_table extends Migration
+class m221130_162757_create_test_assignment_table extends Migration
 {
     public $tableName = '{{%test_assignment}}';
 
@@ -16,18 +16,26 @@ class m200618_163858_create_test_assignment_table extends Migration
     {
         $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
-            'test_id' => $this->integer(),
+            'olympiad_id' => $this->integer(),
+            'subject_id' => $this->integer(),
             'name' => $this->string()->notNull(),
             'surname' => $this->string()->notNull(),
+            'patronymic' => $this->string()->notNull(),
             'iin' => $this->string(12)->notNull(),
+            'phone' => $this->string(12),
             'school_id' => $this->integer(),
-            'grade' => $this->integer(2),
+            'grade' => $this->integer(2)->notNull(),
+            'lang' => $this->string(2),
             'point' => $this->integer(),
+            'leader_name' => $this->string(),
+            'parent_name' => $this->string(),
+            'status' => $this->integer()->defaultValue(0)->notNull(),
             'created_at' => $this->integer(),
             'finished_at' => $this->integer()
         ]);
 
-        $this->addForeignKey('fk-test-assignment-test_id-test-id', $this->tableName, 'test_id', 'test', 'id', 'SET NULL');
+        $this->addForeignKey('fk-test-assignment-subject_id-subject-id', $this->tableName, 'subject_id', '{{%subject}}', 'id', 'SET NULL');
+        $this->addForeignKey('fk-test-assignment-olympiad_id-olympiad-id', $this->tableName, 'olympiad_id', '{{%olympiad}}', 'id', 'SET NULL');
     }
 
     /**
