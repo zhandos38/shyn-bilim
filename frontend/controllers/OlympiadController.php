@@ -136,7 +136,7 @@ class OlympiadController extends Controller
                 ]);
             }
 
-            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+            $whiteList = WhiteList::findOne(['iin' => $model->iin, 'subject_id' => $model->subject_id]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
             }
