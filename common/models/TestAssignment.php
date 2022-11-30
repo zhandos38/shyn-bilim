@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $name
  * @property string $surname
  * @property string $teacher_name
- * @property string $leader_name
+ * @property string $parent_name
  * @property string $iin
  * @property int|null $school_id
  * @property int $grade
@@ -53,8 +53,8 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['grade', 'teacher_name', 'leader_name'], 'required'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'leader_name'], 'string', 'max' => 255],
+            [['grade', 'teacher_name', 'parent_name'], 'required'],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'parent_name'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
@@ -81,7 +81,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'grade' => Yii::t('app', 'Класс'),
             'teacher_name' => Yii::t('app', 'Ф.И.О преподавателя'),
-            'leader_name' => Yii::t('app', 'Ф.И.О руководителя предмета'),
+            'parent_name' => Yii::t('app', 'Ф.И.О руководителя предмета'),
             'phone' => Yii::t('app', 'Номер телефона'),
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),

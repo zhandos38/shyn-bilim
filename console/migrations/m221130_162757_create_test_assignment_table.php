@@ -27,7 +27,7 @@ class m221130_162757_create_test_assignment_table extends Migration
             'grade' => $this->integer(2)->notNull(),
             'lang' => $this->string(2),
             'point' => $this->integer(),
-            'leader_name' => $this->string(),
+            'teacher_name' => $this->string(),
             'parent_name' => $this->string(),
             'status' => $this->integer()->defaultValue(0)->notNull(),
             'created_at' => $this->integer(),
