@@ -116,7 +116,9 @@ class OlympiadController extends Controller
             }
 
             $testOption = TestOption::findOne(['test_id' => $test->id, 'grade' => $model->grade]);
-            if (!$testOption) {
+            $testSubject = TestSubject::findOne(['test_option_id' => $testOption->id, 'subject_id' => $model->subject_id]);
+
+            if (!$testOption || !$testSubject) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
 
                 return $this->render('assignment', [
@@ -126,7 +128,7 @@ class OlympiadController extends Controller
                 ]);
             }
 
-            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED]);
+            $testAssignment = TestAssignment::findOne(['iin' => $model->iin, 'subject_id' => $model->subject_id, 'status' => TestAssignment::STATUS_FINISHED]);
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
                 return $this->render('assignment', [
