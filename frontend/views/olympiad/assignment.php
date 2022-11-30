@@ -74,21 +74,17 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
 
+        <?= $form->field($model, 'leader_name') ?>
+
+        <?= $form->field($model, 'parent_name') ?>
+
         <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
             'mask' => '+7(999)999-99-99',
             'clientOptions' => [
                 'removeMaskOnSubmit' => true,
             ],
             'options' => ['placeholder' => '+7(___)___-__-__'],
-        ]) ?>
-
-        <?= $form->field($model, 'phone_student')->widget(MaskedInput::className(), [
-            'mask' => '+7(999)999-99-99',
-            'clientOptions' => [
-                'removeMaskOnSubmit' => true,
-            ],
-            'options' => ['placeholder' => '+7(___)___-__-__'],
-        ]) ?>
+        ])->label('Мұғалім ватсап номері') ?>
 
         <?= $form->field($model, 'lang')->dropDownList([
             'kz' => 'Қазақша',
