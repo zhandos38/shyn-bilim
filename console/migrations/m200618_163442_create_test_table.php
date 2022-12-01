@@ -15,7 +15,6 @@ class m200618_163442_create_test_table extends Migration
     {
         $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
-            'name' => $this->string(),
             'subject_id' => $this->integer(),
             'grade' => $this->smallInteger(2),
             'questions_limit' => $this->integer()->defaultValue(40),

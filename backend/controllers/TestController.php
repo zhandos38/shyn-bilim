@@ -83,7 +83,7 @@ class TestController extends Controller
         $model = new Test();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['olympiad/update', 'id' => $model->olympiad_id]);
+            return $this->redirect(['update']);
         }
 
         return $this->render('create', [
@@ -103,7 +103,7 @@ class TestController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['olympiad/update', 'id' => $model->olympiad_id]);
+            return $this->redirect(['update']);
         }
 
         $importForm = new ImportForm();
