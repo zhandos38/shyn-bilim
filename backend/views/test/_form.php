@@ -23,7 +23,7 @@ use common\models\Test;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'olympiad_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Olympiad::find()->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'olympiad_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Olympiad::find()->all(), 'id', 'name'), [
         'prompt' => 'Выберите олимпиаду',
     ]) ?>
 

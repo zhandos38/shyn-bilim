@@ -31,6 +31,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type')->dropDownList(Subject::getTypes(), ['prompt' => 'Выберите тип']) ?>
 
+    <?= $form->field($model, 'kind')->dropDownList(Subject::getKinds(), ['prompt' => 'Выберите вид']) ?>
+
     <?= $form->field($model, 'order')->textInput() ?>
 
     <div class="form-group">

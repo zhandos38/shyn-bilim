@@ -40,6 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'filter' => Subject::getTypes()
             ],
+            [
+                'attribute' => 'kind',
+                'value' => function(Subject $model) {
+                    return $model->getKindLabel();
+                },
+                'filter' => Subject::getKinds()
+            ],
             'order',
 
             ['class' => 'yii\grid\ActionColumn'],

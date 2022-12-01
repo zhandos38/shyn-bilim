@@ -12,6 +12,7 @@ use yii\helpers\ArrayHelper;
  * @property string $name_kz
  * @property string $name_ru
  * @property string|null $img
+ * @property int $kind
  *
  * @property Test[] $tests
  * @property bool $type [tinyint(3)]
@@ -22,6 +23,9 @@ class Subject extends \yii\db\ActiveRecord
     const TYPE_STUDENT = 0;
     const TYPE_TEACHER = 1;
     const TYPE_ARTICLE = 2;
+
+    const KIND_HUMANITARIAN = 1;
+    const KIND_NATURAL = 2;
 
     /**
      * {@inheritdoc}
@@ -40,7 +44,7 @@ class Subject extends \yii\db\ActiveRecord
             [['name_kz', 'name_ru'], 'required'],
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
             [['img'], 'string', 'max' => 255],
-            [['type', 'order'], 'integer']
+            [['type', 'order', 'kind'], 'integer']
         ];
     }
 
@@ -54,6 +58,7 @@ class Subject extends \yii\db\ActiveRecord
             'name_ru' => Yii::t('app', 'Название на русском'),
             'img' => Yii::t('app', 'Рисунок'),
             'type' => Yii::t('app', 'Тип'),
+            'kind' => Yii::t('app', 'Вид'),
             'order' => Yii::t('app', 'Порядок')
         ];
     }
@@ -80,6 +85,19 @@ class Subject extends \yii\db\ActiveRecord
     public function getTypeLabel()
     {
         return ArrayHelper::getValue(self::getTypes(), $this->type);
+    }
+
+    public static function getKinds()
+    {
+        return [
+            self::KIND_HUMANITARIAN => 'Гуманитарлық',
+            self::KIND_NATURAL => 'Жаратылыстану',
+        ];
+    }
+
+    public function getKindLabel()
+    {
+        return ArrayHelper::getValue(self::getKinds(), $this->kind);
     }
 
     public function getName()
