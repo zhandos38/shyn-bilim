@@ -17,7 +17,8 @@ class TestSearch extends Test
     public function rules()
     {
         return [
-            [['id', 'time_limit', 'created_at'], 'integer'],
+            [['id', 'grade_from', 'grade_to', 'question_limit', 'time_limit', 'level', 'created_at'], 'integer'],
+            ['lang', 'string'],
         ];
     }
 
@@ -37,9 +38,9 @@ class TestSearch extends Test
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $id)
+    public function search($params)
     {
-        $query = Test::find()->andWhere(['olympiad_id' => $id]);
+        $query = Test::find();
 
         // add conditions that should always apply here
 
@@ -58,7 +59,12 @@ class TestSearch extends Test
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'time_limit' => $this->time_limit
+            'grade_from' => $this->grade_from,
+            'grade_to' => $this->grade_to,
+            'question_limit' => $this->question_limit,
+            'time_limit' => $this->time_limit,
+            'level' => $this->level,
+            'lang' => $this->lang,
         ]);
 
         return $dataProvider;

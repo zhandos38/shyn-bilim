@@ -2,9 +2,8 @@
 
 namespace backend\controllers;
 
+use backend\forms\ImportForm;
 use backend\forms\QuestionForm;
-use backend\models\TestOptionSearch;
-use backend\models\TestSubjectSearch;
 use common\models\Question;
 use Yii;
 use common\models\Test;
@@ -15,6 +14,7 @@ use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * TestController implements the CRUD actions for Test model.
@@ -49,10 +49,10 @@ class TestController extends Controller
      * Lists all Test models.
      * @return mixed
      */
-    public function actionIndex($id)
+    public function actionIndex()
     {
         $searchModel = new TestSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $id);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -78,10 +78,9 @@ class TestController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($id)
+    public function actionCreate()
     {
         $model = new Test();
-        $model->olympiad_id = $id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['olympiad/update', 'id' => $model->olympiad_id]);
@@ -107,14 +106,67 @@ class TestController extends Controller
             return $this->redirect(['olympiad/update', 'id' => $model->olympiad_id]);
         }
 
-        $searchModel = new TestOptionSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $id);
+        $importForm = new ImportForm();
+        $questionForm = new QuestionForm();
 
         return $this->render('update', [
             'model' => $model,
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'importForm' => $importForm,
+            'questionForm' => $questionForm,
         ]);
+    }
+
+    public function actionAddQuestion()
+    {
+        $questionForm = new QuestionForm();
+
+        if ($questionForm->load(Yii::$app->request->post()) && $questionForm->save()) {
+            return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+        }
+
+        return $this->redirect(['test/update', 'id' => $questionForm->test_id]);
+    }
+
+    public function actionDeleteQuestion()
+    {
+        $question_id = Yii::$app->request->post('id');
+
+        $question = Question::findOne(['id' => $question_id]);
+        if ($question && $question->delete()) {
+            return true;
+        }
+
+        throw new HttpException('401');
+    }
+
+    public function actionImportTest()
+    {
+        $importForm = new ImportForm();
+
+        if ($importForm->load(Yii::$app->request->post())) {
+            $importForm->tempFile = UploadedFile::getInstance($importForm, 'tempFile');
+            if ($importForm->tempFile) {
+                $importForm->document = $importForm->tempFile->baseName . '.' . $importForm->tempFile->extension;
+            }
+
+            $importForm->upload();
+
+            $importForm->importTest();
+
+            return $this->redirect(['test/update', 'id' => $importForm->test_id]);
+        }
+
+        return $this->redirect(['test/update', 'id' => $importForm->test_id]);
+    }
+
+    public function actionClearQuestions($id)
+    {
+        $questions = Question::findAll(['test_id' => $id]);
+        foreach ($questions as $question) {
+            $question->delete();
+        }
+
+        return $this->redirect(['test/update', 'id' => $id]);
     }
 
     /**

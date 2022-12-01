@@ -23,7 +23,23 @@ use common\models\Test;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput() ?>
+    <?= $form->field($model, 'olympiad_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Olympiad::find()->all(), 'id', 'name_ru'), [
+        'prompt' => 'Выберите олимпиаду',
+    ]) ?>
+
+    <?= $form->field($model, 'grade_from')->textInput() ?>
+
+    <?= $form->field($model, 'grade_to')->textInput() ?>
+
+    <?= $form->field($model, 'level')->dropDownList(Test::getLevels()) ?>
+
+    <?= $form->field($model, 'lang')->dropDownList(Test::getLangList()) ?>
+
+    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->all(), 'id', 'name_ru'), [
+        'prompt' => 'Выберите предмет',
+    ]) ?>
+
+    <?= $form->field($model, 'question_limit')->textInput() ?>
 
     <?= $form->field($model, 'time_limit')->textInput() ?>
 
