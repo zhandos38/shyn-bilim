@@ -346,18 +346,18 @@ class OlympiadController extends Controller
         }
 
         if ($testAssignment->point >= 15) {
-            $place = 'III ДӘРЕЖЕЛІ';
+            $place = 'III ОРЫН';
             if ($testAssignment->point >= 29 && $testAssignment->point <= 30) {
                 $place = 'БАС ЖҮЛДЕ';
             }
 
             if ($testAssignment->point >= 25 && $testAssignment->point <= 28) {
-                $place = 'I ДӘРЕЖЕЛІ';
+                $place = 'I ОРЫН';
             }
 
 
             if ($testAssignment->point >= 20 && $testAssignment->point <= 24) {
-                $place = 'II ДӘРЕЖЕЛІ';
+                $place = 'II ОРЫН';
             }
 
             $content = $this->renderPartial('_diploma', [

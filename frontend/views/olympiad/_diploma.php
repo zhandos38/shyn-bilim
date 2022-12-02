@@ -11,15 +11,21 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/marathon-2022/olympiad/diplom.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
-        <div style="font-size: 32px; padding-left: 10px; padding-top: 50px; text-transform: uppercase; color: #fff; width: 320px; text-align: center; font-family: 'Times New Roman'">
+    <div class="cert-page" style="font-family: 'Arial'; background-image: url('./img/altyn-qyran-2022/certificate/humanitary/диплом.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
+        <div style="font-size: 22px; padding-left: -70px; padding-top: 190px; text-transform: uppercase; color: #fff; width: 320px; text-align: center;">
             <b><?= $place ?></b>
         </div>
-        <div style="height: 160px; padding-top: 280px; padding-left: 45px; width: 860px;">
-            <div style="padding-top: 8px; font-size: 28px; color: red; font-weight: 400; font-family: 'Times New Roman';">
+        <div style="height: 160px; padding-top: 168px; padding-left: 150px; width: 860px; text-align: center;">
+            <div style="padding-top: 8px; font-size: 22px; color: #dd4b39; font-weight: 400;">
+                <?= $testAssignment->subject->name_kz ?> пәнінен
+            </div>
+            <div style="padding-top: 26px; font-size: 28px; color: #dd4b39; font-weight: 400;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="font-size: 13px; padding-top: 0; font-family: 'Times New Roman'">
+            <div style="padding-top: 8px; font-size: 22px; color: #dd4b39; font-weight: 400;">
+                <?= $testAssignment->grade ?> сынып оқушысы<br>
+            </div>
+            <div style="font-size: 13px; padding-top: 0; color: red;">
                 <div>
                     <?php
                     if ($testAssignment->school !== null) {
@@ -32,17 +38,14 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 </div>
                 <div>
                     <?= $testAssignment->school->name ?>
-                    <div>
-                        <?= $testAssignment->grade ?> сынып оқушысы<br>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 60px; padding-top: 100px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 40px; padding-top: 60px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-            <div style="color: #0a0a0a; padding-top: 10px; font-size: 14px; padding-left: 65px">
-                <div id="cert-number" style="color: #0a0a0a"><?= $testAssignment->id ?></div>
-                <div id="cert-date" style="color: #0a0a0a; padding-left: -20px"><?= date('d.m.Y') ?></div>
+            <div style="color: #0a0a0a; padding-top: 10px; font-size: 14px; padding-left: 0">
+                <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
+                <div id="cert-date" style="color: #0a0a0a;">Күні <?= date('d.m.Y') ?></div>
             </div>
         </div>
     </div>
