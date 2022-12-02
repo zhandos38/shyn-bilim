@@ -48,7 +48,7 @@ class TestSearch extends Test
             'query' => $query,
             'sort' => [
                 'defaultOrder' => [
-                    'created_at' => SORT_DESC
+                    'id' => SORT_DESC
                 ]
             ]
         ]);
