@@ -99,6 +99,16 @@ class OlympiadController extends Controller
         $model = new TestAssignment();
         $olympiad = Olympiad::findOne(['id' => $id]);
 
+        if ($olympiad->status === Olympiad::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
+            return $this->redirect(['site/index']);
+        }
+
+        if ($olympiad->status === Olympiad::STATUS_NEW) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
+            return $this->redirect(['site/index']);
+        }
+
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // Check olympiad status
             /** @var Olympiad $olympiad */
@@ -376,10 +386,32 @@ class OlympiadController extends Controller
                 // enhanced bootstrap css built by Krajee for mPDF formatting
                 'cssFile' => 'css/custom.css'
             ]);
-
         } else {
-            Yii::$app->session->setFlash('success', 'Диплом алуға балыңыз жетпейді');
-            return $this->redirect(['olympiad/index']);
+            $content = $this->renderPartial('_cert', [
+                'testAssignment' => $testAssignment,
+            ]);
+
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_UTF8,
+                'marginTop' => 0,
+                'marginLeft' => 0,
+                'marginRight' => 0,
+                'marginBottom' => 0,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A4,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                'filename' => 'Сертификат.pdf',
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => 'css/custom.css'
+            ]);
         }
 
         return $pdf->render();

@@ -32,13 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [
-                'attribute' => 'test_id',
-                'value' => function(TestAssignment $model) {
-                    return $model->testOption ? $model->testOption->test->name : 'Не указано';
-                },
-                'filter' => ArrayHelper::map(Test::find()->asArray()->all(), 'id','name')
-            ],
             'name',
             'surname',
             'patronymic',
@@ -65,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
                 'format' => 'raw'
             ],
-            'leader_name',
+            'teacher_name',
             'grade',
             [
                 'attribute' => 'phone',

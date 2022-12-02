@@ -53,11 +53,7 @@ use common\models\Test;
 
     <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
 
-    <?= $form->field($model, 'leader_name') ?>
-
-    <?= $form->field($model, 'leader_name_second') ?>
-
-    <?= $form->field($model, 'leader_name_third') ?>
+    <?= $form->field($model, 'teacher_name') ?>
 
     <?= $form->field($model, 'parent_name') ?>
 
@@ -66,13 +62,6 @@ use common\models\Test;
     <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
-
-    <?= $form->field($model, 'test_option_id')->widget(Select2::classname(), [
-        'data' => ArrayHelper::map(\common\models\TestOption::find()->asArray()->all(), 'id', function ($model) {
-            return htmlspecialchars_decode($model['test_id'] . ':' . $model['grade'] . ' - ' . $model['lang']);
-        }),
-        'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
-    ]); ?>
 
     <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
 

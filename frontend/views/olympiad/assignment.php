@@ -24,11 +24,10 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
     <?php endif; ?>
 </p>
+<?php $form = ActiveForm::begin() ?>
+
 <div class="row">
     <div class="col-md-4">
-
-        <?php $form = ActiveForm::begin() ?>
-
         <?= $form->field($model, 'surname') ?>
 
         <?= $form->field($model, 'name') ?>
@@ -36,7 +35,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?= $form->field($model, 'patronymic') ?>
 
         <?= $form->field($model, 'iin') ?>
-
+    </div>
+    <div class="col-md-4">
         <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
             'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
             'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
@@ -69,14 +69,11 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         ], [
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
-
+    </div>
+    <div class="col-md-4">
         <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
-
-        <?= $form->field($model, 'teacher_name') ?>
-
-        <?= $form->field($model, 'parent_name') ?>
 
         <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
             'mask' => '+7(999)999-99-99',
@@ -86,18 +83,22 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'options' => ['placeholder' => '+7(___)___-__-__'],
         ])->label('Мұғалім ватсап номері') ?>
 
+        <?= $form->field($model, 'teacher_name') ?>
+
+        <?= $form->field($model, 'parent_name') ?>
+
         <?= $form->field($model, 'lang')->dropDownList([
             'kz' => 'Қазақша',
             'ru' => 'Русский'
         ], [
             'prompt' => Yii::t('app', 'Выберите язык')
         ]) ?>
-
-        <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
-
-        <?php ActiveForm::end() ?>
     </div>
 </div>
+
+<?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-success']) ?>
+
+<?php ActiveForm::end() ?>
 <?php
 $bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
 $historyLabel = Yii::t('site', 'Преподаватель истории');

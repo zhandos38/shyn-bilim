@@ -46,7 +46,6 @@ class TestAssignmentSearch extends TestAssignment
     {
         $query = TestAssignment::find()
                 ->alias('t1')
-                ->leftJoin('test_option as t4', 't1.test_option_id = t4.id')
                 ->joinWith('school as t2')
                 ->leftJoin('city as t3', 't2.city_id = t3.id');
 
