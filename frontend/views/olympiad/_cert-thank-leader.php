@@ -8,10 +8,13 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/marathon-2022/olympiad/cert-thank.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 800px">
-        <div style="padding-left: 20px; padding-top: 280px">
-            <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; color: red; text-align: center">
-                <?= $testAssignment->leader_name ?>
+    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2022/certificate/humanitary/грамота.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 800px">
+        <div style="padding-left: 20px; padding-top: 460px">
+            <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; text-align: center">
+                <b><?= $testAssignment->teacher_name ?></b>
+            </div>
+            <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; text-align: center">
+                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div id="footer" style="text-align: left; padding-left: 70px; padding-top: 270px; width: 160px; font-size: 16px; color: #fff; font-family: 'Times New Roman'">
                 <div id="cert-qrcode" style="width: 160px; font-size: 22px; padding-left: -52px; font-weight: bold;"><img src="<?= $qrCode->writeDataUri() ?>"></div>
