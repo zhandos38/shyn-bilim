@@ -2,6 +2,8 @@
 
 use yii\helpers\Url;
 
+/** @var \common\models\Olympiad $olympiad */
+
 $this->title = 'Bilimshini.kz - образовательный портал';
 $this->registerMetaTag([
     'name' => 'keywords',
@@ -104,7 +106,7 @@ $this->registerMetaTag([
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/view', 'id' => 3]) ?>"
+                           href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','center','center','center']" data-hoffset="['0','0','0','-90']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
@@ -127,7 +129,7 @@ $this->registerMetaTag([
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="https://st.bilim-shini.kz/olympiad/%D0%95%D0%A0%D0%95%D0%96%D0%95%20%D0%91%D0%90%D0%9D%D0%9D%D0%95%D0%A0%D0%93%D0%95-2022%20%D0%90%D0%9B%D0%A2%D0%AB%D0%9D%20%D2%9A%D0%AB%D0%A0%D0%90%D0%9D.docx"
+                           href="<?= $olympiad->getFile() ?>"
                            id="slide-411-layer-03"
                            data-x="['left','right','center','center']" data-hoffset="['220','0','0','90']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"

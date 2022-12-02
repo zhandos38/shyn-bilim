@@ -5,6 +5,7 @@ use common\models\City;
 use common\models\Marathon;
 use common\models\Mark;
 use common\models\News;
+use common\models\Olympiad;
 use common\models\Post;
 use common\models\School;
 use common\models\Subscribe;
@@ -90,10 +91,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'home';
-        $news = News::find()->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $olympiad = Olympiad::findOne(['id' => 3]);
 
         return $this->render('index', [
-            'news' => $news
+            'olympiad' => $olympiad
         ]);
     }
 
