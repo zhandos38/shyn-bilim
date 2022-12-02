@@ -20,13 +20,13 @@ class ImportForm extends Model
 {
     public $document;
     public $tempFile;
-    public $test_subject;
+    public $test_id;
 
     public function rules()
     {
         return [
             ['document', 'safe'],
-            ['test_subject', 'integer'],
+            ['test_id', 'integer'],
 
             [['tempFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'xml'],
         ];
@@ -36,12 +36,12 @@ class ImportForm extends Model
     {
         $transaction = Yii::$app->db->beginTransaction();
         try {
-            $testSubject = TestSubject::findOne(['id' => $this->test_subject]);
-            if ($testSubject === null) {
+            $test = Test::findOne(['id' => $this->test_id]);
+            if ($test === null) {
                 throw new Exception('Test subject is not found');
             }
 
-            $subjectFolderPath = Yii::getAlias('@static') . '/test/' . $testSubject->id;
+            $subjectFolderPath = Yii::getAlias('@static') . '/test/' . $test->id;
 
             if (!file_exists($subjectFolderPath)) {
                 mkdir($subjectFolderPath, 0777, true);
@@ -53,13 +53,13 @@ class ImportForm extends Model
 
             foreach ($array['question'] as $item) {
                 $question = new Question();
-                $question->test_subject_id = $testSubject->id;
+                $question->test_id = $test->id;
                 $question->created_at = time();
                 if (!$question->save()) {
                     throw new Exception('Question is not saved');
                 }
 
-                $imgDomainPath = Yii::$app->params['staticDomain'] . '/test/' . $testSubject->id . '/' . $question->id;
+                $imgDomainPath = Yii::$app->params['staticDomain'] . '/test/' . $test->id . '/' . $question->id;
                 $text = str_replace('@@PLUGINFILE@@', $imgDomainPath, trim($item['questiontext']['text']));
                 $text = str_replace('.jpg', '.png', $text);
                 $question->text = $text;
