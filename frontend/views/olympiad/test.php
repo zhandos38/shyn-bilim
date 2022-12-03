@@ -2,7 +2,6 @@
 use yii\web\View;
 
 /* @var $this View */
-/* @var $test_option_id integer */
 /* @var $assignment_id integer */
 /* @var $test_name String */
 
@@ -45,7 +44,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                     <br><br>
                     <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                        <?= Yii::t('app', 'Получить благодарственное письмо преподавателю') ?>
+                        <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
                     </a>
                     <br><br>
                     <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" download>
@@ -59,7 +58,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
 <?php
 $hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS
-testApp.id = "$test_option_id";
 testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
 testApp.getTest();

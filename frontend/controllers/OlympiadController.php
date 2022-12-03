@@ -97,6 +97,8 @@ class OlympiadController extends Controller
     public function actionAssignment($id)
     {
         $model = new TestAssignment();
+
+        $model->olympiad_id = $id;
         $olympiad = Olympiad::findOne(['id' => $id]);
 
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {

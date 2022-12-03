@@ -89,7 +89,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
         <?= $form->field($model, 'teacher_name') ?>
 
-        <?= $form->field($model, 'teacher_type_name', [
+        <?= $form->field($model, 'teacher_type_name')->dropdownList([
             'Бастауыш пәні мұғалімі' => 'Бастауыш пәні мұғалімі',
             'Ағылшын тілі пәні мұғалімі' => 'Ағылшын тілі пәні мұғалімі',
             'Орыс тілі пәні мұғалімі' => 'Орыс пәні мұғалімі',

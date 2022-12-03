@@ -54,15 +54,15 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['grade', 'teacher_name', 'parent_name'], 'required'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name'], 'string', 'max' => 255],
+            [['grade', 'teacher_name', 'parent_name', 'subject_id', 'parent_name', 'teacher_type_name', 'phone'], 'required'],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'phone'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id', 'status'], 'integer']
+            [['city_id', 'region_id', 'subject_id', 'status'], 'integer']
         ];
     }
 
@@ -82,8 +82,8 @@ class TestAssignment extends \yii\db\ActiveRecord
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'grade' => Yii::t('app', 'Класс'),
             'teacher_name' => Yii::t('app', 'Ф.И.О преподавателя'),
-            'teacher_type_name' => Yii::t('app', 'Препдаватель'),
-            'parent_name' => Yii::t('app', 'Ф.И.О руководителя предмета'),
+            'teacher_type_name' => Yii::t('app', 'Мұғалім'),
+            'parent_name' => Yii::t('app', 'Ф.И.О родителей'),
             'phone' => Yii::t('app', 'Номер телефона'),
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),

@@ -39,7 +39,7 @@ testApp = new Vue({
             $.get({
                 url: 'get-test',
                 format: 'JSON',
-                data: {id: this.id},
+                data: {id: this.assignmentId},
                 success: (result) => {
                     this.timeLimit = result['timeLimit'];
                     this.startTimer();
@@ -51,8 +51,8 @@ testApp = new Vue({
                          });
                     });
                 },
-                error: function () {
-                    console.log('Get test failed');
+                error: function (err) {
+                    console.log('Get test failed', err);
                 }
             });
         },
@@ -68,7 +68,7 @@ testApp = new Vue({
             let interval = setInterval(async () => {
                 $.post({
                     url: '/ru/olympiad/set-result',
-                    data: {id: this.id, assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
+                    data: {assignmentId: this.assignmentId, point: this.correctAnswerCount, hash: this.hash},
                     success: async (result) => {
                         if (parseInt(result) === 1) {
                             clearInterval(interval);
