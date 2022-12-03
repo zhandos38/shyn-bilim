@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => Subject::getKinds()
             ],
             'order',
+            'grades',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

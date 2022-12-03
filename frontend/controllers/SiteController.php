@@ -8,6 +8,7 @@ use common\models\News;
 use common\models\Olympiad;
 use common\models\Post;
 use common\models\School;
+use common\models\Subject;
 use common\models\Subscribe;
 use common\models\User;
 use Exception;
@@ -301,6 +302,16 @@ class SiteController extends Controller
         if (Yii::$app->request->isAjax) {
             $cities = School::findAll(['city_id' => $id]);
             return Json::encode($cities);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
+    }
+
+    public function actionGetSubjects($grade)
+    {
+        if (Yii::$app->request->isAjax) {
+            $subjects = Subject::find()->andWhere(['like', 'grades', $grade])->all();
+            return Json::encode($subjects);
         }
 
         throw new HttpException('404', 'Page is not found!');

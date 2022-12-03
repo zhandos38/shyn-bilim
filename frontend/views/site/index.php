@@ -106,7 +106,7 @@ $this->registerMetaTag([
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/view', 'id' => $olympiad->id]) ?>"
+                           href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','center','center','center']" data-hoffset="['0','0','0','-90']"
                            data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"

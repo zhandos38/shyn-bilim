@@ -67,14 +67,18 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             10 => '10',
             11 => '11'
         ], [
+            'id' => 'grade-select',
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
+
+        <div id="subject_id-wrapper" style="display: none">
+            <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
+                'id' => 'subject_id-select',
+                'prompt' => Yii::t('app', 'Выберите предмет')
+            ]) ?>
+        </div>
     </div>
     <div class="col-md-4">
-        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите предмет')
-        ]) ?>
-
         <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
             'mask' => '+7(999)999-99-99',
             'clientOptions' => [
@@ -147,6 +151,26 @@ $('#testassignment-city_id').change(function() {
   });
 });
 
+$('#grade-select').change(function() {
+  $.get({
+    url: '/kz/site/get-subjects',
+    data: {grade: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name_kz + '</option>'; 
+      });
+      
+      $('#subject_id-select').html(options);
+      $('#subject_id-wrapper').show();
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
 $('#check-assignment-btn').click(function() {
   $('#check-assignment-form').toggle('ease');
 });
@@ -157,6 +181,10 @@ $('#toggleBtn').click(function() {
 
 $(document).ready(() => {
     handleChange();
+    
+    if (parseInt($('#grade-select').val())) {
+        $('#subject_id-wrapper').show();
+    }
 });
 
 $('#grade-input').change(function() {

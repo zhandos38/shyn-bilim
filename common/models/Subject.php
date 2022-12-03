@@ -43,7 +43,7 @@ class Subject extends \yii\db\ActiveRecord
         return [
             [['name_kz', 'name_ru'], 'required'],
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
-            [['img'], 'string', 'max' => 255],
+            [['img', 'grades'], 'string', 'max' => 255],
             [['type', 'order', 'kind'], 'integer']
         ];
     }
