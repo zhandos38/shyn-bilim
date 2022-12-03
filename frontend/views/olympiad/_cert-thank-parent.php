@@ -3,20 +3,21 @@ use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-parent', 'id' => $testAssignment->id], 'https')))
-    ->setSize(70)
+$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader', 'id' => $testAssignment->id], 'https')))
+    ->setSize(65)
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/marathon/thanks_parent.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 800px">
-        <div id="cert-qrcode" style="padding-top: 60px; padding-left: 920px;"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-        <div style="padding-top: 90px;">
-            <div id="cert-name" style="height: 80px; font-size: 22px; font-weight: bold; text-transform: uppercase; color: #000"><?= $testAssignment->parent_name ?>!</div>
-        </div>
-        <div id="footer" style="text-align: left; padding-left: 100px; padding-top: 378px; width: 160px; font-size: 16px; color: #fff; font-family: 'Times New Roman'">
-            <div id="cert-number" style="padding-top: 5px"> №<?= $testAssignment->id ?></div>
-            <div id="cert-date" style="padding-top: 7px;"><?= date('d.m.Y') ?> жыл</div>
+    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2022/certificate/humanitary/алғыс хат.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+        <div class="bordered" style="padding-left: 160px; padding-top: 240px">
+            <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; text-align: center">
+                <b><?= $testAssignment->parent_name ?></b>
+            </div>
+            <div id="footer" style="text-align: left; padding-left: 740px; padding-top: 180px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
+                <div id="cert-qrcode"><img src="<?= $qrCode->writeDataUri() ?>"></div>
+                <div id="cert-number" style="padding-top: 10px">Тіркеу №<?= $testAssignment->id ?></div>
+                <div id="cert-date" style="padding-top: 0;">Күні <?= date('d.m.Y', $testAssignment->created_at) ?> жыл</div>
+            </div>
         </div>
     </div>
 </div>
-
