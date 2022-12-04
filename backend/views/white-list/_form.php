@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
