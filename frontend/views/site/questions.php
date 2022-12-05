@@ -305,7 +305,9 @@ use yii\helpers\Url; ?>
                                 <br>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
                                 <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Благодарственное письмо для руководителя скачать</a>
+                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота для руководителя скачать</a>
+                                <br><br>
+                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Благодарственное письмо для родителей скачать</a>
                             </p>
                         </div>
                     </div>
