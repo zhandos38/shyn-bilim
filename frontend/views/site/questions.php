@@ -196,7 +196,7 @@ use yii\helpers\Url; ?>
                     <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
-                                Жауап:  Аппеляциялық шағымдар олимпиаданың соңғы күні 16–шы мамырда bilimshini.kz@mail.ru электронды поштасында қабылданады. Қарауға 1күн  (жұмыс күні) уақыт қойылған.
+                                Жауап:  Аппеляциялық шағымдар олимпиаданың соңғы күні 15–шы желтоқсан bilimshini.kz@mail.ru электронды поштасында қабылданады. Қарауға 1күн  (жұмыс күні) уақыт қойылған.
                             </p>
                         </div>
                     </div>
@@ -359,7 +359,7 @@ use yii\helpers\Url; ?>
                     <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
-                                Ответ:  Апелляции принимаются в последний день олимпиады 16 мая по электронной почте bilimshini.kz@mail.ru. На рассмотрение апелляции берется 1 день.
+                                Ответ:  Апелляции принимаются в последний день олимпиады 15–го декабря по электронной почте bilimshini.kz@mail.ru. На рассмотрение апелляции берется 1 день.
                             </p>
                         </div>
                     </div>
