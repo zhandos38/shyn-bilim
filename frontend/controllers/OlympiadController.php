@@ -347,18 +347,18 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/index']);
         }
 
-        if ($testAssignment->point >= 15) {
+        if ($testAssignment->point >= 10) {
             $place = 'III ОРЫН';
-            if ($testAssignment->point >= 29 && $testAssignment->point <= 30) {
+            if ($testAssignment->point == 20) {
                 $place = 'БАС ЖҮЛДЕ';
             }
 
-            if ($testAssignment->point >= 25 && $testAssignment->point <= 28) {
+            if ($testAssignment->point >= 18 && $testAssignment->point <= 19) {
                 $place = 'I ОРЫН';
             }
 
 
-            if ($testAssignment->point >= 20 && $testAssignment->point <= 24) {
+            if ($testAssignment->point >= 15 && $testAssignment->point <= 17) {
                 $place = 'II ОРЫН';
             }
 

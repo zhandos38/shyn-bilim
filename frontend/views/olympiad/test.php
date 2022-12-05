@@ -5,7 +5,7 @@ use yii\web\View;
 /* @var $assignment_id integer */
 /* @var $test_name String */
 
-$this->title = $test_name;
+$this->title = $olympiad_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
 ?>
     <div id="test">

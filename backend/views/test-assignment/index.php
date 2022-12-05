@@ -58,6 +58,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
                 'format' => 'raw'
             ],
+            [
+                'attribute' => 'subject_id',
+                'value' => function(TestAssignment $model) {
+                    return $model->subject !== null ? $model->subject->name_kz : "-";
+                },
+            ],
             'teacher_name',
             'grade',
             [
