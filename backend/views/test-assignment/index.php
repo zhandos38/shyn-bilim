@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'subject_id',
                 'value' => function(TestAssignment $model) {
-                    return $model->subject->name_kz;
+                    return $model->subject !== null ? $model->subject->name_kz : "-";
                 },
             ],
             'teacher_name',
