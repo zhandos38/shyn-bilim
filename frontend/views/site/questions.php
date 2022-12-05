@@ -140,7 +140,9 @@ use yii\helpers\Url; ?>
                                 <br>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
                                 <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Алғыс хат МҰҒАЛІМ үшін жүктеу</a>
+                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота Мұғалім үшін жүктеу</a>
+                                <br><br>
+                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Алғыс хат Ата-Ана үшін жүктеу</a>
                             </p>
                         </div>
                     </div>
