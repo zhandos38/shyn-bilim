@@ -103,12 +103,12 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Сұрақ: 8775 403 72 84 Жанна каспий голдына төлем жасағаннан кейін қандай чекті, қайда жіберуім қажет?
+                            5. Сұрақ: 775 076 78 76 Бахыткүл Е. каспий голдына төлем жасағаннан кейін қандай чекті, қайда жіберуім қажет?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Жауап: Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті және қатысушының ЖСН 8775 403 72 84 вадсапқа жіберуіңіз қажет
+                            Жауап: Телефоныңыздағы Каспий приложениесіне кіріп, Историяның ішіндегі жасыл чекті және қатысушының ЖСН 8775 076 78 76 вадсапқа жіберуіңіз қажет
                         </div>
                     </div>
                 </div>
@@ -264,13 +264,13 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            5. Вопрос: Куда отправить чек после оплаты на Каспи голд 7 775 403 7284 Жанна?
+                            5. Вопрос: Куда отправить чек после оплаты на Каспи голд 8775 076 78 76 Бахыткүл Е.?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
-                                Ответ:  Вам необходимо зайти на телефоне в приложение Каспи голд и отправить зеленый развернутый чек из историй на ватсап номер 7 775 403 7284 Жанна.
+                                Ответ:  Вам необходимо зайти на телефоне в приложение Каспи голд и отправить зеленый развернутый чек из историй на ватсап номер 8775 076 78 76.
                             </p>
                         </div>
                     </div>
