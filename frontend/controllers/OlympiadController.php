@@ -527,7 +527,12 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/view']);
+            return $this->redirect('/');
+        }
+
+        if ($testAssignment->point <= 15) {
+            Yii::$app->session->setFlash('success', 'Орын алмағансыз, балыңыз жетпейді');
+            return $this->redirect('/');
         }
 
         $content = $this->renderPartial('_cert-thank-leader', [
