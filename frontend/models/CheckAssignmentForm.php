@@ -18,25 +18,28 @@ use yii\helpers\VarDumper;
 class CheckAssignmentForm extends Model
 {
     public $iin;
+    public $subject_id;
 
     public function rules()
     {
         return [
-            ['iin', 'required'],
+            [['iin', 'subject_id'], 'required'],
             ['iin', 'string', 'max' => 20],
+            ['subject_id', 'integer'],
         ];
     }
 
     public function attributeLabels()
     {
         return [
-          'iin' => Yii::t('app', 'ИИН')
+          'iin' => Yii::t('app', 'ИИН'),
+          'subject_id' => Yii::t('app', 'Предмет'),
         ];
     }
 
     public function check($isFinished = false)
     {
-        $query = TestAssignment::find()->andWhere(['iin' => $this->iin]);
+        $query = TestAssignment::find()->andWhere(['iin' => $this->iin, 'subject_id' => $this->subject_id]);
         if ($isFinished) {
             $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
         } else {
