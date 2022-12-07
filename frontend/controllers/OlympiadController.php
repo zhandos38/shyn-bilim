@@ -272,8 +272,7 @@ class OlympiadController extends Controller
 
             /** @var Test $test */
             foreach ($tests as $test) {
-                $questions = Question::find()->andWhere(['test_id' => $test->id])->limit($test->question_limit)->all();
-                shuffle($questions);
+                $questions = Question::find()->andWhere(['test_id' => $test->id])->orderBy("RAND()")->limit($test->question_limit)->all();
 
                 /** @var Question $question */
                 foreach ($questions as $question) {
