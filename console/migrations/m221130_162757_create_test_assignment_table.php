@@ -21,7 +21,7 @@ class m221130_162757_create_test_assignment_table extends Migration
             'name' => $this->string()->notNull(),
             'surname' => $this->string()->notNull(),
             'patronymic' => $this->string()->notNull(),
-            'iin' => $this->string(12)->notNull(),
+            'iin' => $this->string(20)->notNull(),
             'phone' => $this->string(12),
             'school_id' => $this->integer(),
             'grade' => $this->integer(2)->notNull(),

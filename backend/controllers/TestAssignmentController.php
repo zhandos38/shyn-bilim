@@ -85,7 +85,7 @@ class TestAssignmentController extends Controller
     public function actionCreate()
     {
         $model = new TestAssignment();
-        $model->lang = 'ok';
+        $model->lang = 'kz';
 
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();

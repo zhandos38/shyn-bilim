@@ -54,7 +54,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['grade', 'teacher_name', 'parent_name', 'subject_id', 'parent_name', 'teacher_type_name', 'phone'], 'required'],
+            [['grade', 'teacher_name', 'parent_name', 'subject_id', 'parent_name', 'teacher_type_name', 'phone', 'lang'], 'required'],
             [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'phone'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
