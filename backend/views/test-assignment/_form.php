@@ -65,6 +65,13 @@ use common\models\Test;
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
 
+    <?= $form->field($model, 'lang')->dropDownList([
+        'kz' => 'Қазақша',
+        'ru' => 'Русский'
+    ], [
+        'prompt' => Yii::t('app', 'Выберите язык')
+    ]) ?>
+
     <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
 
     <div class="form-group">
