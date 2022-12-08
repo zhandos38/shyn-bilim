@@ -54,7 +54,6 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['grade', 'teacher_name', 'parent_name', 'subject_id', 'parent_name', 'teacher_type_name', 'phone', 'lang'], 'required'],
             [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'phone'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
@@ -62,7 +61,9 @@ class TestAssignment extends \yii\db\ActiveRecord
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id', 'subject_id', 'status'], 'integer']
+            [['city_id', 'region_id', 'subject_id', 'status'], 'integer'],
+
+            [['name', 'surname', 'patronymic', 'iin', 'grade', 'teacher_name', 'parent_name', 'subject_id', 'teacher_type_name', 'phone', 'lang'], 'required'],
         ];
     }
 
