@@ -1,4 +1,6 @@
 <?php
+
+use common\models\Subject;
 use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
@@ -7,10 +9,15 @@ use Da\QrCode\QrCode;
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
     ->setSize(50);
+
+$subjectType = "humanitary";
+if ($testAssignment->subject->kind === Subject::KIND_NATURAL) {
+    $subjectType = "natural";
+}
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2022/certificate/humanitary/сертификат.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="padding-top: 498px; text-align: center; width: 800px; height: 150px; font-size: 18px">
+    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2022/certificate/<?= $subjectType ?>/сертификат.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+        <div style="padding-top: <?= $testAssignment->subject->kind === Subject::KIND_NATURAL ? '505px' : '498px' ?>; text-align: center; width: 800px; height: 150px; font-size: 18px">
             <div style="font-size: 18px; font-weight: lighter;">
                 <?= $testAssignment->subject->name ?> пәнінен
             </div>

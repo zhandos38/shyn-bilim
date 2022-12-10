@@ -1,5 +1,5 @@
 <?php
-use Da\QrCode\QrCode;
+use common\models\Subject;use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
 /* @var $place string */
@@ -9,13 +9,18 @@ use Da\QrCode\QrCode;
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
     ->setSize(60)
     ->setMargin(5);
+
+$subjectType = "humanitary";
+if ($testAssignment->subject->kind === Subject::KIND_NATURAL) {
+    $subjectType = "natural";
+}
 ?>
 <div>
-    <div class="cert-page" style="font-family: 'Arial'; background-image: url('./img/altyn-qyran-2022/certificate/humanitary/диплом.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
+    <div class="cert-page" style="font-family: 'Arial'; background-image: url('./img/altyn-qyran-2022/certificate/<?= $subjectType ?>/диплом.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
         <div style="font-size: 22px; padding-left: -70px; padding-top: 210px; text-transform: uppercase; color: #fff; width: 320px; text-align: center;">
             <b><?= $place ?></b>
         </div>
-        <div style="height: 160px; padding-top: 165px; padding-left: 150px; width: 860px; text-align: center;">
+        <div style="height: 160px; padding-top: <?= $testAssignment->subject->kind === Subject::KIND_NATURAL ? '175px' : '165px' ?>; padding-left: 150px; width: 860px; text-align: center;">
             <div style="padding-top: 0; font-size: 22px; font-weight: 400;">
                 <?= $testAssignment->subject->name_kz ?> пәнінен
             </div>
