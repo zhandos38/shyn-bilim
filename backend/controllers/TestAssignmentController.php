@@ -85,7 +85,6 @@ class TestAssignmentController extends Controller
     public function actionCreate()
     {
         $model = new TestAssignment();
-        $model->lang = 'kz';
 
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
@@ -111,7 +110,6 @@ class TestAssignmentController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->lang = 'ok';
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(Url::previous());
