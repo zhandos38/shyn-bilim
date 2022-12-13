@@ -84,7 +84,6 @@ class SiteController extends Controller
             }
 
             if ((int)$request[$this->toProperty('result')]) {
-                $order->lang = 'kz';
                 $order->status = TestAssignment::STATUS_ACTIVE;
                 if (!$order->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
