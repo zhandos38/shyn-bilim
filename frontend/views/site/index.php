@@ -65,7 +65,7 @@ $this->registerMetaTag([
                            href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','center','center','center']" data-hoffset="['0','0','0','-90']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['132','130','82','80']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"
