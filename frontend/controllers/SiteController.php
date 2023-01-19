@@ -92,7 +92,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'home';
-        $olympiad = Olympiad::findOne(['id' => 3]);
+        $olympiad = Olympiad::findOne(['id' => 4]);
 
         return $this->render('index', [
             'olympiad' => $olympiad
