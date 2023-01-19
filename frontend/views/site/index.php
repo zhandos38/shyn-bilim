@@ -57,7 +57,7 @@ $this->registerMetaTag([
                              data-letterspacing="['0.5','0.5','0.5','0.5']"
                              data-responsive="off"
                              data-responsive_offset="on">
-                            РЕСПУБЛИКАЛЫҚ ЗИЯТКЕРЛІК ПӘНДЕР ОЛИМПИАДАСЫ
+                            РЕСПУБЛИКАЛЫҚ ЗИЯТКЕРЛІК <br> ПӘНДЕР ОЛИМПИАДАСЫ
                         </div>
 
                         <!-- btn layer -->
@@ -87,8 +87,8 @@ $this->registerMetaTag([
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
                            href="<?= $olympiad->getFile() ?>"
                            id="slide-411-layer-03"
-                           data-x="['left','right','center','center']" data-hoffset="['220','0','0','90']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                           data-x="['left','right','center','center']" data-hoffset="['0','0','0','90']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['170','130','82','80']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"
