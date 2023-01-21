@@ -58,7 +58,7 @@ $this->registerMetaTag([
                              data-responsive="off"
                              data-responsive_offset="on"
                              data-textAlign="['left','center','center','center']">
-                            РЕСПУБЛИКАЛЫҚ ЗИЯТКЕРЛІК <br> ОЛИМПИАДАСЫ
+                            <?= Yii::t('app', 'ИНТЕЛЛЕКТУАЛЬНАЯ ОЛИМПИАДА <br> «АЛТЫН ҰРПАҚ-2023»') ?>
                         </div>
                         
                         <div class="tp-caption tp-resizeme alt-font text-white"
@@ -75,7 +75,7 @@ $this->registerMetaTag([
                              data-responsive="off"
                              data-responsive_offset="on"
                              data-textAlign="['left','center','center','center']">
-                            Өту уақыты: <br> 2023 жылдың 01-07 ақпан аралығы
+                            <?= Yii::t('app', 'Время проведения:') ?> <br> <?= Yii::t('app', '01-07 февраля 2023 года') ?>
                         </div>
 
                         <!-- btn layer -->
