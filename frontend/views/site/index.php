@@ -58,7 +58,7 @@ $this->registerMetaTag([
                              data-responsive="off"
                              data-responsive_offset="on"
                              data-textAlign="['left','center','center','center']">
-                            РЕСПУБЛИКАЛЫҚ ЗИЯТКЕРЛІК <br> ПӘНДЕР ОЛИМПИАДАСЫ
+                            РЕСПУБЛИКАЛЫҚ ЗИЯТКЕРЛІК <br> ОЛИМПИАДАСЫ
                         </div>
                         
                         <div class="tp-caption tp-resizeme alt-font text-white"
