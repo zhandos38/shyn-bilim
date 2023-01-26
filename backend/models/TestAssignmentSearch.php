@@ -21,7 +21,7 @@ class TestAssignmentSearch extends TestAssignment
     public function rules()
     {
         return [
-            [['id', 'test_id', 'school_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
+            [['id', 'test_id', 'school_id', 'subject_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
             [['name', 'surname', 'patronymic', 'iin'], 'safe'],
         ];
     }
@@ -73,6 +73,7 @@ class TestAssignmentSearch extends TestAssignment
             't1.id' => $this->id,
             't4.test_id' => $this->test_id,
             't1.school_id' => $this->school_id,
+            't1.subject_id' => $this->subject_id,
             't1.grade' => $this->grade,
             't1.point' => $this->point,
             't1.status' => $this->status,
