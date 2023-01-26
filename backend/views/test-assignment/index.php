@@ -1,6 +1,7 @@
 <?php
 
 use common\models\School;
+use common\models\Subject;
 use common\models\TestAssignment;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
@@ -63,6 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(TestAssignment $model) {
                     return $model->subject !== null ? $model->subject->name_kz : "-";
                 },
+                'filter' => ArrayHelper::map(Subject::find()->asArray()->all(), 'id', 'name_kz'),
             ],
             'teacher_name',
             'grade',
