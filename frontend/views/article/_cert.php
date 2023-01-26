@@ -7,7 +7,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px;">
+<div class="cert-page" style="background-image: url('/img/article/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 800px">
     <div id="cert-name" class="bordered" style="padding-top: 280px; padding-left: 40px; width: 600px; text-align: center">
         <div id="cert-city" style="padding-top: 10px; font-size: 14px; color: #000000; height: 10px; text-align: center;">
             <?php
@@ -23,18 +23,20 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         <div id="cert-school" style="font-size: 14px; color: #000000; height: 50px; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
         </div>
-        <span style="font-size: 24px; font-weight: bold; color: #000">
+        <span style="font-size: 28px; font-weight: 500; color: #000">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </span>
     </div>
-    <div id="cert-topic" style="padding-top: 10px; padding-left: 470px; font-size: 18px; color: #7c5822; line-height: 110%; width: 600px; height: 40px; text-align: center">
+    <div id="cert-topic" style="padding-top: 60px; padding-left: 40px; font-size: 18px; color: #000000; line-height: 110%; width: 600px; height: 40px; text-align: center">
          <?= $model->topic ?>
     </div>
-    <div style="padding-top: 0; padding-left: 22px; padding-bottom: 80px; font-size: 14px; font-weight: bold; color: #FFFFFF">
+    <div style="padding-top: 140px; padding-left: 22px; font-size: 14px; font-weight: bold; color: #000000">
         <div id="cert-qrcode" style="height: 60px; padding-top: 40px; width: 160px; font-size: 22px;">
             <img src="<?= $qrCode->writeDataUri() ?>">
         </div>
-        <div id="cert-date" style="padding-top: 10px">Күні: <?= date('d.m.Y') ?></div>
-        <div id="cert-number" style="padding-top: -5px">Тіркеу №<?= $model->id ?></div>
+        <div style="padding-top: -50px; padding-left: 100px">
+            <div id="cert-date" style="padding-top: 10px">Күні: <?= date('d.m.Y', $model->created_at) ?></div>
+            <div id="cert-number" style="padding-top: -5px">Тіркеу №<?= $model->id ?></div>
+        </div>
     </div>
 </div>
