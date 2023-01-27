@@ -133,10 +133,10 @@ class ArticleController extends Controller
             'marginRight' => 0,
             'marginBottom' => 0,
             // portrait orientation
-            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            'orientation' => Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
-            'filename' => 'Сертификат.pdf',
+            'filename' => 'Грамота.pdf',
             // your html content input
             'content' => $content,
             // format content from your own css file if needed or use the
