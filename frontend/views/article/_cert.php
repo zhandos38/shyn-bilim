@@ -28,7 +28,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         </div>
         <div style="height: 100px; font-size: 28px; font-weight: bold; color: #000;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
-            <div id="cert-topic" style="padding-top: 20px; font-size: 20px; color: #000000; line-height: 110%;">
+            <div id="cert-topic" style="padding-top: 20px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500;">
                  <?= $model->topic ?>
             </div>
         </div>
