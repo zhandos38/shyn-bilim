@@ -8,7 +8,7 @@
             <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['article/cert', 'id' => $id]) ?>" target="_blank">
                 <?= Yii::t('app', 'Получить сертификат') ?>
             </a>
-            <br>
+            <br><br>
             <a class="btn btn-success" href="<?= \yii\helpers\Url::to(['article/charter', 'id' => $id]) ?>" target="_blank">
                 <?= Yii::t('app', 'Получить грамоту') ?>
             </a>
