@@ -26,11 +26,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             <?= $model->subject->name_kz ?> пәні мұғалімі
         </div>
         </div>
-        <span style="font-size: 28px; font-weight: 500; color: #000">
+        <span style="font-size: 32px; font-weight: bolder; color: #000;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </span>
     </div>
-    <div id="cert-topic" style="padding-top: 20px; padding-left: 40px; font-size: 18px; color: #000000; line-height: 110%; width: 600px; height: 60px; text-align: center">
+    <div id="cert-topic" style="padding-top: 20px; padding-left: 40px; font-size: 24px; color: #000000; line-height: 110%; width: 600px; height: 60px; text-align: center">
          <?= $model->topic ?>
     </div>
     <div style="padding-top: 140px; padding-left: 22px; font-size: 12px; color: #000000">
