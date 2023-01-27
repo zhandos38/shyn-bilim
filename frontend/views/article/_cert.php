@@ -8,7 +8,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setMargin(5);
 ?>
 <div class="cert-page" style="background-image: url('/img/article/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 800px; font-family: 'Times New Roman';">
-    <div id="cert-name" class="bordered" style="padding-top: 300px; padding-left: 80px; width: 600px; text-align: center">
+    <div id="cert-name" class="bordered" style="padding-top: 300px; padding-left: 80px; width: 560px; text-align: center">
         <div id="cert-city" style="padding-top: 0; font-size: 14px; color: #000000; height: 10px; text-align: center;">
             <?php
             if ($model->school !== null) {
@@ -26,7 +26,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             <?= $model->subject->name_kz ?> пәні мұғалімі
         </div>
         </div>
-        <div style="padding-top: 10px; height: 100px; font-size: 28px; font-weight: bold; color: #000;">
+        <div style="padding-top: 10px; height: 100px; font-size: 24px; font-weight: bold; color: #000;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
             <div id="cert-topic" style="padding-top: 12px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500;">
                  <?= $model->topic ?>
