@@ -109,6 +109,43 @@ class ArticleController extends Controller
 
         return $pdf->render();
     }
+    
+    public function actionCharter($id)
+    {
+        $model = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
+        if (empty($model)) {
+            throw new Exception('Article not found!');
+        }
+
+        // get your HTML raw content without any layouts or scripts
+        $content = $this->renderPartial('_charter', [
+            'model' => $model,
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Сертификат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+        ]);
+
+        return $pdf->render();
+    }
 
     public function actionList($id)
     {
