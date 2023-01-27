@@ -57,7 +57,7 @@ class ArticleController extends Controller
     
     public function actionSuccessOffline($id)
     {
-        $order = Article::findOne(['id' => $id], 'status' => Article::STATUS_ACTIVE]);
+        $order = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
         if (empty($order)) {
             throw new Exception('Order is not found');
         }
