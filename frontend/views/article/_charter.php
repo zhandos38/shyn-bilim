@@ -20,17 +20,14 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 14px; color: #000000; height: 70px; text-align: center; line-height: 110%;">
+        <div id="cert-school" style="font-size: 14px; color: #000000; height: 50px; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
-            <div style="text-transform: uppercase; font-weight: bold; padding-top: 10px;">
-            <?= $model->subject->name_kz ?> пәні мұғалімі
         </div>
-        </div>
-        <div style="padding-top: 10px; height: 100px; font-size: 24px; font-weight: bold; color: #000;">
-            <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
-            <div id="cert-topic" style="padding-top: 12px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500;">
-                 <?= $model->topic ?>
+        <div style="text-transform: uppercase; padding-top: 20px;">
+                <?= $model->subject->name_kz ?> пәні мұғалімі
             </div>
+        <div style="padding-top: 10px; height: 100px; font-size: 24px; bold; color: #000;">
+            <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
     </div>
     <div style="padding-top: 140px; padding-left: 22px; font-size: 12px; color: #000000">
