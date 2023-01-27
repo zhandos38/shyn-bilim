@@ -54,6 +54,18 @@ class ArticleController extends Controller
             'subjects' => $subjects
         ]);
     }
+    
+    public function actionSuccessOffline($id)
+    {
+        $order = Article::findOne(['id' => $id], 'status' => Article::STATUS_ACTIVE]);
+        if (empty($order)) {
+            throw new Exception('Order is not found');
+        }
+
+        return $this->render('success', [
+            'id' => $order->id
+        ]);
+    }
 
     public function actionSuccess()
     {
@@ -207,7 +219,7 @@ class ArticleController extends Controller
                     $whiteList->limit = $whiteList->limit - 1;
                     $whiteList->save();
 
-                    return $this->redirect(['article/cert', 'id' => $model->id]);
+                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
                 }
 
                 $salt = $this->getSalt(8);
