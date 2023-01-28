@@ -3,12 +3,12 @@ use Da\QrCode\QrCode;
 
 /* @var $model \common\models\Article */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model->id], 'https')))
+$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $model->id], 'https')))
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 800px; font-family: 'Times New Roman';">
-    <div id="cert-name" class="bordered" style="padding-top: 300px; padding-left: 80px; width: 540px; text-align: center">
+<div class="cert-page" style="background-image: url('/img/article/charter2.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
+    <div id="cert-name" class="bordered" style="padding-top: 600px; padding-left: 290px; width: 460px; text-align: center">
         <div id="cert-city" style="padding-top: 0; font-size: 14px; color: #000000; height: 10px; text-align: center;">
             <?php
             if ($model->school !== null) {
@@ -20,20 +20,17 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 14px; color: #000000; height: 70px; text-align: center; line-height: 110%;">
+        <div id="cert-school" style="font-size: 14px; color: #000000; height: 50px; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
-            <div style="text-transform: uppercase; font-weight: bold; padding-top: 10px;">
-            <?= $model->subject->name_kz ?> пәні мұғалімі
         </div>
-        </div>
-        <div style="padding-top: 10px; height: 100px; font-size: 24px; font-weight: bold; color: #000;">
-            <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
-            <div id="cert-topic" style="padding-top: 12px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500;">
-                 <?= $model->topic ?>
+        <div style="text-transform: uppercase; padding-top: 20px;">
+                <?= $model->subject->name_kz ?> пәні мұғалімі
             </div>
+        <div style="padding-top: 10px; height: 100px; font-size: 24px; bold; color: #000;">
+            <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
     </div>
-    <div style="padding-top: 140px; padding-left: 22px; font-size: 12px; color: #000000">
+    <div style="padding-top: 160px; padding-left: 260px; font-size: 12px; color: #000000">
         <div id="cert-qrcode" style="height: 60px; padding-top: 40px; width: 160px; font-size: 22px;">
             <img src="<?= $qrCode->writeDataUri() ?>">
         </div>
