@@ -20,7 +20,7 @@ $this->title = Yii::t('app', 'Опубликовать материал');
             Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">келісімді</a> мақұлдайсыз
         <?php endif; ?>
         <br>
-        <a style="color: blue" href="/file/Шаблон байқауға.docx"><i class="fa fa-download"></i> Шаблонды жүктеу</a>
+        <a style="color: blue" href="/file/Шаблон материал жариялау.docx"><i class="fa fa-download"></i> Шаблонды жүктеу</a>
     </p>
     <?php endif; ?>
     <div class="row">
