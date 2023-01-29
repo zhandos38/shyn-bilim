@@ -11,6 +11,7 @@ use yii\imagine\Image;
  *
  * @property int $id
  * @property boolean $status
+ * @property boolean $is_actual
  * @property string|null $name
  * @property integer|null $type
  * @property float|null $price
@@ -54,6 +55,7 @@ class Olympiad extends \yii\db\ActiveRecord
             [['type'], 'integer'],
             ['price', 'number'],
             [['status', 'order'], 'integer'],
+            ['is_actual', 'boolean'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['fileTempKz', 'fileTempRu'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
@@ -75,6 +77,7 @@ class Olympiad extends \yii\db\ActiveRecord
             'type' => 'Тип',
             'imageFile' => 'Рисунок',
             'status' => 'Статус',
+            'is_actual' => 'Актуален',
             'price' => 'Цена',
             'order' => 'Порядок',
             'folder_name' => 'Имя папки',
