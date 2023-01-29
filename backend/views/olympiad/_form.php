@@ -46,6 +46,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'order') ?>
 
+    <?= $form->field($model, 'folder_name')->textInput() ?>
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>

@@ -362,7 +362,7 @@ class OlympiadController extends Controller
                 $place = 'II ОРЫН';
             }
 
-            $content = $this->renderPartial('_diploma', [
+            $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_diploma'), [
                 'testAssignment' => $testAssignment,
                 'place' => $place,
             ]);
@@ -389,7 +389,7 @@ class OlympiadController extends Controller
                 'cssFile' => 'css/custom.css'
             ]);
         } else {
-            $content = $this->renderPartial('_cert', [
+            $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert'), [
                 'testAssignment' => $testAssignment,
             ]);
 
@@ -404,7 +404,7 @@ class OlympiadController extends Controller
                 // A4 paper format
                 'format' => Pdf::FORMAT_A4,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_PORTRAIT,
+                'orientation' => Pdf::ORIENT_LANDSCAPE,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Сертификат.pdf',
@@ -448,7 +448,7 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/view']);
         }
 
-        $content = $this->renderPartial('_cert-thank', [
+        $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank'), [
             'testAssignment' => $testAssignment
         ]);
 
@@ -489,7 +489,7 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/view']);
         }
 
-        $content = $this->renderPartial('_cert-thank-parent', [
+        $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank-parent'), [
             'testAssignment' => $testAssignment
         ]);
 
@@ -535,7 +535,7 @@ class OlympiadController extends Controller
             return $this->redirect('/');
         }
 
-        $content = $this->renderPartial('_cert-thank-leader', [
+        $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank-leader'), [
             'testAssignment' => $testAssignment
         ]);
 

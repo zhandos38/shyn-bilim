@@ -18,6 +18,7 @@ use yii\imagine\Image;
  * @property int|null $order
  * @property string|null $file_kz
  * @property string|null $file_ru
+ * @property string|null $folder_name
  *
  * @property Test[] $tests
  */
@@ -49,7 +50,7 @@ class Olympiad extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'img', 'file'], 'string', 'max' => 255],
+            [['name', 'img', 'file', 'folder_name'], 'string', 'max' => 255],
             [['type'], 'integer'],
             ['price', 'number'],
             [['status', 'order'], 'integer'],
@@ -76,6 +77,7 @@ class Olympiad extends \yii\db\ActiveRecord
             'status' => 'Статус',
             'price' => 'Цена',
             'order' => 'Порядок',
+            'folder_name' => 'Имя папки',
         ];
     }
 
@@ -162,5 +164,10 @@ class Olympiad extends \yii\db\ActiveRecord
         }
 
         return false;
+    }
+
+    public function getFolderPath($subName = null)
+    {
+        return $this->folder_name ? $this->folder_name . "/" . $subName : $subName;
     }
 }

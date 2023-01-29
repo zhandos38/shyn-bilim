@@ -34,6 +34,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите олимпиаду']) ?>
+
     <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
         'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],

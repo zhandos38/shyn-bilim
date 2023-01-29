@@ -46,11 +46,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                         <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
                     </a>
-                    <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" download>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                        <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
-                    </a>
                 </div>
             </div>
         </div>

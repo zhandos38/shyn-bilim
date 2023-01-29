@@ -1,37 +1,27 @@
 <?php
-use common\models\Subject;use Da\QrCode\QrCode;
+
+use common\models\Subject;
+use Da\QrCode\QrCode;
 
 /* @var $testAssignment \common\models\TestAssignment */
-/* @var $place string */
-/* @var $diplomaImage string */
+/* @var $certImage string */
 /* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(60)
-    ->setMargin(5);
+    ->setSize(60)->setMargin(5);
 
-$subjectType = "humanitary";
-if ($testAssignment->subject->kind === Subject::KIND_NATURAL) {
-    $subjectType = "natural";
+$imgFile = "diploma.jpg";
+if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
+    $imgFile = "diploma_1-4.jpg";
+} else if ($testAssignment->grade >= 5 && $testAssignment->grade <= 11) {
+    $imgFile = "diploma_5-11.jpg";
 }
 ?>
 <div>
-    <div class="cert-page" style="font-family: 'Arial'; background-image: url('./img/altyn-urpaq-2023/diplom_1-4.jpg'); background-size: cover; background-repeat: no-repeat; font-size: 18px; font-family: 'Arial'; height: 1200px">
-        <div style="font-size: 22px; padding-left: -70px; padding-top: 210px; text-transform: uppercase; color: #fff; width: 320px; text-align: center;">
-            <b><?= $place ?></b>
-        </div>
-        <div style="height: 160px; padding-top: <?= $testAssignment->subject->kind === Subject::KIND_NATURAL ? '175px' : '165px' ?>; padding-left: 150px; width: 860px; text-align: center;">
-            <div style="padding-top: 0; font-size: 22px; font-weight: 400;">
-                <?= $testAssignment->subject->name_kz ?> пәнінен
-            </div>
-            <div style="padding-top: 26px; font-size: 28px; font-weight: 400;">
-                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
-            </div>
-            <div style="padding-top: 8px; font-size: 22px; font-weight: 400;">
-                <?= $testAssignment->grade ?> сынып оқушысы<br>
-            </div>
-            <div style="font-size: 13px; padding-top: 0;">
-                <div>
+    <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2023/<?= $imgFile ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 800px">
+        <div style="padding-left: 210px; padding-top: 160px; text-align: center; width: 600px; height: 150px; font-size: 18px">
+            <div style="padding-top: 10px; font-family: 'Arial'; height: 100px;">
+                <div style="font-size: 14px; font-weight: 500">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -41,16 +31,22 @@ if ($testAssignment->subject->kind === Subject::KIND_NATURAL) {
                         }
                     } ?>
                 </div>
-                <div>
+                <div style="padding-left: 60px; font-size: 14px; font-weight: 500; width: 460px">
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
+            <div style="text-transform: uppercase">
+                <?= $testAssignment->grade ?> сынып оқушысы
+            </div>
+            <div style="font-size: 22px; padding-top: 10px; font-weight: lighter; height: 60px; text-transform: uppercase">
+                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+            </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 40px; padding-top: 80px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 70px; padding-top: 290px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-            <div style="color: #0a0a0a; padding-top: 10px; font-size: 14px; padding-left: 0">
-                <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
-                <div id="cert-date" style="color: #0a0a0a;">Күні <?= date('d.m.Y') ?></div>
+            <div style="color: #fff; padding-top: -45px; font-size: 14px; padding-left: 90px; font-weight: bold">
+                <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
+                <div id="cert-date">Күні <?= date('d.m.Y') ?></div>
             </div>
         </div>
     </div>

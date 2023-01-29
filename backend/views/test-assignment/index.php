@@ -33,6 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [
+                'attribute' => 'olympiad_id',
+                'value' => function(TestAssignment $model) {
+                    return $model->olympiad !== null ? $model->olympiad->name : 'Не указано';
+                },
+                'filter' => ArrayHelper::map(\common\models\Olympiad::find()->asArray()->all(), 'id', 'name')
+            ],
             'name',
             'surname',
             'patronymic',
