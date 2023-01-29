@@ -28,6 +28,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'price')->textInput() ?>
 
+    <?= $form->field($model, 'is_actual')->checkbox() ?>
+
     <?= $form->field($model, 'fileTempKz')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>

@@ -37,6 +37,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'filter' => Olympiad::getStatuses()
             ],
+            [
+                'attribute' => 'is_actual',
+                'value' => function($model) {
+                    return $model->is_actual ? "Да" : "Нет";
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
