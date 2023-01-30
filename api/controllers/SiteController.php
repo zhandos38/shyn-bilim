@@ -121,7 +121,7 @@ class SiteController extends Controller
                 }
 
                 $user = $order->user;
-                $user->article_count += 3;
+                $user->article_count += 2;
                 if (!$user->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }

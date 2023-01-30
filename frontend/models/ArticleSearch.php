@@ -58,7 +58,7 @@ class ArticleSearch extends Article
             'query' => $query,
             'sort' => [
                 'defaultOrder' => [
-                    'id' => SORT_DESC
+                    'created_at' => SORT_DESC
                 ]
             ],
             'pagination' => [
