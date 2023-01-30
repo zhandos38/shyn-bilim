@@ -19,7 +19,10 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2023/<?= $imgFile ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 800px">
-        <div style="padding-left: 210px; padding-top: 160px; text-align: center; width: 600px; height: 150px; font-size: 18px">
+        <div style="font-size: 22px; padding-left: 500px; padding-top: 60px; text-transform: uppercase; color: #fff; text-align: center">
+            <b><?= $place ?></b>
+        </div>
+        <div style="padding-left: 210px; padding-top: 90px; text-align: center; width: 600px; height: 150px; font-size: 18px">
             <div style="padding-top: 10px; font-family: 'Arial'; height: 100px;">
                 <div style="font-size: 14px; font-weight: 500">
                     <?php
@@ -42,7 +45,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 70px; padding-top: 290px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 70px; padding-top: 270px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #fff; padding-top: -45px; font-size: 14px; padding-left: 90px; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
