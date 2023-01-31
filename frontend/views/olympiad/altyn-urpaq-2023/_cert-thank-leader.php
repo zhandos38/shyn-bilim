@@ -17,7 +17,10 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2023/<?= $imgFile ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 65px; padding-top: 400px">
-            <div style="font-size: 14px; font-weight: 500">
+            <div id="cert-name" style="padding-top: 100px; height: 80px; font-size: 18px; text-transform: uppercase;">
+                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+            </div>
+            <div style="font-size: 14px; font-weight: 500; padding-top: 10px">
                 <?php
                 if ($testAssignment->school !== null) {
                     if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -35,9 +38,6 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             </div>
             <div id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 10px">
                 <b><?= $testAssignment->teacher_name ?></b>
-            </div>
-            <div id="cert-name" style="padding-top: 100px; height: 80px; font-size: 18px; text-transform: uppercase;">
-                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div id="footer" style="text-align: left; padding-left: 0; padding-top: 90px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
                 <div id="cert-qrcode"><img src="<?= $qrCode->writeDataUri() ?>"></div>
