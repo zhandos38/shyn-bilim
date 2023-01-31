@@ -21,7 +21,7 @@ class TestAssignmentSearch extends TestAssignment
     public function rules()
     {
         return [
-            [['id', 'test_id', 'school_id', 'subject_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
+            [['id', 'test_id', 'olympiad_id', 'school_id', 'subject_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
             [['name', 'surname', 'patronymic', 'iin'], 'safe'],
         ];
     }
@@ -71,6 +71,7 @@ class TestAssignmentSearch extends TestAssignment
         // grid filtering conditions
         $query->andFilterWhere([
             't1.id' => $this->id,
+            't1.olympiad_id' => $this->olympiad_id,
             't4.test_id' => $this->test_id,
             't1.school_id' => $this->school_id,
             't1.subject_id' => $this->subject_id,
