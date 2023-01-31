@@ -14,7 +14,7 @@ use yii\helpers\VarDumper;
  *
  * @property mixed $requestFields
  */
-class CheckAssignmentForm extends Model
+class CheckArticleForm extends Model
 {
     public $iin;
     public $subject_id;
