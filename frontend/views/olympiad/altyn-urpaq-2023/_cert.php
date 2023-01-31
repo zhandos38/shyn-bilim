@@ -23,7 +23,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <div style="font-size: 22px; padding-top: 40px; font-weight: lighter; height: 60px; text-transform: uppercase">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="padding-top: 10px; font-family: 'Arial'; height: 110px; width: 460px">
+            <div style="padding-top: 10px; padding-left: 100px; font-family: 'Arial'; height: 80px; width: 420px">
                 <div style="font-size: 14px; font-weight: 500">
                     <?php
                     if ($testAssignment->school !== null) {
