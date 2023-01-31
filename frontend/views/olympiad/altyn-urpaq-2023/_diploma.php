@@ -45,9 +45,9 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 40px; padding-top: 240px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 40px; padding-top: 210px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-            <div style="color: #fff; padding-top: 10px; font-size: 14px; padding-left: 0; font-weight: bold">
+            <div style="color: #fff; padding-top: 10px; font-size: 12px; padding-left: 0; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
                 <div id="cert-date">Күні <?= date('d.m.Y') ?></div>
             </div>
