@@ -23,7 +23,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <b><?= $place ?></b>
         </div>
         <div style="padding-left: 210px; padding-top: 90px; text-align: center; width: 600px; height: 150px; font-size: 18px">
-            <div style="padding-left: 120px; padding-top: 10px; font-family: 'Arial'; height: 100px; width: 400px;">
+            <div style="padding-left: 100px; padding-top: 10px; font-family: 'Arial'; height: 100px; width: 400px;">
                 <div style="font-size: 14px; font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
