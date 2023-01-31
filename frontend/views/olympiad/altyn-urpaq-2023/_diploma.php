@@ -47,7 +47,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
         </div>
         <div class="border" style="display: flex; padding-left: 70px; padding-top: 270px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-            <div style="color: #fff; padding-top: 45px; font-size: 14px; padding-left: 45px; font-weight: bold">
+            <div style="color: #fff; padding-top: 20px; font-size: 14px; padding-left: 20px; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
                 <div id="cert-date">Күні <?= date('d.m.Y') ?></div>
             </div>
