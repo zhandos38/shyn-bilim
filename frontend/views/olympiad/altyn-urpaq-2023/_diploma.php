@@ -8,7 +8,7 @@ use Da\QrCode\QrCode;
 /* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(80)->setMargin(5);
+    ->setSize(90)->setMargin(5);
 
 $imgFile = "diploma.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
