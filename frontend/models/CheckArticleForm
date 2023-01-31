@@ -3,7 +3,6 @@ namespace frontend\models;
 
 
 use common\models\Article;
-use common\models\TestAssignment;
 use Yii;
 use yii\base\Model;
 use Exception;
@@ -19,14 +18,13 @@ class CheckAssignmentForm extends Model
 {
     public $iin;
     public $subject_id;
-    public $olympiad_id;
 
     public function rules()
     {
         return [
             [['iin', 'subject_id'], 'required'],
             ['iin', 'string', 'max' => 20],
-            [['subject_id', 'olympiad_id'], 'integer'],
+            [['subject_id'], 'integer'],
         ];
     }
 
@@ -35,23 +33,19 @@ class CheckAssignmentForm extends Model
         return [
           'iin' => Yii::t('app', 'ИИН'),
           'subject_id' => Yii::t('app', 'Предмет'),
-          'olympiad_id' => Yii::t('app', 'Олимпиада'),
         ];
     }
 
-    public function check($isFinished = false)
+    public function check()
     {
-        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'iin' => $this->iin, 'subject_id' => $this->subject_id]);
-        if ($isFinished) {
-            $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
-        } else {
-            $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
-        }
-        $testAssignment = $query->one();
+        $query = Article::find()->andWhere(['iin' => $this->iin, 'subject_id' => $this->subject_id]);
+        $query->andWhere(['status' => Article::STATUS_ACTIVE]);
+        
+        $article = $query->one();
 
 
-        if ($testAssignment) {
-            return $testAssignment->id;
+        if ($article) {
+            return $article->id;
         }
 
         return false;
