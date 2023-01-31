@@ -151,7 +151,7 @@ class OlympiadController extends Controller
             $model->created_at = time();
 
             // Check whitelist
-            $whiteList = WhiteList::findOne(['iin' => $model->iin, 'subject_id' => $model->subject_id]);
+            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
             }
