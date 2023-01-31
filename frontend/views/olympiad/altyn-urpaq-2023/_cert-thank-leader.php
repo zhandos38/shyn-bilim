@@ -4,12 +4,14 @@ use Da\QrCode\QrCode;
 /* @var $testAssignment \common\models\TestAssignment */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader', 'id' => $testAssignment->id], 'https')))
-    ->setSize(65)
+    ->setSize(80)
     ->setMargin(5);
 
+$teacherType = "Мұғалім";
 $imgFile = "thank.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
     $imgFile = "thank_1-4.jpg";
+    $teacherType = "Бастауыш сынып мұғалімі";
 } else if ($testAssignment->grade >= 5 && $testAssignment->grade <= 11) {
     $imgFile = "thank_5-11.jpg";
 }
@@ -34,7 +36,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <?= $testAssignment->school->name ?>
             </div>
             <div class="bordered" id="cert-name" style="font-size: 14px; padding-top: 20px">
-                <?= $testAssignment->teacher_type_name ?>
+                <?= $teacherType ?>
             </div>
             <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 10px">
                 <b><?= $testAssignment->teacher_name ?></b>
