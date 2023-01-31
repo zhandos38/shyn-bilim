@@ -42,7 +42,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 20px; padding-top: 240px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 20px; padding-top: 260px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; padding-top: -45px; font-size: 14px; padding-left: 100px">
                 <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
