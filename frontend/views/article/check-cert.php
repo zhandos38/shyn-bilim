@@ -9,7 +9,7 @@ use yii\web\View;
 /* @var $this View */
 /* @var $model CheckArticleForm */
 
-$this->title = Yii::t('app', 'Получить сертификат/грамоту');
+$this->title = Yii::t('app', 'Получить сертификат');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Вопросы и ответы'), 'url' => ['site/questions']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 ?>
