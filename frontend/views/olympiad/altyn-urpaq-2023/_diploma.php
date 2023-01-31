@@ -23,8 +23,8 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <b><?= $place ?></b>
         </div>
         <div style="padding-left: 210px; padding-top: 90px; text-align: center; width: 600px; height: 150px; font-size: 18px">
-            <div style="padding-top: 10px; font-family: 'Arial'; height: 100px;">
-                <div style="font-size: 14px; font-weight: 500">
+            <div style="padding-left: 200px; padding-top: 10px; font-family: 'Arial'; height: 100px; width: 200px">
+                <div style="font-size: 14px; font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -38,7 +38,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
-            <div style="text-transform: uppercase">
+            <div style="text-transform: uppercase; font-size: 14px;">
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
             <div style="font-size: 22px; padding-top: 10px; font-weight: lighter; height: 60px; text-transform: uppercase">
