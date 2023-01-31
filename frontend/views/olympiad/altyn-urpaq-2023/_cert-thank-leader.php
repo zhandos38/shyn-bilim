@@ -38,7 +38,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <div class="bordered" id="cert-name" style="font-size: 14px; padding-top: 20px; height: 20px;">
                 <?= $teacherType ?>
             </div>
-            <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 10px">
+            <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 20px">
                 <b><?= $testAssignment->teacher_name ?></b>
             </div>
             <div id="footer" style="text-align: left; padding-left: 0; padding-top: 100px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
