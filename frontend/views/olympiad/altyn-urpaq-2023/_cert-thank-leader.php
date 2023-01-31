@@ -11,7 +11,7 @@ $teacherType = "Мұғалім";
 $imgFile = "thank.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
     $imgFile = "thank_1-4.jpg";
-    $teacherType = "Бастауыш сынып мұғалімі";
+    $teacherType = "";
 } else if ($testAssignment->grade >= 5 && $testAssignment->grade <= 11) {
     $imgFile = "thank_5-11.jpg";
 }
