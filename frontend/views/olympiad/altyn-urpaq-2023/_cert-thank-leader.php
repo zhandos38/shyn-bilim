@@ -33,13 +33,13 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <div class="bordered" style="font-size: 14px; font-weight: 500; width: 460px">
                 <?= $testAssignment->school->name ?>
             </div>
-            <div class="bordered" id="cert-name" style="font-size: 18px; text-transform: uppercase; padding-top: 20px">
+            <div class="bordered" id="cert-name" style="font-size: 18px; padding-top: 20px">
                 <?= $testAssignment->teacher_type_name ?>
             </div>
             <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 10px">
                 <b><?= $testAssignment->teacher_name ?></b>
             </div>
-            <div id="footer" style="text-align: left; padding-left: 0; padding-top: 90px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
+            <div id="footer" style="text-align: left; padding-left: 0; padding-top: 100px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
                 <div id="cert-qrcode"><img src="<?= $qrCode->writeDataUri() ?>"></div>
                 <div id="cert-number" style="padding-top: 10px">Тіркеу №<?= $testAssignment->id ?></div>
                 <div id="cert-date" style="padding-top: 0;">Күні <?= date('d.m.Y', $testAssignment->created_at) ?> жыл</div>
