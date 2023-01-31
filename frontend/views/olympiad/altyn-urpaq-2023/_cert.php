@@ -23,7 +23,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <div style="font-size: 22px; padding-top: 40px; font-weight: lighter; height: 60px; text-transform: uppercase">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="padding-top: 10px; font-family: 'Arial'; height: 110px;">
+            <div style="padding-top: 10px; font-family: 'Arial'; height: 110px; width: 460px">
                 <div style="font-size: 14px; font-weight: 500">
                     <?php
                     if ($testAssignment->school !== null) {
@@ -37,9 +37,9 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <div style="font-size: 14px; font-weight: 500">
                     <?= $testAssignment->school->name ?>
                 </div>
-                <div style="text-transform: uppercase; font-size: 14px;">
-                    <?= $testAssignment->grade ?> сынып оқушысы
-                </div>
+            </div>
+            <div style="text-transform: uppercase; font-size: 14px;">
+                <?= $testAssignment->grade ?> сынып оқушысы
             </div>
         </div>
         <div class="border" style="display: flex; padding-left: 20px; padding-top: 240px; color: #fff9f6">
