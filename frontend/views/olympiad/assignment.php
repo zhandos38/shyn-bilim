@@ -70,13 +70,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             'id' => 'grade-select',
             'prompt' => Yii::t('app', 'Выберите класс')
         ]) ?>
-
-        <div id="subject_id-wrapper" style="display: none">
-            <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
-                'id' => 'subject_id-select',
-                'prompt' => Yii::t('app', 'Выберите предмет')
-            ]) ?>
-        </div>
     </div>
     <div class="col-md-4">
         <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [

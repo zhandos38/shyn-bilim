@@ -125,7 +125,7 @@ class OlympiadController extends Controller
             }
 
             // Check test assignment
-            $testAssignment = TestAssignment::find()->andWhere(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED, 'subject_id' => $model->subject_id])->one();
+            $testAssignment = TestAssignment::find()->andWhere(['iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])->one();
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
 
