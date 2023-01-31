@@ -9,6 +9,7 @@ use common\models\Subject;
 use frontend\models\ArticleSearch;
 use frontend\models\MyArticleSearch;
 use frontend\models\PayboxForm;
+use frontend\models\CheckArticleForm;
 use kartik\mpdf\Pdf;
 use Paybox\Pay\Facade as Paybox;
 use phpDocumentor\Reflection\DocBlock\Tags\Throws;
@@ -157,6 +158,40 @@ class ArticleController extends Controller
         ]);
 
         return $pdf->render();
+    }
+    
+    public function actionCheckCert()
+    {
+        $model = new CheckArticleForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($articleId = $model->check()) {
+                return $this->redirect(['article/cert', 'id' => $articleId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('app', 'По данному ИИН не найдено материалов'));
+        }
+
+        return $this->render('check-cert', [
+            'model' => $model
+        ]);
+    }
+    
+    public function actionCheckCharter()
+    {
+        $model = new CheckArticleForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($articleId = $model->check()) {
+                return $this->redirect(['article/charter', 'id' => $articleId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('app', 'По данному ИИН не найдено материалов'));
+        }
+
+        return $this->render('check-cert', [
+            'model' => $model
+        ]);
     }
 
     public function actionList($id)

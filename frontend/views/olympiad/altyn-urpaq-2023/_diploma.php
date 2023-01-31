@@ -8,7 +8,7 @@ use Da\QrCode\QrCode;
 /* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(60)->setMargin(5);
+    ->setSize(90)->setMargin(5);
 
 $imgFile = "diploma.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
@@ -23,8 +23,8 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <b><?= $place ?></b>
         </div>
         <div style="padding-left: 210px; padding-top: 90px; text-align: center; width: 600px; height: 150px; font-size: 18px">
-            <div style="padding-top: 10px; font-family: 'Arial'; height: 100px;">
-                <div style="font-size: 14px; font-weight: 500">
+            <div style="padding-left: 100px; padding-top: 10px; font-family: 'Arial'; height: 100px; width: 400px;">
+                <div style="font-size: 14px; font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -34,20 +34,20 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                         }
                     } ?>
                 </div>
-                <div style="padding-left: 60px; font-size: 14px; font-weight: 500; width: 460px">
+                <div style="font-size: 14px; font-weight: 500;">
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
-            <div style="text-transform: uppercase">
+            <div style="text-transform: uppercase; font-size: 14px;">
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
             <div style="font-size: 22px; padding-top: 10px; font-weight: lighter; height: 60px; text-transform: uppercase">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 70px; padding-top: 270px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 40px; padding-top: 215px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
-            <div style="color: #fff; padding-top: -45px; font-size: 14px; padding-left: 90px; font-weight: bold">
+            <div style="color: #fff; padding-top: 5px; font-size: 11px; padding-left: 0; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
                 <div id="cert-date">Күні <?= date('d.m.Y') ?></div>
             </div>

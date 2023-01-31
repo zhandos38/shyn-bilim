@@ -39,6 +39,10 @@ use yii\helpers\Url; ?>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Жауап: Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз. Қосымша сұрақтарыңыз болса: https://wa.me/77786252078 WhatsApp номеріне жазасыз.
+                            <br>
+                            <a class="btn btn-primary" href="<?= Url::to(['article/check-cert']) ?>">Сертифика қайта жүктеу</a>
+                            <br><br>
+                            <a class="btn btn-primary" href="<?= Url::to(['article/check-charter']) ?>">Грамота қайта жүктеу</a>
                         </div>
                     </div>
                 </div>
@@ -229,6 +233,10 @@ use yii\helpers\Url; ?>
                         <div class="accordion-body">
                             <p>
                                 Ответ:  Если Вы не смогли или не успели загрузить Диплом, Сертификат, Благодарственное письмо, нажмите на нижнюю  кнопку. По интересующим Вас другим дополнительным  вопросам, можете письменно обратиться через приложение WhatsApp по номеру: https://wa.me/77786252078.
+                                <br>
+                                <a class="btn btn-primary" href="<?= Url::to(['article/check-cert']) ?>">Скачать сертификат</a>
+                                <br><br>
+                                <a class="btn btn-primary" href="<?= Url::to(['article/check-charter']) ?>">Скачать грамоту</a>
                             </p>
                         </div>
                     </div>
