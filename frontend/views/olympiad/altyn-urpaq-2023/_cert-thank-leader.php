@@ -11,7 +11,7 @@ $teacherType = "Мұғалім";
 $imgFile = "thank.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
     $imgFile = "thank_1-4.jpg";
-    $teacherType = "";
+    $teacherType = "Бастауыш сынып мұғалімі";
 } else if ($testAssignment->grade >= 5 && $testAssignment->grade <= 11) {
     $imgFile = "thank_5-11.jpg";
 }
@@ -38,7 +38,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
             <div class="bordered" id="cert-name" style="font-size: 18px; padding-top: 20px; height: 20px; text-transform: uppercase">
                 <?= $teacherType ?>
             </div>
-            <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; padding-top: 20px">
+            <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; padding-top: 10px">
                 <b><?= $testAssignment->teacher_name ?></b>
             </div>
             <div id="footer" style="text-align: left; padding-left: 0; padding-top: 100px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
