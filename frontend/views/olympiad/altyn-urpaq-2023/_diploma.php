@@ -8,7 +8,7 @@ use Da\QrCode\QrCode;
 /* @var $pedagogSubject string | null */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
-    ->setSize(60)->setMargin(5);
+    ->setSize(80)->setMargin(5);
 
 $imgFile = "diploma.jpg";
 if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
@@ -45,7 +45,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 70px; padding-top: 270px; color: #fff9f6">
+        <div class="border" style="display: flex; padding-left: 40px; padding-top: 240px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #fff; padding-top: 10px; font-size: 14px; padding-left: 0; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
