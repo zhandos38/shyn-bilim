@@ -41,7 +41,7 @@ use yii\helpers\Url; ?>
                             Жауап: Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз. Қосымша сұрақтарыңыз болса: https://wa.me/77786252078 WhatsApp номеріне жазасыз.
                             <br>
                             <a class="btn btn-primary" href="<?= Url::to(['article/check-cert']) ?>">Сертифика қайта жүктеу</a>
-                            <br>
+                            <br><br>
                             <a class="btn btn-primary" href="<?= Url::to(['article/check-charter']) ?>">Грамота қайта жүктеу</a>
                         </div>
                     </div>
@@ -235,7 +235,7 @@ use yii\helpers\Url; ?>
                                 Ответ:  Если Вы не смогли или не успели загрузить Диплом, Сертификат, Благодарственное письмо, нажмите на нижнюю  кнопку. По интересующим Вас другим дополнительным  вопросам, можете письменно обратиться через приложение WhatsApp по номеру: https://wa.me/77786252078.
                                 <br>
                                 <a class="btn btn-primary" href="<?= Url::to(['article/check-cert']) ?>">Скачать сертификат</a>
-                                <br>
+                                <br><br>
                                 <a class="btn btn-primary" href="<?= Url::to(['article/check-charter']) ?>">Скачать грамоту</a>
                             </p>
                         </div>
