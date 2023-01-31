@@ -17,7 +17,7 @@ if ($testAssignment->grade >= 1 && $testAssignment->grade <= 4) {
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2023/<?= $imgFile ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 65px; padding-top: 400px">
-            <div class="bordered" id="cert-name" style="padding-top: 90px; height: 60px; font-size: 18px; text-transform: uppercase;">
+            <div class="bordered" id="cert-name" style="padding-top: 100px; height: 60px; font-size: 18px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div class="bordered" style="font-size: 14px; font-weight: 500; padding-top: 10px">
