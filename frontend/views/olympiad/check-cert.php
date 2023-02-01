@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 
 <div class="row">
     <div class="col-md-4">
-        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
+        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->orderBy([‘id ’=> SORT_DESC]), 'id', 'name'), [
             'prompt' => Yii::t('app', 'Выберите олимпиаду')
         ]) ?>
 
