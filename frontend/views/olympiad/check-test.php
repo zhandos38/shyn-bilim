@@ -21,6 +21,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 
 <div class="row">
     <div class="col-md-4">
+        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
+            'prompt' => Yii::t('app', 'Выберите олимпиаду')
+        ]) ?>
+        
         <?= $form->field($model, 'iin') ?>
 
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
