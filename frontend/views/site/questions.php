@@ -152,8 +152,6 @@ use yii\helpers\Url; ?>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
                                 <br><br>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота Мұғалім үшін жүктеу</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Алғыс хат Ата-Ана үшін жүктеу</a>
                             </p>
                         </div>
                     </div>
@@ -329,8 +327,6 @@ use yii\helpers\Url; ?>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
                                 <br><br>
                                 <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота для руководителя скачать</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Благодарственное письмо для родителей скачать</a>
                             </p>
                         </div>
                     </div>
