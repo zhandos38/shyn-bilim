@@ -22,10 +22,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <div class="row">
     <div class="col-md-4">
         <?= $form->field($model, 'iin') ?>
-        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
-            'id' => 'subject_id-select',
-            'prompt' => Yii::t('app', 'Выберите предмет')
-        ]) ?>
+
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
