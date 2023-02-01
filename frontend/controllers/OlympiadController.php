@@ -530,10 +530,10 @@ class OlympiadController extends Controller
             return $this->redirect('/');
         }
 
-        if ($testAssignment->point <= 9) {
-            Yii::$app->session->setFlash('success', 'Орын алмағансыз, балыңыз жетпейді');
-            return $this->redirect('/');
-        }
+        //if ($testAssignment->point <= 9) {
+        //    Yii::$app->session->setFlash('success', 'Орын алмағансыз, балыңыз жетпейді');
+        //    return $this->redirect('/');
+        //}
 
         $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank-leader'), [
             'testAssignment' => $testAssignment
