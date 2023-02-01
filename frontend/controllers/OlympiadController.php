@@ -358,7 +358,7 @@ class OlympiadController extends Controller
             }
 
 
-            if ($testAssignment->point >= 15 && $testAssignment->point <= 17) {
+            if ($testAssignment->point >= 19 && $testAssignment->point <= 24) {
                 $place = 'II ОРЫН';
             }
 
