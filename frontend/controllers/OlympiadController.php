@@ -389,7 +389,7 @@ class OlympiadController extends Controller
                 'cssFile' => 'css/custom.css'
             ]);
         } else {
-            if ($testAssignment->grade === 20) {
+            if ($testAssignment->point === 20) {
                 Yii::$app->session->setFlash('success', 'Скачайте сертификат со второго тура');
                 return $this->redirect(['/']);
             }
