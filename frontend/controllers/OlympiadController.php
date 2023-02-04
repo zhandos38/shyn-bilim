@@ -344,7 +344,7 @@ class OlympiadController extends Controller
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/index']);
+            return $this->redirect(['/']);
         }
 
         if ($testAssignment->point >= 10) {
@@ -389,6 +389,11 @@ class OlympiadController extends Controller
                 'cssFile' => 'css/custom.css'
             ]);
         } else {
+            if ($testAssignment->grade === 20) {
+                Yii::$app->session->setFlash('success', 'Скачайте сертификат со второго тура');
+                return $this->redirect(['/']);
+            }
+
             $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert'), [
                 'testAssignment' => $testAssignment,
             ]);
