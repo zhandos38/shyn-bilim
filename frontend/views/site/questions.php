@@ -32,11 +32,11 @@ use yii\helpers\Url; ?>
             <div class="accordion" id="accordionExample" style="margin-top: 2rem">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             1. Сұрақ: МАТЕРИАЛ ЖАРИЯЛАУ барысында Сертификат немесе Грамота жүктей алмай қалған жағдайда қалай алуыма болады?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Жауап: Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз. Қосымша сұрақтарыңыз болса: https://wa.me/77786252078 WhatsApp номеріне жазасыз.
                             <br>
@@ -225,11 +225,11 @@ use yii\helpers\Url; ?>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             1. Вопрос: Как можно получить Сертификат или Грамоту в случае их незагрузки при  ПУБЛИКАЦИИ  МАТЕРИАЛА?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>
                                 Ответ:  Если Вы не смогли или не успели загрузить Диплом, Сертификат, Благодарственное письмо, нажмите на нижнюю  кнопку. По интересующим Вас другим дополнительным  вопросам, можете письменно обратиться через приложение WhatsApp по номеру: https://wa.me/77786252078.
