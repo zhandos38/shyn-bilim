@@ -75,7 +75,7 @@ $this->registerMetaTag([
                              data-responsive="off"
                              data-responsive_offset="on"
                              data-textAlign="['left','center','center','center']">
-                            <?= Yii::t('app', 'Время проведения:') ?> <br> <?= Yii::t('app', '01-07 февраля 2023 года') ?>
+                            <?= Yii::t('app', 'Время проведения:') ?> <br> <?= Yii::t('app', '01-10 февраля 2023 года') ?>
                         </div>
 
                         <!-- btn layer -->
