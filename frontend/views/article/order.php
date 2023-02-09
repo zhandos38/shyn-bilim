@@ -15,9 +15,9 @@ $this->title = Yii::t('app', 'Опубликовать материал');
     <?php if (!$model->user_id): ?>
     <p>
         <?php if (Yii::$app->language === 'ru'): ?>
-            Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
+            Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer2.pdf' ?>" target="_blank">публичной оферты</a>
         <?php else: ?>
-            Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">келісімді</a> мақұлдайсыз
+            Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer2.pdf' ?>" target="_blank">келісімді</a> мақұлдайсыз
         <?php endif; ?>
         <br>
         <a style="color: blue" href="/file/Шаблон материал жариялау.docx"><i class="fa fa-download"></i> Шаблонды жүктеу</a>
