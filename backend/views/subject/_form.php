@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'grades')->textInput() ?>
 
-    <?= $form->field($model, 'is_not_subject')->textInput() ?>
+    <?= $form->field($model, 'is_not_subject')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
