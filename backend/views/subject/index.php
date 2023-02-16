@@ -49,6 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'order',
             'grades',
+            'is_not_subject',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

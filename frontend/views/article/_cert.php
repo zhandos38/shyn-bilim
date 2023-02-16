@@ -23,7 +23,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         <div id="cert-school" style="font-size: 14px; color: #000000; height: 70px; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
             <div style="text-transform: uppercase; font-weight: bold; padding-top: 10px;">
-            <?= $model->subject->name_kz ?> пәні мұғалімі
+            <?php if ($model->subject->is_not_subject): ?>
+                <?= $model->subject->name_kz ?>
+            <?php else: ?>
+                <?= $model->subject->name_kz ?> пәні мұғалімі
+            <?php endif; ?>
         </div>
         </div>
         <div style="padding-top: 10px; height: 100px; font-size: 24px; font-weight: bold; color: #000;">

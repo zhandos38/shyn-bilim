@@ -17,6 +17,7 @@ use yii\helpers\ArrayHelper;
  * @property Test[] $tests
  * @property bool $type [tinyint(3)]
  * @property integer $order [tinyint(3)]
+ * @property boolean $is_not_subject
  */
 class Subject extends \yii\db\ActiveRecord
 {
@@ -44,7 +45,8 @@ class Subject extends \yii\db\ActiveRecord
             [['name_kz', 'name_ru'], 'required'],
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
             [['img', 'grades'], 'string', 'max' => 255],
-            [['type', 'order', 'kind'], 'integer']
+            [['type', 'order', 'kind'], 'integer'],
+            ['is_not_subject', 'boolean']
         ];
     }
 
@@ -59,7 +61,8 @@ class Subject extends \yii\db\ActiveRecord
             'img' => Yii::t('app', 'Рисунок'),
             'type' => Yii::t('app', 'Тип'),
             'kind' => Yii::t('app', 'Вид'),
-            'order' => Yii::t('app', 'Порядок')
+            'order' => Yii::t('app', 'Порядок'),
+            'is_not_subject' => Yii::t('app', 'Не предмет'),
         ];
     }
 
