@@ -24,7 +24,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
             <?= $model->school->name ?>
         </div>
         <div style="text-transform: uppercase; padding-top: 20px;">
-                <?= $model->subject->name_kz ?> пәні мұғалімі
+                <?php if ($model->subject->is_not_subject): ?>
+                    <?= $model->subject->name_kz ?>
+                <?php else: ?>
+                    <?= $model->subject->name_kz ?> пәні мұғалімі
+                <?php endif; ?>
             </div>
         <div style="padding-top: 10px; height: 100px; font-size: 24px; bold; color: #000;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
