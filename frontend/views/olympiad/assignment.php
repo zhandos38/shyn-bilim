@@ -107,7 +107,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
         <?= $form->field($model, 'lang')->dropDownList([
             'kz' => 'Қазақша',
-            'ru' => 'Русский'
         ], [
             'prompt' => Yii::t('app', 'Выберите язык')
         ]) ?>
