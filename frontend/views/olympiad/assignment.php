@@ -103,6 +103,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
         <?= $form->field($model, 'parent_name') ?>
 
+        <?= $form->field($model, 'parent_name_second') ?>
+
         <?= $form->field($model, 'lang')->dropDownList([
             'kz' => 'Қазақша',
             'ru' => 'Русский'
