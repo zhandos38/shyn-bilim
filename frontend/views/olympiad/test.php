@@ -7,6 +7,17 @@ use yii\web\View;
 
 $this->title = $olympiad_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
+
+$bookLink = "/file/kanikulda-kitap-oku-2023/";
+if ($grade >= 1 and $grade <= 4) {
+    $bookLink .= "book_1-4.pdf";
+}
+if ($grade >= 5 and $grade <= 8) {
+    $bookLink .= "book_5-8.pdf";
+}
+if ($grade >= 9 and $grade <= 11) {
+    $bookLink .= "book_9-11.pdf";
+}
 ?>
     <div id="test">
         <div class="container test-app__container">
@@ -37,7 +48,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             </div>
             <div v-else>
                 <div>
-                    <a class="btn btn-primary" href="#" download>
+                    <a class="btn btn-primary" href="<?= $bookLink ?>" download>
                         <?= Yii::t('app', 'Кітап жүктеу') ?>
                     </a>
                     <br><br>

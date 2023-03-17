@@ -241,7 +241,8 @@ class OlympiadController extends Controller
 
         return $this->render('test', [
             'assignment_id' => $testAssignment->id,
-            'olympiad_name' => $testAssignment->olympiad->name
+            'olympiad_name' => $testAssignment->olympiad->name,
+            'grade' => $testAssignment->grade,
         ]);
     }
 
