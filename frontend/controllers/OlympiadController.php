@@ -342,10 +342,10 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
-            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/index']);
-        }
+//        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+//            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+//            return $this->redirect(['olympiad/index']);
+//        }
 
         if ($testAssignment->point >= 10) {
             $place = 'III ОРЫН';
@@ -483,10 +483,10 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
-            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect(['olympiad/view']);
-        }
+//        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+//            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+//            return $this->redirect(['olympiad/view']);
+//        }
 
         $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank-parent'), [
             'testAssignment' => $testAssignment
@@ -524,10 +524,10 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
-            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
-            return $this->redirect('/');
-        }
+//        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
+//            Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
+//            return $this->redirect('/');
+//        }
 
         //if ($testAssignment->point <= 9) {
         //    Yii::$app->session->setFlash('success', 'Орын алмағансыз, балыңыз жетпейді');

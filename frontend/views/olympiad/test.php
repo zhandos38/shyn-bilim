@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         <div class="container test-app__container">
             <h1><?= $this->title ?></h1>
             <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
-            <div v-if="!showResultActive">
+            <div v-if="showResultActive">
                 <div>
                     <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
                     <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             </div>
             <div v-else>
                 <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
+                {{ isSent }}
                 <div>
                     <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
