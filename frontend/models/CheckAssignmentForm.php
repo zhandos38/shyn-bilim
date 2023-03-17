@@ -49,7 +49,6 @@ class CheckAssignmentForm extends Model
         }
         $testAssignment = $query->one();
 
-
         if ($testAssignment) {
             return $testAssignment->id;
         }

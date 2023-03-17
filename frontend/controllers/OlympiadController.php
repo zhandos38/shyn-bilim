@@ -631,6 +631,23 @@ class OlympiadController extends Controller
         ]);
     }
 
+    public function actionCheckTestAlt()
+    {
+        $model = new CheckAssignmentForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($testAssignmentId = $model->check()) {
+                return $this->redirect(['olympiad/test', 'assignment' => $testAssignmentId]);
+            }
+
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Данный ИИН не участвовал в олимпиаде'));
+        }
+
+        return $this->render('check-test-alt', [
+            'model' => $model
+        ]);
+    }
+
 //    public function actionExportQuestions($test_subject_id)
 //    {
 //        $text = "";

@@ -106,6 +106,29 @@ $this->registerMetaTag([
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
                         </a>
+
+                        <!-- btn layer -->
+                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
+                           href="<?= Url::to(['olympiad/check-test-alt']) ?>"
+                           id="slide-411-layer-03"
+                           data-x="['left','right','center','center']" data-hoffset="['220','0','0','0']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','140']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-responsive="off"
+                           data-responsive_offset="off"
+                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="['8','8','8','8']"
+                           data-paddingbottom="['8','8','8','8']"
+                           data-paddingright="['7','7','7','7']"
+                           data-paddingleft="['34','34','34','34']"
+                           style="background-color: #0d6efd; color: #fff; font-size: 15px;">
+                            <?= Yii::t('app', 'Қайта кіру') ?>
+                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(13 85 191); margin-left: 19px;">
+                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
+                            </div>
+                        </a>
                     </li>
                     <!-- end slide 02 -->
                 </ul>

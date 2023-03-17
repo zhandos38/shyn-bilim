@@ -124,44 +124,9 @@ use yii\helpers\Url; ?>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            6. Сұрақ: Олимпиада тапсырмаларын орындап отырып сайттан шығып кеткен жағдайда қайтадан тапсыра аламын ба?
-                        </button>
-                    </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Жауап:  Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталады. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEight">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            7. Сұрақ: Олимпиада нәтижесі бойынша Дипломды немесе Сертификатты жүктей алмай қалған жағдайда не істеймін?
-                        </button>
-                    </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Жауап:  Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз, төмендегі батырманы басыңыз.
-                                <br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота Мұғалім үшін жүктеу</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Алғыс хат Ата-Ана үшін жүктеу</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
                     <h2 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            8. Сұрақ: Диплом  немесе Сертификатта қате болған жағдайда не істеймін?
+                            6. Сұрақ: Диплом  немесе Сертификатта қате болған жағдайда не істеймін?
                         </button>
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
@@ -175,7 +140,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                            9. Сұрақ: Апелляцияға қашан-қалай беруге болады?
+                            7. Сұрақ: Апелляцияға қашан-қалай беруге болады?
                         </button>
                     </h2>
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
@@ -189,7 +154,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingEleven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                            10. Сұрақ: Байланыс номерлері қажет.
+                            8. Сұрақ: Байланыс номерлері қажет.
                         </button>
                     </h2>
                     <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
@@ -208,7 +173,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwelve">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-                            11. Сұрақ: Жұмыс уақытын білуге бола ма?
+                            9. Сұрақ: Жұмыс уақытын білуге бола ма?
                         </button>
                     </h2>
                     <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
@@ -301,44 +266,9 @@ use yii\helpers\Url; ?>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            6. Вопрос: Могу ли продолжить либо пересдать,  в случае  выхода из сайта при  выполнении заданий Олимпиады?
-                        </button>
-                    </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Ответ: Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталады. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-test']) ?>">Продолжить олимпиаду</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEight">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            7. Вопрос: Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталады. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
-                        </button>
-                    </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>
-                                Ответ: Если Вы не смогли или не успели  загрузить Диплом, Сертификат, Благодарственное письмо, нажмите на нижнюю  кнопку.
-                                <br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом скачать</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота для руководителя скачать</a>
-                                <br><br>
-                                <a class="btn btn-primary" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Алғыс хат Ата-Ана үшін жүктеу</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
                     <h2 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            8. Вопрос: Что делать, если имеется ошибка в  Дипломе или Сертификате?
+                            6. Вопрос: Что делать, если имеется ошибка в  Дипломе или Сертификате?
                         </button>
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
@@ -352,7 +282,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                            9. Вопрос: Когда и каким образом можно подать на апелляцию?
+                            7. Вопрос: Когда и каким образом можно подать на апелляцию?
                         </button>
                     </h2>
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
@@ -366,7 +296,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingEleven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                            10. Вопрос: Укажите контактные номера.
+                            8. Вопрос: Укажите контактные номера.
                         </button>
                     </h2>
                     <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
@@ -384,7 +314,7 @@ use yii\helpers\Url; ?>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwelve">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-                            11. Вопрос: Можно ли узнать часы работы?
+                            9. Вопрос: Можно ли узнать часы работы?
                         </button>
                     </h2>
                     <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
