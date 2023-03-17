@@ -137,16 +137,16 @@ class OlympiadController extends Controller
 
             // Get Test
             /** @var Test $test */
-            $tests = $this->getTestsByAssignment($model);
-
-            if (!$tests) {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
-
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'olympiad' => $olympiad,
-                ]);
-            }
+//            $tests = $this->getTestsByAssignment($model);
+//
+//            if (!$tests) {
+//                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
+//
+//                return $this->render('assignment', [
+//                    'model' => $model,
+//                    'olympiad' => $olympiad,
+//                ]);
+//            }
 
             $model->created_at = time();
 
