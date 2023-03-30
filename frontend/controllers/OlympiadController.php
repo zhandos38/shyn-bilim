@@ -378,7 +378,7 @@ class OlympiadController extends Controller
                 'marginRight' => 0,
                 'marginBottom' => 0,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                'orientation' =>  $testAssignment->olympiad->is_landscape_diploma_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
@@ -404,7 +404,7 @@ class OlympiadController extends Controller
                 // A4 paper format
                 'format' => Pdf::FORMAT_A4,
                 // portrait orientation
-                'orientation' => Pdf::ORIENT_LANDSCAPE,
+                'orientation' =>  $testAssignment->olympiad->is_landscape_cert_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
                 // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Сертификат.pdf',
@@ -463,7 +463,7 @@ class OlympiadController extends Controller
             // A4 paper format
             'format' => Pdf::FORMAT_A4,
             // portrait orientation
-            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            'orientation' =>  $testAssignment->olympiad->is_landscape_cert_thank_leader_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Алғыс хат.pdf',
@@ -504,7 +504,7 @@ class OlympiadController extends Controller
             // A4 paper format
             'format' => Pdf::FORMAT_A4,
             // portrait orientation
-            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            'orientation' =>  $testAssignment->olympiad->is_landscape_cert_thank_parent_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Алғыс хат.pdf',
@@ -550,7 +550,7 @@ class OlympiadController extends Controller
             // A4 paper format
             'format' => Pdf::FORMAT_A4,
             // portrait orientation
-            'orientation' => Pdf::ORIENT_PORTRAIT,
+            'orientation' =>  $testAssignment->olympiad->is_landscape_cert_thank_leader_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Алғыс хат.pdf',
