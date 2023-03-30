@@ -21,6 +21,11 @@ use yii\imagine\Image;
  * @property string|null $file_ru
  * @property string|null $folder_name
  *
+ * @property boolean $is_landscape_diploma_orientation
+ * @property boolean $is_landscape_cert_orientation
+ * @property boolean $is_landscape_cert_thank_leader_orientation
+ * @property boolean $is_landscape_cert_thank_parent_orientation
+ *
  * @property Test[] $tests
  */
 class Olympiad extends \yii\db\ActiveRecord
@@ -56,6 +61,8 @@ class Olympiad extends \yii\db\ActiveRecord
             ['price', 'number'],
             [['status', 'order'], 'integer'],
             ['is_actual', 'boolean'],
+
+            [['is_landscape_diploma_orientation', 'is_landscape_cert_orientation', 'is_landscape_cert_thank_leader_orientation', 'is_landscape_cert_thank_parent_orientation'], 'boolean'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['fileTempKz', 'fileTempRu'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx'],
