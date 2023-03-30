@@ -50,6 +50,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'folder_name')->textInput() ?>
 
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'is_landscape_diploma_orientation')->checkbox() ?>
+
+            <?= $form->field($model, 'is_landscape_cert_orientation')->checkbox() ?>
+        </div>
+
+        <div class="col-md-4">
+            <?= $form->field($model, 'is_landscape_cert_thank_leader_orientation')->checkbox() ?>
+
+            <?= $form->field($model, 'is_landscape_cert_thank_parent_orientation')->checkbox() ?>
+        </div>
+    </div>
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
