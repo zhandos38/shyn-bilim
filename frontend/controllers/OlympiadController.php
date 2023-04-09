@@ -635,6 +635,7 @@ class OlympiadController extends Controller
     public function actionCheckTestAlt()
     {
         $model = new CheckAssignmentForm();
+        $model->olympiad_id = Olympiad::findOne(['is_actual' => true])->id;
 
         if ($model->load(Yii::$app->request->post())) {
             if ($testAssignmentId = $model->check()) {
