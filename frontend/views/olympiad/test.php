@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
     <div class="container test-app__container">
         <h1><?= $this->title ?></h1>
         <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
-        <div v-if="showResultActive">
+        <div v-if="!showResultActive">
             <div>
                 <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
                 <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
