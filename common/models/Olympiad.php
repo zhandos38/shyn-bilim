@@ -21,6 +21,15 @@ use yii\imagine\Image;
  * @property string|null $file_ru
  * @property string|null $folder_name
  *
+ * @property integer $third_place_start
+ * @property integer $third_place_end
+ * @property integer $second_place_start
+ * @property integer $second_place_end
+ * @property integer $first_place_start
+ * @property integer $first_place_end
+ * @property integer $grand_place_start
+ * @property integer $grand_place_end
+ *
  * @property boolean $is_landscape_diploma_orientation
  * @property boolean $is_landscape_cert_orientation
  * @property boolean $is_landscape_cert_thank_leader_orientation
@@ -62,6 +71,7 @@ class Olympiad extends \yii\db\ActiveRecord
             [['status', 'order'], 'integer'],
             ['is_actual', 'boolean'],
 
+            [['third_place_start', 'third_place_end', 'second_place_start', 'second_place_end', 'first_place_start', 'first_place_end', 'grand_place_start', 'grand_place_end'], 'integer'],
             [['is_landscape_diploma_orientation', 'is_landscape_cert_orientation', 'is_landscape_cert_thank_leader_orientation', 'is_landscape_cert_thank_parent_orientation'], 'boolean'],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],

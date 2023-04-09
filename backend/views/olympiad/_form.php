@@ -48,7 +48,34 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'order') ?>
 
-    <?= $form->field($model, 'folder_name')->textInput() ?>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <?= $form->field($model, 'folder_name')->textInput() ?>
+        </div>
+
+        <div class="col-md-4">
+            <?= $form->field($model, 'third_place_start')->textInput() ?>
+
+            <?= $form->field($model, 'third_place_end')->textInput() ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'second_place_start')->textInput() ?>
+
+            <?= $form->field($model, 'second_place_end')->textInput() ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'first_place_start')->textInput() ?>
+
+            <?= $form->field($model, 'first_place_end')->textInput() ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'grand_place_start')->textInput() ?>
+
+            <?= $form->field($model, 'grand_place_end')->textInput() ?>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-4">

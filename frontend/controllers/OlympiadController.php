@@ -348,20 +348,30 @@ class OlympiadController extends Controller
             return $this->redirect(['olympiad/index']);
         }
 
-        if ($testAssignment->point >= 10) {
+        $olympiad = Olympiad::findOne(['id' => $testAssignment->olympiad_id]);
+        if ($olympiad === null) {
+            Yii::$app->session->setFlash('error', 'Олимпиала не началась');
+            return $this->redirect(['site/index']);
+        }
+
+        $place = null;
+        if ($testAssignment->point >= $olympiad->third_place_start) {
             $place = 'III ОРЫН';
-            if ($testAssignment->point >= 29 && $testAssignment->point <= 30) {
-                $place = 'БАС ЖҮЛДЕ';
-            }
+        }
 
-            if ($testAssignment->point >= 25 && $testAssignment->point <= 28) {
-                $place = 'I ОРЫН';
-            }
+        if ($testAssignment->point >= $olympiad->second_place_start && $testAssignment->point <= $olympiad->second_place_end) {
+            $place = 'II ОРЫН';
+        }
 
-            if ($testAssignment->point >= 19 && $testAssignment->point <= 24) {
-                $place = 'II ОРЫН';
-            }
+        if ($testAssignment->point >= $olympiad->first_place_start && $testAssignment->point <= $olympiad->first_place_end) {
+            $place = 'I ОРЫН';
+        }
 
+        if ($testAssignment->point >= $olympiad->grand_place_start && $testAssignment->point <= $olympiad->grand_place_end) {
+            $place = 'Бас жүлде';
+        }
+
+        if ($testAssignment->point >= $olympiad->third_place_start) {
             $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_diploma'), [
                 'testAssignment' => $testAssignment,
                 'place' => $place,
