@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         </div>
         <div v-else>
             <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
-            {{ isSent }}
             <div>
                 <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>

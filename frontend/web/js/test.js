@@ -11,7 +11,7 @@ testApp = new Vue({
         currentQuestionId: 0,
         showResultActive: false,
         hash: null,
-        isSent: true
+        isSent: false
     },
     methods: {
         showLog(key1, key2) {
