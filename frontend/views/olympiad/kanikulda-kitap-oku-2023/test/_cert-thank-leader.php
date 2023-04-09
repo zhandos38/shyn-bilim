@@ -8,7 +8,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2023/test/thank_cert.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+    <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2023/test/thank_cert2.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-top: 360px; padding-left: 90px;">
             <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; padding-top: 20px; color: red">
                 <b><?= $testAssignment->teacher_name ?></b>
