@@ -7,69 +7,55 @@ use yii\web\View;
 
 $this->title = $olympiad_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
-
-$bookLink = "/file/kanikulda-kitap-oku-2023/";
-if ($grade >= 1 and $grade <= 4) {
-    $bookLink .= "book_1-4.pdf";
-}
-if ($grade >= 5 and $grade <= 8) {
-    $bookLink .= "book_5-8.pdf";
-}
-if ($grade >= 9 and $grade <= 11) {
-    $bookLink .= "book_9-11.pdf";
-}
 ?>
-    <div id="test">
-        <div class="container test-app__container">
-            <h1><?= $this->title ?></h1>
-            <div v-if="showResultActive">
-                <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
-                <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
-                <div>
-                    <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
-                    <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
-                </div>
-                <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
-                <small style="color: red; font-weight: 600">
-                    ТЕСТТІ СКРИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТЫЙЫМ САЛЫНАДЫ
-                </small>
-                <div class="question-box" v-if="questions[currentQuestionId]">
-                    <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
-                    <br>
-                    <b>{{ typeof questions[currentQuestionId].selectedAnswerId !== 'undefined' ? 'Выбран ответ: ' + (questions[currentQuestionId].selectedAnswerId + 1) : 'Ответ не выбран' }}</b>
-                    <br><br>
-                    <div class="question-box__container">
-                        <div class="question-box__answer" v-for="(answer, key) in questions[currentQuestionId].answers">
-                            <input v-bind:id="answer.id" class="question-box__answer-input" type="radio" :name="'question' + questions[currentQuestionId].id" @click="selectAnswer(key)">
-                            {{ (key + 1) + ')' }} <label v-bind:for="answer.id" class="question-box__answer-text" v-html="answer.text"></label>
-                        </div>
+<div id="test">
+    <div class="container test-app__container">
+        <h1><?= $this->title ?></h1>
+        <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
+        <div v-if="showResultActive">
+            <div>
+                <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
+                <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
+            </div>
+            <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
+            <small style="color: red; font-weight: 600">
+                ТЕСТТІ СКРИНШОТТАУҒА, ВАДСАП ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТЫЙЫМ САЛЫНАДЫ
+            </small>
+            <div class="question-box" v-if="questions[currentQuestionId]">
+                <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
+                <br>
+                <b>{{ typeof questions[currentQuestionId].selectedAnswerId !== 'undefined' ? 'Выбран ответ: ' + (questions[currentQuestionId].selectedAnswerId + 1) : 'Ответ не выбран' }}</b>
+                <br><br>
+                <div class="question-box__container">
+                    <div class="question-box__answer" v-for="(answer, key) in questions[currentQuestionId].answers">
+                        <input v-bind:id="answer.id" class="question-box__answer-input" type="radio" :name="'question' + questions[currentQuestionId].id" @click="selectAnswer(key)">
+                        {{ (key + 1) + ')' }} <label v-bind:for="answer.id" class="question-box__answer-text" v-html="answer.text"></label>
                     </div>
                 </div>
             </div>
-            <div v-else>
-                <div>
-                    <a class="btn btn-primary" href="<?= $bookLink ?>" download>
-                        <?= Yii::t('app', 'Кітап жүктеу') ?>
-                    </a>
-                    <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                        <?= Yii::t('app', 'Получить сертификат/диплом') ?>
-                    </a>
-                    <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                        <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
-                    </a>
-                    <br><br>
-                    <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" download>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                        <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
-                    </a>
-                </div>
+        </div>
+        <div v-else>
+            <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
+            {{ isSent }}
+            <div>
+                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                    <?= Yii::t('app', 'Получить сертификат/диплом') ?>
+                </a>
+                <br><br>
+                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                    <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
+                </a>
+                <br><br>
+                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" download>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                    <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
+                </a>
             </div>
         </div>
     </div>
+</div>
 <?php
 $hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS

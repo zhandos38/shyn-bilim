@@ -9,7 +9,7 @@ use yii\web\View;
 /* @var $this View */
 /* @var $model CheckAssignmentForm */
 
-$this->title = Yii::t('app', 'Қайта кіру');
+$this->title = Yii::t('app', 'Тестке қатысу');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Вопросы и ответы'), 'url' => ['site/questions']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 ?>
@@ -21,11 +21,11 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 
 <div class="row">
     <div class="col-md-4">
-        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->orderBy(['id' => SORT_DESC])->all(), 'id', 'name')) ?>
+        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'))->hiddenInput()->label(false) ?>
         
         <?= $form->field($model, 'iin') ?>
 
-        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Тест бастау'), ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
 
