@@ -634,8 +634,19 @@ class OlympiadController extends Controller
 
     public function actionCheckTestAlt()
     {
+        $olympiad = Olympiad::findOne(['is_actual' => true]);
+        if ($olympiad->status === Olympiad::STATUS_FINISHED) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
+            return $this->redirect(['site/index']);
+        }
+
+        if ($olympiad->status === Olympiad::STATUS_NEW) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
+            return $this->redirect(['site/index']);
+        }
+
         $model = new CheckAssignmentForm();
-        $model->olympiad_id = Olympiad::findOne(['is_actual' => true])->id;
+        $model->olympiad_id = $olympiad->id;
 
         if ($model->load(Yii::$app->request->post())) {
             if ($testAssignmentId = $model->check()) {
