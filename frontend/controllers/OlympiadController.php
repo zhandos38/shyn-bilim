@@ -659,6 +659,15 @@ class OlympiadController extends Controller
         $model->olympiad_id = $olympiad->id;
 
         if ($model->load(Yii::$app->request->post())) {
+            // Check test assignment
+            $testAssignment = TestAssignment::find()->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])->one();
+            if ($testAssignment) {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
+
+                return $this->render('/');
+            }
+
+
             if ($testAssignmentId = $model->check()) {
                 return $this->redirect(['olympiad/test', 'assignment' => $testAssignmentId]);
             }
