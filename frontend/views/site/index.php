@@ -24,72 +24,16 @@ $this->registerMetaTag([
                     <!-- start slide 02 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="true"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/img/kanikulda-kitap-oku-2023/banner.jpg" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/jas-mathematic-2023/<?= \xstreamka\mobiledetect\Device::$isMobile ? 'banner-m.jpg' : 'banner.jpg' ?>" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg" style="opacity: 0.3;"></div>
-
-                        <div class="tp-caption tp-resizeme alt-font text-white"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['22','16','19','12']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on"
-                             data-textAlign="['left','center','center','center']">
-                            2023 жыл 10-11 сәуір аралығы <br> ІІІ Республикалық Марафон-байқауы басталды
-                        </div>
-
-                        <!-- small text layer -->
-                        <div class="tp-caption tp-resizeme alt-font text-white"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-80','-160','-160','-80']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['36','16','16','16']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on">
-                            <b>«КАНИКУЛДА КІТАП ОҚИМЫЗ»</b>
-                        </div>
-                        <div class="tp-caption tp-resizeme alt-font text-white"
-                             id="slide-411-layer-02"
-                             data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="text"
-                             data-x="['left','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['40','-50','-115','0']"
-                             data-width="auto"
-                             data-height="auto"
-                             data-fontsize="['18','16','19','16']"
-                             data-lineheight="['28','14','23','20']"
-                             data-letterspacing="['0.5','0.5','0.5','0.5']"
-                             data-responsive="off"
-                             data-responsive_offset="on"
-                             data-textAlign="['left','center','center','center']">
-                            <i>Марафонға қатыс!</i>
-                            <br>
-                            <i>Кітап оқы!</i>
-                            <br>
-                            <i>Жеңімпаз бол!</i>
-                            <br>
-                            <i>Сыйлыққа кітап ұтып ал!</i>
-                        </div>
 
                         <!-- btn layer -->
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
                            href="<?= Url::to(['olympiad/check-test-alt']) ?>"
                            id="slide-411-layer-03"
                            data-x="['left','right','center','center']" data-hoffset="['0','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','80']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','180']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"
@@ -112,7 +56,7 @@ $this->registerMetaTag([
                            href="<?= $olympiad->getFile() ?>"
                            id="slide-411-layer-03"
                            data-x="['left','right','center','center']" data-hoffset="['240','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','140']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','240']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"

@@ -37,7 +37,8 @@
         "kartik-v/yii2-mpdf": "dev-master",
         "notamedia/yii2-sentry": "^1.5",
         "2amigos/qrcode-library": "~1.1",
-        "kartik-v/yii2-export": "@dev"
+        "kartik-v/yii2-export": "@dev",
+        "xstreamka/yii2-mobile-detect": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -54,7 +55,8 @@
             "enabled": false
         },
         "allow-plugins": {
-            "yiisoft/yii2-composer": true
+            "yiisoft/yii2-composer": true,
+            "php-http/discovery": true
         }
     },
     "repositories": [
