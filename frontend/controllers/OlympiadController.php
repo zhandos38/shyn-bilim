@@ -540,7 +540,7 @@ class OlympiadController extends Controller
             return $this->redirect('/');
         }
 
-        if ($testAssignment->point <= 9) {
+        if ($testAssignment->point <= 6) {
             Yii::$app->session->setFlash('success', 'Орын алмағансыз, балыңыз жетпейді');
             return $this->redirect('/');
         }
