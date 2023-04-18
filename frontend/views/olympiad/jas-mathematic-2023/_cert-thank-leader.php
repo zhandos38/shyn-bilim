@@ -25,7 +25,7 @@ $teacherType = "Мұғалім";
             <div class="bordered" style="font-size: 12px; font-weight: 500;">
                 <?= $testAssignment->school->name ?>
             </div>
-            <div class="bordered" id="cert-name" style="padding-top: 30px; height: 60px; font-size: 18px; text-transform: uppercase;">
+            <div class="bordered" id="cert-name" style="padding-top: 40px; height: 60px; font-size: 18px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; padding-top: 40px; text-transform: uppercase">
