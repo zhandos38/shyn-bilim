@@ -45,7 +45,7 @@ $this->registerMetaTag([
                            data-paddingright="['7','7','7','7']"
                            data-paddingleft="['34','34','34','34']"
                            style="background-color: #0d6efd; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Тестке қатысу') ?>
+                            <?= Yii::t('app', 'Участвую') ?>
                             <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(13 85 191); margin-left: 19px;">
                                 <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
                             </div>
