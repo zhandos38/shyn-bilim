@@ -11,7 +11,7 @@ $teacherType = "Мұғалім";
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/jas-mathematic-2023/thank-cert-teacher.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="padding-left: 360px; padding-top: 280px; text-align: center; width: 400px">
+        <div style="padding-left: 160px; padding-top: 280px; text-align: center; width: 600px">
             <div class="bordered" style="font-size: 12px; font-weight: 500; padding-top: 10px">
                 <?php
                 if ($testAssignment->school !== null) {
