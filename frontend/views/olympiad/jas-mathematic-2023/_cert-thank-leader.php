@@ -11,7 +11,7 @@ $teacherType = "Мұғалім";
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/jas-mathematic-2023/thank-cert-teacher.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="padding-left: 160px; padding-top: 280px; text-align: center; width: 600px">
+        <div style="padding-left: 260px; padding-top: 280px; text-align: center; width: 600px">
             <div class="bordered" style="font-size: 12px; font-weight: 500; padding-top: 10px">
                 <?php
                 if ($testAssignment->school !== null) {
@@ -25,7 +25,7 @@ $teacherType = "Мұғалім";
             <div class="bordered" style="font-size: 12px; font-weight: 500;">
                 <?= $testAssignment->school->name ?>
             </div>
-            <div class="bordered" id="cert-name" style="padding-top: 10px; height: 60px; font-size: 18px; text-transform: uppercase;">
+            <div class="bordered" id="cert-name" style="padding-top: 30px; height: 60px; font-size: 18px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div class="bordered" id="cert-name" style="height: 80px; font-size: 18px; padding-top: 40px; text-transform: uppercase">
