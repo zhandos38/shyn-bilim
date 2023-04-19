@@ -10,12 +10,12 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
 <div>
     <div class="cert-page" style="background-image: url('./img/jas-mathematic-2023/thank-cert-parent.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 800px">
         <div class="bordered" style="padding-left: -360px; padding-top: 290px">
-            <div id="cert-name" style="height: 80px; font-size: 22px; text-transform: uppercase; text-align: center">
+            <div id="cert-name" style="height: 80px; font-size: 18px; text-transform: uppercase; text-align: center">
                 <b><?= $testAssignment->parent_name ?></b>
                 <br>
                 <b><?= $testAssignment->parent_name_second ?></b>
             </div>
-            <div id="cert-name" style="padding-top: 0; height: 80px; font-size: 22px; text-transform: uppercase; text-align: center">
+            <div id="cert-name" style="padding-top: 0; height: 80px; font-size: 18px; text-transform: uppercase; text-align: center">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
