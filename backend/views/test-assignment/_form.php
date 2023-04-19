@@ -60,6 +60,8 @@ use common\models\Test;
     <?= $form->field($model, 'teacher_type_name') ?>
 
     <?= $form->field($model, 'parent_name') ?>
+    
+    <?= $form->field($model, 'parent_name_second') ?>
 
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
     
