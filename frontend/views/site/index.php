@@ -24,7 +24,7 @@ $this->registerMetaTag([
                     <!-- start slide 02 -->
                     <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="true"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                         <!-- main image -->
-                        <img src="/img/jas-mathematic-2023/<?= \xstreamka\mobiledetect\Device::$isMobile ? 'banner-m.jpg' : 'banner.jpg' ?>" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <img src="/img/en-uzdik-pedagog-2023/<?= \xstreamka\mobiledetect\Device::$isMobile ? 'banner-m.jpg' : 'banner.jpg' ?>" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                         <div class="overlay-bg" style="opacity: 0.3;"></div>
 
@@ -32,8 +32,8 @@ $this->registerMetaTag([
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
                            href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>"
                            id="slide-411-layer-03"
-                           data-x="['left','right','center','center']" data-hoffset="['0','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','180']"
+                           data-x="['left','right','center','left']" data-hoffset="['50','0','0','20']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','115']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"
@@ -55,8 +55,8 @@ $this->registerMetaTag([
                         <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
                            href="<?= $olympiad->getFile() ?>"
                            id="slide-411-layer-03"
-                           data-x="['left','right','center','center']" data-hoffset="['240','0','0','0']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['140','130','82','240']"
+                           data-x="['left','right','center','left']" data-hoffset="['290','0','0','220']"
+                           data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','115']"
                            data-whitespace="nowrap"
                            data-type="button"
                            data-responsive="off"
