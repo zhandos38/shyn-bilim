@@ -35,6 +35,13 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?= $form->field($model, 'patronymic') ?>
 
         <?= $form->field($model, 'iin') ?>
+
+        <div>
+            <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
+                'id' => 'subject_id-select',
+                'prompt' => Yii::t('app', Yii::t('app', 'Выберите предмет'))
+            ]) ?>
+        </div>
     </div>
     <div class="col-md-4">
         <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
