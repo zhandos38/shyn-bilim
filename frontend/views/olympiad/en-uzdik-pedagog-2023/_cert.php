@@ -13,8 +13,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/en-uzdik-pedagog-2023/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="padding-left: 240px; padding-top: 400px; text-align: center; width: 600px; height: 150px; font-size: 18px">
-            <div style="padding-top: 10px; padding-left: 100px; font-family: 'Arial'; height: 80px; width: 400px">
+        <div style="padding-left: 260px; padding-top: 390px; text-align: center; width: 600px; height: 150px; font-size: 18px">
+            <div style="padding-top: 0; padding-left: 100px; font-family: 'Arial'; height: 80px; width: 400px">
                 <div style="font-size: 14px; font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
@@ -32,11 +32,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div>
                 <?= $testAssignment->subject->name ?> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
             </div>
-            <div style="font-size: 22px; padding-top: 10px; font-weight: lighter; height: 60px; text-transform: uppercase;">
+            <div style="font-size: 20px; padding-top: 10px; font-weight: lighter; height: 60px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 20px; padding-top: 50px; text-align: left">
+        <div class="border" style="display: flex; padding-left: 60px; padding-top: 50px; text-align: left">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="padding-top: 5px; font-size: 11px; padding-left: 0; font-weight: bold;">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>

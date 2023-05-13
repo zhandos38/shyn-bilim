@@ -12,11 +12,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/en-uzdik-pedagog-2023/diploma.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="padding-left: 200px; padding-top: 520px; width: 400px; height: 150px; font-size: 18px; text-align: center">
+        <div style="padding-left: 100px; padding-top: 460px; width: 600px; height: 150px; font-size: 18px; text-align: center">
             <div>
                 <b><?= $place ?> ИЕГЕРІ</b>
             </div>
-            <div style="padding-top: 10px; font-family: 'Arial'; height: 100px;">
+            <div style="padding-left: 100px; padding-top: 10px; width: 400px; font-family: 'Arial'; height: 100px;">
                 <div style="font-size: 14px; font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
@@ -38,7 +38,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 55px; padding-top: 160px">
+        <div class="border" style="display: flex; padding-left: 55px; padding-top: 220px">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="padding-top: 5px; font-size: 11px; padding-left: 0;">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
