@@ -35,7 +35,7 @@ use common\models\Test;
 
     <?= $form->field($model, 'lang')->dropDownList(Test::getLangList()) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_TEACHER])->all(), 'id', 'name_ru'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
