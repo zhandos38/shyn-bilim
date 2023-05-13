@@ -7,7 +7,7 @@ body, h4, h5 {
     src: url('../fonts/vCourn.ttf');
 }
 
-a {
+.accordion-item a {
     color: #0d6efd !important;
     text-decoration: underline !important;
 }
