@@ -17,7 +17,7 @@ class TestSearch extends Test
     public function rules()
     {
         return [
-            [['id', 'grade_from', 'grade_to', 'question_limit', 'time_limit', 'level', 'created_at'], 'integer'],
+            [['id', 'grade_from', 'grade_to', 'question_limit', 'time_limit', 'level', 'olympiad_id', 'created_at'], 'integer'],
             ['lang', 'string'],
         ];
     }
@@ -70,6 +70,7 @@ class TestSearch extends Test
             'time_limit' => $this->time_limit,
             'level' => $this->level,
             'lang' => $this->lang,
+            'olympiad_id' => $this->olympiad_id,
         ]);
 
         return $dataProvider;

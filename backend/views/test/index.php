@@ -36,7 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'olympiad_id',
                 'value' => function(\common\models\Test $test) {
                     return $test->olympiad->name;
-                }
+                },
+                'filter' => \yii\helpers\ArrayHelper::map(\common\models\Olympiad::find()->all(), 'id', 'name')
             ],
             'grade_from',
             'grade_to',

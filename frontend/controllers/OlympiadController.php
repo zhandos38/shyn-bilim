@@ -217,12 +217,13 @@ class OlympiadController extends Controller
     {
         $query = Test::find()
             ->andWhere(['olympiad_id' => $model->olympiad_id])
-            ->andWhere([
+            ->andWhere(['lang' => $model->lang])
+            ->andFilterWhere([
                 'and',
                 ['<=', 'grade_from', $model->grade],
                 ['>=', 'grade_to', $model->grade]
-            ])
-            ->andWhere(['lang' => $model->lang]);
+            ]);
+
 
         if (!empty($model->subject_id)) {
             $query->andWhere(['subject_id' => $model->subject_id]);
