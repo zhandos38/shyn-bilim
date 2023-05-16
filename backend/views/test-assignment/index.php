@@ -45,6 +45,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'patronymic',
             'iin',
             [
+                'attribute' => 'subject_id',
+                'value' => function(TestAssignment $model) {
+                    return $model->subject !== null ? $model->subject->name_ru : 'Не указано';
+                },
+            ],
+            [
                 'attribute' => 'region_id',
                 'value' => function(TestAssignment $model) {
                     return $model->school !== null && $model->school->city !== null && $model->school->city->region !== null ? $model->school->city->region->name : 'Не указано';
