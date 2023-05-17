@@ -32,7 +32,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 </div>
             </div>
             <div>
-                <?= $testAssignment->subject->name ?> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
+                <?= $testAssignment->subject->name_kz ?> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
             </div>
             <div style="font-size: 22px; padding-top: 20px; font-weight: lighter; height: 60px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
