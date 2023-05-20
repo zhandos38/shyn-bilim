@@ -238,6 +238,11 @@ class OlympiadController extends Controller
         if (empty($testAssignment)) {
             throw new Exception('Произашла ошибка');
         }
+        
+        if ($testAssignment->status === TestAssignment::STATUS_OFF) {
+            Yii::$app->session->setFlash('success', 'Тест төленбеген!');
+            return $this->redirect('/');
+        }
 
         if ($testAssignment->status === TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест уже пройден!');
