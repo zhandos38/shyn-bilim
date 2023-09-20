@@ -1,45 +1,5 @@
-body, h4, h5 {
-    font-family: 'Roboto', serif;
-}
-
-@font-face {
-    font-family: 'vCourn';
-    src: url('../fonts/vCourn.ttf');
-}
-
-.accordion-item a {
-    color: #0d6efd !important;
-    text-decoration: underline !important;
-}
-
 .bordered {
     border: 1px solid red;
-}
-
-.required.error {
-    border: none !important;
-}
-.required.error.has-success > .select2-container {
-    border: none !important;
-}
-.required.error > .select2-container {
-    border: 1px solid red !important;
-}
-
-.navbar .navbar-nav .nav-link {
-    font-family: 'Roboto', serif;
-}
-
-:root {
-    --main-color-blue: #01A0E4;
-}
-
-.theme-demos {
-    display: none !important;
-}
-
-.form-group .form-control {
-    margin-bottom: 0;
 }
 
 /* question */

@@ -117,7 +117,42 @@
     Default Styles
 ***************************************/
 /*-- Variables --*/
-@import url("../../../../css2");
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/sourceserifpro/v17/neIWzD-0qpwxpaWvjeD0X88SAOeauXE-pQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/sourceserifpro/v17/neIQzD-0qpwxpaWvjeD0X88SAOeaiXM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/sourceserifpro/v17/neIXzD-0qpwxpaWvjeD0X88SAOeasasahSs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/sourceserifpro/v17/neIXzD-0qpwxpaWvjeD0X88SAOeasc8bhSs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/sourceserifpro/v17/neIXzD-0qpwxpaWvjeD0X88SAOeasfcZhSs.ttf) format('truetype');
+}
+
 :root {
   --color-primary: #2f57ef;
   --color-secondary: #b966e7;

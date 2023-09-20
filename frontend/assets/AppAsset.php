@@ -34,6 +34,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/vendor/modernizr.min.js',
         'js/vendor/jquery.js',
+        'js/vendor/bootstrap.min.js',
         'js/vendor/sal.js',
         'js/vendor/swiper.js',
         'js/vendor/magnify.min.js',

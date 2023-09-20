@@ -46,7 +46,7 @@ $this->registerMetaTag([
     </div>
 </div>
 
-<div class="rbt-service-area bg-color-white rbt-section-gapTop rbt-section-gapBottom">
+<div class="rbt-service-area bg-color-white rbt-section-gapTop">
     <div class="container">
         <div class="row row--15 mt_dec--30">
             <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-12 mt--30">
@@ -151,90 +151,83 @@ $this->registerMetaTag([
     </div>
 </div>
 
-<!-- Start Counterup Area  -->
-<div class="rbt-counterup-area bg-color-extra2 rbt-section-gapTop rbt-section-gapBottom">
+<!-- start section -->
+<section class="position-relative pb-0 overflow-visible wow animate__fadeIn" data-wow-delay="0.4s" style="padding-top: 40px;">
     <div class="container">
-        <div class="row mb--60">
-            <div class="col-lg-12">
-                <div class="section-title text-center">
-                    <span class="subtitle bg-primary-opacity">Why Choose Us</span>
-                    <h2 class="title">Creating A Community Of <br /> Life Long Learners.</h2>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 position-relative margin-70px-top lg-margin-30px-top md-margin-50px-bottom">
+                <div class="w-70 border-radius-6px overflow-hidden position-relative">
+                    <img src="/img/about-1.jpg" alt="" />
+                    <div class="opacity-extra-medium bg-gradient-sky-blue-pink"></div>
+                </div>
+                <div class="position-absolute right-15px bottom-0px w-70" data-parallax-layout-ratio="1.1">
+                    <img class="border-radius-6px" src="/img/about-2.jpg" alt="" />
                 </div>
             </div>
-        </div>
-        <div class="row g-5 hanger-line">
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-01.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="500">00</span>
-                            </h3>
-                            <span class="subtitle">Learners &amp; counting</span>
-                        </div>
-                    </div>
+            <div class="col-12 col-lg-5 offset-lg-1">
+                <div class="alt-font text-extra-medium font-weight-500 margin-30px-bottom"><span class="w-30px h-1px bg-fast-blue d-inline-block align-middle margin-20px-right"></span>
+                    <span class="text-fast-blue d-inline-block">
+                        <?= Yii::t('app', 'О нашем сайте') ?>
+                    </span>
+                </div>
+                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom w-95"><?= Yii::t('app', 'BILIMSHINI.KZ  - республиканский сайт педагогов и учащихся') ?></h5>
+                <p class="w-95">
+                    <?= Yii::t('app', 'На сайте вы найдете открытые уроки, поурочные планы, ксп, дсп, ктп, сценарии, воспитательные часы, все необходимые для учителя документы. На сайте можно  опубликовать бесплатно материал, участвовать в интеллектуальных олимпиадах и марафонах, получать сертификаты, дипломы, благодарственные письма, грамоты, действительные для вашего портфолио.') ?>
+                </p>
+                <div class="btn-dual margin-15px-top d-inline-block">
+                    <a href="<?= Url::to(['site/about']) ?>" class="btn btn-medium btn-dark-gray btn-slide-right-bg">
+                        <?= Yii::t('app', 'Подробнее') ?><span class="bg-white"></span>
+                    </a>
                 </div>
             </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-02.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="800">00</span>
-                            </h3>
-                            <span class="subtitle">Courses & Video</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--60 mt_sm--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-03.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="1000">00</span>
-                            </h3>
-                            <span class="subtitle">Certified Students</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-04.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="100">00</span>
-                            </h3>
-                            <span class="subtitle">Registered Enrolls</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
         </div>
     </div>
-</div>
-<!-- End Counterup Area  -->
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="wow animate__fadeIn">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 align-items-center justify-content-center">
+            <!-- start counter item -->
+            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="121"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="768"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Материалов') ?></span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center xs-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.6s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="7"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
+            </div>
+            <!-- end counter item -->
+            <!-- start counter item -->
+            <div class="col text-center wow animate__fadeIn" data-wow-delay="0.8s">
+                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="3"></h4>
+                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Марафон') ?></span>
+            </div>
+            <!-- end counter item -->
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="parallax wow animate__fadeIn" data-parallax-background-ratio="0.2" style="background-image:url('/img/fon-1.jpg');">
+    <div class="opacity-full bg-gradient-fast-blue-purple"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-xl-7 col-md-8 col-sm-10 position-relative text-center text-md-start sm-margin-30px-bottom">
+                <h4 class="alt-font font-weight-600 text-white mb-0"><?= Yii::t('app', 'Подпишитесь на наш журнал') ?></h4>
+            </div>
+            <div class="col-12 col-xl-5 col-md-4 position-relative text-center text-md-end">
+                <a href="#" class="btn btn-large btn-gradient-light-purple-light-orange"><?= Yii::t('app', 'Подписаться') ?></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
