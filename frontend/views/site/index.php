@@ -22,8 +22,9 @@ $this->registerMetaTag([
                     <h1 class="title display-one">
                         Bilimshini.kz
                     </h1>
-                    <p class="description">We help our clients succeed by creating brand identities, digital
-                        experiences, and print materials.</p>
+                    <p class="description">
+                        Сапалы білім, бір тұтас тәрбие - жарыстар, жетістік, марапат, шәкіртақы барлығы бізде!
+                    </p>
                     <div class="rbt-button-group">
                         <a class="rbt-btn btn-white hover-icon-reverse" href="#">
                             <div class="icon-reverse-wrapper">
