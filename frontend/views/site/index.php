@@ -18,24 +18,25 @@ $this->registerMetaTag([
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="inner text-center">
-                    <h1 class="title display-one">
+                <div class="inner">
+                    <h1 class="title display-one" style="padding: 0">
                         Bilimshini.kz
                     </h1>
-                    <p class="description">
+                    <p class="description" style="padding: 0">
                         Сапалы білім, бір тұтас тәрбие - жарыстар, жетістік, марапат, шәкіртақы барлығы бізде!
                     </p>
+                    <img src="/img/banner-part.png" alt="banner-part.png" style="width: 200px">
                     <div class="rbt-button-group">
                         <a class="rbt-btn btn-white hover-icon-reverse" href="#">
                             <div class="icon-reverse-wrapper">
-                                <span class="btn-text">View Our Program</span>
+                                <span class="btn-text">Жазыламын</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                             </div>
                         </a>
                         <a class="rbt-btn btn-border hover-icon-reverse color-white" href="contact.html">
                             <div class="icon-reverse-wrapper">
-                                <span class="btn-text">Contact Us</span>
+                                <span class="btn-text">Тіркелу</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                             </div>
