@@ -48,7 +48,10 @@ AppAsset::register($this);
                         <div class="header-info">
                             <ul class="rbt-information-list">
                                 <li>
-                                    <a href="#"><i class="feather-phone"></i>+1-202-555-0174</a>
+                                    <a href="#"><i class="feather-phone"></i>+7(775) 403 72 84</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="feather-mail"></i>bilimshini.kz@mail.ru</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +85,6 @@ AppAsset::register($this);
                     <div class="rbt-header-content">
                         <div class="header-info">
                             <ul class="rbt-secondary-menu">
-                                <li><a href="my-account.html">My Account</a></li>
                                 <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Помощь') ?></a></li>
                             </ul>
                         </div>
@@ -107,8 +109,8 @@ AppAsset::register($this);
                 <div class="header-left">
                     <div class="logo">
                         <a style="display: flex; align-items: center" href="/">
-                            <img src="/img/logo.png" alt="Education Logo Images">
-                            <span class="ml--10 fw-bold" style="font-size: 28px; text-transform: uppercase; color: var(--color-primary)">Bilimshini.kz</span>
+                            <img src="/img/bilimshini-logo_reverse.png" alt="Bilimshini.kz">
+                            <span class="ml--10 fw-bold" style="font-size: 28px; text-transform: uppercase; color: #2dc8bd">Bilim-shini.kz</span>
                         </a>
                     </div>
                 </div>
@@ -122,7 +124,7 @@ AppAsset::register($this);
                                 <a href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Опубликовать материал') ?></a>
+                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Портфолио') ?></a>
                             </li>
                             <li class="position-static">
                                 <a href="<?= Url::to(['olympiad/choose']) ?>"><?= Yii::t('app', 'Олимпиада') ?></a>
@@ -173,12 +175,6 @@ AppAsset::register($this);
                                     </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="access-icon rbt-mini-cart">
-                            <a class="rbt-cart-sidenav-activation rbt-round-btn" href="#">
-                                <i class="feather-shopping-cart"></i>
-                                <span class="rbt-cart-count">4</span>
-                            </a>
                         </li>
                         <li class="access-icon">
                             <a class="search-trigger-active rbt-round-btn" href="#">

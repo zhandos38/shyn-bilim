@@ -3,16 +3,8 @@ use yii\helpers\Url;
 
 ?>
 <!-- start footer -->
-<footer class="footer-startup footer-light background-position-right background-no-repeat" style="background-image: url('images/home-startup-footer-down-bg.jpg');">
-    <div class="footer-separate">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 h-65px lg-h-30px background-position-center-top background-no-repeat" style="background-image: url('images/home-startup-footer-shadow.png');">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-top padding-four-tb lg-padding-seven-tb md-padding-50px-bottom md-padding-30px-top">
+<footer class="rbt-footer footer-style-1">
+    <div class="footer-top">
         <div class="container">
             <div class="row">
                 <!-- start footer column -->
@@ -62,7 +54,7 @@ use yii\helpers\Url;
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-4 text-center text-sm-start xs-margin-20px-bottom">
-                    <a href="/" class="footer-logo"><img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" alt=""></a>
+                    <a style="display: flex; align-items: center" href="/" class="footer-logo"><img style="height: 80px; margin-right: 10px" src="/img/bilimshini-logo_reverse.png" data-at2x="/img/logo_alt_black.png" alt="Bilim-shini.kz">Bilim-shini.kz</a>
                 </div>
                 <div class="col-12 col-sm-8 text-center text-sm-end last-paragraph-no-margin">
                     <p>&copy; Designed and Developed with  by <a href="https://vk.com/zhandragon96" target="_blank" class="text-decoration-line-bottom text-extra-dark-gray font-weight-500">Jako</a></p>
@@ -71,6 +63,3 @@ use yii\helpers\Url;
         </div>
     </div>
 </footer>
-<!-- start scroll to top -->
-<a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
-<!-- end scroll to top -->

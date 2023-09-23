@@ -14,33 +14,47 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
-<div class="slider-area rbt-banner-5 height-750 bg_image bg_image--3" data-gradient-overlay="7">
+<div class="slider-area rbt-banner-5 height-750 bg_image" style="background-image: url('/img/germaniya-gory-alpy1.jpg')" data-gradient-overlay="7">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="inner">
-                    <h1 class="title display-one" style="padding: 0">
-                        Bilimshini.kz
-                    </h1>
-                    <p class="description" style="padding: 0">
-                        Сапалы білім, бір тұтас тәрбие - жарыстар, жетістік, марапат, шәкіртақы барлығы бізде!
-                    </p>
-                    <img src="/img/banner-part.png" alt="banner-part.png" style="width: 200px">
-                    <div class="rbt-button-group">
-                        <a class="rbt-btn btn-white hover-icon-reverse" href="#">
-                            <div class="icon-reverse-wrapper">
-                                <span class="btn-text">Жазыламын</span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="title display-one">
+                                БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ
+                            </h1>
+                            <p class="description">
+                                Сайтта ашық сабақтар,
+                                сабақ жоспарлары, қмж, омж, ұмж,
+                                ктп, сценарийлер, тәрбие сағаттарын,
+                                мұғалімдерге керекті барлық құжаттарды
+                                таба аласыз. <br> Сайтта тегін материал
+                                жариялап, зияткерлік олимпиадалар мен
+                                марафондарға қатысып, портфолиоңызға
+                                жарамды Сертификат, Диплом, Алғыс хат,
+                                Мақтау қағаздарын алуыңызға болады
+                            </p>
+                            <div>
+                                <a class="rbt-btn btn-white hover-icon-reverse" href="#">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">Жазыламын</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">Бағалары</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                        <a class="rbt-btn btn-border hover-icon-reverse color-white" href="contact.html">
-                            <div class="icon-reverse-wrapper">
-                                <span class="btn-text">Тіркелу</span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                            </div>
-                        </a>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <img src="/img/banner-part.png" alt="banner-part.png" style="width: 400px; height: fit-content">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,12 +67,14 @@ $this->registerMetaTag([
         <div class="row row--15 mt_dec--30">
             <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-12 mt--30">
                 <div class="section-title text-start">
-                    <h2 class="title">What will you learn after the course?.</h2>
-                    <p class="description mt--20">There are many variations of passages of the Ipsum available.</p>
+                    <h2 class="title">Жеңімпаз болып, бонус жинаңыз, сыйлық ұтып алыңыз!</h2>
+                    <p class="description mt--20">
+                        Олимпиадалар, Портфолио жинау, Балалар кітапханасы
+                    </p>
                     <div class="read-more-btn">
                         <a class="rbt-btn btn-gradient radius rbt-marquee-btn marquee-text-y" href="#">
-                            <span data-text="About More Us">
-                                About More Us
+                            <span data-text="Біз туралы">
+                               Біз туралы
                             </span>
                         </a>
                     </div>
@@ -74,8 +90,10 @@ $this->registerMetaTag([
                             <img class="opacity_image" src="/images/shape/service-01.png" alt="Shape Images">
                         </div>
                         <div class="content">
-                            <h6 class="title"><a href="#">English Learning</a></h6>
-                            <p class="description">English Learning looking for random paragraphs, you've come to the right place. When a random word.</p>
+                            <h6 class="title"><a href="#">ОЛИМПИАДА</a></h6>
+                            <p class="description">Білікті, білімді педагогтар
+                                тест тапсыра отырып,
+                                үздіктер қатарына өтеді</p>
                         </div>
                     </div>
                 </div>
@@ -91,8 +109,16 @@ $this->registerMetaTag([
                             <img class="opacity_image" src="/images/shape/service-04.png" alt="Shape Images">
                         </div>
                         <div class="content">
-                            <h6 class="title"><a href="#">Javascript Learning</a></h6>
-                            <p class="description">Javascript Learning looking for random paragraphs, you've come to the right place. When a random word.</p>
+                            <h6 class="title"><a href="#">ПОРТФОЛИО</a></h6>
+                            <p class="description">Бізбен бірге біліктілік
+                                санатын арттыруды
+                                бастаңыз,
+                                тіркеліп, тегін материалдар
+                                жариялау жеңілдіктеріне
+                                қол жеткізіңіз.
+                                Аттестацияға жарамды
+                                Сертификат, Грамотаны
+                                жүктеп алыңыз.</p>
                         </div>
                     </div>
                 </div>
@@ -108,8 +134,13 @@ $this->registerMetaTag([
                             <img class="opacity_image" src="/images/shape/service-03.png" alt="Shape Images">
                         </div>
                         <div class="content">
-                            <h6 class="title"><a href="#">Angular Learning</a></h6>
-                            <p class="description">Angular Learning looking for random paragraphs, you've come to the right place. When a random word.</p>
+                            <h6 class="title"><a href="#">"ШЫҢ" - БАЛАЛАР
+                                    КІТАПХАНАСЫ</a></h6>
+                            <p class="description">Барлық сыныптар үшін
+                                өткізілетін пәндер
+                                олимпиадасына қатыса отырып
+                                оқушы зияткерлік әлеуіетін
+                                дамыта алады.</p>
                         </div>
                     </div>
                 </div>
@@ -125,8 +156,16 @@ $this->registerMetaTag([
                             <img class="opacity_image" src="/images/shape/service-02.png" alt="Shape Images">
                         </div>
                         <div class="content">
-                            <h6 class="title"><a href="#">Php Learning</a></h6>
-                            <p class="description">Php Learning looking for random paragraphs, you've come to the right place. When a random word.</p>
+                            <h6 class="title"><a href="#">ТАБЫСТЫ <br> СЫНЫП ЖЕТЕКШІ -2023</a></h6>
+                            <p class="description">“БІРТҰТАС ТӘРБИЕ
+                                БАҒДАРЛАМАСЫ”
+                                аясында сынып сағаттарын
+                                жариялау. Материалдар
+                                жинақ кітапқа енеді.
+                                Жеңімпаз ұстаздар
+                                марапатталады.
+                                Аттестацияда есепке
+                                алынады.</p>
                         </div>
                     </div>
                 </div>
@@ -142,8 +181,16 @@ $this->registerMetaTag([
                             <img class="opacity_image" src="/images/shape/service-05.png" alt="Shape Images">
                         </div>
                         <div class="content">
-                            <h6 class="title"><a href="#">Spoken English</a></h6>
-                            <p class="description">Spoken english looking for random paragraphs, you've come to the right place. When a random word.</p>
+                            <h6 class="title"><a href="#">Біздің блок</a></h6>
+                            <p class="description">Бізбен бірге біліктілік
+                                санатын арттыруды
+                                бастаңыз,
+                                тіркеліп, тегін материалдар
+                                жариялау жеңілдіктеріне
+                                қол жеткізіңіз.
+                                Аттестацияға жарамды
+                                Сертификат, Грамотаны
+                                жүктеп алыңыз.</p>
                         </div>
                     </div>
                 </div>
@@ -159,30 +206,12 @@ $this->registerMetaTag([
         <div class="row mb--60">
             <div class="col-lg-12">
                 <div class="section-title text-center">
-                    <span class="subtitle bg-primary-opacity">Why Choose Us</span>
-                    <h2 class="title">Creating A Community Of <br /> Life Long Learners.</h2>
+                    <span class="subtitle bg-primary-opacity">Неге біз?</span>
+                    <h2 class="title">БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ</h2>
                 </div>
             </div>
         </div>
         <div class="row g-5 hanger-line">
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-01.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="500">00</span>
-                            </h3>
-                            <span class="subtitle">Learners &amp; counting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
             <!-- Start Single Counter  -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
                 <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
@@ -192,9 +221,9 @@ $this->registerMetaTag([
                             <img src="/images/icons/counter-02.png" alt="Icons Images">
                         </div>
                         <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="800">00</span>
+                            <h3 class="counter"><span class="odometer" data-count="9">00</span>
                             </h3>
-                            <span class="subtitle">Courses & Video</span>
+                            <span class="subtitle">Жыл тәжірбие</span>
                         </div>
                     </div>
                 </div>
@@ -207,12 +236,30 @@ $this->registerMetaTag([
                     <div class="top-circle-shape"></div>
                     <div class="inner">
                         <div class="rbt-round-icon">
+                            <img src="/images/icons/counter-01.png" alt="Icons Images">
+                        </div>
+                        <div class="content">
+                            <h3 class="counter"><span class="odometer" data-count="450000">00</span>
+                            </h3>
+                            <span class="subtitle">Олимпиаданың бірегей қатысушылары</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Counter  -->
+
+            <!-- Start Single Counter  -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
+                    <div class="top-circle-shape"></div>
+                    <div class="inner">
+                        <div class="rbt-round-icon">
                             <img src="/images/icons/counter-03.png" alt="Icons Images">
                         </div>
                         <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="1000">00</span>
+                            <h3 class="counter"><span class="odometer" data-count="8000">00</span>
                             </h3>
-                            <span class="subtitle">Certified Students</span>
+                            <span class="subtitle">Жарияланған &amp; материалдар</span>
                         </div>
                     </div>
                 </div>
@@ -228,9 +275,9 @@ $this->registerMetaTag([
                             <img src="/images/icons/counter-04.png" alt="Icons Images">
                         </div>
                         <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="100">00</span>
+                            <h3 class="counter"><span class="odometer" data-count="5000">00</span>
                             </h3>
-                            <span class="subtitle">Registered Enrolls</span>
+                            <span class="subtitle">Тіркелген адам саны</span>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ use yii\helpers\Url;
         <a href="<?= Url::to(['magazine/index']) ?>" class="nav-link"><?= Yii::t('app', 'Журнал') ?></a>
     </li>
     <li class="nav-item dropdown megamenu">
-        <a href="<?= Url::to(['article/index']) ?>" class="nav-link"><?= Yii::t('app', 'Опубликовать материал') ?></a>
+        <a href="<?= Url::to(['article/index']) ?>" class="nav-link"><?= Yii::t('app', 'Портфолио') ?></a>
     </li>
     <li class="nav-item dropdown megamenu">
         <a href="<?= Url::to(['olympiad/choose']) ?>" class="nav-link"><?= Yii::t('app', 'Олимпиада') ?></a>
