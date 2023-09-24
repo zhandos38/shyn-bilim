@@ -287,3 +287,155 @@ $this->registerMetaTag([
     </div>
 </div>
 <!-- End Counterup Area  -->
+
+<!-- Start Counterup Area  -->
+<div class="rbt-counterup-area bg-color-extra2 rbt-section-gapBottom">
+    <div style="background-color: #ffd101; display: flex; justify-content: space-between; padding: 0 60px">
+        <div>
+            <img style="width: 360px" src="/img/pencil.png" alt="pencil.png">
+        </div>
+        <div style="display: flex; align-items: center">
+            <div style="text-align: center">
+                <h2 style="color: #00c9be;">“ШЫҢ” БАЛАЛАР КІТАПХАНАСЫ</h2>
+                <div style="color: #00c9be;font-size: 28px;">“БІРТҰТАС ТӘРБИЕ” БАҒДАРЛАМАСЫ</div>
+            </div>
+        </div>
+        <div>
+            <img style="width: 360px" src="/img/book.png" alt="book.png">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row--15 mt_dec--80">
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-1">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item1.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">0-6 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">МЕКТЕПКЕ ДЕЙІНГІ </a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Мектеп жасына дейінгі
+                                балаларға арналған
+                                Ойын арқылы үйрету, тәрбиелеу. Бесік-жырларын, арнау-тілек өлеңдер, өтірік
+                                өлеңдер, санамақтар, жаңылтпаштар мен
+                                мақал-мәтелдер, жұмбақтар,
+                                балалар айтысын үйренеді</p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-2">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item2.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">6-10 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">БАСТАУЫШ СЫНЫП</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Қазақ халқының мақал-мәтелдері,
+                                тыйым сөздер, Ұлттық ойындар
+                                («Асық party» өткізу, Хан талапай, Арқан
+                                тартыс, Алтыбақан, Айгөлек,
+                                Белдесу, Саққұлақ, Тымпи, Тоғызқұмалақ т.б.)
+                                физикалық, зияткерлік тұрғыдан дамиды
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-3">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item3.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">11-15 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">ОРТА БУЫН</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Батырлар, ақын-жыраулар және
+                                ұлт зиялыларының, тарихи тұлғалар мен
+                                қоғам қайраткерлерінің өмірлік жолдарын,
+                                қалдырған мұралармен танысады
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-4">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item4.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">15-18 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">ЖОҒАРЫ СЫНЫП</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Табиғи мұра, мәдени мұра, ұлт тарихы,
+                                Қазақстан елін қорғаған батырлар,
+                                билер, шешендер, даналар,
+                                көсемдер, абыздар, ағартушылар
+                                мен ұлт зиялыларымен танысады
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Card  -->
+
+        </div>
+    </div>
+</div>

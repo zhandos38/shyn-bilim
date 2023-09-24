@@ -496,3 +496,10 @@
     font-size: 22px;
     opacity: 1;
 }
+
+[data-gradient-overlay]:before {
+    background: linear-gradient(90deg, #2dc8bd, var(--color-secondary));
+}
+.rbt-flipbox .rbt-flipbox-wrap .rbt-flipbox-front .content > a {
+    margin-top: 100px;
+}
