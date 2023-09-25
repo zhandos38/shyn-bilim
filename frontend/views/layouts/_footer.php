@@ -54,7 +54,7 @@ use yii\helpers\Url;
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-4 text-center text-sm-start xs-margin-20px-bottom">
-                    <a style="display: flex; align-items: center" href="/" class="footer-logo"><img style="height: 80px; margin-right: 10px" src="/img/bilimshini-logo_reverse.png" data-at2x="/img/logo_alt_black.png" alt="Bilim-shini.kz">Bilim-shini.kz</a>
+                    <a style="display: flex; align-items: center" href="/" class="footer-logo"><img style="height: 40px; margin-right: 10px" src="/img/bilimshini-logo_reverse.png" data-at2x="/img/logo_alt_black.png" alt="Bilim-shini.kz">Bilim-shini.kz</a>
                 </div>
                 <div class="col-12 col-sm-8 text-center text-sm-end last-paragraph-no-margin">
                     <p>&copy; Designed and Developed with  by <a href="https://vk.com/zhandragon96" target="_blank" class="text-decoration-line-bottom text-extra-dark-gray font-weight-500">Jako</a></p>

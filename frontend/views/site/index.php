@@ -201,95 +201,7 @@ $this->registerMetaTag([
 </div>
 
 <!-- Start Counterup Area  -->
-<div class="rbt-counterup-area bg-color-extra2 rbt-section-gapTop rbt-section-gapBottom">
-    <div class="container">
-        <div class="row mb--60">
-            <div class="col-lg-12">
-                <div class="section-title text-center">
-                    <span class="subtitle bg-primary-opacity">Неге біз?</span>
-                    <h2 class="title">БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row g-5 hanger-line">
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-02.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="9">00</span>
-                            </h3>
-                            <span class="subtitle">Жыл тәжірбие</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--60 mt_sm--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-01.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="450000">00</span>
-                            </h3>
-                            <span class="subtitle">Олимпиаданың бірегей қатысушылары</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-03.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="8000">00</span>
-                            </h3>
-                            <span class="subtitle">Жарияланған &amp; материалдар</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-
-            <!-- Start Single Counter  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                    <div class="top-circle-shape"></div>
-                    <div class="inner">
-                        <div class="rbt-round-icon">
-                            <img src="/images/icons/counter-04.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h3 class="counter"><span class="odometer" data-count="5000">00</span>
-                            </h3>
-                            <span class="subtitle">Тіркелген адам саны</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Counter  -->
-        </div>
-    </div>
-</div>
-<!-- End Counterup Area  -->
-
-<!-- Start Counterup Area  -->
-<div class="rbt-counterup-area bg-color-extra2 rbt-section-gapBottom">
+<div class="rbt-counterup-area bg-color-extra2">
     <div style="background-color: #ffd101; display: flex; justify-content: space-between; padding: 0 60px">
         <div>
             <img style="width: 360px" src="/img/pencil.png" alt="pencil.png">
@@ -435,7 +347,99 @@ $this->registerMetaTag([
                 </div>
             </div>
             <!-- End Single Card  -->
+        </div>
+    </div>
 
+    <div class="rbt-section-gapTop rbt-section-gapBottom" style="background-color: #04Bab6; margin-top: 120px">
+        <div class="container">
+            <div class="balls-hero" style="text-align: center">
+                <h2 class="title" style="color: #fff">ShynBonus жина да, жүлделер жеңіп ал!</h2>
+                <div class="balls-hero__wrapper" style="margin-top: 40px">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            сайттың туракты окырманы
+                            1 балл
+                        </div>
+                    </div>
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            күнделікті тапсырма орындау
+                        </div>
+                    </div>
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            “Шың балалар кітапханасы”
+                            ЕҢ КӨП КІТАП ОҚИТЫН ОҚУШЫ
+                        </div>
+                    </div>
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            олимпиадаларға қатысу
+                        </div>
+                    </div>
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo5.svg" alt="logo5">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            Мақала жазу
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more-btn mt--60 text-center">
+                <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="#">
+                    <span class="icon-reverse-wrapper">
+                        <span class="btn-text">Жазылу</span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .balls-hero__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .balls-hero__item {
+        width: 20%;
+    }
+    .balls-hero__item-img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .balls-hero__item1 {
+        width: 120px;
+    }
+    .balls-hero__item2 {
+        width: 120px;
+        position: absolute;
+    }
+    .balls-hero__item-title {
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+</style>
