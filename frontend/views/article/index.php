@@ -114,7 +114,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 </p>
             </div>
         <?php endif; ?>
-        <a class="article-order-widget__link btn btn-success" href="<?= Url::to(['article/order']) ?>">
+        <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order']) ?>">
             <?= Yii::t('app', 'Опубликовать материал') ?>
         </a>
     </div>

@@ -44,17 +44,9 @@ class MarathonController extends Controller
         ]);
     }
 
-    public function actionBook($assignment_id)
+    public function actionBook()
     {
-        $assignment = Marathon::findOne(['id' => $assignment_id]);
-        if ($assignment === null) {
-            throw new Exception('Assignment is not found!');
-        }
-
-        return $this->render('book', [
-            'grade' => (int)$assignment->grade,
-            'marathon_id' => (int)$assignment->id,
-        ]);
+        return $this->render('book');
     }
 
     public function actionCheckAssignment()

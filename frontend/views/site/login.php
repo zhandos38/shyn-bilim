@@ -13,29 +13,44 @@ $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = Yii::t('app', 'Заполните форму чтобы войти в свой аккаунт');
 ?>
 <div class="site-login">
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+    <div class="row justify-content-center rbt-section-gapTop rbt-section-gapBottom">
+        <div class="col-lg-8">
+            <div class="login-container sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                <div class="row">
+                    <div class="col-lg-6" style="background-image: url('/img/celebration-gradient.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat">
 
-                <?= $form->field($model, 'iin')->textInput(['autofocus' => true]) ?>
+                    </div>
+                    <div class="col-lg-6 p-5">
+                        <h4 class="text-center">Вход</h4>
+                        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                        <?= $form->field($model, 'iin')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                        <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <div style="color:#999;margin:1em 0">
-                    <?= Yii::t('app', 'У вас нет аккаунта?') ?> <b><?= Html::a(Yii::t('app', 'Зарегистрироватся'), ['site/signup']) ?></b>
-                    <br>
-                    <?= Yii::t('app', 'Если забыли свой пароль') ?>. <b><?= Html::a(Yii::t('app', 'Восстановить'), ['site/request-password-reset']) ?></b>
-                    <br>
-                    <?= Yii::t('app', 'Не получили письмо подтверждение?') ?> <b><?= Html::a(Yii::t('app', 'Переотправить'), ['site/resend-verification-email']) ?></b>
+                        <div style="color:#999;margin:1em 0">
+                            <?= Yii::t('app', 'У вас нет аккаунта?') ?> <b><?= Html::a(Yii::t('app', 'Зарегистрироватся'), ['site/signup']) ?></b>
+                        </div>
+
+                        <div class="form-group">
+                            <?= Html::submitButton(Yii::t('app', 'Войти'), ['class' => 'rbt-btn btn-md btn-gradient hover-icon-reverse w-100', 'name' => 'login-button']) ?>
+                        </div>
+
+                        <?php ActiveForm::end(); ?>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app', 'Войти'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .login-container {
+        background: var(--color-white);
+        transition: 0.3s;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-1);
+        height: 100%;
+    }
+</style>

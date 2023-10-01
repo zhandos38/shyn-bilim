@@ -19,33 +19,29 @@ $this->registerMetaTag([
         <div class="row">
             <div class="col-lg-12">
                 <div class="inner">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col-md-6">
                             <h1 class="title display-one">
-                                БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ
+                                БІЛІММЕН <br>
+                                БІРГЕ ДАМИМЫЗ!
                             </h1>
+                            <div style="font-size: 24px; text-transform: uppercase; color: #fff; font-weight: bold">Bilim-shini.kz</div>
                             <p class="description">
-                                Сайтта ашық сабақтар,
-                                сабақ жоспарлары, қмж, омж, ұмж,
-                                ктп, сценарийлер, тәрбие сағаттарын,
-                                мұғалімдерге керекті барлық құжаттарды
-                                таба аласыз. <br> Сайтта тегін материал
-                                жариялап, зияткерлік олимпиадалар мен
-                                марафондарға қатысып, портфолиоңызға
-                                жарамды Сертификат, Диплом, Алғыс хат,
-                                Мақтау қағаздарын алуыңызға болады
+                                Педагогтарға, балаларға, оқушыларға
+                                студенттерге, <br> ата-аналарға арналған
+                                платформа
                             </p>
                             <div>
                                 <a class="rbt-btn btn-white hover-icon-reverse" href="#">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">Жазыламын</span>
+                                        <span class="btn-text">ТІРКЕЛЕМІН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
                                 <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">Бағалары</span>
+                                        <span class="btn-text">ТӨЛЕМ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
@@ -53,7 +49,7 @@ $this->registerMetaTag([
                             </div>
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
-                            <img src="/img/banner-part.png" alt="banner-part.png" style="width: 400px; height: fit-content">
+                            <img src="/img/bg-boy.png" alt="banner-part.png" style="width: 660px; height: fit-content">
                         </div>
                     </div>
                 </div>
@@ -407,11 +403,160 @@ $this->registerMetaTag([
             <div class="load-more-btn mt--60 text-center">
                 <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="#">
                     <span class="icon-reverse-wrapper">
-                        <span class="btn-text">Жазылу</span>
+                        <span class="btn-text">Тіркелу</span>
                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                     </span>
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rbt-pricing-area bg-color-light rbt-section-gap">
+        <div class="container">
+            <div class="row g-5 mb--60">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="section-title text-start">
+                        <span class="subtitle bg-pink-opacity">Жазылу жарнасы</span>
+                        <h2 class="title">Bilimshini жазылу тарифтері</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="pricing-billing-duration text-start text-md-end">
+                        <ul>
+                            <li class="nav-item">
+                                <button class="nav-link yearly-plan-btn" type="button">Жарты жылдық</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link monthly-plan-btn active" type="button">Жылдық</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-0 ">
+                <!-- Start Single Pricing  -->
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                    <div class="pricing-table style-3">
+                        <div class="icon-image text-center">
+                            <img src="/images/icons/pricing-icon-01.png" alt="Pricing Image Icons">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="title">Ата-аналарға</h3>
+                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
+                            <div class="price-wrap">
+                                <div class="yearly-pricing" style="display: none;">
+                                    <span class="amount">45 000 ₸</span>
+                                    <span class="duration">/жылдық</span>
+                                </div>
+                                <div class="monthly-pricing" style="display: block;">
+                                    <span class="amount">30 000 ₸</span>
+                                    <span class="duration">/жарты жылға</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-item">
+                                <li>Ата-аналарға арналған материлдар</li>
+                                <li>0-6 жас балаларға арналған материалдар</li>
+                                <li>Олимпиададан алғыс хат алу</li>
+                                <li>Кітапхана</li>
+                                <li class="off">Олимпиадаға қатысу</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-btn">
+                            <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
+                                <div class="icon-reverse-wrapper">
+                                    <span class="btn-text">Таңдау</span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Pricing  -->
+
+                <!-- Start Single Pricing  -->
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                    <div class="pricing-table style-3 active">
+                        <div class="icon-image text-center">
+                            <img src="/images/icons/pricing-icon-02.png" alt="Pricing Image Icons">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="title">Мұғалімдерге арналған</h3>
+                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
+                            <div class="price-wrap">
+                                <div class="yearly-pricing" style="display: none;">
+                                    <span class="amount">40 000 ₸</span>
+                                    <span class="duration">/жылдық</span>
+                                </div>
+                                <div class="monthly-pricing" style="display: block;">
+                                    <span class="amount">50 000 ₸</span>
+                                    <span class="duration">/жарты жылға</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-item">
+                                <li>Мұғалімдерге арналған арнай мақалалар, ашық сабақтар, оқу материалдары</li>
+                                <li>Олимпиадаға қатысу, жүлде, грамоте алу</li>
+                                <li>Кітапхана</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-btn">
+                            <a class="rbt-btn btn-gradient radius-round hover-icon-reverse w-100" href="#">
+                                <div class="icon-reverse-wrapper">
+                                    <span class="btn-text">Таңдау</span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Pricing  -->
+
+                <!-- Start Single Pricing  -->
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                    <div class="pricing-table style-3">
+                        <div class="icon-image text-center">
+                            <img src="/images/icons/pricing-icon-03.png" alt="Pricing Image Icons">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="title">Оқушыларға арналған</h3>
+                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
+                            <div class="price-wrap">
+                                <div class="yearly-pricing" style="display: none;">
+                                    <span class="amount">20 000 ₸</span>
+                                    <span class="duration">/жылдық</span>
+                                </div>
+                                <div class="monthly-pricing" style="display: block;">
+                                    <span class="amount">35 000 ₸</span>
+                                    <span class="duration">/жарты жылға</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-item">
+                                <li>Оқушыға арналған арнай мақалалар, оқу материалдары</li>
+                                <li>Олимпиадаға қатысу, жүлде, грамоте алу</li>
+                                <li>Балалар кітапханасы</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-btn">
+                            <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
+                                <div class="icon-reverse-wrapper">
+                                    <span class="btn-text">Таңдау</span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Pricing  -->
+
             </div>
         </div>
     </div>

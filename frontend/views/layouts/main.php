@@ -48,10 +48,10 @@ AppAsset::register($this);
                         <div class="header-info">
                             <ul class="rbt-information-list">
                                 <li>
-                                    <a href="#"><i class="feather-phone"></i>+7(775) 403 72 84</a>
+                                    <a href="tel:87754037284"><i class="feather-phone"></i>+7(775) 403 72 84</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="feather-mail"></i>bilimshini.kz@mail.ru</a>
+                                    <a href="tel:bilimshini.kz@mail.ru"><i class="feather-mail"></i>bilimshini.kz@mail.ru</a>
                                 </li>
                             </ul>
                         </div>
@@ -62,19 +62,10 @@ AppAsset::register($this);
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-skype"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -85,7 +76,7 @@ AppAsset::register($this);
                     <div class="rbt-header-content">
                         <div class="header-info">
                             <ul class="rbt-secondary-menu">
-                                <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Помощь') ?></a></li>
+                                <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a></li>
                             </ul>
                         </div>
                         <div class="rbt-separator"></div>
@@ -121,16 +112,16 @@ AppAsset::register($this);
                                 <a href="/"><?= Yii::t('app', 'Главная') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
+                                <a href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Блог') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Портфолио') ?></a>
+                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Балалар кітапханасы') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['olympiad/choose']) ?>"><?= Yii::t('app', 'Олимпиада') ?></a>
+                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалдар базасы') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['marathon/assignment']) ?>"><?= Yii::t('app', 'Марафон') ?></a>
+                                <a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a>
                             </li>
                             <li class="position-static">
                                 <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>
@@ -229,6 +220,7 @@ AppAsset::register($this);
 <?php include_once "_mobile-menu.php" ?>
 
 <?= Alert::widget() ?>
+
 <?= $content ?>
 
 <?= $this->render('_footer') ?>
