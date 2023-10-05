@@ -195,9 +195,6 @@ li::marker {
 
 /* subject list */
 .subject-list__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -228,6 +225,8 @@ li::marker {
     margin-bottom: 10px;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    display: flex;
+    align-items: center;
 }
 
 .subject-list__item:hover {
