@@ -347,22 +347,6 @@ li::marker {
     position: relative;
 }
 
-
-/* about */
-.about-image {
-    width: 86%;
-    margin: 16px;
-}
-.about__director-wrapper {
-    width: 60%
-}
-
-/* staff */
-.staff-info {
-    text-align: center;
-    font-weight: 600;
-}
-
 .main-block__title-img {
     width: 80%;
     margin-left: 16px;
@@ -394,11 +378,6 @@ li::marker {
     color: #ffffff;
     margin: 10px;
     font-weight: 600;
-}
-
-.about-block {
-    padding: 120px 0 20px 0;
-    background-color: #fff;
 }
 
 .olympiad-info {
@@ -495,16 +474,8 @@ li::marker {
         margin-right: 0;
     }
 
-    .about__director-wrapper {
-        width: 100%
-    }
-
     .site-container h1 {
         text-align: center;
-    }
-
-    .about-block {
-        padding: 20px 0 20px 0;
     }
 
     .feature-block {

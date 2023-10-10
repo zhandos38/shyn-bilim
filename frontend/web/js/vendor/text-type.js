@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+    console.log('xaxa')
+
     //set animation timing
     var animationDelay = 2500,
         //loading bar effect
