@@ -58,6 +58,231 @@ $this->registerMetaTag([
     </div>
 </div>
 
+<div class="bg-color-white rbt-section-gapTop rbt-section-gapBottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/profile.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">ЖЕКЕ КАБИНЕТ</h5>
+                            <small class="mt-2">
+                                Барлық жетістік осында
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/shyn-bonus.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                ShynBonus
+                            </h5>
+                            <small class="mt-2">
+                                Жетістік жинап,
+                                Жүлделерге ие бол!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/child-library.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                «ШЫҢ»
+                                БАЛАЛАР КІТАПХАНАСЫ
+                            </h5>
+                            <small class="mt-2">
+                                Кітап оқып,
+                                табыс тап!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/new-projects.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                ЖАҢА ЖОБАЛАР
+                            </h5>
+                            <small class="mt-2">
+                                Жобаларға тегін қатысу,
+                                Портфолиоға жарамды
+                                марапаттар
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/home-task.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                ҮЙ ТАПСЫРМАСЫ
+                            </h5>
+                            <small class="mt-2">
+                                Апта сайын тест тапсырып,
+                                жаңа білім игер!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/olympiads.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                ОЛИМПИАДАЛАР
+                            </h5>
+                            <small class="mt-2">
+                                Бақ сынап, білім шыңын бағындыр!
+                                Жетістік жина!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/article-base.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                МАТЕРИАЛДАР БАЗАСЫ
+                            </h5>
+                            <small class="mt-2">
+                                Ашық сабақ, эссе, ғылыми жоба
+                                ай сайын жариялау тегін.
+                                Біліктілік санатты көтеруге көп көмек
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/blog.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                БЛОГ
+                            </h5>
+                            <small class="mt-2">
+                                Ең құнды жаңалықтар
+                                осында жазылады
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/about-use.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                БІЗ ТУРАЛЫ
+                            </h5>
+                            <small class="mt-2">
+                                Бірге дамимыз!
+                                Әділетті Қазақстанды
+                                бірге құрамыз!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/magazine.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                ЖУРНАЛ
+                            </h5>
+                            <small class="mt-2">
+                                Шығармашылық баспалдағына
+                                бірге көтерілеміз!
+                                ҚР Инвестициялар және Даму министрлігі
+                                Тіркеу куәлігі №15454-Ж
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/faq.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                СҰРАҚ-ЖАУАП
+                            </h5>
+                            <small class="mt-2">
+                                Дайын әрі жылдам көмек бөлімі
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img style="height: 100px" src="/img/menu-icon/contacts.png" alt="menu-icon">
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb--0">
+                                БАЙЛАНЫС
+                            </h5>
+                            <small class="mt-2">
+                                Жауап беру қызметіміз
+                                +7 775 403 72 84
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="rbt-service-area bg-color-white rbt-section-gapTop rbt-section-gapBottom">
     <div class="container">
         <div class="row row--15 mt_dec--30">
@@ -586,5 +811,44 @@ $this->registerMetaTag([
         color: #fff;
         text-transform: uppercase;
         margin-top: 20px;
+    }
+
+    .menu-card {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 300px;
+        width: 100%;
+        /* max-width: 260px; */
+        padding: 24px;
+        position: relative;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 0 6px rgba(0,31,51,.19);
+        box-shadow: 0 0 6px rgba(0,31,51,.19);
+        -webkit-transition: -webkit-box-shadow .3s;
+        transition: -webkit-box-shadow .3s;
+        -o-transition: box-shadow .3s;
+        transition: box-shadow .3s,-webkit-box-shadow .3s;
+        font: 1.8rem "Open Sans Semibold",sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .menu-card:hover {
+        -webkit-box-shadow: 0 0 29px rgba(0,31,51,.8);
+        box-shadow: 0 0 29px rgba(0,31,51,.8);
     }
 </style>
