@@ -574,7 +574,81 @@ $this->registerMetaTag([
     <div class="rbt-section-gapTop rbt-section-gapBottom" style="background-color: #04Bab6; margin-top: 120px">
         <div class="container">
             <div class="balls-hero" style="text-align: center">
-                <h2 class="title" style="color: #fff">ShynBonus жина да, жүлделер жеңіп ал!</h2>
+                <h2 style="color: #fff">ShynBonus жина да, жүлделер жеңіп ал!</h2>
+                <p class="text-white">
+                    Тек оқушылар үшін!
+                </p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="prize-card">
+                            <div>
+                                <div>
+                                    <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="mb--0">
+                                        РЮКЗАК
+                                    </h5>
+                                    <small>
+                                        820 shynbonus
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="prize-card">
+                            <div>
+                                <div>
+                                    <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="mb--0">
+                                        КІТАПТАР
+                                    </h5>
+                                    <small>
+                                        840 shynbonus
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="prize-card">
+                            <div>
+                                <div>
+                                    <img style="height: 200px" src="/img/prize-icon/park.png" alt="menu-icon">
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="mb--0">
+                                        Паркке билет
+                                    </h5>
+                                    <small>
+                                        860 shynbonus
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="prize-card">
+                            <div>
+                                <div>
+                                    <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="mb--0">
+                                        Планшет
+                                    </h5>
+                                    <small>
+                                        880 shynbonus
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="title mt--40" style="color: #fff">ShynBonus қалай жинаймын?</h2>
                 <div class="balls-hero__wrapper" style="margin-top: 40px">
                     <div class="balls-hero__item">
                         <div class="balls-hero__item-img">
@@ -650,10 +724,10 @@ $this->registerMetaTag([
                     <div class="pricing-billing-duration text-start text-md-end">
                         <ul>
                             <li class="nav-item">
-                                <button class="nav-link yearly-plan-btn" type="button">Жарты жылдық</button>
+                                <button class="nav-link yearly-plan-btn" type="button">6 айға</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link monthly-plan-btn active" type="button">Жылдық</button>
+                                <button class="nav-link monthly-plan-btn active" type="button">3 айға</button>
                             </li>
                         </ul>
                     </div>
@@ -661,76 +735,54 @@ $this->registerMetaTag([
             </div>
             <div class="row gx-0 ">
                 <!-- Start Single Pricing  -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="pricing-table style-3">
-                        <div class="icon-image text-center">
-                            <img src="/images/icons/pricing-icon-01.png" alt="Pricing Image Icons">
-                        </div>
-                        <div class="pricing-header">
-                            <h3 class="title">Ата-аналарға</h3>
-                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
-                            <div class="price-wrap">
-                                <div class="yearly-pricing" style="display: none;">
-                                    <span class="amount">45 000 ₸</span>
-                                    <span class="duration">/жылдық</span>
-                                </div>
-                                <div class="monthly-pricing" style="display: block;">
-                                    <span class="amount">30 000 ₸</span>
-                                    <span class="duration">/жарты жылға</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pricing-body">
-                            <ul class="list-item">
-                                <li>Ата-аналарға арналған материлдар</li>
-                                <li>0-6 жас балаларға арналған материалдар</li>
-                                <li>Олимпиададан алғыс хат алу</li>
-                                <li>Кітапхана</li>
-                                <li class="off">Олимпиадаға қатысу</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-btn">
-                            <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
-                                <div class="icon-reverse-wrapper">
-                                    <span class="btn-text">Таңдау</span>
-                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Pricing  -->
-
-                <!-- Start Single Pricing  -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                    <div class="pricing-table style-3 active">
                         <div class="icon-image text-center">
                             <img src="/images/icons/pricing-icon-02.png" alt="Pricing Image Icons">
                         </div>
                         <div class="pricing-header">
-                            <h3 class="title">Мұғалімдерге арналған</h3>
-                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
+                            <h3 class="title">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</h3>
+                            <span class="rbt-badge mb--15">ЖЕҢІЛДІК</span>
                             <div class="price-wrap">
                                 <div class="yearly-pricing" style="display: none;">
-                                    <span class="amount">40 000 ₸</span>
-                                    <span class="duration">/жылдық</span>
+                                    <span class="amount">3500 ₸</span>
+                                    <span class="duration">/6 айға</span>
                                 </div>
                                 <div class="monthly-pricing" style="display: block;">
-                                    <span class="amount">50 000 ₸</span>
-                                    <span class="duration">/жарты жылға</span>
+                                    <span class="amount">2000 ₸</span>
+                                    <span class="duration">/3 айға</span>
                                 </div>
                             </div>
                         </div>
                         <div class="pricing-body">
                             <ul class="list-item">
-                                <li>Мұғалімдерге арналған арнай мақалалар, ашық сабақтар, оқу материалдары</li>
-                                <li>Олимпиадаға қатысу, жүлде, грамоте алу</li>
-                                <li>Кітапхана</li>
+                                <li>
+                                    “БІРТҰТАС ТӘРБИЕ БАҒДАРЛАМАСЫ”
+                                    аясында тегін кітаптар оқу, сайысқа қатысу
+                                </li>
+                                <li>
+                                    3 рет тегін материал жариялау
+                                </li>
+                                <li>
+                                    1 рет пән олимпиадасына тегін қатысу
+                                </li>
+                                <li>
+                                    1 рет жаңа жобаға тегін қатысу
+                                </li>
+
+                                <li>
+                                    Осыларды орындай отырып,
+                                    Портфолиоға жарамды құнды
+                                    МАРАПАТ қағаздары иемдену
+                                </li>
                             </ul>
+                            <p class="mt-4">
+                                Белсенділік танытқан педагогтерге
+                                <b>“БІЛІМ ШЫҢЫ”</b> төсбелгісі
+                            </p>
                         </div>
                         <div class="pricing-btn">
-                            <a class="rbt-btn btn-gradient radius-round hover-icon-reverse w-100" href="#">
+                            <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
                                 <div class="icon-reverse-wrapper">
                                     <span class="btn-text">Таңдау</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -743,34 +795,51 @@ $this->registerMetaTag([
                 <!-- End Single Pricing  -->
 
                 <!-- Start Single Pricing  -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                    <div class="pricing-table style-3">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="pricing-table style-3 active">
                         <div class="icon-image text-center">
-                            <img src="/images/icons/pricing-icon-03.png" alt="Pricing Image Icons">
+                            <img src="/images/icons/pricing-icon-01.png" alt="Pricing Image Icons">
                         </div>
                         <div class="pricing-header">
-                            <h3 class="title">Оқушыларға арналған</h3>
-                            <span class="rbt-badge mb--15">Бірінші ай тегін</span>
+                            <h3 class="title">
+                                ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР
+                                СТУДЕНТТЕР ҮШІН
+                            </h3>
+                            <span class="rbt-badge mb--15">ЖЕҢІЛДІК</span>
                             <div class="price-wrap">
                                 <div class="yearly-pricing" style="display: none;">
-                                    <span class="amount">20 000 ₸</span>
-                                    <span class="duration">/жылдық</span>
+                                    <span class="amount">1800 ₸</span>
+                                    <span class="duration">/6 айға</span>
                                 </div>
                                 <div class="monthly-pricing" style="display: block;">
-                                    <span class="amount">35 000 ₸</span>
-                                    <span class="duration">/жарты жылға</span>
+                                    <span class="amount">1000 ₸</span>
+                                    <span class="duration">/3 айға</span>
                                 </div>
                             </div>
                         </div>
                         <div class="pricing-body">
                             <ul class="list-item">
-                                <li>Оқушыға арналған арнай мақалалар, оқу материалдары</li>
-                                <li>Олимпиадаға қатысу, жүлде, грамоте алу</li>
-                                <li>Балалар кітапханасы</li>
+                                <li>
+                                    “ШЫҢ” балалар кітапханасындағы
+                                    кітаптарды оқып,сайыстарына қатысу
+                                </li>
+                                <li>
+                                    “Каникулда кітап оқимыз” марафонына тегін қатысу
+                                </li>
+                                <li>
+                                    1 рет пән олимпиадасына тегін қатысу
+                                </li>
+                                <li>
+                                    “ҮЙ ТАПСЫРМАСЫ” байқауына тегін қатысу
+                                </li>
                             </ul>
+                            <p class="mt-4">
+                                Көрсетілген жарыстардан сүрінбей өтіп,
+                                <b>ШыңБонус</b> жинап, Сыйлықтарды иелену.
+                            </p>
                         </div>
                         <div class="pricing-btn">
-                            <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
+                            <a class="rbt-btn btn-gradient radius-round hover-icon-reverse w-100" href="#">
                                 <div class="icon-reverse-wrapper">
                                     <span class="btn-text">Таңдау</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -813,7 +882,8 @@ $this->registerMetaTag([
         margin-top: 20px;
     }
 
-    .menu-card {
+    .menu-card, .prize-card {
+        background-color: white;
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -847,7 +917,7 @@ $this->registerMetaTag([
         align-items: center;
         cursor: pointer;
     }
-    .menu-card:hover {
+    .menu-card:hover, .prize-card:hover {
         -webkit-box-shadow: 0 0 29px rgba(0,31,51,.8);
         box-shadow: 0 0 29px rgba(0,31,51,.8);
     }
