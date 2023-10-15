@@ -211,7 +211,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     <div class="subject-list__item">
                         <div>
                             <div>
-                                <img style="height: 120px" src="<?= $subject->get ?>" alt="article-logo.png">
+                                <img style="height: 120px" src="<?= $subject->getImage() ?>" alt="article-logo.png">
                             </div>
                             <div class="subject-list__title">
                                 <h5><?= $subject->getName() ?></h5>
