@@ -207,13 +207,13 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
     <div class="row" style="padding-top: 20px">
         <?php foreach ($subjects as $subject): ?>
             <div class="col-md-2">
-                <a href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>" style="padding: 10px">
+                <a href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
                     <div class="subject-list__item">
                         <div>
                             <div>
-                                <img style="width: 80%" src="/img/article-logo.png" alt="article-logo.png">
+                                <img style="height: 120px" src="<?= $subject->get ?>" alt="article-logo.png">
                             </div>
-                            <div>
+                            <div class="subject-list__title">
                                 <h5><?= $subject->getName() ?></h5>
                             </div>
                         </div>

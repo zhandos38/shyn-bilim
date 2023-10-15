@@ -82,7 +82,7 @@ AppAsset::register($this);
                         <div class="rbt-separator"></div>
                         <div class="header-info">
                             <div class="header-right-btn d-flex">
-                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="#">
+                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/login']) ?>">
                                     <span data-text="Бізге қосылу">Бізге қосылу</span>
                                 </a>
                             </div>
@@ -115,13 +115,16 @@ AppAsset::register($this);
                                 <a href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Блог') ?></a>
                             </li>
                             <li class="position-static">
+                                <a href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
+                            </li>
+                            <li class="position-static">
                                 <a href="#" disabled=""><?= Yii::t('app', 'Балалар кітапханасы') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалдар базасы') ?></a>
+                                <a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a>
+                                <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалдар базасы') ?></a>
                             </li>
                             <li class="position-static">
                                 <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>

@@ -45,10 +45,12 @@ class OlympiadController extends Controller
 
     public function actionIndex($type = Olympiad::TYPE_STUDENT)
     {
-        $olympiads = Olympiad::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC])->all();
+        $teacherOlympiads = Olympiad::find()->andWhere(['type' => Olympiad::TYPE_TEACHER])->orderBy(['order' => SORT_ASC])->all();
+        $studentOlympiads = Olympiad::find()->andWhere(['type' => Olympiad::TYPE_STUDENT])->orderBy(['order' => SORT_ASC])->all();
 
         return $this->render('index', [
-            'olympiads' => $olympiads
+            'teacherOlympiads' => $teacherOlympiads,
+            'studentOlympiads' => $studentOlympiads,
         ]);
     }
 

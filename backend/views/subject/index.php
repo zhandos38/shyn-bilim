@@ -32,7 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name_kz',
             'name_ru',
-//            'img',
+            [
+                'attribute' => 'img',
+                'value' => function(Subject $model) {
+                    return $model->img ? "<img style='height: 80px' src='". $model->getImage() ."' />" : '-';
+                },
+                'format' => 'html'
+            ],
             [
                 'attribute' => 'type',
                 'value' => function(Subject $model) {

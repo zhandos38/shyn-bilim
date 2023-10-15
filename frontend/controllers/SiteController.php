@@ -91,7 +91,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'home';
         $olympiad = Olympiad::findOne(['is_actual' => true]);
 
         return $this->render('index', [

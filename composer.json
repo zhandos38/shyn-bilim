@@ -16,7 +16,9 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.14",
+        "raiffeisen/bootstrap": "^3.4.0",
         "yiisoft/yii2-bootstrap4": "~2.0.6",
+        "yiisoft/yii2-bootstrap5": "*",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "dmstr/yii2-adminlte-asset": "2.*",
         "insolita/yii2-adminlte-widgets": "~3.1",
@@ -38,7 +40,8 @@
         "notamedia/yii2-sentry": "^1.5",
         "2amigos/qrcode-library": "~1.1",
         "kartik-v/yii2-export": "@dev",
-        "xstreamka/yii2-mobile-detect": "*"
+        "xstreamka/yii2-mobile-detect": "*",
+        "kl83/yii2-autocomplete-dropdown-widget": "~1.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

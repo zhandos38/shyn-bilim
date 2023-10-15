@@ -15,10 +15,15 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'Заполните форму чтобы зарегистрироватся:';
 ?>
-<div class="site-signup">
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+<div class="bg-gradient-13">
+    <div class="container pt--60">
+        <div class="section-title text-center mb--60">
+            <span class="subtitle bg-secondary-opacity">Регистрация</span>
+            <h2 class="title">Тіркелу</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
                 <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
@@ -37,38 +42,26 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                     'clientOptions' => [
                         'removeMaskOnSubmit' => true
                     ],
-                    'options' => [
-                        'placeholder' => '7(000) 000-00-00'
-                    ]
                 ]) ?>
 
                 <?= $form->field($model, 'email') ?>
 
                 <?= $form->field($model, 'post') ?>
 
-                <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
-                ]) ?>
+                <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
 
-                <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
-                ]) ?>
+                <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
 
-                <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
-                        return htmlspecialchars_decode($model['name']);
-                    }),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
-                ]) ?>
+                <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
+
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
 
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app', 'Продолжить'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton(Yii::t('app', 'Продолжить'), ['class' => 'rbt-btn btn-gradient w-100', 'name' => 'signup-button']) ?>
                 </div>
 
-            <?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>

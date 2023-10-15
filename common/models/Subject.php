@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use yii\imagine\Image;
 
 /**
  * This is the model class for table "subject".
@@ -28,6 +29,8 @@ class Subject extends \yii\db\ActiveRecord
     const KIND_HUMANITARIAN = 1;
     const KIND_NATURAL = 2;
 
+    public $imageFile;
+
     /**
      * {@inheritdoc}
      */
@@ -46,7 +49,9 @@ class Subject extends \yii\db\ActiveRecord
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
             [['img', 'grades'], 'string', 'max' => 255],
             [['type', 'order', 'kind'], 'integer'],
-            ['is_not_subject', 'boolean']
+            ['is_not_subject', 'boolean'],
+
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -106,5 +111,35 @@ class Subject extends \yii\db\ActiveRecord
     public function getName()
     {
         return Yii::$app->language === 'kz' ? $this->name_kz : $this->name_ru;
+    }
+
+    public function getImage()
+    {
+        return Yii::$app->params['staticDomain'] . '/subject/' . $this->img;
+    }
+
+    public function upload()
+    {
+        if ($this->imageFile === null) {
+            return true;
+        }
+
+        $folderPath = Yii::getAlias('@static') . '/subject';
+
+        if (!file_exists($folderPath) && !mkdir($folderPath, 0777, true) && !is_dir($folderPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
+        }
+
+        $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+
+        if ($this->validate()) {
+            if ($this->imageFile) {
+                $this->imageFile->saveAs($imgPath);
+            }
+
+            return true;
+        }
+
+        return false;
     }
 }

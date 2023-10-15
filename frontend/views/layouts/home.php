@@ -115,7 +115,10 @@ AppAsset::register($this);
                                 <a href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Блог') ?></a>
                             </li>
                             <li class="position-static">
-                                <a href="#" disabled=""><?= Yii::t('app', 'Балалар кітапханасы') ?></a>
+                                <a href="#" disabled><?= Yii::t('app', 'Балалар кітапханасы') ?></a>
+                            </li>
+                            <li class="position-static">
+                                <a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
                             </li>
                             <li class="position-static">
                                 <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалдар базасы') ?></a>

@@ -65,11 +65,11 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/profile.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/profile.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">ЖЕКЕ КАБИНЕТ</h5>
-                            <small class="mt-2">
+                            <small class="menu-card__desc">
                                 Барлық жетістік осында
                             </small>
                         </div>
@@ -80,15 +80,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/shyn-bonus.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/shyn-bonus.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 ShynBonus
                             </h5>
-                            <small class="mt-2">
-                                Жетістік жинап,
-                                Жүлделерге ие бол!
+                            <small class="menu-card__desc">
+                                Жеңімпаз бол,
+                                Планшет ұтып ал!
                             </small>
                         </div>
                     </div>
@@ -98,14 +98,14 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/child-library.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/child-library.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 «ШЫҢ»
                                 БАЛАЛАР КІТАПХАНАСЫ
                             </h5>
-                            <small class="mt-2">
+                            <small class="menu-card__desc">
                                 Кітап оқып,
                                 табыс тап!
                             </small>
@@ -117,16 +117,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/new-projects.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/new-projects.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
-                                ЖАҢА ЖОБАЛАР
+                                ЖИНАҚ
                             </h5>
-                            <small class="mt-2">
-                                Жобаларға тегін қатысу,
-                                Портфолиоға жарамды
-                                марапаттар
+                            <small class="menu-card__desc">
+                                Озат тәжірибеңізді ұсыныңыз,
+                                жинаққа еніңіз!
                             </small>
                         </div>
                     </div>
@@ -136,15 +135,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/home-task.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/home-task.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 ҮЙ ТАПСЫРМАСЫ
                             </h5>
-                            <small class="mt-2">
-                                Апта сайын тест тапсырып,
-                                жаңа білім игер!
+                            <small class="menu-card__desc">
+                                Аптаның сенбісі үй тапсырмасын орында!
+                                Жаңа білім игер! Бонус жина!
                             </small>
                         </div>
                     </div>
@@ -154,15 +153,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/olympiads.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/olympiads.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 ОЛИМПИАДАЛАР
                             </h5>
-                            <small class="mt-2">
-                                Бақ сынап, білім шыңын бағындыр!
-                                Жетістік жина!
+                            <small class="menu-card__desc">
+                                Бақ сынап, білім шыңын
+                                бірге бағындырамыз!
                             </small>
                         </div>
                     </div>
@@ -172,16 +171,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/article-base.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/article-base.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 МАТЕРИАЛДАР БАЗАСЫ
                             </h5>
-                            <small class="mt-2">
-                                Ашық сабақ, эссе, ғылыми жоба
-                                ай сайын жариялау тегін.
-                                Біліктілік санатты көтеруге көп көмек
+                            <small class="menu-card__desc">
+                                Өз еңбегіңізбен бөлісіп,
+                                Сертификат жүктеп алыңыз
                             </small>
                         </div>
                     </div>
@@ -191,15 +189,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/blog.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/blog.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 БЛОГ
                             </h5>
-                            <small class="mt-2">
-                                Ең құнды жаңалықтар
-                                осында жазылады
+                            <small class="menu-card__desc">
+                                Жаңа ақпараттармен
+                                таныс болыңыз
                             </small>
                         </div>
                     </div>
@@ -209,16 +207,14 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/about-use.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/about-use.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 БІЗ ТУРАЛЫ
                             </h5>
-                            <small class="mt-2">
-                                Бірге дамимыз!
-                                Әділетті Қазақстанды
-                                бірге құрамыз!
+                            <small class="menu-card__desc">
+                                Болашақ үшін қызметтеміз
                             </small>
                         </div>
                     </div>
@@ -228,17 +224,15 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/magazine.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/magazine.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 ЖУРНАЛ
                             </h5>
-                            <small class="mt-2">
+                            <small class="menu-card__desc">
                                 Шығармашылық баспалдағына
                                 бірге көтерілеміз!
-                                ҚР Инвестициялар және Даму министрлігі
-                                Тіркеу куәлігі №15454-Ж
                             </small>
                         </div>
                     </div>
@@ -248,13 +242,13 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/faq.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/faq.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 СҰРАҚ-ЖАУАП
                             </h5>
-                            <small class="mt-2">
+                            <small class="menu-card__desc">
                                 Дайын әрі жылдам көмек бөлімі
                             </small>
                         </div>
@@ -265,15 +259,14 @@ $this->registerMetaTag([
                 <a href="#" class="menu-card">
                     <div>
                         <div>
-                            <img style="height: 100px" src="/img/menu-icon/contacts.png" alt="menu-icon">
+                            <img class="menu-card__img" src="/img/menu-icon/contacts.png" alt="menu-icon">
                         </div>
-                        <div class="mt-4">
+                        <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 БАЙЛАНЫС
                             </h5>
-                            <small class="mt-2">
+                            <small class="menu-card__desc">
                                 Жауап беру қызметіміз
-                                +7 775 403 72 84
                             </small>
                         </div>
                     </div>
@@ -418,94 +411,60 @@ $this->registerMetaTag([
         </div>
         <div class="load-more-btn mt--60 text-center">
             <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="#">
-                    <span class="icon-reverse-wrapper">
-                        <span class="btn-text">Тіркелу</span>
-                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                    </span>
+                <span class="icon-reverse-wrapper">
+                    <span class="btn-text">Жазылу</span>
+                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                </span>
             </a>
         </div>
     </div>
 </div>
 
-<div class="rbt-pricing-area rbt-section-gapTop bg-color-light">
+<div class="rbt-pricing-area rbt-section-gapTop rbt-section-gapBottom bg-color-light">
     <div class="container">
         <div class="row g-5 mb--60">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="section-title text-start">
                     <span class="subtitle bg-pink-opacity">Жазылу жарнасы</span>
-                    <h2 class="title">Bilimshini жазылу тарифтері</h2>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="pricing-billing-duration text-start text-md-end">
-                    <ul>
-                        <li class="nav-item">
-                            <button class="nav-link yearly-plan-btn" type="button">6 айға</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link monthly-plan-btn active" type="button">3 айға</button>
-                        </li>
-                    </ul>
+                    <h2 class="title">Жазылу тарифтері</h2>
                 </div>
             </div>
         </div>
-        <div class="row gx-0 ">
+        <div class="row row--15 gx-0 ">
             <!-- Start Single Pricing  -->
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="pricing-table style-3">
-                    <div class="icon-image text-center">
-                        <img src="/images/icons/pricing-icon-02.png" alt="Pricing Image Icons">
-                    </div>
-                    <div class="pricing-header">
-                        <h3 class="title">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</h3>
-                        <span class="rbt-badge mb--15">ЖЕҢІЛДІК</span>
-                        <div class="price-wrap">
-                            <div class="yearly-pricing" style="display: none;">
-                                <span class="amount">3500 ₸</span>
-                                <span class="duration">/6 айға</span>
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-2">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/images/icons/pricing-icon-02.png" alt="card-icon">
                             </div>
-                            <div class="monthly-pricing" style="display: block;">
-                                <span class="amount">2000 ₸</span>
-                                <span class="duration">/3 айға</span>
+                            <div class="content">
+                                <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
+                                <h6 class="title"><a href="#">2000 теңге / 2 айға жазылу</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="list-item">
-                            <li>
-                                “БІРТҰТАС ТӘРБИЕ БАҒДАРЛАМАСЫ”
-                                аясында тегін кітаптар оқу, сайысқа қатысу
-                            </li>
-                            <li>
-                                3 рет тегін материал жариялау
-                            </li>
-                            <li>
-                                1 рет пән олимпиадасына тегін қатысу
-                            </li>
-                            <li>
-                                1 рет жаңа жобаға тегін қатысу
-                            </li>
 
-                            <li>
-                                Осыларды орындай отырып,
-                                Портфолиоға жарамды құнды
-                                МАРАПАТ қағаздары иемдену
-                            </li>
-                        </ul>
-                        <p class="mt-4">
-                            Белсенділік танытқан педагогтерге
-                            <b>“БІЛІМ ШЫҢЫ”</b> төсбелгісі
-                        </p>
-                    </div>
-                    <div class="pricing-btn">
-                        <a class="rbt-btn btn-border radius-round hover-icon-reverse w-100" href="#">
-                            <div class="icon-reverse-wrapper">
-                                <span class="btn-text">Таңдау</span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                            </div>
-                        </a>
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                - “Ең білімді педагог-2023"
+                                олимпиадасына тегін қатысасыз <br>
+                                - Табысты сынып жетекші-2023”
+                                жобасына тегін қатысасыз. <br>
+                                - Тегін материал жариялайсыз. <br>
+                                - Портфолиоға жарамды QR кодталған
+                                МАРАПАТ қағаздарын иемденесіз.
+                            </p>
+                            <p>
+                                Біліктілігіңізді арттыруда көп көмек аласыз.
+                                Е-Портфолиоға жарамды құжаттар жинақтайсыз.
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -513,56 +472,39 @@ $this->registerMetaTag([
 
             <!-- Start Single Pricing  -->
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="pricing-table style-3 active">
-                    <div class="icon-image text-center">
-                        <img src="/images/icons/pricing-icon-01.png" alt="Pricing Image Icons">
-                    </div>
-                    <div class="pricing-header">
-                        <h3 class="title">
-                            ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР
-                            СТУДЕНТТЕР ҮШІН
-                        </h3>
-                        <span class="rbt-badge mb--15">ЖЕҢІЛДІК</span>
-                        <div class="price-wrap">
-                            <div class="yearly-pricing" style="display: none;">
-                                <span class="amount">1800 ₸</span>
-                                <span class="duration">/6 айға</span>
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-3">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/images/icons/pricing-icon-01.png" alt="card-icon">
                             </div>
-                            <div class="monthly-pricing" style="display: block;">
-                                <span class="amount">1000 ₸</span>
-                                <span class="duration">/3 айға</span>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a href="#">
+                                        ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР
+                                        СТУДЕНТТЕР ҮШІН
+                                    </a>
+                                </h5>
+                                <h6 class="title"><a href="#">1000 теңге / 2 айға жазылу</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="list-item">
-                            <li>
-                                “ШЫҢ” балалар кітапханасындағы
-                                кітаптарды оқып,сайыстарына қатысу
-                            </li>
-                            <li>
-                                “Каникулда кітап оқимыз” марафонына тегін қатысу
-                            </li>
-                            <li>
-                                1 рет пән олимпиадасына тегін қатысу
-                            </li>
-                            <li>
-                                “ҮЙ ТАПСЫРМАСЫ” байқауына тегін қатысу
-                            </li>
-                        </ul>
-                        <p class="mt-4">
-                            Көрсетілген жарыстардан сүрінбей өтіп,
-                            <b>ШыңБонус</b> жинап, Сыйлықтарды иелену.
-                        </p>
-                    </div>
-                    <div class="pricing-btn">
-                        <a class="rbt-btn btn-gradient radius-round hover-icon-reverse w-100" href="#">
-                            <div class="icon-reverse-wrapper">
-                                <span class="btn-text">Таңдау</span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                            </div>
-                        </a>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                - “Каникулда кітап оқимыз” марафонына қатысу тегін
+                                - “ШЫҢ” балалар кітапханасынан кітап оқу тегін <br>
+                                -  “ҮЙ ТАПСЫРМАСЫ” байқауына қатысу тегін <br>
+                                - “Алтын қыран”  пән олимпиадасына қатысу тегін
+                            </p>
+                            <p>
+                                Жарыстардан сүрінбей өтіп,
+                                ShynBonus жинап, Сыйлықтарды ұтып ал!.
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -676,7 +618,8 @@ $this->registerMetaTag([
                                 Батырлар, ақын-жыраулар және
                                 ұлт зиялыларының, тарихи тұлғалар мен
                                 қоғам қайраткерлерінің өмірлік жолдарын,
-                                қалдырған мұралармен танысады
+                                қалдырған мұралармен танысады.
+                                Көркем әдебиеттер оқиды
                             </p>
                             <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
                                 <span data-text="Толығырақ">Толығырақ</span>
@@ -706,9 +649,9 @@ $this->registerMetaTag([
                             <p style="font-size: 16px">
                                 Табиғи мұра, мәдени мұра, ұлт тарихы,
                                 Қазақстан елін қорғаған батырлар,
-                                билер, шешендер, даналар,
-                                көсемдер, абыздар, ағартушылар
-                                мен ұлт зиялыларымен танысады
+                                билер, шешендер, даналар, көсемдер,
+                                абыздар, ағартушылар мен ұлт зиялыларымен
+                                танысады. Көркем әдебиеттер оқиды
                             </p>
                             <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
                                 <span data-text="Толығырақ">Толығырақ</span>
@@ -746,45 +689,5 @@ $this->registerMetaTag([
         color: #fff;
         text-transform: uppercase;
         margin-top: 20px;
-    }
-
-    .menu-card, .prize-card {
-        background-color: white;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        height: 300px;
-        width: 100%;
-        /* max-width: 260px; */
-        padding: 24px;
-        position: relative;
-        border-radius: 10px;
-        -webkit-box-shadow: 0 0 6px rgba(0,31,51,.19);
-        box-shadow: 0 0 6px rgba(0,31,51,.19);
-        -webkit-transition: -webkit-box-shadow .3s;
-        transition: -webkit-box-shadow .3s;
-        -o-transition: box-shadow .3s;
-        transition: box-shadow .3s,-webkit-box-shadow .3s;
-        font: 1.8rem "Open Sans Semibold",sans-serif;
-        text-transform: uppercase;
-        text-decoration: none;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    .menu-card:hover, .prize-card:hover {
-        -webkit-box-shadow: 0 0 29px rgba(0,31,51,.8);
-        box-shadow: 0 0 29px rgba(0,31,51,.8);
     }
 </style>

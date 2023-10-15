@@ -52,6 +52,13 @@ return [
                 'questions' => 'site/questions',
             ],
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@vendor/raiffeisen/bootstrap/dist'
+                ]
+            ]
+        ]
     ],
     'params' => $params,
 ];
