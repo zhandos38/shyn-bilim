@@ -48,6 +48,11 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
 
                 <?= $form->field($model, 'post') ?>
 
+                <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+                ]) ?>
+
                 <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
 
                 <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
