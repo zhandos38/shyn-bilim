@@ -5,7 +5,7 @@
 /* @var $model \common\models\LoginForm */
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login']];

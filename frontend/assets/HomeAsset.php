@@ -12,7 +12,7 @@ class HomeAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/vendor/bootstrap.min.css',
+        // 'css/vendor/bootstrap.min.css',
         'css/vendor/slick.css',
         'css/vendor/slick-theme.css',
         'css/plugins/sal.css',
@@ -47,7 +47,7 @@ class HomeAsset extends AssetBundle
         'js/vendor/easypie.js',
         'js/vendor/text-type.js',
         'js/vendor/jquery-one-page-nav.js',
-        'js/vendor/bootstrap-select.min.js',
+        // 'js/vendor/bootstrap-select.min.js',
         'js/vendor/jquery-ui.js',
         'js/vendor/magnify-popup.min.js',
         'js/vendor/paralax-scroll.js',

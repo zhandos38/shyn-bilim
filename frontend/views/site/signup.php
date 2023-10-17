@@ -7,7 +7,7 @@
 use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 use yii\widgets\MaskedInput;
 
 $this->title = 'Регистрация';
@@ -21,53 +21,86 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
             <span class="subtitle bg-secondary-opacity">Регистрация</span>
             <h2 class="title">Тіркелу</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-5">
-                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+        <div>
+            <h3>Жеке ақпарат</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'surname') ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'patronymic') ?>
+                </div>
+            </div>
+        </div>
 
-                <?= $form->field($model, 'surname') ?>
+        <div>
+            <div class="row">
+                <div class="col-md-3">
+                    <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                        'mask' => '+7(999)999-99-99',
+                        'clientOptions' => [
+                            'removeMaskOnSubmit' => true
+                        ],
+                    ]) ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'iin') ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'email') ?>
+                </div>
+            </div>
+        </div>
 
-                <?= $form->field($model, 'patronymic') ?>
-
-                <?= $form->field($model, 'iin') ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'address') ?>
-
-                <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
-                    'mask' => '+7(999)999-99-99',
-                    'clientOptions' => [
-                        'removeMaskOnSubmit' => true
-                    ],
-                ]) ?>
-
-                <?= $form->field($model, 'email') ?>
-
-                <?= $form->field($model, 'post') ?>
-
-                <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+        <div>
+            <h3>Мекен жай</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                     'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
                     'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
                 ]) ?>
-
-                <?= $form->field($model, 'region_id')->dropDownList(ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
-
-                <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
-
-                <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['placeholder' => Yii::t('app', 'Укажите регион')]) ?>
-
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
-
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app', 'Продолжить'), ['class' => 'rbt-btn btn-gradient w-100', 'name' => 'signup-button']) ?>
                 </div>
-
-                <?php ActiveForm::end(); ?>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+                ]) ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'address') ?>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'post') ?>
+                </div>
             </div>
         </div>
+        <div>
+            <h3>Мектеп</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
+                    'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+                ]) ?>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-group mt-4">
+            <?= Html::submitButton(Yii::t('app', 'Продолжить'), ['class' => 'rbt-btn btn-gradient w-100', 'name' => 'signup-button']) ?>
+        </div>
+
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
 <?php
