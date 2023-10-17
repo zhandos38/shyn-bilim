@@ -11,6 +11,9 @@
     padding-top: 10px;
     border-radius: var(--radius);
 }
+.rbt-header .mainmenu-nav .mainmenu {
+    justify-content: end;
+}
 
 .form-control {
     font-size: 16px;

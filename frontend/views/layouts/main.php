@@ -79,14 +79,23 @@ AppAsset::register($this);
                                 <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a></li>
                             </ul>
                         </div>
+                        <?php if (!Yii::$app->user->identity): ?>
                         <div class="rbt-separator"></div>
                         <div class="header-info">
                             <div class="header-right-btn d-flex">
                                 <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/login']) ?>">
-                                    <span data-text="Бізге қосылу">Бізге қосылу</span>
+                                    <span data-text="Бізге қосылу">Кіру</span>
                                 </a>
                             </div>
                         </div>
+                        <div class="header-info pl--5">
+                            <div class="header-right-btn d-flex">
+                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/signup']) ?>">
+                                    <span data-text="Бізге қосылу">Тіркелу</span>
+                                </a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -135,6 +144,8 @@ AppAsset::register($this);
                 <div class="header-right">
                     <!-- Navbar Icons -->
                     <ul class="quick-access">
+                        <?php $user = Yii::$app->user->identity; ?>
+                        <?php if (Yii::$app->user->identity): ?>
                         <li class="access-icon rbt-user-wrapper right-align-dropdown">
                             <a class="rbt-round-btn" href="#">
                                 <i class="feather-user"></i>
@@ -143,38 +154,34 @@ AppAsset::register($this);
                                 <div class="inner">
                                     <div class="rbt-admin-profile">
                                         <div class="admin-thumbnail">
-                                            <img src="/images/team/avatar.jpg" alt="User Images">
+                                            <img src="/img/no-img-book.png" alt="User Images">
                                         </div>
                                         <div class="admin-info">
-                                            <span class="name">Nipa Bali</span>
-                                            <a class="rbt-btn-link color-primary" href="profile.html">View Profile</a>
+                                            <span class="name"><?= $user->name ?></span>
+                                            <a class="rbt-btn-link color-primary" href="#">Профиль</a>
                                         </div>
                                     </div>
                                     <ul class="user-list-wrapper">
                                         <li>
-                                            <a href="instructor-dashboard.html">
+                                            <a href="#">
                                                 <i class="feather-home"></i>
-                                                <span>My Dashboard</span>
+                                                <span>Олимпиадаға қатысу тарихы</span>
                                             </a>
                                         </li>
                                     </ul>
                                     <hr class="mt--10 mb--10">
                                     <ul class="user-list-wrapper">
                                         <li>
-                                            <a href="index.html">
+                                            <a href="<?= Url::to(['site/logout']) ?>">
                                                 <i class="feather-log-out"></i>
-                                                <span>Logout</span>
+                                                <span>Шығу</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
-                        <li class="access-icon">
-                            <a class="search-trigger-active rbt-round-btn" href="#">
-                                <i class="feather-search"></i>
-                            </a>
-                        </li>
+                        <?php endif; ?>
                     </ul>
                     <!-- Start Mobile-Menu-Bar -->
                     <div class="mobile-menu-bar d-block d-xl-none">
