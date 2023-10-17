@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/signu
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'Заполните форму чтобы зарегистрироватся:';
 ?>
-<div class="bg-gradient-13">
+<div class="bg-gradient-13 rbt-section-gapBottom">
     <div class="container pt--60">
         <div class="section-title text-center mb--60">
             <span class="subtitle bg-secondary-opacity">Регистрация</span>
@@ -24,7 +24,7 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
         <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
         <div>
-            <h3>Жеке ақпарат</h2>
+            <h3>Жеке ақпарат</h3>
             <div class="row">
                 <div class="col-md-3">
                     <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
@@ -60,8 +60,8 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
             </div>
         </div>
 
-        <div>
-            <h3>Мекен жай</h2>
+        <div class="mt--40">
+            <h3>Мекен жай</h3>
             <div class="row">
                 <div class="col-md-3">
                     <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
@@ -83,8 +83,8 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                 </div>
             </div>
         </div>
-        <div>
-            <h3>Мектеп</h2>
+        <div class="mt--40">
+            <h3>Мектеп</h3>
             <div class="row">
                 <div class="col-md-3">
                     <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
