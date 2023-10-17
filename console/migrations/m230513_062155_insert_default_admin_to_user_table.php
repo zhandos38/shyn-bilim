@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Class m200713_172505_insert_default_admin_to_user_table
  */
-class m200713_172505_insert_default_admin_to_user_table extends Migration
+class m230513_062155_insert_default_admin_to_user_table extends Migration
 {
     public $tableName = '{{%user}}';
 
