@@ -52,6 +52,9 @@ return [
                 'questions' => 'site/questions',
             ],
         ],
+        'sms' => [
+            'class' => 'frontend\components\SMSCenter'
+        ],
     ],
     'params' => $params,
 ];

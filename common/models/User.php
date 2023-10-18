@@ -32,12 +32,16 @@ use yii\web\IdentityInterface;
  * @property integer $school_id
  * @property string $post
  * @property integer $article_count
+ *
+ * @property string $verification_code [varchar(4)]
  */
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
+
+    const MAX_REQUEST_COUNT = 5;
 
     const ROLE_ADMIN = 'admin';
     const ROLE_USER = 'user';
@@ -74,6 +78,8 @@ class User extends ActiveRecord implements IdentityInterface
 
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
             [['school_id', 'article_count'], 'integer'],
+
+            ['verification_code', 'string', 'max' => 4],
         ];
     }
 
@@ -120,6 +126,17 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByIIN($iin)
     {
         return static::findOne(['iin' => $iin, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * Finds user by phone
+     *
+     * @param $phone
+     * @return static|null
+     */
+    public static function findByPhone($phone)
+    {
+        return static::findOne(['phone' => $phone]);
     }
 
     /**
@@ -273,5 +290,15 @@ class User extends ActiveRecord implements IdentityInterface
     public function getRoleLabel()
     {
         return ArrayHelper::getValue(static::getRoles(), $this->status);
+    }
+
+    public function validateCode($code)
+    {
+        return $this->verification_code === $code;
+    }
+
+    public function getLastSMS()
+    {
+        return $this->hasOne(SmsLog::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);
     }
 }

@@ -8,12 +8,14 @@ use common\models\News;
 use common\models\Olympiad;
 use common\models\Post;
 use common\models\School;
+use common\models\SmsLog;
 use common\models\Subject;
 use common\models\Subscribe;
 use common\models\User;
 use Exception;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\SubscribeForm;
+use frontend\models\VerificationForm;
 use frontend\models\VerifyEmailForm;
 use kartik\mpdf\Pdf;
 use Yii;
@@ -277,6 +279,48 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionVerification()
+    {
+        $model = new VerificationForm();
+        $model->phone = Yii::$app->session->get('phone');
+
+        if ($model->load(Yii::$app->request->post()) && $model->verify()) {
+            Yii::$app->session->setFlash('success', 'Ваш аккаунт успешно подтвержден. Спасибо что Вы с нами!');
+            if (Yii::$app->request->get('referrer') === 'checkout') {
+                return  $this->redirect(['cart/checkout']);
+            }
+
+            return $this->redirect(['site/login']);
+        }
+
+        return $this->render('verification', [
+            'model' => $model
+        ]);
+    }
+
+    public function actionResendVerificationCode()
+    {
+        if (Yii::$app->request->isAjax) {
+            try {
+                $user = User::findOne(['phone' => Yii::$app->session->get('phone')]);
+                if (!$user) {
+                    throw new Exception('Пользователь не найден');
+                }
+
+                if ((time() - $user->lastSMS->created_at) <= 60) {
+                    return 'Подаждите пока наступить ваше время ;)';
+                }
+
+                SmsLog::sendSms($user->phone, $user->verification_code . ' - Bilim-shini', $user->id);
+                return true;
+            } catch (Exception $exception) {
+                throw new Exception($exception->getMessage());
+            }
+        }
+
+        return false;
     }
 
     public function actionQuestions()
