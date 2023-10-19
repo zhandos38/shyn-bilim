@@ -49,13 +49,7 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                     ]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'iin') ?>
-                </div>
-                <div class="col-md-3">
                     <?= $form->field($model, 'password')->passwordInput() ?>
-                </div>
-                <div class="col-md-3">
-                    <?= $form->field($model, 'email') ?>
                 </div>
             </div>
         </div>
@@ -78,9 +72,6 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                 <div class="col-md-3">
                     <?= $form->field($model, 'address') ?>
                 </div>
-                <div class="col-md-3">
-                    <?= $form->field($model, 'post') ?>
-                </div>
             </div>
         </div>
         <div class="mt--40">
@@ -92,6 +83,12 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                     'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
                 ]) ?>
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                </div>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'role')->dropDownList([
+                        \common\models\User::ROLE_STUDENT => 'Оқушы',
+                        \common\models\User::ROLE_TEACHER => 'Оқытушы',
+                    ]) ?>
                 </div>
             </div>
         </div>

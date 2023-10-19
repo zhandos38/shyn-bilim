@@ -10,7 +10,7 @@ use yii\helpers\VarDumper;
  */
 class LoginForm extends Model
 {
-    public $iin;
+    public $phone;
     public $password;
     public $rememberMe = true;
 
@@ -24,7 +24,7 @@ class LoginForm extends Model
     {
         return [
             // iin and password are both required
-            [['iin', 'password'], 'required'],
+            [['phone', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -35,7 +35,7 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'iin' => Yii::t('app', 'ИИН'),
+            'phone' => Yii::t('app', 'Номер телефона'),
             'password' => Yii::t('app', 'Пароль'),
             'rememberMe' => Yii::t('app', 'Запомни меня'),
         ];
@@ -80,7 +80,7 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByIIN($this->iin);
+            $this->_user = User::findByPhone($this->phone);
         }
 
         return $this->_user;

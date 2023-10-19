@@ -177,7 +177,7 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Спасибо за регистрацию');
+            Yii::$app->session->setFlash('success', 'Бізбен болғаныңыз үшін. Рахмет!');
             return $this->goHome();
         }
 

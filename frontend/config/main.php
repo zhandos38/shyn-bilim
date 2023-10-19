@@ -42,7 +42,7 @@ return [
             'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'languages' => ['kz', 'ru'],
+            'languages' => ['kz', 'ru' => 'kz'],
             'enableLanguageDetection' => false,
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
