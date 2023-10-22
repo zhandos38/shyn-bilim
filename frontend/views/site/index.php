@@ -461,7 +461,7 @@ $this->registerMetaTag([
                                 Біліктілігіңізді арттыруда көп көмек аласыз.
                                 Е-Портфолиоға жарамды құжаттар жинақтайсыз.
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
                                 <span data-text="Толығырақ">Жазылу</span>
                             </a>
                         </div>
@@ -501,7 +501,7 @@ $this->registerMetaTag([
                                 Жарыстардан сүрінбей өтіп,
                                 ShynBonus жинап, Сыйлықтарды ұтып ал!.
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
                                 <span data-text="Толығырақ">Жазылу</span>
                             </a>
                         </div>

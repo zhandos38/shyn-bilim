@@ -406,35 +406,33 @@ class SiteController extends Controller
 
     public function actionSubscribe()
     {
-        $model = new SubscribeForm();
-        if ($model->load(Yii::$app->request->post()) && $orderId = $model->save()) {
-            $salt = $this->getSalt(8);
-            $request = [
-                'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => 3000,
-                'pg_salt' => $salt,
-                'pg_order_id' => $orderId,
-                'pg_description' => 'Оплата за подписку',
-                'pg_success_url' => Url::base('https') . '/site/subscribe-success',
-                'pg_result_url' => Yii::$app->params['apiDomain'] . '/subscribe/result',
-                'pg_result_url_method' => 'POST',
-            ];
-
-            $request = $this->getSignByData($request, 'payment.php', $salt);
-
-            $query = http_build_query($request);
-
-            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-        }
-        /** @var User $user */
         $user = Yii::$app->user->identity;
-        $model->school_id = $user->school_id;
-        $model->post = $user->post;
-        $model->address = $user->address;
 
-        return $this->render('subscribe', [
-            'model' => $model,
-        ]);
+        $subscribe = new Subscribe();
+        $subscribe->user_id = $user->id;
+        $subscribe->created_at = time();
+        if (!$subscribe->save()) {
+            throw new \yii\db\Exception('Subscribe error!');
+        }
+        $subscribeId = $subscribe->id;
+
+        $salt = $this->getSalt(8);
+        $request = [
+            'pg_merchant_id' => Yii::$app->params['payboxId'],
+            'pg_amount' => Yii::$app->user->identity->role === User::ROLE_TEACHER ? Yii::$app->params['teacherSubscribeCost'] : Yii::$app->params['studentSubscribeCost'],
+            'pg_salt' => $salt,
+            'pg_order_id' => $subscribeId,
+            'pg_description' => 'Оплата за подписку',
+            'pg_success_url' => Url::base('https') . '/site/subscribe-success',
+            'pg_result_url' => Yii::$app->params['apiDomain'] . '/subscribe/result',
+            'pg_result_url_method' => 'POST',
+        ];
+
+        $request = $this->getSignByData($request, 'payment.php', $salt);
+
+        $query = http_build_query($request);
+
+        return $this->redirect('https://api.paybox.money/payment.php?' . $query);
     }
 
     public function actionSubscribeSuccess()
@@ -454,7 +452,8 @@ class SiteController extends Controller
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
-        return $this->redirect(['site/subscribe']);
+        Yii::$app->session->setFlash('success', 'Сіз сәтті жазылдыңыз. Рахмет!');
+        return $this->redirect(['cabinet/index']);
     }
 
     public function checkSign($data, $url):bool

@@ -35,12 +35,18 @@ class ArticleController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['my-list'],
                 'rules' => [
                     [
-                        'actions' => ['my-list'],
                         'allow' => true,
                         'roles' => ['@'],
+                        'matchCallback' => function() {
+                            if (!Yii::$app->user->identity->checkSubscription()) {
+                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
+                                return false;
+                            }
+
+                            return true;
+                        },
                     ],
                 ],
             ],

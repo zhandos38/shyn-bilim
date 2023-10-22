@@ -16,6 +16,7 @@ use common\models\TestSubject;
 use common\models\WhiteList;
 use frontend\models\CheckAssignmentForm;
 use kartik\mpdf\Pdf;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -38,6 +39,23 @@ class OlympiadController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function() {
+                            if (!Yii::$app->user->identity->checkSubscription()) {
+                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
+                                return false;
+                            }
+
+                            return true;
+                        },
+                    ],
                 ],
             ],
         ];

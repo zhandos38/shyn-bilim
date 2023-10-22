@@ -6,6 +6,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
+use yii\helpers\VarDumper;
 use yii\web\IdentityInterface;
 
 /**
@@ -32,6 +33,7 @@ use yii\web\IdentityInterface;
  * @property integer $school_id
  * @property string $post
  * @property integer $article_count
+ * @property string $subscribe_until
  *
  * @property string $verification_code [varchar(4)]
  */
@@ -78,7 +80,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
 
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post', 'subscribe_until'], 'string'],
             [['school_id', 'article_count'], 'integer'],
 
             ['verification_code', 'string', 'max' => 4],
@@ -100,6 +102,7 @@ class User extends ActiveRecord implements IdentityInterface
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'post' => Yii::t('app', 'Почтовый индекс'),
             'article_count' => Yii::t('app', 'Лимит на материалы'),
+            'subscribe_until' => 'Подписан до',
         ];
     }
 
@@ -302,5 +305,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function getLastSMS()
     {
         return $this->hasOne(SmsLog::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function checkSubscription(): bool
+    {
+        return date('Y-m-d', strtotime(Yii::$app->user->identity->subscribe_until)) >= date('Y-m-d');
     }
 }

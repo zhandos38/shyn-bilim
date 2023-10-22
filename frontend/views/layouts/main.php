@@ -158,7 +158,7 @@ AppAsset::register($this);
                                         </div>
                                         <div class="admin-info">
                                             <span class="name"><?= $user->name ?></span>
-                                            <a class="rbt-btn-link color-primary" href="#">Профиль</a>
+                                            <a class="rbt-btn-link color-primary" href="<?= Url::to(['cabinet/index']) ?>">Жеке кабинет</a>
                                         </div>
                                     </div>
                                     <ul class="user-list-wrapper">
