@@ -203,8 +203,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </div>
         </div>
     </div>
-<div class="container pt--60">
-    <div class="row" style="padding-top: 20px">
+<div class="container">
+    <div class="row">
         <?php foreach ($subjects as $subject): ?>
             <div class="col-md-2">
                 <a href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">

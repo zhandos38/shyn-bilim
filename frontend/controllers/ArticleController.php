@@ -230,8 +230,15 @@ class ArticleController extends Controller
         if ($id) {
             $model->subject_id = $id;
         }
+        $user = Yii::$app->user->identity;
+        $model->name = $user->name;
+        $model->surname = $user->surname;
+        $model->patronymic = $user->patronymic;
+        $model->phone = $user->patronymic;
+        $model->school_id = $user->school_id;
 
         if ($model->load(Yii::$app->request->post())) {
+            $model->status = Article::STATUS_ACTIVE;
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
 
@@ -251,35 +258,37 @@ class ArticleController extends Controller
                 ]);
             }
 
-            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
-            if ($whiteList !== null) {
-                $model->status = Article::STATUS_ACTIVE;
-            }
+//            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
+//            if ($whiteList !== null) {
+//                $model->status = Article::STATUS_ACTIVE;
+//            }
             if ($model->save() && $model->upload()) {
-                if ($whiteList !== null) {
-                    $whiteList->limit = $whiteList->limit - 1;
-                    $whiteList->save();
+//                if ($whiteList !== null) {
+//                    $whiteList->limit = $whiteList->limit - 1;
+//                    $whiteList->save();
+//
+//                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
+//                }
 
-                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
-                }
+//                $salt = $this->getSalt(8);
+//                $request = [
+//                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+//                    'pg_amount' => 3000,
+//                    'pg_salt' => $salt,
+//                    'pg_order_id' => $model->id,
+//                    'pg_success_url_method' => 'GET',
+//                    'pg_description' => 'Оплата за публикацию материала',
+//                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+//                    'pg_result_url_method' => 'POST',
+//                ];
+//
+//                $request = $this->getSignByData($request, 'payment.php', $salt);
+//
+//                $query = http_build_query($request);
+//
+//                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
 
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 3000,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_success_url_method' => 'GET',
-                    'pg_description' => 'Оплата за публикацию материала',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
-                ];
-
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                return $this->redirect(['article/success-offline', 'id' => $model->id]);
             }
         }
 

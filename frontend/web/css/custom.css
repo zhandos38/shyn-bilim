@@ -600,6 +600,21 @@ li::marker {
         top: 0;
         background-color: #3195ff;
     }
+
+    .logo-title {
+        font-size: 22px !important;
+    }
+
+    .header-left {
+        flex-basis: 60% !important;
+    }
+    .header-right {
+        flex-basis: 40% !important;
+    }
+}
+
+.logo-title {
+    font-size: 28px; text-transform: uppercase; color: #2dc8bd
 }
 
 .block-disabled {

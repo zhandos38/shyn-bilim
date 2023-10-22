@@ -1,13 +1,12 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form yii\bootstrap5\ActiveForm */
 /* @var $model LoginForm */
 
 use common\models\LoginForm;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\helpers\Url;
+use yii\bootstrap5\ActiveForm;
 
 $this->title = 'Телефон номерді растау';
 $this->params['breadcrumbs'][] = $this->title;

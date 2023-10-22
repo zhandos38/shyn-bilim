@@ -612,7 +612,7 @@
         },
 
         masonryActivation: function name(params) {
-            $(window).load(function () {
+            $(window).on('load', function () {
                 $('.masonary-wrapper-activation').imagesLoaded(function () {
                     // filter items on button click
                     $('.messonry-button').on('click', 'button', function () {
@@ -635,7 +635,7 @@
                 });
             })
 
-            $(window).load(function () {
+            $(window).on('load', function () {
                 $('.splash-masonary-wrapper-activation').imagesLoaded(function () {
                     // filter items on button click
                     $('.messonry-button').on('click', 'button', function () {

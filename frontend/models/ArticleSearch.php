@@ -21,7 +21,7 @@ class ArticleSearch extends Article
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'file'], 'string'],
+            [['name', 'surname', 'patronymic', 'file', 'topic'], 'string'],
             [['subject_id', 'created_at'], 'integer'],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
 
@@ -79,6 +79,7 @@ class ArticleSearch extends Article
         // grid filtering conditions
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'surname', $this->surname])
+            ->andFilterWhere(['like', 'topic', $this->topic])
             ->andFilterWhere(['like', 'patronymic', $this->patronymic]);
 
         return $dataProvider;

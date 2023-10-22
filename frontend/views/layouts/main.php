@@ -59,13 +59,14 @@ AppAsset::register($this);
                         <div class="header-info">
                             <ul class="social-share-transparent">
                                 <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100009917714377&_se_imp=013RoUTUXRDM4XUc6&paipv=0&eav=Afb7V5VR0QCk9ms7t2tkGwlt1LX56AM_a85ywYirohUiYpqyPlWlar0yU3n7F2dP45g&_rdr">
+                                        <i class="feather-facebook"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://www.instagram.com/shyn.baspahana/?hl=ru">
+                                        <i class="feather-instagram"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -110,7 +111,7 @@ AppAsset::register($this);
                     <div class="logo">
                         <a style="display: flex; align-items: center" href="/">
                             <img src="/img/bilimshini-logo_reverse.png" alt="Bilimshini.kz">
-                            <span class="ml--10 fw-bold" style="font-size: 28px; text-transform: uppercase; color: #2dc8bd">Bilim-shini.kz</span>
+                            <span class="ml--10 fw-bold logo-title">Bilim-shini.kz</span>
                         </a>
                     </div>
                 </div>
