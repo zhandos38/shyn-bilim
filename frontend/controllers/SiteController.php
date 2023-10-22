@@ -411,4 +411,24 @@ class SiteController extends Controller
     {
         return 'pg_' . $property;
     }
+
+//    public function actionTest()
+//    {
+//        $currentDate = date('Y-m-d');
+//        $newDate = date('Y-m-d', strtotime($currentDate) + 90 * 60 * 60 * 24);
+//
+//        $order = Subscribe::findOne(['id' => 1]);
+//        $order->status = Subscribe::STATUS_ACTIVE;
+//        if (!$order->save()) {
+//            throw new \yii\db\Exception(Json::encode($order->getErrors()));
+//        }
+//
+//        $user = $order->user;
+//        $user->subscribe_until = $newDate;
+//        if (!$user->save()) {
+//            throw new \yii\db\Exception(Json::encode($order->getErrors()));
+//        }
+//
+//        echo $newDate;
+//    }
 }
