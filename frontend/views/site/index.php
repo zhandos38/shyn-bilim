@@ -32,14 +32,14 @@ $this->registerMetaTag([
                                 платформа
                             </p>
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse" href="#">
+                                <a class="rbt-btn btn-white hover-icon-reverse" href="<?= Url::to(['site/signup']) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ТІРКЕЛЕМІН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#about-payment">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ТӨЛЕМ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -359,52 +359,62 @@ $this->registerMetaTag([
                 <br>
                 Қараша-желтоқсан айларында берілген тапсырмаларды ретімен орындап, <b>ShynBonus</b> жина.
             </p>
-            <div class="balls-hero__wrapper" style="margin-top: 40px">
-                <div class="balls-hero__item">
-                    <div class="balls-hero__item-img">
-                        <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
-                        <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
-                    </div>
-                    <div class="balls-hero__item-title">
-                        сайттың туракты окырманы
-                        1 балл
-                    </div>
-                </div>
-                <div class="balls-hero__item">
-                    <div class="balls-hero__item-img">
-                        <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
-                        <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
-                    </div>
-                    <div class="balls-hero__item-title">
-                        “Шың балалар кітапханасы”
-                        ЕҢ КӨП КІТАП ОҚИТЫН ОҚУШЫ
+            <div class="row justify-content-center gap-5 balls-hero__wrapper" style="margin-top: 40px">
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            сайттың туракты окырманы
+                            1 балл
+                        </div>
                     </div>
                 </div>
-                <div class="balls-hero__item">
-                    <div class="balls-hero__item-img">
-                        <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
-                        <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
-                    </div>
-                    <div class="balls-hero__item-title">
-                        күнделікті тапсырма орындау
-                    </div>
-                </div>
-                <div class="balls-hero__item">
-                    <div class="balls-hero__item-img">
-                        <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
-                        <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
-                    </div>
-                    <div class="balls-hero__item-title">
-                        олимпиадаларға қатысу
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            “Шың балалар кітапханасы”
+                            ЕҢ КӨП КІТАП ОҚИТЫН ОҚУШЫ
+                        </div>
                     </div>
                 </div>
-                <div class="balls-hero__item">
-                    <div class="balls-hero__item-img">
-                        <img class="balls-hero__item1" src="/img/balls-hero/logo5.svg" alt="logo5">
-                        <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            күнделікті тапсырма орындау
+                        </div>
                     </div>
-                    <div class="balls-hero__item-title">
-                        Мақала жазу
+                </div>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            олимпиадаларға қатысу
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo5.svg" alt="logo5">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            Мақала жазу
+                        </div>
                     </div>
                 </div>
             </div>
@@ -422,7 +432,7 @@ $this->registerMetaTag([
 </div>
 
 <div class="rbt-pricing-area rbt-section-gapTop rbt-section-gapBottom bg-color-light">
-    <div class="container">
+    <div id="about-payment" class="container">
         <div class="row g-5 mb--60">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="section-title text-start">
@@ -666,17 +676,15 @@ $this->registerMetaTag([
 </div>
 
 <style>
-    .balls-hero__wrapper {
-        display: flex;
-        justify-content: space-between;
-    }
-    .balls-hero__item {
-        width: 20%;
-    }
     .balls-hero__item-img {
         position: relative;
         display: flex;
         justify-content: center;
+    }
+    .balls-hero__item-title {
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 20px;
     }
     .balls-hero__item1 {
         width: 120px;
@@ -684,10 +692,5 @@ $this->registerMetaTag([
     .balls-hero__item2 {
         width: 120px;
         position: absolute;
-    }
-    .balls-hero__item-title {
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 20px;
     }
 </style>
