@@ -20,6 +20,7 @@
                     ['label' => 'Разделы', 'options' => ['class' => 'header']],
                     ['label' => 'Пользователи', 'icon' => 'fas fa-user', 'url' => ['user/index']],
                     ['label' => 'Журналы', 'icon' => 'fas fa-user', 'url' => ['magazine/index']],
+                    ['label' => 'Кітапхана', 'icon' => 'fas fa-user', 'url' => ['book/index']],
                     ['label' => 'Подписка', 'icon' => 'fas fa-edit', 'url' => ['subscribe/index']],
                     ['label' => 'Материалы', 'icon' => 'fas fa-user', 'url' => ['article/index']],
                     ['label' => 'Белый список для материалов', 'icon' => 'fas fa-book', 'url' => ['article-white-list/index']],

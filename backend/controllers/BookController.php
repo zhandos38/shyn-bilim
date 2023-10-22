@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BookController implements the CRUD actions for Book model.
@@ -66,8 +67,21 @@ class BookController extends Controller
     {
         $model = new Book();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+
+            if ($model->imageFile) {
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            }
+
+            if ($model->fileTemp) {
+                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            }
+
+            if ($model->save() && $model->upload()) {
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('create', [
@@ -86,8 +100,21 @@ class BookController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+
+            if ($model->imageFile) {
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            }
+
+            if ($model->fileTemp) {
+                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            }
+
+            if ($model->save() && $model->upload()) {
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('update', [

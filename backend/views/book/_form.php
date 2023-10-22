@@ -1,5 +1,6 @@
 <?php
 
+use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,9 +15,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'file')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+    ]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+    <?php if ($model->img): ?>
+        <img src="<?= $model->getImage() ?>" alt="product-image" width="200px">
+    <?php endif; ?>
+
+    <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'document/*'],
+    ]) ?>
 
     <?= $form->field($model, 'age_range')->textInput(['maxlength' => true]) ?>
 

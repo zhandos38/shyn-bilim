@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\imagine\Image;
 
 /**
  * This is the model class for table "book".
@@ -16,6 +17,9 @@ use Yii;
  */
 class Book extends \yii\db\ActiveRecord
 {
+    public $imageFile;
+    public $fileTemp;
+
     /**
      * {@inheritdoc}
      */
@@ -33,6 +37,9 @@ class Book extends \yii\db\ActiveRecord
             [['name', 'file', 'img'], 'required'],
             [['book_category_id'], 'integer'],
             [['name', 'file', 'img', 'age_range'], 'string', 'max' => 255],
+
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['fileTemp'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf'],
         ];
     }
 
@@ -44,10 +51,52 @@ class Book extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'file' => 'File',
-            'img' => 'Img',
+            'img' => 'Рисунок',
+            'imageFile' => 'Файл рисунка',
+            'file' => 'Файл',
+            'fileTemp' => 'Файл',
             'age_range' => 'Age Range',
             'book_category_id' => 'Book Category ID',
         ];
+    }
+
+    public function getFile()
+    {
+        return Yii::$app->params['staticDomain'] . '/book/' . $this->file;
+    }
+
+    public function getImage()
+    {
+        return $this->img ? Yii::$app->params['staticDomain'] . '/book/' . $this->img : '/img/no-magazine.png';
+    }
+
+    public function upload()
+    {
+        if ($this->imageFile === null && $this->fileTemp === null) {
+            return true;
+        }
+
+        $folderPath = Yii::getAlias('@static') . '/book';
+
+        if (!file_exists($folderPath) && !mkdir($folderPath, 0777, true) && !is_dir($folderPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $folderPath));
+        }
+
+        $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        $filePath = $folderPath . '/' . $this->fileTemp->baseName . '.' . $this->fileTemp->extension;
+
+        if ($this->validate()) {
+            if ($this->imageFile) {
+                $this->imageFile->saveAs($imgPath);
+            }
+
+            if ($this->fileTemp) {
+                $this->fileTemp->saveAs($filePath);
+            }
+
+            return true;
+        }
+
+        return false;
     }
 }
