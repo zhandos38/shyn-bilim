@@ -62,7 +62,7 @@ $this->registerMetaTag([
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['cabinet/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/profile.png" alt="menu-icon">
@@ -114,7 +114,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['article/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/new-projects.png" alt="menu-icon">
@@ -150,7 +150,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['olympiads/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/olympiads.png" alt="menu-icon">
@@ -168,7 +168,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['article/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/article-base.png" alt="menu-icon">
@@ -186,7 +186,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['news/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/blog.png" alt="menu-icon">
@@ -204,7 +204,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['about/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/about-use.png" alt="menu-icon">
@@ -221,7 +221,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['magazine/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/magazine.png" alt="menu-icon">
@@ -239,7 +239,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['site/questions']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/faq.png" alt="menu-icon">
@@ -256,7 +256,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['site/contacts']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/contacts.png" alt="menu-icon">
@@ -410,7 +410,7 @@ $this->registerMetaTag([
             </div>
         </div>
         <div class="load-more-btn mt--60 text-center">
-            <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="#">
+            <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="<?= Url::to(['cabinet/index']) ?>">
                 <span class="icon-reverse-wrapper">
                     <span class="btn-text">Жазылу</span>
                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
