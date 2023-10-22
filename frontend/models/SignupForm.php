@@ -1,9 +1,12 @@
 <?php
 namespace frontend\models;
 
+use common\models\SmsLog;
 use Yii;
 use yii\base\Model;
 use common\models\User;
+use yii\db\Exception;
+use yii\helpers\Json;
 
 /**
  * Signup form
@@ -64,19 +67,33 @@ class SignupForm extends Model
             return null;
         }
 
-        $user = new User();
-        $user->name = $this->name;
-        $user->surname = $this->surname;
-        $user->patronymic = $this->patronymic;
-        $user->phone = $this->phone;
-        $user->address = $this->address;
-        $user->school_id = $this->school_id;
-        $user->role = $this->role;
-        $user->status = User::STATUS_INACTIVE;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        return $user->save();
+        try {
+            $transaction = Yii::$app->db->beginTransaction();
+            $user = new User();
+            $user->name = $this->name;
+            $user->surname = $this->surname;
+            $user->patronymic = $this->patronymic;
+            $user->phone = $this->phone;
+            $user->address = $this->address;
+            $user->school_id = $this->school_id;
+            $user->role = $this->role;
+            $user->status = User::STATUS_INACTIVE;
+            $user->verification_code = (string)($code = random_int(1000, 9999));
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            $user->generateEmailVerificationToken();
+            if (!$user->save()) {
+                throw new Exception(Json::encode($user->errors));
+            }
 
+            SmsLog::sendSms($this->phone, $code . ' - Bilimshini', $user->id);
+            Yii::$app->session->set('phone', $this->phone);
+
+            $transaction->commit();
+            return true;
+        } catch (Exception $exception) {
+            $transaction->rollBack();
+            throw new Exception($exception->getMessage());
+        }
     }
 }

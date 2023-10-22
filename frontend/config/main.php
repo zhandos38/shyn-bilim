@@ -52,7 +52,7 @@ return [
                 'questions' => 'site/questions',
             ],
         ],
-        'sms' => [
+        'smsc' => [
             'class' => 'frontend\components\SMSCenter'
         ],
     ],

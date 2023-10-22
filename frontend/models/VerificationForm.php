@@ -42,7 +42,7 @@ class VerificationForm extends Model
     public function attributeLabels()
     {
         return [
-            'code' => 'Код активации'
+            'code' => 'СМС код'
         ];
     }
 

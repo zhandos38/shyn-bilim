@@ -19,7 +19,6 @@ use yii\httpclient\Client;
  * @property int|null $created_at
  * @property int $user_id [int(11)]
  * @property mixed $statusLabel
- * @property string $text_error [varchar(255)]
  */
 class SmsLog extends \yii\db\ActiveRecord
 {
@@ -42,7 +41,6 @@ class SmsLog extends \yii\db\ActiveRecord
         return [
             [['message_type', 'status', 'created_at'], 'integer'],
             [['text'], 'string', 'max' => 255],
-            ['text_error', 'string']
         ];
     }
 
@@ -54,7 +52,6 @@ class SmsLog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'text' => 'Текс',
-            'text_error' => 'Текс ошибки',
             'message_type' => 'Тип',
             'status' => 'Статус',
             'created_at' => 'Время добавления',
@@ -77,13 +74,14 @@ class SmsLog extends \yii\db\ActiveRecord
 
     public static function sendSms($phone, $message, $userId)
     {
-        $smsc = Yii::$app->sms;
+        $smsc = Yii::$app->smsc;
+        $smsc->login = Yii::$app->params['smscLogin'];
+        $smsc->password = Yii::$app->params['smscPassword'];
         $response = $smsc->send(7 . $phone, $message);
 
         $smsLog = new self();
         $smsLog->user_id = !empty($userId) ? $userId : null;
         $smsLog->text = $message;
-//        $smsLog->text_error = $response;
         $smsLog->status = $response ? self::STATUS_SUCCESS : self::STATUS_ERROR;
         $smsLog->created_at = time();
         if (!$smsLog->save()) {
