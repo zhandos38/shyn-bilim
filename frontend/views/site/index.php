@@ -95,7 +95,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
+                <a href="<?= Url::to(['book/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/child-library.png" alt="menu-icon">
