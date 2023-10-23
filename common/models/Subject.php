@@ -51,7 +51,7 @@ class Subject extends \yii\db\ActiveRecord
             [['type', 'order', 'kind'], 'integer'],
             ['is_not_subject', 'boolean'],
 
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 
