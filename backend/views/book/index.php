@@ -25,6 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
+            [
+                'attribute' => 'book_category_id',
+                'value' => function(\common\models\Book $model) {
+                    return $model->bookCategory->name;
+                }
+            ],
             'file',
             'img',
             'age_range',

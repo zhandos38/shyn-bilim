@@ -29,9 +29,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'age_range')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'book_category_id')->textInput() ?>
+    <?= $form->field($model, 'book_category_id')->dropDownList(
+            \yii\helpers\ArrayHelper::map(\common\models\BookCategory::find()->all(), 'id', 'name'),
+        [
+            'prompt' => 'Выбрать категорию'
+        ]
+    ) ?>
 
-    <div class="form-group">
+    <div class="form-group mt-2">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 

@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\Book;
+use common\models\BookCategory;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
@@ -51,8 +52,11 @@ class BookController extends Controller
                 'pageSize' => 8
             ]
         ]);
+
+        $bookCategories = BookCategory::find()->all();
         return $this->render('index', [
-            'dataProvider' => $dataProvider
+            'dataProvider' => $dataProvider,
+            'bookCategories' => $bookCategories,
         ]);
     }
 }
