@@ -81,7 +81,6 @@ class SignupForm extends Model
             $user->verification_code = (string)($code = random_int(1000, 9999));
             $user->setPassword($this->password);
             $user->generateAuthKey();
-            $user->generateEmailVerificationToken();
             if (!$user->save()) {
                 throw new Exception(Json::encode($user->errors));
             }

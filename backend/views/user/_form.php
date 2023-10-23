@@ -16,9 +16,15 @@ use yii\widgets\MaskedInput;
 
         <?php $form = ActiveForm::begin(); ?>
 
+        <?= $form->field($model, 'name')->textInput() ?>
+
+        <?= $form->field($model, 'surname')->textInput() ?>
+
+        <?= $form->field($model, 'patronymic')->textInput() ?>
+
         <?= $form->field($model, 'iin')->textInput() ?>
 
-        <?= $form->field($model, 'email')->textInput() ?>
+        <?= $form->field($model, 'phone')->textInput() ?>
 
         <?= $form->field($model, 'role')->dropDownList(User::getRoles(), ['prompt' => 'Указать роль']) ?>
 
@@ -26,7 +32,9 @@ use yii\widgets\MaskedInput;
 
         <?= $form->field($model, 'article_count') ?>
 
-        <div class="form-group">
+        <?= $form->field($model, 'subscribe_until') ?>
+
+        <div class="form-group mt-2">
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
         </div>
 
