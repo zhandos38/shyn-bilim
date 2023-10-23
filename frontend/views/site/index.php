@@ -150,7 +150,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="<?= Url::to(['olympiads/index']) ?>" class="menu-card">
+                <a href="<?= Url::to(['olympiad/index']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/olympiads.png" alt="menu-icon">
@@ -256,7 +256,7 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="<?= Url::to(['site/contacts']) ?>" class="menu-card">
+                <a href="<?= Url::to(['site/contact']) ?>" class="menu-card">
                     <div>
                         <div>
                             <img class="menu-card__img" src="/img/menu-icon/contacts.png" alt="menu-icon">
