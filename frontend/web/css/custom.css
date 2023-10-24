@@ -633,7 +633,9 @@ li::marker {
 }
 
 [data-gradient-overlay]:before {
-    background: linear-gradient(90deg, #2dc8bd, var(--color-secondary));
+    background: rgb(25,162,153);
+    background: linear-gradient(90deg, rgba(25,162,153,1) 0%, rgba(183,143,252,1) 100%);
+    opacity: 1;
 }
 .rbt-flipbox .rbt-flipbox-wrap .rbt-flipbox-front .content > a {
     margin-top: 100px;

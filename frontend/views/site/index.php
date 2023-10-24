@@ -14,7 +14,16 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
-<div class="slider-area rbt-banner-5 height-750 bg_image" style="background-image: url('/img/germaniya-gory-alpy1.jpg')" data-gradient-overlay="7">
+<div class="slider-area rbt-banner-5 height-750 bg_image" style="position: relative" data-gradient-overlay="7">
+    <div style="    position: absolute;
+    bottom: 36px;
+    left: 5px;
+    width: 160px;
+    height: 160px;
+    z-index: 999;
+    opacity: 1;">
+        <img src="/img/hero/oyu.png" alt="oyu">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -22,15 +31,20 @@ $this->registerMetaTag([
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <h1 class="title display-one">
-                                БІЛІММЕН <br>
-                                БІРГЕ ДАМИМЫЗ!
+                                BILIM-SHINI.KZ
                             </h1>
-                            <div style="font-size: 24px; text-transform: uppercase; color: #fff; font-weight: bold">Bilim-shini.kz</div>
                             <p class="description">
-                                Педагогтарға, балаларға, оқушыларға
-                                студенттерге, <br> ата-аналарға арналған
-                                платформа
+                                Педагогтерге, балаларға, ата-аналарға арналған
                             </p>
+                            <div class="description">
+                                Ең үздік, ең креативті тұлғалар:
+                                <ul class="banner-list">
+                                    <li>Бізбен бірге қалыптасады.</li>
+                                    <li>Бізбен бірге дамиды.</li>
+                                    <li>Бізбен бірге білім шыңын бағындырады.</li>
+                                </ul>
+                            </div>
+
                             <div>
                                 <a class="rbt-btn btn-white hover-icon-reverse" href="<?= Url::to(['site/signup']) ?>">
                                     <div class="icon-reverse-wrapper">
@@ -48,8 +62,13 @@ $this->registerMetaTag([
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex justify-content-end">
-                            <img src="/img/bg-boy.png" alt="banner-part.png" style="width: 660px; height: fit-content">
+                        <div class="col-md-6">
+                            <div class="mt-4 mt-lg-0">
+                                <img src="/img/hero/teacher.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
+                            </div>
+                            <div class="mt-4">
+                                <img src="/img/hero/student.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -379,8 +398,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Шың балалар кітапханасы”
-                            ЕҢ КӨП КІТАП ОҚИТЫН ОҚУШЫ
+                            “Шың балалар кітапханасы”. “Оқуға құштар оқушы” марафон
                         </div>
                     </div>
                 </div>
@@ -391,7 +409,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
                         </div>
                         <div class="balls-hero__item-title">
-                            күнделікті тапсырма орындау
+                            Үй тапсырмасы
                         </div>
                     </div>
                 </div>
@@ -402,7 +420,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
                         </div>
                         <div class="balls-hero__item-title">
-                            олимпиадаларға қатысу
+                            “Алтын қыран-ерекше дарын иесі” олимпидасы
                         </div>
                     </div>
                 </div>
@@ -413,7 +431,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
                         </div>
                         <div class="balls-hero__item-title">
-                            Мақала жазу
+                            Шығармашыл шәкірт. Мақала жариялау
                         </div>
                     </div>
                 </div>
@@ -452,24 +470,24 @@ $this->registerMetaTag([
                             </div>
                             <div class="content">
                                 <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
-                                <h6 class="title"><a href="#">2000 теңге / 2 айға жазылу</a></h6>
+                                <h6 class="title"><a href="#">3 000 теңге / 2 айға жазылу</a></h6>
                                 <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                - “Ең білімді педагог-2023"
-                                олимпиадасына тегін қатысасыз <br>
-                                - Табысты сынып жетекші-2023”
-                                жобасына тегін қатысасыз. <br>
-                                - Тегін материал жариялайсыз. <br>
-                                - Портфолиоға жарамды QR кодталған
-                                МАРАПАТ қағаздарын иемденесіз.
-                            </p>
-                            <p>
-                                Біліктілігіңізді арттыруда көп көмек аласыз.
-                                Е-Портфолиоға жарамды құжаттар жинақтайсыз.
+                                1. “ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ -2023" байқауына қатысу ТЕГІН.
+                                (1 қараша мен 20 желтоқсан аралығы)
+                                <br>
+                                2. “ЕҢ БІЛІМДІ ПЕДАГОГ-2023" олимпиадасына қатысу ТЕГІН.
+                                (15-20 қараша аралығы)
+                                <br>
+                                3. МАТЕРИАЛ жариялау 2 рет ТЕГІН.
+                                (01 қараша-31 желтоқсан аралығы)
+                                <br>
+                                4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН.
+                                (01 қараша -31 желтоқсан аралығы)
                             </p>
                             <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
                                 <span data-text="Толығырақ">Жазылу</span>
@@ -491,21 +509,31 @@ $this->registerMetaTag([
                             <div class="content">
                                 <h5 class="title">
                                     <a href="#">
-                                        ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР
+                                        ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР,
                                         СТУДЕНТТЕР ҮШІН
                                     </a>
                                 </h5>
-                                <h6 class="title"><a href="#">1000 теңге / 2 айға жазылу</a></h6>
+                                <h6 class="title"><a href="#">1500 теңге / 2 айға жазылу</a></h6>
                                 <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                - “Каникулда кітап оқимыз” марафонына қатысу тегін
-                                - “ШЫҢ” балалар кітапханасынан кітап оқу тегін <br>
-                                -  “ҮЙ ТАПСЫРМАСЫ” байқауына қатысу тегін <br>
-                                - “Алтын қыран”  пән олимпиадасына қатысу тегін
+                                1. “КАНИКУЛДА КІТАП ОҚИМЫЗ" марафонына қатысу ТЕГІН!
+                                (28 қазаннан жыл соңына дейін)
+                                <br>
+                                2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН!
+                                ( 4 қарашадан бастап әр аптаның сенбісі күні 20-ші желтоқсанға дейін)
+                                <br>
+                                3. «АЛТЫН ҚЫРАН» пәндер олимпиадасына қатысу ТЕГІН!
+                                (20-25 қараша аралығы)
+                                <br>
+                                4. «Жақсылық жаса, Жас ұрпақ» Материалдар базасы бөліміне Эссе жариялау ТЕГІН.
+                                <br>
+                                5. (28 қазаннан жыл соңына дейін)
+                                <br>
+                                Барлық байқауда СЕРТИФИКАТ, ДИПЛОМ беріледі.
                             </p>
                             <p>
                                 Жарыстардан сүрінбей өтіп,
@@ -692,5 +720,15 @@ $this->registerMetaTag([
     .balls-hero__item2 {
         width: 120px;
         position: absolute;
+    }
+
+    .banner-list {
+        list-style-type: disc !important;
+    }
+    .banner-list li {
+        color: white;
+    }
+    .banner-list li::marker {
+        content: unset;
     }
 </style>
