@@ -42,7 +42,7 @@ return [
             'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'languages' => ['kz', 'ru'],
+            'languages' => ['kz', 'ru' => 'kz'],
             'enableLanguageDetection' => false,
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
@@ -51,6 +51,9 @@ return [
                 'contact' => 'site/contact',
                 'questions' => 'site/questions',
             ],
+        ],
+        'smsc' => [
+            'class' => 'frontend\components\SMSCenter'
         ],
     ],
     'params' => $params,

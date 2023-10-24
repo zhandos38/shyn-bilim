@@ -87,8 +87,7 @@ class News extends \yii\db\ActiveRecord
         $imgPath = $folderPath . '/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
 
         if ($this->validate()) {
-            $this->imageFile->saveAs($imgPath);
-            return Image::resize($imgPath,375, 625, true)->save();
+            return $this->imageFile->saveAs($imgPath);
         }
 
         return false;

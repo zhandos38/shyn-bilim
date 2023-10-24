@@ -9,6 +9,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SubjectController implements the CRUD actions for Subject model.
@@ -76,8 +77,16 @@ class SubjectController extends Controller
     {
         $model = new Subject();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->imageFile) {
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            }
+
+            if ($model->save() && $model->upload()) {
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('create', [
@@ -96,8 +105,16 @@ class SubjectController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->imageFile) {
+                $model->img = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            }
+
+            if ($model->save() && $model->upload()) {
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('update', [

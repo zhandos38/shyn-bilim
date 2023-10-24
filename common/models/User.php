@@ -6,6 +6,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
+use yii\helpers\VarDumper;
 use yii\web\IdentityInterface;
 
 /**
@@ -15,7 +16,6 @@ use yii\web\IdentityInterface;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $verification_token
- * @property string $email
  * @property string $auth_key
  * @property integer $status
  * @property integer $role
@@ -32,6 +32,9 @@ use yii\web\IdentityInterface;
  * @property integer $school_id
  * @property string $post
  * @property integer $article_count
+ * @property string $subscribe_until
+ *
+ * @property string $verification_code [varchar(4)]
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -39,8 +42,12 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
 
+    const MAX_REQUEST_COUNT = 5;
+
     const ROLE_ADMIN = 'admin';
     const ROLE_USER = 'user';
+    const ROLE_TEACHER = 'teacher';
+    const ROLE_STUDENT = 'student';
 
 
     /**
@@ -67,13 +74,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['email', 'email'],
-
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
 
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post', 'subscribe_until'], 'string'],
             [['school_id', 'article_count'], 'integer'],
+
+            ['verification_code', 'string', 'max' => 4],
         ];
     }
 
@@ -92,6 +99,7 @@ class User extends ActiveRecord implements IdentityInterface
             'school_id' => Yii::t('app', 'Школа/Колледж'),
             'post' => Yii::t('app', 'Почтовый индекс'),
             'article_count' => Yii::t('app', 'Лимит на материалы'),
+            'subscribe_until' => 'Подписан до',
         ];
     }
 
@@ -120,6 +128,17 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByIIN($iin)
     {
         return static::findOne(['iin' => $iin, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * Finds user by phone
+     *
+     * @param $phone
+     * @return static|null
+     */
+    public static function findByPhone($phone)
+    {
+        return static::findOne(['phone' => $phone]);
     }
 
     /**
@@ -231,11 +250,6 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
-    public function generateEmailVerificationToken()
-    {
-        $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
-    }
-
     /**
      * Removes password reset token
      */
@@ -273,5 +287,23 @@ class User extends ActiveRecord implements IdentityInterface
     public function getRoleLabel()
     {
         return ArrayHelper::getValue(static::getRoles(), $this->status);
+    }
+
+    public function validateCode($code)
+    {
+        return $this->verification_code === $code;
+    }
+
+    public function getLastSMS()
+    {
+        return $this->hasOne(SmsLog::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function checkSubscription(): bool
+    {
+        return date('Y-m-d', strtotime(Yii::$app->user->identity->subscribe_until)) >= date('Y-m-d');
     }
 }

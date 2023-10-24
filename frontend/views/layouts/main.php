@@ -33,71 +33,187 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="rbt-header-sticky">
 <?php $this->beginBody() ?>
 
-<header>
-    <!-- start navigation -->
-    <nav class="navbar navbar-expand-lg top-space navbar-light bg-white header-light navbar-boxed fixed-top header-reverse-scroll">
-        <div class="container-fluid nav-header-container">
-            <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
-                <a class="navbar-brand" href="/">
-                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt_black.png" class="default-logo" alt="">
-                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt.png" class="alt-logo" alt="">
-                    <img src="/img/logo_alt_black.png" data-at2x="/img/logo_alt.png" class="mobile-logo" alt="">
-                </a>
-            </div>
-            <div class="col-auto col-lg-8 menu-order px-lg-0">
-                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <?= $this->render('_nav') ?>
+<!-- Start Header Area -->
+<header class="rbt-header rbt-header-4">
+    <div class="rbt-sticky-placeholder"></div>
+    <!-- Start Header Top -->
+    <div class="rbt-header-top rbt-header-top-1 variation-height-50 header-space-betwween bg-color-white border-top-bar-primary-color rbt-border-bottom d-none d-xl-block">
+        <div class="container-fluid">
+            <div class="rbt-header-sec align-items-center ">
+                <div class="rbt-header-sec-col rbt-header-left">
+                    <div class="rbt-header-content">
+                        <div class="header-info">
+                            <ul class="rbt-information-list">
+                                <li>
+                                    <a href="tel:87754037284"><i class="feather-phone"></i>+7(775) 403 72 84</a>
+                                </li>
+                                <li>
+                                    <a href="tel:bilimshini.kz@mail.ru"><i class="feather-mail"></i>bilimshini.kz@mail.ru</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rbt-separator"></div>
+                        <div class="header-info">
+                            <ul class="social-share-transparent">
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100009917714377&_se_imp=013RoUTUXRDM4XUc6&paipv=0&eav=Afb7V5VR0QCk9ms7t2tkGwlt1LX56AM_a85ywYirohUiYpqyPlWlar0yU3n7F2dP45g&_rdr">
+                                        <i class="feather-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/shyn.baspahana/?hl=ru">
+                                        <i class="feather-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
-                <div class="header-language dropdown d-lg-inline-block">
-                    <?= $this->render('_language') ?>
+
+                <div class="rbt-header-sec-col rbt-header-right">
+                    <div class="rbt-header-content">
+                        <div class="header-info">
+                            <ul class="rbt-secondary-menu">
+                                <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a></li>
+                            </ul>
+                        </div>
+                        <?php if (!Yii::$app->user->identity): ?>
+                        <div class="rbt-separator"></div>
+                        <div class="header-info">
+                            <div class="header-right-btn d-flex">
+                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/login']) ?>">
+                                    <span data-text="Бізге қосылу">Кіру</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-info pl--5">
+                            <div class="header-right-btn d-flex">
+                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/signup']) ?>">
+                                    <span data-text="Бізге қосылу">Тіркелу</span>
+                                </a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!-- End Header Top -->
+
+    <div class="rbt-header-wrapper header-space-betwween bg-color-white header-sticky">
+        <div class="container-fluid">
+            <div class="mainbar-row rbt-navigation-start align-items-center">
+                <div class="header-left">
+                    <div class="logo">
+                        <a style="display: flex; align-items: center" href="/">
+                            <img src="/img/bilimshini-logo_reverse.png" alt="Bilimshini.kz">
+                            <span class="ml--10 fw-bold logo-title">Bilim-shini.kz</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="rbt-main-navigation d-none d-xl-block">
+                    <?php include '_nav.php' ?>
+                </div>
+                <div class="header-right">
+                    <!-- Navbar Icons -->
+                    <ul class="quick-access">
+                        <?php $user = Yii::$app->user->identity; ?>
+                        <?php if (Yii::$app->user->identity): ?>
+                        <li class="access-icon rbt-user-wrapper right-align-dropdown">
+                            <a class="rbt-round-btn" href="#">
+                                <i class="feather-user"></i>
+                            </a>
+                            <div class="rbt-user-menu-list-wrapper">
+                                <div class="inner">
+                                    <div class="rbt-admin-profile">
+                                        <div class="admin-thumbnail">
+                                            <img src="/img/no-img-book.png" alt="User Images">
+                                        </div>
+                                        <div class="admin-info">
+                                            <span class="name"><?= $user->name ?></span>
+                                            <a class="rbt-btn-link color-primary" href="<?= Url::to(['cabinet/index']) ?>">Жеке кабинет</a>
+                                        </div>
+                                    </div>
+                                    <ul class="user-list-wrapper">
+                                        <li>
+                                            <a href="#">
+                                                <i class="feather-home"></i>
+                                                <span>Олимпиадаға қатысу тарихы</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt--10 mb--10">
+                                    <ul class="user-list-wrapper">
+                                        <li>
+                                            <a href="<?= Url::to(['site/logout']) ?>">
+                                                <i class="feather-log-out"></i>
+                                                <span>Шығу</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                    <!-- Start Mobile-Menu-Bar -->
+                    <div class="mobile-menu-bar d-block d-xl-none">
+                        <div class="hamberger">
+                            <button class="hamberger-button rbt-round-btn">
+                                <i class="feather-menu"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Start Mobile-Menu-Bar -->
+                </div>
+            </div>
+        </div>
+        <!-- Start Search Dropdown  -->
+        <div class="rbt-search-dropdown">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="#">
+                            <input type="text" placeholder="What are you looking for?">
+                            <div class="submit-btn">
+                                <a class="rbt-btn btn-gradient btn-md" href="#">Search</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="rbt-separator-mid">
+                    <hr class="rbt-separator m-0">
+                </div>
+
+                <div class="row g-4 pt--30 pb--60">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h5 class="rbt-title-style-2">Our Top Course</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Search Dropdown  -->
+    </div>
 </header>
 
-<section class="bg-light-gray padding-40px-tb sm-padding-30px-tb page-title-small">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-xl-8 col-lg-6 text-center text-lg-start">
-                <?php if (!empty($this->params['heroTitle'])): ?>
-                <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom d-inline-block"><?= $this->params['heroTitle'] ?></h1>
-                <?php endif; ?>
-                <?php if (!empty($this->params['heroDescription'])): ?>
-                <span class="alt-font text-medium d-block d-md-inline-block sm-margin-5px-top"><?= $this->params['heroDescription'] ?></span>
-                <?php endif; ?>
-            </div>
-            <div class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
-                <?= Breadcrumbs::widget([
-                    'homeLink'      =>  [
-                        'label'     =>  Yii::t('yii', 'Home'),
-                        'url'       =>  ['/site/index'],
-                        'class'     =>  'home',
-                    ],
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'tag' =>  'ul',
-                ]); ?>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include_once "_mobile-menu.php" ?>
 
-<div class="site-container">
-    <div class="container pt-5 pb-5">
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+<?= Alert::widget() ?>
+
+<?= $content ?>
+
+<div class="rbt-progress-parent">
+    <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
 </div>
 
 <?= $this->render('_footer') ?>

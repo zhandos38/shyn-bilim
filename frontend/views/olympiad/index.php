@@ -10,26 +10,62 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['olympiad/i
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 ?>
-<div class="olympiad-index" style="padding-bottom: 80px">
-    <div class="row">
-        <?php /** @var \common\models\Olympiad $olympiad */
-        foreach ($olympiads as $olympiad): ?>
-            <div class="col-md-4">
-                <div class="blog-post text-center border-radius-6px bg-white box-shadow box-shadow-large-hover">
-                    <div class="blog-post-image bg-gradient-fast-blue-purple">
-                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>"><img src="<?= $olympiad->getImage() ?>" alt="">
-                            <div class="blog-rounded-icon bg-white border-color-white absolute-middle-center">
-                                <i class="feather icon-feather-arrow-right text-extra-dark-gray icon-extra-small"></i>
+<div class="bg-gradient-5">
+    <div class="container pt--60">
+        <div class="section-title text-center mb--30">
+            <h2 class="title">Олимпиада оқушылар</h2>
+        </div>
+        <div class="row justify-content-center">
+            <?php /** @var \common\models\Olympiad $olympiad */
+            foreach ($studentOlympiads as $olympiad): ?>
+                <div class="col-md-3">
+                    <div class="menu-card">
+                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
+                            <div>
+                                <div>
+                                    <img class="menu-card__img" src="<?= $olympiad->getImage() ?>" alt="menu-icon">
+                                </div>
+                                <div class="menu-card__text-box">
+                                    <h5 class="mb--10"><?= $olympiad->name ?></h5>
+                                    <a href="<?= $olympiad->getFile() ?>" class="rbt-btn-link"><?= Yii::t('app', 'Положение') ?></a>
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="post-details padding-30px-all xl-padding-25px-lr">
-                        <a href="#" class="post-author text-medium text-uppercase"><?= $olympiad->getType() ?></a>
-                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>" class="text-extra-dark-gray font-weight-500 alt-font d-block"><?= $olympiad->name ?></a>
-                        <a href="<?= $olympiad->getFile() ?>" class="btn btn-extra-large btn-link text-extra-dark-gray"><?= Yii::t('app', 'Положение') ?></a>
-                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="container pt--60 pb--60">
+        <div class="section-title text-center mb--30">
+            <h2 class="title">Олимпиада мұғалімдер</h2>
+        </div>
+        <div class="row justify-content-center">
+            <?php /** @var \common\models\Olympiad $olympiad */
+            foreach ($teacherOlympiads as $olympiad): ?>
+                <div class="col-md-3">
+                    <div class="menu-card">
+                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
+                            <div>
+                                <div>
+                                    <img class="menu-card__img" src="<?= $olympiad->getImage() ?>" alt="menu-icon">
+                                </div>
+                                <div class="menu-card__text-box">
+                                    <h5 class="mb--10"><?= $olympiad->name ?></h5>
+                                    <a href="<?= $olympiad->getFile() ?>" class="rbt-btn-link"><?= Yii::t('app', 'Положение') ?></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
+<style>
+    .menu-card__img {
+        height: 120px;
+    }
+</style>

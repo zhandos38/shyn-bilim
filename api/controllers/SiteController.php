@@ -6,6 +6,7 @@ use common\models\Article;
 use common\models\Subscribe;
 use common\models\Test;
 use common\models\TestAssignment;
+use common\models\User;
 use Yii;
 use yii\db\Exception;
 use yii\filters\auth\AuthInterface;
@@ -120,8 +121,10 @@ class SiteController extends Controller
                     throw new Exception(Json::encode($order->getErrors()));
                 }
 
-                $user = $order->user;
-                $user->article_count += 2;
+                $user = User::findOne(['id' => $order->user_id]);
+                $currentDate = date('Y-m-d');
+                $newDate = date('Y-m-d', (strtotime($currentDate) + 60 * 60 * 60 * 24));
+                $user->subscribe_until = $newDate;
                 if (!$user->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }

@@ -1,30 +1,28 @@
 <?php
 namespace frontend\models;
 
+use common\models\SmsLog;
 use Yii;
 use yii\base\Model;
 use common\models\User;
-use yii\helpers\VarDumper;
+use yii\db\Exception;
+use yii\helpers\Json;
 
 /**
  * Signup form
  */
 class SignupForm extends Model
 {
-    public $email;
     public $password;
     public $role;
-    public $status;
     public $name;
     public $surname;
     public $patronymic;
     public $phone;
-    public $iin ;
     public $address;
     public $city_id;
     public $region_id;
     public $school_id;
-    public $post;
 
 
     /**
@@ -33,20 +31,12 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['email', 'trim'],
-            ['email', 'email'],
-            [['email', 'post'], 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
-
-            ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            [['name', 'surname', 'patronymic', 'phone', 'address', 'role'], 'string'],
+            [['school_id'], 'integer'],
+            [['name', 'surname', 'password'], 'required'],
 
-            [['status', 'role'], 'integer'],
-
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post'], 'string'],
-            ['school_id', 'integer'],
-            [['name', 'surname', 'iin'], 'required'],
-            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный телефон уже зарегистрирован'],
+            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Бұл телефон тіркеліп қойған'],
         ];
     }
 
@@ -57,14 +47,12 @@ class SignupForm extends Model
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
             'patronymic' => Yii::t('app', 'Отчество'),
-            'iin' => Yii::t('app', 'ИИН'),
             'phone' => Yii::t('app', 'Номер телефона'),
             'address' => 'Адрес',
             'school_id' => Yii::t('app', 'Школа/Колледж'),
-            'email' => 'Email',
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
-            'post' => Yii::t('app', 'Почтовый индекс'),
+            'role' => 'Оқушы/Оқытушы',
         ];
     }
 
@@ -79,40 +67,32 @@ class SignupForm extends Model
             return null;
         }
 
-        $user = new User();
-        $user->name = $this->name;
-        $user->surname = $this->surname;
-        $user->patronymic = $this->patronymic;
-        $user->phone = $this->phone;
-        $user->address = $this->address;
-        $user->post = $this->post;
-        $user->school_id = $this->school_id;
-        $user->iin = $this->iin;
-        $user->email = $this->email;
-        $user->status = User::STATUS_ACTIVE;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        return $user->save();
+        try {
+            $transaction = Yii::$app->db->beginTransaction();
+            $user = new User();
+            $user->name = $this->name;
+            $user->surname = $this->surname;
+            $user->patronymic = $this->patronymic;
+            $user->phone = $this->phone;
+            $user->address = $this->address;
+            $user->school_id = $this->school_id;
+            $user->role = $this->role;
+            $user->status = User::STATUS_INACTIVE;
+            $user->verification_code = (string)($code = random_int(1000, 9999));
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            if (!$user->save()) {
+                throw new Exception(Json::encode($user->errors));
+            }
 
-    }
+            SmsLog::sendSms($this->phone, $code . ' - Bilimshini', $user->id);
+            Yii::$app->session->set('phone', $this->phone);
 
-    /**
-     * Sends confirmation email to user
-     * @param User $user user model to with email should be send
-     * @return bool whether the email was sent
-     */
-    protected function sendEmail($user)
-    {
-        return Yii::$app
-            ->mailer
-            ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
-            )
-            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
-            ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
-            ->send();
+            $transaction->commit();
+            return true;
+        } catch (Exception $exception) {
+            $transaction->rollBack();
+            throw new Exception($exception->getMessage());
+        }
     }
 }

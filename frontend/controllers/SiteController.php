@@ -8,12 +8,14 @@ use common\models\News;
 use common\models\Olympiad;
 use common\models\Post;
 use common\models\School;
+use common\models\SmsLog;
 use common\models\Subject;
 use common\models\Subscribe;
 use common\models\User;
 use Exception;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\SubscribeForm;
+use frontend\models\VerificationForm;
 use frontend\models\VerifyEmailForm;
 use kartik\mpdf\Pdf;
 use Yii;
@@ -91,7 +93,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'home';
         $olympiad = Olympiad::findOne(['is_actual' => true]);
 
         return $this->render('index', [
@@ -106,22 +107,20 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        return $this->goHome();
+         if (!Yii::$app->user->isGuest) {
+             return $this->goHome();
+         }
 
-        // if (!Yii::$app->user->isGuest) {
-        //     return $this->goHome();
-        // }
+         $model = new LoginForm();
+         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+             return $this->goBack();
+         } else {
+             $model->password = '';
 
-        // $model = new LoginForm();
-        // if ($model->load(Yii::$app->request->post()) && $model->login()) {
-        //     return $this->goBack();
-        // } else {
-        //     $model->password = '';
-
-        //     return $this->render('login', [
-        //         'model' => $model,
-        //     ]);
-        // }
+             return $this->render('login', [
+                 'model' => $model,
+             ]);
+         }
     }
 
     /**
@@ -178,8 +177,7 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Спасибо за регистрацию');
-            return $this->goHome();
+            return $this->redirect(['site/verification']);
         }
 
         return $this->render('signup', [
@@ -187,99 +185,43 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Requests password reset.
-     *
-     * @return mixed
-     */
-    public function actionRequestPasswordReset()
+    public function actionVerification()
     {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+        $model = new VerificationForm();
+        $model->phone = Yii::$app->session->get('phone');
 
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->verify()) {
+            Yii::$app->session->setFlash('success', 'Тіркелу сәтті аяқталды, бізбен болғаныңыз үшін рахмет!');
+
+            return $this->redirect(['site/login']);
         }
 
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Resets password.
-     *
-     * @param string $token
-     * @return mixed
-     * @throws BadRequestHttpException
-     */
-    public function actionResetPassword($token)
-    {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidArgumentException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Verify email address
-     *
-     * @param string $token
-     * @throws BadRequestHttpException
-     * @return yii\web\Response
-     */
-    public function actionVerifyEmail($token)
-    {
-        try {
-            $model = new VerifyEmailForm($token);
-        } catch (InvalidArgumentException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-        if ($user = $model->verifyEmail()) {
-            if (Yii::$app->user->login($user)) {
-                Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
-                return $this->goHome();
-            }
-        }
-
-        Yii::$app->session->setFlash('error', 'Sorry, we are unable to verify your account with provided token.');
-        return $this->goHome();
-    }
-
-    /**
-     * Resend verification email
-     *
-     * @return mixed
-     */
-    public function actionResendVerificationEmail()
-    {
-        $model = new ResendVerificationEmailForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-                return $this->goHome();
-            }
-            Yii::$app->session->setFlash('error', 'Sorry, we are unable to resend verification email for the provided email address.');
-        }
-
-        return $this->render('resendVerificationEmail', [
+        return $this->render('verification', [
             'model' => $model
         ]);
+    }
+
+    public function actionResendVerificationCode()
+    {
+        if (Yii::$app->request->isAjax) {
+            try {
+                $user = User::findOne(['phone' => Yii::$app->session->get('phone')]);
+                if (!$user) {
+                    throw new Exception('Пользователь не найден');
+                }
+
+                if ((time() - $user->lastSMS->created_at) <= 60) {
+                    return 'Подаждите пока наступить ваше время ;)';
+                }
+
+                SmsLog::sendSms($user->phone, $user->verification_code . ' - Bilimshini', $user->id);
+                return true;
+            } catch (Exception $exception) {
+                throw new Exception($exception->getMessage());
+            }
+        }
+
+        return false;
     }
 
     public function actionQuestions()
@@ -365,35 +307,33 @@ class SiteController extends Controller
 
     public function actionSubscribe()
     {
-        $model = new SubscribeForm();
-        if ($model->load(Yii::$app->request->post()) && $orderId = $model->save()) {
-            $salt = $this->getSalt(8);
-            $request = [
-                'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => 3000,
-                'pg_salt' => $salt,
-                'pg_order_id' => $orderId,
-                'pg_description' => 'Оплата за подписку',
-                'pg_success_url' => Url::base('https') . '/site/subscribe-success',
-                'pg_result_url' => Yii::$app->params['apiDomain'] . '/subscribe/result',
-                'pg_result_url_method' => 'POST',
-            ];
-
-            $request = $this->getSignByData($request, 'payment.php', $salt);
-
-            $query = http_build_query($request);
-
-            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-        }
-        /** @var User $user */
         $user = Yii::$app->user->identity;
-        $model->school_id = $user->school_id;
-        $model->post = $user->post;
-        $model->address = $user->address;
 
-        return $this->render('subscribe', [
-            'model' => $model,
-        ]);
+        $subscribe = new Subscribe();
+        $subscribe->user_id = $user->id;
+        $subscribe->created_at = time();
+        if (!$subscribe->save()) {
+            throw new \yii\db\Exception('Subscribe error!');
+        }
+        $subscribeId = $subscribe->id;
+
+        $salt = $this->getSalt(8);
+        $request = [
+            'pg_merchant_id' => Yii::$app->params['payboxId'],
+            'pg_amount' => Yii::$app->user->identity->role === User::ROLE_TEACHER ? Yii::$app->params['teacherSubscribeCost'] : Yii::$app->params['studentSubscribeCost'],
+            'pg_salt' => $salt,
+            'pg_order_id' => $subscribeId,
+            'pg_description' => 'Оплата за подписку',
+            'pg_success_url' => Url::base('https') . '/site/subscribe-success',
+            'pg_result_url' => Yii::$app->params['apiDomain'] . '/subscribe/result',
+            'pg_result_url_method' => 'POST',
+        ];
+
+        $request = $this->getSignByData($request, 'payment.php', $salt);
+
+        $query = http_build_query($request);
+
+        return $this->redirect('https://api.paybox.money/payment.php?' . $query);
     }
 
     public function actionSubscribeSuccess()
@@ -413,7 +353,8 @@ class SiteController extends Controller
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
-        return $this->redirect(['site/subscribe']);
+        Yii::$app->session->setFlash('success', 'Сіз сәтті жазылдыңыз. Рахмет!');
+        return $this->redirect(['cabinet/index']);
     }
 
     public function checkSign($data, $url):bool
@@ -470,4 +411,24 @@ class SiteController extends Controller
     {
         return 'pg_' . $property;
     }
+
+//    public function actionTest()
+//    {
+//        $currentDate = date('Y-m-d');
+//        $newDate = date('Y-m-d', strtotime($currentDate) + 90 * 60 * 60 * 24);
+//
+//        $order = Subscribe::findOne(['id' => 1]);
+//        $order->status = Subscribe::STATUS_ACTIVE;
+//        if (!$order->save()) {
+//            throw new \yii\db\Exception(Json::encode($order->getErrors()));
+//        }
+//
+//        $user = $order->user;
+//        $user->subscribe_until = $newDate;
+//        if (!$user->save()) {
+//            throw new \yii\db\Exception(Json::encode($order->getErrors()));
+//        }
+//
+//        echo $newDate;
+//    }
 }

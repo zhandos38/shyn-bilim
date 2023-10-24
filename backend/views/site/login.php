@@ -1,22 +1,13 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
 $this->title = 'Войти';
-
-$fieldOptions1 = [
-    'options' => ['class' => 'form-group has-feedback'],
-    'inputTemplate' => "{input}<span class='glyphicon glyphicon-envelope form-control-feedback'></span>"
-];
-
-$fieldOptions2 = [
-    'options' => ['class' => 'form-group has-feedback'],
-    'inputTemplate' => "{input}<span class='glyphicon glyphicon-lock form-control-feedback'></span>"
-];
 ?>
 
 <div class="login-box">
@@ -32,12 +23,18 @@ $fieldOptions2 = [
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 
         <?= $form
-            ->field($model, 'iin', $fieldOptions1)
+            ->field($model, 'phone')
+            ->widget(MaskedInput::className(), [
+                'mask' => '+7(999)999-99-99',
+                'clientOptions' => [
+                    'removeMaskOnSubmit' => true
+                ],
+            ])
             ->label(false)
-            ->textInput(['placeholder' => $model->getAttributeLabel('iin')]) ?>
+            ->textInput(['placeholder' => $model->getAttributeLabel('phone')]) ?>
 
         <?= $form
-            ->field($model, 'password', $fieldOptions2)
+            ->field($model, 'password')
             ->label(false)
             ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 

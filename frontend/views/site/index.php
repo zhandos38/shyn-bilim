@@ -14,234 +14,683 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
-<!-- start revolution slider -->
-<section class="p-0 example home-startup bg-dark-slate-blue">
-    <article class="content">
-        <div id="rev_slider_26_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
-            <!-- Start revolution slider 5.4.1 fullscreen mode -->
-            <div id="rev_slider_26_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
-                <ul>
-                    <!-- start slide 02 -->
-                    <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="true"  data-easein="default" data-easeout="default" data-masterspeed="1500"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
-                        <!-- main image -->
-                        <img src="/img/en-uzdik-pedagog-2023/<?= \xstreamka\mobiledetect\Device::$isMobile ? 'banner1-m.jpg' : 'banner1.jpg' ?>" alt="" data-bgcolor="#262b32" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <div class="overlay-bg" style="opacity: 0.3;"></div>
-
-                        <!-- btn layer -->
-                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>"
-                           id="slide-411-layer-03"
-                           data-x="['left','right','center','left']" data-hoffset="['50','0','0','20']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','115']"
-                           data-whitespace="nowrap"
-                           data-type="button"
-                           data-responsive="off"
-                           data-responsive_offset="off"
-                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                           data-textAlign="['center','center','center','center']"
-                           data-paddingtop="['8','8','8','8']"
-                           data-paddingbottom="['8','8','8','8']"
-                           data-paddingright="['7','7','7','7']"
-                           data-paddingleft="['34','34','34','34']"
-                           style="background-color: #0d6efd; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Участвую') ?>
-                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(13 85 191); margin-left: 19px;">
-                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
-                            </div>
-                        </a>
-
-                        <!-- btn layer -->
-                        <a class="tp-caption tp-resizeme rs-btn btn btn-rounded d-flex align-items-center justify-content-center"
-                           href="<?= $olympiad->getFile() ?>"
-                           id="slide-411-layer-03"
-                           data-x="['left','right','center','left']" data-hoffset="['290','0','0','220']"
-                           data-y="['middle','middle','middle','middle']" data-voffset="['180','130','82','115']"
-                           data-whitespace="nowrap"
-                           data-type="button"
-                           data-responsive="off"
-                           data-responsive_offset="off"
-                           data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                           data-textAlign="['center','center','center','center']"
-                           data-paddingtop="['8','8','8','8']"
-                           data-paddingbottom="['8','8','8','8']"
-                           data-paddingright="['7','7','7','7']"
-                           data-paddingleft="['34','34','34','34']"
-                           style="background-color: #dc3545; color: #fff; font-size: 15px;">
-                            <?= Yii::t('app', 'Правила') ?>
-                            <div style="display: flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(159 38 50); margin-left: 19px;">
-                                <i class="fas fa-play" style="color: #fff; font-size: 12px; line-height: 15px; margin-top: 2px; margin-left: 3px;"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <!-- end slide 02 -->
-                </ul>
-            </div>
-        </div>
-    </article>
-</section>
-<!-- end revolution slider -->
-<!-- start section -->
-<section class="extra-big-section cover-background overflow-visible" style="background-image: url('/images/home-startup-about-bg.jpg');">
+<div class="slider-area rbt-banner-5 height-750 bg_image" style="background-image: url('/img/germaniya-gory-alpy1.jpg')" data-gradient-overlay="7">
     <div class="container">
         <div class="row">
-            <div class="col-12 overlap-section md-no-margin-top md-margin-70px-bottom sm-margin-50px-bottom">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
-                        <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Book icon-medium text-green"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Материалы и статьи') ?></div>
-                                <span><?= Yii::t('app', 'Получите доступ к самой большой трудовой базе для педагогов') ?></span>
+            <div class="col-lg-12">
+                <div class="inner">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h1 class="title display-one">
+                                БІЛІММЕН <br>
+                                БІРГЕ ДАМИМЫЗ!
+                            </h1>
+                            <div style="font-size: 24px; text-transform: uppercase; color: #fff; font-weight: bold">Bilim-shini.kz</div>
+                            <p class="description">
+                                Педагогтарға, балаларға, оқушыларға
+                                студенттерге, <br> ата-аналарға арналған
+                                платформа
+                            </p>
+                            <div>
+                                <a class="rbt-btn btn-white hover-icon-reverse" href="<?= Url::to(['site/signup']) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">ТІРКЕЛЕМІН</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#about-payment">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">ТӨЛЕМ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <!-- end feature box item-->
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <a href="<?= Url::to(['olympiad/info']) ?>">
-                            <!-- start feature box item-->
-                        <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                            <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                <i class="line-icon-Chacked-Flag icon-medium text-green"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Олимпиады') ?></div>
-                                <span><?= Yii::t('app', 'Интеллектуальное соревнование в форме теста позволит оценить уровень знаний учащихся и педагогов') ?></span>
-                            </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <img src="/img/bg-boy.png" alt="banner-part.png" style="width: 660px; height: fit-content">
                         </div>
-                        <!-- end feature box item-->
-                        </a>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
-                        <a href="<?= Url::to(['marathon/info']) ?>">
-                            <!-- start feature box item-->
-                            <div class="feature-box h-100 feature-box-left-icon-middle padding-3-rem-all bg-white box-shadow-small box-shadow-large-hover border-radius-4px overflow-hidden last-paragraph-no-margin lg-padding-2-half-rem-tb lg-padding-2-rem-lr md-padding-4-rem-all">
-                                <div class="feature-box-icon margin-30px-right lg-margin-25px-right">
-                                    <i class="line-icon-Idea icon-medium text-green"></i>
-                                </div>
-                                <div class="feature-box-content">
-                                    <div class="text-slate-blue font-weight-500 text-large margin-5px-bottom"><?= Yii::t('app', 'Марафон') ?></div>
-                                    <span><?= Yii::t('app', 'Один из очень удобных и интересных способов для самосовершенствования, духовного развития') ?></span>
-                                </div>
-                            </div>
-                            <!-- end feature box item-->
-                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row align-items-end">
-            <div class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
-                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600">7k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Опубликованных материалов') ?></span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего опубликованных материалов и статьей') ?></p>
-            </div>
-            <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
-                <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
-                    <span class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background" style="background-image: url('/images/home-startup-text-bg.jpg')">7</span>
-                    <span class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block"><?= Yii::t('app', 'Лет опыта') ?></span>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
-                <div class="title-large-2 text-green alt-font line-height-70px letter-spacing-minus-3px font-weight-600" >50k+</div>
-                <span class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom"><?= Yii::t('app', 'Уникальных участников олимпиады') ?></span>
-                <p class="w-90 d-inline-block sm-w-60 xs-w-80"><?= Yii::t('app', 'Всего уникальных участников олимпиады по всей стране') ?></p>
             </div>
         </div>
     </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="overflow-visible pt-md-0 pb-0">
+</div>
+
+<div class="bg-color-white rbt-section-gapTop">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center overlap-section wow animate__zoomIn">
-                <img class="rounded-circle box-shadow-large w-170px h-170px border-all border-width-10px border-color-white" src="/img/about-mini-1.jpg" alt="">
+            <div class="col-md-3">
+                <a href="<?= Url::to(['cabinet/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/profile.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">ЖЕКЕ КАБИНЕТ</h5>
+                            <small class="menu-card__desc">
+                                Барлық жетістік осында
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/shyn-bonus.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                ShynBonus
+                            </h5>
+                            <small class="menu-card__desc">
+                                Жеңімпаз бол,
+                                Планшет ұтып ал!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['book/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/child-library.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                «ШЫҢ»
+                                БАЛАЛАР КІТАПХАНАСЫ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Кітап оқып,
+                                табыс тап!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['article/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/new-projects.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                ЖИНАҚ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Озат тәжірибеңізді ұсыныңыз,
+                                жинаққа еніңіз!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/home-task.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                ҮЙ ТАПСЫРМАСЫ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Аптаның сенбісі үй тапсырмасын орында!
+                                Жаңа білім игер! Бонус жина!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['olympiad/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/olympiads.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                ОЛИМПИАДАЛАР
+                            </h5>
+                            <small class="menu-card__desc">
+                                Бақ сынап, білім шыңын
+                                бірге бағындырамыз!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['article/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/article-base.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                МАТЕРИАЛДАР БАЗАСЫ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Өз еңбегіңізбен бөлісіп,
+                                Сертификат жүктеп алыңыз
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['news/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/blog.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                БЛОГ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Жаңа ақпараттармен
+                                таныс болыңыз
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['about/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/about-use.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                БІЗ ТУРАЛЫ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Болашақ үшін қызметтеміз
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['magazine/index']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/magazine.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                ЖУРНАЛ
+                            </h5>
+                            <small class="menu-card__desc">
+                                Шығармашылық баспалдағына
+                                бірге көтерілеміз!
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['site/questions']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/faq.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                СҰРАҚ-ЖАУАП
+                            </h5>
+                            <small class="menu-card__desc">
+                                Дайын әрі жылдам көмек бөлімі
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="<?= Url::to(['site/contact']) ?>" class="menu-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img" src="/img/menu-icon/contacts.png" alt="menu-icon">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--0">
+                                БАЙЛАНЫС
+                            </h5>
+                            <small class="menu-card__desc">
+                                Жауап беру қызметіміз
+                            </small>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="position-relative pb-0 overflow-visible wow animate__fadeIn" data-wow-delay="0.4s" style="padding-top: 40px;">
+</div>
+
+<div class="rbt-section-gapTop rbt-section-gapBottom" style="background-color: #04Bab6; margin-top: 120px">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6 position-relative margin-70px-top lg-margin-30px-top md-margin-50px-bottom">
-                <div class="w-70 border-radius-6px overflow-hidden position-relative">
-                    <img src="/img/about-1.jpg" alt="" />
-                    <div class="opacity-extra-medium bg-gradient-sky-blue-pink"></div>
+        <div class="balls-hero" style="text-align: center">
+            <h2 style="color: #fff">ShynBonus жина да, жүлделер жеңіп ал!</h2>
+            <p class="text-white">
+                Тек оқушылар үшін!
+            </p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    РЮКЗАК
+                                </h5>
+                                <small>
+                                    820 shynbonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="position-absolute right-15px bottom-0px w-70" data-parallax-layout-ratio="1.1">
-                    <img class="border-radius-6px" src="/img/about-2.jpg" alt="" />
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    КІТАПТАР
+                                </h5>
+                                <small>
+                                    840 shynbonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/park.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    Паркке билет
+                                </h5>
+                                <small>
+                                    860 shynbonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    Планшет
+                                </h5>
+                                <small>
+                                    880 shynbonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-5 offset-lg-1">
-                <div class="alt-font text-extra-medium font-weight-500 margin-30px-bottom"><span class="w-30px h-1px bg-fast-blue d-inline-block align-middle margin-20px-right"></span>
-                    <span class="text-fast-blue d-inline-block">
-                        <?= Yii::t('app', 'О нашем сайте') ?>
-                    </span>
+            <h2 class="title mt--40" style="color: #fff">ShynBonus қалай жинаймын?</h2>
+            <p class="text-white">
+                Ол үшін платформаға  ЖАЗЫЛ, ТҰРАҚТЫ ОҚЫРМАН бол!
+                <br>
+                Қараша-желтоқсан айларында берілген тапсырмаларды ретімен орындап, <b>ShynBonus</b> жина.
+            </p>
+            <div class="row justify-content-center gap-5 balls-hero__wrapper" style="margin-top: 40px">
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            сайттың туракты окырманы
+                            1 балл
+                        </div>
+                    </div>
                 </div>
-                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom w-95"><?= Yii::t('app', 'BILIMSHINI.KZ  - республиканский сайт педагогов и учащихся') ?></h5>
-                <p class="w-95">
-                    <?= Yii::t('app', 'На сайте вы найдете открытые уроки, поурочные планы, ксп, дсп, ктп, сценарии, воспитательные часы, все необходимые для учителя документы. На сайте можно  опубликовать бесплатно материал, участвовать в интеллектуальных олимпиадах и марафонах, получать сертификаты, дипломы, благодарственные письма, грамоты, действительные для вашего портфолио.') ?>
-                </p>
-                <div class="btn-dual margin-15px-top d-inline-block">
-                    <a href="<?= Url::to(['site/about']) ?>" class="btn btn-medium btn-dark-gray btn-slide-right-bg">
-                        <?= Yii::t('app', 'Подробнее') ?><span class="bg-white"></span>
-                    </a>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            “Шың балалар кітапханасы”
+                            ЕҢ КӨП КІТАП ОҚИТЫН ОҚУШЫ
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            күнделікті тапсырма орындау
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            олимпиадаларға қатысу
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="balls-hero__item">
+                        <div class="balls-hero__item-img">
+                            <img class="balls-hero__item1" src="/img/balls-hero/logo5.svg" alt="logo5">
+                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
+                        </div>
+                        <div class="balls-hero__item-title">
+                            Мақала жазу
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="load-more-btn mt--60 text-center">
+            <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="<?= Url::to(['cabinet/index']) ?>">
+                <span class="icon-reverse-wrapper">
+                    <span class="btn-text">Жазылу</span>
+                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                </span>
+            </a>
+        </div>
     </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="wow animate__fadeIn">
+</div>
+
+<div class="rbt-pricing-area rbt-section-gapTop rbt-section-gapBottom bg-color-light">
+    <div id="about-payment" class="container">
+        <div class="row g-5 mb--60">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="section-title text-start">
+                    <span class="subtitle bg-pink-opacity">Жазылу жарнасы</span>
+                    <h2 class="title">Жазылу тарифтері</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row--15 gx-0 ">
+            <!-- Start Single Pricing  -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-2">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/images/icons/pricing-icon-02.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
+                                <h6 class="title"><a href="#">2000 теңге / 2 айға жазылу</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                - “Ең білімді педагог-2023"
+                                олимпиадасына тегін қатысасыз <br>
+                                - Табысты сынып жетекші-2023”
+                                жобасына тегін қатысасыз. <br>
+                                - Тегін материал жариялайсыз. <br>
+                                - Портфолиоға жарамды QR кодталған
+                                МАРАПАТ қағаздарын иемденесіз.
+                            </p>
+                            <p>
+                                Біліктілігіңізді арттыруда көп көмек аласыз.
+                                Е-Портфолиоға жарамды құжаттар жинақтайсыз.
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Pricing  -->
+
+            <!-- Start Single Pricing  -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-3">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/images/icons/pricing-icon-01.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a href="#">
+                                        ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР
+                                        СТУДЕНТТЕР ҮШІН
+                                    </a>
+                                </h5>
+                                <h6 class="title"><a href="#">1000 теңге / 2 айға жазылу</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                - “Каникулда кітап оқимыз” марафонына қатысу тегін
+                                - “ШЫҢ” балалар кітапханасынан кітап оқу тегін <br>
+                                -  “ҮЙ ТАПСЫРМАСЫ” байқауына қатысу тегін <br>
+                                - “Алтын қыран”  пән олимпиадасына қатысу тегін
+                            </p>
+                            <p>
+                                Жарыстардан сүрінбей өтіп,
+                                ShynBonus жинап, Сыйлықтарды ұтып ал!.
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Pricing  -->
+
+        </div>
+    </div>
+</div>
+
+<div class="rbt-counterup-area bg-color-extra2 rbt-section-gapBottom">
+    <div style="background-color: #ffd101; display: flex; justify-content: space-between; padding: 0 60px">
+        <div>
+            <img style="width: 360px" src="/img/pencil.png" alt="pencil.png">
+        </div>
+        <div style="display: flex; align-items: center">
+            <div style="text-align: center">
+                <h2 style="color: #00c9be;">“ШЫҢ” БАЛАЛАР КІТАПХАНАСЫ</h2>
+                <div style="color: #00c9be;font-size: 28px;">“БІРТҰТАС ТӘРБИЕ” БАҒДАРЛАМАСЫ</div>
+            </div>
+        </div>
+        <div>
+            <img style="width: 360px" src="/img/book.png" alt="book.png">
+        </div>
+    </div>
+
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 align-items-center justify-content-center">
-            <!-- start counter item -->
-            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="121"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
+        <div class="row row--15 mt_dec--80">
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-1">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item1.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">0-6 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">МЕКТЕПКЕ ДЕЙІНГІ </a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Мектеп жасына дейінгі
+                                балаларға арналған
+                                Ойын арқылы үйрету, тәрбиелеу. Бесік-жырларын, арнау-тілек өлеңдер, өтірік
+                                өлеңдер, санамақтар, жаңылтпаштар мен
+                                мақал-мәтелдер, жұмбақтар,
+                                балалар айтысын үйренеді</p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- end counter item -->
-            <!-- start counter item -->
-            <div class="col text-center sm-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="768"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Материалов') ?></span>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-2">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item2.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">6-10 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">БАСТАУЫШ СЫНЫП</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Қазақ халқының мақал-мәтелдері,
+                                тыйым сөздер, Ұлттық ойындар
+                                («Асық party» өткізу, Хан талапай, Арқан
+                                тартыс, Алтыбақан, Айгөлек,
+                                Белдесу, Саққұлақ, Тымпи, Тоғызқұмалақ т.б.)
+                                физикалық, зияткерлік тұрғыдан дамиды
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- end counter item -->
-            <!-- start counter item -->
-            <div class="col text-center xs-margin-40px-bottom wow animate__fadeIn" data-wow-delay="0.6s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="7"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Олимпиад') ?></span>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-3">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item3.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">11-15 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">ОРТА БУЫН</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Батырлар, ақын-жыраулар және
+                                ұлт зиялыларының, тарихи тұлғалар мен
+                                қоғам қайраткерлерінің өмірлік жолдарын,
+                                қалдырған мұралармен танысады.
+                                Көркем әдебиеттер оқиды
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- end counter item -->
-            <!-- start counter item -->
-            <div class="col text-center wow animate__fadeIn" data-wow-delay="0.8s">
-                <h4 class="vertical-counter d-inline-flex text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-2px md-letter-spacing-normal mb-0" data-to="3"></h4>
-                <span class="alt-font text-uppercase text-small d-block margin-5px-top"><?= Yii::t('app', 'Марафон') ?></span>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-4">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item4.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">15-18 ЖАС</a></h5>
+                                <h6 class="title"><a href="#">ЖОҒАРЫ СЫНЫП</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                Табиғи мұра, мәдени мұра, ұлт тарихы,
+                                Қазақстан елін қорғаған батырлар,
+                                билер, шешендер, даналар, көсемдер,
+                                абыздар, ағартушылар мен ұлт зиялыларымен
+                                танысады. Көркем әдебиеттер оқиды
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
+                                <span data-text="Толығырақ">Толығырақ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- end counter item -->
+            <!-- End Single Card  -->
         </div>
     </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="parallax wow animate__fadeIn" data-parallax-background-ratio="0.2" style="background-image:url('/img/fon-1.jpg');">
-    <div class="opacity-full bg-gradient-fast-blue-purple"></div>
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-12 col-xl-7 col-md-8 col-sm-10 position-relative text-center text-md-start sm-margin-30px-bottom">
-                <h4 class="alt-font font-weight-600 text-white mb-0"><?= Yii::t('app', 'Подпишитесь на наш журнал') ?></h4>
-            </div>
-            <div class="col-12 col-xl-5 col-md-4 position-relative text-center text-md-end">
-                <a href="#" class="btn btn-large btn-gradient-light-purple-light-orange"><?= Yii::t('app', 'Подписаться') ?></a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end section -->
+</div>
+
+<style>
+    .balls-hero__item-img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .balls-hero__item-title {
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+    .balls-hero__item1 {
+        width: 120px;
+    }
+    .balls-hero__item2 {
+        width: 120px;
+        position: absolute;
+    }
+</style>

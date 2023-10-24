@@ -3,6 +3,7 @@
 use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -27,7 +28,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+    ]) ?>
+
+    <?php if ($model->img): ?>
+        <img src="<?= $model->getImage() ?>" alt="product-image" width="200px">
+    <?php endif; ?>
 
     <?= $form->field($model, 'type')->dropDownList(Subject::getTypes(), ['prompt' => 'Выберите тип']) ?>
 

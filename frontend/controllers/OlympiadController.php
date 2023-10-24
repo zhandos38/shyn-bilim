@@ -16,6 +16,7 @@ use common\models\TestSubject;
 use common\models\WhiteList;
 use frontend\models\CheckAssignmentForm;
 use kartik\mpdf\Pdf;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -40,15 +41,34 @@ class OlympiadController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function() {
+                            if (!Yii::$app->user->identity->checkSubscription()) {
+                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
+                                return false;
+                            }
+
+                            return true;
+                        },
+                    ],
+                ],
+            ],
         ];
     }
 
     public function actionIndex($type = Olympiad::TYPE_STUDENT)
     {
-        $olympiads = Olympiad::find()->andWhere(['type' => $type])->orderBy(['order' => SORT_ASC])->all();
+        $teacherOlympiads = Olympiad::find()->andWhere(['type' => Olympiad::TYPE_TEACHER])->andWhere(['is_actual' => true])->orderBy(['order' => SORT_ASC])->all();
+        $studentOlympiads = Olympiad::find()->andWhere(['type' => Olympiad::TYPE_STUDENT])->andWhere(['is_actual' => true])->orderBy(['order' => SORT_ASC])->all();
 
         return $this->render('index', [
-            'olympiads' => $olympiads
+            'teacherOlympiads' => $teacherOlympiads,
+            'studentOlympiads' => $studentOlympiads,
         ]);
     }
 
