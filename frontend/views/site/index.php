@@ -30,6 +30,9 @@ $this->registerMetaTag([
                 <div class="inner">
                     <div class="row align-items-center">
                         <div class="col-md-4">
+                            <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
+                        </div>
+                        <div class="col-md-4 mt-4 mt-lg-0">
                             <h1 class="title display-one">
                                 BILIM-SHINI.KZ
                             </h1>
@@ -62,15 +65,8 @@ $this->registerMetaTag([
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="d-flex justify-content-end">
-                                <div class="mt-4 mt-lg-0">
-                                    <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
-                                </div>
-                                <div class="pl--5 mt-4 mt-lg-0">
-                                    <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
-                                </div>
-                            </div>
+                        <div class="col-md-4 mt-4 mt-lg-0">
+                            <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
                         </div>
                     </div>
                 </div>
