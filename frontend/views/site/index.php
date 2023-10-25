@@ -14,6 +14,12 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
+<style>
+    .rbt-card {
+        padding: 0;
+        background: transparent;
+    }
+</style>
 <div class="slider-area rbt-banner-5 height-750 bg_image" style="position: relative" data-gradient-overlay="7">
     <div style="    position: absolute;
     bottom: 36px;
@@ -29,10 +35,7 @@ $this->registerMetaTag([
             <div class="col-lg-12">
                 <div class="inner">
                     <div class="row align-items-center">
-                        <div class="col-md-4">
-                            <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
-                        </div>
-                        <div class="col-md-4 mt-4 mt-lg-0">
+                        <div class="col-md-6">
                             <h1 class="title display-one">
                                 BILIM-SHINI.KZ
                             </h1>
@@ -65,24 +68,40 @@ $this->registerMetaTag([
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4 mt-4 mt-lg-0">
-                            <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
+                        <div class="col-md-6 mt-4 mt-lg-0">
+                            <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
+                                <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms;" id="swiper-wrapper-282072954a06d1a10" aria-live="polite">
+
+                                    <!-- Start Single Card  -->
+                                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="#">
+                                                    <img src="/img/hero/student2.png" style="width: 100%" alt="banner-part1.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide-shadow" style="opacity: 0; transition-duration: 0ms;"></div></div>
+                                    <!-- End Single Card  -->
+
+                                    <!-- Start Single Card  -->
+                                    <div class="swiper-slide swiper-slide-next" style="width: 390px; z-index: 2; transform: translate3d(calc(-390px + 7.25%), 0px, -100px) rotateZ(2deg) scale(1); transition-duration: 0ms;" role="group" aria-label="2 / 3">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="#">
+                                                    <img src="/img/hero/teacher2.png" style="width: 100%" alt="Card image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide-shadow" style="opacity: 1; transition-duration: 0ms;"></div></div>
+                                    <!-- End Single Card  -->
+
+                                </div>
+                                <div class="rbt-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-color-white rbt-section-gapTop">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
-            </div>
-            <div class="col-md-6 mt-4 mt-lg-">
-                <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
             </div>
         </div>
     </div>
