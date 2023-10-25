@@ -26,7 +26,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         </li>
                         <li class="rbt-breadcrumb-item active">Материалдар базасы</li>
                     </ul>
-                    <h2 class="title">Шығармашыл шәкірт. Мақала жариялау</h2>
+                    <h2 class="title">МАТЕРИАЛДАР БАЗАСЫ</h2>
                     <p class="description">
                         МАТЕРИАЛ ЖАРИЯЛАП,
                         ПОРТФОЛИОҒА ЖАРАМДЫ
