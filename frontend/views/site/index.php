@@ -173,7 +173,7 @@ $this->registerMetaTag([
                                 БАЙҚАУ
                             </h5>
                             <small class="menu-card__desc">
-                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ"
+                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2023"
                             </small>
                         </div>
                     </div>
