@@ -208,7 +208,7 @@ $this->registerMetaTag([
                                 ОЛИМПИАДАЛАР
                             </h5>
                             <small class="menu-card__desc">
-                                Қатыс. Жетістік жина!
+                                Қатыс! Жетістік жина!
                             </small>
                         </div>
                     </div>
