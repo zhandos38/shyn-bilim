@@ -124,7 +124,7 @@ AppAsset::register($this);
                         <?php $user = Yii::$app->user->identity; ?>
                         <?php if (Yii::$app->user->identity): ?>
                         <li class="access-icon rbt-user-wrapper right-align-dropdown">
-                            <span class="rbt-badge-5">ShynBonus 1600</span>
+                            <span class="rbt-badge-5">ShynBonus <?= Yii::$app->user->identity->shyn_bonus ?></span>
                             <a class="rbt-round-btn" href="#">
                                 <i class="feather-user"></i>
                             </a>
