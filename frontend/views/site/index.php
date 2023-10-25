@@ -85,7 +85,7 @@ $this->registerMetaTag([
             <div class="col-md-6">
                 <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
             </div>
-            <div class="col-md-6 mt-4 mt-lg-0">
+            <div class="col-md-6 mt-4 mt-lg-">
                 <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
             </div>
         </div>
