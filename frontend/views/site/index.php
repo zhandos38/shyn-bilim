@@ -335,31 +335,14 @@ $this->registerMetaTag([
                     <div class="prize-card">
                         <div>
                             <div>
-                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
                             </div>
                             <div class="mt-4">
                                 <h5 class="mb--0">
-                                    РЮКЗАК
+                                    Планшет
                                 </h5>
                                 <small>
-                                    820 shynbonus
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
-                            </div>
-                            <div class="mt-4">
-                                <h5 class="mb--0">
-                                    КІТАПТАР
-                                </h5>
-                                <small>
-                                    840 shynbonus
+                                    880 shynbonus
                                 </small>
                             </div>
                         </div>
@@ -386,14 +369,31 @@ $this->registerMetaTag([
                     <div class="prize-card">
                         <div>
                             <div>
-                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
+                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
                             </div>
                             <div class="mt-4">
                                 <h5 class="mb--0">
-                                    Планшет
+                                    КІТАПТАР
                                 </h5>
                                 <small>
-                                    880 shynbonus
+                                    840 shynbonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    РЮКЗАК
+                                </h5>
+                                <small>
+                                    820 shynbonus
                                 </small>
                             </div>
                         </div>
