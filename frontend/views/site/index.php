@@ -14,6 +14,12 @@ $this->registerMetaTag([
     'content' => 'Білім шыңы Республикалық ұстаздар мен оқушылар сайты. Ұстаздарға мен оқушыларға онлайн олимпиадалар, сертификаттар, грамоталар, дипломдар, сабақ жоспарлары және басқа да материалдар'
 ]);
 ?>
+<style>
+    .rbt-card {
+        padding: 0;
+        background: transparent;
+    }
+</style>
 <div class="slider-area rbt-banner-5 height-750 bg_image" style="position: relative" data-gradient-overlay="7">
     <div style="    position: absolute;
     bottom: 36px;
@@ -29,7 +35,7 @@ $this->registerMetaTag([
             <div class="col-lg-12">
                 <div class="inner">
                     <div class="row align-items-center">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <h1 class="title display-one">
                                 BILIM-SHINI.KZ
                             </h1>
@@ -62,31 +68,40 @@ $this->registerMetaTag([
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="d-flex justify-content-end">
-                                <div class="mt-4 mt-lg-0">
-                                    <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
+                        <div class="col-md-6 mt-4 mt-lg-0">
+                            <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
+                                <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms;" id="swiper-wrapper-282072954a06d1a10" aria-live="polite">
+
+                                    <!-- Start Single Card  -->
+                                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="#">
+                                                    <img src="/img/hero/student2.png" style="width: 100%" alt="banner-part1.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide-shadow" style="opacity: 0; transition-duration: 0ms;"></div></div>
+                                    <!-- End Single Card  -->
+
+                                    <!-- Start Single Card  -->
+                                    <div class="swiper-slide swiper-slide-next" style="width: 390px; z-index: 2; transform: translate3d(calc(-390px + 7.25%), 0px, -100px) rotateZ(2deg) scale(1); transition-duration: 0ms;" role="group" aria-label="2 / 3">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="#">
+                                                    <img src="/img/hero/teacher2.png" style="width: 100%" alt="Card image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide-shadow" style="opacity: 1; transition-duration: 0ms;"></div></div>
+                                    <!-- End Single Card  -->
+
                                 </div>
-                                <div class="pl--5 mt-4 mt-lg-0">
-                                    <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
-                                </div>
-                            </div>
+                                <div class="rbt-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-color-white rbt-section-gapTop">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
-            </div>
-            <div class="col-md-6 mt-4 mt-lg-0">
-                <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
             </div>
         </div>
     </div>
@@ -155,11 +170,10 @@ $this->registerMetaTag([
                         </div>
                         <div class="menu-card__text-box">
                             <h5 class="mb--0">
-                                ЖИНАҚ
+                                БАЙҚАУ
                             </h5>
                             <small class="menu-card__desc">
-                                Озат тәжірибеңізді ұсыныңыз,
-                                жинаққа еніңіз!
+                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2023"
                             </small>
                         </div>
                     </div>
@@ -176,8 +190,8 @@ $this->registerMetaTag([
                                 ҮЙ ТАПСЫРМАСЫ
                             </h5>
                             <small class="menu-card__desc">
-                                Аптаның сенбісі үй тапсырмасын орында!
-                                Жаңа білім игер! Бонус жина!
+                                Әр аптаның сенбісі орындау! <br>
+                                Бонус жина
                             </small>
                         </div>
                     </div>
@@ -194,8 +208,7 @@ $this->registerMetaTag([
                                 ОЛИМПИАДАЛАР
                             </h5>
                             <small class="menu-card__desc">
-                                Бақ сынап, білім шыңын
-                                бірге бағындырамыз!
+                                Қатыс! Жетістік жина!
                             </small>
                         </div>
                     </div>
@@ -322,31 +335,14 @@ $this->registerMetaTag([
                     <div class="prize-card">
                         <div>
                             <div>
-                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
                             </div>
                             <div class="mt-4">
                                 <h5 class="mb--0">
-                                    РЮКЗАК
+                                    Планшет
                                 </h5>
-                                <small>
-                                    820 shynbonus
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
-                            </div>
-                            <div class="mt-4">
-                                <h5 class="mb--0">
-                                    КІТАПТАР
-                                </h5>
-                                <small>
-                                    840 shynbonus
+                                <small style="text-transform: none;">
+                                    950 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -362,8 +358,8 @@ $this->registerMetaTag([
                                 <h5 class="mb--0">
                                     Паркке билет
                                 </h5>
-                                <small>
-                                    860 shynbonus
+                                <small style="text-transform: none;">
+                                    900 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -373,14 +369,31 @@ $this->registerMetaTag([
                     <div class="prize-card">
                         <div>
                             <div>
-                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
+                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
                             </div>
                             <div class="mt-4">
                                 <h5 class="mb--0">
-                                    Планшет
+                                    КІТАПТАР
                                 </h5>
-                                <small>
-                                    880 shynbonus
+                                <small style="text-transform: none;">
+                                    850 ShynBonus
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="prize-card">
+                        <div>
+                            <div>
+                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb--0">
+                                    РЮКЗАК
+                                </h5>
+                                <small style="text-transform: none;">
+                                    800 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -397,23 +410,11 @@ $this->registerMetaTag([
                 <div class="col-md-2">
                     <div class="balls-hero__item">
                         <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            сайттың туракты окырманы
-                            1 балл
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
                             <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Шың балалар кітапханасы”. “Оқуға құштар оқушы” марафон
+                            “Шың балалар кітапханасы”. <br> Кітап оқу
                         </div>
                     </div>
                 </div>
@@ -435,7 +436,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Алтын қыран-ерекше дарын иесі” олимпидасы
+                            “Алтын қыран-ерекше дарын иесі” олимпиадасы
                         </div>
                     </div>
                 </div>
@@ -446,7 +447,9 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
                         </div>
                         <div class="balls-hero__item-title">
-                            Шығармашыл шәкірт. Мақала жариялау
+                            "жақсылық жаса, жас ұрпақ".
+                            <br>
+                            ЭССЕ ЖАРИЯЛАУ
                         </div>
                     </div>
                 </div>
@@ -492,17 +495,17 @@ $this->registerMetaTag([
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                1. “ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ -2023" байқауына қатысу ТЕГІН.
+                                1. “ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2023" байқауына қатысу ТЕГІН. <br>
                                 (1 қараша мен 20 желтоқсан аралығы)
                                 <br>
-                                2. “ЕҢ БІЛІМДІ ПЕДАГОГ-2023" олимпиадасына қатысу ТЕГІН.
+                                2. “ЕҢ БІЛІМДІ ПЕДАГОГ-2023" олимпиадасына қатысу ТЕГІН. <br>
                                 (15-20 қараша аралығы)
                                 <br>
-                                3. МАТЕРИАЛ жариялау 2 рет ТЕГІН.
+                                3. МАТЕРИАЛ жариялау 2 рет ТЕГІН. <br>
                                 (01 қараша-31 желтоқсан аралығы)
                                 <br>
-                                4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН.
-                                (01 қараша -31 желтоқсан аралығы)
+                                4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН. <br>
+                                (01 қараша-31 желтоқсан аралығы)
                             </p>
                             <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
                                 <span data-text="Толығырақ">Жазылу</span>
@@ -535,24 +538,17 @@ $this->registerMetaTag([
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                1. “КАНИКУЛДА КІТАП ОҚИМЫЗ" марафонына қатысу ТЕГІН!
-                                (28 қазаннан жыл соңына дейін)
+                                1. <span style="text-transform: uppercase">“Шың балалар кітапханасы”</span>. Кітап оқу ТЕГІН! <br>
+                                (1 қарашадан жыл соңына дейін)
                                 <br>
-                                2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН!
+                                2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН! <br>
                                 ( 4 қарашадан бастап әр аптаның сенбісі күні 20-ші желтоқсанға дейін)
                                 <br>
-                                3. «АЛТЫН ҚЫРАН» пәндер олимпиадасына қатысу ТЕГІН!
+                                3. «АЛТЫН ҚЫРАН» пәндер олимпиадасына қатысу ТЕГІН! <br>
                                 (20-25 қараша аралығы)
                                 <br>
-                                4. «Жақсылық жаса, Жас ұрпақ» Материалдар базасы бөліміне Эссе жариялау ТЕГІН.
-                                <br>
-                                5. (28 қазаннан жыл соңына дейін)
-                                <br>
-                                Барлық байқауда СЕРТИФИКАТ, ДИПЛОМ беріледі.
-                            </p>
-                            <p>
-                                Жарыстардан сүрінбей өтіп,
-                                ShynBonus жинап, Сыйлықтарды ұтып ал!.
+                                4. «Жақсылық жаса, Жас ұрпақ» Материалдар базасы бөліміне Эссе жариялау ТЕГІН. <br>
+                               (1 қарашадан жыл соңына дейін)
                             </p>
                             <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
                                 <span data-text="Толығырақ">Жазылу</span>
@@ -584,40 +580,7 @@ $this->registerMetaTag([
     </div>
 
     <div class="container">
-        <div class="row row--15 mt_dec--80">
-            <!-- Start Single Card  -->
-            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
-                <div class="rbt-flipbox">
-
-                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-1">
-                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
-                            <div class="icon">
-                                <img src="/img/library-item1.png" alt="card-icon">
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">0-6 ЖАС</a></h5>
-                                <h6 class="title"><a href="#">МЕКТЕПКЕ ДЕЙІНГІ </a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
-                            <p style="font-size: 16px">
-                                Мектеп жасына дейінгі
-                                балаларға арналған
-                                Ойын арқылы үйрету, тәрбиелеу. Бесік-жырларын, арнау-тілек өлеңдер, өтірік
-                                өлеңдер, санамақтар, жаңылтпаштар мен
-                                мақал-мәтелдер, жұмбақтар,
-                                балалар айтысын үйренеді</p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
-                                <span data-text="Толығырақ">Толығырақ</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Card  -->
-
+        <div class="row row--15 mt_dec--80 justify-content-center">
             <!-- Start Single Card  -->
             <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
                 <div class="rbt-flipbox">

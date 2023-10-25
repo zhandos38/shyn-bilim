@@ -150,10 +150,13 @@
         eduSwiperActive: function () {
             var swiper = new Swiper('.banner-swiper-active', {
                 effect: 'cards',
-                grabCursor: true,
+                grabCursor: false,
                 pagination: {
                     el: '.rbt-swiper-pagination',
                     clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
                 },
             });
 
