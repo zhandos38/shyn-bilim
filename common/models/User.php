@@ -33,6 +33,7 @@ use yii\web\IdentityInterface;
  * @property string $post
  * @property integer $article_count
  * @property string $subscribe_until
+ * @property integer $shyn_bonus
  *
  * @property string $verification_code [varchar(4)]
  */
@@ -78,7 +79,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
 
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post', 'subscribe_until'], 'string'],
-            [['school_id', 'article_count'], 'integer'],
+            [['school_id', 'article_count', 'shyn_bonus'], 'integer'],
 
             ['verification_code', 'string', 'max' => 4],
         ];
@@ -100,6 +101,7 @@ class User extends ActiveRecord implements IdentityInterface
             'post' => Yii::t('app', 'Почтовый индекс'),
             'article_count' => Yii::t('app', 'Лимит на материалы'),
             'subscribe_until' => 'Подписан до',
+            'shyn_bonus' => 'Шың бонус',
         ];
     }
 

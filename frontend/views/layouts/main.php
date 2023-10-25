@@ -124,6 +124,7 @@ AppAsset::register($this);
                         <?php $user = Yii::$app->user->identity; ?>
                         <?php if (Yii::$app->user->identity): ?>
                         <li class="access-icon rbt-user-wrapper right-align-dropdown">
+                            <span class="rbt-badge-5">ShynBonus 1600</span>
                             <a class="rbt-round-btn" href="#">
                                 <i class="feather-user"></i>
                             </a>
@@ -135,6 +136,7 @@ AppAsset::register($this);
                                         </div>
                                         <div class="admin-info">
                                             <span class="name"><?= $user->name ?></span>
+                                            <span class="rbt-badge-5">ShynBonus 1600</span>
                                             <a class="rbt-btn-link color-primary" href="<?= Url::to(['cabinet/index']) ?>">Жеке кабинет</a>
                                         </div>
                                     </div>

@@ -8,7 +8,6 @@ use common\models\User;
 use Yii;
 use yii\base\Model;
 use yii\db\Exception;
-use yii\helpers\VarDumper;
 
 /**
  *

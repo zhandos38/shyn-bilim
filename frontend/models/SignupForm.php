@@ -79,6 +79,7 @@ class SignupForm extends Model
             $user->role = $this->role;
             $user->status = User::STATUS_INACTIVE;
             $user->verification_code = (string)($code = random_int(1000, 9999));
+            $user->shyn_bonus = 100;
             $user->setPassword($this->password);
             $user->generateAuthKey();
             if (!$user->save()) {
