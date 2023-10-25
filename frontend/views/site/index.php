@@ -580,40 +580,7 @@ $this->registerMetaTag([
     </div>
 
     <div class="container">
-        <div class="row row--15 mt_dec--80">
-            <!-- Start Single Card  -->
-            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
-                <div class="rbt-flipbox">
-
-                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-1">
-                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
-                            <div class="icon">
-                                <img src="/img/library-item1.png" alt="card-icon">
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">0-6 ЖАС</a></h5>
-                                <h6 class="title"><a href="#">МЕКТЕПКЕ ДЕЙІНГІ </a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
-                            <p style="font-size: 16px">
-                                Мектеп жасына дейінгі
-                                балаларға арналған
-                                Ойын арқылы үйрету, тәрбиелеу. Бесік-жырларын, арнау-тілек өлеңдер, өтірік
-                                өлеңдер, санамақтар, жаңылтпаштар мен
-                                мақал-мәтелдер, жұмбақтар,
-                                балалар айтысын үйренеді</p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
-                                <span data-text="Толығырақ">Толығырақ</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Card  -->
-
+        <div class="row row--15 mt_dec--80 justify-content-center">
             <!-- Start Single Card  -->
             <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
                 <div class="rbt-flipbox">
