@@ -98,7 +98,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="staff-block__name">Бекзат Рүстем Мажитұлы</div>
                         <div class="staff-block__job">Шығармашылық директор</div>
                         <div class="staff-block__experience">
-                            23 жыл тәжірибе
+                            39 жыл тәжірибе
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="staff-block__name">Тастанбек Аяулым</div>
                         <div class="staff-block__job">Сарапшы</div>
                         <div class="staff-block__experience">
-                            23 жыл тәжірибе
+                            10 жыл тәжірибе
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="staff-block__name">Усипова Жанна Абдукаримовна</div>
                         <div class="staff-block__job">Тілші</div>
                         <div class="staff-block__experience">
-                            23 жыл тәжірибе
+                            12 жыл тәжірибе
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="staff-block__name">Анаркулов Ислам</div>
                         <div class="staff-block__job">Дизайнер</div>
                         <div class="staff-block__experience">
-                            23 жыл тәжірибе
+                            9 жыл тәжірибе
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="staff-block__name">Құралбекова Динара</div>
                         <div class="staff-block__job">Штаттан тыс тілші</div>
                         <div class="staff-block__experience">
-                            23 жыл тәжірибе
+                            2 жыл тәжірибе
                         </div>
                     </div>
                 </div>

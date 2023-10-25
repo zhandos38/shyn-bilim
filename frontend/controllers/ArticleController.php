@@ -262,7 +262,21 @@ class ArticleController extends Controller
 //            if ($whiteList !== null) {
 //                $model->status = Article::STATUS_ACTIVE;
 //            }
+            $user = Yii::$app->user->identity;
+            $user->article_count -= 1;
+            if ($user->article_count <= 0) {
+                Yii::$app->session->setFlash('error', 'Материал жариялау лимиты біткен');
+
+                return $this->render('order', [
+                    'model' => $model,
+                ]);
+            }
+
             if ($model->save() && $model->upload()) {
+                if (!$user->save()) {
+                    throw new Exception('Article is not saved');
+                }
+
 //                if ($whiteList !== null) {
 //                    $whiteList->limit = $whiteList->limit - 1;
 //                    $whiteList->save();

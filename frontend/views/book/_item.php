@@ -3,12 +3,31 @@ use common\models\Book;
 
 /* @var $model Book */
 ?>
-<div class="magazine">
-    <img class="magazine__image" src="<?= $model->getImage() ?>" alt="magazine-image">
-    <div class="magazine__title"><?= $model->name ?></div>
-    <div class="magazine__body">
-        <div class="magazine__footer">
-            <a href="<?= $model->getFile() ?>" class="magazine__download-link" download="<?= $model->file ?>"><i class="fa fa-download"></i> <?= Yii::t('app', 'Скачать') ?></a>
+<div class="rbt-card variation-01 rbt-hover">
+    <div class="rbt-card-body">
+        <div class="rbt-card-img">
+            <a href="#">
+                <img src="<?= $model->getImage() ?>" alt="Card image">
+            </a>
+        </div>
+
+        <h4 class="rbt-card-title"><a href="#"><?= $model->name ?></a>
+        </h4>
+
+        <ul class="rbt-meta">
+            <li><i class="feather-book"></i>0-6</li>
+            <li><i class="feather-users"></i>категория</li>
+        </ul>
+
+        <!--            <p class="rbt-card-text">-->
+        <!--                It is a long established fact that a reader will be distracted.-->
+        <!--            </p>-->
+        <div class="rbt-card-bottom">
+            <a class="rbt-btn-link" href="<?= $model->getFile() ?>" download="<?= $model->file ?>">
+                Жүктеу
+                <i class="fa fa-download"></i>
+                <!--                    <i class="feather-arrow-right"></i>-->
+            </a>
         </div>
     </div>
 </div>

@@ -25,6 +25,8 @@
 
                                     <p>Жазылу уақыты (дейін): <?= Yii::$app->user->identity->subscribe_until ?? 'Жазылмағансыз' ?></p>
 
+                                    <p>Материал жариялау лимиті: <?= Yii::$app->user->identity->article_count ?></p>
+
                                     <a class="rbt-btn btn-gradient" href="<?= \yii\helpers\Url::to(['site/subscribe']) ?>">Жазылу</a>
                                 </div>
                             </div>

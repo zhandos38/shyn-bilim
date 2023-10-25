@@ -38,8 +38,8 @@ class Book extends \yii\db\ActiveRecord
             [['book_category_id'], 'integer'],
             [['name', 'file', 'img', 'age_range'], 'string', 'max' => 255],
 
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
-            [['fileTemp'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf'],
         ];
     }
 
@@ -68,6 +68,11 @@ class Book extends \yii\db\ActiveRecord
     public function getImage()
     {
         return $this->img ? Yii::$app->params['staticDomain'] . '/book/' . $this->img : '/img/no-magazine.png';
+    }
+
+    public function getBookCategory()
+    {
+        return $this->hasOne(BookCategory::className(), ['id' => 'book_category_id']);
     }
 
     public function upload()

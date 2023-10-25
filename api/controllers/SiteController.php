@@ -125,6 +125,8 @@ class SiteController extends Controller
                 $currentDate = date('Y-m-d');
                 $newDate = date('Y-m-d', (strtotime($currentDate) + 60 * 60 * 60 * 24));
                 $user->subscribe_until = $newDate;
+                $user->article_count = 2;
+
                 if (!$user->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }
