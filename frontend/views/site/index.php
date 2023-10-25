@@ -170,11 +170,10 @@ $this->registerMetaTag([
                         </div>
                         <div class="menu-card__text-box">
                             <h5 class="mb--0">
-                                ЖИНАҚ
+                                БАЙҚАУ
                             </h5>
                             <small class="menu-card__desc">
-                                Озат тәжірибеңізді ұсыныңыз,
-                                жинаққа еніңіз!
+                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ"
                             </small>
                         </div>
                     </div>
