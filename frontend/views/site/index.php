@@ -489,7 +489,7 @@ $this->registerMetaTag([
                             <div class="content">
                                 <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
                                 <h6 class="title"><a href="#">3 000 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                                <a class="rbt-btn-link stretched-link" href="<?= Url::to(['cabinet/index']) ?>">Жазылу<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
@@ -507,9 +507,6 @@ $this->registerMetaTag([
                                 4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН. <br>
                                 (01 қараша -31 желтоқсан аралығы)
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Толығырақ">Жазылу</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -532,13 +529,13 @@ $this->registerMetaTag([
                                     </a>
                                 </h5>
                                 <h6 class="title"><a href="#">1500 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                                <a class="rbt-btn-link stretched-link" href="<?= Url::to(['cabinet/index']) ?>">Жазылу<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                1. “КАНИКУЛДА КІТАП ОҚИМЫЗ" марафонына қатысу ТЕГІН! <br>
+                                1. “Шың балалар кітапханасы”. Кітап оқу ТЕГІН! <br>
                                 (28 қазаннан жыл соңына дейін)
                                 <br>
                                 2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН! <br>
@@ -552,13 +549,6 @@ $this->registerMetaTag([
                                 <br>
                                 5. Барлық байқауда СЕРТИФИКАТ, ДИПЛОМ беріледі.
                             </p>
-                            <p>
-                                Жарыстардан сүрінбей өтіп,
-                                ShynBonus жинап, Сыйлықтарды ұтып ал!.
-                            </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Толығырақ">Жазылу</span>
-                            </a>
                         </div>
                     </div>
                 </div>
