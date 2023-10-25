@@ -208,8 +208,7 @@ $this->registerMetaTag([
                                 ОЛИМПИАДАЛАР
                             </h5>
                             <small class="menu-card__desc">
-                                Бақ сынап, білім шыңын
-                                бірге бағындырамыз!
+                                Қатыс. Жетістік жина!
                             </small>
                         </div>
                     </div>
