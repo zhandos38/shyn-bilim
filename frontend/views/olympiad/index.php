@@ -13,7 +13,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 <div class="bg-gradient-5">
     <div class="container pt--60">
         <div class="section-title text-center mb--30">
-            <h2 class="title">Олимпиада оқушылар</h2>
+            <h2 class="title">Олимпиада оқушылар үшін</h2>
         </div>
         <div class="row justify-content-center">
             <?php /** @var \common\models\Olympiad $olympiad */
@@ -39,7 +39,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
     <div class="container pt--60 pb--60">
         <div class="section-title text-center mb--30">
-            <h2 class="title">Олимпиада мұғалімдер</h2>
+            <h2 class="title">Олимпиада мұғалімдер үшін</h2>
         </div>
         <div class="row justify-content-center">
             <?php /** @var \common\models\Olympiad $olympiad */
