@@ -190,7 +190,8 @@ $this->registerMetaTag([
                                 ҮЙ ТАПСЫРМАСЫ
                             </h5>
                             <small class="menu-card__desc">
-                                Әр аптаның сенбісі орындау!
+                                Әр аптаның сенбісі орындау! <br>
+                                Бонус жина
                             </small>
                         </div>
                     </div>
