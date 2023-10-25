@@ -436,7 +436,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Алтын қыран-ерекше дарын иесі” олимпидасы
+                            “Алтын қыран-ерекше дарын иесі” олимпиадасы
                         </div>
                     </div>
                 </div>
