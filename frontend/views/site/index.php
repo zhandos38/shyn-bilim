@@ -341,8 +341,8 @@ $this->registerMetaTag([
                                 <h5 class="mb--0">
                                     Планшет
                                 </h5>
-                                <small>
-                                    880 shynbonus
+                                <small style="text-transform: none;">
+                                    950 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -358,8 +358,8 @@ $this->registerMetaTag([
                                 <h5 class="mb--0">
                                     Паркке билет
                                 </h5>
-                                <small>
-                                    860 shynbonus
+                                <small style="text-transform: none;">
+                                    900 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -375,8 +375,8 @@ $this->registerMetaTag([
                                 <h5 class="mb--0">
                                     КІТАПТАР
                                 </h5>
-                                <small>
-                                    840 shynbonus
+                                <small style="text-transform: none;">
+                                    850 ShynBonus
                                 </small>
                             </div>
                         </div>
@@ -392,8 +392,8 @@ $this->registerMetaTag([
                                 <h5 class="mb--0">
                                     РЮКЗАК
                                 </h5>
-                                <small>
-                                    820 shynbonus
+                                <small style="text-transform: none;">
+                                    800 ShynBonus
                                 </small>
                             </div>
                         </div>
