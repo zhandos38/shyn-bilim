@@ -29,7 +29,7 @@ use yii\helpers\Url;
                     </div>
                 </div>
 
-                <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="offset-lg-4 col-lg-2 col-md-6 col-sm-6 col-12 mt--30">
                     <div class="footer-widget">
                         <h5 class="ft-title">Ақпарат</h5>
                         <ul class="ft-link">
@@ -41,40 +41,11 @@ use yii\helpers\Url;
 
                 <div class="col-lg-2 col-md-6 col-sm-6 col-12 mt--30">
                     <div class="footer-widget">
-                        <h5 class="ft-title"><?= Yii::t('app', 'Редакция') ?></h5>
+                        <h5 class="ft-title"><?= Yii::t('app', 'Контакты ') ?></h5>
                         <ul class="ft-link">
                             <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
                             <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
                             <li><a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
-                    <div class="footer-widget">
-                        <h5 class="ft-title"><?= Yii::t('app', 'Полиграфия') ?></h5>
-                        <ul class="ft-link">
-                            <li><span>Whatsapp:</span> <a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
-                            <li><span>Whatsapp:</span> <a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
-                            <li><span>E-mail:</span> <a href="mailto:polygraphy@bilimshini.kz"><i class="fa fa-envelope"></i> polygraphy@bilimshini.kz</a></li>
-                        </ul>
-                        <ul class="social-icon social-default icon-naked justify-content-start mt--20">
-                            <li><a href="https://www.facebook.com/">
-                                    <i class="feather-facebook"></i>
-                                </a>
-                            </li>
-                            <li><a href="https://www.twitter.com">
-                                    <i class="feather-twitter"></i>
-                                </a>
-                            </li>
-                            <li><a href="https://www.instagram.com/">
-                                    <i class="feather-instagram"></i>
-                                </a>
-                            </li>
-                            <li><a href="https://www.linkdin.com/">
-                                    <i class="feather-linkedin"></i>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
