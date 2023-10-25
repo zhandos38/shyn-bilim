@@ -489,7 +489,7 @@ $this->registerMetaTag([
                             <div class="content">
                                 <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
                                 <h6 class="title"><a href="#">3 000 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="<?= Url::to(['cabinet/index']) ?>">Жазылу<i class="feather-arrow-right"></i></a>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
@@ -507,6 +507,9 @@ $this->registerMetaTag([
                                 4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН. <br>
                                 (01 қараша-31 желтоқсан аралығы)
                             </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -529,7 +532,7 @@ $this->registerMetaTag([
                                     </a>
                                 </h5>
                                 <h6 class="title"><a href="#">1500 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="<?= Url::to(['cabinet/index']) ?>">Жазылу<i class="feather-arrow-right"></i></a>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
 
@@ -546,9 +549,10 @@ $this->registerMetaTag([
                                 <br>
                                 4. «Жақсылық жаса, Жас ұрпақ» Материалдар базасы бөліміне Эссе жариялау ТЕГІН. <br>
                                (1 қарашадан жыл соңына дейін)
-                                <br>
-                                5. Барлық байқауда СЕРТИФИКАТ, ДИПЛОМ беріледі.
                             </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Толығырақ">Жазылу</span>
+                            </a>
                         </div>
                     </div>
                 </div>
