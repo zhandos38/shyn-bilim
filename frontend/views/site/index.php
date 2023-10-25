@@ -410,18 +410,6 @@ $this->registerMetaTag([
                 <div class="col-md-2">
                     <div class="balls-hero__item">
                         <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo1.svg" alt="logo1">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo1">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            сайттың туракты окырманы
-                            1 балл
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
                             <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
                         </div>
