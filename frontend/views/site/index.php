@@ -538,7 +538,7 @@ $this->registerMetaTag([
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                1. “Шың балалар кітапханасы”. Кітап оқу ТЕГІН! <br>
+                                1. <span style="text-transform: uppercase">“Шың балалар кітапханасы”</span>. Кітап оқу ТЕГІН! <br>
                                 (1 қарашадан жыл соңына дейін)
                                 <br>
                                 2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН! <br>
