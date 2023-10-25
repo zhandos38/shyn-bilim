@@ -41,7 +41,7 @@ use yii\helpers\Url;
 
                 <div class="col-lg-2 col-md-6 col-sm-6 col-12 mt--30">
                     <div class="footer-widget">
-                        <h5 class="ft-title"><?= Yii::t('app', 'Контакты ') ?></h5>
+                        <h5 class="ft-title">Байланыс</h5>
                         <ul class="ft-link">
                             <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
                             <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
