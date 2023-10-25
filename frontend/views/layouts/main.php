@@ -136,7 +136,7 @@ AppAsset::register($this);
                                         </div>
                                         <div class="admin-info">
                                             <span class="name"><?= $user->name ?></span>
-                                            <span class="rbt-badge-5">ShynBonus 1600</span>
+                                            <span class="rbt-badge-5">ShynBonus <?= $user->shyn_bonus ?></span>
                                             <a class="rbt-btn-link color-primary" href="<?= Url::to(['cabinet/index']) ?>">Жеке кабинет</a>
                                         </div>
                                     </div>

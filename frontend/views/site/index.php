@@ -29,7 +29,7 @@ $this->registerMetaTag([
             <div class="col-lg-12">
                 <div class="inner">
                     <div class="row align-items-center">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <h1 class="title display-one">
                                 BILIM-SHINI.KZ
                             </h1>
@@ -62,16 +62,31 @@ $this->registerMetaTag([
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mt-4 mt-lg-0">
-                                <img src="/img/hero/teacher.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
-                            </div>
-                            <div class="mt-4">
-                                <img src="/img/hero/student.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
+                        <div class="col-md-8">
+                            <div class="d-flex justify-content-end">
+                                <div class="mt-4 mt-lg-0">
+                                    <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
+                                </div>
+                                <div class="pl--5 mt-4 mt-lg-0">
+                                    <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-color-white rbt-section-gapTop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/img/hero/teacher2.png" alt="banner-part2.png" style="width: 660px; height: fit-content">
+            </div>
+            <div class="col-md-6 mt-4 mt-lg-0">
+                <img src="/img/hero/student2.png" alt="banner-part1.png" style="width: 660px; height: fit-content">
             </div>
         </div>
     </div>
