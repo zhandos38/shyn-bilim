@@ -414,7 +414,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Шың балалар кітапханасы”. “Оқуға құштар оқушы” марафон
+                            “Шың балалар кітапханасы” <br> Кітап оқу
                         </div>
                     </div>
                 </div>
@@ -447,7 +447,9 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
                         </div>
                         <div class="balls-hero__item-title">
-                            Шығармашыл шәкірт. Мақала жариялау
+                            "жақсылық жаса, жас ұрпақ"
+                            <br>
+                            ЭССЕ ЖАРИЯЛАУ
                         </div>
                     </div>
                 </div>
