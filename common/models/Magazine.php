@@ -13,6 +13,7 @@ use Yii;
  * @property int $number
  * @property string $image
  * @property string $file
+ * @property int $order
  * @property int|null $created_at
  */
 class Magazine extends \yii\db\ActiveRecord
@@ -35,11 +36,11 @@ class Magazine extends \yii\db\ActiveRecord
     {
         return [
             [['number', 'image', 'file'], 'required'],
-            [['number', 'created_at'], 'integer'],
+            [['number', 'created_at', 'order'], 'integer'],
             [['image', 'file'], 'string', 'max' => 255],
 
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
-            [['fileTemp'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf'],
         ];
     }
 
@@ -55,6 +56,7 @@ class Magazine extends \yii\db\ActiveRecord
             'imageFile' => 'Файл рисунка',
             'file' => 'Файл',
             'fileTemp' => 'Файл',
+            'order' => 'Порядок',
             'created_at' => 'Время добавления',
         ];
     }
