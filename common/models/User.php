@@ -18,7 +18,7 @@ use yii\web\IdentityInterface;
  * @property string $verification_token
  * @property string $auth_key
  * @property integer $status
- * @property integer $role
+ * @property string $role
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
@@ -290,7 +290,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getRoleLabel()
     {
-        return ArrayHelper::getValue(static::getRoles(), $this->status);
+        return ArrayHelper::getValue(static::getRoles(), $this->role);
     }
 
     public function validateCode($code)
