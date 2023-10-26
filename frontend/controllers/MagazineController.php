@@ -16,7 +16,7 @@ class MagazineController extends Controller
             'query' => Magazine::find(),
             'sort' => [
                 'defaultOrder' => [
-                    'id' => SORT_DESC
+                    'order' => SORT_ASC
                 ]
             ],
             'pagination' => [
