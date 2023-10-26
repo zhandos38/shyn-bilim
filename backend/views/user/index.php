@@ -34,14 +34,26 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'surname',
             'patronymic',
-            'phone',
-            'role',
+            [
+                'attribute' => 'phone',
+                'value' => function(User $model) {
+                    return '<a target="_blank" href="https://wa.me/7' . $model->phone . '">' . $model->phone . '</a>';
+                },
+                'format' => 'raw'
+            ],
+            [
+                'attribute' => 'role',
+                'value' => function(User $model) {
+                    return $model->getRoleLabel();
+                },
+            ],
             [
                 'attribute' => 'status',
                 'value' => function(User $model) {
                     return $model->getStatusLabel();
                 }
             ],
+            'subscribe_until',
             [
                 'attribute' => 'created_at',
                 'value' => function(User $model) {
