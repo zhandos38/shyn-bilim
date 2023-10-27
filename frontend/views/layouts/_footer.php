@@ -44,7 +44,7 @@ use yii\helpers\Url;
                         <h5 class="ft-title">Байланыс</h5>
                         <ul class="ft-link">
                             <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
-                            <li><a href="tel:+7(701)3129906"><i class="fa fa-phone"></i> +7(701) 312 99 06</a></li>
+                            <li><a href="tel:+7(778)6252078"><i class="fa fa-phone"></i> +7(778) 625 20 78</a></li>
                             <li><a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a></li>
                         </ul>
                     </div>
