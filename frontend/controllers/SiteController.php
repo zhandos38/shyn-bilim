@@ -191,7 +191,7 @@ class SiteController extends Controller
         $model->phone = Yii::$app->session->get('phone');
 
         if ($model->load(Yii::$app->request->post()) && $model->verify()) {
-            Yii::$app->session->setFlash('success', 'Тіркелу сәтті аяқталды, бізбен болғаныңыз үшін рахмет!');
+            Yii::$app->session->setFlash('success', 'Тіркелу сәтті аяқталды! Жазылу үшін жеке кабинетке өту қажет');
 
             return $this->redirect(['site/login']);
         }
