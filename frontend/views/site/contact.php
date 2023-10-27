@@ -36,6 +36,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     </li>
                     <li class="contact-list__item">
                         <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
+                        <a href="tel:87786252078"><i class="fa fa-phone"></i> +7(778) 625 20 78 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
                         <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
