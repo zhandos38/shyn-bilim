@@ -263,7 +263,6 @@ class ArticleController extends Controller
 //                $model->status = Article::STATUS_ACTIVE;
 //            }
             $user = Yii::$app->user->identity;
-            $user->article_count -= 1;
             if ($user->article_count <= 0) {
                 Yii::$app->session->setFlash('error', 'Материал жариялау лимиты біткен');
 
@@ -271,6 +270,7 @@ class ArticleController extends Controller
                     'model' => $model,
                 ]);
             }
+            $user->article_count -= 1;
 
             if ($model->save() && $model->upload()) {
                 if (!$user->save()) {
