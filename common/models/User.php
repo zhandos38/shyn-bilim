@@ -34,8 +34,12 @@ use yii\web\IdentityInterface;
  * @property integer $article_count
  * @property string $subscribe_until
  * @property integer $shyn_bonus
+ * @property integer $grade
+ * @property string $teacher_title
  *
  * @property string $verification_code [varchar(4)]
+ * @property Subject $subject
+ * @property School $school
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -78,8 +82,8 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
 
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post', 'subscribe_until'], 'string'],
-            [['school_id', 'article_count', 'shyn_bonus'], 'integer'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'address', 'post', 'subscribe_until', 'teacher_title'], 'string'],
+            [['school_id', 'article_count', 'shyn_bonus', 'grade'], 'integer'],
 
             ['verification_code', 'string', 'max' => 4],
         ];
@@ -102,6 +106,8 @@ class User extends ActiveRecord implements IdentityInterface
             'article_count' => Yii::t('app', 'Лимит на материалы'),
             'subscribe_until' => 'Подписан до',
             'shyn_bonus' => 'Шың бонус',
+            'grade' => 'Класс',
+            'teacher_title' => 'Пән мүғалімі',
         ];
     }
 
@@ -258,6 +264,24 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSchool()
+    {
+        return $this->hasOne(School::className(), ['id' => 'school_id']);
+    }
+
+    public function getSubject()
+    {
+        return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
+    }
+
+    public function getGrade()
+    {
+        return $this->grade . ' сынып оқушысы';
     }
 
     public static function getStatuses() {

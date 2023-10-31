@@ -99,6 +99,10 @@ class ArticleController extends Controller
             throw new Exception('Article not found!');
         }
 
+        if ($model->subject_id === 17) {
+            return $this->redirect(['article/cert-tarbie-sagati', 'id' => $id]);
+        }
+
         // get your HTML raw content without any layouts or scripts
         $content = $this->renderPartial('_cert', [
             'model' => $model,
@@ -129,7 +133,7 @@ class ArticleController extends Controller
         return $pdf->render();
     }
 
-    public function actionCertNew($id)
+    public function actionCertTarbieSagati($id)
     {
         $model = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
         if (empty($model)) {
@@ -137,7 +141,7 @@ class ArticleController extends Controller
         }
 
         // get your HTML raw content without any layouts or scripts
-        $content = $this->renderPartial('_cert_new', [
+        $content = $this->renderPartial('_cert_tarbie-sagati', [
             'model' => $model,
         ]);
 
@@ -160,7 +164,8 @@ class ArticleController extends Controller
             'content' => $content,
             // format content from your own css file if needed or use the
             // enhanced bootstrap css built by Krajee for mPDF formatting
-            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css'
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+            'cssInline' => '.bordered { border: 1px solid red }'
         ]);
 
         return $pdf->render();

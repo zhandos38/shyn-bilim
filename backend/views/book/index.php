@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'book_category_id',
                 'value' => function(\common\models\Book $model) {
-                    return $model->bookCategory->name;
+                    return $model->bookCategory ? $model->bookCategory->name : "-";
                 }
             ],
             'file',
