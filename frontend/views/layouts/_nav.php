@@ -15,7 +15,7 @@ use yii\helpers\Url;
             <a href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
         </li>
         <li class="position-static">
-            <a href="<?= Url::to(['book/index']) ?>" disabled=""><?= Yii::t('app', 'Балалар кітапханасы') ?></a>
+            <a href="<?= Url::to(['book/index']) ?>">Кітапхана</a>
         </li>
         <li class="position-static">
             <a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
