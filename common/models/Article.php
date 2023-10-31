@@ -51,7 +51,7 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'surname', 'topic', 'subject_id', 'school_id', 'iin', 'phone'], 'required'],
-            [['subject_id', 'status', 'school_id', 'user_id', 'created_at'], 'integer'],
+            [['subject_id', 'status', 'school_id', 'user_id', 'created_at', 'iin'], 'integer'],
             [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
             [['iin', 'phone'], 'string', 'max' => 20],
 
