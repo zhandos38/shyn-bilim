@@ -152,7 +152,7 @@ $this->registerMetaTag([
                         <div class="menu-card__text-box">
                             <h5 class="mb--0">
                                 «ШЫҢ»
-                                БАЛАЛАР КІТАПХАНАСЫ
+                                КІТАПХАНАСЫ
                             </h5>
                             <small class="menu-card__desc">
                                 Кітап оқып,
@@ -414,7 +414,7 @@ $this->registerMetaTag([
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
                         </div>
                         <div class="balls-hero__item-title">
-                            “Шың балалар кітапханасы”. <br> Кітап оқу
+                            “Шың кітапханасы”. <br> Кітап оқу
                         </div>
                     </div>
                 </div>
@@ -538,7 +538,7 @@ $this->registerMetaTag([
 
                         <div class="rbt-flipbox-back rbt-flipbox-face inner">
                             <p style="font-size: 16px">
-                                1. <span style="text-transform: uppercase">“Шың балалар кітапханасы”</span>. Кітап оқу ТЕГІН! <br>
+                                1. <span style="text-transform: uppercase">“Шың кітапханасы”</span>. Кітап оқу ТЕГІН! <br>
                                 (1 қарашадан жыл соңына дейін)
                                 <br>
                                 2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН! <br>
@@ -570,7 +570,7 @@ $this->registerMetaTag([
         </div>
         <div style="display: flex; align-items: center">
             <div style="text-align: center">
-                <h2 style="color: #00c9be;">“ШЫҢ” БАЛАЛАР КІТАПХАНАСЫ</h2>
+                <h2 style="color: #00c9be;">“ШЫҢ” КІТАПХАНАСЫ</h2>
                 <div style="color: #00c9be;font-size: 28px;">“БІРТҰТАС ТӘРБИЕ” БАҒДАРЛАМАСЫ</div>
             </div>
         </div>
@@ -605,8 +605,8 @@ $this->registerMetaTag([
                                 Белдесу, Саққұлақ, Тымпи, Тоғызқұмалақ т.б.)
                                 физикалық, зияткерлік тұрғыдан дамиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
-                                <span data-text="Толығырақ">Толығырақ</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Жазылу">Жазылу</span>
                             </a>
                         </div>
                     </div>
@@ -637,8 +637,8 @@ $this->registerMetaTag([
                                 қалдырған мұралармен танысады.
                                 Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
-                                <span data-text="Толығырақ">Толығырақ</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Жазылу">Жазылу</span>
                             </a>
                         </div>
                     </div>
@@ -669,8 +669,36 @@ $this->registerMetaTag([
                                 абыздар, ағартушылар мен ұлт зиялыларымен
                                 танысады. Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="#">
-                                <span data-text="Толығырақ">Толығырақ</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Жазылу">Жазылу</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Card  -->
+
+            <!-- Start Single Card  -->
+            <div class="col-xl-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="rbt-flipbox">
+                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-1">
+                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
+                            <div class="icon">
+                                <img src="/img/library-item4.png" alt="card-icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">Оқуға құштар мұғалім</a></h5>
+                                <h6 class="title"><a href="#">Мұғалімдер</a></h6>
+                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
+                            <p style="font-size: 16px">
+                                -
+                            </p>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
+                                <span data-text="Жазылу">Жазылу</span>
                             </a>
                         </div>
                     </div>

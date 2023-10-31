@@ -22,24 +22,23 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                             <li>
                                 <div class="icon-right"><i class="feather-chevron-right"></i></div>
                             </li>
-                            <li class="rbt-breadcrumb-item active">Балалар кітапханасы</li>
+                            <li class="rbt-breadcrumb-item active">«ШЫҢ» кітапханасы</li>
                         </ul>
                         <!-- End Breadcrumb Area  -->
 
                         <div class=" title-wrapper">
-                            <h1 class="title mb--0">Балалар кітапханасы</h1>
+                            <h1 class="title mb--0">«ШЫҢ» кітапханасы</h1>
                             <a href="#" class="rbt-badge-2">
                                 <div class="image">🎉</div> Всего <?= $dataProvider->totalCount ?> книг
                             </a>
                         </div>
                         <p class="description">
                             «ШЫҢ»
-                            БАЛАЛАР КІТАПХАНАСЫ,
-
+                            КІТАПХАНАСЫ,
                             Кітап оқып,
                             табыс тап!
-
                         </p>
+                        <a class="rbt-badge-4" href="<?= \yii\helpers\Url::to(['book/cert']) ?>"><i class="fa fa-download"></i> Сертификат жүктеу</a>
                     </div>
                 </div>
             </div>

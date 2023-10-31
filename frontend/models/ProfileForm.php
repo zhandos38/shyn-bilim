@@ -47,7 +47,7 @@ class ProfileForm extends Model
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
             'grade' => 'Класс',
-            'teacher_title' => 'Пән мүғалімі',
+            'teacher_title' => 'Мұғалімдің қызмет атауы',
         ];
     }
 
