@@ -7,9 +7,9 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/cert-new.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
-    <div id="cert-name" class="bordered" style="padding-top: 340px; padding-left: 120px; width: 540px; text-align: center">
-        <div style="width: 360px; padding-left: 100px; padding-top: 40px; font-style: italic; font-size: 16px;">
+<div class="cert-page" style="background-image: url('/img/article/tarbie-sagati.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
+    <div id="cert-name" style="padding-top: 320px; padding-left: 80px; width: 620px; text-align: center">
+        <div style="width: 420px; padding-left: 100px; padding-top: 40px; font-style: italic; font-size: 16px;">
             <div id="cert-city" style="padding-top: 0; color: #000000; height: 10px; text-align: center;">
                 <?php
                 if ($model->school !== null) {
@@ -35,11 +35,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         <div style="padding-top: 10px; height: 100px; font-size: 24px; font-weight: bold; color: #BE9259;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
-        <div id="cert-topic" style="padding-top: 12px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500; margin-top: 60px">
+        <div id="cert-topic" style="padding-top: 12px; font-size: 20px; color: #000000; line-height: 110%; font-weight: 500; margin-top: 70px; height: 100px">
             <?= $model->topic ?>
         </div>
     </div>
-    <div style="padding-top: 220px; padding-left: 36px; font-size: 12px; color: #000000">
+    <div style="padding-top: 160px; padding-left: 36px; font-size: 12px; color: #000000">
         <div id="cert-qrcode" style="height: 60px; padding-top: 40px; width: 160px; font-size: 22px;">
             <img src="<?= $qrCode->writeDataUri() ?>">
         </div>

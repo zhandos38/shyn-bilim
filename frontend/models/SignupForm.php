@@ -23,6 +23,8 @@ class SignupForm extends Model
     public $city_id;
     public $region_id;
     public $school_id;
+    public $grade;
+    public $teacher_title;
 
 
     /**
@@ -32,8 +34,8 @@ class SignupForm extends Model
     {
         return [
             ['password', 'string', 'min' => 6],
-            [['name', 'surname', 'patronymic', 'phone', 'address', 'role'], 'string'],
-            [['school_id'], 'integer'],
+            [['name', 'surname', 'patronymic', 'phone', 'address', 'role', 'teacher_title'], 'string'],
+            [['school_id', 'grade'], 'integer'],
             [['name', 'surname', 'password'], 'required'],
 
             ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Бұл телефон тіркеліп қойған'],
@@ -53,6 +55,8 @@ class SignupForm extends Model
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
             'role' => 'Оқушы/Оқытушы',
+            'grade' => 'Класс',
+            'teacher_title' => 'Пән мүғалімі',
         ];
     }
 

@@ -1,3 +1,12 @@
+<?php
+
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+use yii\bootstrap5\ActiveForm;
+
+/* @var $model \frontend\models\ProfileForm */
+?>
 <div class="my-account-section bg-color-white rbt-section-gap">
     <div class="container">
         <div class="row">
@@ -27,7 +36,94 @@
 
                                     <p>Материал жариялау лимиті: <?= Yii::$app->user->identity->article_count ?></p>
 
-                                    <a class="rbt-btn btn-gradient" href="<?= \yii\helpers\Url::to(['site/subscribe']) ?>">Жазылу</a>
+                                    <a class="rbt-btn btn-gradient rbt-switch-btn w-100" data-text="Жазылу" href="<?= \yii\helpers\Url::to(['site/subscribe']) ?>">Жазылу</a>
+
+                                    <br>
+
+                                    <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+
+                                    <div class="row mt--30">
+                                        <div class="col-md-6">
+                                            <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?= $form->field($model, 'surname') ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?= $form->field($model, 'patronymic') ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+                                                'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+                                                'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+                                            ]) ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+                                                'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+                                                'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+                                            ]) ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?= $form->field($model, 'address') ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+                                                'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
+                                                'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+                                            ]) ?>
+                                            <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                                        </div>
+                                        <?php if (Yii::$app->user->identity->role === \common\models\User::ROLE_TEACHER): ?>
+                                        <div class="col-md-6">
+                                            <?= $form->field($model, 'teacher_title')->dropdownList([
+                                                'Бастауыш мұғалімі' => 'Бастауыш мұғалімі',
+                                                'Ағылшын тілі пәні мұғалімі' => 'Ағылшын тілі пәні мұғалімі',
+                                                'Орыс тілі және әдебиет пәні мұғалімі' => 'Орыс пәні мұғалімі',
+                                                'Математика пәні мұғалімі' => 'Математика мұғалімі',
+                                                'Қазақ тілі мен әдебиет пәні мұғалімі' => 'Қазақ тілі мен әдебиет пәні мұғалімі',
+                                                'Дүниетану пәні мұғалімі' => 'Дүниетану пәні мұғалімі',
+                                                'Тарих пәні мұғалімі' => 'Тарих пәні мұғалімі',
+                                                'Жаратылыстану пәні мұғалімі' => 'Жаратылыстану пәні мұғалімі',
+                                                'Информатика пәні мұғалімі' => 'Информатика пәні мұғалімі',
+                                                'Физика пәні мұғалімі' => 'Физика пәні мұғалімі',
+                                                'Биология пәні мұғалімі' => 'Биология пәні мұғалімі',
+                                                'Химия пәні мұғалімі' => 'Химия пәні мұғалімі',
+                                                'География пәні мұғалімі' => 'География пәні мұғалімі',
+                                                'Көркем еңбек пәні мұғалімі' => 'Көркем еңбек пәні мұғалімі',
+                                                'Кітапханашы ' => 'Кітапханашы',
+                                            ], [
+                                                'id' => 'teacher_title-select',
+                                                'prompt' => 'Мұғалімдің қызмет атауы'
+                                            ]) ?>
+                                        </div>
+                                        <?php else: ?>
+                                            <div class="col-md-3">
+                                                <?= $form->field($model, 'grade')->dropDownList([
+                                                    1,
+                                                    2,
+                                                    3,
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11,
+                                                ], [
+                                                    'id' => 'grade-select',
+                                                    'prompt' => Yii::t('app', 'Выберите класс')
+                                                ]) ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="form-group mt-4">
+                                        <?= Html::submitButton("Сақтау", ['class' => 'rbt-btn btn-gradient w-100', 'name' => 'signup-button']) ?>
+                                    </div>
+
+                                    <?php ActiveForm::end(); ?>
                                 </div>
                             </div>
                             <!-- Single Tab Content End -->
