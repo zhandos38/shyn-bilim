@@ -80,6 +80,11 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
+            $userExist = User::findByPhone($this->phone);
+            if ($userExist && $userExist->status === User::STATUS_INACTIVE) {
+                $userExist->delete();
+            }
+
             $this->_user = User::findByPhone($this->phone);
         }
 
