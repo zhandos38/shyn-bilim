@@ -18,7 +18,7 @@ class UserSearch extends UserModel
     {
         return [
             [['id', 'role', 'phone','status', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'auth_key', 'password_hash', 'password_reset_token', 'verification_token'], 'safe'],
+            [['name', 'auth_key', 'password_hash', 'password_reset_token', 'verification_token', 'subscribe_until'], 'safe'],
         ];
     }
 
@@ -62,7 +62,7 @@ class UserSearch extends UserModel
             'role' => $this->role,
             'status' => $this->status,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -71,6 +71,8 @@ class UserSearch extends UserModel
             ->andFilterWhere(['like', 'password_hash', $this->password_hash])
             ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
             ->andFilterWhere(['like', 'verification_token', $this->verification_token]);
+
+        $query->andFilterWhere(['<=', 'subscribe_until', $this->subscribe_until]);
 
         return $dataProvider;
     }
