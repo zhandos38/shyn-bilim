@@ -38,7 +38,7 @@ class SignupForm extends Model
             [['school_id', 'grade'], 'integer'],
             [['name', 'surname', 'password'], 'required'],
 
-            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Бұл телефон тіркеліп қойған'],
+//            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Бұл телефон тіркеліп қойған'],
         ];
     }
 
@@ -69,6 +69,13 @@ class SignupForm extends Model
     {
         if (!$this->validate()) {
             return null;
+        }
+
+        $userFound = User::findOne(['phone' => $this->phone]);
+        if ($userFound) {
+            SmsLog::sendSms($this->phone, $userFound->verification_code . ' - Bilimshini', $userFound->id);
+            Yii::$app->session->set('phone', $this->phone);
+            return true;
         }
 
         try {
