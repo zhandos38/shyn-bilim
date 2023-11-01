@@ -53,10 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->getStatusLabel();
                 }
             ],
-            [
-                 'attribute' => 'subscribe_until',
-                 'filter' => [ 0 => 'Нет', 1 => 'Да' ],
-            ],
+            'subscribe_until',
             [
                 'attribute' => 'created_at',
                 'value' => function(User $model) {
