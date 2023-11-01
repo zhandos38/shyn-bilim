@@ -15,8 +15,8 @@ use common\models\Book;
         </h4>
 
         <ul class="rbt-meta">
-            <li><i class="feather-book"></i>0-6</li>
-            <li><i class="feather-users"></i>категория</li>
+            <li><i class="feather-book"></i><?= $model->age_range ?></li>
+            <li><i class="feather-users"></i></li>
         </ul>
 
         <!--            <p class="rbt-card-text">-->

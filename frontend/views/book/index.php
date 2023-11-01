@@ -57,10 +57,10 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         <div class="inner">
                             <h4 class="rbt-widget-title">Жас</h4>
                             <div class="rbt-sidebar-list-wrapper rbt-tag-list">
-                                <a href="#">0-6</a>
-                                <a href="#">6-10</a>
-                                <a href="#">11-15</a>
-                                <a href="#">15-18</a>
+                                <a href="#">1-4</a>
+                                <a href="#">5-8</a>
+                                <a href="#">9-11</a>
+                                <a href="#">Мұғалімдерге</a>
                             </div>
                         </div>
                     </div>
