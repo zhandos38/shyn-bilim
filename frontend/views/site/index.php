@@ -403,17 +403,6 @@ $this->registerMetaTag([
                 <div class="col-md-2">
                     <div class="balls-hero__item">
                         <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            Үй тапсырмасы
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
                             <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
                             <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
                         </div>
