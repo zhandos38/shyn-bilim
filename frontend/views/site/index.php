@@ -180,24 +180,6 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/home-task.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">
-                                ҮЙ ТАПСЫРМАСЫ
-                            </h5>
-                            <small class="menu-card__desc">
-                                Әр аптаның сенбісі орындау! <br>
-                                Бонус жина
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3">
                 <a href="<?= Url::to(['olympiad/index']) ?>" class="menu-card">
                     <div>
                         <div>
@@ -415,17 +397,6 @@ $this->registerMetaTag([
                         </div>
                         <div class="balls-hero__item-title">
                             “Шың кітапханасы”. <br> Кітап оқу
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo2.svg" alt="logo2">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo2">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            Үй тапсырмасы
                         </div>
                     </div>
                 </div>
