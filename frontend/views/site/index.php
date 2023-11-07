@@ -180,24 +180,6 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="#" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/home-task.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">
-                                ҮЙ ТАПСЫРМАСЫ
-                            </h5>
-                            <small class="menu-card__desc">
-                                Әр аптаның сенбісі орындау! <br>
-                                Бонус жина
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3">
                 <a href="<?= Url::to(['olympiad/index']) ?>" class="menu-card">
                     <div>
                         <div>
