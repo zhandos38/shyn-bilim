@@ -319,13 +319,13 @@ $this->registerMetaTag([
                             <div>
                                 <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
                             </div>
-                            <div class="mt-4">
+                            <div class="shynbonus-box mt-4">
                                 <h5 class="mb--0">
                                     Планшет
                                 </h5>
-                                <small style="text-transform: none;">
-                                    950 ShynBonus
-                                </small>
+                                <div class="shynbonus-box__text">
+                                    600 <br> ShynBonus
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -336,13 +336,13 @@ $this->registerMetaTag([
                             <div>
                                 <img style="height: 200px" src="/img/prize-icon/park.png" alt="menu-icon">
                             </div>
-                            <div class="mt-4">
+                            <div class="shynbonus-box mt-4">
                                 <h5 class="mb--0">
                                     Паркке билет
                                 </h5>
-                                <small style="text-transform: none;">
-                                    900 ShynBonus
-                                </small>
+                                <div class="shynbonus-box__text">
+                                    570 <br> ShynBonus
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -353,13 +353,13 @@ $this->registerMetaTag([
                             <div>
                                 <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
                             </div>
-                            <div class="mt-4">
+                            <div class="shynbonus-box mt-4">
                                 <h5 class="mb--0">
                                     КІТАПТАР
                                 </h5>
-                                <small style="text-transform: none;">
-                                    850 ShynBonus
-                                </small>
+                                <div class="shynbonus-box__text">
+                                    550 <br> ShynBonus
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -370,13 +370,13 @@ $this->registerMetaTag([
                             <div>
                                 <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
                             </div>
-                            <div class="mt-4">
+                            <div class="shynbonus-box mt-4">
                                 <h5 class="mb--0">
                                     РЮКЗАК
                                 </h5>
-                                <small style="text-transform: none;">
-                                    800 ShynBonus
-                                </small>
+                                <div class="shynbonus-box__text">
+                                    530 <br> ShynBonus
+                                </div>
                             </div>
                         </div>
                     </div>
