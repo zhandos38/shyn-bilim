@@ -22,6 +22,7 @@ use yii\helpers\ArrayHelper;
  * @property int $grade
  * @property int $status
  * @property string $lang
+ * @property string $phone
  * @property int|null $created_at
  *
  * @property Olympiad $olympiad
@@ -62,9 +63,9 @@ class TestAssignment extends \yii\db\ActiveRecord
 //            ['iin', 'unique', 'targetClass' => '\common\models\TestAssignment', 'message' => Yii::t('app', 'Данный ИИН уже зарегистрирован')],
 
             ['lang', 'string', 'max' => 2],
-            [['city_id', 'region_id', 'subject_id', 'status'], 'integer'],
+            [['city_id', 'region_id', 'status'], 'integer'],
 
-            [['name', 'surname', 'iin', 'phone', 'lang', 'school_id', 'phone', 'subject_id'], 'required'],
+            [['name', 'surname', 'phone', 'lang', 'school_id', 'subject_id'], 'required'],
         ];
     }
 

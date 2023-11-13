@@ -8,7 +8,7 @@ use yii\web\View;
 $this->title = $olympiad_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
 ?>
-<div id="test">
+<div id="test" class="pb--60 pt--60">
     <div class="container test-app__container">
         <h1><?= $this->title ?></h1>
         <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>

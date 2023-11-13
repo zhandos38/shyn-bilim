@@ -36,6 +36,12 @@ use yii\bootstrap5\ActiveForm;
 
                                     <p>Материал жариялау лимиті: <?= Yii::$app->user->identity->article_count ?></p>
 
+                                    <?php if (Yii::$app->language === 'ru'): ?>
+                                        Отправляя данные вы соглашаетесь с условиями <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">публичной оферты</a>
+                                    <?php else: ?>
+                                        Мәліметтерді жібере отырып, <a style="color: red" href="<?= '/file/offer.pdf' ?>" target="_blank">қоғамдық ұсыныспен</a> келісесіз
+                                    <?php endif; ?>
+
                                     <a class="rbt-btn btn-gradient rbt-switch-btn w-100" data-text="Жазылу" href="<?= \yii\helpers\Url::to(['site/subscribe']) ?>">Жазылу</a>
 
                                     <br>
