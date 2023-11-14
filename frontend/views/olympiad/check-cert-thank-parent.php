@@ -14,7 +14,8 @@ $this->title = Yii::t('app', 'Получить благодарственное 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Вопросы и ответы'), 'url' => ['site/questions']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 ?>
-<h1 class="mb-4">
+<div class="container rbt-section-gapBottom rbt-section-gapTop">
+    <h1 class="mb-4">
     <?= $this->title ?>
 </h1>
 
@@ -33,9 +34,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
             ],
         ]) ?>
 
-        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
     </div>
 </div>
 
 <?php ActiveForm::end() ?>
+</div>
 
