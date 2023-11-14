@@ -5,6 +5,7 @@ use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 use yii\helpers\ArrayHelper;
 use yii\web\View;
+use yii\widgets\MaskedInput;
 
 /* @var $this View */
 /* @var $model CheckAssignmentForm */
