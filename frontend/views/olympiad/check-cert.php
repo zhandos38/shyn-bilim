@@ -25,7 +25,12 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
             'prompt' => Yii::t('app', 'Выберите олимпиаду')
         ]) ?>
 
-        <?= $form->field($model, 'iin') ?>
+        <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+            'mask' => '+7(999)999-99-99',
+            'clientOptions' => [
+                'removeMaskOnSubmit' => true
+            ],
+        ]) ?>
 
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
     </div>
