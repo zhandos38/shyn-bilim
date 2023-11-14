@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
             ],
         ]) ?>
 
-        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
     </div>
 </div>
 
