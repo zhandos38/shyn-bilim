@@ -33,7 +33,7 @@ class CheckAssignmentForm extends Model
     public function attributeLabels()
     {
         return [
-          'phone' => Yii::t('app', 'ИИН'),
+          'phone' => Yii::t('app', 'Номер телефона'),
           'subject_id' => Yii::t('app', 'Предмет'),
           'olympiad_id' => Yii::t('app', 'Олимпиада'),
         ];
