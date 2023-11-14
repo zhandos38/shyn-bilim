@@ -17,15 +17,15 @@ use yii\helpers\VarDumper;
  */
 class CheckAssignmentForm extends Model
 {
-    public $iin;
+    public $phone;
     public $subject_id;
     public $olympiad_id;
 
     public function rules()
     {
         return [
-            [['iin', 'olympiad_id'], 'required'],
-            ['iin', 'string', 'max' => 20],
+            [['phone', 'olympiad_id'], 'required'],
+            ['phone', 'string', 'max' => 20],
             [['subject_id', 'olympiad_id'], 'integer'],
         ];
     }
@@ -33,7 +33,7 @@ class CheckAssignmentForm extends Model
     public function attributeLabels()
     {
         return [
-          'iin' => Yii::t('app', 'ИИН'),
+          'phone' => Yii::t('app', 'ИИН'),
           'subject_id' => Yii::t('app', 'Предмет'),
           'olympiad_id' => Yii::t('app', 'Олимпиада'),
         ];
@@ -41,7 +41,7 @@ class CheckAssignmentForm extends Model
 
     public function check($isFinished = false)
     {
-        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'iin' => $this->iin]);
+        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'phone' => $this->iin]);
         if ($isFinished) {
             $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
         } else {
