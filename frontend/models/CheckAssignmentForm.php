@@ -41,7 +41,7 @@ class CheckAssignmentForm extends Model
 
     public function check($isFinished = false)
     {
-        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'phone' => $this->iin]);
+        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'phone' => $this->phone]);
         if ($isFinished) {
             $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
         } else {
