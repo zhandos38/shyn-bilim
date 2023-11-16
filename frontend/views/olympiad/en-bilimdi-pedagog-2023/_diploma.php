@@ -14,7 +14,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     <div class="cert-page" style="background-image: url('./img/en-bilimdi-pedagog-2023/diplom.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 127px; padding-top: 300px; width: 540px; height: 150px; font-size: 18px; text-align: center">
             <div style="color: #6840AD">
-                <b><?= $place ?> ИЕГЕРІ</b>
+                <b><?= $place ?></b>
             </div>
             <div style="font-size: 18px; padding-top: 10px; font-weight: lighter; height: 30px; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
