@@ -22,7 +22,7 @@ class TestAssignmentSearch extends TestAssignment
     {
         return [
             [['id', 'test_id', 'olympiad_id', 'school_id', 'subject_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
-            [['name', 'surname', 'patronymic', 'iin'], 'safe'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone'], 'safe'],
         ];
     }
 
@@ -88,6 +88,7 @@ class TestAssignmentSearch extends TestAssignment
         $query->andFilterWhere(['like', 't1.name', $this->name])
             ->andFilterWhere(['like', 't1.surname', $this->surname])
             ->andFilterWhere(['like', 't1.patronymic', $this->patronymic])
+            ->andFilterWhere(['like', 't1.phone', $this->phone])
             ->andFilterWhere(['like', 't1.iin', $this->iin]);
 
         return $dataProvider;
