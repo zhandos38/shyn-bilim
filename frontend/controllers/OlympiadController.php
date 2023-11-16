@@ -140,11 +140,11 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // check for finish
             $testAssignment = TestAssignment::find()
-                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])
+                ->andWhere(['olympiad_id' => $model->olympiad_id, 'phone' => $model->phone, 'status' => TestAssignment::STATUS_FINISHED])
                 ->andFilterWhere(['subject_id' => $model->subject_id])
                 ->one();
             if ($testAssignment) {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест уже пройден'));
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Тест өтіліп қойылған, егерде өтпеген болсаңыз бізге хабарласыңыз, Рахмет!'));
 
                 return $this->render('assignment', [
                     'model' => $model,
