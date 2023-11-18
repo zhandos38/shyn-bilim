@@ -141,7 +141,6 @@ class OlympiadController extends Controller
             // check for finish
             $testAssignment = TestAssignment::find()
                 ->andWhere(['olympiad_id' => $model->olympiad_id, 'phone' => $model->phone, 'status' => TestAssignment::STATUS_FINISHED])
-                ->andFilterWhere(['subject_id' => $model->subject_id])
                 ->one();
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест өтіліп қойылған, егерде өтпеген болсаңыз бізге хабарласыңыз, Рахмет!'));
