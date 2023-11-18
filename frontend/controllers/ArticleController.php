@@ -347,7 +347,6 @@ class ArticleController extends Controller
                 return $this->redirect(['article/success-offline', 'id' => $model->id]);
             }
         }
-        VarDumper::dump($model->errors);
 
         return $this->render('order', [
             'model' => $model,
