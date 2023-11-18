@@ -276,7 +276,7 @@ class ArticleController extends Controller
         $model->name = $user->name;
         $model->surname = $user->surname;
         $model->patronymic = $user->patronymic;
-        $model->phone = $user->patronymic;
+        $model->phone = $user->phone;
         $model->school_id = $user->school_id;
 
         if ($model->load(Yii::$app->request->post())) {
