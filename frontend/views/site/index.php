@@ -89,7 +89,7 @@ $this->registerMetaTag([
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
                                                 <a href="#">
-                                                    <img src="/img/hero/teacher2.png" style="width: 100%" alt="Card image">
+                                                    <img src="/img/hero/teacher3.png" style="width: 100%" alt="Card image">
                                                 </a>
                                             </div>
                                         </div>
