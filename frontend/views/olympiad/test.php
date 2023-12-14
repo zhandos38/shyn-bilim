@@ -37,19 +37,14 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         <div v-else>
             <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
             <div>
-                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить сертификат/диплом') ?>
                 </a>
-                <br><br>
-                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
+                <br>
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
-                </a>
-                <br><br>
-                <a class="btn btn-success" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-parent', 'id' => $assignment_id]) ?>" download>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                    <?= Yii::t('app', 'Получить благодарственное письмо родителю') ?>
                 </a>
             </div>
         </div>

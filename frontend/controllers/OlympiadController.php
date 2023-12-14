@@ -373,25 +373,17 @@ class OlympiadController extends Controller
                 'place' => $place,
             ]);
 
-            // setup kartik\mpdf\Pdf component
             $pdf = new Pdf([
-                // set to use core fonts only
                 'mode' => Pdf::MODE_UTF8,
-                // A4 paper format
                 'format' => Pdf::FORMAT_A4,
                 'marginTop' => 0,
                 'marginLeft' => 0,
                 'marginRight' => 0,
                 'marginBottom' => 0,
-                // portrait orientation
                 'orientation' =>  $testAssignment->olympiad->is_landscape_diploma_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
-                // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
-                // your html content input
                 'content' => $content,
-                // format content from your own css file if needed or use the
-                // enhanced bootstrap css built by Krajee for mPDF formatting
                 'cssFile' => 'css/custom.css'
             ]);
         } else {
@@ -399,25 +391,17 @@ class OlympiadController extends Controller
                 'testAssignment' => $testAssignment,
             ]);
 
-            // setup kartik\mpdf\Pdf component
             $pdf = new Pdf([
-                // set to use core fonts only
                 'mode' => Pdf::MODE_UTF8,
                 'marginTop' => 0,
                 'marginLeft' => 0,
                 'marginRight' => 0,
                 'marginBottom' => 0,
-                // A4 paper format
                 'format' => Pdf::FORMAT_A4,
-                // portrait orientation
                 'orientation' =>  $testAssignment->olympiad->is_landscape_cert_orientation ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
-                // stream to browser inline
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Сертификат.pdf',
-                // your html content input
                 'content' => $content,
-                // format content from your own css file if needed or use the
-                // enhanced bootstrap css built by Krajee for mPDF formatting
                 'cssFile' => 'css/custom.css'
             ]);
         }
