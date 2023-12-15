@@ -125,6 +125,7 @@ class OlympiadController extends Controller
         $model->patronymic = $user->patronymic;
         $model->school_id = $user->school_id;
         $model->phone = $user->phone;
+        $model->grade = $user->grade;
 
         $olympiad = Olympiad::findOne(['id' => $id]);
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
