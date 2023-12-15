@@ -18,10 +18,7 @@ if ($testAssignment->subject->kind === Subject::KIND_HUMANITARIAN) {
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-qyran-2023/<?= $imgFile ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
-        <div style="font-size: 28px; padding-left: 20px; padding-top: 340px; text-transform: uppercase; color: red; text-align: center">
-            <b><?= $place ?></b>
-        </div>
-        <div style="color: red; padding-left: 90px; padding-top: 155px; text-align: center; width: 600px; height: 150px; font-size: 20px">
+        <div style="color: red; padding-left: 90px; padding-top: 495px; text-align: center; width: 600px; height: 150px; font-size: 20px">
             <div>
                 <?= $testAssignment->subject->name ?> пәнінен
             </div>
