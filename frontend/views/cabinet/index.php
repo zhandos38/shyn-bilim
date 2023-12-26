@@ -70,7 +70,7 @@ use yii\bootstrap5\ActiveForm;
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
                                             ]) ?>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <?= $form->field($model, 'address') ?>
                                         </div>
                                         <div class="col-md-6">
