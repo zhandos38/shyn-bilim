@@ -73,7 +73,7 @@ use yii\bootstrap5\ActiveForm;
                                         <div class="col-md-3">
                                             <?= $form->field($model, 'address') ?>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
                                                 'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
