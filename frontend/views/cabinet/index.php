@@ -49,22 +49,22 @@ use yii\bootstrap5\ActiveForm;
                                     <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
                                     <div class="row mt--30">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <?= $form->field($model, 'surname') ?>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <?= $form->field($model, 'patronymic') ?>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                                                 'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
                                             ]) ?>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
                                                 'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
@@ -75,9 +75,11 @@ use yii\bootstrap5\ActiveForm;
                                         </div>
                                         <div class="col-md-6">
                                             <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-                                                'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
+                                                'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
+                                                    return htmlspecialchars_decode($model['name']);
+                                                }),
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
-                                            ]) ?>
+                                            ]); ?>
                                             <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
                                         </div>
                                         <?php if (Yii::$app->user->identity->role === \common\models\User::ROLE_TEACHER): ?>
@@ -319,3 +321,96 @@ use yii\bootstrap5\ActiveForm;
         </div>
     </div>
 </div>
+
+<?php
+$bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
+$historyLabel = Yii::t('site', 'Преподаватель истории');
+$geographyLabel = Yii::t('site', 'Преподаватель географии');
+$naturalSciencesLabel = Yii::t('site', 'Преподаватель по естествознанию');
+$js =<<<JS
+let bastaushLabel = "$bastaushLabel";
+let historyLabel = "$historyLabel";
+let geographyLabel = "$geographyLabel";
+let naturalSciencesLabel = "$naturalSciencesLabel";
+$('#profileform-region_id').change(function() {
+  $.get({
+    url: '/kz/site/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#profileform-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#profileform-city_id').change(function() {
+  $.get({
+    url: '/kz/site/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#profileform-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#grade-select').change(function() {
+  $.get({
+    url: '/kz/site/get-subjects',
+    data: {grade: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name_kz + '</option>'; 
+      });
+      
+      $('#subject_id-select').html(options);
+      $('#subject_id-wrapper').show();
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#check-assignment-btn').click(function() {
+  $('#check-assignment-form').toggle('ease');
+});
+
+$('#toggleBtn').click(function() {
+  $('#toggleText').toggle('ease');
+});
+
+$(document).ready(() => {
+    handleChange();
+    
+    if (parseInt($('#grade-select').val())) {
+        $('#subject_id-wrapper').show();
+    }
+});
+
+$('#grade-input').change(function() {
+    handleChange();
+});
+JS;
+
+
+$this->registerJs($js);
+?>
