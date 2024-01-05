@@ -85,9 +85,9 @@ class BookController extends Controller
 
     public function actionCertKitapOku()
     {
-        $model = Yii::$app->user->identity;
+        $model = User::findOne(['id' => Yii::$app->user->identity->id]);
         if (empty($model)) {
-            throw new Exception('Article not found!');
+            throw new Exception('User not found!');
         }
 
         // get your HTML raw content without any layouts or scripts
@@ -123,9 +123,9 @@ class BookController extends Controller
 
     public function actionCertOkugaKushtarUstaz()
     {
-        $model = Yii::$app->user->identity;
+        $model = User::findOne(['id' => Yii::$app->user->identity->id]);
         if (empty($model)) {
-            throw new Exception('Article not found!');
+            throw new Exception('User not found!');
         }
 
         // get your HTML raw content without any layouts or scripts
