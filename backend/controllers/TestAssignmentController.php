@@ -89,6 +89,7 @@ class TestAssignmentController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
             if (!$model->save()) {
+//                VarDumper::dump($model->errors); die;
                 throw new Exception('Assignment is not saved');
             }
 
