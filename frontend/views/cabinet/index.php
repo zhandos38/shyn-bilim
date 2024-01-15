@@ -112,17 +112,17 @@ use yii\bootstrap5\ActiveForm;
                                         <?php else: ?>
                                             <div class="col-md-3">
                                                 <?= $form->field($model, 'grade')->dropDownList([
-                                                    1,
-                                                    2,
-                                                    3,
-                                                    4,
-                                                    5,
-                                                    6,
-                                                    7,
-                                                    8,
-                                                    9,
-                                                    10,
-                                                    11,
+                                                    '1' => 1,
+                                                    '2' => 2,
+                                                    '3' => 3,
+                                                    '4' => 4,
+                                                    '5' => 5,
+                                                    '6' => 6,
+                                                    '7' => 7,
+                                                    '8' => 8,
+                                                    '9' => 9,
+                                                    '10' => 10,
+                                                    '11' => 11,
                                                 ], [
                                                     'id' => 'grade-select',
                                                     'prompt' => Yii::t('app', 'Выберите класс')

@@ -67,7 +67,7 @@ use common\models\Test;
 
     <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
     
-    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => $model->olympiad->type === \common\models\Olympiad::TYPE_STUDENT ? Subject::TYPE_STUDENT : Subject::TYPE_TEACHER]), 'id', 'name'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => $model->olympiad && $model->olympiad->type === \common\models\Olympiad::TYPE_STUDENT ? Subject::TYPE_STUDENT : Subject::TYPE_TEACHER]), 'id', 'name'), [
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
 
