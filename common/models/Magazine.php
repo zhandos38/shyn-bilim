@@ -10,7 +10,7 @@ use Yii;
  * This is the model class for table "magazine".
  *
  * @property int $id
- * @property int $number
+ * @property string $number
  * @property string $image
  * @property string $file
  * @property int $order
@@ -36,7 +36,7 @@ class Magazine extends \yii\db\ActiveRecord
     {
         return [
             [['number', 'image', 'file'], 'required'],
-            [['number', 'created_at', 'order'], 'integer'],
+            [['created_at', 'order'], 'integer'],
             [['image', 'file'], 'string', 'max' => 255],
 
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
