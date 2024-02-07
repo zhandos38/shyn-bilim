@@ -79,9 +79,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
                     <li class="nav-item <?= $controller === 'news' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Новости') ?></a>
                     </li>
-                    <li class="nav-item <?= $controller === 'magazine' && $action === 'index' ? 'nav-item--active' : '' ?>">
-                        <a class="nav-link" href="<?= Url::to(['magazine/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
-                    </li>
                     <li class="nav-item <?= $controller === 'article' && $action === 'index' ? 'nav-item--active' : '' ?>">
                         <a class="nav-link" href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалы') ?></a>
                     </li>
