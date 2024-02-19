@@ -80,23 +80,6 @@ AppAsset::register($this);
                                 <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a></li>
                             </ul>
                         </div>
-                        <?php if (!Yii::$app->user->identity): ?>
-                        <div class="rbt-separator"></div>
-                        <div class="header-info">
-                            <div class="header-right-btn d-flex">
-                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/login']) ?>">
-                                    <span data-text="Бізге қосылу">Кіру</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="header-info pl--5">
-                            <div class="header-right-btn d-flex">
-                                <a class="rbt-btn rbt-switch-btn btn-gradient btn-xs" href="<?= Url::to(['site/signup']) ?>">
-                                    <span data-text="Бізге қосылу">Тіркелу</span>
-                                </a>
-                            </div>
-                        </div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -117,60 +100,6 @@ AppAsset::register($this);
                 </div>
                 <div class="rbt-main-navigation d-none d-xl-block">
                     <?php include '_nav.php' ?>
-                </div>
-                <div class="header-right">
-                    <!-- Navbar Icons -->
-                    <ul class="quick-access">
-                        <?php $user = Yii::$app->user->identity; ?>
-                        <?php if (Yii::$app->user->identity): ?>
-                        <li class="access-icon rbt-user-wrapper right-align-dropdown">
-                            <span class="rbt-badge-5">ShynBonus <?= Yii::$app->user->identity->shyn_bonus ?></span>
-                            <a class="rbt-round-btn" href="#">
-                                <i class="feather-user"></i>
-                            </a>
-                            <div class="rbt-user-menu-list-wrapper">
-                                <div class="inner">
-                                    <div class="rbt-admin-profile">
-                                        <div class="admin-thumbnail">
-                                            <img src="/img/no-img-book.png" alt="User Images">
-                                        </div>
-                                        <div class="admin-info">
-                                            <span class="name"><?= $user->name ?></span>
-                                            <span class="rbt-badge-5">ShynBonus <?= $user->shyn_bonus ?></span>
-                                            <a class="rbt-btn-link color-primary" href="<?= Url::to(['cabinet/index']) ?>">Жеке кабинет</a>
-                                        </div>
-                                    </div>
-                                    <ul class="user-list-wrapper">
-                                        <li>
-                                            <a href="#">
-                                                <i class="feather-home"></i>
-                                                <span>Олимпиадаға қатысу тарихы</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <hr class="mt--10 mb--10">
-                                    <ul class="user-list-wrapper">
-                                        <li>
-                                            <a href="<?= Url::to(['site/logout']) ?>">
-                                                <i class="feather-log-out"></i>
-                                                <span>Шығу</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <?php endif; ?>
-                    </ul>
-                    <!-- Start Mobile-Menu-Bar -->
-                    <div class="mobile-menu-bar d-block d-xl-none">
-                        <div class="hamberger">
-                            <button class="hamberger-button rbt-round-btn">
-                                <i class="feather-menu"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Start Mobile-Menu-Bar -->
                 </div>
             </div>
         </div>

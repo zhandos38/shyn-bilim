@@ -41,23 +41,6 @@ class OlympiadController extends Controller
                     'logout' => ['post'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'matchCallback' => function() {
-                            if (!Yii::$app->user->identity->checkSubscription()) {
-                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
-                                return false;
-                            }
-
-                            return true;
-                        },
-                    ],
-                ],
-            ],
         ];
     }
 
@@ -117,15 +100,6 @@ class OlympiadController extends Controller
     public function actionAssignment($id)
     {
         $model = new TestAssignment();
-        $user = Yii::$app->user->identity;
-
-        $model->olympiad_id = $id;
-        $model->name = $user->name;
-        $model->surname = $user->surname;
-        $model->patronymic = $user->patronymic;
-        $model->school_id = $user->school_id;
-        $model->phone = $user->phone;
-        $model->grade = $user->grade;
 
         $olympiad = Olympiad::findOne(['id' => $id]);
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
