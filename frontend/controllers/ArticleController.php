@@ -27,32 +27,6 @@ use common\models\ArticleWhiteList;
 
 class ArticleController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'matchCallback' => function() {
-                            if (!Yii::$app->user->identity->checkSubscription()) {
-                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
-                                return false;
-                            }
-
-                            return true;
-                        },
-                    ],
-                ],
-            ],
-        ];
-    }
-
     public function actionIndex()
     {
         $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
@@ -272,23 +246,10 @@ class ArticleController extends Controller
         if ($id) {
             $model->subject_id = $id;
         }
-        $user = Yii::$app->user->identity;
-        $model->name = $user->name;
-        $model->surname = $user->surname;
-        $model->patronymic = $user->patronymic;
-        $model->phone = $user->phone;
-        $model->school_id = $user->school_id;
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->status = Article::STATUS_ACTIVE;
             $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
             $model->created_at = time();
-
-//            $modelExist = Article::find()->where(['iin' => $model->iin])->one();
-//            if ($modelExist) {
-//                Yii::$app->session->setFlash('success', Yii::t('app', 'Ваш материал уже опубликован'));
-//                return $this->redirect('/');
-//            }
 
             if ($model->fileTemp) {
                 $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
@@ -304,21 +265,8 @@ class ArticleController extends Controller
 //            if ($whiteList !== null) {
 //                $model->status = Article::STATUS_ACTIVE;
 //            }
-            $user = Yii::$app->user->identity;
-            if ($user->article_count <= 0) {
-                Yii::$app->session->setFlash('error', 'Материал жариялау лимиты біткен');
-
-                return $this->render('order', [
-                    'model' => $model,
-                ]);
-            }
-            $user->article_count -= 1;
 
             if ($model->save() && $model->upload()) {
-                if (!$user->save()) {
-                    throw new Exception('Article is not saved');
-                }
-
 //                if ($whiteList !== null) {
 //                    $whiteList->limit = $whiteList->limit - 1;
 //                    $whiteList->save();
@@ -326,25 +274,23 @@ class ArticleController extends Controller
 //                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
 //                }
 
-//                $salt = $this->getSalt(8);
-//                $request = [
-//                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-//                    'pg_amount' => 3000,
-//                    'pg_salt' => $salt,
-//                    'pg_order_id' => $model->id,
-//                    'pg_success_url_method' => 'GET',
-//                    'pg_description' => 'Оплата за публикацию материала',
-//                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-//                    'pg_result_url_method' => 'POST',
-//                ];
-//
-//                $request = $this->getSignByData($request, 'payment.php', $salt);
-//
-//                $query = http_build_query($request);
-//
-//                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 3000,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_success_url_method' => 'GET',
+                    'pg_description' => 'Оплата за публикацию материала',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+                    'pg_result_url_method' => 'POST',
+                ];
 
-                return $this->redirect(['article/success-offline', 'id' => $model->id]);
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
         }
 
