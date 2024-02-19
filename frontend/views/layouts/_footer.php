@@ -20,7 +20,7 @@ use yii\helpers\Url;
                         <div class="contact-btn mt--30">
                             <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round" href="#">
                                 <div class="icon-reverse-wrapper">
-                                    <span class="btn-text">Бізбен байланысты болыңыз</span>
+                                    <span class="btn-text">Бізбен байланыста болыңыз</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 </div>
@@ -44,7 +44,7 @@ use yii\helpers\Url;
                         <h5 class="ft-title">Байланыс</h5>
                         <ul class="ft-link">
                             <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
-                            <li><a href="tel:+7(778)6252078"><i class="fa fa-phone"></i> +7(778) 625 20 78</a></li>
+                            <li><a href="tel:+7(778)6252078"><i class="fa fa-phone"></i> +7(775) 424 37 27</a></li>
                             <li><a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a></li>
                         </ul>
                     </div>

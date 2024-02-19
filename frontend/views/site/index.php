@@ -122,8 +122,7 @@ $this->registerMetaTag([
                                 КІТАПХАНАСЫ
                             </h5>
                             <small class="menu-card__desc">
-                                Кітап оқып,
-                                табыс тап!
+                                КІТАП ОҚЫП, СЫЙЛЫҚ ҰТЫП АЛ!
                             </small>
                         </div>
                     </div>
@@ -140,7 +139,7 @@ $this->registerMetaTag([
                                 БАЙҚАУ
                             </h5>
                             <small class="menu-card__desc">
-                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2023"
+                                "ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2024"
                             </small>
                         </div>
                     </div>
@@ -174,8 +173,7 @@ $this->registerMetaTag([
                                 МАТЕРИАЛДАР БАЗАСЫ
                             </h5>
                             <small class="menu-card__desc">
-                                Өз еңбегіңізбен бөлісіп,
-                                Сертификат жүктеп алыңыз
+                                ІС-ТӘЖРИБЕ ТАРАТЫП, ПОРТФОЛИОДА ЖОҒАРЫ ҰПАЙ ЖИНАҢЫЗ!
                             </small>
                         </div>
                     </div>
@@ -192,8 +190,7 @@ $this->registerMetaTag([
                                 БЛОГ
                             </h5>
                             <small class="menu-card__desc">
-                                Жаңа ақпараттармен
-                                таныс болыңыз
+                                ҚЫЗЫҚТЫ ЖАҢАЛЫҚТАРДАН ҚҰР ҚАЛМАҢЫЗ!
                             </small>
                         </div>
                     </div>
@@ -210,7 +207,7 @@ $this->registerMetaTag([
                                 БІЗ ТУРАЛЫ
                             </h5>
                             <small class="menu-card__desc">
-                                Болашақ үшін қызметтеміз
+                                БІЛІМ ШЫҢЫ БАСПАЛДАҒЫНА БІРГЕ КӨТЕРІЛЕМІЗ!
                             </small>
                         </div>
                     </div>
