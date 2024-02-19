@@ -17,32 +17,6 @@ use yii\web\Controller;
 
 class BookController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'matchCallback' => function() {
-                            if (!Yii::$app->user->identity->checkSubscription()) {
-                                Yii::$app->session->setFlash('error', 'Сіз жазылмағансыз немесе жазылым уақыты өтіп кеткен');
-                                return false;
-                            }
-
-                            return true;
-                        },
-                    ],
-                ],
-            ],
-        ];
-    }
-
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
