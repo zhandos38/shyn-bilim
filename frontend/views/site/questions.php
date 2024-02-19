@@ -109,9 +109,7 @@ use yii\helpers\Url; ?>
                                 <div id="faqs-collapseThree1" class="accordion-collapse collapse show" aria-labelledby="faqs-headingThree1" data-bs-parent="#faqs-accordionExamplec3" style="">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Жауап: Сайттан төлем жасау қиындық туғызған жағдайда 8(775) 076-78-76 Бахыткүл каспий голд номеріне төлем жасап, төлем чекті және қатысушы ЖСН-ін мына ватсапқа жіберу керек.
-                                            <br><a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
-                                            <br>«ТІРКЕЛДІ» деген жауап алғаннан кейін олимпиадаға қатысуға болады.
+                                            Жауап: Сайттан төлем жасау қиындық туғызған жағдайда 8(775) 076-78-76 Бахыткүл каспий голд номеріне төлем жасап, төлем чекті және қатысушы ЖСН-ін <a class="btn-link" href="https://wa.me/77754037284">+7(775)403 72 84</a> ватсапқа жіберу керек.
                                         </p>
                                     </div>
                                 </div>
@@ -133,22 +131,6 @@ use yii\helpers\Url; ?>
                             </div>
 
                             <div class="accordion-item card">
-                                <h2 class="accordion-header card-header" id="faqs-headingThree3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree3" aria-expanded="false" aria-controls="faqs-collapseThree3">
-                                        Жарна төленді. «Тіркелді» деген жауап алдым. Бірақ сайтта «Төлем жасау» беті  шығып тұр. Не істеуге болады?
-                                    </button>
-                                </h2>
-                                <div id="faqs-collapseThree3" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree3" data-bs-parent="#faqs-accordionExamplec3">
-                                    <div class="accordion-body card-body">
-                                        <p>
-                                            Жауап: Сіз тіркеткен ЖСН-ді анкетаға жазған ЖСН-мен салыстырып көріңіз. Қате ЖСН-мен қатыса алмайсыз. Егер ондай қателік болмаса, тексеру
-                                            <a href="https://wa.me/77754037284">https://wa.me/77754037284</a> осы ватсап номерге ЧЕК+ЖСН қайта жіберіңіз.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item card">
                                 <h2 class="accordion-header card-header" id="faqs-headingThree4">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree4" aria-expanded="false" aria-controls="faqs-collapseThree4">
                                         Олимпиада тапсырмаларын орындап отырып сайттан шығып кеткен жағдайда қайтадан тапсыра аламын ба?
@@ -158,8 +140,8 @@ use yii\helpers\Url; ?>
                                     <div class="accordion-body card-body">
                                         <p>
                                             Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталады. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
-                                            <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
                                         </p>
+                                        <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +177,7 @@ use yii\helpers\Url; ?>
                                 <div id="faqs-collapseThree6" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree6" data-bs-parent="#faqs-accordionExamplec3">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Жауап: Қатені жөндеу үшін <a href="https://wa.me/77754037284">https://wa.me/77754037284</a> ватсап номеріне жазасыз: «Менің марапат қағазымда (осы жақша ішіне қалай дұрыстау керектігін жазыңыз) қателік кетіп қалды. Дұрыстап алуға сіздердің көмектеріңіз қажет» деп, ЖСН-ңізді қоса жазыңыз. Сізге, дұрысталғын марапат қағазының сілтемесі жіберіледі.
+                                            Жауап: Қатені жөндеу үшін <a class="btn-link" href="https://wa.me/77754037284">+7(775) 403 72 84</a> ватсап номеріне жазасыз: «Менің марапат қағазымда (осы жақша ішіне қалай дұрыстау керектігін жазыңыз) қателік кетіп қалды. Дұрыстап алуға сіздердің көмектеріңіз қажет» деп, ЖСН-ңізді қоса жазыңыз. Сізге, дұрысталғын марапат қағазының сілтемесі жіберіледі.
                                         </p>
                                     </div>
                                 </div>
@@ -225,11 +207,9 @@ use yii\helpers\Url; ?>
                                 <div id="faqs-collapseThree8" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree8" data-bs-parent="#faqs-accordionExamplec3">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Олимипиадалар бойынша ватсапқа жазасыз:
-                                            <br><a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
+                                            Олимипиадалар бойынша ватсапқа жазасыз: <a href="https://wa.me/77754037284">+7(775) 403 72 84</a>
 
-                                            <br>Журналға материал жариялау бойынша:
-                                            <br><a href="https://wa.me/77786252078">https://wa.me/77786252078</a>
+                                            <br>Журналға материал жариялау бойынша: <a href="https://wa.me/77786252078">+7(778) 625 20 78</a>
                                             <br>Кері байланысты сабырмен күтесіздер. 24 сағат ішінде жауап беріледі.
                                         </p>
                                     </div>
@@ -250,7 +230,6 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

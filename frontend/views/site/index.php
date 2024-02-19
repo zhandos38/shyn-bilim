@@ -107,42 +107,9 @@ $this->registerMetaTag([
     </div>
 </div>
 
-<div class="bg-color-white rbt-section-gapTop">
+<div class="bg-color-white rbt-section-gapTop rbt-section-gapBottom">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <a href="<?= Url::to(['cabinet/index']) ?>" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/profile.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">ЖЕКЕ КАБИНЕТ</h5>
-                            <small class="menu-card__desc">
-                                Барлық жетістік осында
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3">
-                <a href="#" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/shyn-bonus.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">
-                                ShynBonus
-                            </h5>
-                            <small class="menu-card__desc">
-                                Жеңімпаз бол,
-                                Планшет ұтып ал!
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
             <div class="col-md-3">
                 <a href="<?= Url::to(['book/index']) ?>" class="menu-card">
                     <div>
@@ -250,24 +217,6 @@ $this->registerMetaTag([
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="<?= Url::to(['magazine/index']) ?>" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/magazine.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">
-                                ЖУРНАЛ
-                            </h5>
-                            <small class="menu-card__desc">
-                                Шығармашылық баспалдағына
-                                бірге көтерілеміз!
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3">
                 <a href="<?= Url::to(['site/questions']) ?>" class="menu-card">
                     <div>
                         <div>
@@ -301,235 +250,6 @@ $this->registerMetaTag([
                     </div>
                 </a>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="rbt-section-gapTop rbt-section-gapBottom" style="background-color: #04Bab6; margin-top: 120px">
-    <div class="container">
-        <div class="balls-hero" style="text-align: center">
-            <h2 style="color: #fff">ShynBonus жина да, жүлделер жеңіп ал!</h2>
-            <p class="text-white">
-                Тек оқушылар үшін!
-            </p>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/tablet.png" alt="menu-icon">
-                            </div>
-                            <div class="shynbonus-box mt-4">
-                                <h5 class="mb--0">
-                                    Планшет
-                                </h5>
-                                <div class="shynbonus-box__text">
-                                    600 <br> ShynBonus
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/park.png" alt="menu-icon">
-                            </div>
-                            <div class="shynbonus-box mt-4">
-                                <h5 class="mb--0">
-                                    Паркке билет
-                                </h5>
-                                <div class="shynbonus-box__text">
-                                    570 <br> ShynBonus
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/books.png" alt="menu-icon">
-                            </div>
-                            <div class="shynbonus-box mt-4">
-                                <h5 class="mb--0">
-                                    КІТАПТАР
-                                </h5>
-                                <div class="shynbonus-box__text">
-                                    550 <br> ShynBonus
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="prize-card">
-                        <div>
-                            <div>
-                                <img style="height: 200px" src="/img/prize-icon/bag.png" alt="menu-icon">
-                            </div>
-                            <div class="shynbonus-box mt-4">
-                                <h5 class="mb--0">
-                                    РЮКЗАК
-                                </h5>
-                                <div class="shynbonus-box__text">
-                                    530 <br> ShynBonus
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h2 class="title mt--40" style="color: #fff">ShynBonus қалай жинаймын?</h2>
-            <p class="text-white">
-                Ол үшін платформаға  ЖАЗЫЛ, ТҰРАҚТЫ ОҚЫРМАН бол!
-                <br>
-                Қараша-желтоқсан айларында берілген тапсырмаларды ретімен орындап, <b>ShynBonus</b> жина.
-            </p>
-            <div class="row justify-content-center gap-5 balls-hero__wrapper" style="margin-top: 40px">
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" style="height: 116px;margin-left: 6px;" src="/img/balls-hero/logo3.svg" alt="logo3">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo3">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            “Шың кітапханасы”. <br> Кітап оқу
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo4.svg" alt="logo4">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo4">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            “Алтын қыран-ерекше дарын иесі” олимпиадасы
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="balls-hero__item">
-                        <div class="balls-hero__item-img">
-                            <img class="balls-hero__item1" src="/img/balls-hero/logo5.svg" alt="logo5">
-                            <img class="balls-hero__item2" src="/img/balls-hero/logoBg.svg" alt="logo5">
-                        </div>
-                        <div class="balls-hero__item-title">
-                            "жақсылық жаса, жас ұрпақ".
-                            <br>
-                            ЭССЕ ЖАРИЯЛАУ
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="load-more-btn mt--60 text-center">
-            <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse" href="<?= Url::to(['cabinet/index']) ?>">
-                <span class="icon-reverse-wrapper">
-                    <span class="btn-text">Жазылу</span>
-                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                </span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="rbt-pricing-area rbt-section-gapTop rbt-section-gapBottom bg-color-light">
-    <div id="about-payment" class="container">
-        <div class="row g-5 mb--60">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="section-title text-start">
-                    <span class="subtitle bg-pink-opacity">Жазылу жарнасы</span>
-                    <h2 class="title">Жазылу тарифтері</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row row--15 gx-0 ">
-            <!-- Start Single Pricing  -->
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="rbt-flipbox">
-                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-2">
-                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
-                            <div class="icon">
-                                <img src="/images/icons/pricing-icon-02.png" alt="card-icon">
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">ПЕДАГОГТЕР, ТӘРБИЕШІЛЕР ҮШІН</a></h5>
-                                <h6 class="title"><a href="#">3 000 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
-                            <p style="font-size: 16px">
-                                1. “ТАБЫСТЫ СЫНЫП ЖЕТЕКШІ-2023" байқауына қатысу ТЕГІН. <br>
-                                (1 қараша мен 20 желтоқсан аралығы)
-                                <br>
-                                2. “ЕҢ БІЛІМДІ ПЕДАГОГ-2023" олимпиадасына қатысу ТЕГІН. <br>
-                                (15-20 қараша аралығы)
-                                <br>
-                                3. МАТЕРИАЛ жариялау 2 рет ТЕГІН. <br>
-                                (01 қараша-31 желтоқсан аралығы)
-                                <br>
-                                4. “ОҚУҒА ҚҰШТАР МҰҒАЛІМ ” марафонына қатысу ТЕГІН. <br>
-                                (01 қараша-31 желтоқсан аралығы)
-                            </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Толығырақ">Жазылу</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Pricing  -->
-
-            <!-- Start Single Pricing  -->
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="rbt-flipbox">
-                    <div class="rbt-flipbox-wrap rbt-service rbt-service-1 card-bg-3">
-                        <div class="rbt-flipbox-front rbt-flipbox-face inner">
-                            <div class="icon">
-                                <img src="/images/icons/pricing-icon-01.png" alt="card-icon">
-                            </div>
-                            <div class="content">
-                                <h5 class="title">
-                                    <a href="#">
-                                        ТӘРБИЕЛЕНУШІЛЕР, ОҚУШЫЛАР,
-                                        СТУДЕНТТЕР ҮШІН
-                                    </a>
-                                </h5>
-                                <h6 class="title"><a href="#">1500 теңге / 2 айға жазылу</a></h6>
-                                <a class="rbt-btn-link stretched-link" href="#">Толығырақ<i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="rbt-flipbox-back rbt-flipbox-face inner">
-                            <p style="font-size: 16px">
-                                1. <span style="text-transform: uppercase">“Шың кітапханасы”</span>. Кітап оқу ТЕГІН! <br>
-                                (1 қарашадан жыл соңына дейін)
-                                <br>
-                                2. “ҮЙ ТАПСЫРМАСЫН" орындау ТЕГІН! <br>
-                                ( 4 қарашадан бастап әр аптаның сенбісі күні 20-ші желтоқсанға дейін)
-                                <br>
-                                3. «АЛТЫН ҚЫРАН» пәндер олимпиадасына қатысу ТЕГІН! <br>
-                                (20-25 қараша аралығы)
-                                <br>
-                                4. «Жақсылық жаса, Жас ұрпақ» Материалдар базасы бөліміне Эссе жариялау ТЕГІН. <br>
-                               (1 қарашадан жыл соңына дейін)
-                            </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Толығырақ">Жазылу</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Pricing  -->
-
         </div>
     </div>
 </div>
@@ -576,8 +296,8 @@ $this->registerMetaTag([
                                 Белдесу, Саққұлақ, Тымпи, Тоғызқұмалақ т.б.)
                                 физикалық, зияткерлік тұрғыдан дамиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Жазылу">Жазылу</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
+                                <span data-text="Жазылу">Кітапханаға өту</span>
                             </a>
                         </div>
                     </div>
@@ -608,8 +328,8 @@ $this->registerMetaTag([
                                 қалдырған мұралармен танысады.
                                 Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Жазылу">Жазылу</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
+                                <span data-text="Жазылу">Кітапханаға өту</span>
                             </a>
                         </div>
                     </div>
@@ -640,8 +360,8 @@ $this->registerMetaTag([
                                 абыздар, ағартушылар мен ұлт зиялыларымен
                                 танысады. Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Жазылу">Жазылу</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
+                                <span data-text="Жазылу">Кітапханаға өту</span>
                             </a>
                         </div>
                     </div>
@@ -668,8 +388,8 @@ $this->registerMetaTag([
                             <p style="font-size: 16px">
                                 -
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['cabinet/index']) ?>">
-                                <span data-text="Жазылу">Жазылу</span>
+                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
+                                <span data-text="Жазылу">Кітапханаға өту</span>
                             </a>
                         </div>
                     </div>
