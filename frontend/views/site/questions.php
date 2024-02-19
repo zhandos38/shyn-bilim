@@ -43,7 +43,8 @@ use yii\helpers\Url; ?>
                                 <div id="collapseThree1" class="accordion-collapse collapse" aria-labelledby="headingThree1" data-bs-parent="#accordionExamplec3" style="">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Жауап: Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз. Қосымша сұрақтарыңыз болса: https://wa.me/77786252078 WhatsApp номеріне жазасыз.
+                                            Жауап: Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз төмендегі батырманы басыңыз.
+                                            Қосымша сұрақтарыңыз болса: <a href="https://wa.me/77786252078">+7(778) 625 20 78</a> WhatsApp номеріне жазасыз.
                                         </p>
                                         <br>
                                         <a class="rbt-btn" href="<?= Url::to(['article/check-cert']) ?>">Сертифика қайта жүктеу</a>
@@ -86,7 +87,6 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,13 @@ use yii\helpers\Url; ?>
                                 <div id="faqs-collapseThree1" class="accordion-collapse collapse show" aria-labelledby="faqs-headingThree1" data-bs-parent="#faqs-accordionExamplec3" style="">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Жауап: Сайттан төлем жасау қиындық туғызған жағдайда 8(775) 076-78-76 Бахыткүл каспий голд номеріне төлем жасап, төлем чекті және қатысушы ЖСН-ін <a class="btn-link" href="https://wa.me/77754037284">+7(775)403 72 84</a> ватсапқа жіберу керек.
+                                            Сайттан төлем жасау қиындық туғызған жағдайда, мына сілтемені
+                                            <a href="https://pay.kaspi.kz/pay/lzlvssh5">kaspi</a>
+                                            басып, 500 тг жазу арқылы төлем жасап, чекті және қатысушы оқушының ЖСН-ін төмендегі вадсап номерлердің біріне ғана жіберу керек
+                                            <a class="btn-link" href="https://wa.me/77754243727">+7(775)424 37 27</a>
+                                            <a class="btn-link" href="https://wa.me/77754037284">+7(775)403 72 84</a>
+                                            <br>
+                                            «ТІРКЕЛДІ» деген жауап алғаннан кейін олимпиадаға қатысуға болады.
                                         </p>
                                     </div>
                                 </div>
@@ -125,6 +131,22 @@ use yii\helpers\Url; ?>
                                     <div class="accordion-body card-body">
                                         <p>
                                             Жоқ, болмайды. Төлем жасалғаннан кейін тапсырма бірден ашылады.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item card">
+                                <h2 class="accordion-header card-header" id="faqs-headingThree11">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree11" aria-expanded="false" aria-controls="faqs-collapseThree11">
+                                        Жарна төленді. «Тіркелді» деген жауап алдым. Бірақ сайтта «Төлем жасау» беті  шығып тұр. Не істеуге болады?
+                                    </button>
+                                </h2>
+                                <div id="faqs-collapseThree11" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree11" data-bs-parent="#faqs-accordionExamplec11">
+                                    <div class="accordion-body card-body">
+                                        <p>
+                                            Сіз тіркеткен ЖСН-ді анкетаға жазған ЖСН-мен салыстырып көріңіз. Қате ЖСН-мен қатыса алмайсыз. Егер ондай қателік болмаса,
+                                            тексеру <a href="https://wa.me/77786252078">+7(778) 625 20 78</a> осы ватсап номерге ЧЕК+ЖСН қайта жіберіңіз.
                                         </p>
                                     </div>
                                 </div>
@@ -207,7 +229,9 @@ use yii\helpers\Url; ?>
                                 <div id="faqs-collapseThree8" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree8" data-bs-parent="#faqs-accordionExamplec3">
                                     <div class="accordion-body card-body">
                                         <p>
-                                            Олимипиадалар бойынша ватсапқа жазасыз: <a href="https://wa.me/77754037284">+7(775) 403 72 84</a>
+                                            Олимипиадалар бойынша ватсапқа жазасыз:
+                                            <a href="https://wa.me/77754243727">+7(775) 424 37 27</a>
+                                            <a href="https://wa.me/77754037284">+7(775) 403 72 84</a>
 
                                             <br>Журналға материал жариялау бойынша: <a href="https://wa.me/77786252078">+7(778) 625 20 78</a>
                                             <br>Кері байланысты сабырмен күтесіздер. 24 сағат ішінде жауап беріледі.
