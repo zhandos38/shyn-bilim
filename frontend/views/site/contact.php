@@ -32,11 +32,16 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <h4><?= Yii::t('app', 'Контактные телефоны'); ?></h4>
                 <ul class="phone-list" style="padding: 0">
                     <li class="contact-list__item">
-                        <a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a>
+                        Олимпиада: <a href="tel:87754037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
-                        <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
-                        <a href="tel:87786252078"><i class="fa fa-phone"></i> +7(778) 625 20 78 ( WhatsApp )</a>
+                        Олимпиада: <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27 ( WhatsApp )</a>
+                    </li>
+                    <li class="contact-list__item">
+                        Редакция: <a href="tel:87786252078"><i class="fa fa-phone"></i> +7(778) 625 20 78 ( WhatsApp )</a>
+                    </li>
+                    <li class="contact-list__item">
+                        Полиграфия: <a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
                         <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>

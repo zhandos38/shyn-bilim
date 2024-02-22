@@ -52,16 +52,16 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse" href="<?= Url::to(['site/signup']) ?>">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=18">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">ТІРКЕЛЕМІН</span>
+                                        <span class="btn-text">"АЛТЫН ҰРПАҚ -2024" ОЛИМПИАДАСЫНА ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white" href="#about-payment">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="#about-payment">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">ТӨЛЕМ</span>
+                                        <span class="btn-text">ЕРЕЖЕ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
