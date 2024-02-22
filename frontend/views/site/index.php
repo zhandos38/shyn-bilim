@@ -76,24 +76,12 @@ $this->registerMetaTag([
                                     <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
-                                                <a href="#">
-                                                    <img src="/img/hero/1.jpg" style="width: 100%" alt="banner-part1.png">
+                                                <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=18">
+                                                    <img src="/img/altyn-urpaq-2024/banner.jpg" style="width: 100%" alt="banner-part1.png">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide-shadow" style="opacity: 0; transition-duration: 0ms;"></div></div>
-                                    <!-- End Single Card  -->
-
-                                    <!-- Start Single Card  -->
-                                    <div class="swiper-slide swiper-slide-next" style="width: 390px; z-index: 2; transform: translate3d(calc(-390px + 7.25%), 0px, -100px) rotateZ(2deg) scale(1); transition-duration: 0ms;" role="group" aria-label="2 / 3">
-                                        <div class="rbt-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="#">
-                                                    <img src="/img/hero/2.jpg" style="width: 100%" alt="Card image">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide-shadow" style="opacity: 1; transition-duration: 0ms;"></div></div>
                                     <!-- End Single Card  -->
 
                                 </div>
