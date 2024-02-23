@@ -21,13 +21,7 @@ $this->registerMetaTag([
     }
 </style>
 <div class="slider-area rbt-banner-5 height-750 bg_image" style="position: relative" data-gradient-overlay="7">
-    <div style="    position: absolute;
-    bottom: 36px;
-    left: 5px;
-    width: 160px;
-    height: 160px;
-    z-index: 999;
-    opacity: 1;">
+    <div class="slider-oyu">
         <img src="/img/hero/oyu.png" alt="oyu">
     </div>
     <div class="container">
@@ -416,9 +410,23 @@ $this->registerMetaTag([
     content: unset;
 }
 
+.slider-oyu {
+    position: absolute;
+    bottom: 36px;
+    left: 5px;
+    width: 160px;
+    height: 160px;
+    z-index: 3;
+    opacity: 1;
+}
 @media only screen and (max-width: 768px) {
     .banner-btn {
         font-size: 11px;
+    }
+
+    .slider-oyu {
+        width: 80px;
+        height: 80px;
     }
 }
 </style>
