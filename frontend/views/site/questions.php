@@ -393,7 +393,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree4" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree4" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Иә, тапсыра аласыз. Бірақ тест тапсырмалары басынан басталады. Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
+                                                Да, Вы сможете. Но тестовые задания начнутся с самого начала. Нажмите кнопку ниже, чтобы вернуться к заданию.
                                             </p>
                                             <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
                                         </div>

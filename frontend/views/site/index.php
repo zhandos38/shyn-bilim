@@ -55,7 +55,7 @@ $this->registerMetaTag([
                             <div>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">"АЛТЫН ҰРПАҚ -2024" ОЛИМПИАДАСЫНА ҚАТЫСУ</span>
+                                        <span class="btn-text banner-btn">"АЛТЫН ҰРПАҚ -2024" ОЛИМПИАДАСЫНА ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
@@ -388,31 +388,37 @@ $this->registerMetaTag([
 </div>
 
 <style>
-    .balls-hero__item-img {
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-    .balls-hero__item-title {
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 20px;
-    }
-    .balls-hero__item1 {
-        width: 120px;
-    }
-    .balls-hero__item2 {
-        width: 120px;
-        position: absolute;
-    }
+.balls-hero__item-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.balls-hero__item-title {
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.balls-hero__item1 {
+    width: 120px;
+}
+.balls-hero__item2 {
+    width: 120px;
+    position: absolute;
+}
 
-    .banner-list {
-        list-style-type: disc !important;
+.banner-list {
+    list-style-type: disc !important;
+}
+.banner-list li {
+    color: white;
+}
+.banner-list li::marker {
+    content: unset;
+}
+
+@media only screen and (max-width: 768px) {
+    .banner-btn {
+        font-size: 11px;
     }
-    .banner-list li {
-        color: white;
-    }
-    .banner-list li::marker {
-        content: unset;
-    }
+}
 </style>
