@@ -411,12 +411,12 @@ $this->registerMetaTag([
 }
 
 .slider-oyu {
-    position: absolute;
+    position: absolute !important;
     bottom: 36px;
     left: 5px;
     width: 160px;
     height: 160px;
-    z-index: 3;
+    z-index: 3 !important;
     opacity: 1;
 }
 @media only screen and (max-width: 768px) {
