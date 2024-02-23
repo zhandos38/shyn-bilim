@@ -51,15 +51,16 @@ $this->registerMetaTag([
                                 </ul>
                             </div>
 
+                            <?php if ($olympiad): ?>
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=18">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">"АЛТЫН ҰРПАҚ -2024" ОЛИМПИАДАСЫНА ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="#about-payment">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiad->getFile() ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -67,6 +68,7 @@ $this->registerMetaTag([
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; ?>
                         </div>
                         <div class="col-md-6 mt-4 mt-lg-0">
                             <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
