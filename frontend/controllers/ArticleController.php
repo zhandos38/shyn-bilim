@@ -261,18 +261,18 @@ class ArticleController extends Controller
                 ]);
             }
 
-//            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
-//            if ($whiteList !== null) {
-//                $model->status = Article::STATUS_ACTIVE;
-//            }
+            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
+            if ($whiteList !== null) {
+                $model->status = Article::STATUS_ACTIVE;
+            }
 
             if ($model->save() && $model->upload()) {
-//                if ($whiteList !== null) {
-//                    $whiteList->limit = $whiteList->limit - 1;
-//                    $whiteList->save();
-//
-//                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
-//                }
+                if ($whiteList !== null) {
+                    $whiteList->limit = $whiteList->limit - 1;
+                    $whiteList->save();
+
+                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
+                }
 
                 $salt = $this->getSalt(8);
                 $request = [
