@@ -31,11 +31,8 @@ $this->registerMetaTag([
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <h1 class="title display-one">
-                                BILIM-SHINI.KZ
+                                Педагогтерге, балаларға, <br> ата-аналарға арналған платформа
                             </h1>
-                            <p class="description">
-                                Педагогтерге, балаларға, ата-аналарға арналған
-                            </p>
                             <div class="description">
                                 Ең үздік, ең креативті тұлғалар:
                                 <ul class="banner-list">
