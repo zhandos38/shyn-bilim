@@ -16,7 +16,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div style="font-size: 28px; margin-top: 8px">
                 <b><?= $place ?></b>
             </div>
-            <div style="padding-top: 5px; padding-left: 90px; height: 100px; width: 420px">
+            <div style="padding-top: 30px; padding-left: 90px; height: 100px; width: 420px">
                 <div>
                     2-11 сынып оқушылары арасында өткен <br> республикалық "Алтын ұрпақ" зияткерлік <br> олимпиадасының жеңімпазы
                 </div>

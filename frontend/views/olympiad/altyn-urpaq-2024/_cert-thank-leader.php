@@ -17,9 +17,12 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 <div>
                     <span style="color: red"><b>“ALTYN URPAQ"</b></span>
                     <br>
-                    Республикалық зияткерлік олимпиадасына дайндаған оқушысы жүлделі орын <br> иеленгені үшін
+                    Республикалық зияткерлік олимпиадасына дайындаған оқушысы
+                    <br>
+                    <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+                    <br> жүлделі орын иеленгені үшін
                 </div>
-                <div style="padding-top: 60px">
+                <div style="padding-top: 30px">
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
