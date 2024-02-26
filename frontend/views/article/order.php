@@ -1,7 +1,7 @@
 <?php
 use kartik\file\FileInput;
 use kartik\select2\Select2;
-use yii\bootstrap5\ActiveForm;
+use kartik\form\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\widgets\MaskedInput;
 

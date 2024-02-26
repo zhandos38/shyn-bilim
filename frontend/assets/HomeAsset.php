@@ -59,6 +59,8 @@ class HomeAsset extends AssetBundle
         'js/script.js',
     ];
     public $depends = [
+        'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap5\BootstrapPluginAsset',
         'yii\web\YiiAsset',
     ];
 }
