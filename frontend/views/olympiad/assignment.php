@@ -127,13 +127,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </div>
         </div>
 
-        <div class="row mt--40">
-            <h3>Толем</h3>
-            <div class="col-md-3">
-                <?= $form->field($model, 'teacher_type_name')->dropdownList([ 'card' => 'VISA/MasterCard карта', 'kaspipay' => 'Kaspi Pay арқылы' ])->label('Төлем тәсілдері') ?>
-            </div>
-        </div>
-
         <div class="mt--40">
             <?= Html::submitButton('Олимпиада бастау', ['class' => 'rbt-btn btn-gradient']) ?>
         </div>
