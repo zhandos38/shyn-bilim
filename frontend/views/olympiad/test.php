@@ -19,9 +19,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             </span>
             <div class="question-box" v-if="questions[currentQuestionId]">
                 <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
-                <br>
-                <b>{{ typeof questions[currentQuestionId].selectedAnswerId !== 'undefined' ? 'Выбран ответ: ' + (questions[currentQuestionId].selectedAnswerId + 1) : 'Ответ не выбран' }}</b>
-                <br><br>
                 <div class="question-box__container">
                     <div class="question-box__answer" v-for="(answer, key) in questions[currentQuestionId].answers">
                         <input v-bind:id="answer.id" class="question-box__answer-input" type="radio" :name="'question' + questions[currentQuestionId].id" @click="selectAnswer(key)">
@@ -30,8 +27,11 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                 </div>
             </div>
             <div class="mt--20">
+                <b>{{ typeof questions[currentQuestionId].selectedAnswerId !== 'undefined' ? 'Выбран ответ: ' + (questions[currentQuestionId].selectedAnswerId + 1) : 'Ответ не выбран' }}</b>
+            </div>
+            <div class="mt--10">
                 <button id="nextQuestionButton" class="rbt-btn" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
-                <button class="rbt-btn site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
+                <button class="rbt-btn rbt-gradient site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
             </div>
         </div>
         <div v-else>
