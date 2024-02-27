@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             </span>
             <div class="question-box mt--10" v-if="questions[currentQuestionId]">
                 <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
-                <div class="question-box__container">
+                <div class="question-box__container mt--10">
                     <div class="question-box__answer" v-for="(answer, key) in questions[currentQuestionId].answers">
                         <input v-bind:id="answer.id" class="question-box__answer-input" type="radio" :name="'question' + questions[currentQuestionId].id" @click="selectAnswer(key)">
                         {{ (key + 1) + ')' }} <label v-bind:for="answer.id" class="question-box__answer-text" v-html="answer.text"></label>
