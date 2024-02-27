@@ -38,6 +38,17 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <div class="col-md-3">
                 <?= $form->field($model, 'patronymic') ?>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                ]) ?>
+            </div>
             <div class="col-md-3">
                 <?= $form->field($model, 'iin') ?>
             </div>
@@ -61,40 +72,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <div class="row mt--40">
             <h3>Мектеп</h3>
             <div class="col-md-3">
-                <?= $form->field($model, 'lang')->dropDownList([
-                    'kz' => 'Қазақша',
-                    'ru' => 'Русский',
-                ]) ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'teacher_name') ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'teacher_type_name')->dropdownList([
-                    'Бастауыш мұғалімі' => 'Бастауыш мұғалімі',
-                    'Ағылшын тілі пәні мұғалімі' => 'Ағылшын тілі пәні мұғалімі',
-                    'Орыс тілі және әдебиет пәні мұғалімі' => 'Орыс пәні мұғалімі',
-                    'Математика пәні мұғалімі' => 'Математика мұғалімі',
-                    'Қазақ тілі мен әдебиет пәні мұғалімі' => 'Қазақ тілі мен әдебиет пәні мұғалімі',
-                    'Дүниетану пәні мұғалімі' => 'Дүниетану пәні мұғалімі',
-                    'Тарих пәні мұғалімі' => 'Тарих пәні мұғалімі',
-                    'Жаратылыстану пәні мұғалімі' => 'Жаратылыстану пәні мұғалімі',
-                    'Информатика пәні мұғалімі' => 'Информатика пәні мұғалімі',
-                    'Физика пәні мұғалімі' => 'Физика пәні мұғалімі',
-                    'Биология пәні мұғалімі' => 'Биология пәні мұғалімі',
-                    'Химия пәні мұғалімі' => 'Химия пәні мұғалімі',
-                    'География пәні мұғалімі' => 'География пәні мұғалімі',
-                    'Көркем еңбек пәні мұғалімі' => 'Көркем еңбек пәні мұғалімі',
-                    'Кітапханашы ' => 'Кітапханашы',
-                    'Дене шынықтыру пәні мұғалімі' => 'Дене шынықтыру пәні мұғалімі',
-                    'Өзбек тілі мен әдебиеті пәні мұғалімі' => 'Өзбек тілі мен әдебиеті пәні мұғалімі',
-                    'Мектеп алды даярлық мұғалім' => 'Мектеп алды даярлық мұғалім',
-                    'Мектеп алды даярлық тобы жетекшісі' => 'Мектеп алды даярлық тобы жетекшісі',
-                ], [
-                    'prompt' => Yii::t('app', 'Выберите преподавателя')
-                ]) ?>
-            </div>
-            <div class="col-md-6">
                 <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
                     'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
                         return htmlspecialchars_decode($model['name']);
@@ -104,13 +81,17 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
             </div>
             <div class="col-md-3">
-                <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_STUDENT]), 'id', 'name'), [
-                    'id' => 'subject_id-select',
-                    'prompt' => Yii::t('app', Yii::t('app', 'Выберите предмет'))
+                <?= $form->field($model, 'lang')->dropDownList([
+                    'kz' => 'Қазақша',
+                    'ru' => 'Русский',
                 ]) ?>
             </div>
             <div class="col-md-3">
+                <?= $form->field($model, 'teacher_name') ?>
+            </div>
+            <div class="col-md-3">
                 <?= $form->field($model, 'grade')->dropDownList([
+                    1 => '1',
                     2 => '2',
                     3 => '3',
                     4 => '4',
@@ -124,13 +105,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 ], [
                     'prompt' => Yii::t('app', 'Выберите класс')
                 ]) ?>
-            </div>
-        </div>
-
-        <div class="row mt--40">
-            <h3>Толем</h3>
-            <div class="col-md-3">
-                <?= $form->field($model, 'teacher_type_name')->dropdownList([ 'card' => 'VISA/MasterCard карта', 'kaspipay' => 'Kaspi Pay арқылы' ])->label('Төлем тәсілдері') ?>
             </div>
         </div>
 
