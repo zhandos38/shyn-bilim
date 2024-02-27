@@ -100,6 +100,7 @@ class OlympiadController extends Controller
     public function actionAssignment($id)
     {
         $model = new TestAssignment();
+        $model->olympiad_id = $id;
 
         $olympiad = Olympiad::findOne(['id' => $id]);
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
@@ -115,7 +116,7 @@ class OlympiadController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // check for finish
             $testAssignment = TestAssignment::find()
-                ->andWhere(['olympiad_id' => $model->olympiad_id, 'phone' => $model->phone, 'status' => TestAssignment::STATUS_FINISHED])
+                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])
                 ->one();
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест өтіліп қойылған, егерде өтпеген болсаңыз бізге хабарласыңыз, Рахмет!'));
@@ -146,7 +147,6 @@ class OlympiadController extends Controller
 
             return $this->redirect(['test', 'assignment' => $model->id]);
         }
-//        VarDumper::dump($model->errors); die;
 
         return $this->render('assignment', [
             'model' => $model,
