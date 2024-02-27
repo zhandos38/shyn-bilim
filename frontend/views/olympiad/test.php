@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                 </div>
             </div>
             <div>
-                <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
-                <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
+                <button id="nextQuestionButton" class="rbt-btn" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
+                <button class="rbt-btn site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
             </div>
         </div>
         <div v-else>
