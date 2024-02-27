@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
             <span style="font-size: 12px">
                 <i>ТЕСТТІ СКРИНШОТТАУҒА, WHATSAPP ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТЫЙЫМ САЛЫНАДЫ</i>
             </span>
-            <div class="question-box" v-if="questions[currentQuestionId]">
+            <div class="question-box mt--10" v-if="questions[currentQuestionId]">
                 <div class="question-box__text" v-html="questions[currentQuestionId].text"></div>
                 <div class="question-box__container">
                     <div class="question-box__answer" v-for="(answer, key) in questions[currentQuestionId].answers">
