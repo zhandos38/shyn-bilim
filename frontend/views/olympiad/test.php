@@ -13,10 +13,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         <h1><?= $this->title ?></h1>
         <div class="test-app__timer"><?= Yii::t('app', 'Оставшееся время:') ?> {{ timer }}</div>
         <div v-if="!showResultActive">
-            <div>
-                <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
-                <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
-            </div>
             <div class="questions-count"><?= Yii::t('app', 'Вопрос') ?>: {{ currentQuestionId + 1 }}/{{ questions.length }}</div>
             <span style="font-size: 12px">
                 <i>ТЕСТТІ СКРИНШОТТАУҒА, WHATSAPP ЖЕЛІЛЕРІНЕ ТАРАТУҒА ҚАТАҢ ТЫЙЫМ САЛЫНАДЫ</i>
@@ -32,6 +28,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
                         {{ (key + 1) + ')' }} <label v-bind:for="answer.id" class="question-box__answer-text" v-html="answer.text"></label>
                     </div>
                 </div>
+            </div>
+            <div>
+                <button id="nextQuestionButton" class="btn btn-info" @click="setNextQuestion"><?= Yii::t('app', 'Следующий вопрос') ?> <i class="fa fa-arrow-right"></i></button>
+                <button class="btn btn-success site-button" v-on:click="showResults" v-if="(currentQuestionId + 1) === questions.length"><i class="fa fa-flag-checkered"></i> <?= Yii::t('app', 'Завершить') ?></button>
             </div>
         </div>
         <div v-else>
