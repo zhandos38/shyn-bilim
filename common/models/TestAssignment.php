@@ -65,7 +65,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             ['lang', 'string', 'max' => 2],
             [['city_id', 'region_id', 'status'], 'integer'],
 
-            [['name', 'surname', 'phone', 'lang', 'school_id', 'subject_id'], 'required'],
+            [['name', 'surname', 'phone', 'lang', 'school_id'], 'required'],
         ];
     }
 
