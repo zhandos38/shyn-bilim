@@ -36,12 +36,13 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         </div>
         <div v-else>
             <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
-            <div>
+            <div class="mt--20">
                 <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить сертификат/диплом') ?>
                 </a>
-                <br>
+            </div>
+            <div class="mt--10">
                 <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
