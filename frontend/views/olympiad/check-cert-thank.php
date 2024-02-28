@@ -1,8 +1,8 @@
 <?php
 
 use frontend\models\CheckAssignmentForm;
-use yii\bootstrap4\ActiveForm;
-use yii\bootstrap4\Html;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Html;
 use yii\web\View;
 
 /* @var $this View */
@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <div class="row">
     <div class="col-md-4">
         <?= $form->field($model, 'iin') ?>
+
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
