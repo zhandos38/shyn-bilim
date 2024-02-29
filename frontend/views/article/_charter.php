@@ -9,7 +9,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
 ?>
 <div class="cert-page" style="background-image: url('/img/article/charter.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
     <div id="cert-name" style="height: 200px; padding-top: 540px; padding-left: 170px; width: 460px; text-align: center">
-        <div id="cert-city" style="padding-top: 0; font-size: 14px; color: #000000; text-align: center;">
+        <div id="cert-city" style="padding-top: 0; font-size: 18px; color: #000000; text-align: center;">
             <?php
             if ($model->school !== null) {
                 if ($model->school->city_id === 1 || $model->school->city_id === 2 || $model->school->city_id === 3) {
@@ -20,10 +20,10 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 14px; color: #000000; text-align: center; line-height: 110%;">
+        <div id="cert-school" style="font-size: 18px; color: #000000; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
         </div>
-        <div style="text-transform: uppercase; padding-top: 20px;">
+        <div style="text-transform: uppercase; padding-top: 40px;">
                 <?php if ($model->subject->is_not_subject): ?>
                     <?= $model->subject->name_kz ?>
                 <?php else: ?>
