@@ -11,14 +11,14 @@ use yii\helpers\Url;
         <li class="position-static">
             <a href="<?= Url::to(['news/index']) ?>"><?= Yii::t('app', 'Блог') ?></a>
         </li>
-        <li class="position-static">
-            <a href="<?= Url::to(['book/index']) ?>">Кітапхана</a>
-        </li>
+<!--        <li class="position-static">-->
+<!--            <a href="--><?//= Url::to(['book/index']) ?><!--">Кітапхана</a>-->
+<!--        </li>-->
         <li class="position-static">
             <a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
         </li>
         <li class="position-static">
-            <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Материалдар базасы') ?></a>
+            <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
         </li>
         <li class="position-static">
             <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>

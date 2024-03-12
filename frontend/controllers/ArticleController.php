@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\Article;
+use common\models\ArticleMagazine;
 use common\models\Subject;
 use frontend\models\ArticleSearch;
 use frontend\models\MyArticleSearch;
@@ -29,9 +30,20 @@ class ArticleController extends Controller
 {
     public function actionIndex()
     {
-        $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
+        $magazines = ArticleMagazine::find()->all();
 
         return $this->render('index', [
+            'magazines' => $magazines
+        ]);
+    }
+
+    public function actionView($id)
+    {
+        $magazine = ArticleMagazine::findOne(['id' => $id]);
+        $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
+
+        return $this->render('view', [
+            'magazine' => $magazine,
             'subjects' => $subjects
         ]);
     }

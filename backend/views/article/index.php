@@ -18,17 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="project-article-index">
 
-    <?php
-
-    LteBox::begin([
+    <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
         'isSolid' => true,
         'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button']),
         'tooltip' => 'this tooltip description',
-        'title' => $this->title
-    ])
-
-    ?>
+        'title' => $this->title,
+    ]) ?>
 
     <?php
         $gridColumns = [
@@ -48,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'topic',
             'file',
+            'magazine',
             [
                 'attribute' => 'status',
                 'value' => function(Article $model) {
@@ -83,6 +80,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumns,
+        'options' => [
+            'class' => 'table-responsive'
+        ],
     ]) ?>
 
     <?php LteBox::end() ?>
