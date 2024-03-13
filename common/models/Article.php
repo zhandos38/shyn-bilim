@@ -16,6 +16,9 @@ use yii\helpers\Json;
  * @property string $patronymic
  * @property string $topic
  * @property string $file
+ * @property int $article_magazine_id
+ * @property int $grade
+ * @property string $lead_name
  * @property int $subject_id
  * @property int $status
  * @property string $iin
@@ -33,6 +36,7 @@ class Article extends \yii\db\ActiveRecord
 
     const STATUS_OFF = 0;
     const STATUS_ACTIVE = 1;
+    const STATUS_PUBLISHED = 2;
 
     public $fileTemp;
 
@@ -50,9 +54,9 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'surname', 'topic', 'subject_id', 'school_id', 'iin', 'phone'], 'required'],
-            [['subject_id', 'status', 'school_id', 'user_id', 'created_at', 'iin'], 'integer'],
-            [['name', 'surname', 'patronymic', 'topic', 'file'], 'string', 'max' => 255],
+            [['name', 'surname', 'topic', 'subject_id', 'school_id', 'article_magazine_id', 'iin', 'phone'], 'required'],
+            [['subject_id', 'status', 'school_id', 'user_id', 'created_at', 'iin', 'article_magazine_id', 'grade'], 'integer'],
+            [['name', 'surname', 'patronymic', 'topic', 'file', 'lead_name'], 'string', 'max' => 255],
             [['iin', 'phone'], 'string', 'max' => 20],
 
             [['fileTemp'], 'file', 'skipOnEmpty' => true, 'extensions' => 'pdf, doc, docx, ttf', 'maxSize' => 1024 * 1024 * 100],
@@ -74,6 +78,9 @@ class Article extends \yii\db\ActiveRecord
             'phone' => Yii::t('app', 'Номер телефона'),
             'file' => Yii::t('app', 'Файл'),
             'fileTemp' => Yii::t('app', 'Выбрать файл'),
+            'article_magazine_id' => Yii::t('app', 'Журнал'),
+            'grade' => Yii::t('app', 'Класс'),
+            'lead_name' => Yii::t('app', 'Ф.И.О преподавателя'),
             'subject_id' => Yii::t('app', 'Предмет'),
             'region_id' => Yii::t('app', 'Регион'),
             'city_id' => Yii::t('app', 'Город'),
@@ -82,6 +89,11 @@ class Article extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'Время создание'),
             'user_id' => Yii::t('app', 'Пользователь'),
         ];
+    }
+
+    public function getArticleMagazine()
+    {
+        return $this->hasOne(ArticleMagazine::className(), ['id' => 'article_magazine_id']);
     }
 
     public function getSubject()
@@ -133,6 +145,7 @@ class Article extends \yii\db\ActiveRecord
         return [
             self::STATUS_OFF => 'Не оплачен',
             self::STATUS_ACTIVE => 'Оплачен',
+            self::STATUS_PUBLISHED => 'Опубликован',
         ];
     }
 

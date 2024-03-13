@@ -1,10 +1,14 @@
 <?php
 /* @var $this \yii\web\View */
 /* @var $searchModel \frontend\models\ProjectArticleSearch */
+/** @var Integer $articleMagazineId */
+/** @var Integer $subjectId */
 
 $this->title = Yii::t('app', Yii::t('app', 'Материалы'));
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/list']];
 use yii\helpers\Url;
+use yii\widgets\ListView;
+
 ?>
 <div class="container rbt-section-gapTop rbt-section-gapBottom">
     <h1 class="site-title"><?= $this->title ?></h1>
@@ -12,7 +16,7 @@ use yii\helpers\Url;
         <div class="col-md-3">
             <div class="article-order-widget">
                 <div>
-                    <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/order', 'id' => $id]) ?>">
+                    <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/order', 'articleMagazineId' => $articleMagazineId, 'subjectId' => $subjectId]) ?>">
                         <?= Yii::t('app', 'Опубликовать материал') ?>
                     </a>
                 </div>
@@ -26,7 +30,7 @@ use yii\helpers\Url;
         </div>
     </div>
 
-    <?= \yii\widgets\ListView::widget([
+    <?= ListView::widget([
         'dataProvider' => $dataProvider,
         'itemView' => '_item',
         'layout' => '{items}',

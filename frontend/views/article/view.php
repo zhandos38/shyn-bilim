@@ -1,10 +1,13 @@
 <?php
+
+use common\models\ArticleMagazineRelease;
 use common\models\Subject;
 use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $subjects Subject */
 /* @var $subject Subject */
+/* @var $releases ArticleMagazineRelease */
 
 $this->title = Yii::t('app', 'Материалы');
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['article/index']];
@@ -181,17 +184,25 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     <div class="course-sidebar sticky-top rbt-shadow-box course-sidebar-top rbt-gradient-border">
                         <div class="inner">
 
-                            <img style="width: 400px" src="/img/article-banner1.png" alt="article-banner">
+                            <img style="width: 400px" src="<?= $magazine->getImage() ?>" alt="article-banner">
 
-                            <div style="text-align: center">
+                            <div class="mt-4" style="text-align: center">
                                 <h5>
                                     МАТЕРИАЛ ЖАРИЯЛАП, <br>
                                     ПОРТФОЛИОҒА ЖАРАМДЫ <br>
                                     МАРАПАТТАРДЫ ИЕЛЕНІҢІЗ!
                                 </h5>
-                                <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order']) ?>">
-                                    <?= Yii::t('app', 'Опубликовать материал') ?>
-                                </a>
+                                <div>
+                                    <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order', 'articleMagazineId' => $magazine->id]) ?>">
+                                        <?= Yii::t('app', 'Опубликовать материал') ?>
+                                    </a>
+                                </div>
+                                <div>
+                                    <small>Мақалңыз жарияландыма?</small>
+                                    <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order', 'articleMagazineId' => $magazine->id]) ?>">
+                                        Сертификат жүктеу
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -201,9 +212,27 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
     </div>
 <div class="container">
     <div class="row">
+        <?php foreach ($releases as $release): ?>
+            <div class="col-md-3">
+                <div class="menu-card magazine-card">
+                    <div>
+                        <div>
+                            <img class="menu-card__img magazine-img" style="height: 120px" src="<?= $release->getImage() ?>" alt="article-logo.png">
+                        </div>
+                        <div class="menu-card__text-box">
+                            <h5 class="mb--10"><?= $release->name ?></h5>
+                            <a target="_blank" href="<?= $release->getFile() ?>" class="magazine__download-link" download="<?= $release->file ?>"><i class="fa fa-download"></i> <?= Yii::t('app', 'Скачать') ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <hr class="mt-4">
+    <div class="row">
         <?php foreach ($subjects as $subject): ?>
             <div class="col-md-2">
-                <a href="<?= Url::to(['article/list', 'id' => $subject->id]) ?>">
+                <a href="<?= Url::to(['article/list', 'articleMagazineId' => $magazine->id, 'subjectId' => $subject->id]) ?>">
                     <div class="subject-list__item">
                         <div>
                             <div>
@@ -228,3 +257,12 @@ JS;
 
 $this->registerJs($js);
 ?>
+
+<style>
+    .magazine-card {
+        height: auto;
+    }
+    .magazine-img {
+        height: 100% !important;
+    }
+</style>

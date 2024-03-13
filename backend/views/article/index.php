@@ -44,7 +44,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'topic',
             'file',
-            'magazine',
+            [
+                'attribute' => 'article_magazine_id',
+                'value' => function(Article $model) {
+                    return $model->getArticleMagazine()->one() ? $model->getArticleMagazine()->one()->name : '-';
+                }
+            ],
             [
                 'attribute' => 'status',
                 'value' => function(Article $model) {
@@ -57,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(Article $model) {
                     return $model->subject !== null ? $model->subject->name : 'Не указано';
                 },
-                'filter' => ArrayHelper::map(\common\models\Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name_ru')
+                'filter' => ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name_ru')
             ],
             [
                 'attribute' => 'created_at',
