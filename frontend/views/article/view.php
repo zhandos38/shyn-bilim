@@ -193,15 +193,18 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                                     МАРАПАТТАРДЫ ИЕЛЕНІҢІЗ!
                                 </h5>
                                 <div>
-                                    <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order', 'articleMagazineId' => $magazine->id]) ?>">
+                                    <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/order', 'articleMagazineId' => $magazine->id]) ?>">
                                         <?= Yii::t('app', 'Опубликовать материал') ?>
                                     </a>
                                 </div>
                                 <div>
                                     <small>Мақалңыз жарияландыма?</small>
-                                    <a class="article-order-widget__link rbt-btn btn-gradient" href="<?= Url::to(['article/order', 'articleMagazineId' => $magazine->id]) ?>">
-                                        Сертификат жүктеу
-                                    </a>
+                                    <div>
+                                        <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-cert']) ?>">Сертифика жүктеу</a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-charter']) ?>">Грамота жүктеу</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

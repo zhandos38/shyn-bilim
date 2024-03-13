@@ -1,8 +1,8 @@
 <?php
 
 use frontend\models\CheckArticleForm;
-use yii\bootstrap4\ActiveForm;
-use yii\bootstrap4\Html;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Html;
 use yii\helpers\ArrayHelper;
 use yii\web\View;
 
