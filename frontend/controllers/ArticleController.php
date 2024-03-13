@@ -32,7 +32,7 @@ class ArticleController extends Controller
 {
     public function actionIndex()
     {
-        $magazines = ArticleMagazine::find()->all();
+        $magazines = ArticleMagazine::find()->orderBy(['order' => SORT_ASC])->all();
 
         return $this->render('index', [
             'magazines' => $magazines
