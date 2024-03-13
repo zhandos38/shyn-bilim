@@ -13,7 +13,7 @@ use yii\helpers\Url;
             <?php foreach ($magazines as $magazine): ?>
                 <div class="col-md-3">
                     <div class="menu-card magazine-card">
-                        <a href="<?= Url::to(['article/view', 'id' => $magazine->id]) ?>">
+                        <a href="<?= Url::to(['article/view', 'articleMagazineId' => $magazine->id]) ?>">
                             <div>
                                 <div>
                                     <img class="menu-card__img magazine-img" src="<?= $magazine->getImage() ?>" alt="menu-icon">

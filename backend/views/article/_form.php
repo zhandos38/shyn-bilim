@@ -1,9 +1,13 @@
 <?php
 
 use common\models\Article;
+use common\models\ArticleMagazine;
+use common\models\School;
+use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use kartik\file\FileInput;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -28,6 +32,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'article_magazine_id')->dropDownList(ArrayHelper::map(ArticleMagazine::find()->all(), 'id', 'name')) ?>
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'surname')->textInput(['maxlength' => true]) ?>
@@ -38,13 +44,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->dropDownList(Article::getStatuses()) ?>
 
+    <?= $form->field($model, 'lead_name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
+
     <?= $form->field($model, 'fileTemp')->widget(FileInput::classname(), [
         'options' => ['accept' => 'document/*'],
     ]) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->asArray()->all(), 'id', 'name_ru'), ['prompt' => 'Выберите предмет']) ?>
 
-    <?= $form->field($model, 'school_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите город']) ?>
+    <?= $form->field($model, 'school_id')->dropDownList(ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите город']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

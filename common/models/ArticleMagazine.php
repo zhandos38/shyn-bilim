@@ -13,10 +13,17 @@ use Yii;
  * @property string $name
  * @property string $img
  * @property int $order
+ * @property string $type
+ * @property string $folder_name
+ * @property boolean $is_cert_landscape
+ * @property boolean $is_charter_landscape
  */
 class ArticleMagazine extends \yii\db\ActiveRecord
 {
     public $imgFile;
+
+    const TYPE_TEACHER = "teacher";
+    const TYPE_STUDENT = "student";
 
     /**
      * {@inheritdoc}
@@ -32,9 +39,10 @@ class ArticleMagazine extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'img'], 'required'],
-            [['name', 'img'], 'string', 'max' => 255],
+            [['name', 'img', 'folder_name'], 'required'],
+            [['name', 'img', 'folder_name', 'type'], 'string', 'max' => 255],
             ['order', 'integer'],
+            [['is_cert_landscape', 'is_charter_landscape'], 'boolean'],
 
             [['imgFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
@@ -51,7 +59,19 @@ class ArticleMagazine extends \yii\db\ActiveRecord
             'img' => 'Рисунок',
             'imgFile' => 'Файл рисунка',
             'order' => 'Порядок',
+            'folder_name' => 'Папка',
+            'type' => 'Тип',
+            'is_cert_landscape' => 'Сертификат горизонтальный',
+            'is_charter_landscape' => 'Сертификат портретный',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getArticleMagazineSubjects()
+    {
+        return $this->hasMany(ArticleMagazineSubject::className(), ['article_magazine_id' => 'id']);
     }
 
     public function getImage()
@@ -82,5 +102,10 @@ class ArticleMagazine extends \yii\db\ActiveRecord
         }
 
         return false;
+    }
+
+    public function getFolderPath($subName = null)
+    {
+        return $this->folder_name ? $this->folder_name . "/" . $subName : $subName;
     }
 }

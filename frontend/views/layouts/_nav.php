@@ -18,7 +18,7 @@ use yii\helpers\Url;
             <a href="<?= Url::to(['olympiad/index']) ?>"><?= Yii::t('app', 'Олимпиады') ?></a>
         </li>
         <li class="position-static">
-            <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журнал') ?></a>
+            <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
         </li>
         <li class="position-static">
             <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>

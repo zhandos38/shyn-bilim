@@ -6,6 +6,7 @@ namespace frontend\controllers;
 
 use common\models\Article;
 use common\models\ArticleMagazine;
+use common\models\ArticleMagazineRelease;
 use common\models\Subject;
 use frontend\models\ArticleSearch;
 use frontend\models\MyArticleSearch;
@@ -18,6 +19,7 @@ use Yii;
 use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -37,14 +39,17 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function actionView($id)
+    public function actionView($articleMagazineId)
     {
-        $magazine = ArticleMagazine::findOne(['id' => $id]);
-        $subjects = Subject::find()->andWhere(['type' => Subject::TYPE_ARTICLE])->orderBy(['order' => SORT_ASC])->all();
+        $magazine = ArticleMagazine::findOne(['id' => $articleMagazineId]);
+        $subjectIds = ArrayHelper::getColumn($magazine->getArticleMagazineSubjects()->all(), 'subject_id');
+        $subjects = Subject::find()->andWhere(['in', 'id', $subjectIds])->orderBy(['order' => SORT_ASC])->all();
+        $releases = ArticleMagazineRelease::find()->where(['article_magazine_id' => $articleMagazineId])->all();
 
         return $this->render('view', [
             'magazine' => $magazine,
-            'subjects' => $subjects
+            'subjects' => $subjects,
+            'releases' => $releases,
         ]);
     }
     
@@ -78,6 +83,95 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function actionList($articleMagazineId, $subjectId)
+    {
+        $searchModel = new ArticleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $articleMagazineId, $subjectId);
+
+        return $this->render('list', [
+            'subjectId' => $subjectId,
+            'articleMagazineId' => $articleMagazineId,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
+        ]);
+    }
+
+    public function actionMyList()
+    {
+        return $this->redirect('/');
+        /*$searchModel = new MyArticleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('my-list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
+        ]);*/
+    }
+
+    public function actionOrder($articleMagazineId, $subjectId = null)
+    {
+        $model = new Article();
+        $model->article_magazine_id = $articleMagazineId;
+
+        $articleMagazine = ArticleMagazine::findOne(['id' => $articleMagazineId]);
+        if ($subjectId) {
+            $model->subject_id = $subjectId;
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
+            $model->created_at = time();
+
+            if ($model->fileTemp) {
+                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
+            } else {
+                Yii::$app->session->setFlash('error', 'Файлды жүктеу қажет');
+
+                return $this->render('order', [
+                    'model' => $model,
+                    'articleMagazine' => $articleMagazine,
+                ]);
+            }
+
+            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
+            if ($whiteList !== null) {
+                $model->status = Article::STATUS_ACTIVE;
+            }
+
+            if ($model->save() && $model->upload()) {
+                if ($whiteList !== null) {
+                    $whiteList->limit = $whiteList->limit - 1;
+                    $whiteList->save();
+
+                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
+                }
+
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => 3000,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_success_url_method' => 'GET',
+                    'pg_description' => 'Оплата за публикацию материала',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
+                    'pg_result_url_method' => 'POST',
+                ];
+
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
+        }
+
+        return $this->render('order', [
+            'model' => $model,
+            'articleMagazine' => $articleMagazine,
+        ]);
+    }
+
     public function actionCert($id)
     {
         $model = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
@@ -89,31 +183,23 @@ class ArticleController extends Controller
             return $this->redirect(['article/cert-tarbie-sagati', 'id' => $id]);
         }
 
-        // get your HTML raw content without any layouts or scripts
-        $content = $this->renderPartial('_cert', [
+        $articleMagazine = $model->getArticleMagazine()->one();
+        $content = $this->renderPartial($articleMagazine->getFolderPath('_cert'), [
             'model' => $model,
         ]);
 
-        // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
-            // set to use core fonts only
             'mode' => Pdf::MODE_UTF8,
-            // A4 paper format
             'format' => Pdf::FORMAT_A4,
             'marginTop' => 0,
             'marginLeft' => 0,
             'marginRight' => 0,
             'marginBottom' => 0,
-            // portrait orientation
-            'orientation' => Pdf::ORIENT_LANDSCAPE,
-            // stream to browser inline
+            'orientation' => $articleMagazine->is_cert_landscape ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
             'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Сертификат.pdf',
-            // your html content input
             'content' => $content,
-            // format content from your own css file if needed or use the
-            // enhanced bootstrap css built by Krajee for mPDF formatting
-            'cssFile' => 'css/custom.css'
+            'cssFile' => 'css/cert.css'
         ]);
 
         return $pdf->render();
@@ -156,7 +242,7 @@ class ArticleController extends Controller
 
         return $pdf->render();
     }
-    
+
     public function actionCharter($id)
     {
         $model = Article::findOne(['id' => $id, 'status' => Article::STATUS_ACTIVE]);
@@ -164,8 +250,8 @@ class ArticleController extends Controller
             throw new Exception('Article not found!');
         }
 
-        // get your HTML raw content without any layouts or scripts
-        $content = $this->renderPartial('_charter', [
+        $articleMagazine = $model->getArticleMagazine()->one();
+        $content = $this->renderPartial($articleMagazine->getFolderPath('_charter'), [
             'model' => $model,
         ]);
 
@@ -180,7 +266,7 @@ class ArticleController extends Controller
             'marginRight' => 0,
             'marginBottom' => 0,
             // portrait orientation
-            'orientation' => Pdf::ORIENT_PORTRAIT,
+            'orientation' => $articleMagazine->is_charter_landscape ? Pdf::ORIENT_LANDSCAPE : Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
             'filename' => 'Грамота.pdf',
@@ -193,7 +279,7 @@ class ArticleController extends Controller
 
         return $pdf->render();
     }
-    
+
     public function actionCheckCert()
     {
         $model = new CheckArticleForm();
@@ -210,7 +296,7 @@ class ArticleController extends Controller
             'model' => $model
         ]);
     }
-    
+
     public function actionCheckCharter()
     {
         $model = new CheckArticleForm();
@@ -225,89 +311,6 @@ class ArticleController extends Controller
 
         return $this->render('check-cert', [
             'model' => $model
-        ]);
-    }
-
-    public function actionList($id)
-    {
-        $searchModel = new ArticleSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $id);
-
-        return $this->render('list', [
-            'id' => $id,
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider
-        ]);
-    }
-
-    public function actionMyList()
-    {
-        return $this->redirect('/');
-        /*$searchModel = new MyArticleSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('my-list', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider
-        ]);*/
-    }
-
-    public function actionOrder($id = null)
-    {
-        $model = new Article();
-        if ($id) {
-            $model->subject_id = $id;
-        }
-
-        if ($model->load(Yii::$app->request->post())) {
-            $model->fileTemp = UploadedFile::getInstance($model, 'fileTemp');
-            $model->created_at = time();
-
-            if ($model->fileTemp) {
-                $model->file = $model->fileTemp->baseName . '.' . $model->fileTemp->extension;
-            } else {
-                Yii::$app->session->setFlash('error', 'Файлды жүктеу қажет');
-
-                return $this->render('order', [
-                    'model' => $model,
-                ]);
-            }
-
-            $whiteList = ArticleWhiteList::find()->andWhere(['iin' => $model->iin])->andWhere(['>', 'limit', 0])->one();
-            if ($whiteList !== null) {
-                $model->status = Article::STATUS_ACTIVE;
-            }
-
-            if ($model->save() && $model->upload()) {
-                if ($whiteList !== null) {
-                    $whiteList->limit = $whiteList->limit - 1;
-                    $whiteList->save();
-
-                    return $this->redirect(['article/success-offline', 'id' => $model->id]);
-                }
-
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => 3000,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_success_url_method' => 'GET',
-                    'pg_description' => 'Оплата за публикацию материала',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
-                ];
-
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-            }
-        }
-
-        return $this->render('order', [
-            'model' => $model,
         ]);
     }
 
