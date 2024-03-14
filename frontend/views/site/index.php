@@ -92,24 +92,6 @@ $this->registerMetaTag([
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="<?= Url::to(['book/index']) ?>" class="menu-card">
-                    <div>
-                        <div>
-                            <img class="menu-card__img" src="/img/menu-icon/child-library.png" alt="menu-icon">
-                        </div>
-                        <div class="menu-card__text-box">
-                            <h5 class="mb--0">
-                                «ШЫҢ»
-                                КІТАПХАНАСЫ
-                            </h5>
-                            <small class="menu-card__desc">
-                                КІТАП ОҚЫП, СЫЙЛЫҚ ҰТЫП АЛ!
-                            </small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3">
                 <a href="<?= Url::to(['article/index']) ?>" class="menu-card">
                     <div>
                         <div>
