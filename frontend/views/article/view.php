@@ -200,7 +200,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                                 <div>
                                     <small>Мақалңыз жарияландыма?</small>
                                     <div>
-                                        <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-cert']) ?>">Сертифика жүктеу</a>
+                                        <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-cert']) ?>">Сертификат жүктеу</a>
                                     </div>
                                     <div class="mt-2">
                                         <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-charter']) ?>">Грамота жүктеу</a>
