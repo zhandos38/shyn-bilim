@@ -18,6 +18,7 @@ use yii\helpers\VarDumper;
 class CheckAssignmentForm extends Model
 {
     public $iin;
+    public $phone;
     public $subject_id;
     public $olympiad_id;
 
@@ -25,7 +26,7 @@ class CheckAssignmentForm extends Model
     {
         return [
             [['iin', 'olympiad_id'], 'required'],
-            ['iin', 'string', 'max' => 20],
+            [['iin', 'phone'], 'string', 'max' => 20],
             [['subject_id', 'olympiad_id'], 'integer'],
         ];
     }
@@ -34,6 +35,7 @@ class CheckAssignmentForm extends Model
     {
         return [
           'iin' => Yii::t('app', 'ИИН/ЖСН'),
+          'phone' => Yii::t('app', 'Номер телефона'),
           'subject_id' => Yii::t('app', 'Предмет'),
           'olympiad_id' => Yii::t('app', 'Олимпиада'),
         ];
@@ -41,7 +43,10 @@ class CheckAssignmentForm extends Model
 
     public function check($isFinished = false)
     {
-        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id, 'iin' => $this->iin]);
+        $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id])
+        ->andFilterWhere(['iin' => $this->iin])
+        ->andFilterWhere(['phone' => $this->phone]);
+
         if ($isFinished) {
             $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
         } else {

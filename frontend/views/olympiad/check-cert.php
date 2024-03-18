@@ -5,6 +5,7 @@ use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
 use yii\helpers\ArrayHelper;
 use yii\web\View;
+use yii\widgets\MaskedInput;
 
 /* @var $this View */
 /* @var $model CheckAssignmentForm */
@@ -27,6 +28,13 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
         ]) ?>
 
         <?= $form->field($model, 'iin') ?>
+        <small>Немесе</small>
+        <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+            'mask' => '+7(999)999-99-99',
+            'clientOptions' => [
+                'removeMaskOnSubmit' => true
+            ],
+        ]) ?>
 
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
     </div>

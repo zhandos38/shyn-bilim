@@ -28,6 +28,13 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
         ]) ?>
 
         <?= $form->field($model, 'iin') ?>
+        <small>Немесе</small>
+        <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+            'mask' => '+7(999)999-99-99',
+            'clientOptions' => [
+                'removeMaskOnSubmit' => true
+            ],
+        ]) ?>
 
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
     </div>
