@@ -2,8 +2,11 @@
 use yii\helpers\Url;
 
 /** @var \common\models\ArticleMagazine $magazines */
-?>
 
+$this->title = 'Журналдар';
+$this->params['heroTitle'] = $this->title;
+$this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
+?>
 <div class="bg-gradient-5">
     <div class="container pt--60 pb--60">
         <div class="section-title text-center mb--30">
