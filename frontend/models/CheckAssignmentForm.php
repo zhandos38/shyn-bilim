@@ -25,7 +25,7 @@ class CheckAssignmentForm extends Model
     public function rules()
     {
         return [
-            [['iin', 'olympiad_id'], 'required'],
+            [['olympiad_id'], 'required'],
             [['iin', 'phone'], 'string', 'max' => 20],
             [['subject_id', 'olympiad_id'], 'integer'],
         ];
