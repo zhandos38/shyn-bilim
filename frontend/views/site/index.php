@@ -69,7 +69,7 @@ $this->registerMetaTag([
                                     <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
-                                                <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=18">
+                                                <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
                                                     <img src="/img/kanikulda-kitap-oku-2024/banner.jpg" style="width: 100%" alt="banner-part1.png">
                                                 </a>
                                             </div>
