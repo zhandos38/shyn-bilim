@@ -93,7 +93,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $olympiad = Olympiad::findOne(['is_actual' => true, 'id' => 18]);
+        $olympiad = Olympiad::findOne(['is_actual' => true, 'id' => 19]);
 
         return $this->render('index', [
             'olympiad' => $olympiad
