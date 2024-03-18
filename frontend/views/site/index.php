@@ -70,7 +70,7 @@ $this->registerMetaTag([
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
                                                 <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=18">
-                                                    <img src="/img/altyn-urpaq-2024/banner.jpg" style="width: 100%" alt="banner-part1.png">
+                                                    <img src="/img/kanikulda-kitap-oku-2024/banner.jpg" style="width: 100%" alt="banner-part1.png">
                                                 </a>
                                             </div>
                                         </div>
