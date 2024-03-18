@@ -256,9 +256,6 @@ $this->registerMetaTag([
                                 Белдесу, Саққұлақ, Тымпи, Тоғызқұмалақ т.б.)
                                 физикалық, зияткерлік тұрғыдан дамиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
-                                <span data-text="Жазылу">Кітапханаға өту</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -288,9 +285,6 @@ $this->registerMetaTag([
                                 қалдырған мұралармен танысады.
                                 Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
-                                <span data-text="Жазылу">Кітапханаға өту</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -320,9 +314,6 @@ $this->registerMetaTag([
                                 абыздар, ағартушылар мен ұлт зиялыларымен
                                 танысады. Көркем әдебиеттер оқиды
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
-                                <span data-text="Жазылу">Кітапханаға өту</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -348,9 +339,6 @@ $this->registerMetaTag([
                             <p style="font-size: 16px">
                                 -
                             </p>
-                            <a class="rbt-btn rbt-switch-btn btn-white btn-sm" href="<?= Url::to(['book/index']) ?>">
-                                <span data-text="Жазылу">Кітапханаға өту</span>
-                            </a>
                         </div>
                     </div>
                 </div>
