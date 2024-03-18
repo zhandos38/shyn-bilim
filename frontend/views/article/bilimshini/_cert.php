@@ -21,7 +21,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             ?>
         </div>
         <div id="cert-school" style="font-size: 14px; color: #000000; text-align: center; line-height: 110%; height: 60px">
-            <?= $model->school->name ?> <?= $model->school->name ?>
+            <?= $model->school->name ?>
         </div>
         <div>
             <?php if ($model->subject->is_not_subject): ?>
