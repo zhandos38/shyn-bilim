@@ -100,7 +100,7 @@ class OlympiadController extends Controller
     public function actionAssignment($id)
     {
         if ($id == 19) {
-            Yii::$app->session->setFlash('warning', '21-ші наурыз басталады');
+            Yii::$app->session->setFlash('warning', 'Марафон 21-наурызда басталады');
             return $this->redirect(['site/index']);
         }
 
