@@ -1,5 +1,7 @@
 <?php
 
+use common\models\ArticleMagazine;
+use common\models\Subject;
 use frontend\models\CheckArticleForm;
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
@@ -24,12 +26,16 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
         <div class="col-md-4">
             <?= $form->field($model, 'iin') ?>
 
-            <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_ARTICLE]), 'id', 'name'), [
+            <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_ARTICLE]), 'id', 'name'), [
                 'id' => 'subject_id-select',
                 'prompt' => Yii::t('app', 'Выберите предмет')
             ]) ?>
 
-            <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+            <?= $form->field($model, 'article_magazine_id')->dropDownList(ArrayHelper::map(ArticleMagazine::find()->all(), 'id', 'name'), [
+                'prompt' => 'Выбрать журнал'
+            ])->label('Журнал') ?>
+
+            <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn']) ?>
         </div>
     </div>
 
