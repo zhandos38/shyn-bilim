@@ -18,11 +18,12 @@ class CheckArticleForm extends Model
 {
     public $iin;
     public $subject_id;
+    public $article_magazine_id;
 
     public function rules()
     {
         return [
-            [['iin', 'subject_id'], 'required'],
+            [['iin', 'subject_id', 'article_magazine_id'], 'required'],
             ['iin', 'string', 'max' => 20],
             [['subject_id'], 'integer'],
         ];
@@ -40,7 +41,8 @@ class CheckArticleForm extends Model
     {
         $query = Article::find()->andWhere(['iin' => $this->iin, 'subject_id' => $this->subject_id]);
         $query->andWhere(['status' => Article::STATUS_ACTIVE]);
-        
+        $query->andWhere(['article_magazine_id' => $this->article_magazine_id]);
+
         $article = $query->one();
 
 
