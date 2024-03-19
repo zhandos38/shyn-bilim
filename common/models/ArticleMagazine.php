@@ -17,6 +17,7 @@ use Yii;
  * @property string $folder_name
  * @property boolean $is_cert_landscape
  * @property boolean $is_charter_landscape
+ * @property string $description
  */
 class ArticleMagazine extends \yii\db\ActiveRecord
 {
@@ -43,6 +44,7 @@ class ArticleMagazine extends \yii\db\ActiveRecord
             [['name', 'img', 'folder_name', 'type'], 'string', 'max' => 255],
             ['order', 'integer'],
             [['is_cert_landscape', 'is_charter_landscape'], 'boolean'],
+            ['description', 'string'],
 
             [['imgFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
