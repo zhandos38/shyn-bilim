@@ -4,8 +4,10 @@ use common\models\ArticleMagazine;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use kartik\file\FileInput;
+use vova07\imperavi\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -44,6 +46,26 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'is_cert_landscape')->checkbox() ?>
 
     <?= $form->field($model, 'is_charter_landscape')->checkbox() ?>
+
+    <?= $form->field($model, 'description')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 200,
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'imagemanager',
+            ],
+            'imageUpload' => Url::to(['news/image-upload']),
+            'imageManagerJson' => Url::to(['/news/images-get']),
+            'clips' => [
+                ['Lorem ipsum...', 'Lorem...'],
+                ['red', '<span class="label-red">red</span>'],
+                ['green', '<span class="label-green">green</span>'],
+                ['blue', '<span class="label-blue">blue</span>'],
+            ],
+        ],
+    ]); ?>
 
     <div class="form-group mt-4">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
