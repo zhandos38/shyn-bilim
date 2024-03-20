@@ -34,7 +34,7 @@ class MarathonController extends Controller
             if (!$model->save()) {
                 throw new Exception('Marathon save error!');
             }
-            return $this->redirect(['marathon/book', 'assignment_id' => $model->id]);
+            return $this->redirect(['marathon/book', 'marathonId' => $model->id]);
         }
 
         $checkAssignmentForm = new CheckAssignmentForm();
@@ -44,9 +44,14 @@ class MarathonController extends Controller
         ]);
     }
 
-    public function actionBook()
+    public function actionBook($marathonId)
     {
-        return $this->render('book');
+        $model = Marathon::findOne(['id' => $marathonId]);
+
+        return $this->render('book', [
+            'grade' => $model->grade,
+            'marathonId' => $marathonId,
+        ]);
     }
 
     public function actionCheckAssignment()
@@ -60,7 +65,7 @@ class MarathonController extends Controller
                 return $this->redirect(['marathon/assignment']);
             }
 
-            return $this->redirect(['marathon/book', 'assignment_id' => $marathon->id]);
+            return $this->redirect(['marathon/book', 'assignmentId' => $marathon->id]);
         }
 
         return false;
@@ -77,7 +82,7 @@ class MarathonController extends Controller
                 return $this->redirect(['olympiad/index']);
             }
 
-            return $this->redirect(['marathon/extra-assignment', 'assignment_id' => $marathon->id]);
+            return $this->redirect(['marathon/extra-assignment', 'assignmentId' => $marathon->id]);
         }
 
         return $this->render('find-assignment');
@@ -106,12 +111,48 @@ class MarathonController extends Controller
                 throw new Exception('Test Assignment is not found!');
             }
 
-            return $this->redirect(['olympiad/extra-assignment', 'assignment_id' => $marathon->id]);
+            return $this->redirect(['olympiad/extra-assignment', 'assignmentId' => $marathon->id]);
         }
 
         return $this->render('extra-assignment', [
             'model' => $model
         ]);
+    }
+
+    public function actionGetCert($id)
+    {
+        $marathon = Marathon::findOne(['id' => $id]);
+        if (!$marathon) {
+            throw new Exception('Marathon is not found');
+        }
+
+        $content = $this->renderPartial('_cert', [
+            'marathon' => $marathon
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            'marginTop' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => 0,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            'filename' => 'Сертификат.pdf',
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => 'css/custom.css',
+        ]);
+
+        return $pdf->render();
     }
     
     public function actionGetCertThank($id)

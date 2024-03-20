@@ -102,7 +102,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                                     </a>
                                 </div>
                                 <div>
-                                    <small>Мақалңыз жарияландыма?</small>
+                                    <small>Мақалаңыз жарияландыма?</small>
                                     <div>
                                         <a class="article-order-widget__link rbt-btn btn-gradient w-100" href="<?= Url::to(['article/check-cert']) ?>">Сертификат жүктеу</a>
                                     </div>
