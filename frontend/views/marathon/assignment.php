@@ -81,7 +81,9 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
                     }),
                     'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
                 ]); ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам +7(701) 312 99 06 (Whatsapp)') ?></small>
+                <small class="text-secondary">
+                    Мектеп тізімнен табылмаған жағдайда <a href="teL:+7(775)4037284">+7(775) 403-72-84</a>, <a href="teL:+7(775)4243727">+7(775) 424-37-27</a> ватсапқа жазыңыз
+                </small>
             </div>
             <div class="col-md-4">
                 <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
