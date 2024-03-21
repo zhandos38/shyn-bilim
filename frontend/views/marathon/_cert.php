@@ -20,7 +20,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['marathon/get-cert-thank', 'id'
                         }
                     } ?>
             </div>
-            <div style="font-size: 18px">
+            <div class="bordered" style="font-size: 18px; height: 100px">
                 <?= $marathon->school->name ?>
             </div>
             <div style="font-size: 18px; margin-top: 10px;">
