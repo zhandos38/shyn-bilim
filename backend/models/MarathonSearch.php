@@ -2,6 +2,7 @@
 
 namespace backend\models;
 
+use kartik\daterange\DateRangeBehavior;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Marathon;
@@ -11,6 +12,22 @@ use common\models\Marathon;
  */
 class MarathonSearch extends Marathon
 {
+    public $createTimeRange;
+    public $createTimeStart;
+    public $createTimeEnd;
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => DateRangeBehavior::className(),
+                'attribute' => 'createTimeRange',
+                'dateStartAttribute' => 'createTimeStart',
+                'dateEndAttribute' => 'createTimeEnd',
+            ]
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -19,6 +36,8 @@ class MarathonSearch extends Marathon
         return [
             [['id', 'school_id', 'grade'], 'integer'],
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'phone_parent', 'phone_teacher', 'city_id', 'region_id'], 'safe'],
+
+            [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/']
         ];
     }
 
@@ -81,6 +100,9 @@ class MarathonSearch extends Marathon
             ->andFilterWhere(['like', 't1.phone', $this->phone])
             ->andFilterWhere(['like', 't1.phone_parent', $this->phone_parent])
             ->andFilterWhere(['like', 't1.phone_teacher', $this->phone_teacher]);
+
+        $query->andFilterWhere(['>=', 'created_at', $this->createTimeStart])
+            ->andFilterWhere(['<=', 'created_at', $this->createTimeEnd]);
 
         return $dataProvider;
     }
