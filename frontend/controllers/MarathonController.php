@@ -55,7 +55,7 @@ class MarathonController extends Controller
                 return $this->redirect(['marathon/assignment']);
             }
 
-            return $this->redirect(['marathon/book', 'assignmentId' => $marathon->id]);
+            return $this->redirect(['marathon/book', 'marathonId' => $marathon->id]);
         }
 
         return false;
