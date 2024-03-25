@@ -1,9 +1,10 @@
 <?php
 use Da\QrCode\QrCode;
+use yii\helpers\Url;
 
 /* @var $marathon \common\models\Marathon */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['marathon/get-cert-thank', 'id' => $marathon->id], 'https')))
+$qrCode = (new QrCode(Url::toRoute(['marathon/get-cert', 'id' => $marathon->id], 'https')))
     ->setSize(70)
     ->setMargin(5);
 ?>

@@ -2,6 +2,8 @@
 
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -36,7 +38,22 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'school_id')->textInput() ?>
+    <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
+    ]); ?>
+
+    <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
+    ]); ?>
+
+    <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
+            return htmlspecialchars_decode($model['name']);
+        }),
+        'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
+    ]); ?>
 
     <?= $form->field($model, 'grade')->textInput() ?>
 
@@ -55,3 +72,47 @@ use yii\widgets\ActiveForm;
     <?php LteBox::end() ?>
 
 </div>
+<?php
+$js =<<<JS
+$('#marathon-region_id').change(function() {
+  $.get({
+    url: '/test-assignment/get-cities',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#marathon-city_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+
+$('#marathon-city_id').change(function() {
+  $.get({
+    url: '/test-assignment/get-schools',
+    data: {id: $(this).val()},
+    dataType: 'JSON',
+    success: function(result) {
+      let options = '<option value>-</option>';
+      result.forEach(function(item) {
+        options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+      });
+      
+      $('#marathon-school_id').html(options);
+    },
+    error: function() {
+      console.log('Ошибка');
+    }
+  });
+});
+JS;
+
+
+$this->registerJs($js);
+?>
