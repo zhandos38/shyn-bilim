@@ -111,7 +111,7 @@ class MarathonController extends Controller
 
     public function actionGetCert($id)
     {
-        $marathon = Marathon::findOne(['id' => $id]);
+        $marathon = Marathon::find()->andWhere(['id' => $id])->orderBy(['id' => SORT_DESC])->one();
         if (!$marathon) {
             throw new Exception('Marathon is not found');
         }
