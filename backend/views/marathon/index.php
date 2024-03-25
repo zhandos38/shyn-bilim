@@ -5,6 +5,7 @@ use common\models\Marathon;
 use common\models\Region;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use kartik\daterange\DateRangePicker;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -86,9 +87,20 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute' => 'created_at',
             'value' => function(Marathon $model) {
-                return date('d.m.Y H:i', $model->created_at);
+                return date('d-m-Y', $model->created_at);
             },
-            'format' => 'raw'
+            'filter' => DateRangePicker::widget([
+                'model' => $searchModel,
+                'attribute' => 'createTimeRange',
+                'convertFormat' => true,
+                'pjaxContainerId' => 'crud-datatable-pjax',
+                'pluginOptions' => [
+                    'locale' => [
+                        'format'=>'Y-m-d'
+                    ],
+                    'convertFormat'=>true
+                ]
+            ]),
         ],
 
         ['class' => 'yii\grid\ActionColumn'],

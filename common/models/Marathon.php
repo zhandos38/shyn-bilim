@@ -78,7 +78,7 @@ class Marathon extends \yii\db\ActiveRecord
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
             'grade' => Yii::t('app', 'Класс'),
-            'phone' => Yii::t('app', 'Номер телефона'),
+            'phone' => Yii::t('app', 'Номер телефон участника'),
             'phone_parent' => Yii::t('app', 'Номер телефона родителей'),
             'phone_teacher' => Yii::t('app', 'Номер телефона преподавателей'),
             'created_at' => 'Время добавление',
