@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute' => 'school_id',
             'value' => function(Marathon $model) {
-                return $model->school->name;
+                return $model->school !== null ? $model->school->name : 'Не указано';
             }
         ],
         'grade',
