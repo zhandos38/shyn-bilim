@@ -25,8 +25,8 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
             Марафонға қатысу үшін анкетаны толтыру қажет
         </p>
 
-        <a id="check-assignment-btn" class="rbt-btn-link mt--30" style="cursor: pointer">
-            <i class="fa fa-info"></i>  КІТАП/СЕРТИФИКАТ/АЛҒЫС ХАТ жүктей алмасаңыз осы қызыл батырманы басыңыз
+        <a id="check-assignment-btn" class="rbt-btn-link mb--30" style="cursor: pointer; color: red">
+            <i class="fa fa-info"></i>  КІТАП/СЕРТИФИКАТ/АЛҒЫС ХАТ жүктей алмасаңыз осы батырманы басыңыз
         </a>
 
         <div id="check-assignment-form" class="mb-5" style="display: none">
