@@ -20,14 +20,25 @@ class MarathonController extends Controller
     public function actionAssignment()
     {
         $model = new Marathon();
+        $checkAssignmentForm = new CheckAssignmentForm();
+
         if ($model->load(Yii::$app->request->post())) {
+            $marathon = Marathon::findOne(['iin' => $model->iin]);
+            if ($marathon) {
+                Yii::$app->session->setFlash('error', 'Бұл ИИН тіркелінген');
+
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'checkAssignmentForm' => $checkAssignmentForm
+                ]);
+            }
+
             if (!$model->save()) {
                 throw new Exception('Marathon save error!');
             }
             return $this->redirect(['marathon/book', 'marathonId' => $model->id]);
         }
 
-        $checkAssignmentForm = new CheckAssignmentForm();
         return $this->render('assignment', [
             'model' => $model,
             'checkAssignmentForm' => $checkAssignmentForm
