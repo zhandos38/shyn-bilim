@@ -34,7 +34,7 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
             <?= $form->field($checkAssignmentForm, 'iin') ?>
 
-            <?= $form->field($checkAssignmentForm, 'marathon_type_id') ?>
+            <?= $form->field($checkAssignmentForm, 'marathon_type_id')->dropDownList(ArrayHelper::map(\common\models\Marathon::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name')) ?>
 
             <?= Html::submitButton('ЖҮКТЕУ', ['class' => 'rbt-btn']) ?>
 
