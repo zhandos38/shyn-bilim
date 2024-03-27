@@ -43,6 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'parent_name',
         'iin',
         [
+            'attribute' => 'marathon_type_id',
+            'value' => function(Marathon $model) {
+                return $model->marathonType !== null ? $model->marathonType->name : 'Не указано';
+            },
+            'filter' => ArrayHelper::map(Region::find()->asArray()->all(), 'id', 'name')
+        ],
+        [
             'attribute' => 'region_id',
             'value' => function(Marathon $model) {
                 return $model->school !== null ? $model->school->city->region->name : 'Не указано';

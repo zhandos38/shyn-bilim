@@ -23,6 +23,7 @@ use yii\db\ActiveRecord;
  * @property integer $created_at
  *
  * @property School $school
+ * @property MarathonType $marathonType
  */
 class Marathon extends \yii\db\ActiveRecord
 {
@@ -90,5 +91,10 @@ class Marathon extends \yii\db\ActiveRecord
     public function getSchool()
     {
         return $this->hasOne(School::className(), ['id' => 'school_id']);
+    }
+
+    public function getMarathonType()
+    {
+        return $this->hasOne(MarathonType::className(), ['id' => 'marathon_type_id']);
     }
 }
