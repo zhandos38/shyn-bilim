@@ -44,7 +44,7 @@ $this->registerMetaTag([
 
                             <?php if ($olympiad): ?>
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/marathon/assignment">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/marathon/assignment?type=2">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">МАРАФОНҒА ҚАТЫСАМЫН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
