@@ -34,6 +34,8 @@ $this->params['heroDescription'] = 'КАНИКУЛДА КІТАП ОҚИМЫЗ';
 
             <?= $form->field($checkAssignmentForm, 'iin') ?>
 
+            <?= $form->field($checkAssignmentForm, 'marathon_type_id') ?>
+
             <?= Html::submitButton('ЖҮКТЕУ', ['class' => 'rbt-btn']) ?>
 
             <?php ActiveForm::end() ?>

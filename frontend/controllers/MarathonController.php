@@ -9,6 +9,7 @@ use common\models\Olympiad;
 use common\models\TestAssignment;
 use frontend\models\CheckAssignmentForm;
 use frontend\models\ExtraAssignmentForm;
+use frontend\models\MarathonCheckAssignmentForm;
 use Yii;
 use yii\db\Exception;
 use yii\helpers\VarDumper;
@@ -21,7 +22,7 @@ class MarathonController extends Controller
     {
         $model = new Marathon();
         $model->marathon_type_id = $type;
-        $checkAssignmentForm = new CheckAssignmentForm();
+        $checkAssignmentForm = new MarathonCheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
             $marathon = Marathon::findOne(['iin' => $model->iin]);
@@ -58,9 +59,9 @@ class MarathonController extends Controller
 
     public function actionCheckAssignment()
     {
-        $model = new CheckAssignmentForm();
+        $model = new MarathonCheckAssignmentForm();
         if ($model->load(Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $model->iin]);
+            $marathon = Marathon::findOne(['iin' => $model->iin, 'marathon_type_id']);
 
             if ($marathon === null) {
                 Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
