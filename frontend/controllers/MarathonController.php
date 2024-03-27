@@ -17,9 +17,10 @@ use kartik\mpdf\Pdf;
 
 class MarathonController extends Controller
 {
-    public function actionAssignment()
+    public function actionAssignment($type)
     {
         $model = new Marathon();
+        $model->marathon_type_id = $type;
         $checkAssignmentForm = new CheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
