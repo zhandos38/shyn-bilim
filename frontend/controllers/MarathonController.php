@@ -61,7 +61,7 @@ class MarathonController extends Controller
     {
         $model = new MarathonCheckAssignmentForm();
         if ($model->load(Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $model->iin, 'marathon_type_id']);
+            $marathon = Marathon::findOne(['iin' => $model->iin, 'marathon_type_id' => $model->marathon_type_id]);
 
             if ($marathon === null) {
                 Yii::$app->session->setFlash('error', 'Вашу анкету не удалось найти');
