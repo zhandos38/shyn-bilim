@@ -25,7 +25,7 @@ class MarathonController extends Controller
         $checkAssignmentForm = new MarathonCheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $model->iin]);
+            $marathon = Marathon::findOne(['iin' => $model->iin, 'marathon_type_id' => $model->marathon_type_id]);
             if ($marathon) {
                 Yii::$app->session->setFlash('error', 'Бұл ИИН тіркелінген');
 
