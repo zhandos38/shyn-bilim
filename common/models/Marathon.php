@@ -19,6 +19,7 @@ use yii\db\ActiveRecord;
  * @property string|null $phone
  * @property string|null $phone_parent
  * @property string|null $phone_teacher
+ * @property int|null $marathon_type_id
  * @property integer $created_at
  *
  * @property School $school
@@ -54,7 +55,7 @@ class Marathon extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['school_id', 'grade', 'created_at'], 'integer'],
+            [['school_id', 'grade', 'created_at', 'marathon_type_id'], 'integer'],
             [['name', 'surname', 'patronymic', 'parent_name'], 'string', 'max' => 255],
             [['iin', 'phone', 'phone_parent', 'phone_teacher'], 'string', 'max' => 20],
 
@@ -81,6 +82,7 @@ class Marathon extends \yii\db\ActiveRecord
             'phone' => Yii::t('app', 'Номер телефона участника'),
             'phone_parent' => Yii::t('app', 'Номер телефона родителей'),
             'phone_teacher' => Yii::t('app', 'Номер телефона преподавателей'),
+            'marathon_type_id' => 'Тип марафона',
             'created_at' => 'Время добавление',
         ];
     }
