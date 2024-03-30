@@ -73,7 +73,7 @@ class Marathon extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => Yii::t('app', 'Имя'),
             'surname' => Yii::t('app', 'Фамилия'),
-            'patronymic' => Yii::t('app', 'Отчество'),
+            'patronymic' => 'Отчество',
             'parent_name' => Yii::t('app', 'Ф.И.О родителей'),
             'iin' => Yii::t('app', 'ИИН'),
             'school_id' => Yii::t('app', 'Школа/Колледж'),
