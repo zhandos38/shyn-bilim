@@ -7,8 +7,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/bilimshini/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 800px; font-family: 'Times New Roman';">
-    <div id="cert-name" style="padding-top: 380px; padding-left: 100px; width: 700px; text-align: center; height: 240px">
+<div class="cert-page" style="background-image: url('/img/article/bilimshini/cert2.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 800px; font-family: 'Times New Roman';">
+    <div id="cert-name" style="padding-top: 410px; padding-left: 100px; width: 700px; text-align: center; height: 200px">
         <div id="cert-city" style="padding-top: 0; font-size: 16px; color: #000000; text-align: center;">
             <?php
             if ($model->school !== null) {
@@ -20,7 +20,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 14px; color: #000000; text-align: center; line-height: 110%; height: 60px">
+        <div id="cert-school" style="font-size: 14px; color: #000000; text-align: center; line-height: 110%; height: 50px">
             <?= $model->school->name ?>
         </div>
         <div>
@@ -30,7 +30,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
                 <?= $model->subject->name_kz ?> пәні мұғалімі
             <?php endif; ?>
         </div>
-        <div style="padding-top: 5px; font-size: 24px; color: #D79236; height: 65px; font-weight: bold">
+        <div style="padding-top: 5px; font-size: 24px; color: #D79236; font-weight: bold">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
         <div id="cert-topic" style="padding-top: 12px; font-size: 14px; color: #000000; line-height: 110%; font-weight: 500;">
