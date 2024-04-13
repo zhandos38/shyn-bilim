@@ -44,7 +44,7 @@ $this->registerMetaTag([
 
                             <?php if ($olympiad): ?>
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/marathon/assignment?type=2">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">МАРАФОНҒА ҚАТЫСАМЫН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -69,7 +69,7 @@ $this->registerMetaTag([
                                     <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
-                                                <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
+                                                <a href="https://bilim-shini.kz/kz/marathon/assignment?type=2">
                                                     <img src="/img/kanikulda-kitap-oku-2024/banner2.jpeg" style="width: 100%" alt="banner-part1.png">
                                                 </a>
                                             </div>
