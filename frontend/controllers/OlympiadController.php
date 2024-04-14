@@ -136,10 +136,7 @@ class OlympiadController extends Controller
             }
 
             if (!$model->validate()) {
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'olympiad' => $olympiad,
-                ]);
+                VarDumper::dump($model->errors, 10, 1); die;
             }
 
             // check for finish
