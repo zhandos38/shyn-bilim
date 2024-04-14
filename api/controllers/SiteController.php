@@ -7,6 +7,7 @@ use common\models\Subscribe;
 use common\models\Test;
 use common\models\TestAssignment;
 use common\models\User;
+use common\models\WhiteList;
 use Yii;
 use yii\db\Exception;
 use yii\filters\auth\AuthInterface;
@@ -85,10 +86,16 @@ class SiteController extends Controller
             }
 
             if ((int)$request[$this->toProperty('result')]) {
-                $order->status = TestAssignment::STATUS_ACTIVE;
-                if (!$order->save()) {
+                $whiteList = new WhiteList();
+                $whiteList->iin = $order->iin;
+                if (!$whiteList->save()) {
                     throw new Exception(Json::encode($order->getErrors()));
                 }
+
+//                $order->status = TestAssignment::STATUS_ACTIVE;
+//                if (!$order->save()) {
+//                    throw new Exception(Json::encode($order->getErrors()));
+//                }
             }
 
             return $this->getSignByData($data, 'result');

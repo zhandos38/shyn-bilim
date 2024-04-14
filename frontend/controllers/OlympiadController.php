@@ -99,13 +99,10 @@ class OlympiadController extends Controller
 
     public function actionAssignment($id)
     {
-        if ($id == 19) {
-            Yii::$app->session->setFlash('warning', 'Марафон 21-наурызда басталады');
-            return $this->redirect(['site/index']);
-        }
-
-        $model = new TestAssignment();
-        $model->olympiad_id = $id;
+//        if ($id == 19) {
+//            Yii::$app->session->setFlash('warning', 'Марафон 21-наурызда басталады');
+//            return $this->redirect(['site/index']);
+//        }
 
         $olympiad = Olympiad::findOne(['id' => $id]);
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
@@ -118,11 +115,30 @@ class OlympiadController extends Controller
             return $this->redirect(['site/index']);
         }
 
+        $model = new TestAssignment();
+        $model->olympiad_id = $id;
+
+        if ($model->iin) {
+            $marathon = Marathon::findOne(['iin' => $model->iin]);
+
+            if ($marathon) {
+                $model->name = $marathon->name;
+                $model->surname = $marathon->surname;
+                $model->patronymic = $marathon->patronymic;
+                $model->parent_name = $marathon->parent_name;
+                $model->phone = $marathon->phone;
+                $model->school_id = $marathon->school_id;
+                $model->grade = $marathon->grade;
+                $model->lang = Test::LANG_KZ;
+            }
+        }
+
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // check for finish
             $testAssignment = TestAssignment::find()
                 ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])
                 ->one();
+
             if ($testAssignment) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест өтіліп қойылған, егерде өтпеген болсаңыз бізге хабарласыңыз, Рахмет!'));
 
@@ -147,34 +163,38 @@ class OlympiadController extends Controller
             $model->created_at = time();
 
             // Check whitelist
-            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
-            if ($whiteList !== null) {
-                $model->status = TestAssignment::STATUS_ACTIVE;
+//            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+//            if ($whiteList !== null) {
+//                $model->status = TestAssignment::STATUS_ACTIVE;
+//            }
+
+            if ($model->olympiad_id == 19) {
+                $model->status = Olympiad::STATUS_ACTIVE;
             }
 
             if (!$model->save()) {
                 throw new Exception('Assignment is not saved');
             }
 
-            if ($whiteList === null) {
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => $olympiad->price,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_description' => 'Оплата за участие в олимпиаде',
-                    'pg_success_url' => Url::base('https') . '/olympiad/success',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-                    'pg_result_url_method' => 'POST',
-                ];
-
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-            }
+//            if ($whiteList === null) {
+//                $salt = $this->getSalt(8);
+//                $request = [
+//                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+//                    'pg_amount' => $olympiad->price,
+//                    'pg_salt' => $salt,
+//                    'pg_order_id' => $model->id,
+//                    'pg_description' => 'Оплата за участие в олимпиаде',
+//                    'pg_success_url' => Url::base('https') . '/olympiad/success',
+//                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+//                    'pg_result_url_method' => 'POST',
+//                ];
+//
+//                $request = $this->getSignByData($request, 'payment.php', $salt);
+//
+//                $query = http_build_query($request);
+//
+//                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+//            }
 
             return $this->redirect(['test', 'assignment' => $model->id]);
         }
@@ -203,6 +223,26 @@ class OlympiadController extends Controller
         }
 
         return $this->redirect(['test', 'assignment' => $model->id]);
+    }
+
+    public function actionMarathonSuccess()
+    {
+        $request = Yii::$app->request->queryParams;
+
+        if (!$this->checkSign($request, 'success')) {
+            throw new Exception('Sig is not correct');
+        }
+
+        $model = TestAssignment::find()
+            ->andWhere(['id' => $request[$this->toProperty('order_id')]])
+            ->andWhere(['status' => TestAssignment::STATUS_ACTIVE])
+            ->one();
+
+        if (empty($model)) {
+            throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
+        }
+
+        return $this->redirect(['marathon-success', 'assignment' => $model->id]);
     }
 
     public function getTestsByAssignment(TestAssignment $model)
@@ -345,6 +385,29 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
+        if ($testAssignment->olympiad_id == 19) {
+            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
+            if (!$whiteList) {
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => $testAssignment->olympiad->price,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $testAssignment->id,
+                    'pg_description' => 'Оплата за диплом/сертификат',
+                    'pg_success_url' => Url::base('https') . '/olympiad/marathon-success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
+
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
+        }
+
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
             return $this->redirect(['olympiad/index']);
@@ -480,6 +543,29 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
+        if ($testAssignment->olympiad_id == 19) {
+            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
+            if (!$whiteList) {
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => $testAssignment->olympiad->price,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $testAssignment->id,
+                    'pg_description' => 'Оплата за диплом/сертификат',
+                    'pg_success_url' => Url::base('https') . '/olympiad/marathon-success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
+
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
+        }
+
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
             return $this->redirect(['olympiad/view']);
@@ -519,6 +605,29 @@ class OlympiadController extends Controller
         $testAssignment = TestAssignment::findOne(['id' => $id]);
         if (!$testAssignment) {
             throw new Exception('Test Assignment is not found');
+        }
+
+        if ($testAssignment->olympiad_id == 19) {
+            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
+            if (!$whiteList) {
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => $testAssignment->olympiad->price,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $testAssignment->id,
+                    'pg_description' => 'Оплата за диплом/сертификат',
+                    'pg_success_url' => Url::base('https') . '/olympiad/marathon-success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
+
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
         }
 
         if ($testAssignment->status !== TestAssignment::STATUS_FINISHED) {
