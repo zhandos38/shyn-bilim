@@ -130,6 +130,9 @@ class OlympiadController extends Controller
                 $model->school_id = $marathon->school_id;
                 $model->grade = $marathon->grade;
                 $model->lang = Test::LANG_KZ;
+            } else {
+                Yii::$app->session->setFlash('error', 'Бұл ИИН марафонға қатыспаған');
+                return $this->redirect(['site/index']);
             }
         }
 
