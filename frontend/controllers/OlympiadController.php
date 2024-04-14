@@ -234,7 +234,7 @@ class OlympiadController extends Controller
     {
         $request = Yii::$app->request->queryParams;
 
-        if (!$this->checkSign($request, 'success')) {
+        if (!$this->checkSign($request, 'marathon-success')) {
             throw new Exception('Sig is not correct');
         }
 
