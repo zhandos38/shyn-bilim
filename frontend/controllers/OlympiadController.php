@@ -118,7 +118,7 @@ class OlympiadController extends Controller
         $model = new TestAssignment();
         $model->olympiad_id = $id;
 
-        if ($model->iin) {
+        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $marathon = Marathon::findOne(['iin' => $model->iin]);
 
             if ($marathon) {
@@ -134,9 +134,7 @@ class OlympiadController extends Controller
                 Yii::$app->session->setFlash('error', 'Бұл ИИН марафонға қатыспаған');
                 return $this->redirect(['site/index']);
             }
-        }
 
-        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // check for finish
             $testAssignment = TestAssignment::find()
                 ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])
