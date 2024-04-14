@@ -97,7 +97,7 @@ class OlympiadController extends Controller
         ]);
     }
 
-    public function actionAssignment($id)
+    public function actionAssignment($id, $test = null)
     {
 //        if ($id == 19) {
 //            Yii::$app->session->setFlash('warning', 'Марафон 21-наурызда басталады');
@@ -110,7 +110,7 @@ class OlympiadController extends Controller
             return $this->redirect(['site/index']);
         }
 
-        if ($olympiad->status === Olympiad::STATUS_NEW) {
+        if ($olympiad->status === Olympiad::STATUS_NEW && $test != 'admin') {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
             return $this->redirect(['site/index']);
         }
