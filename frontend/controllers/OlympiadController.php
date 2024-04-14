@@ -119,6 +119,7 @@ class OlympiadController extends Controller
         $model->olympiad_id = $id;
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            VarDumper::dumpAsString($model->iin);
             $marathon = Marathon::findOne(['iin' => $model->iin]);
 
             if ($marathon) {
