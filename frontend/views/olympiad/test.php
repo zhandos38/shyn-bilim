@@ -1,4 +1,6 @@
 <?php
+
+use yii\helpers\Url;
 use yii\web\View;
 
 /* @var $this View */
@@ -37,13 +39,18 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/te
         <div v-else>
             <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
             <div class="mt--20">
-                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
+                <small>
+                    Қатысушылар жинаған балдарына сәйкес сертификаттар алады, ал жоғары балл жинаған оқушыларға Бас жүлде және І, ІІ, ІІ дәрежелі дипломдар беріледі. Дипломдар мен сертификаттарды жүктеу ақылы түрде,  жарнасы - 500 тг. (ата-анасының немесе демеушілердің рұқсатымен). 8(775)424-37-27 Феруза И. Kaspi Gold номеріне төлем жасап, төлем чекті, толық аты-жөнің, қатысқан пәніңізді жазып,  және қатысушы оқушының ЖСН-н (қатесіз ЖСН жазыңыз) 8775 424 37 27 WhatsApp номеріне  жіберуіге болады. WhatsApp бойынша төлемді тіркеу туралы жауап алғаннан кейін сіз сайттың басты бетінен «КӨМЕК» деген жерден, дипломыңызды немесе сертификатыңызды жүктей аласыз.
+                </small>
+            </div>
+            <div class="mt--10">
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить сертификат/диплом') ?>
                 </a>
             </div>
             <div class="mt--10">
-                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= \yii\helpers\Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
                 </a>

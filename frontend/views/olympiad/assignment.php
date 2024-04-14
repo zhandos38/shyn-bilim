@@ -1,14 +1,6 @@
 <?php
-
-use common\models\City;
-use common\models\Region;
-use common\models\School;
-use common\models\Subject;
-use kartik\select2\Select2;
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
-use yii\helpers\ArrayHelper;
-use yii\widgets\MaskedInput;
 
 /* @var $this \yii\web\View */
 /* @var $model \common\models\TestAssignment */
@@ -28,83 +20,11 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?php $form = ActiveForm::begin() ?>
 
         <div class="row">
-            <h3>Жеке ақпарат</h3>
-            <div class="col-md-3">
-                <?= $form->field($model, 'surname') ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'name') ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'patronymic') ?>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3">
-                <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
-                    'mask' => '+7(999)999-99-99',
-                    'clientOptions' => [
-                        'removeMaskOnSubmit' => true
-                    ],
-                ]) ?>
-            </div>
             <div class="col-md-3">
                 <?= $form->field($model, 'iin') ?>
             </div>
-        </div>
-
-        <div class="row mt--40">
-            <h3>Мекен жай</h3>
-            <div class="col-md-3">
-                <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите регион')],
-                ]); ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name'),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите город')],
-                ]); ?>
-            </div>
-        </div>
-        <div class="row mt--40">
-            <h3>Мектеп</h3>
-            <div class="col-md-3">
-                <?= $form->field($model, 'school_id')->widget(Select2::classname(), [
-                    'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', function ($model) {
-                        return htmlspecialchars_decode($model['name']);
-                    }),
-                    'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
-                ]); ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'lang')->dropDownList([
-                    'kz' => 'Қазақша',
-                    'ru' => 'Русский',
-                ]) ?>
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <?= $form->field($model, 'teacher_name') ?>
-            </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'grade')->dropDownList([
-                    1 => '1',
-                    2 => '2',
-                    3 => '3',
-                    4 => '4',
-                    5 => '5',
-                    6 => '6',
-                    7 => '7',
-                    8 => '8',
-                    9 => '9',
-                    10 => '10',
-                    11 => '11',
-                ], [
-                    'prompt' => Yii::t('app', 'Выберите класс')
-                ]) ?>
             </div>
         </div>
 
@@ -117,15 +37,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
 <?php ActiveForm::end() ?>
 <?php
-$bastaushLabel = Yii::t('site', 'Преподаватель начальных классов');
-$historyLabel = Yii::t('site', 'Преподаватель истории');
-$geographyLabel = Yii::t('site', 'Преподаватель географии');
-$naturalSciencesLabel = Yii::t('site', 'Преподаватель по естествознанию');
 $js =<<<JS
-let bastaushLabel = "$bastaushLabel";
-let historyLabel = "$historyLabel";
-let geographyLabel = "$geographyLabel";
-let naturalSciencesLabel = "$naturalSciencesLabel";
 $('#testassignment-region_id').change(function() {
   $.get({
     url: '/kz/site/get-cities',
