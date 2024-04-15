@@ -53,7 +53,7 @@ $this->registerMetaTag([
                                 </a>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">МАРАФОНҒА ҚАТЫСАМЫН</span>
+                                        <span class="btn-text banner-btn">МАРАФОН-БАЙҚАУҒА ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
