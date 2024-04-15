@@ -26,7 +26,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <div class="col-md-6">
                 <?= $form->field($model, 'teacher_name') ?>
             </div>
-            <?php if (!$model->parent_name): ?>
+            <?php if (empty($model->parent_name)): ?>
             <div class="col-md-6">
                 <?= $form->field($model, 'parent_name') ?>
             </div>
