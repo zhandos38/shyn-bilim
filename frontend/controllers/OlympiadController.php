@@ -249,7 +249,12 @@ class OlympiadController extends Controller
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
         }
 
-        return $this->redirect(['marathon-success', 'assignment' => $model->id]);
+        return $this->redirect(['marathon-cert', 'assignment' => $model->id]);
+    }
+
+    public function actionMarathonCert($assignment)
+    {
+        return $this->redirect(['marathon-success', 'assignment' => $assignment]);
     }
 
     public function getTestsByAssignment(TestAssignment $model)
