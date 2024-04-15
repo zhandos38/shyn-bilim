@@ -242,7 +242,7 @@ class OlympiadController extends Controller
 
         $model = TestAssignment::find()
             ->andWhere(['id' => $request[$this->toProperty('order_id')]])
-            ->andWhere(['status' => TestAssignment::STATUS_ACTIVE])
+            ->andWhere(['status' => TestAssignment::STATUS_FINISHED])
             ->one();
 
         if (empty($model)) {
