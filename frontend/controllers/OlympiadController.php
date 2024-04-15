@@ -254,7 +254,7 @@ class OlympiadController extends Controller
 
     public function actionMarathonCert($assignment)
     {
-        return $this->redirect(['marathon-success', 'assignment' => $assignment]);
+        return $this->redirect(['marathon-cert', 'assignment' => $assignment]);
     }
 
     public function getTestsByAssignment(TestAssignment $model)
