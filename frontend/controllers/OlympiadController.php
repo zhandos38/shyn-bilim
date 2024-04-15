@@ -119,7 +119,7 @@ class OlympiadController extends Controller
         $model->olympiad_id = $id;
 
         if ($model->load(\Yii::$app->request->post())) {
-            $marathon = Marathon::findOne(['iin' => $model->iin]);
+            $marathon = Marathon::find()->where(['iin' => $model->iin])->orderBy(['id' => SORT_DESC])->one();
 
             if ($marathon) {
                 $model->name = $marathon->name;
