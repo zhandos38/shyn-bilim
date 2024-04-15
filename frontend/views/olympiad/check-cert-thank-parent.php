@@ -28,7 +28,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
         ]) ?>
 
         <?= $form->field($model, 'iin') ?>
-        <small>Немесе</small>
+        <br>
+        <b>Немесе</b>
+        <br><br>
         <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
             'mask' => '+7(999)999-99-99',
             'clientOptions' => [
