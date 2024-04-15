@@ -8,7 +8,6 @@ use yii\helpers\Url;
     <div class="container test-app__container">
         <div class="mt--10">
             <a class="rbt-btn btn-gradient" href="<?= Url::to(['/olympiad/get-cert', 'id' => $assignment]) ?>" download>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                 <?= Yii::t('app', 'Получить сертификат/диплом') ?>
             </a>
         </div>
