@@ -125,7 +125,9 @@ class OlympiadController extends Controller
                 $model->name = $marathon->name;
                 $model->surname = $marathon->surname;
                 $model->patronymic = $marathon->patronymic;
-                $model->parent_name = $marathon->parent_name;
+                if ($model->parent_name) {
+                    $model->parent_name = $marathon->parent_name;
+                }
                 $model->phone = $marathon->phone;
                 $model->school_id = $marathon->school_id;
                 $model->grade = $marathon->grade;
