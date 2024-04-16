@@ -51,6 +51,15 @@ class CheckAssignmentForm extends Model
             $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
         } else {
             $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
+
+            $hasFinished = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id])
+                ->andFilterWhere(['iin' => $this->iin])
+                ->andFilterWhere(['phone' => $this->phone])
+                ->andWhere(['status' => TestAssignment::STATUS_FINISHED])
+                ->one();
+            if ($hasFinished) {
+                return false;
+            }
         }
         $testAssignment = $query->one();
 
