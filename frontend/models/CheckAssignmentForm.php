@@ -57,7 +57,7 @@ class CheckAssignmentForm extends Model
                 ->andFilterWhere(['phone' => $this->phone])
                 ->andWhere(['status' => TestAssignment::STATUS_FINISHED])
                 ->one();
-            if ($hasFinished) {
+            if (!empty($hasFinished)) {
                 return false;
             }
         }
