@@ -65,6 +65,13 @@ $this->registerMetaTag([
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= Url::to(['site/questions']) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text"><?= Yii::t('app', 'Сұрақ-жауап') ?></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
                             </div>
                             <?php endif; ?>
                         </div>

@@ -48,7 +48,7 @@ AppAsset::register($this);
                         <div class="header-info">
                             <ul class="rbt-information-list">
                                 <li>
-                                    <a href="tel:87754037284"><i class="feather-phone"></i>+7(778) 625 20 78</a>
+                                    <a href="tel:87754037284"><i class="feather-phone"></i>+7(775) 403 72 84</a>
                                 </li>
                                 <li>
                                     <a href="tel:bilimshini.kz@mail.ru"><i class="feather-mail"></i>bilimshini.kz@mail.ru</a>
