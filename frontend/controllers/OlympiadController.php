@@ -741,7 +741,7 @@ class OlympiadController extends Controller
                 return $this->redirect(['olympiad/test', 'assignment' => $testAssignmentId]);
             }
 
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Данный ИИН не участвовал в олимпиаде'));
+            Yii::$app->session->setFlash('error', 'Бұл ЖСН олипиадаға қатысып, аяқтап қойылған немесе мүлдем қатыспаған');
         }
 
         return $this->render('check-test', [
