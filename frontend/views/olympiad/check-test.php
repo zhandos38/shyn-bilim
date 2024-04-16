@@ -1,8 +1,8 @@
 <?php
 
 use frontend\models\CheckAssignmentForm;
-use yii\bootstrap4\ActiveForm;
-use yii\bootstrap4\Html;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Html;
 use yii\helpers\ArrayHelper;
 use yii\web\View;
 
@@ -13,23 +13,25 @@ $this->title = Yii::t('app', 'Продолжить олимпиаду');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Вопросы и ответы'), 'url' => ['site/questions']];
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 ?>
-<h1 class="mb-4">
-    <?= $this->title ?>
-</h1>
+<div class="container">
+    <h1 class="mb-4">
+        <?= $this->title ?>
+    </h1>
 
-<?php $form = ActiveForm::begin() ?>
+    <?php $form = ActiveForm::begin() ?>
 
-<div class="row">
-    <div class="col-md-4">
-        <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите олимпиаду')
-        ]) ?>
-        
-        <?= $form->field($model, 'iin') ?>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
+                'prompt' => Yii::t('app', 'Выберите олимпиаду')
+            ]) ?>
 
-        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+            <?= $form->field($model, 'iin') ?>
+
+            <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+        </div>
     </div>
-</div>
 
-<?php ActiveForm::end() ?>
+    <?php ActiveForm::end() ?>
+</div>
 
