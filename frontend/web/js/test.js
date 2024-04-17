@@ -34,6 +34,11 @@ testApp = new Vue({
             }
 
             this.currentQuestionId++;
+
+            const radios = document.getElementsByClassName("question-box__answer-input");
+            for (const radio of radios) {
+                radio.checked = false;
+            }
         },
         getTest() {
             $.get({
