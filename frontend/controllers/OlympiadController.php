@@ -244,29 +244,41 @@ class OlympiadController extends Controller
     {
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
 
-        $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
-        if (!$whiteList) {
-            $salt = $this->getSalt(8);
-            $request = [
-                'pg_merchant_id' => Yii::$app->params['payboxId'],
-                'pg_amount' => $testAssignment->olympiad->price,
-                'pg_salt' => $salt,
-                'pg_order_id' => $testAssignment->id,
-                'pg_description' => 'Оплата за диплом/сертификат',
-                'pg_success_url' => Url::base('https') . '/olympiad/cert-pay-success',
-                'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-                'pg_result_url_method' => 'POST',
-            ];
-
-            $request = $this->getSignByData($request, 'payment.php', $salt);
-
-            $query = http_build_query($request);
-
-            return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+        // Проверка на наличие место
+        if ($testAssignment->olympiad->type === Olympiad::TYPE_STUDENT && $testAssignment->point < $testAssignment->olympiad->third_place_start) {
+            Yii::$app->session->setFlash('success', 'Нәтиже балы жеткіліксіз');
+            return $this->redirect(['olympiad/index']);
         }
-        $testAssignment->status = TestAssignment::STATUS_CERT_PAID;
-        if (!$testAssignment->save()) {
-            throw new Exception('Test Assignment save error');
+
+        if ($testAssignment->olympiad->is_cert_paid) {
+            if ($testAssignment->status === TestAssignment::STATUS_CERT_PAID) {
+                return $this->render('cert', ['testAssignment' => $testAssignment]);
+            }
+
+            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
+            if (!$whiteList) {
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => $testAssignment->olympiad->price,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $testAssignment->id,
+                    'pg_description' => 'Оплата за диплом/сертификат',
+                    'pg_success_url' => Url::base('https') . '/olympiad/cert-pay-success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
+
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+            }
+            $testAssignment->status = TestAssignment::STATUS_CERT_PAID;
+            if (!$testAssignment->save()) {
+                throw new Exception('Test Assignment save error');
+            }
         }
 
         return $this->render('cert', ['testAssignment' => $testAssignment]);
@@ -411,7 +423,7 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED || $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED && $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
             return $this->redirect(['olympiad/index']);
         }
@@ -546,7 +558,7 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED || $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED && $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
             return $this->redirect('/');
         }
