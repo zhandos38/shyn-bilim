@@ -2,7 +2,8 @@
 
 use yii\helpers\Url;
 
-/** @var \common\models\Olympiad $olympiad */
+/** @var \common\models\Olympiad $olympiadStudent */
+/** @var \common\models\Olympiad $olympiadTeacher */
 
 $this->title = 'Bilimshini.kz - образовательный портал';
 $this->registerMetaTag([
@@ -42,24 +43,38 @@ $this->registerMetaTag([
                                 </ul>
                             </div>
 
-                            <?php if ($olympiad): ?>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/marathon/assignment?type=2">
+                            <div>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">МАРАФОН КІТАП ОҚУ</span>
+                                        <span class="btn-text banner-btn">«ЕҢ БІЛІМДІ ПЕДАГОГ 2024» ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">МАРАФОН-БАЙҚАУҒА ҚАТЫСУ</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiad->getFile() ?>">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadTeacher->getFile() ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">«ЖАС МАТЕМАТИК 2024» ҚАТЫСУ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadStudent->getFile() ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">ЕРЕЖЕ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/check-cert']) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">Сертификат/диплом/грамота жүктеу</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
@@ -71,27 +86,25 @@ $this->registerMetaTag([
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                            <?php endif; ?>
+                            </div>
                         </div>
                         <div class="col-md-6 mt-4 mt-lg-0">
                             <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
-                                <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms;" id="swiper-wrapper-282072954a06d1a10" aria-live="polite">
-
-                                    <!-- Start Single Card  -->
-                                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 390px; z-index: 3; transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 0ms;" role="group" aria-label="1 / 3">
-                                        <div class="rbt-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
-                                                    <img src="/img/kanikulda-kitap-oku-2024/banner2.jpeg" style="width: 100%" alt="banner-part1.png">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide-shadow" style="opacity: 0; transition-duration: 0ms;"></div></div>
-                                    <!-- End Single Card  -->
-
+                                <div class="rbt-card rbt-hover">
+                                    <div class="rbt-img">
+                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
+                                            <img src="/img/en-bilimdi-pedagog-2024/banner-mini.jpg" style="width: 100%" alt="banner-part1.png">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="rbt-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                                <div class="rbt-card rbt-hover">
+                                    <div class="rbt-img">
+                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
+                                            <img  src="/img/jas-mathematic-2024/banner-mini.jpg" style="width: 100%; margin-top: 2rem" alt="banner-part2.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,7 +251,7 @@ $this->registerMetaTag([
             </div>
         </div>
         <div>
-            <img style="width: 360px" src="/img/book.png" alt="book.png">
+            <img style="width: 360px" src="/img/library-item1.png" alt="book.png">
         </div>
     </div>
 

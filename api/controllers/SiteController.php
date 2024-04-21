@@ -86,16 +86,15 @@ class SiteController extends Controller
             }
 
             if ((int)$request[$this->toProperty('result')]) {
-                $whiteList = new WhiteList();
-                $whiteList->iin = $order->iin;
-                if (!$whiteList->save()) {
-                    throw new Exception(Json::encode($order->getErrors()));
+                if ($order->olympiad->is_cert_paid) {
+                    $order->status = TestAssignment::STATUS_CERT_PAID;
+                } else {
+                    $order->status = TestAssignment::STATUS_ACTIVE;
                 }
 
-//                $order->status = TestAssignment::STATUS_ACTIVE;
-//                if (!$order->save()) {
-//                    throw new Exception(Json::encode($order->getErrors()));
-//                }
+                if (!$order->save()) {
+                    throw new Exception(Json::encode($order->getErrors()));
+                }
             }
 
             return $this->getSignByData($data, 'result');
