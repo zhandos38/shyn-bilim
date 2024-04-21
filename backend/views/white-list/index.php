@@ -1,5 +1,6 @@
 <?php
 
+use common\models\WhiteList;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
 use yii\helpers\Html;
@@ -31,8 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'iin',
             [
                 'attribute' => 'subject_id',
-                'value' => function(\common\models\WhiteList $model) {
-                    return $model->subject ? $model->subject->name : '-';
+                'value' => function(WhiteList $model) {
+                    return $model->subject ? $model->subject->name_ru : '-';
+                }
+            ],
+            [
+                'attribute' => 'olympiad_id',
+                'value' => function(WhiteList $model) {
+                    return $model->olympiad ? $model->olympiad->name : '-';
                 }
             ],
 

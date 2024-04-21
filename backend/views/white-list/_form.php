@@ -1,7 +1,10 @@
 <?php
 
+use common\models\Olympiad;
+use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -24,7 +27,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
+        'prompt' => 'Выберите предмет',
+    ]) ?>
+
+    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->all(), 'id', 'name'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 

@@ -9,9 +9,11 @@ use Yii;
  *
  * @property int $id
  * @property int|null $subject_id
+ * @property int|null $olympiad_id
  * @property string|null $iin
  *
  * @property Subject $subject
+ * @property Olympiad $olympiad
  */
 class WhiteList extends \yii\db\ActiveRecord
 {
@@ -31,7 +33,7 @@ class WhiteList extends \yii\db\ActiveRecord
         return [
             [['iin'], 'string', 'max' => 12],
 
-            ['subject_id', 'integer'],
+            [['subject_id', 'olympiad_id'], 'integer'],
         ];
     }
 
@@ -44,6 +46,7 @@ class WhiteList extends \yii\db\ActiveRecord
             'id' => 'ID',
             'iin' => 'ИИН',
             'subject_id' => 'Предмет',
+            'olympiad_id' => 'Олимпиада',
         ];
     }
 
@@ -55,5 +58,10 @@ class WhiteList extends \yii\db\ActiveRecord
     public function getSubject()
     {
         return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
+    }
+
+    public function getOlympiad()
+    {
+        return $this->hasOne(Olympiad::className(), ['id' => 'olympiad_id']);
     }
 }

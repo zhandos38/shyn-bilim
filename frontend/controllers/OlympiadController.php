@@ -5,20 +5,15 @@ namespace frontend\controllers;
 
 
 use common\models\Answer;
-use common\models\Marathon;
 use common\models\Olympiad;
 use common\models\Question;
-use common\models\Subject;
 use common\models\Test;
 use common\models\TestAssignment;
-use common\models\TestOption;
-use common\models\TestSubject;
 use common\models\WhiteList;
 use frontend\models\CheckAssignmentForm;
 use frontend\models\TestAssignmentStudentForm;
 use frontend\models\TestAssignmentTeacherForm;
 use kartik\mpdf\Pdf;
-use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
@@ -123,7 +118,8 @@ class OlympiadController extends Controller
 
             // Проверка на завершенность теста
             $testAssignment = TestAssignment::find()
-                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'status' => TestAssignment::STATUS_FINISHED])
+                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin])
+                ->andWhere(['or', ['status' => TestAssignment::STATUS_FINISHED], ['status' => TestAssignment::STATUS_CERT_PAID]])
                 ->one();
 
             if ($testAssignment) {
@@ -161,7 +157,7 @@ class OlympiadController extends Controller
             }
 
             // Проверка на белый список
-            $whiteList = WhiteList::findOne(['iin' => $model->iin]);
+            $whiteList = WhiteList::findOne(['iin' => $model->iin, 'olympiad_id' => $model->olympiad_id]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
             }
@@ -254,7 +250,7 @@ class OlympiadController extends Controller
                 return $this->render('cert', ['testAssignment' => $testAssignment]);
             }
 
-            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin])->one();
+            $whiteList = WhiteList::find()->andWhere(['iin' => $testAssignment->iin, 'olympiad_id' => $testAssignment->olympiad_id])->one();
             if (!$whiteList) {
                 $salt = $this->getSalt(8);
                 $request = [
