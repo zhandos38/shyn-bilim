@@ -15,7 +15,7 @@ class TestAssignmentTeacherForm extends TestAssignment
     public function rules()
     {
         return [
-            [['name', 'surname', 'patronymic', 'iin', 'phone', 'status', 'lang'], 'string'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'lang'], 'string'],
             [['school_id', 'subject_id', 'city_id', 'region_id', 'olympiad_id', 'status'], 'integer'],
 
             [['name', 'surname', 'iin', 'phone', 'school_id', 'subject_id', 'olympiad_id'], 'required'],

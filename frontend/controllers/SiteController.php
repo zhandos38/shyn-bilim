@@ -93,10 +93,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $olympiad = Olympiad::findOne(['is_actual' => true, 'id' => 19]);
+        $olympiadStudent = Olympiad::find()->orderBy(['id' => SORT_DESC])->where(['is_actual' => true, 'type' => Olympiad::TYPE_STUDENT])->one();
+        $olympiadTeacher = Olympiad::find()->orderBy(['id' => SORT_DESC])->where(['is_actual' => true, 'type' => Olympiad::TYPE_TEACHER])->one();
 
         return $this->render('index', [
-            'olympiad' => $olympiad
+            'olympiadStudent' => $olympiadStudent,
+            'olympiadTeacher' => $olympiadTeacher
         ]);
     }
 

@@ -2,7 +2,8 @@
 
 use yii\helpers\Url;
 
-/** @var \common\models\Olympiad $olympiad */
+/** @var \common\models\Olympiad $olympiadStudent */
+/** @var \common\models\Olympiad $olympiadTeacher */
 
 $this->title = 'Bilimshini.kz - образовательный портал';
 $this->registerMetaTag([
@@ -43,35 +44,35 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=20">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">«ЕҢ БІЛІМДІ ПЕДАГОГ 2024» ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="https://bilim-shini.kz/kz/olympiad/ЕРЕЖЕ ЕБП 2023.docx">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadTeacher->getFile() ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=21">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">«ЖАС МАТЕМАТИК 2024» ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="https://bilim-shini.kz/kz/olympiad/ЕРЕЖЕ ЕБП 2023.docx">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadStudent->getFile() ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/cert">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/check-cert']) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">Сертификат/диплом/грамота жүктеу</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -91,14 +92,14 @@ $this->registerMetaTag([
                             <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
                                 <div class="rbt-card rbt-hover">
                                     <div class="rbt-img">
-                                        <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=20">
+                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
                                             <img src="/img/en-bilimdi-pedagog-2024/banner-mini.jpg" style="width: 100%" alt="banner-part1.png">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="rbt-card rbt-hover">
                                     <div class="rbt-img">
-                                        <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=21">
+                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
                                             <img  src="/img/jas-mathematic-2024/banner-mini.jpg" style="width: 100%; margin-top: 2rem" alt="banner-part2.png">
                                         </a>
                                     </div>
