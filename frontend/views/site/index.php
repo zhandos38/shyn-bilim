@@ -42,18 +42,38 @@ $this->registerMetaTag([
                                 </ul>
                             </div>
 
-                            <?php if ($olympiad): ?>
-                            <div
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=19">
+                            <div>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=20">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">МАРАФОН-БАЙҚАУҒА ҚАТЫСУ</span>
+                                        <span class="btn-text banner-btn">«ЕҢ БІЛІМДІ ПЕДАГОГ 2024» ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiad->getFile() ?>">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="https://bilim-shini.kz/kz/olympiad/ЕРЕЖЕ ЕБП 2023.docx">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/assignment?id=21">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">«ЖАС МАТЕМАТИК 2024» ҚАТЫСУ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="https://bilim-shini.kz/kz/olympiad/ЕРЕЖЕ ЕБП 2023.docx">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text">ЕРЕЖЕ</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://bilim-shini.kz/kz/olympiad/cert">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">Сертификат/диплом/грамота жүктеу</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
@@ -66,20 +86,19 @@ $this->registerMetaTag([
                                     </div>
                                 </a>
                             </div>
-                            <?php endif; ?>
                         </div>
                         <div class="col-md-6 mt-4 mt-lg-0">
                             <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
                                 <div class="rbt-card rbt-hover">
                                     <div class="rbt-img">
-                                        <a href="#">
+                                        <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=20">
                                             <img src="/img/en-bilimdi-pedagog-2024/banner-mini.jpg" style="width: 100%" alt="banner-part1.png">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="rbt-card rbt-hover">
                                     <div class="rbt-img">
-                                        <a href="#">
+                                        <a href="https://bilim-shini.kz/kz/olympiad/assignment?id=21">
                                             <img  src="/img/jas-mathematic-2024/banner-mini.jpg" style="width: 100%; margin-top: 2rem" alt="banner-part2.png">
                                         </a>
                                     </div>
@@ -231,7 +250,7 @@ $this->registerMetaTag([
             </div>
         </div>
         <div>
-            <img style="width: 360px" src="/img/book.png" alt="book.png">
+            <img style="width: 360px" src="/img/library-item1.png" alt="book.png">
         </div>
     </div>
 

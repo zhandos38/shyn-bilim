@@ -43,6 +43,12 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 
         <div class="row">
             <div class="col-md-3">
+                <?= $form->field($model, 'lang')->dropDownList([
+                    'kz' => 'Қазақша',
+                    'ru' => 'Русский',
+                ]) ?>
+            </div>
+            <div class="col-md-3">
                 <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
                     'mask' => '+7(999)999-99-99',
                     'clientOptions' => [
