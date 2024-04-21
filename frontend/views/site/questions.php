@@ -116,11 +116,7 @@ use yii\helpers\Url; ?>
                                             <p>
                                                 Егер Сіз Дипломды, Сертификатты, Алғыс хатты жүктей алмай қалсаңыз, төмендегі батырманы басыңыз.
                                                 <br>
-                                                <a class="rbt-btn" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом қайта жүктеу</a>
-                                                <br><br>
-                                                <a class="rbt-btn" href="<?= Url::to(['olympiad/check-cert-thank-leader']) ?>">Грамота Мұғалім үшін жүктеу</a>
-                                                <br><br>
-                                                <a class="rbt-btn" href="<?= Url::to(['olympiad/check-cert-thank-parent']) ?>">Алғыс хат Ата-Ана үшін жүктеу</a>
+                                                <a class="rbt-btn" href="<?= Url::to(['olympiad/check-cert']) ?>">Сертификат/Диплом/Алғыс хат қайта жүктеу</a>
                                             </p>
                                         </div>
                                     </div>
