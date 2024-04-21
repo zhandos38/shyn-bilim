@@ -76,9 +76,7 @@ AppAsset::register($this);
                 <div class="rbt-header-sec-col rbt-header-right">
                     <div class="rbt-header-content">
                         <div class="header-info">
-                            <ul class="rbt-secondary-menu">
-                                <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a></li>
-                            </ul>
+                            <a style="font-size: 14px" href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a>
                         </div>
                     </div>
                 </div>
