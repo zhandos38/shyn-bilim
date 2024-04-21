@@ -48,7 +48,7 @@ class CheckAssignmentForm extends Model
         ->andFilterWhere(['phone' => $this->phone]);
 
         if ($isFinished) {
-            $query->andWhere(['status' => TestAssignment::STATUS_FINISHED]);
+            $query->andWhere(['or', ['status' => TestAssignment::STATUS_FINISHED], ['status' => TestAssignment::STATUS_CERT_PAID]]);
         } else {
             $query->andWhere(['status' => TestAssignment::STATUS_ACTIVE]);
 
