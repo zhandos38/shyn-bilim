@@ -104,6 +104,7 @@ class OlympiadController extends Controller
 //            return $this->redirect(['site/index']);
 //        }
 
+
         $olympiad = Olympiad::findOne(['id' => $id]);
         if ($olympiad->status === Olympiad::STATUS_FINISHED) {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада завершилась'));
