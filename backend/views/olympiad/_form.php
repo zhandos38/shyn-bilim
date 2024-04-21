@@ -91,12 +91,6 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 
-    <row>
-        <div class="col-md-12">
-            <?= $form->field($model, 'is_cert_paid')->checkbox() ?>
-        </div>
-    </row>
-
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>

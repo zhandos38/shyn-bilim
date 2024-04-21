@@ -1,18 +1,14 @@
 <?php
 
-use common\models\Olympiad;
-use common\models\TestAssignment;
 use yii\helpers\Url;
 use yii\web\View;
 
 /* @var $this View */
-/* @var $testAssignment TestAssignment */
-/* @var $olympiad Olympiad */
+/* @var $assignment_id integer */
+/* @var $test_name String */
 
-$this->title = $olympiad->name;
+$this->title = $olympiad_name;
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['subject/test']];
-
-$assignment_id = $testAssignment->id;
 ?>
 <div id="test" class="pb--60 pt--60">
     <div class="container test-app__container">
@@ -49,18 +45,24 @@ $assignment_id = $testAssignment->id;
                 </small>
             </div>
             <div class="mt--10">
-                Бас жүлде: <?= $olympiad->grand_place_start ?>-<?= $olympiad->grand_place_end ?> дұрыс жауап.
+                Бас жүлде – 20 дұрыс жауап.
                 <br>
-                І орын: <?= $olympiad->first_place_start ?>-<?= $olympiad->first_place_end ?> дұрыс жауап.
+                І орын – 16-19 дұрыс жауап.
                 <br>
-                ІІ орын: <?= $olympiad->second_place_start ?>-<?= $olympiad->second_place_end ?> дұрыс жауап.
+                ІІ орын – 13-15 дұрыс жауап.
                 <br>
-                ІІІ орын: <?= $olympiad->third_place_start ?>-<?= $olympiad->third_place_end ?>  дұрыс жауап.
+                ІІІ орын – 3-12  дұрыс жауап.
             </div>
             <div class="mt--10">
-                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/cert', 'assignment' => $assignment_id]) ?>">
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/get-cert', 'id' => $assignment_id]) ?>" download>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
-                    Сертификат/диплом/алғыс хат алу
+                    <?= Yii::t('app', 'Получить сертификат/диплом') ?>
+                </a>
+            </div>
+            <div class="mt--10">
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/get-cert-thank-leader', 'id' => $assignment_id]) ?>" download>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
+                    <?= Yii::t('app', 'Получить грамоту преподавателя') ?>
                 </a>
             </div>
         </div>

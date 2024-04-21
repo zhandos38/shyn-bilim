@@ -40,7 +40,6 @@ class TestAssignment extends \yii\db\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_FINISHED = 2;
-    const STATUS_CERT_PAID = 3;
 
     /**
      * {@inheritdoc}
@@ -66,7 +65,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             ['lang', 'string', 'max' => 2],
             [['city_id', 'region_id', 'status'], 'integer'],
 
-            [['iin', 'name', 'surname', 'phone', 'lang', 'school_id'], 'required'],
+            [['iin', 'name', 'surname', 'phone', 'lang', 'school_id', 'teacher_name', 'parent_name'], 'required'],
         ];
     }
 
@@ -131,7 +130,6 @@ class TestAssignment extends \yii\db\ActiveRecord
             self::STATUS_OFF => 'Не оплачено',
             self::STATUS_ACTIVE => 'Оплачено',
             self::STATUS_FINISHED => 'Завершено',
-            self::STATUS_CERT_PAID => 'Сертификат оплачен',
         ];
     }
 

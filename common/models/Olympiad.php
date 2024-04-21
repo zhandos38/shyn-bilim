@@ -34,7 +34,6 @@ use yii\imagine\Image;
  * @property boolean $is_landscape_cert_orientation
  * @property boolean $is_landscape_cert_thank_leader_orientation
  * @property boolean $is_landscape_cert_thank_parent_orientation
- * @property boolean $is_cert_paid
  *
  * @property Test[] $tests
  */
@@ -70,7 +69,7 @@ class Olympiad extends \yii\db\ActiveRecord
             [['type'], 'integer'],
             ['price', 'number'],
             [['status', 'order'], 'integer'],
-            [['is_actual', 'is_cert_paid'], 'boolean'],
+            ['is_actual', 'boolean'],
 
             [['third_place_start', 'third_place_end', 'second_place_start', 'second_place_end', 'first_place_start', 'first_place_end', 'grand_place_start', 'grand_place_end'], 'integer'],
             [['is_landscape_diploma_orientation', 'is_landscape_cert_orientation', 'is_landscape_cert_thank_leader_orientation', 'is_landscape_cert_thank_parent_orientation'], 'boolean'],
@@ -99,7 +98,6 @@ class Olympiad extends \yii\db\ActiveRecord
             'price' => 'Цена',
             'order' => 'Порядок',
             'folder_name' => 'Имя папки',
-            'is_cert_paid' => 'Сертификат платный',
         ];
     }
 
