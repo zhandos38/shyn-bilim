@@ -512,7 +512,7 @@ class OlympiadController extends Controller
             throw new Exception('Test Assignment is not found');
         }
 
-        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED || $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
+        if ($testAssignment->status !== TestAssignment::STATUS_FINISHED && $testAssignment->status !== TestAssignment::STATUS_CERT_PAID) {
             Yii::$app->session->setFlash('success', 'Тест аяқталмаған немесе төленбеген');
             return $this->redirect(['olympiad/view']);
         }
