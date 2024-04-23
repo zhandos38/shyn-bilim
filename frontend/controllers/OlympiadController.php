@@ -226,7 +226,7 @@ class OlympiadController extends Controller
         $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')], 'status' => TestAssignment::STATUS_CERT_PAID]);
 
         if (empty($model)) {
-            throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
+            $this->redirect('check-cert');
         }
 
         return $this->redirect(['cert', 'assignment' => $model->id]);
