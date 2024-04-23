@@ -223,10 +223,7 @@ class OlympiadController extends Controller
             throw new Exception('Sig is not correct');
         }
 
-        $model = TestAssignment::find()
-            ->andWhere(['id' => $request[$this->toProperty('order_id')]])
-            ->andWhere(['status' => TestAssignment::STATUS_CERT_PAID])
-            ->one();
+        $model = TestAssignment::findOne(['id' => $request[$this->toProperty('order_id')], 'status' => TestAssignment::STATUS_CERT_PAID]);
 
         if (empty($model)) {
             throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
