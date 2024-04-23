@@ -67,10 +67,12 @@ $assignment_id = $testAssignment->id;
     </div>
 </div>
 <?php
+$olympiad_id = $testAssignment->olympiad_id;
 $hash = md5( 'zohan'.(string)$assignment_id );
 $js =<<<JS
 testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
+testApp.olympiadId = "$olympiad_id";
 testApp.getTest();
 
 $('#previousQuestionButton, #nextQuestionButton').click(function() {
