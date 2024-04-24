@@ -88,6 +88,14 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <?php if ($olympiad->type === Olympiad::TYPE_STUDENT): ?>
         <div class="row">
             <div class="col-md-3">
+                <?= $form->field($model, 'leader_phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                ]) ?>
+            </div>
+            <div class="col-md-3">
                 <?= $form->field($model, 'teacher_name') ?>
             </div>
             <div class="col-md-3">
