@@ -17,7 +17,7 @@ class WhiteListSearch extends WhiteList
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'olympiad_id'], 'integer'],
             [['iin'], 'safe'],
         ];
     }
@@ -59,6 +59,7 @@ class WhiteListSearch extends WhiteList
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'olympiad_id' => $this->olympiad_id,
         ]);
 
         $query->andFilterWhere(['like', 'iin', $this->iin]);

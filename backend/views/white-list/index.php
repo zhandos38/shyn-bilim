@@ -1,8 +1,10 @@
 <?php
 
+use common\models\Olympiad;
 use common\models\WhiteList;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -39,8 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'olympiad_id',
                 'value' => function(WhiteList $model) {
-                    return $model->olympiad ? $model->olympiad->name : '-';
-                }
+                    return $model->olympiad !== null ? $model->olympiad->name : 'Не указано';
+                },
+                'filter' => ArrayHelper::map(Olympiad::find()->asArray()->all(), 'id', 'name')
             ],
 
             ['class' => 'yii\grid\ActionColumn'],

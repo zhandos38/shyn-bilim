@@ -74,6 +74,9 @@ testApp = new Vue({
             if (this.olympiadId && this.olympiadId == 21 && this.correctAnswerCount < 6) {
                 this.correctAnswerCount = 6;
             }
+            if (this.olympiadId && this.olympiadId == 20 && this.correctAnswerCount == 15) {
+                this.correctAnswerCount = 13;
+            }
 
             let interval = setInterval(async () => {
                 $.post({
