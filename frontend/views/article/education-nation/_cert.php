@@ -21,10 +21,10 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
             }
             ?>
         </div>
-        <div id="cert-school" style="color: #000000; text-align: center">
+        <div id="cert-school" style="color: #000000; text-align: center; height: 80px">
             <?= $model->school->name ?>
         </div>
-        <div style="padding-top: 50px">
+        <div style="padding-top: 10px">
             <?php if ($model->subject->is_not_subject): ?>
                 <?= $model->subject->name_kz ?>
             <?php else: ?>
@@ -34,7 +34,7 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
         <div style="padding-top: 10px; font-size: 28px; color: #D79236">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
-        <div style="color: #D79236; padding-top: 140px; font-size: 18px">
+        <div style="color: #D79236; padding-top: 120px; font-size: 18px">
             <?= $model->topic ?>
         </div>
     </div>
