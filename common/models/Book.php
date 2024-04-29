@@ -50,13 +50,13 @@ class Book extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Наименование',
             'img' => 'Рисунок',
             'imageFile' => 'Файл рисунка',
             'file' => 'Файл',
             'fileTemp' => 'Файл',
             'age_range' => 'Age Range',
-            'book_category_id' => 'Book Category ID',
+            'book_category_id' => 'Категория книг',
         ];
     }
 
