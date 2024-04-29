@@ -9,7 +9,7 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
     ->setMargin(5);
 ?>
 <div class="cert-page" style="background-image: url('/img/article/education-nation/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
-    <div id="cert-name" style="padding-top: 380px; padding-left: 60px; width: 660px; text-align: center; height: 300px; line-height: 110%; font-size: 18px; ">
+    <div id="cert-name" style="padding-top: 340px; padding-left: 60px; width: 660px; text-align: center; height: 340px; line-height: 110%; font-size: 18px; ">
         <div id="cert-city" style="padding-top: 0; color: #000000; text-align: center;">
             <?php
             if ($model->school !== null) {
@@ -34,7 +34,7 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
         <div style="padding-top: 10px; font-size: 28px; color: #D79236">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
-        <div style="color: #D79236; padding-top: 100px; font-size: 22px">
+        <div style="color: #D79236; padding-top: 140px; font-size: 18px">
             <?= $model->topic ?>
         </div>
     </div>
