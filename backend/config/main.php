@@ -20,6 +20,13 @@ return [
         ]
     ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@vendor/raiffeisen/bootstrap/dist'
+                ]
+            ]
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
