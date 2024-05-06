@@ -37,6 +37,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'article_magazine_id')->dropDownList(ArrayHelper::map(ArticleMagazine::find()->all(), 'id', 'name')) ?>
 
+    <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'surname')->textInput(['maxlength' => true]) ?>
