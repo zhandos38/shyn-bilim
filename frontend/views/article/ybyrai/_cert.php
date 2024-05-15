@@ -24,17 +24,17 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
         <div id="cert-school" style="color: #000000; text-align: center; font-size: 12px">
             <?= $model->school->name ?>
         </div>
-        <div style="padding-top: 10px">
+        <div style="padding-top: 10px; font-size: 11px">
             <?php if ($model->subject->is_not_subject): ?>
                 <?= $model->subject->name_kz ?>
             <?php else: ?>
                 <?= $model->subject->name_kz ?> пәні мұғалімі
             <?php endif; ?>
         </div>
-        <div style="padding-top: 10px; font-size: 22px">
+        <div style="padding-top: 5px; font-size: 22px">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
-        <div style="padding-top: 5px; padding-left: 60px; font-size: 12px; width: 480px;">
+        <div style="padding-top: 10px; padding-left: 60px; font-size: 12px; width: 480px;">
             <?= $model->topic ?>
         </div>
     </div>
