@@ -17,7 +17,6 @@ $this->title = 'Материалы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="project-article-index">
-
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
         'isSolid' => true,
@@ -74,11 +73,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ];
-        echo ExportMenu::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => $gridColumns,
-        'clearBuffers' => true, //optional
-        ]);
+//        echo ExportMenu::widget([
+//        'dataProvider' => $dataProvider,
+//        'columns' => $gridColumns,
+//        ]);
     ?>
 
     <?= GridView::widget([
