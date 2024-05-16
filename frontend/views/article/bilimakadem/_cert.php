@@ -20,7 +20,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 14px; color: #000000; text-align: center; line-height: 110%;">
+        <div id="cert-school" style="font-size: 12px; color: #000000; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
             <div style="padding-top: 80px; text-transform: uppercase">
                 <?php if ($model->subject->is_not_subject): ?>
@@ -33,7 +33,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         <div style="padding-top: 10px; font-size: 28px;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
-        <div id="cert-topic" style="padding-top: 20px; font-size: 16px; color: #663b8b; line-height: 110%; font-weight: 500;">
+        <div id="cert-topic" style="padding-top: 10px; font-size: 14px; color: #663b8b; line-height: 110%; font-weight: 500;">
             <?= $model->topic ?>
         </div>
     </div>
