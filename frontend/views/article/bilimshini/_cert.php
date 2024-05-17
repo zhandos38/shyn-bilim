@@ -41,7 +41,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
         <div id="cert-qrcode" style="height: 60px; width: 160px; font-size: 22px;">
             <img src="<?= $qrCode->writeDataUri() ?>">
         </div>
-        <div style="padding-top: 20px; padding-left: 63px">
+        <div style="padding-top: 20px">
             <div id="cert-number" style="padding-top: 0">Тіркеу №<?= $model->id ?></div>
         </div>
     </div>
