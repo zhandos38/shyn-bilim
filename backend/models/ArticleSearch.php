@@ -18,7 +18,7 @@ class ArticleSearch extends Article
     {
         return [
             [['id', 'subject_id', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'iin', 'topic', 'file', 'status'], 'safe'],
+            [['name', 'surname', 'patronymic', 'iin', 'topic', 'file', 'status', 'phone'], 'safe'],
         ];
     }
 
@@ -73,6 +73,7 @@ class ArticleSearch extends Article
             ->andFilterWhere(['like', 'surname', $this->surname])
             ->andFilterWhere(['like', 'patronymic', $this->patronymic])
             ->andFilterWhere(['like', 'iin', $this->iin])
+            ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'topic', $this->topic])
             ->andFilterWhere(['like', 'file', $this->file]);
 
