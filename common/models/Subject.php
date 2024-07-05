@@ -115,7 +115,7 @@ class Subject extends \yii\db\ActiveRecord
 
     public function getImage()
     {
-        return Yii::$app->params['staticDomain'] . '/subject/' . $this->img;
+        return $this->img ? Yii::$app->params['staticDomain'] . '/subject/' . $this->img : '/img/no-img-book.png';
     }
 
     public function upload()
