@@ -2,8 +2,7 @@
 
 use yii\helpers\Url;
 
-/** @var \common\models\Olympiad $olympiadStudent */
-/** @var \common\models\Olympiad $olympiadTeacher */
+/** @var \common\models\Olympiad $olympiad */
 
 $this->title = 'Bilimshini.kz - образовательный портал';
 $this->registerMetaTag([
@@ -41,31 +40,20 @@ $this->registerMetaTag([
                                     <li>Бізбен бірге дамиды.</li>
                                     <li>Бізбен бірге білім шыңын бағындырады.</li>
                                 </ul>
+                                <div class="mt-2">
+                                    «Altyn Qyran 2024» басталу уақыты 14 қазан
+                                </div>
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«ЕҢ БІЛІМДІ ПЕДАГОГ 2024» ҚАТЫСУ</span>
+                                        <span class="btn-text banner-btn">«Altyn Qyran 2024» ҚАТЫСУ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadTeacher->getFile() ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">ЕРЕЖЕ</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«ЖАС МАТЕМАТИК 2024» ҚАТЫСУ</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiadStudent->getFile() ?>">
+                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiad->getFile() ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text">ЕРЕЖЕ</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -86,24 +74,6 @@ $this->registerMetaTag([
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-lg-0">
-                            <div class="banner-card pb--30 swiper rbt-dot-bottom-center banner-swiper-active swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
-                                <div class="rbt-card rbt-hover">
-                                    <div class="rbt-img">
-                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadTeacher->id]) ?>">
-                                            <img src="/img/en-bilimdi-pedagog-2024/banner-mini.jpg" style="width: 100%" alt="banner-part1.png">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="rbt-card rbt-hover">
-                                    <div class="rbt-img">
-                                        <a href="<?= Url::to(['olympiad/assignment', 'id' => $olympiadStudent->id]) ?>">
-                                            <img  src="/img/jas-mathematic-2024/banner-mini.jpg" style="width: 100%; margin-top: 2rem" alt="banner-part2.png">
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -94,7 +94,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $olympiadStudent = Olympiad::find()->orderBy(['id' => SORT_DESC])->where(['is_actual' => true, 'type' => Olympiad::TYPE_STUDENT])->one();
-        $olympiadTeacher = Olympiad::find()->orderBy(['id' => SORT_DESC])->where(['is_actual' => true, 'type' => Olympiad::TYPE_TEACHER])->one();
 
         return $this->render('index', [
             'olympiadStudent' => $olympiadStudent,
