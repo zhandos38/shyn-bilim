@@ -96,8 +96,7 @@ class SiteController extends Controller
         $olympiadStudent = Olympiad::find()->orderBy(['id' => SORT_DESC])->where(['is_actual' => true, 'type' => Olympiad::TYPE_STUDENT])->one();
 
         return $this->render('index', [
-            'olympiadStudent' => $olympiadStudent,
-            'olympiadTeacher' => $olympiadTeacher
+            'olympiad' => $olympiadStudent,
         ]);
     }
 
