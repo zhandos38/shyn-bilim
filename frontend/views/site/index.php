@@ -40,15 +40,12 @@ $this->registerMetaTag([
                                     <li>Бізбен бірге дамиды.</li>
                                     <li>Бізбен бірге білім шыңын бағындырады.</li>
                                 </ul>
-                                <div class="mt-2">
-                                    «Altyn Qyran 2024» басталу уақыты 14 қазан
-                                </div>
                             </div>
 
                             <div>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«Altyn Qyran 2024» ҚАТЫСУ</span>
+                                        <span class="btn-text banner-btn">«Altyn Qyran» ҚАТЫСАМЫН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
