@@ -75,7 +75,7 @@ class OlympiadController extends Controller
         }
 
         if ($olympiad->status === Olympiad::STATUS_NEW) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Олимпиада еще не началась'));
+            Yii::$app->session->setFlash('error', '«Altyn Qyran 2024» басталу уақыты 14 қазан');
             return $this->redirect(['site/index']);
         }
 
