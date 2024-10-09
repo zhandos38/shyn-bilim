@@ -106,7 +106,7 @@ class OlympiadController extends Controller
 
         // Проверка на неактивность
         if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
-            Yii::$app->session->setFlash('error', '«Altyn Qyran» басталу уақыты 14 қазан');
+            Yii::$app->session->setFlash('error', '«Altyn Qyran» тіркелу уақыты 14 қазанда басталады');
             return $this->redirect(['site/index']);
         }
 
