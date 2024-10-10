@@ -235,7 +235,7 @@ AppAsset::register($this);
     </div>
 </header>
 
-<?php include_once "_mobile-menu.php" ?>
+<?= $this->render('_mobile-menu') ?>
 
 <section class="bg-light-gray padding-40px-tb sm-padding-30px-tb page-title-small">
     <div class="container">

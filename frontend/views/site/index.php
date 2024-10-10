@@ -76,14 +76,14 @@ $this->registerMetaTag([
                         <div class="col-md-6">
                             <img src="/img/altyn-qyran-2024/banner.jpg" alt="img">
                         </div>
-                    </div>
+                    </div>rbt-header-wrapper header-space-betwween bg-color-white header-sticky
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="bg-color-white rbt-section-gapTop rbt-section-gapBottom">
+<div class="bg-color-white mt-4 mb-4">
     <div class="container">
         <div class="row">
             <div class="col-md-3">

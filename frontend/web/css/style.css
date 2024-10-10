@@ -10843,8 +10843,8 @@ ul.rbt-dropdown-menu li a .right-icon {
   }
 }
 ul.rbt-dropdown-menu li.has-child-menu {
-  display: flex;
-  align-items: center;
+  /*display: flex;*/
+  /*align-items: center;*/
   cursor: pointer;
   position: relative;
 }

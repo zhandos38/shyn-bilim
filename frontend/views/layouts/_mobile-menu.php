@@ -29,7 +29,7 @@ use yii\helpers\Url;
             </ul>
         </div>
 
-        <?php include '_nav.php' ?>
+        <?= $this->render('_nav') ?>
 
         <div class="mobile-menu-bottom">
             <div class="rbt-btn-wrapper mb--20">
