@@ -27,7 +27,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => '/favi
             </div>
             <div class="top-header__contact">
                 <div class="navbar-button">
-                    <?= $this->render('select-language') ?>
+                    <?= $this->render('_language') ?>
                 </div>
                 <?php if (!Yii::$app->user->identity): ?>
                     <div class="navbar-button">

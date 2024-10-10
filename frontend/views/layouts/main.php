@@ -76,6 +76,9 @@ AppAsset::register($this);
                 <div class="rbt-header-sec-col rbt-header-right">
                     <div class="rbt-header-content">
                         <div class="header-info">
+                            <?= $this->render('_language') ?>
+                        </div>
+                        <div class="header-info">
                             <a style="font-size: 14px" href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Сұрақ-жауап') ?></a>
                         </div>
                     </div>
@@ -97,7 +100,10 @@ AppAsset::register($this);
                     </div>
                 </div>
                 <div class="rbt-main-navigation d-none d-xl-block">
-                    <?php include '_nav.php' ?>
+                    <?= $this->render('_nav') ?>
+                </div>
+                <div class="rbt-main-navigation">
+                    <?= $this->render('_mobile-menu') ?>
                 </div>
             </div>
         </div>
@@ -133,7 +139,7 @@ AppAsset::register($this);
     </div>
 </header>
 
-<?php include_once "_mobile-menu.php" ?>
+<?= $this->render('_mobile-menu') ?>
 
 <?= Alert::widget() ?>
 
