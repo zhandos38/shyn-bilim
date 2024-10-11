@@ -1,7 +1,10 @@
 <?php
 
+use common\models\Olympiad;
+use common\models\Subject;
 use insolita\wgadminlte\LteBox;
 use insolita\wgadminlte\LteConst;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\Test;
@@ -23,7 +26,7 @@ use common\models\Test;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'olympiad_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Olympiad::find()->all(), 'id', 'name'), [
+    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
         'prompt' => 'Выберите олимпиаду',
     ]) ?>
 
@@ -35,7 +38,7 @@ use common\models\Test;
 
     <?= $form->field($model, 'lang')->dropDownList(Test::getLangList()) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Subject::find()->andWhere(['type' => \common\models\Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
