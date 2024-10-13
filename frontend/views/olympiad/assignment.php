@@ -116,15 +116,11 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     9 => '9',
                     10 => '10',
                     11 => '11',
-                ], [
-                    'prompt' => Yii::t('app', 'Выберите класс')
                 ]) ?>
             </div>
             <div class="col-md-1">
                 <?= $form->field($model, 'lang')->dropDownList([
                     'kz' => 'Қазақша',
-                ], [
-                    'prompt' => Yii::t('app', 'Выберите язык')
                 ]) ?>
             </div>
         </div>
