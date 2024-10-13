@@ -120,6 +120,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <div class="col-md-2">
                 <?= $form->field($model, 'lang')->dropDownList([
                     'kz' => 'Қазақша',
+                    'ru' => 'Русский',
                 ]) ?>
             </div>
         </div>

@@ -289,9 +289,9 @@ class OlympiadController extends Controller
             ]);
 
 
-        if (!empty($model->subject_id)) {
-            $query->andWhere(['subject_id' => $model->subject_id]);
-        }
+//        if (!empty($model->subject_id)) {
+//            $query->andWhere(['subject_id' => $model->subject_id]);
+//        }
 
         return $query->all();
     }
