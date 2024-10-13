@@ -492,7 +492,6 @@ class OlympiadController extends Controller
         $model = new CheckAssignmentForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            VarDumper::dump($model,10,1); die;
             if ($testAssignmentId = $model->check(true)) {
                 return $this->redirect(['olympiad/cert', 'assignment' => $testAssignmentId]);
             }
