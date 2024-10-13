@@ -280,6 +280,7 @@ class OlympiadController extends Controller
     {
         $query = Test::find()
             ->andWhere(['olympiad_id' => $model->olympiad_id])
+            ->andWhere(['subject_id' => $model->subject_id])
             ->andWhere(['lang' => $model->lang])
             ->andFilterWhere([
                 'and',
