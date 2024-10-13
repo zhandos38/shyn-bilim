@@ -237,10 +237,10 @@ class OlympiadController extends Controller
         $testAssignment = TestAssignment::findOne(['id' => $assignment]);
 
         // Проверка на наличие место
-        if ($testAssignment->olympiad->type === Olympiad::TYPE_STUDENT && $testAssignment->point < $testAssignment->olympiad->third_place_start) {
-            Yii::$app->session->setFlash('success', 'Нәтиже балы жеткіліксіз');
-            return $this->redirect(['olympiad/index']);
-        }
+//        if ($testAssignment->olympiad->type === Olympiad::TYPE_STUDENT && $testAssignment->point < $testAssignment->olympiad->third_place_start) {
+//            Yii::$app->session->setFlash('success', 'Нәтиже балы жеткіліксіз');
+//            return $this->redirect(['olympiad/index']);
+//        }
 
         if ($testAssignment->olympiad->is_cert_paid) {
             if ($testAssignment->status === TestAssignment::STATUS_CERT_PAID) {
@@ -560,8 +560,26 @@ class OlympiadController extends Controller
             return $this->redirect('/');
         }
 
+        $olympiad = $testAssignment->olympiad;
+        $place = null;
+        if ($testAssignment->point >= $olympiad->third_place_start) {
+            $place = 'III ОРЫН';
+        }
+
+        if ($testAssignment->point >= $olympiad->second_place_start && $testAssignment->point <= $olympiad->second_place_end) {
+            $place = 'II ОРЫН';
+        }
+
+        if ($testAssignment->point >= $olympiad->first_place_start && $testAssignment->point <= $olympiad->first_place_end) {
+            $place = 'I ОРЫН';
+        }
+
+        if ($testAssignment->point >= $olympiad->grand_place_start && $testAssignment->point <= $olympiad->grand_place_end) {
+            $place = 'Бас жүлде';
+        }
         $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert-thank-leader'), [
-            'testAssignment' => $testAssignment
+            'testAssignment' => $testAssignment,
+            'place' => $place,
         ]);
 
         // setup kartik\mpdf\Pdf component

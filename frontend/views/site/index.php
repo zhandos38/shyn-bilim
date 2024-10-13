@@ -76,7 +76,7 @@ $this->registerMetaTag([
                         <div class="col-md-6">
                             <img src="/img/altyn-qyran-2024/banner.jpg" alt="img">
                         </div>
-                    </div>rbt-header-wrapper header-space-betwween bg-color-white header-sticky
+                    </div>
                 </div>
             </div>
         </div>

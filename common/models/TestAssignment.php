@@ -92,7 +92,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'parent_name' => Yii::t('app', 'Ф.И.О родителей'),
             'parent_name_second' => Yii::t('app', 'Мать ученика'),
             'phone' => Yii::t('app', 'Номер телефона'),
-            'leader_phone' => 'Жекетші мұғалімнің телефон номері',
+            'leader_phone' => 'Жетекші мұғалімнің телефон номері',
             'lang' => Yii::t('app', 'Язык'),
             'city_id' => Yii::t('app', 'Город'),
             'region_id' => Yii::t('app', 'Регион'),
