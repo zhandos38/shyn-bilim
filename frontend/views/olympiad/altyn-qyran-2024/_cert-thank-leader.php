@@ -16,7 +16,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
             <div style="font-size: 22px; padding-top: 5px; text-transform: uppercase; color: red; text-align: center">
                 <b><?= $place ?></b>
             </div>
-            <div style="padding-left: 190px; padding-top: 40px; font-family: 'Arial'; height: 100px; width: 400px; font-size: 16px">
+            <div style="padding-left: 80px; padding-top: 40px; font-family: 'Arial'; height: 100px; width: 500px; font-size: 16px">
                 <div style="font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
