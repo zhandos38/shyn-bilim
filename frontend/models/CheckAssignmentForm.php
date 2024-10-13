@@ -44,7 +44,7 @@ class CheckAssignmentForm extends Model
     public function check($isFinished = false)
     {
         $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id])
-        ->andFilterWhere(['iin' => $this->iin])
+        ->andFilterWhere(['iin' => trim($this->iin)])
         ->andFilterWhere(['phone' => $this->phone]);
 
         if ($isFinished) {
