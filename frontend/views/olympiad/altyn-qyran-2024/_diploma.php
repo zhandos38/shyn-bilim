@@ -23,20 +23,22 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
             <div style="padding-left: 50px; font-family: 'Arial'; height: 100px; width: 500px; font-size: 16px">
-                <div style="font-weight: 500;">
-                    <?php
-                    if ($testAssignment->school !== null) {
-                        if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
-                            echo $testAssignment->school->city->name;
-                        } else {
-                            echo $testAssignment->school->city->region->name . ', ' . $testAssignment->school->city->name;
-                        }
-                    } ?>
+                <div style="height: 94px">
+                    <div style="font-weight: 500;">
+                        <?php
+                        if ($testAssignment->school !== null) {
+                            if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
+                                echo $testAssignment->school->city->name;
+                            } else {
+                                echo $testAssignment->school->city->region->name . ', ' . $testAssignment->school->city->name;
+                            }
+                        } ?>
+                    </div>
+                    <div style=" font-weight: 500;">
+                        <?= $testAssignment->school->name ?>
+                    </div>
                 </div>
-                <div style=" font-weight: 500;">
-                    <?= $testAssignment->school->name ?>
-                </div>
-                <div style="padding-top: 50px; font-weight: lighter; text-transform: uppercase;">
+                <div style="padding-top: 20px; font-weight: lighter; text-transform: uppercase;">
                     <b><?= $testAssignment->teacher_name ?></b>
                 </div>
             </div>
