@@ -10,7 +10,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-qyran-2024/certificate_thank.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 10px; padding-top: 500px; text-align: center;">
-            <div id="cert-name" style="font-size: 18px; text-transform: uppercase;">
+            <div id="cert-name" style="font-size: 18px; text-transform: uppercase; font-weight: bold">
                 <?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?>
             </div>
             <div style="font-size: 22px; padding-top: 5px; text-transform: uppercase; color: red; text-align: center">
@@ -31,7 +31,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert-thank-leader
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
-            <div id="cert-name" style="height: 80px; font-size: 18px; padding-top: 10px; text-transform: uppercase">
+            <div id="cert-name" style="height: 80px; font-size: 18px; padding-top: 5px; text-transform: uppercase; font-weight: bold">
                 <?= $testAssignment->teacher_name ?>
             </div>
         </div>
