@@ -133,7 +133,7 @@ class OlympiadController extends Controller
 
             // Проверка на есть ли тест или нет
             /** @var Test $test */
-            VarDumper::dump($this,10 ,1); die;
+            VarDumper::dump($model,10 ,1); die;
             $tests = $this->getTestsByAssignment($model);
             if (!$tests) {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Тест не найден'));
