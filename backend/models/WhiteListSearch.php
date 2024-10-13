@@ -48,7 +48,7 @@ class WhiteListSearch extends WhiteList
             'query' => $query,
             'sort' => [
                 'defaultOrder' => [
-                    'created_at' => SORT_DESC
+                    'id' => SORT_DESC
                 ]
             ]
         ]);
