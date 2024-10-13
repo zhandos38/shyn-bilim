@@ -23,7 +23,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div style="margin-top: 10px; font-size: 16px">
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
-            <div style="padding-left: 100px; font-family: 'Arial'; height: 100px; width: 400px; font-size: 16px">
+            <div style="padding-left: 150px; font-family: 'Arial'; height: 100px; width: 500px; font-size: 16px">
                 <div style="font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
