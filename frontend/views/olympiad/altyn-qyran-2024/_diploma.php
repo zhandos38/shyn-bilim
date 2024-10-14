@@ -15,8 +15,13 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         <div style="font-size: 28px; padding-left: 20px; padding-top: 360px; text-transform: uppercase; color: red; text-align: center">
             <b><?= $place ?></b>
         </div>
-        <div style="padding-left: 100px; padding-top: 130px; text-align: center; width: 600px; height: 150px; font-size: 20px">
-            <div style="padding-top: 50px; font-weight: lighter; text-transform: uppercase;">
+        <div style="padding-left: 100px; padding-top: 120px; text-align: center; width: 600px; height: 150px; font-size: 20px">
+            <div style="font-size: 16px">
+                <?= $testAssignment->subject->name ?> пәнінен
+                <br>
+                жеңімпаз болғаны үшін
+            </div>
+            <div style="padding-top: 15px; font-weight: lighter; text-transform: uppercase;">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div style="font-size: 16px; padding-top: 10px;">
@@ -38,7 +43,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                         <?= $testAssignment->school->name ?>
                     </div>
                 </div>
-                <div style="padding-top: 20px; font-weight: lighter; text-transform: uppercase;">
+                <div style="padding-top: 20px; font-size: 20px; font-weight: lighter; text-transform: uppercase;">
                     <b><?= $testAssignment->teacher_name ?></b>
                 </div>
             </div>
