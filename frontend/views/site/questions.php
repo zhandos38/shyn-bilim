@@ -217,40 +217,6 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item card">
-                                <h2 class="accordion-header card-header" id="headingThree2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
-                                        САЙТТАН ҚАЛАЙ ТӨЛЕМ ЖАСАУҒА БОЛАДЫ?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExamplec3" style="">
-                                    <div class="accordion-body card-body">
-                                        <p>
-                                            1. Олимпиадалар батырмасынан кейін  ҚАТЫСУ батырмасын басыңыз.
-                                            <img class="card-img" src="/img/pay-1.png" alt="pay-1">
-                                        </p>
-                                        <p>
-                                            2. МАТЕМАТИКА кнопкасын басыңыз.
-                                            <img class="card-img" src="/img/pay-2.png" alt="pay-2">
-                                        </p>
-                                        <p>
-                                            3. АНКЕТАНЫ қатесіз толтырып, төменгі жағындағы ЖІБЕРУ батырмасын басыңыз.
-                                            <img class="card-img" src="/img/pay-3.png" alt="pay-3">
-                                        </p>
-                                        <p>
-                                            4. Анкетаны толтырып болған соң, ТӨЛЕМ БЕТІ шығады. Суретте көрсетілгендей –Төлем картаңыздағы 16 санды жазыңыз.
-                                        </p>
-                                        <p>
-                                            5. ММ, ҮҮ, СVC белгілері тұсына Төлем картаңыздың артындағы сандарды жазаңыз.
-                                        </p>
-                                        <p>
-                                            6. ТОЛЫҚ толтырып болғаннан кейін ОПЛАТИТЬ 500т батырмасын басыңыз, одан кейін 10 секунд күтсеңіз Олимпиада тапсырмасы бірден ашылады, бетті жауып қоймаңыз.
-                                            <img class="card-img" src="/img/pay-4.png" alt="pay-4">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -446,40 +412,6 @@ use yii\helpers\Url; ?>
                                             <a class="rbt-btn" href="<?= Url::to(['article/check-cert']) ?>">Сертифика қайта жүктеу</a>
                                             <br><br>
                                             <a class="rbt-btn" href="<?= Url::to(['article/check-charter']) ?>">Грамота қайта жүктеу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="headingThree2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
-                                            КАК ПРОИЗВЕСТИ ОПЛАТУ ЧЕРЕЗ САЙТ?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExamplec3" style="">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                1. Олимпиадалар батырмасынан кейін  ҚАТЫСУ батырмасын басыңыз.
-                                                <img class="card-img" src="/img/pay-1.png" alt="pay-1">
-                                            </p>
-                                            <p>
-                                                2. МАТЕМАТИКА кнопкасын басыңыз.
-                                                <img class="card-img" src="/img/pay-2.png" alt="pay-2">
-                                            </p>
-                                            <p>
-                                                3. АНКЕТАНЫ қатесіз толтырып, төменгі жағындағы ЖІБЕРУ батырмасын басыңыз.
-                                                <img class="card-img" src="/img/pay-3.png" alt="pay-3">
-                                            </p>
-                                            <p>
-                                                4. Анкетаны толтырып болған соң, ТӨЛЕМ БЕТІ шығады. Суретте көрсетілгендей –Төлем картаңыздағы 16 санды жазыңыз.
-                                            </p>
-                                            <p>
-                                                5. ММ, ҮҮ, СVC белгілері тұсына Төлем картаңыздың артындағы сандарды жазаңыз.
-                                            </p>
-                                            <p>
-                                                6. ТОЛЫҚ толтырып болғаннан кейін ОПЛАТИТЬ 500т батырмасын басыңыз, одан кейін 10 секунд күтсеңіз Олимпиада тапсырмасы бірден ашылады, бетті жауып қоймаңыз.
-                                                <img class="card-img" src="/img/pay-4.png" alt="pay-4">
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
