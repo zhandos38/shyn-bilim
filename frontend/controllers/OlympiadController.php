@@ -118,7 +118,7 @@ class OlympiadController extends Controller
 
             // Проверка на завершенность теста
             $testAssignment = TestAssignment::find()
-                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin])
+                ->andWhere(['olympiad_id' => $model->olympiad_id, 'iin' => $model->iin, 'subject_id' => $model->subject_id])
                 ->andWhere(['or', ['status' => TestAssignment::STATUS_FINISHED], ['status' => TestAssignment::STATUS_CERT_PAID]])
                 ->one();
 
