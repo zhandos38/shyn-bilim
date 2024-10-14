@@ -146,7 +146,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree7" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree7" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Апелляциялық шағымдар олимпиада аяқталған күннің ертесіне 18.00-ге дейін қабылданады.
+                                                Апелляциялық шағымдар олимпиада аяқталған күннің ертесіне 18:00-ге дейін bilimshini.kz@mail.ru электронды почтасында  қабылданады. Апелляциялық шағымға жауап беру 3 жұмыс күні ішінде қарастырылған.
                                             </p>
                                         </div>
                                     </div>
@@ -345,7 +345,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree7" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree7" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Апелляционные жалобы принимаются до 18.00 часов  следующего дня  после завершения  Олимпиады.
+                                                Апелляционные жалобы принимаются до 18.00 часов следующего дня после завершения Олимпиады на почтовый адрес bilimshini.kz@mail.ru
                                             </p>
                                         </div>
                                     </div>
