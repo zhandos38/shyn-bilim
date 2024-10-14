@@ -11,6 +11,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\WhiteList */
 /* @var $form yii\widgets\ActiveForm */
+
+$model->olympiad_id = 22;
 ?>
 
 <div class="white-list-form">
@@ -31,7 +33,7 @@ use yii\widgets\ActiveForm;
         'prompt' => 'Выберите предмет',
     ]) ?>
 
-    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->all(), 'id', 'name'), [
+    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
