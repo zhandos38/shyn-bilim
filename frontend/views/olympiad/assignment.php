@@ -44,8 +44,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         <div class="row">
             <div class="col-md-3">
                 <?= $form->field($model, 'lang')->dropDownList([
-                    'kz' => 'Қазақша',
-                    'ru' => 'Русский',
+                    'KZ' => 'Қазақша',
+                    'RU' => 'Русский',
                 ]) ?>
             </div>
             <div class="col-md-3">
@@ -115,12 +115,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     9 => '9',
                     10 => '10',
                     11 => '11',
-                ]) ?>
-            </div>
-            <div class="col-md-2">
-                <?= $form->field($model, 'lang')->dropDownList([
-                    'KZ' => 'Қазақша',
-                    'RU' => 'Русский',
                 ]) ?>
             </div>
         </div>
