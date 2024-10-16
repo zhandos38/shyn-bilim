@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\forms\WhiteListForm;
 use Yii;
 use common\models\WhiteList;
 use backend\models\WhiteListSearch;
@@ -74,11 +75,9 @@ class WhiteListController extends Controller
      */
     public function actionCreate()
     {
-        $model = new WhiteList();
+        $model = new WhiteListForm();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->iin = str_replace(' ', '', $model->iin);
-            $model->save();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         }
 

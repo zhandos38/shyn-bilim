@@ -27,15 +27,15 @@ $model->olympiad_id = 22;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
+        'prompt' => 'Выберите предмет',
+    ]) ?>
 
     <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
-    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
-        'prompt' => 'Выберите предмет',
-    ]) ?>
+    <?= $form->field($model, 'iin_list')->textarea([ 'rows' => '30' ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
