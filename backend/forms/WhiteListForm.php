@@ -50,6 +50,10 @@ class WhiteListForm extends Model
         try {
             $ids = explode("\n", str_replace("\r", "", $this->iin_list));
             foreach ($ids as $id) {
+                if ($id === "") {
+                    continue;
+                }
+
                 $whiteList = new WhiteList();
                 $whiteList->iin = trim($id);
                 $whiteList->olympiad_id = $this->olympiad_id;
