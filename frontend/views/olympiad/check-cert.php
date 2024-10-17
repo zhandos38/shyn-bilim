@@ -29,6 +29,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 
         <?= $form->field($model, 'iin') ?>
 
+        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
+            'prompt' => Yii::t('app', 'Выберите предмет')
+        ]) ?>
+
         <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
     </div>
 </div>

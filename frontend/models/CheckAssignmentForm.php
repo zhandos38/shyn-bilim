@@ -25,7 +25,7 @@ class CheckAssignmentForm extends Model
     public function rules()
     {
         return [
-            [['olympiad_id'], 'required'],
+            [['olympiad_id', 'iin', 'subject_id'], 'required'],
             [['iin', 'phone'], 'string', 'max' => 20],
             [['subject_id', 'olympiad_id'], 'integer'],
         ];
@@ -45,7 +45,8 @@ class CheckAssignmentForm extends Model
     {
         $query = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id])
         ->andFilterWhere(['iin' => trim($this->iin)])
-        ->andFilterWhere(['phone' => $this->phone]);
+        ->andFilterWhere(['phone' => $this->phone])
+        ->andFilterWhere(['subject_id' => $this->subject_id]);
 
         if ($isFinished) {
             $query->andWhere(['or', ['status' => TestAssignment::STATUS_FINISHED], ['status' => TestAssignment::STATUS_CERT_PAID]]);
