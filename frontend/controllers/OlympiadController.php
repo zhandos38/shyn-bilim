@@ -163,6 +163,7 @@ class OlympiadController extends Controller
                 $model->status = TestAssignment::STATUS_ACTIVE;
             }
 
+            $model->iin = trim($model->iin);
             if (!$model->save()) {
                 throw new Exception(VarDumper::dumpAsString($model->errors));
             }
