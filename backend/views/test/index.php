@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(\common\models\Test $model) {
                     return $model->subject ? $model->subject->name : '-';
                 },
-                'filter' => \yii\helpers\ArrayHelper::map(\common\models\Subject::find()->all(), 'id', 'name_kz')
+                'filter' => \yii\helpers\ArrayHelper::map(\common\models\Subject::find()->where(['type' => \common\models\Subject::TYPE_STUDENT])->all(), 'id', 'name_kz')
             ],
             [
                 'attribute' => 'level',
