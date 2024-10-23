@@ -209,9 +209,9 @@ class OlympiadController extends Controller
     {
         $request = Yii::$app->request->queryParams;
 
-        if (!$this->checkSign($request, 'success')) {
-            throw new Exception('Sig is not correct');
-        }
+//        if (!$this->checkSign($request, 'success')) {
+//            throw new Exception('Sig is not correct');
+//        }
 
         $model = TestAssignment::find()
                 ->andWhere(['id' => $request[$this->toProperty('order_id')]])
