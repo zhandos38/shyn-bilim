@@ -15,7 +15,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
         <div style="font-size: 28px; padding-left: 20px; padding-top: 360px; text-transform: uppercase; color: red; text-align: center">
             <b><?= $place ?></b>
         </div>
-        <div style="padding-left: 100px; padding-top: 120px; text-align: center; width: 600px; height: 150px; font-size: 20px">
+        <div style="padding-left: 80px; padding-top: 120px; text-align: center; width: 640px; height: 150px; font-size: 20px">
             <div style="font-size: 16px">
                 <?= $testAssignment->subject->name ?> пәнінен
                 <br>
