@@ -219,10 +219,22 @@ class OlympiadController extends Controller
                 ->one();
 
         if (empty($model)) {
-            throw new Exception('Ошибка платежа, платеж не был совершен, попытайтесь снова или свяжитесь с администрацией сайта');
+            return $this->render('success', [
+                'orderId' => $request[$this->toProperty('order_id')]
+            ]);
         }
 
         return $this->redirect(['test', 'assignment' => $model->id]);
+    }
+
+    public function actionCheckPayment($id)
+    {
+        $model = TestAssignment::find()
+            ->andWhere(['id' => $id])
+            ->andWhere(['status' => TestAssignment::STATUS_ACTIVE])
+            ->one();
+
+        return empty($model);
     }
 
     public function actionCertPaySuccess()
