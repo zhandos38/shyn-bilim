@@ -116,7 +116,7 @@ class OlympiadController extends Controller
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // Проверка на математику
-            if ($model->subject_id === 1) {
+            if ($model->subject_id == 1) {
                 Yii::$app->session->setFlash('warning', 'Техникалық қателікке байланысты жабық! 17:00-де ашылады');
                 return $this->render('assignment', [
                     'model' => $model,
