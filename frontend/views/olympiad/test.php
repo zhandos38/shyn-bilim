@@ -87,6 +87,6 @@ $('#previousQuestionButton, #nextQuestionButton').click(function() {
 JS;
 
 $this->registerJsFile( '@web/js/vue.js', ['position' => View::POS_END]);
-$this->registerJsFile( '@web/js/test.js', ['position' => View::POS_END]);
+$this->registerJsFile( '@web/js/tests.js', ['position' => View::POS_END]);
 $this->registerJs($js, View::POS_END);
 ?>
