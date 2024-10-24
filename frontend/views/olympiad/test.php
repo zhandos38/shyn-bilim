@@ -69,10 +69,14 @@ $assignment_id = $testAssignment->id;
 <?php
 $olympiad_id = $testAssignment->olympiad_id;
 $hash = md5( 'zohan'.(string)$assignment_id );
+$subject_id = $testAssignment->subject_id;
+$grade = $testAssignment->grade;
 $js =<<<JS
 testApp.hash = "$hash";
 testApp.assignmentId = "$assignment_id";
 testApp.olympiadId = "$olympiad_id";
+testApp.subjectId = "$subject_id";
+testApp.grade = "$grade";
 testApp.getTest();
 
 $('#previousQuestionButton, #nextQuestionButton').click(function() {
