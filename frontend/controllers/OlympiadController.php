@@ -177,23 +177,29 @@ class OlympiadController extends Controller
             }
 
             if ($whiteList === null) {
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => $olympiad->price,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $model->id,
-                    'pg_description' => 'Оплата за участие в олимпиаде',
-                    'pg_success_url' => Url::base('https') . '/olympiad/success',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-                    'pg_result_url_method' => 'POST',
-                ];
+                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
 
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                return $this->render('assignment', [
+                    'model' => $model,
+                    'olympiad' => $olympiad,
+                ]);
+//                $salt = $this->getSalt(8);
+//                $request = [
+//                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+//                    'pg_amount' => $olympiad->price,
+//                    'pg_salt' => $salt,
+//                    'pg_order_id' => $model->id,
+//                    'pg_description' => 'Оплата за участие в олимпиаде',
+//                    'pg_success_url' => Url::base('https') . '/olympiad/success',
+//                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+//                    'pg_result_url_method' => 'POST',
+//                ];
+//
+//                $request = $this->getSignByData($request, 'payment.php', $salt);
+//
+//                $query = http_build_query($request);
+//
+//                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
 
             return $this->redirect(['test', 'assignment' => $model->id]);
