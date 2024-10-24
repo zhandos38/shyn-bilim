@@ -13,6 +13,8 @@ testApp = new Vue({
         hash: null,
         isSent: false,
         olympiadId: null,
+        subjectId: null,
+        grade: null,
     },
     methods: {
         showLog(key1, key2) {
@@ -76,7 +78,12 @@ testApp = new Vue({
             const numbers = [27, 28];
             const randomNumber = getRandomElement(numbers);
 
-            if (this.olympiadId && this.olympiadId == 22 && this.correctAnswerCount === 30) {
+            const banSubjects = [72,73,74];
+
+            if (this.olympiadId && this.olympiadId == 22 && this.subjectId == 1 && parseInt(this.grade) < 5 && this.correctAnswerCount === 30) {
+                this.correctAnswerCount = randomNumber;
+            }
+            if (this.olympiadId && this.olympiadId == 22 && banSubjects.some(banSubject => banSubject == parseInt(this.subjectId)) && this.correctAnswerCount === 30) {
                 this.correctAnswerCount = randomNumber;
             }
 
