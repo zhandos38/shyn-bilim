@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function(TestAssignment $model) {
                     return $model->subject !== null ? $model->subject->name_ru : 'Не указано';
                 },
-                'filter' => ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_TEACHER])->asArray()->all(), 'id', 'name_kz')
+                'filter' => ArrayHelper::map(Subject::find()->where(['type' => Subject::TYPE_STUDENT])->asArray()->all(), 'id', 'name_kz')
             ],
             [
                 'attribute' => 'region_id',
