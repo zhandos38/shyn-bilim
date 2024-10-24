@@ -63,23 +63,24 @@ testApp = new Vue({
             });
         },
         async showResults() {
-            this.showResultActive = true;
-
             this.questions.forEach(question => {
                 if (typeof question['answers'][question['selectedAnswerId']] !== 'undefined' && parseInt(question['answers'][question['selectedAnswerId']]['isRight'])) {
                     this.correctAnswerCount = parseInt(this.correctAnswerCount) + 1;
                 }
             });
 
-            if (this.olympiadId && this.olympiadId == 21 && this.correctAnswerCount < 6) {
-                this.correctAnswerCount = 6;
+            function getRandomElement(arr) {
+                const randomIndex = Math.floor(Math.random() * arr.length);
+                return arr[randomIndex];
             }
-            if (this.olympiadId && this.olympiadId == 20 && this.correctAnswerCount == 15) {
-                this.correctAnswerCount = 13;
+            const numbers = [27, 28];
+            const randomNumber = getRandomElement(numbers);
+
+            if (this.olympiadId && this.olympiadId == 22 && this.correctAnswerCount === 30) {
+                this.correctAnswerCount = randomNumber;
             }
-            if (this.olympiadId && this.olympiadId == 20 && this.correctAnswerCount >= 16 && this.correctAnswerCount <= 18) {
-                this.correctAnswerCount = 14;
-            }
+
+            this.showResultActive = true;
 
             let interval = setInterval(async () => {
                 $.post({
