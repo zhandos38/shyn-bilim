@@ -8,8 +8,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
     ->setMargin(5);
 ?>
 <div class="cert-page" style="background-image: url('/img/article/bilimshini/charter.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
-    <div id="cert-name" style="height: 200px; padding-top: 540px; padding-left: 120px; width: 600px; text-align: center; font-size: 24px">
-        <div id="cert-city" style="padding-top: 0; font-size: 18px; color: #000000; text-align: center;">
+    <div id="cert-name" style="height: 200px; padding-top: 540px; padding-left: 100px; width: 600px; text-align: center; font-size: 22px">
+        <div id="cert-city" style="padding-top: 0; color: #000000; text-align: center;">
             <?php
             if ($model->school !== null) {
                 if ($model->school->city_id === 1 || $model->school->city_id === 2 || $model->school->city_id === 3) {
@@ -20,7 +20,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
             }
             ?>
         </div>
-        <div id="cert-school" style="font-size: 18px; color: #000000; text-align: center; line-height: 110%;">
+        <div id="cert-school" style="color: #000000; text-align: center; line-height: 110%;">
             <?= $model->school->name ?>
         </div>
         <div style="text-transform: uppercase;">
