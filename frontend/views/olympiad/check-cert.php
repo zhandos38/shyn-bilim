@@ -32,8 +32,14 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
         <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_STUDENT]), 'id', 'name'), [
             'prompt' => Yii::t('app', 'Выберите предмет')
         ]) ?>
+        <div>
+            <small>Это поле может быть пустым если вы не выбрали предмет при заполнение анкеты</small>
+        </div>
+        <div>
+            <small>Анкета толтыру кезінде пәнді таңдамаған болсаңыз, бұл өріс бос болуы мүмкін.</small>
+        </div>
 
-        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'rbt-btn btn-gradient mt--10']) ?>
     </div>
 </div>
 
