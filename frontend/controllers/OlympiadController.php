@@ -489,7 +489,7 @@ class OlympiadController extends Controller
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Диплом.pdf',
                 'content' => $content,
-                'cssFile' => 'css/custom.css'
+                'cssFile' => 'css/cert.css'
             ]);
         } else {
             $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_cert'), [
@@ -507,7 +507,7 @@ class OlympiadController extends Controller
                 'destination' => Pdf::DEST_BROWSER,
                 'filename' => 'Сертификат.pdf',
                 'content' => $content,
-                'cssFile' => 'css/custom.css'
+                'cssFile' => 'css/cert.css'
             ]);
         }
 
