@@ -84,11 +84,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 ]); ?>
                 <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
             </div>
-            <div class="col-md-3">
-                <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_STUDENT]), 'id', 'name'), [
-                    'prompt' => Yii::t('app', 'Выберите предмет')
-                ]) ?>
-            </div>
         </div>
         <?php if ($olympiad->type === Olympiad::TYPE_STUDENT): ?>
         <div class="row">
