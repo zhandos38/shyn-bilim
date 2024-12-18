@@ -75,16 +75,17 @@ testApp = new Vue({
                 const randomIndex = Math.floor(Math.random() * arr.length);
                 return arr[randomIndex];
             }
-            const numbers = [27, 28];
-            const randomNumber = getRandomElement(numbers);
+            const grandNumbers = [27, 26];
+            const firstNumbers = [25, 24];
+            const grandRandomNumber = getRandomElement(grandNumbers);
+            const firstRandomNumber = getRandomElement(firstNumbers);
 
-            const banSubjects = [72,73,74];
-
-            if (this.olympiadId && this.olympiadId == 22 && this.subjectId == 1 && parseInt(this.grade) < 5 && this.correctAnswerCount === 30) {
-                this.correctAnswerCount = randomNumber;
+            if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 30 || this.correctAnswerCount === 29)) {
+                this.correctAnswerCount = grandRandomNumber;
             }
-            if (this.olympiadId && this.olympiadId == 22 && banSubjects.some(banSubject => banSubject == parseInt(this.subjectId)) && this.correctAnswerCount === 30) {
-                this.correctAnswerCount = randomNumber;
+
+            if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 28 || this.correctAnswerCount === 27)) {
+                this.correctAnswerCount = firstRandomNumber;
             }
 
             this.showResultActive = true;
