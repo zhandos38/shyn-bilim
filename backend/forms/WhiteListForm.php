@@ -32,7 +32,7 @@ class WhiteListForm extends Model
         return [
             [['subject_id', 'olympiad_id'], 'integer'],
             ['iin_list', 'string'],
-            [['subject_id', 'olympiad_id', 'iin_list'], 'required'],
+            [['olympiad_id', 'iin_list'], 'required'],
         ];
     }
 

@@ -1,10 +1,12 @@
 @font-face {
-    font-family: ptSans;
-    src: url('/fonts/pt_sans.ttf');
+    font-family: 'ptSans';
+    src: url('/fonts/pt-sans.woff2') format('woff2'),
+    url('/fonts/pt-sans.woff') format('woff'),
+    url('/fonts/pt-sans.ttf') format('truetype');
 }
 
-.cert-page {
-    font-family: ptSans;
+body {
+    font-family: 'ptSans', Arial, serif;
 }
 
 .bordered {
