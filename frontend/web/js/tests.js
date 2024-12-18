@@ -82,9 +82,7 @@ testApp = new Vue({
 
             if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 30 || this.correctAnswerCount === 29)) {
                 this.correctAnswerCount = grandRandomNumber;
-            }
-
-            if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 28 || this.correctAnswerCount === 27)) {
+            } else if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 28 || this.correctAnswerCount === 27)) {
                 this.correctAnswerCount = firstRandomNumber;
             }
 
