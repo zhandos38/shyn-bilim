@@ -12,6 +12,7 @@ use Yii;
  * @property integer|null $city_id
  *
  * @property User[] $users
+ * @property City $city
  */
 class School extends \yii\db\ActiveRecord
 {
