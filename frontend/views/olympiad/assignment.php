@@ -100,6 +100,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </div>
             <div class="col-md-1">
                 <?= $form->field($model, 'grade')->dropDownList([
+                    1 => '1',
                     2 => '2',
                     3 => '3',
                     4 => '4',
