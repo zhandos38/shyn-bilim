@@ -105,10 +105,10 @@ class OlympiadController extends Controller
         }
 
         // Проверка на неактивность
-        if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
-            Yii::$app->session->setFlash('error', 'Олимпиада 19-желтоқсан ашылады');
-            return $this->redirect(['site/index']);
-        }
+//        if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
+//            Yii::$app->session->setFlash('error', 'Олимпиада 19-желтоқсан ашылады');
+//            return $this->redirect(['site/index']);
+//        }
 
         $model = $olympiad->type === Olympiad::TYPE_STUDENT ? new TestAssignmentStudentForm() : new TestAssignmentTeacherForm();
         $model->status = TestAssignment::STATUS_OFF;
@@ -177,29 +177,29 @@ class OlympiadController extends Controller
             }
 
             if ($whiteList === null) {
-                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
+//                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
+//
+//                return $this->render('assignment', [
+//                    'model' => $model,
+//                    'olympiad' => $olympiad,
+//                ]);
+                $salt = $this->getSalt(8);
+                $request = [
+                    'pg_merchant_id' => Yii::$app->params['payboxId'],
+                    'pg_amount' => $olympiad->price,
+                    'pg_salt' => $salt,
+                    'pg_order_id' => $model->id,
+                    'pg_description' => 'Оплата за участие в олимпиаде',
+                    'pg_success_url' => Url::base('https') . '/olympiad/success',
+                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                    'pg_result_url_method' => 'POST',
+                ];
 
-                return $this->render('assignment', [
-                    'model' => $model,
-                    'olympiad' => $olympiad,
-                ]);
-//                $salt = $this->getSalt(8);
-//                $request = [
-//                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-//                    'pg_amount' => $olympiad->price,
-//                    'pg_salt' => $salt,
-//                    'pg_order_id' => $model->id,
-//                    'pg_description' => 'Оплата за участие в олимпиаде',
-//                    'pg_success_url' => Url::base('https') . '/olympiad/success',
-//                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
-//                    'pg_result_url_method' => 'POST',
-//                ];
-//
-//                $request = $this->getSignByData($request, 'payment.php', $salt);
-//
-//                $query = http_build_query($request);
-//
-//                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
+                $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                $query = http_build_query($request);
+
+                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
             }
 
             return $this->redirect(['test', 'assignment' => $model->id]);
@@ -473,7 +473,22 @@ class OlympiadController extends Controller
         }
 
         if ($testAssignment->point >= $olympiad->third_place_start) {
-            $content = $this->renderPartial($testAssignment->olympiad->getFolderPath('_diploma'), [
+            $template = "_diploma";
+            $cityId = $regionId = $testAssignment->school->city_id;
+            $regionId = $testAssignment->school->city->region_id;
+            if ($cityId === 3) {
+                $template = "shymkent/_diploma";
+                if ($testAssignment->point === 29 || $testAssignment->point === 30) {
+                    $template = "shymkent/_diploma_grand";
+                }
+            } else if ($regionId === 14) {
+                $template = "turkestan/_diploma";
+                if ($testAssignment->point === 29 || $testAssignment->point === 30) {
+                    $template = "turkestan/_diploma_grand";
+                }
+            }
+
+            $content = $this->renderPartial($testAssignment->olympiad->getFolderPath($template), [
                 'testAssignment' => $testAssignment,
                 'place' => $place,
             ]);
