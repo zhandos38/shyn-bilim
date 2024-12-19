@@ -56,6 +56,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div style="font-size: 12px; margin-top: 5px">
                 <div id="cert-number"><b>№<?= $testAssignment->id ?></b></div>
                 <div id="cert-date">Күні <?= date('d.m.Y', $testAssignment->created_at) ?></div>
+                <div>Шымкент, 2024/25 оқу жылы</div>
             </div>
         </div>
     </div>
