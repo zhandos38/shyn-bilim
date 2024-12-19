@@ -476,12 +476,12 @@ class OlympiadController extends Controller
             $template = "_diploma";
             $cityId = $regionId = $testAssignment->school->city_id;
             $regionId = $testAssignment->school->city->region_id;
-            if ($cityId === 3) {
+            if ($olympiad->id === 23 && $cityId === 3) {
                 $template = "shymkent/_diploma";
                 if ($testAssignment->point === 29 || $testAssignment->point === 30) {
                     $template = "shymkent/_diploma_grand";
                 }
-            } else if ($regionId === 14) {
+            } else if ($olympiad->id === 23 && $regionId === 14) {
                 $template = "turkestan/_diploma";
                 if ($testAssignment->point === 29 || $testAssignment->point === 30) {
                     $template = "turkestan/_diploma_grand";
