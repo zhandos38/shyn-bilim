@@ -77,13 +77,17 @@ testApp = new Vue({
             }
             const grandNumbers = [27, 26];
             const firstNumbers = [25, 24];
+            const thirdNumbers = [15, 16, 17, 18, 19];
             const grandRandomNumber = getRandomElement(grandNumbers);
             const firstRandomNumber = getRandomElement(firstNumbers);
+            const thirdRandomNumber = getRandomElement(thirdNumbers)
 
             if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 30 || this.correctAnswerCount === 29)) {
                 this.correctAnswerCount = grandRandomNumber;
             } else if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 28 || this.correctAnswerCount === 27)) {
                 this.correctAnswerCount = firstRandomNumber;
+            } else if (this.olympiadId && this.olympiadId == 23 && (this.correctAnswerCount === 10 || this.correctAnswerCount === 11 || this.correctAnswerCount === 12 || this.correctAnswerCount === 13 || this.correctAnswerCount === 14)) {
+                this.correctAnswerCount = thirdRandomNumber;
             }
 
             this.showResultActive = true;
