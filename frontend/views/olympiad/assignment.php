@@ -47,6 +47,8 @@ $model->lang = 'KZ';
                 <?= $form->field($model, 'lang')->dropDownList([
                     'KZ' => 'Қазақша',
                     'RU' => 'Русский',
+                ], [
+                        'disabled' => 'true'
                 ]) ?>
             </div>
             <div class="col-md-3">
