@@ -19,7 +19,6 @@ $this->title = Yii::t('app', 'Регистрация');
 
 $this->params['heroTitle'] = $this->title;
 $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
-$model->lang = 'KZ';
 ?>
 <div class="bg-gradient-13 pt--60 pb--60">
     <div class="container">

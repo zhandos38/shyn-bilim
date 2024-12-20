@@ -113,6 +113,7 @@ class OlympiadController extends Controller
         $model = $olympiad->type === Olympiad::TYPE_STUDENT ? new TestAssignmentStudentForm() : new TestAssignmentTeacherForm();
         $model->status = TestAssignment::STATUS_OFF;
         $model->olympiad_id = $id;
+        $model->lang = 'KZ';
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             // Проверка на математику
