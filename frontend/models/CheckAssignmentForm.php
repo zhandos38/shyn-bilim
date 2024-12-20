@@ -64,7 +64,7 @@ class CheckAssignmentForm extends Model
         }
         $testAssignment = $query->one();
 
-        if ($testAssignment && $testAssignment->olympiad_id === 3 && ($testAssignment->point >= 10 && $testAssignment->point <= 14)) {
+        if ($testAssignment && $testAssignment->olympiad_id === 23 && ($testAssignment->point >= 10 && $testAssignment->point <= 14)) {
             $testAssignment->point = 15;
             $testAssignment->save();
         }
