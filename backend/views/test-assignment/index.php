@@ -66,11 +66,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => ArrayHelper::map(\common\models\City::find()->asArray()->all(), 'id', 'name')
             ],
             [
-                'attribute' => 'school_id',
+                'attribute' => 'school_name',
                 'value' => function(TestAssignment $model) {
                     return $model->school !== null ? $model->school->name : 'Не указано';
                 },
-                'filter' => ArrayHelper::map(School::find()->asArray()->all(), 'id', 'name'),
+                'label' => 'Школа',
                 'format' => 'raw'
             ],
             'teacher_name',
