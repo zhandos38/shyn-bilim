@@ -14,6 +14,7 @@ class TestAssignmentSearch extends TestAssignment
     public $test_id;
     public $city_id;
     public $region_id;
+    public $school_name;
 
     /**
      * {@inheritdoc}
@@ -22,7 +23,7 @@ class TestAssignmentSearch extends TestAssignment
     {
         return [
             [['id', 'test_id', 'olympiad_id', 'school_id', 'subject_id', 'grade', 'point', 'status', 'created_at', 'finished_at', 'city_id', 'region_id'], 'integer'],
-            [['name', 'surname', 'patronymic', 'iin', 'phone'], 'safe'],
+            [['name', 'surname', 'patronymic', 'iin', 'phone', 'school_name', 'leader_phone', 'teacher_name'], 'safe'],
         ];
     }
 
@@ -73,7 +74,6 @@ class TestAssignmentSearch extends TestAssignment
             't1.id' => $this->id,
             't1.olympiad_id' => $this->olympiad_id,
             't4.test_id' => $this->test_id,
-            't1.school_id' => $this->school_id,
             't1.subject_id' => $this->subject_id,
             't1.grade' => $this->grade,
             't1.point' => $this->point,
@@ -89,7 +89,10 @@ class TestAssignmentSearch extends TestAssignment
             ->andFilterWhere(['like', 't1.surname', $this->surname])
             ->andFilterWhere(['like', 't1.patronymic', $this->patronymic])
             ->andFilterWhere(['like', 't1.phone', $this->phone])
-            ->andFilterWhere(['like', 't1.iin', $this->iin]);
+            ->andFilterWhere(['like', 't1.leader_phone', $this->leader_phone])
+            ->andFilterWhere(['like', 't1.teacher_name', $this->teacher_name])
+            ->andFilterWhere(['like', 't1.iin', $this->iin])
+            ->andFilterWhere(['like', 't2.name', $this->school_name]);
 
         return $dataProvider;
     }
