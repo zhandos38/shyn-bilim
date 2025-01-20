@@ -12,5 +12,10 @@ use yii\helpers\Url;
                 <?= Yii::t('app', 'Получить сертификат/диплом') ?>
             </a>
         </div>
+        <div class="mt--10">
+            <a class="rbt-btn btn-gradient" href="<?= Url::to(['/olympiad/get-cert-thank-leader', 'id' => $testAssignment->id]) ?>">
+                Алғыс хат алу
+            </a>
+        </div>
     </div>
 </div>
