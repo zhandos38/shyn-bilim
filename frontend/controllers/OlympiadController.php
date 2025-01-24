@@ -105,10 +105,10 @@ class OlympiadController extends Controller
         }
 
         // Проверка на неактивность
-//        if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
-//            Yii::$app->session->setFlash('error', 'Олимпиада 19-желтоқсан ашылады');
-//            return $this->redirect(['site/index']);
-//        }
+        if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
+            Yii::$app->session->setFlash('error', 'Олимпиада 10-ақпанла ашылады');
+            return $this->redirect(['site/index']);
+        }
 
         $model = $olympiad->type === Olympiad::TYPE_STUDENT ? new TestAssignmentStudentForm() : new TestAssignmentTeacherForm();
         $model->status = TestAssignment::STATUS_OFF;
