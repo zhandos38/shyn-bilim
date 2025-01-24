@@ -106,7 +106,7 @@ class OlympiadController extends Controller
 
         // Проверка на неактивность
         if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
-            Yii::$app->session->setFlash('error', 'Олимпиада 10-ақпанла ашылады');
+            Yii::$app->session->setFlash('error', 'Олимпиада 10-ақпанда ашылады');
             return $this->redirect(['site/index']);
         }
 
