@@ -8,6 +8,7 @@ use common\models\Article;
 use common\models\ArticleMagazine;
 use common\models\ArticleMagazineRelease;
 use common\models\Subject;
+use DateTime;
 use frontend\models\ArticleSearch;
 use frontend\models\MyArticleSearch;
 use frontend\models\PayboxForm;
@@ -184,7 +185,8 @@ class ArticleController extends Controller
         }
 
         $articleMagazine = $model->getArticleMagazine()->one();
-        $content = $this->renderPartial($articleMagazine->getFolderPath('_cert'), [
+        $year = date('Y', $model->created_at);
+        $content = $this->renderPartial($articleMagazine->getFolderPath("$year/_cert"), [
             'model' => $model,
         ]);
 
@@ -251,7 +253,8 @@ class ArticleController extends Controller
         }
 
         $articleMagazine = $model->getArticleMagazine()->one();
-        $content = $this->renderPartial($articleMagazine->getFolderPath('_charter'), [
+        $year = date('Y', $model->created_at);
+        $content = $this->renderPartial($articleMagazine->getFolderPath("$year/_charter"), [
             'model' => $model,
         ]);
 
