@@ -21,6 +21,9 @@ use yii\helpers\Url;
             <a href="<?= Url::to(['article/index']) ?>"><?= Yii::t('app', 'Журналы') ?></a>
         </li>
         <li class="position-static">
+            <a href="<?= Url::to(['magazine/index']) ?>">PDF</a>
+        </li>
+        <li class="position-static">
             <a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Контакты') ?></a>
         </li>
     </ul>
