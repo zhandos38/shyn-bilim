@@ -8,7 +8,7 @@ $qrCode = (new QrCode(Url::toRoute(['article/cert', 'id' => $model->id], 'https'
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/little-geniuses/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 800px; height: 1200px; font-family: 'Times New Roman';">
+<div class="cert-page" style="background-image: url('/img/article/little-geniuses/2024/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 800px; height: 1200px; font-family: 'Times New Roman';">
     <div id="cert-name" style="padding-top: 380px; padding-left: 180px; width: 600px; text-align: center; height: 400px; line-height: 160%; font-size: 16px;; text-transform: uppercase; ">
         <div id="cert-city" style="padding-top: 30px; color: #000000; text-align: center;">
             <?php
