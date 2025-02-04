@@ -30,7 +30,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
                 <?= $model->subject->name_kz ?> пәні мұғалімі
             <?php endif; ?>
         </div>
-        <div style="font-size: 22px; bold; color: #000; margin-top: 30px; font-weight: bold">
+        <div style="font-size: 22px; bold; color: #000; margin-top: 20px; font-weight: bold">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
         </div>
     </div>
