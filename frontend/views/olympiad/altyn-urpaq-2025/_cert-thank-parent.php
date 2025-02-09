@@ -16,10 +16,10 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div style="padding-left: 160px; height: 160px; width: 600px;">
                 <div>
                     <div>
-                        <b><?= $testAssignment->parent_name ?></b>
+                        <b><?= $testAssignment->parent_name_second ?></b>
                     </div>
                     <div style="padding-top: 5px">
-                        <b><?= $testAssignment->parent_name_second ?></b>
+                        <b><?= $testAssignment->parent_name ?></b>
                     </div>
                 </div>
                 <div style="padding-top: 42px">
