@@ -97,7 +97,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     ],
                 ]) ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <?= $form->field($model, 'teacher_name') ?>
             </div>
             <div class="col-md-4">
