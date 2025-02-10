@@ -46,8 +46,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <?= $form->field($model, 'lang')->dropDownList([
                     'KZ' => 'Қазақша',
                     'RU' => 'Русский',
-                ], [
-                        'disabled' => 'true'
                 ]) ?>
             </div>
             <div class="col-md-3">
