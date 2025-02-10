@@ -13,8 +13,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2025/cert-thank-parent.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 100px; padding-top: 265px; text-align: center; width: 1000px; height: 320px; font-size: 18px; text-transform: uppercase; font-weight: 500">
-            <div style="padding-left: 160px; height: 160px; width: 600px;">
-                <div>
+            <div style="padding-left: 160px; width: 600px;">
+                <div style="height: 60px;">
                     <div>
                         <b><?= $testAssignment->parent_name_second ?></b>
                     </div>
@@ -22,7 +22,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                         <b><?= $testAssignment->parent_name ?></b>
                     </div>
                 </div>
-                <div style="padding-top: 42px">
+                <div style="padding-top: 35px">
                    <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
                 </div>
             </div>
