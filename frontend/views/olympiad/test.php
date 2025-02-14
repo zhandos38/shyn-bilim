@@ -41,7 +41,7 @@ $assignment_id = $testAssignment->id;
             </div>
         </div>
         <div v-else>
-            <div class="questions-correct-count"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
+            <div class="questions-correct-count" style="font-size: 22px; font-weight: bold"><?= Yii::t('app', 'Вы набрали') ?>: {{ correctAnswerCount }}</div>
             <div class="mt--20">
                 <small>
                     Қатысушылар жинаған балдарына сәйкес сертификаттар алады, ал жоғары балл жинаған оқушыларға І, ІІ, ІІ дәрежелі дипломдар беріледі. Дипломдар мен сертификаттарды жүктеу ақылы түрде,  жарнасы - <?= $olympiad->price ?> тг. (ата-анасының немесе демеушілердің рұқсатымен). Астынғы батырманы басу арқылы толем картасы арқылы немесе
