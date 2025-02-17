@@ -1,5 +1,4 @@
 <?php
-<?php
 use Da\QrCode\QrCode;
 
 /* @var $model \common\models\Article */
