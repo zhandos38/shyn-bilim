@@ -74,7 +74,7 @@ $this->registerMetaTag([
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="/img/altyn-urpaq-2025/banner.jpg" alt="img">
+                            <img src="/img/en-bilimdi-pedagog-2025/banner.jpg" alt="img">
                         </div>
                     </div>
                 </div>
