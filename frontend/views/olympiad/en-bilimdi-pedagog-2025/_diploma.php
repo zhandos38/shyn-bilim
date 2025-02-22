@@ -14,9 +14,9 @@ $olympiadId = $testAssignment->olympiad_id;
 $cityId = $testAssignment->school->city_id;
 $regionId = $testAssignment->school->city->region_id;
 $template = 'diploma.jpg';
-if ($olympiadId === 24 && $cityId === 3) {
+if ($olympiadId === 25 && $cityId === 3) {
     $template = "diploma-turkestan.jpg";
-} else if ($olympiadId === 24 && $regionId === 14) {
+} else if ($olympiadId === 25 && $regionId === 14) {
     $template = "diploma-shymkent.jpg";
 }
 ?>
