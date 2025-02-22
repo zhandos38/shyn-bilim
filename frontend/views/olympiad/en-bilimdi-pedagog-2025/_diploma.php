@@ -9,20 +9,24 @@ use Da\QrCode\QrCode;
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
     ->setSize(80)->setMargin(5);
+
+$olympiadId = $testAssignment->olympiad_id;
+$cityId = $testAssignment->school->city_id;
+$regionId = $testAssignment->school->city->region_id;
+$template = 'diploma.jpg';
+if ($olympiadId === 24 && $cityId === 3) {
+    $template = "diploma-turkestan.jpg";
+} else if ($olympiadId === 24 && $regionId === 14) {
+    $template = "diploma-shymkent.jpg";
+}
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/en-bilimdi-pedagog-2024/diploma.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
-        <div style="padding-left: 20px; padding-top: 340px; width: 800px; height: 350px; font-size: 14px; text-align: center">
-            <div style="font-size: 22px; text-transform: uppercase; margin-top: 5px">
-                <b><?= $place ?></b>
+    <div class="cert-page" style="background-image: url(<?= "./img/en-bilimdi-pedagog-2025/$template" ?>); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
+        <div style="padding-left: 200px; padding-top: 430px; width: 600px; height: 350px; font-size: 18px; text-align: center">
+            <div style="font-size: 24px; text-transform: uppercase; font-weight: bold; margin-top: 5px; color: #c8973c">
+                <?= $place ?>
             </div>
-            <div style="color: #bd8e34; font-size: 22px; height: 36px; text-transform: uppercase; margin-top: 30px">
-                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
-            </div>
-            <div style="padding-top: 20px">
-                <span><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
-            </div>
-            <div style="width: 400px; padding-left: 180px">
+            <div style="width: 500px; margin-left: 50px; margin-top: 130px; height: 80px">
                 <div style="font-weight: 500;">
                     <?php
                     if ($testAssignment->school !== null) {
@@ -37,8 +41,14 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
+            <div style="margin-top: 10px">
+                <span><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
+            </div>
+            <div style="font-size: 22px; height: 40px; text-transform: uppercase; margin-top: 5px">
+                <?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?>
+            </div>
         </div>
-        <div class="border" style="display: flex; padding-left: 40px; padding-top: 280px; color: #fff9f6">
+        <div style="display: flex; padding-left: 40px; padding-top: 140px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; font-size: 12px; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
