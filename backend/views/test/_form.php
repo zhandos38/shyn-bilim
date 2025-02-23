@@ -38,7 +38,7 @@ use common\models\Test;
 
     <?= $form->field($model, 'lang')->dropDownList(Test::getLangList()) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_STUDENT])->all(), 'id', 'name_ru'), [
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_TEACHER])->all(), 'id', 'name_ru'), [
         'prompt' => 'Выберите предмет',
     ]) ?>
 
