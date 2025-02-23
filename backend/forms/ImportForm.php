@@ -76,7 +76,7 @@ class ImportForm extends Model
                 }
 
                 // Answers
-                if (!$item['answer']) {
+                if (empty($item['answer'])) {
                     throw new Exception('No answer, question is: '. $question->text);
                 }
                 foreach ($item['answer'] as $item) {
