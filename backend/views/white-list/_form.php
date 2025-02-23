@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 /* @var $model common\models\WhiteList */
 /* @var $form yii\widgets\ActiveForm */
 
-$model->olympiad_id = 24    ;
+$model->olympiad_id = 25;
 ?>
 
 <div class="white-list-form">
