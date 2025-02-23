@@ -135,5 +135,6 @@ $this->registerJs($js);
     /* question */
     .question-list__item span, .question-box__text span, .question-box__answer span {
         top: 0 !important;
+        color: black !important;
     }
 </style>
