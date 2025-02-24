@@ -24,7 +24,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <div class="row">
     <div class="col-md-4">
         <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите олимпиаду')
+            'prompt' => Yii::t('app', 'Выберите олимпиаду'),
+            'id' => 'olympiad_id'
         ]) ?>
 
         <?= $form->field($model, 'iin') ?>
@@ -46,3 +47,27 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <?php ActiveForm::end() ?>
 </div>
 
+<?php
+$js =<<<JS
+$('#olympiad_id').change(function() {
+        $.get({
+            url: '/kz/site/get-subjects-by-olympiad-id',
+            data: {id: $(this).val()},
+            dataType: 'JSON',
+            success: function(result) {
+                let options = '<option value>-</option>';
+                result.forEach(function(item) {
+                    options += '<option value="' + item.id + '">' + item.name + '</option>';
+                });
+
+                $('#city_id').html(options);
+            },
+            error: function() {
+                console.log('Ошибка');
+            }
+        });
+    });
+JS;
+
+$this->registerJs($js);
+?>
