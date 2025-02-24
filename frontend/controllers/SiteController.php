@@ -259,6 +259,17 @@ class SiteController extends Controller
         throw new HttpException('404', 'Page is not found!');
     }
 
+    public function actionGetSubjectsByOlympiadId($id)
+    {
+        if (Yii::$app->request->isAjax) {
+            $olympiad = Olympiad::findOne(['id' => $id]);
+            $subjects = Subject::find()->andWhere(['=', 'type', $olympiad->type])->all();
+            return Json::encode($subjects);
+        }
+
+        throw new HttpException('404', 'Page is not found!');
+    }
+
     public function actionCert()
     {
 //        $results = Result::find()

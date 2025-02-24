@@ -24,13 +24,15 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <div class="row">
     <div class="col-md-4">
         <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->orderBy(['id' => SORT_DESC])->all(), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите олимпиаду')
+            'prompt' => Yii::t('app', 'Выберите олимпиаду'),
+            'id' => 'olympiad_id'
         ]) ?>
 
         <?= $form->field($model, 'iin') ?>
 
-        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите предмет')
+        <?= $form->field($model, 'subject_id')->dropDownList([], [
+            'prompt' => Yii::t('app', 'Выберите предмет'),
+            'id' => 'subject_id'
         ]) ?>
         <div>
             <small>Анкета толтыру кезінде пәнді таңдамаған болсаңыз, бұл өріс бос болуы мүмкін.</small>
@@ -46,3 +48,27 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 <?php ActiveForm::end() ?>
 </div>
 
+<?php
+$js =<<<JS
+$('#olympiad_id').change(function() {
+        $.get({
+            url: '/kz/site/get-subjects-by-olympiad-id',
+            data: {id: $(this).val()},
+            dataType: 'JSON',
+            success: function(result) {
+                let options = '<option value>-</option>';
+                result.forEach(function(item) {
+                    options += '<option value="' + item.id + '">' + item.name_kz + '</option>';
+                });
+
+                $('#subject_id').html(options);
+            },
+            error: function() {
+                console.log('Ошибка');
+            }
+        });
+    });
+JS;
+
+$this->registerJs($js);
+?>
