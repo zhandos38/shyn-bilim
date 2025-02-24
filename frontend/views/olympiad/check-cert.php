@@ -30,8 +30,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => '#'];
 
         <?= $form->field($model, 'iin') ?>
 
-        <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => \common\models\Subject::TYPE_TEACHER]), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите предмет')
+        <?= $form->field($model, 'subject_id')->dropDownList([], [
+            'prompt' => Yii::t('app', 'Выберите предмет'),
+            'id' => 'subject_id'
         ]) ?>
         <div>
             <small>Анкета толтыру кезінде пәнді таңдамаған болсаңыз, бұл өріс бос болуы мүмкін.</small>
@@ -57,10 +58,10 @@ $('#olympiad_id').change(function() {
             success: function(result) {
                 let options = '<option value>-</option>';
                 result.forEach(function(item) {
-                    options += '<option value="' + item.id + '">' + item.name + '</option>';
+                    options += '<option value="' + item.id + '">' + item.name_kz + '</option>';
                 });
 
-                $('#city_id').html(options);
+                $('#subject_id').html(options);
             },
             error: function() {
                 console.log('Ошибка');
