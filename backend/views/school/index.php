@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'city_id',
                 'value' => function(School $model) {
-                    return $model->city->name;
+                    return !empty($model->city) ? $model->city->name : '-';
                 },
                 'filter' => ArrayHelper::map(City::find()->asArray()->all(), 'id', 'name')
             ],
