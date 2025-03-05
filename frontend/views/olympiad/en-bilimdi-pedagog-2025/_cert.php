@@ -34,7 +34,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                     </div>
                 </div>
                 <div style="padding-top: 5px">
-                    <span style="text-transform: capitalize"><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
+                    <span style="text-transform: capitalize"><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> <?= $testAssignment->is_methodologist ? 'әдіскері' : 'мұғалімі' ?>
                 </div>
             </div>
         </div>

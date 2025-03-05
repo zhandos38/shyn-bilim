@@ -42,7 +42,7 @@ if ($olympiadId === 25 && $testAssignment->point === 20 && $cityId === 3) {
                 </div>
             </div>
             <div style="margin-top: 10px">
-                <span><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> мұғалімі
+                <span><?= $testAssignment->subject->name_kz ?></span> <?= !$testAssignment->subject->is_not_subject ? 'пәні' : '' ?> <?= $testAssignment->is_methodologist ? 'әдіскері' : 'мұғалімі' ?>
             </div>
             <div style="font-size: 22px; height: 40px; text-transform: uppercase; margin-top: 5px">
                 <?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?>
