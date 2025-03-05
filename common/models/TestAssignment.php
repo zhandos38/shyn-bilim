@@ -32,6 +32,7 @@ use yii\helpers\ArrayHelper;
  * @property int $point [int(11)]
  * @property int $finished_at [int(11)]
  * @property string $patronymic [varchar(255)]
+ * @property boolean $is_methodologist
  */
 class TestAssignment extends \yii\db\ActiveRecord
 {
@@ -66,6 +67,7 @@ class TestAssignment extends \yii\db\ActiveRecord
 
             ['lang', 'string', 'max' => 2],
             [['city_id', 'region_id', 'status'], 'integer'],
+            ['is_methodologist', 'boolean'],
 
             [['iin', 'name', 'surname', 'phone', 'lang', 'school_id'], 'required'],
         ];
@@ -97,6 +99,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             'region_id' => Yii::t('app', 'Регион'),
             'status' => Yii::t('app', 'Статус'),
             'point' => Yii::t('app', 'Баллы'),
+            'is_methodologist' => 'Әдіскер',
             'created_at' => Yii::t('app', 'Время создание'),
         ];
     }
