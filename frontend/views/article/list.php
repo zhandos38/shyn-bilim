@@ -26,7 +26,7 @@ use yii\widgets\ListView;
             </div>
         </div>
         <div class="col-md-9">
-            <?= $this->render('_search', ['model' => $searchModel, 'projectId' => Yii::$app->request->get('id')]) ?>
+            <?= $this->render('_search', ['model' => $searchModel, 'articleMagazineId' => Yii::$app->request->get('articleMagazineId'), 'subjectId' => Yii::$app->request->get('subjectId')]) ?>
         </div>
     </div>
 

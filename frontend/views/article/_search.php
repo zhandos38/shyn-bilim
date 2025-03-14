@@ -11,10 +11,10 @@ use yii\widgets\ActiveForm;
 <div class="project-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['list', 'id' => $projectId],
+        'action' => ['list', 'articleMagazineId' => $articleMagazineId, 'subjectId' => $subjectId],
         'method' => 'get',
     ]); ?>
-
+s
     <div class="row">
         <div class="col-md-10">
             <?= $form->field($model, 'topic')->textInput(['placeholder' => 'Тақырып', 'style' => 'height: 60px'])->label(false) ?>
