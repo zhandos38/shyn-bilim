@@ -28,7 +28,7 @@ $this->registerMetaTag([
         <div class="row">
             <div class="col-lg-12">
                 <div class="inner">
-                    <div class="row align-items-center">
+                    <div class="row gap-0 align-items-center">
                         <div class="col-md-6">
                             <h1 class="title display-one">
                                 Педагогтерге, балаларға, <br> ата-аналарға арналған платформа
@@ -74,7 +74,11 @@ $this->registerMetaTag([
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="/img/en-bilimdi-pedagog-2025/banner.jpg" alt="img">
+                            <div style="display: flex; justify-content: center">
+                                <a href="https://shyn-kitaphana.kz">
+                                    <img style="object-fit: contain; height: 600px" src="/img/kanikulda-kitap-oku-2025/banner.jpg" alt="img">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
