@@ -43,16 +43,9 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://shyn-kitaphana.kz">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«<?= $olympiad->name ?>» ҚАТЫСАМЫН</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-border hover-icon-reverse color-white mt-4" href="<?= $olympiad->getFile() ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">ЕРЕЖЕ</span>
+                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» ҚАТЫСАМЫН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
