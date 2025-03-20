@@ -8,9 +8,9 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; width: 1200px">
-        <div style="padding-left: 20px; padding-top: 240px">
-            <div id="cert-name" style="padding-left: 0; height: 80px; font-size: 22px; text-transform: uppercase; text-align: center;">
+    <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; width: 1200px; height: 800px">
+        <div style="padding-left: 100px; padding-top: 240px">
+            <div id="cert-name" style="padding-left: 0; height: 80px; font-size: 22px; text-transform: uppercase; text-align: left;">
                 <b><?= $model->leader_name ?></b>
             </div>
             <div id="footer" style="text-align: left; padding-left: 40px; padding-top: 280px; font-size: 14px; font-family: 'Times New Roman'">
