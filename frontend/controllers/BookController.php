@@ -44,6 +44,7 @@ class BookController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'bookCategories' => $bookCategories,
+            'assignment' => $assignment
         ]);
     }
 

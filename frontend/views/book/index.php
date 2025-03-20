@@ -38,8 +38,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                             Кітап оқып,
                             табыс тап!
                         </p>
-                        <a class="rbt-badge-4" href="<?= \yii\helpers\Url::to(['book/cert']) ?>"><i class="fa fa-download"></i> Сертификат жүктеу</a>
-                        <a class="rbt-badge-4" href="<?= \yii\helpers\Url::to(['book/cert-thank']) ?>"><i class="fa fa-download"></i> Алғыс-хат жүктеу</a>
+                        <a class="rbt-badge-4" href="<?= \yii\helpers\Url::to(['book/cert', 'assignment' => $assignment]) ?>"><i class="fa fa-download"></i> Сертификат жүктеу</a>
+                        <a class="rbt-badge-4" href="<?= \yii\helpers\Url::to(['book/cert-thank', 'assignment' => $assignment]) ?>"><i class="fa fa-download"></i> Алғыс-хат жүктеу</a>
                     </div>
                 </div>
             </div>
