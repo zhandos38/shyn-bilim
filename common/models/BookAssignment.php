@@ -42,8 +42,8 @@ class BookAssignment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['school_id', 'grade','created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_phone', 'parent_name', 'parent_phone', 'phone'], 'string', 'max' => 255],
+            [['school_id','created_at'], 'integer'],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_phone', 'parent_name', 'parent_phone', 'phone', 'grade'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
             [['city_id', 'region_id'], 'integer'],
