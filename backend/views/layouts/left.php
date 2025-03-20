@@ -22,6 +22,7 @@
                     ['label' => 'Журналы', 'icon' => 'fas fa-user', 'url' => ['magazine/index']],
                     ['label' => 'Кітапхана-Категория', 'icon' => 'fas fa-user', 'url' => ['book-category/index']],
                     ['label' => 'Кітапхана', 'icon' => 'fas fa-user', 'url' => ['book/index']],
+                    ['label' => 'Кітап оқу қатысушылар', 'icon' => 'fas fa-user', 'url' => ['book-assignment/index']],
                     ['label' => 'Подписка', 'icon' => 'fas fa-edit', 'url' => ['subscribe/index']],
                     ['label' => 'Материал Журнал', 'icon' => 'fas fa-user', 'url' => ['article-magazine/index']],
                     ['label' => 'Материал Журнал Предметы', 'icon' => 'fas fa-user', 'url' => ['article-magazine-subject/index']],
