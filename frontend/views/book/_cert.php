@@ -7,7 +7,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/kitap-oku.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
+<div class="cert-page" style="background-image: url('/img/article/cert.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
     <div id="cert-name" style="padding-top: 340px; padding-left: 335px; width: 540px;">
         <div style="text-transform: uppercase; padding-top: 10px; height: 80px; font-size: 22px; color: red;">
             <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
