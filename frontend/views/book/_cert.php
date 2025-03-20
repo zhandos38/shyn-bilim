@@ -12,8 +12,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $m
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
-        <div style="padding-left: 80px; padding-top: 320px; width: 800px; height: 450px; font-size: 14px">
-            <div class="bordered" style="padding-top: 130px; width: 400px; height: 100px">
+        <div style="padding-left: 80px; padding-top: 450px; width: 800px; height: 450px; font-size: 14px">
+            <div class="bordered" style="width: 400px; height: 80px">
                 <div style="font-weight: 500;">
                     <?php
                     if ($model->school !== null) {
