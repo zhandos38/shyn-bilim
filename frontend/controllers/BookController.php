@@ -1,13 +1,10 @@
 <?php
-
-
 namespace frontend\controllers;
 
-
-use common\models\Article;
 use common\models\Book;
 use common\models\BookCategory;
 use common\models\User;
+use common\models\BookAssignment;
 use kartik\mpdf\Pdf;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -17,6 +14,18 @@ use yii\web\Controller;
 
 class BookController extends Controller
 {
+    public function actionAssignment()
+    {
+        $model = new BookAssignment();
+        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+            return $this->redirect(['book/index']);
+        }
+
+        return $this->render('assignment', [
+            'model' => $model,
+        ]);
+    }
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
