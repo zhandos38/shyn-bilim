@@ -7,35 +7,19 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
-    <div id="cert-name" style="padding-top: 560px; padding-left: 120px; width: 540px; text-align: center">
-        <div style="padding-left: 70px; width: 400px; font-size: 16px;">
-            <div id="cert-city" style="padding-top: 0; color: #000000; height: 10px;">
-                <?php
-                if ($model->school !== null) {
-                    if ($model->school->city_id === 1 || $model->school->city_id === 2 || $model->school->city_id === 3) {
-                        echo $model->school->city->name;
-                    } else {
-                        echo $model->school->city->region->name . ', ' . $model->school->city->name;
-                    }
-                }
-                ?>
+<div>
+    <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); text-align: center; background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+        <div style="padding-left: 20px; padding-top: 360px">
+            <div id="cert-name" style="padding-left: 280px; height: 80px; font-size: 22px; text-transform: uppercase; text-align: center;">
+                <b><?= $model->leader_name ?></b>
             </div>
-            <div id="cert-school" style="color: #000000; height: 60px; line-height: 110%;">
-                <?= $model->school->name ?>
-                <div style="text-transform: lowercase;">
-                    <?= $model->teacher_title ?>
+            <div id="footer" style="text-align: left; padding-left: 40px; padding-top: 480px; width: 160px; font-size: 14px; font-family: 'Times New Roman'">
+                <div id="cert-qrcode"><img src="<?= $qrCode->writeDataUri() ?>" alt="qr"></div>
+                <div style="padding-left: 0">
+                    <div id="cert-number" style="padding-top: 10px">Тіркеу №<?= $model->id ?></div>
+                    <div id="cert-date" style="padding-top: 0;">Күні <?= date('d.m.Y', $model->created_at) ?> жыл</div>
                 </div>
             </div>
         </div>
-        <div style="text-transform: uppercase; padding-top: 10px; height: 80px; font-size: 22px; font-weight: bold">
-            <?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?>
-        </div>
-    </div>
-    <div style="padding-top: 190px; padding-left: 20px; font-size: 12px; color: #000000">
-        <div id="cert-qrcode" style="height: 60px; padding-top: 40px; width: 160px; font-size: 22px;">
-            <img src="<?= $qrCode->writeDataUri() ?>">
-        </div>
-        <div id="cert-number" style="padding-left: 20px; padding-top: 20px; font-size: 12px">Тіркеу №<?= $model->id ?></div>
     </div>
 </div>
