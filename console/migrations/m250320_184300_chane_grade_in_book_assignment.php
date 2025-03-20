@@ -12,7 +12,7 @@ class m250320_184300_chane_grade_in_book_assignment extends Migration
      */
     public function safeUp()
     {
-
+        $this->alterColumn('book_assignment', 'grade', $this->string());
     }
 
     /**
