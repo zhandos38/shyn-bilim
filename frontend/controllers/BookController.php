@@ -17,7 +17,7 @@ class BookController extends Controller
     public function actionAssignment()
     {
         $model = new BookAssignment();
-        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['book/index']);
         }
 
