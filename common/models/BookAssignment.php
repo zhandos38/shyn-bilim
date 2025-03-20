@@ -43,7 +43,7 @@ class BookAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['school_id','created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_phone', 'parent_name', 'parent_phone', 'phone', 'grade'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'leader_name', 'leader_phone', 'parent_name', 'parent_phone', 'grade'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
             [['city_id', 'region_id'], 'integer'],
