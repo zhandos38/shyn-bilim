@@ -43,7 +43,7 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="https://shyn-kitaphana.kz">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="#">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» ҚАТЫСАМЫН</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -68,7 +68,7 @@ $this->registerMetaTag([
                         </div>
                         <div class="col-md-6">
                             <div style="display: flex; justify-content: center">
-                                <a href="https://shyn-kitaphana.kz">
+                                <a href="#">
                                     <img style="object-fit: contain; height: 600px" src="/img/kanikulda-kitap-oku-2025/banner.jpg" alt="img">
                                 </a>
                             </div>
