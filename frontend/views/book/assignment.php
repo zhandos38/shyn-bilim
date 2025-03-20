@@ -100,7 +100,12 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <?= $form->field($model, 'parent_name') ?>
             </div>
             <div class="col-md-4">
-                <?= $form->field($model, 'parent_phone') ?>
+                <?= $form->field($model, 'parent_phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ],
+                ]) ?>
             </div>
         </div>
 
