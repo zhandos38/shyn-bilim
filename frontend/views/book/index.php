@@ -50,40 +50,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 <div class="rbt-counterup-area rbt-section-overlayping-top rbt-section-gapBottom">
     <div class="container">
         <div class="row row--30 gy-5">
-            <div class="col-lg-3 order-2 order-lg-1">
-                <aside class="rbt-sidebar-widget-wrapper rbt-gradient-border">
-                    <!-- Start Widget Area  -->
-                    <div class="rbt-single-widget rbt-widget-tag">
-                        <div class="inner">
-                            <h4 class="rbt-widget-title">Жас</h4>
-                            <div class="rbt-sidebar-list-wrapper rbt-tag-list">
-                                <a href="#">1-4</a>
-                                <a href="#">5-8</a>
-                                <a href="#">9-11</a>
-                                <a href="#">Мұғалімдерге</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Widget Area  -->
-
-                    <!-- Start Widget Area  -->
-                    <div class="rbt-single-widget rbt-widget-categories has-show-more">
-                        <div class="inner">
-                            <h4 class="rbt-widget-title">Категория</h4>
-                            <ul class="rbt-sidebar-list-wrapper categories-list-check has-show-more-inner-content">
-                                <?php foreach ($bookCategories as $index => $bookCategory): ?>
-                                <li class="rbt-check-group">
-                                    <input id="cat-list-<?= $index ?>" type="checkbox" name="cat-list-<?= $index ?>">
-                                    <label for="cat-list-<?= $index ?>"><?= $bookCategory->name ?></label>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                        <div class="rbt-show-more-btn">Подробнее</div>
-                    </div>
-                    <!-- End Widget Area  -->
-                </aside>
-            </div>
             <div class="col-lg-9 order-1 order-lg-2">
 
                 <?= \yii\widgets\ListView::widget([
