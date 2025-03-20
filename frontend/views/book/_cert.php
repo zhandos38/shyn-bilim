@@ -12,7 +12,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $m
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
-        <div style="padding-left: 80px; padding-top: 265px; width: 800px; height: 450px; font-size: 14px">
+        <div style="padding-left: 80px; padding-top: 320px; width: 800px; height: 450px; font-size: 14px">
             <div style="padding-top: 130px; width: 400px;">
                 <div style="font-weight: 500;">
                     <?php
@@ -29,7 +29,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $m
                 </div>
             </div>
             <div style="font-size: 14px; font-weight: bold; padding-top: 10px">
-                <?= $model->grade ?> сынып оқушысы
+                <?= $model->getGrade() ?> сынып оқушысы
             </div>
             <div style="font-size: 22px; height: 36px; text-transform: uppercase">
                 <b><?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?></b>
