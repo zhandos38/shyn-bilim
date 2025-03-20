@@ -38,26 +38,17 @@ class BookController extends Controller
         ]);
     }
 
-    public function actionCert()
+    public function actionGetCert()
     {
-        $model = Yii::$app->user->identity;
-        if ($model->role === User::ROLE_STUDENT) {
-            if (!$model->grade) {
-                Yii::$app->session->setFlash('warning', 'Сыныбынызды таңдап, қайта жүктеңіз');
-                return $this->redirect(['cabinet/index']);
-            }
-
-            return $this->redirect(['book/cert-kitap-oku']);
-        } else {
-            if (!$model->teacher_title) {
-                Yii::$app->session->setFlash('warning', 'Мұғалімдің қызмет атауын таңдаңызда, қайта жүктеңіз');
-                return $this->redirect(['cabinet/index']);
-            }
-            return $this->redirect(['book/cert-okuga-kushtar-ustaz']);
+        if (!$model->grade) {
+            Yii::$app->session->setFlash('warning', 'Сыныбынызды таңдап, қайта жүктеңіз');
+            return $this->redirect(['cabinet/index']);
         }
+
+        return $this->redirect(['book/cert-kitap-oku']);
     }
 
-    public function actionCertKitapOku()
+    public function actionCert()
     {
         $model = User::findOne(['id' => Yii::$app->user->identity->id]);
         if (empty($model)) {
@@ -95,7 +86,7 @@ class BookController extends Controller
         return $pdf->render();
     }
 
-    public function actionCertOkugaKushtarUstaz()
+    public function actionCertThank()
     {
         $model = User::findOne(['id' => Yii::$app->user->identity->id]);
         if (empty($model)) {
@@ -103,7 +94,7 @@ class BookController extends Controller
         }
 
         // get your HTML raw content without any layouts or scripts
-        $content = $this->renderPartial('_cert_okuga-kushtar-ustaz', [
+        $content = $this->renderPartial('_cert_thank', [
             'model' => $model,
         ]);
 
