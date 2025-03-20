@@ -18,7 +18,7 @@ use yii\helpers\ArrayHelper;
  * @property string|null $parent_phone
  * @property string $iin
  * @property int|null $school_id
- * @property int $grade
+ * @property string $grade
  * @property int|null $created_at
  *
  * @property School $school
