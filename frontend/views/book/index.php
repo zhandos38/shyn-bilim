@@ -50,7 +50,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 <div class="rbt-counterup-area rbt-section-overlayping-top rbt-section-gapBottom">
     <div class="container">
         <div class="row row--30 gy-5">
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="col-lg-12 order-1 order-lg-2">
 
                 <?= \yii\widgets\ListView::widget([
                     'dataProvider' => $dataProvider,
