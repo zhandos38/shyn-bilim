@@ -17,6 +17,7 @@ class BookController extends Controller
     public function actionAssignment()
     {
         $model = new BookAssignment();
+        $model->created_at = time();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['book/index', 'assignment' => $model->id]);
         }
