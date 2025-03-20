@@ -39,7 +39,23 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <?= $form->field($model, 'iin') ?>
             </div>
             <div class="col-md-3">
-                <?= $form->field($model, 'grade') ?>
+                <?= $form->field($model, 'grade')->dropDownList([
+                    '1_grade' => '1 класс',
+                    '2_grade' => '2 класс',
+                    '3_grade' => '3 класс',
+                    '4_grade' => '4 класс',
+                    '5_grade' => '5 класс',
+                    '6_grade' => '6 класс',
+                    '7_grade' => '7 класс',
+                    '8_grade' => '8 класс',
+                    '9_grade' => '9 класс',
+                    '10_grade' => '10 класс',
+                    '11_grade' => '11 класс',
+                    '1_course' => '1 курс',
+                    '2_course' => '2 курс',
+                    '3_course' => '3 курс',
+                    '4_course' => '4 курс',
+                ]) ?>
             </div>
         </div>
 
