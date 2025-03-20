@@ -23,7 +23,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property School $school
  */
-class TestAssignment extends \yii\db\ActiveRecord
+class BookAssignment extends \yii\db\ActiveRecord
 {
     public $region_id;
     public $city_id;
