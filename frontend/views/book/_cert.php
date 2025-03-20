@@ -3,11 +3,11 @@
 use common\models\Subject;
 use Da\QrCode\QrCode;
 
-/* @var $testAssignment \common\models\TestAssignment */
+/* @var $model \common\models\BookAssignment */
 /* @var $certImage string */
 /* @var $pedagogSubject string | null */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $testAssignment->id], 'https')))
+$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $model->id], 'https')))
     ->setSize(80)->setMargin(5);
 ?>
 <div>
@@ -16,35 +16,35 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div style="padding-top: 130px; width: 400px;">
                 <div style="font-weight: 500;">
                     <?php
-                    if ($testAssignment->school !== null) {
-                        if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
-                            echo $testAssignment->school->city->name;
+                    if ($model->school !== null) {
+                        if ($model->school->city_id === 1 || $model->school->city_id === 2 || $model->school->city_id === 3) {
+                            echo $model->school->city->name;
                         } else {
-                            echo $testAssignment->school->city->region->name . ', ' . $testAssignment->school->city->name;
+                            echo $model->school->city->region->name . ', ' . $model->school->city->name;
                         }
                     } ?>
                 </div>
                 <div>
-                    <?= $testAssignment->school->name ?>
+                    <?= $model->school->name ?>
                 </div>
             </div>
             <div style="font-size: 14px; font-weight: bold; padding-top: 10px">
-                <?= $testAssignment->grade ?> сынып оқушысы
+                <?= $model->grade ?> сынып оқушысы
             </div>
             <div style="font-size: 22px; height: 36px; text-transform: uppercase">
-                <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
+                <b><?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?></b>
             </div>
             <div style="font-size: 14px; font-weight: bold; padding-top: 10px">
                 Мұғалімі:
             </div>
             <div style="font-size: 22px; height: 36px; text-transform: uppercase">
-                <b><?= $testAssignment->teacher_name ?></b>
+                <b><?= $model->leader_name ?></b>
             </div>
         </div>
         <div class="border" style="display: flex; padding-left: 40px; padding-top: 270px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; font-size: 12px; font-weight: bold">
-                <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
+                <div id="cert-number">Тіркеу №<?= $model->id ?></div>
             </div>
         </div>
     </div>
