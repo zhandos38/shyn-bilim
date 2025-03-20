@@ -13,7 +13,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             <div id="cert-name" style="padding-left: 0; height: 80px; font-size: 22px; text-transform: uppercase; text-align: center;">
                 <b><?= $model->leader_name ?></b>
             </div>
-            <div id="footer" style="text-align: left; padding-left: 240px; padding-top: 280px; font-size: 14px; font-family: 'Times New Roman'">
+            <div id="footer" style="text-align: left; padding-left: 320px; padding-top: 280px; font-size: 14px; font-family: 'Times New Roman'">
                 <div id="cert-qrcode"><img src="<?= $qrCode->writeDataUri() ?>" alt="qr"></div>
                 <div style="padding-left: 0">
                     <div id="cert-number" style="padding-top: 10px">Тіркеу №<?= $model->id ?></div>
