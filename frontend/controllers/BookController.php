@@ -55,7 +55,7 @@ class BookController extends Controller
         }
 
         // get your HTML raw content without any layouts or scripts
-        $content = $this->renderPartial('_cert_kitap-oku', [
+        $content = $this->renderPartial('_cert', [
             'model' => $model,
         ]);
 
