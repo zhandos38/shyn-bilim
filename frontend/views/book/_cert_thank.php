@@ -1,13 +1,13 @@
 <?php
 use Da\QrCode\QrCode;
 
-/* @var $model \common\models\User */
+/* @var $model \common\models\BookAssignment */
 
 $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model->id], 'https')))
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/cert-thank.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
+<div class="cert-page" style="background-image: url('/img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
     <div id="cert-name" style="padding-top: 560px; padding-left: 120px; width: 540px; text-align: center">
         <div style="padding-left: 70px; width: 400px; font-size: 16px;">
             <div id="cert-city" style="padding-top: 0; color: #000000; height: 10px;">

@@ -47,19 +47,9 @@ class BookController extends Controller
         ]);
     }
 
-    public function actionGetCert()
+    public function actionCert($assignment)
     {
-        if (!$model->grade) {
-            Yii::$app->session->setFlash('warning', 'Сыныбынызды таңдап, қайта жүктеңіз');
-            return $this->redirect(['cabinet/index']);
-        }
-
-        return $this->redirect(['book/cert-kitap-oku']);
-    }
-
-    public function actionCert()
-    {
-        $model = User::findOne(['id' => Yii::$app->user->identity->id]);
+        $model = BookAssignment::findOne(['id' => $assignment]);
         if (empty($model)) {
             throw new Exception('User not found!');
         }
@@ -95,9 +85,9 @@ class BookController extends Controller
         return $pdf->render();
     }
 
-    public function actionCertThank()
+    public function actionCertThank($assignment)
     {
-        $model = User::findOne(['id' => Yii::$app->user->identity->id]);
+        $model = BookAssignment::findOne(['id' => $assignment]);
         if (empty($model)) {
             throw new Exception('User not found!');
         }
