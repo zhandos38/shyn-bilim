@@ -9,7 +9,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/kanikulda-kitap-oku-2025/oku/cert-thank.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; width: 1200px; height: 800px">
-        <div style="padding-left: 100px; padding-top: 240px">
+        <div style="padding-left: 260px; padding-top: 240px">
             <div id="cert-name" style="padding-left: 0; height: 80px; font-size: 22px; text-transform: uppercase; text-align: left;">
                 <b><?= $model->leader_name ?></b>
             </div>
