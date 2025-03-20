@@ -48,7 +48,7 @@ class BookAssignment extends \yii\db\ActiveRecord
 
             [['city_id', 'region_id'], 'integer'],
 
-            [['iin', 'name', 'surname', 'phone', 'school_id'], 'required'],
+            [['iin', 'name', 'surname', 'leader_phone', 'school_id'], 'required'],
         ];
     }
 
