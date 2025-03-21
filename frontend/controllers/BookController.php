@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use common\models\Book;
 use common\models\BookCategory;
+use common\models\TestAssignment;
 use common\models\User;
 use common\models\BookAssignment;
 use kartik\mpdf\Pdf;
@@ -16,6 +17,9 @@ class BookController extends Controller
 {
     public function actionAssignment()
     {
+        Yii::$app->session->setFlash('warning', 'Жақында ашылады');
+        return $this->redirect('/');
+
         $model = new BookAssignment();
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
