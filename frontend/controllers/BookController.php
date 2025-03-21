@@ -38,7 +38,7 @@ class BookController extends Controller
     {
         $assignmentModel = BookAssignment::find()->where(['assignment' => $assignment])->one();
         $dataProvider = new ActiveDataProvider([
-            'query' => Book::find()->where(['grade' => $assignmentModel->grade]),
+            'query' => Book::find()->where(['age_range' => $assignmentModel->grade]),
             'sort' => [
                 'defaultOrder' => [
                     'id' => SORT_DESC
