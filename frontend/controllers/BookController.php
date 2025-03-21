@@ -15,10 +15,12 @@ use yii\web\Controller;
 
 class BookController extends Controller
 {
-    public function actionAssignment()
+    public function actionAssignment($admin = false)
     {
-        Yii::$app->session->setFlash('warning', 'Жақында ашылады');
-        return $this->redirect('/');
+        if (!$admin) {
+            Yii::$app->session->setFlash('warning', 'Жақында ашылады');
+            return $this->redirect('/');
+        }
 
         $model = new BookAssignment();
         if ($model->load(Yii::$app->request->post())) {
