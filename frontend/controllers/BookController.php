@@ -36,7 +36,7 @@ class BookController extends Controller
 
     public function actionIndex($assignment)
     {
-        $assignmentModel = BookAssignment::find()->where(['assignment' => $assignment])->one();
+        $assignmentModel = BookAssignment::find()->where(['id' => $assignment])->one();
         $dataProvider = new ActiveDataProvider([
             'query' => Book::find()->where(['age_range' => $assignmentModel->grade]),
             'sort' => [
