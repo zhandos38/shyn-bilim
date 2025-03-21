@@ -110,7 +110,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </div>
 
         <div class="mt--40">
-            <?= Html::submitButton('Олимпиада бастау', ['class' => 'rbt-btn btn-gradient']) ?>
+            <?= Html::submitButton('Кітап жүктеу', ['class' => 'rbt-btn btn-gradient']) ?>
         </div>
     </div>
 </div>
