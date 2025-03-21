@@ -29,13 +29,13 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $m
                 </div>
             </div>
             <div style="font-size: 14px; font-weight: bold; padding-top: 10px">
-                <?= $model->getGrade() ?> сынып оқушысы
+                <?= $model->getGrade() ?> оқушысы
             </div>
             <div style="font-size: 22px; height: 36px; text-transform: uppercase">
                 <b><?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?></b>
             </div>
             <div style="font-size: 14px; font-weight: bold; padding-top: 10px">
-                Мұғалімі:
+                Жетекші:
             </div>
             <div style="font-size: 22px; height: 36px; text-transform: uppercase">
                 <b><?= $model->leader_name ?></b>

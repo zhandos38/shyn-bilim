@@ -34,8 +34,9 @@ class BookController extends Controller
 
     public function actionIndex($assignment)
     {
+        const $assignmentModel = BookAssignment::find()->where(['assignment' => $assignment])->one();
         $dataProvider = new ActiveDataProvider([
-            'query' => Book::find(),
+            'query' => Book::find()->where(['grade' => $assignmentModel->grade]),
             'sort' => [
                 'defaultOrder' => [
                     'id' => SORT_DESC
@@ -46,10 +47,8 @@ class BookController extends Controller
             ]
         ]);
 
-        $bookCategories = BookCategory::find()->all();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
-            'bookCategories' => $bookCategories,
             'assignment' => $assignment
         ]);
     }
