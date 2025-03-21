@@ -51,10 +51,10 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     '9_grade' => '9 класс',
                     '10_grade' => '10 класс',
                     '11_grade' => '11 класс',
-                    '1_course' => '1 курс',
-                    '2_course' => '2 курс',
-                    '3_course' => '3 курс',
-                    '4_course' => '4 курс',
+                    'course' => '1 курс',
+                    'course' => '2 курс',
+                    'course' => '3 курс',
+                    'course' => '4 курс',
                 ]) ?>
             </div>
         </div>
