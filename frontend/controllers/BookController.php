@@ -17,11 +17,6 @@ class BookController extends Controller
 {
     public function actionAssignment($admin = false)
     {
-        if (!$admin) {
-            Yii::$app->session->setFlash('warning', 'Жақында ашылады');
-            return $this->redirect('/');
-        }
-
         $model = new BookAssignment();
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
