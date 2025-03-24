@@ -66,6 +66,13 @@ class BookController extends Controller
 
     public function actionCert($assignment)
     {
+        return $this->render('cert', [
+            'assignment' => $assignment
+        ]);
+    }
+
+    public function actionGetCert($assignment)
+    {
         $model = BookAssignment::findOne(['id' => $assignment]);
         if (empty($model)) {
             throw new Exception('User not found!');
@@ -102,7 +109,7 @@ class BookController extends Controller
         return $pdf->render();
     }
 
-    public function actionCertThank($assignment)
+    public function actionGetCertThank($assignment)
     {
         $model = BookAssignment::findOne(['id' => $assignment]);
         if (empty($model)) {
