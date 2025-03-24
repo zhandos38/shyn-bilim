@@ -34,9 +34,13 @@ use common\models\Test;
 
     <?= $form->field($model, 'iin')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'phone')->textInput(['placeholder' => '7771112233', 'maxlength' => 10]) ?>
+    <?= $form->field($model, 'leader_name') ?>
 
-    <?= $form->field($model, 'olympiad_id')->dropDownList(ArrayHelper::map(\common\models\Olympiad::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Выберите олимпиаду']) ?>
+    <?= $form->field($model, 'leader_phone')->textInput(['placeholder' => '7771112233', 'maxlength' => 10]) ?>
+
+    <?= $form->field($model, 'parent_name') ?>
+
+    <?= $form->field($model, 'parent_phone')->textInput(['placeholder' => '7771112233', 'maxlength' => 10]) ?>
 
     <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name'),
@@ -56,31 +60,6 @@ use common\models\Test;
     ]); ?>
 
     <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
-
-    <?= $form->field($model, 'teacher_name') ?>
-
-    <?= $form->field($model, 'teacher_type_name') ?>
-
-    <?= $form->field($model, 'parent_name') ?>
-    
-    <?= $form->field($model, 'parent_name_second') ?>
-
-    <?= $form->field($model, 'point')->textInput(['type' => 'number']) ?>
-    
-    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => $model->olympiad && $model->olympiad->type === \common\models\Olympiad::TYPE_STUDENT ? Subject::TYPE_STUDENT : Subject::TYPE_TEACHER]), 'id', 'name'), [
-            'prompt' => Yii::t('app', 'Выберите предмет')
-        ]) ?>
-
-    <?= $form->field($model, 'lang')->dropDownList([
-        'kz' => 'Қазақша',
-        'ru' => 'Русский'
-    ], [
-        'prompt' => Yii::t('app', 'Выберите язык')
-    ]) ?>
-
-    <?= $form->field($model, 'is_methodologist')->checkbox() ?>
-
-    <?= $form->field($model, 'status')->dropDownList(\common\models\TestAssignment::getStatuses()) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
