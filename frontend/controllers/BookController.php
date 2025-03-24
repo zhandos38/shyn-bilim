@@ -16,6 +16,11 @@ class BookController extends Controller
     {
         $model = new BookAssignment();
         if ($model->load(Yii::$app->request->post())) {
+            $bookAssignmentExist = BookAssignment::findOne(['iin' => $model->iin]);
+            if ($bookAssignmentExist) {
+                return $this->redirect(['book/index', 'assignment' => $bookAssignmentExist->id]);
+            }
+
             $model->created_at = time();
             $model->save();
             return $this->redirect(['book/index', 'assignment' => $model->id]);
