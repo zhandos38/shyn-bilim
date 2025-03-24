@@ -2,15 +2,12 @@
 namespace frontend\controllers;
 
 use common\models\Book;
-use common\models\BookCategory;
-use common\models\TestAssignment;
-use common\models\User;
 use common\models\BookAssignment;
+use frontend\models\CheckBookAssignmentForm;
 use kartik\mpdf\Pdf;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\Exception;
-use yii\filters\AccessControl;
 use yii\web\Controller;
 
 class BookController extends Controller
@@ -47,6 +44,23 @@ class BookController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'assignment' => $assignment
+        ]);
+    }
+
+    public function actionCheckCert()
+    {
+        $model = new CheckBookAssignmentForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($bookAssignmentId = $model->check(true)) {
+                return $this->redirect(['book/cert', 'assignment' => $bookAssignmentId]);
+            }
+
+            Yii::$app->session->setFlash('error', 'Анкета толтырылмаған');
+        }
+
+        return $this->render('check-cert', [
+            'model' => $model
         ]);
     }
 
