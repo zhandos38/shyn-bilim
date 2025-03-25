@@ -59,7 +59,23 @@ use common\models\Test;
         'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
     ]); ?>
 
-    <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
+    <?= $form->field($model, 'grade')->dropDownList([
+        '1_grade' => '1 класс',
+        '2_grade' => '2 класс',
+        '3_grade' => '3 класс',
+        '4_grade' => '4 класс',
+        '5_grade' => '5 класс',
+        '6_grade' => '6 класс',
+        '7_grade' => '7 класс',
+        '8_grade' => '8 класс',
+        '9_grade' => '9 класс',
+        '10_grade' => '10 класс',
+        '11_grade' => '11 класс',
+        '1_course' => '1 курс',
+        '2_course' => '2 курс',
+        '3_course' => '3 курс',
+        '4_course' => '4 курс',
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
