@@ -58,7 +58,7 @@ class BookController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             if ($bookAssignmentId = $model->check(true)) {
-                return $this->redirect(['book/cert', 'assignment' => $bookAssignmentId]);
+                return $this->redirect(['book/index', 'assignment' => $bookAssignmentId]);
             }
 
             Yii::$app->session->setFlash('error', 'Анкета толтырылмаған');
