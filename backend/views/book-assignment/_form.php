@@ -88,7 +88,7 @@ use common\models\Test;
 </div>
 <?php
 $js =<<<JS
-$('#testassignment-region_id').change(function() {
+$('#bookassignment-region_id').change(function() {
   $.get({
     url: '/test-assignment/get-cities',
     data: {id: $(this).val()},
@@ -107,7 +107,7 @@ $('#testassignment-region_id').change(function() {
   });
 });
 
-$('#testassignment-city_id').change(function() {
+$('#bookassignment-city_id').change(function() {
   $.get({
     url: '/test-assignment/get-schools',
     data: {id: $(this).val()},
