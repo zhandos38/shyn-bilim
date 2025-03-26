@@ -99,7 +99,7 @@ $('#bookassignment-region_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#testassignment-city_id').html(options);
+      $('#c-city_id').html(options);
     },
     error: function() {
       console.log('Ошибка');
@@ -118,7 +118,7 @@ $('#bookassignment-city_id').change(function() {
         options += '<option value="' + item.id + '">' + item.name + '</option>'; 
       });
       
-      $('#testassignment-school_id').html(options);
+      $('#bookassignment-school_id').html(options);
     },
     error: function() {
       console.log('Ошибка');
