@@ -7,7 +7,7 @@ use Da\QrCode\QrCode;
 /* @var $certImage string */
 /* @var $pedagogSubject string | null */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $model->id], 'https')))
+$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['book/get-cert', 'assignment' => $model->id], 'https')))
     ->setSize(80)->setMargin(5);
 ?>
 <div>

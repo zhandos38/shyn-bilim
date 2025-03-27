@@ -3,7 +3,7 @@ use Da\QrCode\QrCode;
 
 /* @var $model \common\models\BookAssignment */
 
-$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model->id], 'https')))
+$qrCode = (new QrCode(\yii\helpers\Url::toRoute(['book/cert', 'assignment' => $model->id], 'https')))
     ->setSize(80)
     ->setMargin(5);
 ?>
