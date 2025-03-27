@@ -52,7 +52,7 @@ $this->registerMetaTag([
                                 </a>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['book/check-cert']) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Сертификат/Кітап жүктеу</span>
+                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Қайта кіру</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
