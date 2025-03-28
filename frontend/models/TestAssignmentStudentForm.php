@@ -18,7 +18,7 @@ class TestAssignmentStudentForm extends TestAssignment
             [['name', 'surname', 'patronymic', 'iin', 'phone', 'teacher_name', 'lang'], 'string'],
             [['school_id', 'city_id', 'region_id', 'grade', 'olympiad_id', 'status'], 'integer'],
 
-            [['name', 'surname', 'iin', 'phone', 'school_id', 'teacher_name', 'leader_phone', 'grade', 'olympiad_id', 'lang'], 'required'],
+            [['name', 'surname', 'iin', 'phone', 'school_id', 'teacher_name', 'leader_phone', 'grade', 'olympiad_id', 'lang', 'subject_id'], 'required'],
         ];
     }
 }
