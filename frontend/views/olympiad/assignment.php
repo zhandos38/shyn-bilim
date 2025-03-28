@@ -122,7 +122,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
         </div>
         <div class="row">
             <div class="col-md-3">
-                <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_TEACHER]), 'id', 'name_kz'), ['prompt' => 'Пән таңдау']) ?>
+                <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_STUDENT]), 'id', 'name_kz'), ['prompt' => 'Пән таңдау']) ?>
             </div>
         </div>
         <?php else: ?>
