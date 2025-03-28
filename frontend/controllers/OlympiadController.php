@@ -307,7 +307,6 @@ class OlympiadController extends Controller
 
     public function getTestsByAssignment(TestAssignment $model)
     {
-        VarDumper::dump($model, 10, 1);
         $query = Test::find()
             ->andWhere(['olympiad_id' => $model->olympiad_id])
             ->andWhere(['subject_id' => $model->subject_id])
