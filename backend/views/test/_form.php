@@ -38,8 +38,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'lang')->dropDownList(Test::getLangList()) ?>
 
-    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::find()->andWhere(['type' => Subject::TYPE_TEACHER])->all(), 'id', 'name_ru'), [
-        'prompt' => 'Выберите предмет',
+    <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(\common\models\Subject::findAll(['type' => $model->olympiad && $model->olympiad->type === \common\models\Olympiad::TYPE_STUDENT ? Subject::TYPE_STUDENT : Subject::TYPE_TEACHER]), 'id', 'name'), [
+        'prompt' => Yii::t('app', 'Выберите предмет')
     ]) ?>
 
     <?= $form->field($model, 'question_limit')->textInput() ?>
