@@ -42,6 +42,7 @@ class CheckArticleForm extends Model
         $query = Article::find()->andWhere(['iin' => $this->iin, 'subject_id' => $this->subject_id]);
         $query->andWhere(['status' => Article::STATUS_ACTIVE]);
         $query->andWhere(['article_magazine_id' => $this->article_magazine_id]);
+        $query->orderBy(['id' => SORT_DESC]);
 
         $article = $query->one();
 
