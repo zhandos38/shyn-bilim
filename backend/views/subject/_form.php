@@ -46,6 +46,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'is_not_subject')->checkbox() ?>
 
+    <?= $form->field($model, 'suffix_label_kz')->checkbox() ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
