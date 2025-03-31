@@ -12,6 +12,7 @@ use yii\imagine\Image;
  * @property int $id
  * @property string $name_kz
  * @property string $name_ru
+ * @property string $suffix_label_kz
  * @property string|null $img
  * @property int $kind
  *
@@ -47,7 +48,7 @@ class Subject extends \yii\db\ActiveRecord
         return [
             [['name_kz', 'name_ru'], 'required'],
             [['name_kz', 'name_ru'], 'string', 'max' => 100],
-            [['img', 'grades'], 'string', 'max' => 255],
+            [['img', 'grades', 'suffix_label_kz'], 'string', 'max' => 255],
             [['type', 'order', 'kind'], 'integer'],
             ['is_not_subject', 'boolean'],
 
@@ -68,6 +69,7 @@ class Subject extends \yii\db\ActiveRecord
             'kind' => Yii::t('app', 'Вид'),
             'order' => Yii::t('app', 'Порядок'),
             'is_not_subject' => Yii::t('app', 'Не предмет'),
+            'suffix_label_kz' => 'Суффикс текст',
         ];
     }
 
