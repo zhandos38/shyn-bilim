@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name_kz',
             'name_ru',
+            'suffix_label_kz',
             [
                 'attribute' => 'img',
                 'value' => function(Subject $model) {
