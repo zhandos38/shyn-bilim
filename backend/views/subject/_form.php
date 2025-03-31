@@ -28,6 +28,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'suffix_label_kz')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'imageFile')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
     ]) ?>
@@ -45,8 +47,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'grades')->textInput() ?>
 
     <?= $form->field($model, 'is_not_subject')->checkbox() ?>
-
-    <?= $form->field($model, 'suffix_label_kz')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
