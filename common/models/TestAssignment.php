@@ -22,6 +22,7 @@ use yii\helpers\ArrayHelper;
  * @property string $iin
  * @property int|null $school_id
  * @property int $grade
+ * @property string $grade_alt
  * @property int $status
  * @property string $lang
  * @property int|null $created_at
@@ -59,7 +60,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'parent_name_second', 'phone', 'leader_phone'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'parent_name_second', 'phone', 'leader_phone', 'grade'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],

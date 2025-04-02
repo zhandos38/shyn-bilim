@@ -40,7 +40,7 @@ if ($olympiadId === 26 && $testAssignment->point === 20 && $regionId === 14) {
                 </div>
             </div>
             <div style="padding-top: 10px">
-                <?= $testAssignment->grade ?> сынып оқушысы
+                <?= \common\models\BookAssignment::getGradeLabel($testAssignment->grade_alt) ?>
             </div>
             <div style="font-size: 18px; height: 40px; text-transform: uppercase; margin-top: 5px">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>

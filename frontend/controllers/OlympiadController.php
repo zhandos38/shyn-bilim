@@ -248,7 +248,8 @@ class OlympiadController extends Controller
             $testAssignment->name = $bookAssignment->name;
             $testAssignment->surname = $bookAssignment->surname;
             $testAssignment->patronymic = $bookAssignment->patronymic;
-            $testAssignment->grade = $bookAssignment->grade;
+            $testAssignment->grade = BookAssignment::getNormalGrade($bookAssignment->grade);
+            $testAssignment->grade_alt = $bookAssignment->grade;
             $testAssignment->leader_phone = $bookAssignment->leader_phone;
             $testAssignment->phone = $bookAssignment->parent_phone;
             $testAssignment->iin = $bookAssignment->iin;

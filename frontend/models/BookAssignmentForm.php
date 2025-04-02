@@ -36,6 +36,6 @@ class BookAssignmentForm extends Model
 
     public function check()
     {
-        return BookAssignment::find()->andFilterWhere(['iin' => trim($this->iin)])->one();
+        return BookAssignment::find()->andFilterWhere(['iin' => trim($this->iin)])->orderBy(['id' => SORT_DESC])->one();
     }
 }
