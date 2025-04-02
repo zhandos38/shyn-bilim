@@ -243,7 +243,6 @@ class OlympiadController extends Controller
 
         /** @var BookAssignment $bookAssignment */
         if ($model->load(Yii::$app->request->post()) && $bookAssignment = $model->check()) {
-            VarDumper::dump($model,10,1); die;
             $testAssignment = new TestAssignment();
             $testAssignment->olympiad_id = $model->olympiad_id;
             $testAssignment->name = $bookAssignment->name;
@@ -256,6 +255,7 @@ class OlympiadController extends Controller
             $testAssignment->iin = $bookAssignment->iin;
             $testAssignment->school_id = $bookAssignment->school_id;
             $testAssignment->lang = 'KZ';
+            VarDumper::dump($testAssignment->errors,10,1); die;
             if ($testAssignment->save()) {
                 // Проверка на белый список
                 $whiteList = WhiteList::findOne(['iin' => $testAssignment->iin, 'olympiad_id' => $testAssignment->olympiad_id]);
