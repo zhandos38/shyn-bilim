@@ -13,7 +13,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 $olympiadId = $testAssignment->olympiad_id;
 $cityId = $testAssignment->school->city_id;
 $regionId = $testAssignment->school->city->region_id;
-$template = 'diploma_turkestan.jpg';
+$template = 'diploma.jpg';
 if ($olympiadId === 26 && $testAssignment->point === 20 && $regionId === 14) {
     $template = "diploma_turkestan.jpg";
 }
