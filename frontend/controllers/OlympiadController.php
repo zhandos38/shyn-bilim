@@ -261,6 +261,7 @@ class OlympiadController extends Controller
                 if ($whiteList !== null) {
                     $testAssignment->status = TestAssignment::STATUS_ACTIVE;
                 }
+                $whiteList->save();
 
                 if ($whiteList === null) {
 //                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
