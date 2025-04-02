@@ -255,6 +255,7 @@ class OlympiadController extends Controller
             $testAssignment->iin = $bookAssignment->iin;
             $testAssignment->school_id = $bookAssignment->school_id;
             $testAssignment->lang = 'KZ';
+            $testAssignment->created_at = time();
             if ($testAssignment->save()) {
                 // Проверка на белый список
                 $whiteList = WhiteList::findOne(['iin' => $testAssignment->iin, 'olympiad_id' => $testAssignment->olympiad_id]);
