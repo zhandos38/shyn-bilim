@@ -57,6 +57,13 @@ $this->registerMetaTag([
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/book-assignment']) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Олимпиада бастау</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/check-cert']) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">Олимпиада Сертификат/диплом/грамота жүктеу</span>

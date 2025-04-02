@@ -5,11 +5,13 @@ namespace frontend\controllers;
 
 
 use common\models\Answer;
+use common\models\BookAssignment;
 use common\models\Olympiad;
 use common\models\Question;
 use common\models\Test;
 use common\models\TestAssignment;
 use common\models\WhiteList;
+use frontend\models\BookAssignmentForm;
 use frontend\models\CheckAssignmentForm;
 use frontend\models\TestAssignmentStudentForm;
 use frontend\models\TestAssignmentTeacherForm;
@@ -232,6 +234,63 @@ class OlympiadController extends Controller
         }
 
         return $this->redirect(['test', 'assignment' => $model->id]);
+    }
+
+    public function actionBookAssignment()
+    {
+        $model = new BookAssignmentForm();
+        $model->olympiad_id = 26;
+
+        /** @var BookAssignment $bookAssignment */
+        if ($model->load(Yii::$app->request->post()) && $bookAssignment = $model->check()) {
+            $testAssignment = new TestAssignment();
+            $testAssignment->olympiad_id = $model->olympiad_id;
+            $testAssignment->name = $bookAssignment->name;
+            $testAssignment->surname = $bookAssignment->surname;
+            $testAssignment->patronymic = $bookAssignment->patronymic;
+            $testAssignment->grade = $bookAssignment->grade;
+            $testAssignment->leader_phone = $bookAssignment->leader_phone;
+            $testAssignment->phone = $bookAssignment->parent_phone;
+            $testAssignment->iin = $bookAssignment->iin;
+            $testAssignment->school_id = $bookAssignment->school_id;
+            if ($testAssignment->save()) {
+                // Проверка на белый список
+                $whiteList = WhiteList::findOne(['iin' => $testAssignment->iin, 'olympiad_id' => $testAssignment->olympiad_id]);
+                if ($whiteList !== null) {
+                    $testAssignment->status = TestAssignment::STATUS_ACTIVE;
+                }
+
+                if ($whiteList === null) {
+//                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
+//
+//                return $this->render('assignment', [
+//                    'model' => $model,
+//                    'olympiad' => $olympiad,
+//                ]);
+                    $salt = $this->getSalt(8);
+                    $request = [
+                        'pg_merchant_id' => Yii::$app->params['payboxId'],
+                        'pg_amount' => $testAssignment->olympiad->price,
+                        'pg_salt' => $salt,
+                        'pg_order_id' => $model->id,
+                        'pg_description' => 'Оплата за участие в олимпиаде',
+                        'pg_success_url' => Url::base('https') . '/olympiad/success',
+                        'pg_result_url' => Yii::$app->params['apiDomain'] . '/olympiad/result',
+                        'pg_result_url_method' => 'POST',
+                    ];
+
+                    $request = $this->getSignByData($request, 'payment.php', $salt);
+
+                    $query = http_build_query($request);
+
+                    return $this->redirect('https://api.freedompay.kz/payment.php?' . $query);
+                }
+
+                return $this->redirect(['test', 'assignment' => $testAssignment->id]);
+            }
+        }
+
+        return $this->render('book-assignment', ['model' => $model]);
     }
 
     public function actionCheckPayment($id)
