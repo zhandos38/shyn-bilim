@@ -60,7 +60,7 @@ class TestAssignment extends \yii\db\ActiveRecord
     {
         return [
             [['olympiad_id', 'subject_id', 'school_id', 'grade', 'point', 'created_at'], 'integer'],
-            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'parent_name_second', 'phone', 'leader_phone', 'grade'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'teacher_name', 'teacher_type_name', 'parent_name', 'parent_name_second', 'phone', 'leader_phone', 'grade_alt'], 'string', 'max' => 255],
             [['iin'], 'string', 'max' => 20],
 
 //            ['iin', 'match', 'pattern' => '/^\d{14}$/', 'message' => Yii::t('app', 'Длина ИИН должен составлять максимум 14 цифр')],
@@ -70,7 +70,7 @@ class TestAssignment extends \yii\db\ActiveRecord
             [['city_id', 'region_id', 'status'], 'integer'],
             ['is_methodologist', 'boolean'],
 
-            [['iin', 'name', 'surname', 'phone', 'lang', 'school_id'], 'required'],
+            [['iin', 'name', 'surname', 'lang', 'school_id'], 'required'],
         ];
     }
 
