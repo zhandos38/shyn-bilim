@@ -243,6 +243,7 @@ class OlympiadController extends Controller
 
         /** @var BookAssignment $bookAssignment */
         if ($model->load(Yii::$app->request->post()) && $bookAssignment = $model->check()) {
+            VarDumper::dump($model,10,1); die;
             $testAssignment = new TestAssignment();
             $testAssignment->olympiad_id = $model->olympiad_id;
             $testAssignment->name = $bookAssignment->name;
