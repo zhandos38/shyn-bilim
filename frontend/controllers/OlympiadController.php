@@ -291,8 +291,6 @@ class OlympiadController extends Controller
 
                 return $this->redirect(['test', 'assignment' => $testAssignment->id]);
             }
-
-            VarDumper::dump($testAssignment->getErrors(),10,1); die;
         }
 
         return $this->render('book-assignment', ['model' => $model]);
