@@ -50,7 +50,7 @@ $this->registerMetaTag([
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
                                 </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['book/assignment']) ?>">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['book/assignment']) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Тіркелу/Кітап жүктеу</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
