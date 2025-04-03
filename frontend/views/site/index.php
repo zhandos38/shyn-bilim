@@ -43,9 +43,16 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/book-assignment']) ?>">
+                                    <div class="icon-reverse-wrapper">
+                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Олимпиада бастау</span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </div>
+                                </a>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase" href="<?= Url::to(['book/assignment']) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» ҚАТЫСАМЫН</span>
+                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Тіркелу/Кітап жүктеу</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
@@ -53,13 +60,6 @@ $this->registerMetaTag([
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['book/check-cert']) ?>">
                                     <div class="icon-reverse-wrapper">
                                         <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Қайта кіру</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/book-assignment']) ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Олимпиада бастау</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
