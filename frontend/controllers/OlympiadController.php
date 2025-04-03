@@ -243,7 +243,7 @@ class OlympiadController extends Controller
 
         /** @var BookAssignment $bookAssignment */
         if ($model->load(Yii::$app->request->post()) && $bookAssignment = $model->check()) {
-            $testAssignmentFound = TestAssignment::findOne(['iin' => $bookAssignment->iin, 'olympiad_id' => $model->olympiad_id]);
+            $testAssignmentFound = TestAssignment::findOne(['iin' => $bookAssignment->iin, 'olympiad_id' => $model->olympiad_id, 'status' => TestAssignment::STATUS_FINISHED]);
             if ($testAssignmentFound) {
                 Yii::$app->session->setFlash('error', 'Бул ЖСН тестке қатысылып қойлған');
                 return $this->render('book-assignment', ['model' => $model]);
