@@ -57,6 +57,8 @@ use common\models\Test;
 
     <?= $form->field($model, 'grade')->textInput(['type' => 'number']) ?>
 
+    <?= $form->field($model, 'grade_alt') ?>
+
     <?= $form->field($model, 'teacher_name') ?>
 
     <?= $form->field($model, 'teacher_type_name') ?>
