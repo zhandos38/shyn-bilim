@@ -98,12 +98,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             <div class="col-md-6">
                 <?= $form->field($model, 'teacher_name') ?>
             </div>
-            <div class="col-md-4">
-                <?= $form->field($model, 'parent_name') ?>
-            </div>
-            <div class="col-md-4">
-                <?= $form->field($model, 'parent_name_second') ?>
-            </div>
             <div class="col-md-1">
                 <?= $form->field($model, 'grade')->dropDownList([
                     1 => '1',
@@ -118,11 +112,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     10 => '10',
                     11 => '11',
                 ]) ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <?= $form->field($model, 'subject_id')->dropDownList(ArrayHelper::map(Subject::findAll(['type' => Subject::TYPE_STUDENT]), 'id', 'name_kz'), ['prompt' => 'Пән таңдау']) ?>
             </div>
         </div>
         <?php else: ?>
