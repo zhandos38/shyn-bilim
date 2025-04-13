@@ -68,7 +68,7 @@ $this->registerMetaTag([
                         </div>
                         <div class="col-md-6">
                             <div style="display: flex; justify-content: center">
-                                <a href="<?= Url::to(['book/assignment']) ?>">
+                                <a href="<?= Url::to(['book/assignment', 'id' => $olympiad->id]) ?>">
                                     <img style="object-fit: contain; height: 600px" src="/img/jas-mathematic-2025/banner.jpg" alt="img">
                                 </a>
                             </div>
