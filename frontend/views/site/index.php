@@ -43,23 +43,9 @@ $this->registerMetaTag([
                             </div>
 
                             <div>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/book-assignment']) ?>">
+                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» II тур</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['book/assignment']) ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» I тур</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                                <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['book/check-cert']) ?>">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn">«КАНИКУЛДА КІТАП ОҚИМЫЗ» Қайта кіру</span>
+                                        <span class="btn-text banner-btn"><?= $olympiad->name ?></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
