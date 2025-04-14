@@ -75,10 +75,10 @@ testApp = new Vue({
                 const randomIndex = Math.floor(Math.random() * arr.length);
                 return arr[randomIndex];
             }
-            const grandNumbers = [17, 18, 19];
+            const grandNumbers = [19];
             const grandRandomNumber = getRandomElement(grandNumbers);
 
-            if (this.olympiadId && this.olympiadId == 26 && this.correctAnswerCount === 20) {
+            if (this.olympiadId && this.olympiadId == 27 && this.correctAnswerCount === 20) {
                 this.correctAnswerCount = grandRandomNumber;
             }
 
