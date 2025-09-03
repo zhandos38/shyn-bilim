@@ -16985,6 +16985,9 @@ span.transparent-button:hover i {
   border-top: 1px solid var(--color-border);
 }
 
+.accordion-button {
+  font-size: 22px !important;
+}
 .accordion-button::after {
   visibility: hidden;
 }

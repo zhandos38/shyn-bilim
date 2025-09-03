@@ -54,6 +54,11 @@ class OlympiadController extends Controller
         ]);
     }
 
+    public function actionInfo()
+    {
+        return $this->render('info');
+    }
+
     public function actionChoose()
     {
         return $this->render('choose');
