@@ -229,6 +229,11 @@ class SiteController extends Controller
         return $this->render('questions');
     }
 
+    public function actionPolicy()
+    {
+        return $this->render('policy');
+    }
+
     public function actionGetCities($id)
     {
         if (Yii::$app->request->isAjax) {

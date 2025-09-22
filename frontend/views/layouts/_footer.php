@@ -34,6 +34,7 @@ use yii\helpers\Url;
                         <h5 class="ft-title">Ақпарат</h5>
                         <ul class="ft-link">
                             <li><a href="<?= Yii::$app->params['staticDomain'] . '/offer.pdf' ?>"><?= Yii::t('app', 'Публичная оферта') ?></a></li>
+                            <li><a href="<?= Url::to(['site/policy']) ?>">Политика конфиденциальности</a></li>
                             <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Вопросы и ответы') ?></a></li>
                         </ul>
                     </div>
