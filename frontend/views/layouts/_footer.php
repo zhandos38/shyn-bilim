@@ -33,7 +33,7 @@ use yii\helpers\Url;
                     <div class="footer-widget">
                         <h5 class="ft-title">Ақпарат</h5>
                         <ul class="ft-link">
-                            <li><a href="/files/offer_too.pdf"><?= Yii::t('app', 'Публичная оферта') ?></a></li>
+                            <li><a href="/files/offer_too.pdf" download><?= Yii::t('app', 'Публичная оферта') ?></a></li>
                             <li><a href="<?= Url::to(['site/policy']) ?>">Политика конфиденциальности</a></li>
                             <li><a href="<?= Url::to(['site/questions']) ?>"><?= Yii::t('app', 'Вопросы и ответы') ?></a></li>
                         </ul>
