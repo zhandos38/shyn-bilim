@@ -229,6 +229,11 @@ class SiteController extends Controller
         return $this->render('questions');
     }
 
+    public function actionOffer()
+    {
+        return $this->render('offer');
+    }
+
     public function actionPolicy()
     {
         return $this->render('policy');
