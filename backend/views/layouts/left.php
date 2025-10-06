@@ -42,6 +42,7 @@
                     ['label' => 'Города', 'icon' => 'fas fa-book', 'url' => ['city/index']],
                     ['label' => 'Школы', 'icon' => 'fas fa-book', 'url' => ['school/index']],
                     ['label' => 'Белый список', 'icon' => 'fas fa-book', 'url' => ['white-list/index']],
+                    ['label' => 'Белый список (KASPI)', 'icon' => 'fas fa-book', 'url' => ['kaspi-white-list/index']],
                 ],
             ]
         ) ?>

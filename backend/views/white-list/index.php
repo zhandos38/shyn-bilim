@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php LteBox::begin([
         'type' => LteConst::TYPE_INFO,
         'isSolid' => true,
-        'boxTools'=> Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button']),
+        'boxTools'=> [Html::a('Добавить <i class="fa fa-plus-circle"></i>', ['create'], ['class' => 'btn btn-success btn-xs create_button'])],
         'tooltip' => 'this tooltip description',
         'title' => $this->title
     ]) ?>

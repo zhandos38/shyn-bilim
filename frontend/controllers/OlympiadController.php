@@ -6,6 +6,7 @@ namespace frontend\controllers;
 
 use common\models\Answer;
 use common\models\BookAssignment;
+use common\models\KaspiWhiteList;
 use common\models\Olympiad;
 use common\models\Question;
 use common\models\Test;
@@ -174,9 +175,20 @@ class OlympiadController extends Controller
             }
 
             // Проверка на белый список
+            $isPaid = false;
             $whiteList = WhiteList::findOne(['iin' => $model->iin, 'olympiad_id' => $model->olympiad_id]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
+                $isPaid = true;
+            }
+            if ($whiteList === null) {
+                $kaspiWhiteList = KaspiWhiteList::findOne(['iin' => $model->iin, 'is_activated' => false]);
+                if ($kaspiWhiteList) {
+                    $model->status = TestAssignment::STATUS_ACTIVE;
+                    $kaspiWhiteList->is_activated = true;
+                    $kaspiWhiteList->save();
+                    $isPaid = true;
+                }
             }
 
             $model->iin = trim($model->iin);
@@ -184,7 +196,7 @@ class OlympiadController extends Controller
                 throw new Exception(VarDumper::dumpAsString($model->errors));
             }
 
-            if ($whiteList === null) {
+            if (!$isPaid) {
 //                Yii::$app->session->setFlash('error', 'Техникалық ақаулықтарға байланысты уақытша тек Каспий арқылы төлем жасауға болады. Ыңғайсыздық үшін кешірім сұраймыз');
 //
 //                return $this->render('assignment', [
