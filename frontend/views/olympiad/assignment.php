@@ -23,13 +23,48 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
 <div class="bg-gradient-13 pt--60 pb--60">
     <div class="container">
         <h1><?= $olympiad->name ?></h1>
-        <p>
-            Олимпиадаға қатысу үшін анкетаны толтыру қажет
-        </p>
+
+        <div class="mb--40">
+            <h3>
+                1-ші қадам. Төлем жасау
+            </h3>
+            <h4>
+                Төлем жасау тәсілдері:
+            </h4>
+            <div>
+                <div>
+                    *Бұл тәселдер тек KASPI қосымшасы болған жағдайда жұмыс істейді
+                </div>
+                <div>
+                    <div>
+                        1) Батырманы басу арқылы
+                    </div>
+                    <a class="btn btn-success" href="https://kaspi.kz/pay/_gate?action=service_with_subservice&service_id=3025&subservice_id=13414&region_id=56&amount=7000">
+                        Төлемге өту
+                    </a>
+                </div>
+                <div>
+                    <div>
+                        2) QR код сканерлеу арқылы
+                    </div>
+                    <div>
+                        <img src="/img/qr_600.png" alt="qr">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>
+            2-ші қадам. Төлем бір сағат ішінде өңделеді
+        </h3>
+
         <?php $form = ActiveForm::begin() ?>
+        <h3>
+            3-ші қадам. Анкета толтыру
+        </h3>
 
         <div class="row">
-            <h3>Жеке ақпарат</h3>
+            <h4>Жеке ақпарат</h4>
             <div class="col-md-3">
                 <?= $form->field($model, 'surname') ?>
             </div>
@@ -61,8 +96,8 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
             </div>
         </div>
 
-        <div class="row mt--40">
-            <h3>Мектеп</h3>
+        <div class="row mt--20">
+            <h4>Мектеп</h4>
             <div class="col-md-3">
                 <?= $form->field($model, 'region_id')->widget(Select2::classname(), [
                     'data' => ArrayHelper::map(Region::find()->asArray()->all(), 'id', 'name'),
