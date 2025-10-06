@@ -55,7 +55,6 @@ class ImportExcelWhiteList extends Model
             }
         }
 
-
-        return $arr[1];
+        return $arr[1] ?? 0;
     }
 }
