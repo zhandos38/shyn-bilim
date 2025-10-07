@@ -23,10 +23,10 @@ if ($olympiadId === 28 && $cityId === 3 && $point === 20) {
 ?>
 <div>
     <div class="cert-page" style="background-image: url('./img/altyn-qyran-2025/<?= $template ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'PT Sans'; height: 1200px">
-        <div style="font-size: 32px; padding-left: 20px; padding-top: 370px; text-transform: uppercase; color: red; text-align: center">
+        <div style="font-size: 32px; padding-left: 20px; padding-top: 330px; text-transform: uppercase; color: red; text-align: center">
             <b><?= $place ?></b>
         </div>
-        <div style="padding-left: 110px; padding-top: 120px; text-align: center; width: 600px; height: 150px; font-size: 18px">
+        <div style="padding-left: 100px; padding-top: 115px; text-align: center; width: 600px; height: 150px; font-size: 18px">
             <div>
                 <span style="text-transform: capitalize"><?= $testAssignment->subject->name ?></span> пәнінен
                 <br>
@@ -67,7 +67,7 @@ if ($olympiadId === 28 && $cityId === 3 && $point === 20) {
                 </div>
             </div>
         </div>
-        <div style="display: flex; padding-left: 40px; padding-top: 120px; color: #fff9f6">
+        <div style="display: flex; padding-left: 30px; padding-top: 150px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; padding-top: 10px; font-size: 12px; padding-left: 0">
                 <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
