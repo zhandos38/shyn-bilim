@@ -49,8 +49,6 @@ $assignment_id = $testAssignment->id;
                 </small>
             </div>
             <div class="mt--10">
-                Бас жүлде: <?= $olympiad->grand_place_start ?>-<?= $olympiad->grand_place_end ?> дұрыс жауап.
-                <br>
                 І орын: <?= $olympiad->first_place_start ?>-<?= $olympiad->first_place_end ?> дұрыс жауап.
                 <br>
                 ІІ орын: <?= $olympiad->second_place_start ?>-<?= $olympiad->second_place_end ?> дұрыс жауап.
@@ -58,7 +56,7 @@ $assignment_id = $testAssignment->id;
                 ІІІ орын: <?= $olympiad->third_place_start ?>-<?= $olympiad->third_place_end ?>  дұрыс жауап.
             </div>
             <div class="mt--10">
-                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/cert', 'assignment' => $assignment_id]) ?>">
+                <a class="rbt-btn btn-gradient" :class="!isSent ? 'disabled-link' : ''" href="<?= Url::to(['/olympiad/get-cert', 'id' => $testAssignment->id]) ?>">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="!isSent"></span>
                     Сертификат/диплом/алғыс хат алу
                 </a>
