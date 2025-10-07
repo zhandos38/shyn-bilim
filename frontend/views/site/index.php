@@ -45,7 +45,7 @@ $this->registerMetaTag([
                             <div>
                                 <a class="rbt-btn btn-white hover-icon-reverse text-uppercase mt-2" href="<?= Url::to(['olympiad/assignment', 'id' => $olympiad->id]) ?>">
                                     <div class="icon-reverse-wrapper">
-                                        <span class="btn-text banner-btn"><?= $olympiad->name ?></span>
+                                        <span class="btn-text banner-btn"><?= $olympiad->name ?> қатысамын</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </div>
