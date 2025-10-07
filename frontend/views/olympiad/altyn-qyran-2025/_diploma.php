@@ -67,7 +67,7 @@ if ($olympiadId === 28 && $cityId === 3 && $point === 20) {
                 </div>
             </div>
         </div>
-        <div style="display: flex; padding-left: 30px; padding-top: 150px; color: #fff9f6">
+        <div style="display: flex; padding-left: 30px; padding-top: 155px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; padding-top: 10px; font-size: 12px; padding-left: 0">
                 <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
