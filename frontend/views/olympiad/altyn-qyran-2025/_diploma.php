@@ -28,23 +28,23 @@ if ($olympiadId === 28 && $cityId === 3) {
 }
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2025/<?= $template ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2025/<?= $template ?>'); background-size: cover; background-repeat: no-repeat; font-family: 'PT Sans'; height: 1200px">
         <div style="font-size: 32px; padding-left: 20px; padding-top: 370px; text-transform: uppercase; color: red; text-align: center">
             <b><?= $place ?></b>
         </div>
-        <div style="padding-left: 100px; padding-top: 120px; text-align: center; width: 600px; height: 150px; font-size: 20px">
-            <div style="font-size: 16px">
-                <?= $testAssignment->subject->name ?> пәнінен
+        <div style="padding-left: 110px; padding-top: 120px; text-align: center; width: 600px; height: 150px; font-size: 18px">
+            <div>
+                <span style="text-transform: capitalize"><?= $testAssignment->subject->name ?></span> пәнінен
                 <br>
                 жеңімпаз болғаны үшін
             </div>
-            <div style="padding-top: 15px; font-weight: lighter; text-transform: uppercase;">
+            <div style="padding-top: 5px; font-weight: lighter; text-transform: uppercase; font-size: 20px">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
-            <div style="font-size: 16px; padding-top: 10px;">
+            <div style="padding-top: 5px;">
                 <?= $testAssignment->grade ?> сынып оқушысы
             </div>
-            <div style="padding-left: 20px; font-family: 'Arial'; height: 100px; width: 600px; font-size: 16px">
+            <div style="font-family: 'Arial'; height: 100px; width: 600px">
                 <div style="height: 90px">
                     <div style="font-weight: 500;">
                         <?php
@@ -61,7 +61,7 @@ if ($olympiadId === 28 && $cityId === 3) {
                     </div>
                 </div>
                 <div style="padding-top: 10px;">
-                    <div style="text-transform: lowercase">
+                    <div>
                         Жетекшісі
                     </div>
                     <div style="margin-top: 5px; font-size: 20px; font-weight: lighter; text-transform: uppercase;">
