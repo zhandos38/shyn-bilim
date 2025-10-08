@@ -57,16 +57,17 @@ use yii\helpers\Url; ?>
                                 </div>
 
                                 <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree2" aria-expanded="false" aria-controls="faqs-collapseThree2">
-                                            САЙТТАН ТӨЛЕМ ЖАСАП ҚОЙЫП, ОЛИМПИАДА ТАПСЫРМАСЫН БАСҚА УАҚЫТТА ОРЫНДАУҒА БОЛАМА?
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree99">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree99" aria-expanded="false" aria-controls="faqs-collapseThree2">
+                                            Мен төлемді Kaspi QR арқылы жасадым. Бір сағат күтпестен кестені толтырдым, енді қайтадан төлем беті шығып тұр. Мұндай жағдайда не істеу керек?
                                         </button>
                                     </h2>
-                                    <div id="faqs-collapseThree2" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree2" data-bs-parent="#faqs-accordionExamplec3">
+                                    <div id="faqs-collapseThree99" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree99" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Жоқ, болмайды. Төлем жасалғаннан кейін тапсырма бірден ашылады.
+                                                Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
                                             </p>
+                                            <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
                                         </div>
                                     </div>
                                 </div>
@@ -247,16 +248,17 @@ use yii\helpers\Url; ?>
                                 </div>
 
                                 <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree2" aria-expanded="false" aria-controls="faqs-collapseThree2">
-                                            ВОЗМОЖНО ЛИ ОПЛАТИВ ЧЕРЕЗ САЙТ, ПРИСТУПИТЬ К ВЫПОЛНЕНИЮ  ЗАДАНИЙ  ОЛИМПИАДЫ  В  ДРУГОЕ  ВРЕМЯ?
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree99">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree99" aria-expanded="false" aria-controls="faqs-collapseThree2">
+                                            Я совершил оплату через Kaspi QR. Заполнил форму, не дожидаясь часа, и теперь страница оплаты снова появляется. Что делать в этом случае?
                                         </button>
                                     </h2>
-                                    <div id="faqs-collapseThree2" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree2" data-bs-parent="#faqs-accordionExamplec3">
+                                    <div id="faqs-collapseThree99" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree99" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Нет, нельзя. После совершения оплаты сразу  открываются задания олимпиады.
+                                                Нажмите кнопку ниже, чтобы повторно продолжить задачу.
                                             </p>
+                                            <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Продолжить олимпиаду</a>
                                         </div>
                                     </div>
                                 </div>
