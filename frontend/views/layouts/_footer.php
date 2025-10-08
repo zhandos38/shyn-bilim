@@ -44,9 +44,8 @@ use yii\helpers\Url;
                     <div class="footer-widget">
                         <h5 class="ft-title">Байланыс</h5>
                         <ul class="ft-link">
-                            <li><a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a></li>
                             <li><a href="tel:+7(775)4243727"><i class="fa fa-phone"></i> +7(775) 424 37 27</a></li>
-                            <li><a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a></li>
+                            <li><a href="mailto:bilimshini.kz@gmail.com"><i class="fa fa-envelope"></i> bilimshini.kz@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>

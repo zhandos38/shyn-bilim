@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/login
                     }),
                     'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
                 ]) ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@gmail.com') ?></small>
 
                 <?= $form->field($model, 'address') ?>
 

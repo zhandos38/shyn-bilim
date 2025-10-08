@@ -21,10 +21,7 @@ use yii\helpers\Url;
             <p class="description">Білім шыңы, білім сыры</p>
             <ul class="navbar-top-left rbt-information-list justify-content-start">
                 <li>
-                    <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
-                </li>
-                <li>
-                    <a href="tel:+7(775)4037284"><i class="fa fa-phone"></i> +7(775) 403 72 84</a>
+                    <a href="mailto:bilimshini.kz@gmail.com"><i class="fa fa-envelope"></i> bilimshini.kz@gmail.com</a>
                 </li>
             </ul>
         </div>

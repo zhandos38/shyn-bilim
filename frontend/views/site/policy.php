@@ -361,8 +361,8 @@
                 связи, расположенный по адресу:
                 <a class="text-blue-500" href="https://bilim-shini.kz/contact">https://bilim-shini.kz/contact</a>.
                 Или путем отправки электронного письма по адресу
-                <a class="text-blue-500" href="mailto:bilimshini.kz@mail.ru">
-                    bilimshini.kz@mail.ru
+                <a class="text-blue-500" href="mailto:bilimshini.kz@gmail.com">
+                    bilimshini.kz@gmail.com
                 </a>
             </li>
             <li class="list-group-item">

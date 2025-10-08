@@ -82,7 +82,7 @@ $this->params['heroDescription'] = 'Заполните форму чтобы з�
                     'data' => ArrayHelper::map(\common\models\School::find()->asArray()->all(), 'id', 'name'),
                     'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
                 ]) ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@gmail.com') ?></small>
                 </div>
                 <div class="col-md-3">
                     <?= $form->field($model, 'role')->dropDownList([

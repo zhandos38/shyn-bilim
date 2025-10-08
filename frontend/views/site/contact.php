@@ -32,9 +32,6 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <h4><?= Yii::t('app', 'Контактные телефоны'); ?></h4>
                 <ul class="phone-list" style="padding: 0">
                     <li class="contact-list__item">
-                        Олимпиада: <a href="tel:87754037284"><i class="fa fa-phone"></i> +7(775) 403 72 84 ( WhatsApp )</a>
-                    </li>
-                    <li class="contact-list__item">
                         Олимпиада: <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
@@ -44,7 +41,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                         Полиграфия: <a href="tel:87015907916"><i class="fa fa-phone"></i> +7(701) 590 79 16 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
-                        <a href="mailto:bilimshini.kz@mail.ru"><i class="fa fa-envelope"></i> bilimshini.kz@mail.ru</a>
+                        <a href="mailto:bilimshini.kz@gmail.com"><i class="fa fa-envelope"></i> bilimshini.kz@gmail.com</a>
                     </li>
                 </ul>
             </div>

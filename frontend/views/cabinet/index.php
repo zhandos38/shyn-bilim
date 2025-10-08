@@ -80,7 +80,7 @@ use yii\bootstrap5\ActiveForm;
                                                 }),
                                                 'options' => ['placeholder' => Yii::t('app', 'Укажите школу')],
                                             ]); ?>
-                                            <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                                            <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@gmail.com') ?></small>
                                         </div>
                                         <?php if (Yii::$app->user->identity->role === \common\models\User::ROLE_TEACHER): ?>
                                         <div class="col-md-6">

@@ -48,8 +48,7 @@ use yii\helpers\Url; ?>
                                                 Сайттан төлем жасау қиындық туғызған жағдайда, мына сілтемені
                                                 <a class="btn-link" href="https://pay.kaspi.kz/pay/lzlvssh5">kaspi</a>
                                                 басып, 600 тг жазу арқылы төлем жасап, чекті және қатысушы ЖСН-ін төмендегі вадсап номерлердің біріне ғана жіберу керек
-                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775)424 37 27</a>,
-                                                <a class="btn-link" href="https://wa.me/77754037284">+7(775)403 72 84</a>
+                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775)424 37 27</a>
                                                 <br>
                                                 «ТІРКЕЛДІ» деген жауап алғаннан кейін олимпиадаға қатысуға болады.
                                             </p>
@@ -82,7 +81,7 @@ use yii\helpers\Url; ?>
                                         <div class="accordion-body card-body">
                                             <p>
                                                 Сіз тіркеткен ЖСН-ді анкетаға жазған ЖСН-мен салыстырып көріңіз. Қате ЖСН-мен қатыса алмайсыз. Егер ондай қателік болмаса,
-                                                тексеру <a href="https://wa.me/+77754037284">+7(775) 403 7284</a>,  <a href="https://wa.me/+77754243727">+7(775) 424 3727</a>  осы ватсап номерге ЧЕК+ЖСН қайта жіберіңіз.
+                                                тексеру <a href="https://wa.me/+77754243727">+7(775) 424 3727</a>  осы ватсап номерге ЧЕК+ЖСН қайта жіберіңіз.
                                             </p>
                                         </div>
                                     </div>
@@ -131,7 +130,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree6" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree6" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Жауап: Қатені жөндеу үшін <a class="btn-link" href="https://wa.me/77754037284">+7(775) 403 72 84</a> ватсап номеріне жазасыз: «Менің марапат қағазымда (осы жақша ішіне қалай дұрыстау керектігін жазыңыз) қателік кетіп қалды. Дұрыстап алуға сіздердің көмектеріңіз қажет» деп, ЖСН-ңізді қоса жазыңыз. Сізге, дұрысталғын марапат қағазының сілтемесі жіберіледі.
+                                                Жауап: Қатені жөндеу үшін <a href="https://wa.me/+77754243727">+7(775) 424 3727</a> ватсап номеріне жазасыз: «Менің марапат қағазымда (осы жақша ішіне қалай дұрыстау керектігін жазыңыз) қателік кетіп қалды. Дұрыстап алуға сіздердің көмектеріңіз қажет» деп, ЖСН-ңізді қоса жазыңыз. Сізге, дұрысталғын марапат қағазының сілтемесі жіберіледі.
                                             </p>
                                         </div>
                                     </div>
@@ -146,7 +145,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree7" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree7" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Апелляциялық шағымдар олимпиада аяқталған күннің ертесіне 18:00-ге дейін bilimshini.kz@mail.ru электронды почтасында  қабылданады. Апелляциялық шағымға жауап беру 3 жұмыс күні ішінде қарастырылған.
+                                                Апелляциялық шағымдар олимпиада аяқталған күннің ертесіне 18:00-ге дейін bilimshini.kz@gmail.com электронды почтасында  қабылданады. Апелляциялық шағымға жауап беру 3 жұмыс күні ішінде қарастырылған.
                                             </p>
                                         </div>
                                     </div>
@@ -162,8 +161,7 @@ use yii\helpers\Url; ?>
                                         <div class="accordion-body card-body">
                                             <p>
                                                 Олимипиадалар бойынша ватсапқа жазасыз:
-                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775) 424 37 27</a>,
-                                                <a class="btn-link" href="https://wa.me/77754037284">+7(775) 403 72 84</a>
+                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775) 424 37 27</a>
 
                                                 <br>Журналға материал жариялау бойынша: <a class="btn-link" href="https://wa.me/77786252078">+7(778) 625 20 78</a>
                                                 <br>Кері байланысты сабырмен күтесіздер. 24 сағат ішінде жауап беріледі.
@@ -242,7 +240,6 @@ use yii\helpers\Url; ?>
                                                 Необходимо совершить перевод по ссылке <a href="https://pay.kaspi.kz/pay/lzlvssh5">https://pay.kaspi.kz/pay/lzlvssh5</a>
                                                 оплатив 600тг, платежный чек и ИИН участника Олимпиады отправить на один из нижеуказанных номеров через приложение WhatsApp.
                                                 <a href="https://wa.me/77754243727">https://wa.me/77754243727</a>
-                                                <a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
                                                 После получения ответа «ЗАРЕГИСТРИРОВАНО» появится доступ к участию.
                                             </p>
                                         </div>
@@ -329,7 +326,7 @@ use yii\helpers\Url; ?>
                                         <div class="accordion-body card-body">
                                             <p>
                                                 Для исправления ошибок необходимо письменно обратиться  через  приложение  WhatsApp: по номеру
-                                                <a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
+                                                <a href="https://wa.me/+77754243727">+7(775) 424 3727</a>
                                                 со следующим текстом: «В моем наградном листе допущена ошибка  (в скобках  указать правильный и безошибочный вариант) . Прошу Вас помочь в  решении данного вопроса». Напишите свой  ИИН. Вам будет направлена  ссылка  исправленного варианта наградного листа.
                                             </p>
                                         </div>
@@ -345,7 +342,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree7" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree7" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                Апелляционные жалобы принимаются до 18.00 часов следующего дня после завершения Олимпиады на почтовый адрес bilimshini.kz@mail.ru
+                                                Апелляционные жалобы принимаются до 18.00 часов следующего дня после завершения Олимпиады на почтовый адрес bilimshini.kz@gmail.com
                                             </p>
                                         </div>
                                     </div>
@@ -360,8 +357,7 @@ use yii\helpers\Url; ?>
                                     <div id="faqs-collapseThree8" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree8" data-bs-parent="#faqs-accordionExamplec3">
                                         <div class="accordion-body card-body">
                                             <p>
-                                                По Олимипиаде: <a href="https://wa.me/77754243727">https://wa.me/77754243727</a>,
-                                                <a href="https://wa.me/77754037284">https://wa.me/77754037284</a>
+                                                По Олимипиаде: <a href="https://wa.me/77754243727">https://wa.me/77754243727</a>
                                                 <br>
                                                 По вопросам публикации материала: <a href="https://wa.me/77786252078">https://wa.me/77786252078</a>
                                                 Необходимо спокойно дождаться  обратной связи. Из-за большого количества обращений,  обязательно всем ответят в течение 24 часов.

@@ -80,7 +80,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     }),
                     'options' => ['id' => 'school_id', 'placeholder' => Yii::t('app', 'Укажите школу')],
                 ]); ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@gmail.com') ?></small>
             </div>
         </div>
 

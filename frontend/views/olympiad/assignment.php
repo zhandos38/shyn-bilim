@@ -39,7 +39,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     <div>
                         1) Батырманы басу арқылы
                     </div>
-                    <a class="btn btn-success" href="https://kaspi.kz/pay/_gate?action=service_with_subservice&service_id=3025&subservice_id=13414&region_id=56&amount=7000">
+                    <a class="btn btn-success" href="https://kaspi.kz/pay/_gate?action=service_with_subservice&service_id=3025&subservice_id=13414&region_id=56&amount=600">
                         Төлемге өту
                     </a>
                 </div>
@@ -117,7 +117,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     }),
                     'options' => ['id' => 'school_id', 'placeholder' => Yii::t('app', 'Укажите школу')],
                 ]); ?>
-                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@mail.ru') ?></small>
+                <small class="text-secondary"><?= Yii::t('app', 'Если вы не нашли вашу школу, напишите нам bilimshini.kz@gmail.com') ?></small>
             </div>
         </div>
         <?php if ($olympiad->type === Olympiad::TYPE_STUDENT): ?>
