@@ -82,6 +82,20 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
 
+                                <div class="accordion-item card">
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree97">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree97" aria-expanded="false" aria-controls="faqs-collapseThree97">
+                                            Kaspi арқылы әр оқушы бірінен кейін бірі төлем жасай ала ма?
+                                        </button>
+                                    </h2>
+                                    <div id="faqs-collapseThree97" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree97" data-bs-parent="#faqs-accordionExample97">
+                                        <div class="accordion-body card-body">
+                                            <p>
+                                                Иә, әр оқушы төлемді бірінен кейін бірі Kaspi QR арқылы жасай алады. Әр төлемнен кейін 1 сағат ішінде доступ беріліп, оқушы тест тапсыра алады.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree5">
@@ -249,6 +263,21 @@ use yii\helpers\Url; ?>
                                         <div class="accordion-body card-body">
                                             <p>
                                                 Төленген чекті ашып, чекте көрсетілген қатысушының ЖСН-ді енгізіңіз.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item card">
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree97">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree97" aria-expanded="false" aria-controls="faqs-collapseThree97">
+                                            Kaspi арқылы әр оқушы бірінен кейін бірі төлем жасай ала ма?
+                                        </button>
+                                    </h2>
+                                    <div id="faqs-collapseThree97" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree97" data-bs-parent="#faqs-accordionExample97">
+                                        <div class="accordion-body card-body">
+                                            <p>
+                                                Иә, әр оқушы төлемді бірінен кейін бірі Kaspi QR арқылы жасай алады. Әр төлемнен кейін 1 сағат ішінде доступ беріліп, оқушы тест тапсыра алады.
                                             </p>
                                         </div>
                                     </div>
