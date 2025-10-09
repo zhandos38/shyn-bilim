@@ -28,7 +28,7 @@ if ($olympiadId === 28 && $cityId === 3 && $point === 20) {
         </div>
         <div style="padding-left: 100px; padding-top: 115px; text-align: center; width: 600px; height: 150px; font-size: 18px">
             <div>
-                <span style="text-transform: capitalize"><?= $testAssignment->subject->name ?></span> пәнінен
+                <span><?= $testAssignment->subject->name ?></span> пәнінен
                 <br>
                 жеңімпаз болғаны үшін
             </div>
