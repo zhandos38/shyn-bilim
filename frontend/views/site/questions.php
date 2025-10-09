@@ -36,27 +36,6 @@ use yii\helpers\Url; ?>
                         <div class="rbt-accordion-style rbt-accordion-04 accordion">
                             <div class="accordion" id="faqs-accordionExamplec3">
                                 <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree1">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree1" aria-expanded="true" aria-controls="faqs-collapseThree1">
-                                            ОЛИМПИАДА ЖАРНАСЫН САЙТТАН ТӨЛЕМ ЖАСАЙ АЛМАҒАН ЖАҒДАЙДА НЕ ІСТЕЙМІН?
-                                        </button>
-                                    </h2>
-
-                                    <div id="faqs-collapseThree1" class="accordion-collapse collapse show" aria-labelledby="faqs-headingThree1" data-bs-parent="#faqs-accordionExamplec3" style="">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Сайттан төлем жасау қиындық туғызған жағдайда, мына сілтемені
-                                                <a class="btn-link" href="https://pay.kaspi.kz/pay/lzlvssh5">kaspi</a>
-                                                басып, 600 тг жазу арқылы төлем жасап, чекті және қатысушы ЖСН-ін төмендегі вадсап номерлердің біріне ғана жіберу керек
-                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775)424 37 27</a>
-                                                <br>
-                                                «ТІРКЕЛДІ» деген жауап алғаннан кейін олимпиадаға қатысуға болады.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree99">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree99" aria-expanded="false" aria-controls="faqs-collapseThree2">
                                             Мен төлемді Kaspi QR арқылы жасадым. Бір сағат күтпестен кестені толтырдым, енді қайтадан төлем беті шығып тұр. Мұндай жағдайда не істеу керек?
@@ -68,22 +47,6 @@ use yii\helpers\Url; ?>
                                                 Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
                                             </p>
                                             <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree11">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree11" aria-expanded="false" aria-controls="faqs-collapseThree11">
-                                            ЖАРНА ТӨЛЕНДІ. «ТІРКЕЛДІ» ДЕГЕН ЖАУАП АЛДЫМ. БІРАҚ САЙТТА «ТӨЛЕМ ЖАСАУ» БЕТІ  ШЫҒЫП ТҰР. НЕ ІСТЕУГЕ БОЛАДЫ?
-                                        </button>
-                                    </h2>
-                                    <div id="faqs-collapseThree11" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree11" data-bs-parent="#faqs-accordionExamplec11">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Сіз тіркеткен ЖСН-ді анкетаға жазған ЖСН-мен салыстырып көріңіз. Қате ЖСН-мен қатыса алмайсыз. Егер ондай қателік болмаса,
-                                                тексеру <a href="https://wa.me/+77754243727">+7(775) 424 3727</a>  осы ватсап номерге ЧЕК+ЖСН қайта жіберіңіз.
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -228,41 +191,6 @@ use yii\helpers\Url; ?>
                         </div>
                         <div class="rbt-accordion-style rbt-accordion-04 accordion">
                             <div class="accordion" id="faqs-accordionExamplec3">
-                                <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree1">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree1" aria-expanded="true" aria-controls="faqs-collapseThree1">
-                                            ЧТО ДЕЛАТЬ ПРИ  ВОЗНИКНОВЕНИИ  ТРУДНОСТЕЙ  С  ОПЛАТОЙ  ВЗНОСА ЧЕРЕЗ  САЙТ  ДЛЯ УЧАСТИЯ В ОЛИМПИАДЕ?
-                                        </button>
-                                    </h2>
-
-                                    <div id="faqs-collapseThree1" class="accordion-collapse collapse show" aria-labelledby="faqs-headingThree1" data-bs-parent="#faqs-accordionExamplec3" style="">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Необходимо совершить перевод по ссылке <a href="https://pay.kaspi.kz/pay/lzlvssh5">https://pay.kaspi.kz/pay/lzlvssh5</a>
-                                                оплатив 600тг, платежный чек и ИИН участника Олимпиады отправить на один из нижеуказанных номеров через приложение WhatsApp.
-                                                <a href="https://wa.me/77754243727">https://wa.me/77754243727</a>
-                                                После получения ответа «ЗАРЕГИСТРИРОВАНО» появится доступ к участию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree99">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree99" aria-expanded="false" aria-controls="faqs-collapseThree2">
-                                            Я совершил оплату через Kaspi QR. Заполнил форму, не дожидаясь часа, и теперь страница оплаты снова появляется. Что делать в этом случае?
-                                        </button>
-                                    </h2>
-                                    <div id="faqs-collapseThree99" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree99" data-bs-parent="#faqs-accordionExamplec3">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Нажмите кнопку ниже, чтобы повторно продолжить задачу.
-                                            </p>
-                                            <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Продолжить олимпиаду</a>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree11">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree11" aria-expanded="false" aria-controls="faqs-collapseThree11">
