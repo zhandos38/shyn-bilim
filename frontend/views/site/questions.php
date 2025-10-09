@@ -67,6 +67,21 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
 
+                                <div class="accordion-item card">
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree98">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree98" aria-expanded="false" aria-controls="faqs-collapseThree98">
+                                            Мен Kaspi арқылы QR-кодпен төлем жасадым, бірақ анкетаны толтырмадым. Бір сағаттан кейін екінші қадам — анкетаны толтыру үшін кіргенде, қайтадан төлем беті шықты. Не істеу керек?
+                                        </button>
+                                    </h2>
+                                    <div id="faqs-collapseThree98" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree98" data-bs-parent="#faqs-accordionExample98">
+                                        <div class="accordion-body card-body">
+                                            <p>
+                                                Төленген чекті ашып, чекте көрсетілген қатысушының ЖСН-ді енгізіңіз.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree5">
@@ -224,6 +239,20 @@ use yii\helpers\Url; ?>
                                     </div>
                                 </div>
 
+                                <div class="accordion-item card">
+                                    <h2 class="accordion-header card-header" id="faqs-headingThree98">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree98" aria-expanded="false" aria-controls="faqs-collapseThree98">
+                                            Мен Kaspi арқылы QR-кодпен төлем жасадым, бірақ анкетаны толтырмадым. Бір сағаттан кейін екінші қадам — анкетаны толтыру үшін кіргенде, қайтадан төлем беті шықты. Не істеу керек?
+                                        </button>
+                                    </h2>
+                                    <div id="faqs-collapseThree98" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree98" data-bs-parent="#faqs-accordionExample98">
+                                        <div class="accordion-body card-body">
+                                            <p>
+                                                Төленген чекті ашып, чекте көрсетілген қатысушының ЖСН-ді енгізіңіз.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree5">
