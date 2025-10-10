@@ -154,7 +154,7 @@ use yii\helpers\Url; ?>
                                         <div class="accordion-body card-body">
                                             <p>
                                                 Олимипиадалар бойынша ватсапқа жазасыз:
-                                                <a class="btn-link" href="https://wa.me/77754243727">+7(775) 312 99 06</a>
+                                                <a class="btn-link" href="https://wa.me/77754243727">+7(701) 312 99 06</a>
 
                                                 <br>Журналға материал жариялау бойынша: <a class="btn-link" href="https://wa.me/77786252078">+7(778) 625 20 78</a>
                                                 <br>Кері байланысты сабырмен күтесіздер. 24 сағат ішінде жауап беріледі.

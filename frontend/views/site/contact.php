@@ -31,7 +31,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <h4><?= Yii::t('app', 'Контактные телефоны'); ?></h4>
                 <ul class="phone-list" style="padding: 0">
                     <li class="contact-list__item">
-                        Олимпиада: <a href="tel:87753129906"><i class="fa fa-phone"></i> +7(775) 312 99 06 ( WhatsApp )</a>
+                        Олимпиада: <a href="tel:87013129906"><i class="fa fa-phone"></i> +7(701) 312 99 06 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
                         Редакция: <a href="tel:87786252078"><i class="fa fa-phone"></i> +7(778) 625 20 78 ( WhatsApp )</a>
