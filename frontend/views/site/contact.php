@@ -20,8 +20,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                     <?php if (Yii::$app->language === 'kz'): ?>
                         Жұмыс уақыты: дүйсенбі-жұма, 9.00-19.00 <br>
                         Сенбі, 10:00-14:00 <br>
-                        Қазақстан Республикасы, <br>
-                        Шымкент қаласы, Ғ.Орманов көшесі, 10/1
+                        Қазақстан Республикасы, <br>Шымкент қаласы, Ғ.Орманов көшесі, 10/1
                     <?php else: ?>
                         Грфик работы: понедельник-пятница, 9.00-19.00 <br>
                         Суббота, 10.00-14.00 <br>
@@ -32,7 +31,7 @@ $this->params['heroDescription'] = 'БІЛІМ ШЫҢЫ - ҒЫЛЫМ СЫРЫ';
                 <h4><?= Yii::t('app', 'Контактные телефоны'); ?></h4>
                 <ul class="phone-list" style="padding: 0">
                     <li class="contact-list__item">
-                        Олимпиада: <a href="tel:87754243727"><i class="fa fa-phone"></i> +7(775) 424 37 27 ( WhatsApp )</a>
+                        Олимпиада: <a href="tel:87753129906"><i class="fa fa-phone"></i> +7(775) 312 99 06 ( WhatsApp )</a>
                     </li>
                     <li class="contact-list__item">
                         Редакция: <a href="tel:87786252078"><i class="fa fa-phone"></i> +7(778) 625 20 78 ( WhatsApp )</a>
