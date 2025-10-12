@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'iin',
             'amount',
             'date',
-            'is_activated',
+            [
+                'attribute' => 'is_activated',
+                'value' => function(\common\models\KaspiWhiteList $model) {
+                    return $model->is_activated;
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

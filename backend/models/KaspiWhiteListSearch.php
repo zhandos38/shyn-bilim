@@ -17,7 +17,7 @@ class KaspiWhiteListSearch extends KaspiWhiteList
     public function rules()
     {
         return [
-            [['iin'], 'safe'],
+            [['iin', 'is_activated'], 'safe'],
         ];
     }
 
