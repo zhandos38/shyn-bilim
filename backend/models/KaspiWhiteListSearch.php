@@ -63,6 +63,7 @@ class KaspiWhiteListSearch extends KaspiWhiteList
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'is_activated' => $this->is_activated,
         ]);
 
         $query->andFilterWhere(['like', 'iin', $this->iin]);
