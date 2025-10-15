@@ -56,6 +56,7 @@ class CheckAssignmentForm extends Model
             $hasFinished = TestAssignment::find()->andWhere(['olympiad_id' => $this->olympiad_id])
                 ->andFilterWhere(['iin' => $this->iin])
                 ->andFilterWhere(['phone' => $this->phone])
+                ->andFilterWhere(['subject_id' => $this->subject_id])
                 ->andWhere(['status' => TestAssignment::STATUS_FINISHED])
                 ->one();
             if (!empty($hasFinished)) {
