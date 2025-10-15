@@ -176,7 +176,7 @@ class OlympiadController extends Controller
 
             // Проверка на белый список
             $isPaid = false;
-            $whiteList = WhiteList::findOne(['iin' => $model->iin, 'olympiad_id' => $model->olympiad_id]);
+            $whiteList = WhiteList::findOne(['iin' => $model->iin, 'olympiad_id' => $model->olympiad_id, 'subject_id' => $model->subject_id]);
             if ($whiteList !== null) {
                 $model->status = TestAssignment::STATUS_ACTIVE;
                 $isPaid = true;
