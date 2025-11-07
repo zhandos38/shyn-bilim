@@ -36,22 +36,6 @@ use yii\helpers\Url; ?>
                         <div class="rbt-accordion-style rbt-accordion-04 accordion">
                             <div class="accordion" id="faqs-accordionExamplec3">
                                 <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree99">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree99" aria-expanded="false" aria-controls="faqs-collapseThree2">
-                                            Мен төлемді Kaspi QR арқылы жасадым. Бір сағат күтпестен кестені толтырдым, енді қайтадан төлем беті шығып тұр. Мұндай жағдайда не істеу керек?
-                                        </button>
-                                    </h2>
-                                    <div id="faqs-collapseThree99" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree99" data-bs-parent="#faqs-accordionExamplec3">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Тапсырмаға қайта кіру үшін төмендегі батырманы басыңыз.
-                                            </p>
-                                            <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
                                     <h2 class="accordion-header card-header" id="faqs-headingThree4">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree4" aria-expanded="false" aria-controls="faqs-collapseThree4">
                                             ОЛИМПИАДА ТАПСЫРМАЛАРЫН ОРЫНДАП ОТЫРЫП САЙТТАН ШЫҒЫП КЕТКЕН ЖАҒДАЙДА ҚАЙТАДАН ТАПСЫРА АЛАМЫН БА?
@@ -249,21 +233,6 @@ use yii\helpers\Url; ?>
                                                 Да, Вы сможете. Но тестовые задания начнутся с самого начала. Нажмите кнопку ниже, чтобы вернуться к заданию.
                                             </p>
                                             <a class="rbt-btn" href="<?= Url::to(['olympiad/check-test']) ?>">Олимпиаданы жалғастыру</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item card">
-                                    <h2 class="accordion-header card-header" id="faqs-headingThree98">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqs-collapseThree98" aria-expanded="false" aria-controls="faqs-collapseThree98">
-                                            Мен Kaspi арқылы QR-кодпен төлем жасадым, бірақ анкетаны толтырмадым. Бір сағаттан кейін екінші қадам — анкетаны толтыру үшін кіргенде, қайтадан төлем беті шықты. Не істеу керек?
-                                        </button>
-                                    </h2>
-                                    <div id="faqs-collapseThree98" class="accordion-collapse collapse" aria-labelledby="faqs-headingThree98" data-bs-parent="#faqs-accordionExample98">
-                                        <div class="accordion-body card-body">
-                                            <p>
-                                                Төленген чекті ашып, чекте көрсетілген қатысушының ЖСН-ді енгізіңіз.
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
