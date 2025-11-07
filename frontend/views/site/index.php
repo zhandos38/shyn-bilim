@@ -69,7 +69,7 @@ $this->registerMetaTag([
                         <div class="col-md-6">
                             <div style="display: flex; justify-content: center">
                                 <a href="<?= Url::to(['book/assignment', 'id' => $olympiad->id]) ?>">
-                                    <img style="object-fit: contain; height: 600px" src="/img/altyn-qyran-2025/banner.jpg" alt="img">
+                                    <img style="object-fit: contain; height: 600px" src="/img/banner.jpg" alt="img">
                                 </a>
                             </div>
                         </div>
