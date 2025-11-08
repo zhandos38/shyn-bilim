@@ -114,7 +114,7 @@ class OlympiadController extends Controller
 
         // Проверка на неактивность
         if ($olympiad->status === Olympiad::STATUS_NEW && $test !== 'admin') {
-            Yii::$app->session->setFlash('error', 'Олимпиада 7 қазанда басталады. Тіркелу бойынша осы нөмірдің біріне жазыңыз +7(775)424-37-27');
+            Yii::$app->session->setFlash('error', 'Олимпиада 10 қараша басталады. Тіркелу бойынша осы нөмірдің біріне жазыңыз +7(775)424-37-27');
             return $this->redirect(['site/index']);
         }
 
