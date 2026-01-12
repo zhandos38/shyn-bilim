@@ -7,7 +7,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
     ->setSize(80)
     ->setMargin(5);
 ?>
-<div class="cert-page" style="background-image: url('/img/article/bilimakadem/2025/charter.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
+<div class="cert-page" style="background-image: url('/img/article/bilimakadem/2026/charter.jpg'); background-size: cover; background-repeat: no-repeat; width: 1400px; height: 1200px; font-family: 'Times New Roman';">
     <div id="cert-name" style="height: 400px; padding-top: 520px; padding-left: 140px; width: 500px; text-align: center; color: white; font-size: 18px; text-transform: uppercase">
         <div id="cert-city" style="padding-top: 10px; text-align: center;">
             <?php
