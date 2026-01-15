@@ -50,7 +50,6 @@ if ($testAssignment->subject->kind === Subject::KIND_NATURAL) {
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; padding-top: 10px; font-size: 14px; padding-left: 0">
                 <div id="cert-number" style="color: #0a0a0a">Тіркеу №<?= $testAssignment->id ?></div>
-                <div id="cert-date" style="color: #0a0a0a;">Күні <?= date('d.m.Y') ?></div>
             </div>
         </div>
     </div>
