@@ -33,11 +33,8 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/charter', 'id' => $mod
         <div style="padding-top: 10px; font-size: 22px;">
             <b><?= $model->surname . ' ' . $model->name . ' ' . $model->patronymic ?></b>
         </div>
-        <div style="padding-top: 40px">
-            <b>МАРАПАТТАЛАДЫ</b>
-        </div>
     </div>
-    <div style="padding-top: 20px; padding-left: 660px; font-size: 12px; color: #000000">
+    <div style="padding-top: 60px; padding-left: 660px; font-size: 12px; color: #000000">
         <div id="cert-qrcode" style="height: 60px; padding-top: 40px; width: 160px; font-size: 22px;">
             <img src="<?= $qrCode->writeDataUri() ?>">
         </div>
