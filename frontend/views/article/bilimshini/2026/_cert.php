@@ -24,10 +24,12 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['article/cert', 'id' => $model-
             <?= $model->school->name ?>
         </div>
         <div>
-            <?php if ($model->subject->is_not_subject): ?>
+            <?php if ($model->subject->suffix_label_kz): ?>
+                <?= $model->subject->suffix_label_kz ?>
+            <?php elseif ($model->subject->is_not_subject): ?>
                 <?= $model->subject->name_kz ?>
             <?php else: ?>
-                <?= $model->subject->name_kz ?>
+                <?= $model->subject->name_kz ?> пәні мұғалімі
             <?php endif; ?>
         </div>
         <div style="padding-top: 5px; font-size: 24px; color: #D79236; font-weight: bold">
