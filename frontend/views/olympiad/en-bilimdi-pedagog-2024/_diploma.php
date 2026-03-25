@@ -42,7 +42,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #0a0a0a; font-size: 12px; font-weight: bold">
                 <div id="cert-number">Тіркеу №<?= $testAssignment->id ?></div>
-                <div id="cert-date">Күні <?= date('d.m.Y', $testAssignment->created_at) ?></div>
+                <div id="cert-date">ҚР, 2024 жыл</div>
             </div>
         </div>
     </div>
