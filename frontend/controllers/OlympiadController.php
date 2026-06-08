@@ -580,7 +580,9 @@ class OlympiadController extends Controller
                 if ($testAssignment->point === 29 || $testAssignment->point === 30) {
                     $template = "turkestan/_diploma_grand";
                 }
-            } else if (($olympiad->id === 20 || $olympiad->id === 22 || $olympiad->id === 18 || $olympiad->id === 21) && $regionId === 14 && $testAssignment->point === 30) {
+            } else if (($olympiad->id === 20 || $olympiad->id === 22 || $olympiad->id === 18) && $regionId === 14 && $testAssignment->point === 30) {
+                $template = "_diploma_grand_turkistan";
+            } else if ($olympiad->id === 21 && $regionId === 14 && $testAssignment->point === 20) {
                 $template = "_diploma_grand_turkistan";
             }
 
