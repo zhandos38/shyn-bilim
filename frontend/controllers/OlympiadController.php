@@ -580,6 +580,8 @@ class OlympiadController extends Controller
                 if ($testAssignment->point === 29 || $testAssignment->point === 30) {
                     $template = "turkestan/_diploma_grand";
                 }
+            } else if ($olympiad->id === 20 && $regionId === 14 && $testAssignment->point === 30) {
+                $template = "diploma_turkistan";
             }
 
             $content = $this->renderPartial($testAssignment->olympiad->getFolderPath($template), [
