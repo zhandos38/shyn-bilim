@@ -45,7 +45,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 </div>
             </div>
         </div>
-        <div class="border" style="padding-left: 60px; padding-top: 240px; color: #fff9f6">
+        <div class="border" style="padding-left: 60px; padding-top: 200px; color: #fff9f6">
             <div id="cert-qrcode"><?= '<img src="' . $qrCode->writeDataUri() . '">' ?></div>
             <div style="color: #fff; font-size: 12px; margin-top: 5px">
                 <div id="cert-number"><b>№<?= $testAssignment->id ?></b></div>
