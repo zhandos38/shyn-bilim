@@ -11,7 +11,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     ->setSize(80)->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/jas-mathematic-2024/diploma.jpg'); background-size: cover; background-repeat: no-repeat; font-family: Arial; height: 1200px">
+    <div class="cert-page" style="background-image: url('./img/jas-mathematic-2024/diploma_grand_turkistan.jpg'); background-size: cover; background-repeat: no-repeat; font-family: Arial; height: 1200px">
         <div style="padding-left: 147px; padding-top: 265px; width: 800px; height: 600px; font-size: 14px">
             <div style="padding-top: 340px; width: 400px;">
                 <div style="font-size: 18px; text-transform: uppercase; font-weight: bold">
