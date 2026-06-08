@@ -581,7 +581,7 @@ class OlympiadController extends Controller
                     $template = "turkestan/_diploma_grand";
                 }
             } else if ($olympiad->id === 20 && $regionId === 14 && $testAssignment->point === 30) {
-                $template = "diploma_turkistan";
+                $template = "_diploma_grand_turkistan";
             }
 
             $content = $this->renderPartial($testAssignment->olympiad->getFolderPath($template), [
