@@ -11,7 +11,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     ->setSize(90)->setMargin(5);
 ?>
 <div>
-    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2024/diploma.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
+    <div class="cert-page" style="background-image: url('./img/altyn-qyran-2024/diploma_grand_turkistan.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="font-size: 28px; padding-left: 20px; padding-top: 360px; text-transform: uppercase; color: red; text-align: center">
             <b><?= $place ?></b>
         </div>
