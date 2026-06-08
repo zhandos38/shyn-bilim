@@ -14,7 +14,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
     <div class="cert-page" style="background-image: url('./img/altyn-urpaq-2024/diploma_grand_turkistan.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Arial'; height: 1200px">
         <div style="padding-left: 110px; padding-top: 460px; text-align: center; width: 600px; height: 320px; font-size: 16px; text-transform: uppercase; font-weight: 500">
             <div style="padding-top: 30px; padding-left: 90px; height: 100px; width: 420px">
-                <div style="padding-top: 5px">
+                <div>
                     <?php
                     if ($testAssignment->school !== null) {
                         if ($testAssignment->school->city_id === 1 || $testAssignment->school->city_id === 2 || $testAssignment->school->city_id === 3) {
@@ -24,11 +24,11 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                         }
                     } ?>
                 </div>
-                <div style="padding-top: 5px;">
+                <div>
                     <?= $testAssignment->school->name ?>
                 </div>
             </div>
-            <div style="padding-top: 5px">
+            <div>
                 <div>
                     <?= $testAssignment->grade ?> сынып оқушысы
                 </div>
@@ -43,9 +43,6 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
                 <div style="font-size: 20px;">
                     <b><?= $testAssignment->teacher_name ?></b>
                 </div>
-            </div>
-            <div style="padding-top: 10px">
-                Марапатталады
             </div>
         </div>
         <div class="border" style="padding-left: 60px; padding-top: 240px; color: #fff9f6">
