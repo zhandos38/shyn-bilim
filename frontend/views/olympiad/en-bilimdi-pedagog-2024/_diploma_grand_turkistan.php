@@ -13,7 +13,7 @@ $qrCode = (new QrCode(\yii\helpers\Url::toRoute(['olympiad/get-cert', 'id' => $t
 <div>
     <div class="cert-page" style="background-image: url('./img/en-bilimdi-pedagog-2024/diploma_grand_turkistan.jpg'); background-size: cover; background-repeat: no-repeat; font-family: 'Times New Roman'; height: 1200px">
         <div style="padding-left: 20px; padding-top: 340px; width: 800px; height: 350px; font-size: 14px; text-align: center">
-            <div style="color: #bd8e34; font-size: 22px; height: 36px; text-transform: uppercase; margin-top: 50px">
+            <div style="color: #bd8e34; font-size: 22px; height: 36px; text-transform: uppercase; margin-top: 60px">
                 <b><?= $testAssignment->surname . ' ' . $testAssignment->name . ' ' . $testAssignment->patronymic ?></b>
             </div>
             <div style="padding-top: 20px">
